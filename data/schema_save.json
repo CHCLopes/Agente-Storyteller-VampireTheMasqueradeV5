@@ -1,0 +1,14 @@
+{
+  "session_id": "chronicle_001",
+  "chronicle_name": "Noites de Sangue",
+  "turn": 1,
+  "context": {
+    "location": "Elysium",
+    "npcs_present": ["Príncipe", "Xerife"],
+    "player_status": {
+      "hunger": 2,
+      "willpower": 5,
+      "health": 7
+    }
+  }
+}
