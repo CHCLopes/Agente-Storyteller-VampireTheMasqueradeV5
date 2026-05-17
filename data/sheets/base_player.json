@@ -1,0 +1,54 @@
+{
+    "attributes": {
+        "Strength": 3,
+        "Dexterity": 2,
+        "Stamina": 2,
+        "Charisma": 2,
+        "Manipulation": 2,
+        "Composure": 2,
+        "Intelligence": 2,
+        "Wits": 2,
+        "Resolve": 3
+    },
+    "skills": {
+        "Athletics": 2,
+        "Brawl": 2,
+        "Craft": 0,
+        "Drive": 0,
+        "Firearms": 0,
+        "Larceny": 0,
+        "Melee": 1,
+        "Stealth": 2,
+        "Survival": 0,
+        "AnimalKen": 0,
+        "Etiquette": 0,
+        "Insight": 0,
+        "Intimidation": 2,
+        "Leadership": 0,
+        "Performance": 0,
+        "Persuasion": 1,
+        "Streetwise": 1,
+        "Subterfuge": 0,
+        "Academics": 0,
+        "Awareness": 2,
+        "Finance": 0,
+        "Investigation": 0,
+        "Medicine": 0,
+        "Occult": 1,
+        "Politics": 0,
+        "Science": 0,
+        "Technology": 0
+    },
+    "disciplines": {
+        "feral_weapons": true,
+        "soaring_leap": true,
+        "awe": true
+    },
+    "status": {
+        "blood_potency": 1,
+        "current_hunger": 1,
+        "humanity": 7,
+        "health_tracker": {"size": 7, "superficial": 0, "aggravated": 0},
+        "willpower_tracker": {"size": 5, "superficial": 0, "aggravated": 0}
+    }
+}
