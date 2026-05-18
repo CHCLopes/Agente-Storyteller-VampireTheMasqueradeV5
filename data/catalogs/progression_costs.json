@@ -1,0 +1,9 @@
+{
+  "attribute": { "cost_multiplier": 5, "base_cost": 0, "description": "Novo Nível x 5" },
+  "skill": { "cost_multiplier": 3, "base_cost": 0, "description": "Novo Nível x 3" },
+  "specialty": { "cost_multiplier": 0, "base_cost": 3, "description": "Custo Fixo de 3" },
+  "clan_discipline": { "cost_multiplier": 5, "base_cost": 0, "description": "Novo Nível x 5" },
+  "out_of_clan_discipline": { "cost_multiplier": 7, "base_cost": 0, "description": "Novo Nível x 7" },
+  "caitiff_discipline": { "cost_multiplier": 6, "base_cost": 0, "description": "Novo Nível x 6" },
+  "blood_potency": { "cost_multiplier": 10, "base_cost": 0, "description": "Novo Nível x 10" }
+}

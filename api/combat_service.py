@@ -1,5 +1,28 @@
 from pydantic import BaseModel
 import math
+import os
+import json
+from enum import Enum
+
+class WeaponTypeEnum(str, Enum):
+    BRAWL = "BRAWL"
+    MELEE = "MELEE"
+    RANGED = "RANGED"
+
+class WeaponEngineData(BaseModel):
+    damage_modifier: int
+    is_concealable: bool
+    weapon_type: WeaponTypeEnum
+    is_aggravated_to_vampires: bool
+
+class WeaponNarrativeData(BaseModel):
+    description: str
+    impact_flavor: str
+    masquerade_threat: str
+
+class WeaponModel(BaseModel):
+    engine_data: WeaponEngineData
+    narrative_data: WeaponNarrativeData
 
 class TrackerResult(BaseModel):
     superficial_damage: int
@@ -10,29 +33,40 @@ class DamageResult(BaseModel):
     total_damage: int
     damage_type: str
 
-WEAPON_MODIFIERS = {
-    "UNARMED": 0,
-    "LIGHT": 1,
-    "MEDIUM": 2,
-    "HEAVY": 3,
-    "DESTRUCTIVE": 4
-}
+_WEAPONS_CACHE: dict[str, WeaponModel] = {}
 
-def calculate_damage(margin: int, weapon_category: str, is_bane: bool, is_target_vampire: bool, weapon_damage_bonus: int = 0) -> DamageResult:
-    weapon_val = WEAPON_MODIFIERS.get(weapon_category, 0)
+def load_weapons_catalog():
+    global _WEAPONS_CACHE
+    if _WEAPONS_CACHE: return
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogs", "weapons.json")
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        for key, val in data.items():
+            _WEAPONS_CACHE[key] = WeaponModel(**val)
+
+def get_weapon_model(category: str) -> WeaponModel | None:
+    load_weapons_catalog()
+    return _WEAPONS_CACHE.get(category.lower())
+
+def calculate_damage(margin: int, weapon_category: str, is_bane: bool, is_supernatural_target: bool, weapon_damage_bonus: int = 0, is_true_faith_active: bool = False) -> DamageResult:
+    weapon = get_weapon_model(weapon_category)
+    weapon_val = weapon.engine_data.damage_modifier if weapon else 0
+    is_aggravated_to_vampires = weapon.engine_data.is_aggravated_to_vampires if weapon else False
+    
+    if weapon_category.lower() == "holy_artifact" and is_true_faith_active:
+        is_aggravated_to_vampires = True
+        weapon_val += 2
+
     total_base_damage = margin + weapon_val + weapon_damage_bonus
     
-    if is_target_vampire:
-        if is_bane:
+    if is_supernatural_target:
+        if is_bane or is_aggravated_to_vampires:
             return DamageResult(total_damage=total_base_damage, damage_type="aggravated")
         else:
             reduced = math.ceil(total_base_damage / 2)
             return DamageResult(total_damage=reduced, damage_type="superficial")
     else:
-        if weapon_val > 0 or is_bane or weapon_damage_bonus > 0:
-            return DamageResult(total_damage=total_base_damage, damage_type="aggravated")
-        else:
-            return DamageResult(total_damage=total_base_damage, damage_type="superficial")
+        return DamageResult(total_damage=total_base_damage, damage_type="superficial")
 
 def apply_damage_to_tracker(tracker_size: int, superficial: int, aggravated: int, incoming_damage: int, damage_type: str) -> TrackerResult:
     sup = superficial

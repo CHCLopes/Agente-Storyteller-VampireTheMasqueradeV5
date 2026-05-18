@@ -1,11 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel
 from enum import Enum
 import json
 import os
 import uuid
+import asyncio
 from .rules_service import PlayerSheetModel
-from .orchestrator_service import process_turn_pipeline, SAVE_DIR
+from .orchestrator_service import process_turn_pipeline, run_narrator_stream
+from .state_service import SAVE_DIR
 
 app = FastAPI(title="Agente Storyteller Motor V5")
 
@@ -46,10 +48,6 @@ class SessionData:
 
 active_sessions = {}
 
-class ActionRequest(BaseModel):
-    user_input: str
-    session_id: str = "local_player"
-
 def create_new_campaign() -> str:
     new_session = f"chronicle_{uuid.uuid4().hex[:8]}"
     return new_session
@@ -58,10 +56,9 @@ def create_new_campaign() -> str:
 async def health_check():
     return {"status": "ok"}
 
-@app.post("/chat")
-async def process_chat(action: ActionRequest):
-    user_input = action.user_input.strip().lower()
-    session_id = action.session_id
+@app.websocket("/ws/session/{session_id}")
+async def websocket_endpoint(websocket: WebSocket, session_id: str):
+    await websocket.accept()
     
     if session_id not in active_sessions:
         active_sessions[session_id] = SessionData()
@@ -71,18 +68,44 @@ async def process_chat(action: ActionRequest):
     if session.state == StateEnum.MENU:
         session.active_campaign_id = create_new_campaign()
         session.state = StateEnum.PLAYING
-        return {"action": "chat_response", "message": "Iniciado."}
+        await websocket.send_json({"action": "chat_response", "message": "Iniciado."})
 
-    elif session.state == StateEnum.PLAYING:
-        reply, updated_context = await process_turn_pipeline(
-            user_input=action.user_input, 
-            session_id=session_id, 
-            context=session.context,
-            turn=session.turn,
-            chronicle_name=session.chronicle_name
-        )
-        session.context = updated_context
-        session.turn += 1
-        return {"action": "chat_response", "message": reply}
-
-    return {"action": "error", "message": "Estado Inválido."}
+    try:
+        while True:
+            data = await websocket.receive_text()
+            user_input = data.strip()
+            
+            if session.state == StateEnum.PLAYING:
+                system_log, updated_context = await process_turn_pipeline(
+                    user_input=user_input, 
+                    session_id=session_id, 
+                    context=session.context,
+                    turn=session.turn,
+                    chronicle_name=session.chronicle_name
+                )
+                session.context = updated_context
+                session.turn += 1
+                
+                # Send updated PlayerSheet state back to client
+                await websocket.send_json({"action": "state_update", "player_sheet": session.context.get("player_sheet", {})})
+                
+                # If pipeline resulted in error, send error and stop turn processing
+                if system_log.startswith("[ERROR"):
+                    await websocket.send_json({"action": "error", "message": system_log})
+                    continue
+                
+                # Stream narrative back to client
+                await websocket.send_json({"action": "stream_start"})
+                try:
+                    async for chunk in run_narrator_stream(user_input, system_log):
+                        await websocket.send_json({"action": "stream_chunk", "chunk": chunk})
+                except Exception as e:
+                    await websocket.send_json({"action": "error", "message": f"[H6 Error] {str(e)}"})
+                    
+                await websocket.send_json({"action": "stream_end"})
+            else:
+                await websocket.send_json({"action": "error", "message": "Estado Inválido."})
+                
+    except WebSocketDisconnect:
+        # Cleanup
+        pass

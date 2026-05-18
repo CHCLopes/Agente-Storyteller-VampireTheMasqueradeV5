@@ -1,0 +1,13 @@
+{
+  "0": { "engine_data": { "blood_surge_bonus": 0, "damage_healed_per_rouse": 1, "bane_severity": 0, "rouse_reroll_level": 0 } },
+  "1": { "engine_data": { "blood_surge_bonus": 1, "damage_healed_per_rouse": 1, "bane_severity": 1, "rouse_reroll_level": 1 } },
+  "2": { "engine_data": { "blood_surge_bonus": 1, "damage_healed_per_rouse": 2, "bane_severity": 1, "rouse_reroll_level": 1 } },
+  "3": { "engine_data": { "blood_surge_bonus": 2, "damage_healed_per_rouse": 2, "bane_severity": 2, "rouse_reroll_level": 2 } },
+  "4": { "engine_data": { "blood_surge_bonus": 2, "damage_healed_per_rouse": 3, "bane_severity": 2, "rouse_reroll_level": 2 } },
+  "5": { "engine_data": { "blood_surge_bonus": 3, "damage_healed_per_rouse": 3, "bane_severity": 3, "rouse_reroll_level": 3 } },
+  "6": { "engine_data": { "blood_surge_bonus": 3, "damage_healed_per_rouse": 4, "bane_severity": 3, "rouse_reroll_level": 3 } },
+  "7": { "engine_data": { "blood_surge_bonus": 4, "damage_healed_per_rouse": 4, "bane_severity": 4, "rouse_reroll_level": 4 } },
+  "8": { "engine_data": { "blood_surge_bonus": 4, "damage_healed_per_rouse": 5, "bane_severity": 4, "rouse_reroll_level": 4 } },
+  "9": { "engine_data": { "blood_surge_bonus": 5, "damage_healed_per_rouse": 5, "bane_severity": 5, "rouse_reroll_level": 5 } },
+  "10": { "engine_data": { "blood_surge_bonus": 5, "damage_healed_per_rouse": 6, "bane_severity": 5, "rouse_reroll_level": 5 } }
+}

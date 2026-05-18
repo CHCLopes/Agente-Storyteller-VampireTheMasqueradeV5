@@ -1,0 +1,37 @@
+{
+  "alleycat": {
+    "engine_data": { "hunting_pool": ["strength", "brawl"], "blood_resonance_preference": "choleric" },
+    "narrative_data": {
+      "description": "Gato de Beco. Caça pela força bruta, roubando sangue de quem não pode resistir.",
+      "hunting_method": "Embosca as vítimas na rua, espanca-as até à submissão e bebe. Gera terror e pânico, arriscando quebra de Máscara local."
+    }
+  },
+  "siren": {
+    "engine_data": { "hunting_pool": ["charisma", "subterfuge"], "blood_resonance_preference": "sanguine" },
+    "narrative_data": {
+      "description": "Sereia. Seduz as vítimas, disfarçando o Beijo como intimidade.",
+      "hunting_method": "Opera em discotecas e bares. O Beijo induz euforia, não dor. A vítima acorda fraca, acreditando ter tido uma noite selvagem."
+    }
+  },
+  "sandman": {
+    "engine_data": { "hunting_pool": ["dexterity", "stealth"], "blood_resonance_preference": "phlegmatic" },
+    "narrative_data": {
+      "description": "Sandeiro. Alimenta-se de vítimas adormecidas nos seus próprios lares.",
+      "hunting_method": "Invade propriedades em silêncio. Alimenta-se sem acordar a presa. O risco primário é o arrombamento e deixar pistas físicas."
+    }
+  },
+  "bagger": {
+    "engine_data": { "hunting_pool": ["intelligence", "streetwise"], "blood_resonance_preference": "melancholic" },
+    "narrative_data": {
+      "description": "Saco de Sangue. Rouba ou compra sangue de hospitais, clínicas ou mercados negros.",
+      "hunting_method": "Não caça diretamente vivos. A sua interação é puramente criminal e logística (subornos a médicos ou traficantes)."
+    }
+  },
+  "consensualist": {
+    "engine_data": { "hunting_pool": ["manipulation", "persuasion"], "blood_resonance_preference": "sanguine" },
+    "narrative_data": {
+      "description": "Consensualista. Explica a sua condição (ou mente sobre ela) para obter permissão da presa.",
+      "hunting_method": "A presa sabe que está a ser bebida. Enorme risco para a Máscara. Frequente a formação de cultos pessoais ou dependência doadora."
+    }
+  }
+}

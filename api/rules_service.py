@@ -43,11 +43,16 @@ class V5Skill(str, Enum):
     TECHNOLOGY = "Technology"
 
 class V5WeaponCategory(str, Enum):
-    UNARMED = "UNARMED"
-    LIGHT = "LIGHT"
-    MEDIUM = "MEDIUM"
-    HEAVY = "HEAVY"
-    DESTRUCTIVE = "DESTRUCTIVE"
+    UNARMED = "unarmed"
+    LIGHT_MELEE = "light_melee"
+    HEAVY_MELEE = "heavy_melee"
+    LIGHT_FIREARM = "light_firearm"
+    HEAVY_FIREARM = "heavy_firearm"
+    INCENDIARY = "incendiary"
+    ELECTRICAL = "electrical"
+    CHEMICAL = "chemical"
+    HEAVY_MACHINERY = "heavy_machinery"
+    HOLY_ARTIFACT = "holy_artifact"
 
 class V5ActionTarget(str, Enum):
     UNOPPOSED = "UNOPPOSED"
@@ -67,11 +72,36 @@ class StatusModel(BaseModel):
     health_tracker: TrackerModel
     willpower_tracker: TrackerModel
 
+class PredatorEngineData(BaseModel):
+    hunting_pool: list[str]
+    blood_resonance_preference: str
+
+class PredatorNarrativeData(BaseModel):
+    description: str
+    hunting_method: str
+
+class PredatorTypeModel(BaseModel):
+    engine_data: PredatorEngineData
+    narrative_data: PredatorNarrativeData
+
+class BloodPotencyEngineData(BaseModel):
+    blood_surge_bonus: int
+    damage_healed_per_rouse: int
+    bane_severity: int
+    rouse_reroll_level: int
+
+class BloodPotencyModel(BaseModel):
+    engine_data: BloodPotencyEngineData
+
 class PlayerSheetModel(BaseModel):
+    clan: str = "brujah"
+    predator_type: str = "alleycat"
     attributes: Dict[str, int]
     skills: Dict[str, int]
-    disciplines: Dict[str, bool]
+    disciplines: Dict[str, int]
     status: StatusModel
+    available_xp: int = 0
+    spent_xp: int = 0
 
 class V5ActionPayload(BaseModel):
     intent: str
@@ -81,10 +111,13 @@ class V5ActionPayload(BaseModel):
     weapon_category: V5WeaponCategory = V5WeaponCategory.UNARMED
     is_aggressive: bool
     is_feeding: bool = False
+    is_healing: bool = False
     target_killed: bool = False
     is_bane_damage: bool = False
     is_blood_surge: bool = False
     is_willpower_reroll: bool = False
+    is_compulsion_active: bool = False
+    is_true_faith_active: bool = False
     action_target: V5ActionTarget = V5ActionTarget.UNOPPOSED
     inferred_difficulty: int = Field(default=3, ge=1, le=7)
     npc_threat_level: int = Field(default=2, ge=1, le=5)
