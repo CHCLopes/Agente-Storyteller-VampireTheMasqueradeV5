@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampire: The Masquerade - Storyteller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-container">
+        <!-- Log da Narrativa e Interações -->
+        <section id="narrative-section">
+            <div id="narrative-log" aria-live="polite"></div>
+            
+            <div id="action-panel">
+                <input type="text" id="user-input" placeholder="O que você faz?" autocomplete="off" />
+                <button id="btn-send">Enviar</button>
+                <div id="transaction-actions">
+                    <button id="btn-reroll" class="transaction-btn hidden">Rerrolar (Força de Vontade)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HUD do Personagem -->
+        <aside id="hud-container">
+            <header>
+                <h2>Status</h2>
+            </header>
+            
+            <div class="hud-item">
+                <h3>Fome</h3>
+                <div id="hud-hunger" class="tracker-group"></div>
+            </div>
+
+            <div class="hud-item">
+                <h3>Vida</h3>
+                <div id="hud-health" class="tracker-group"></div>
+            </div>
+
+            <div class="hud-item">
+                <h3>Força de Vontade</h3>
+                <div id="hud-willpower" class="tracker-group"></div>
+            </div>
+
+            <div class="hud-item">
+                <h3>Experiência (XP)</h3>
+                <div id="hud-xp-avb">0</div>
+            </div>
+
+            <div class="hud-item">
+                <h3>Máculas</h3>
+                <div id="hud-banes" class="hidden"></div>
+            </div>
+        </aside>
+    </main>
+    <script src="app.js" defer></script>
+</body>
+</html>

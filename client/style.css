@@ -1,0 +1,191 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a0a0a;
+  --text-primary: #c9b99a;
+  --text-secondary: #8a7a6a;
+  --accent-blood: #8b0000;
+  --accent-dark: #4a0a0a;
+  --hud-width: 220px;
+  --font-narrative: 'Courier New', Courier, monospace;
+  --font-ui: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+}
+
+main.game-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+section#narrative-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  /* Espaço reservado para o aside fixo */
+  margin-right: var(--hud-width);
+}
+
+div#narrative-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  font-family: var(--font-narrative);
+  line-height: 1.6;
+}
+
+div#action-panel {
+  position: static;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--accent-dark);
+}
+
+#user-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-dark);
+  font-family: var(--font-ui);
+}
+
+button {
+  background-color: var(--accent-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-blood);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+}
+
+button:hover {
+  background-color: var(--accent-blood);
+}
+
+#transaction-actions {
+  margin-top: 0.5rem;
+}
+
+aside#hud-container {
+  width: var(--hud-width);
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--bg-secondary);
+  border-left: 1px solid var(--accent-dark);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.hud-item {
+  margin-bottom: 1.5rem;
+}
+
+.hud-item h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Componentes HUD */
+.tracker-group {
+  display: flex;
+  gap: 4px;
+}
+
+.tracker-pip {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-blood);
+  box-sizing: border-box;
+}
+
+.tracker-pip.active {
+  background-color: var(--accent-blood);
+}
+
+.tracker-pip.superficial {
+  background-color: var(--text-secondary);
+}
+
+.tracker-pip.aggravated {
+  background-color: var(--accent-blood);
+  position: relative;
+}
+
+/* X emudoelemento ::after para dano agravado */
+.tracker-pip.aggravated::after {
+  content: "X";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#hud-xp-avb {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent-blood);
+}
+
+#hud-banes {
+  color: var(--accent-blood);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Estados */
+#action-panel.locked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.transaction-btn {
+  position: relative;
+}
+
+/* Spinner CSS puro */
+.transaction-btn.loading {
+  color: transparent !important;
+}
+
+.transaction-btn.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  margin-left: -7px;
+  border: 2px solid var(--text-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
