@@ -3,56 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampire: The Masquerade - Storyteller</title>
+    <title>Vampiro: A Máscara - Motor Narrativo V5 🦇</title>
+    <!-- Google Fonts: Pirata One (Gótica Elegante e Compacta), Lora (Serifada Clássica), Inter (Sans-serif Moderna) -->
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        v5: {
+                            charcoal: '#121214',
+                            parchment: '#e2e0d9',
+                            blood: '#7f1d1d',
+                            crimson: '#b91c1c',
+                            card: '#18181b',
+                            border: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        gothic: ['"Pirata One"', 'serif'],
+                        serif: ['Lora', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <main class="game-container">
-        <!-- Log da Narrativa e Interações -->
-        <section id="narrative-section">
-            <div id="narrative-log" aria-live="polite"></div>
+<body class="bg-v5-charcoal text-v5-parchment font-sans overflow-hidden min-h-screen flex flex-col relative select-none">
+    
+    <!-- Textura de Noise Global -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Top Bar (Barra de Título e Contexto Fixo) -->
+    <header class="fixed top-0 left-0 right-0 h-14 bg-zinc-950 border-b border-zinc-800 flex items-center justify-between px-6 z-40 select-none" role="banner">
+        <div class="flex-1 md:flex-none flex items-center justify-center md:justify-start gap-4">
+            <!-- Título responsivo centralizado no mobile e à esquerda no desktop -->
+            <h1 class="font-gothic text-2xl md:text-3xl text-red-600 tracking-wider text-center md:text-left font-bold" aria-label="Vampiro - A Máscara">Vampiro - A Máscara</h1>
+            <span class="hidden md:inline-block w-px h-5 bg-zinc-800" aria-hidden="true"></span>
+            <!-- Indicador de conexão reativo -->
+            <div class="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-wider ml-2 md:ml-0" aria-label="Status de conexão">
+                <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse shrink-0" id="conn-indicator" aria-hidden="true"></span>
+                <span id="conn-text" class="hidden sm:inline">Desconectado</span>
+            </div>
+        </div>
+        
+        <!-- Contexto da Sessão (Ocultado em telas pequenas) -->
+        <div class="hidden sm:block text-xs font-serif italic text-zinc-300 max-w-[200px] md:max-w-md truncate" id="session-context" aria-live="polite" aria-label="Contexto atual da crônica">
+            Carregando refúgio...
+        </div>
+
+        <!-- Botões de Ajuda / Sobre (Desktop) -->
+        <div class="hidden lg:flex items-center gap-4 text-xs font-serif">
+            <button id="btn-about" class="text-zinc-400 hover:text-red-500 transition-colors uppercase tracking-wider font-semibold" aria-label="Exibir informações sobre o sistema de jogo">Sobre</button>
+            <button id="btn-help" class="text-zinc-400 hover:text-red-500 transition-colors uppercase tracking-wider font-semibold" aria-label="Exibir guia de comandos de jogo">Ajuda</button>
+        </div>
+    </header>
+
+    <!-- Layout Principal: Desktop Grid (2/3 Esquerda, 1/3 Direita) travado, iniciando abaixo do Header (pt-14) -->
+    <main class="flex-1 lg:grid lg:grid-cols-3 lg:h-[calc(100vh-56px)] lg:overflow-hidden pt-14 relative" role="main">
+        
+        <!-- COLUNA ESQUERDA: PAINEL NARRATIVO + INPUT (Ocupa 2 colunas no desktop) -->
+        <section id="narrative-section" class="lg:col-span-2 flex flex-col h-full overflow-hidden pb-16 lg:pb-0 transition-all duration-300">
             
-            <div id="action-panel">
-                <input type="text" id="user-input" placeholder="O que você faz?" autocomplete="off" />
-                <button id="btn-send">Enviar</button>
-                <div id="transaction-actions">
-                    <button id="btn-reroll" class="transaction-btn hidden">Rerrolar (Força de Vontade)</button>
+            <!-- Registro de Crônica (Log Narrativo - Scroll Interno) -->
+            <div id="narrative-log" class="flex-1 overflow-y-auto px-6 py-6 space-y-6 font-sans text-base leading-relaxed select-text" aria-live="polite" aria-label="Registro de narrativa da crônica de RPG">
+                <div class="text-zinc-400 border-l border-zinc-800 pl-4 py-1 text-xs font-mono" aria-label="Log do sistema">
+                    [Sistema] Inicializando interface web reativa em português do Brasil...
+                </div>
+            </div>
+
+            <!-- PAINEL DE AÇÃO E INPUT (Largura restrita ao contêiner de log) -->
+            <div id="action-panel-container" class="w-full bg-zinc-950/90 border-t border-zinc-800/80 backdrop-blur z-20 shrink-0">
+                <div class="max-w-4xl mx-auto p-4 space-y-3">
+                    
+                    <!-- Linha 1: Input de texto com largura de 100% (Textarea travada em 4 linhas com rolagem interna) -->
+                    <form id="input-form" class="w-full" onsubmit="return false;" aria-label="Formulário de envio de ação do jogador">
+                        <textarea rows="4" id="user-input" placeholder="O que seu Neófito faz sob o manto da noite?" autocomplete="off" aria-label="Campo de entrada de texto para ações do jogador"
+                                  class="w-full resize-none overflow-y-auto bg-zinc-900 border border-zinc-800 text-v5-parchment rounded px-4 py-3 focus:outline-none focus:border-red-900 focus:ring-1 focus:ring-red-950 transition-all font-sans text-sm"></textarea>
+                    </form>
+
+                    <!-- Linha 2 (Flex Container): Dropdown de Macros 2/3 (Esquerda) e Enviar 1/3 (Direita) -->
+                    <div class="flex gap-3 w-full items-center">
+                        <!-- Esquerda (2/3 de largura) - Menu de Ação Rápida -->
+                        <div class="w-2/3">
+                            <select id="macro-select" aria-label="Menu de ações rápidas contextuais para injeção automática" 
+                                    class="w-full bg-zinc-900 border border-zinc-800 text-zinc-300 rounded px-3 py-2.5 text-xs focus:outline-none focus:border-red-900 font-serif cursor-pointer">
+                                <option value="" disabled selected hidden>Ações rápidas...</option>
+                                <option value="Inicie uma nova crônica.">Iniciar Nova Crônica</option>
+                                <option value="Fazer teste de Força + Briga">Realizar Teste de Força + Briga</option>
+                                <option value="Atacar usando garras sobrenaturais">Atacar com Garras Sobrenaturais</option>
+                                <option value="Rerrolar dados usando Força de Vontade">Rerrolar Dados (Força de Vontade)</option>
+                                <option value="Curar um ferimento superficial na ficha">Curar Ferimento Superficial</option>
+                                <option value="Tentar fugir silenciosamente nas sombras">Fugir Silenciosamente (Furtividade)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Direita (1/3 de largura) - Enviar -->
+                        <div class="w-1/3 h-10">
+                            <button id="btn-send-trigger" aria-label="Enviar comando ou ação de texto para o mestre narrativo" class="w-full h-full bg-v5-blood hover:bg-v5-crimson border border-red-900 text-v5-parchment font-serif text-xs font-semibold rounded transition-all active:scale-95 flex items-center justify-center gap-1.5 select-none">
+                                <span>Enviar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- HUD do Personagem -->
-        <aside id="hud-container">
-            <header>
-                <h2>Status</h2>
-            </header>
+        <!-- OVERLAY ESCURECIDO MOBILE (z-40 para o Bottom Sheet) -->
+        <div id="sheet-overlay" class="hidden fixed inset-0 bg-black/85 z-40 transition-opacity duration-300 lg:hidden" aria-hidden="true"></div>
+
+        <!-- COLUNA DIREITA: DIGITAL SHEET (Ficha Única Modular - 1/3 no desktop, Bottom Sheet no mobile) -->
+        <aside id="hud-container" aria-label="Ficha de personagem digital modular do Vampiro"
+               class="fixed inset-x-0 bottom-0 z-50 h-[80vh] bg-v5-card border-t border-zinc-800 flex flex-col transform translate-y-full transition-transform duration-300 shadow-2xl shadow-black select-none lg:static lg:transform-none lg:col-span-1 lg:h-full lg:z-30 lg:border-t-0 lg:border-l lg:overflow-y-auto">
             
-            <div class="hud-item">
-                <h3>Fome</h3>
-                <div id="hud-hunger" class="tracker-group"></div>
-            </div>
+            <!-- Cabeçalho da Ficha (Nome e Clã) -->
+            <header class="border-b border-zinc-800 bg-zinc-950 px-5 py-4 flex items-center justify-between shrink-0">
+                <div>
+                    <h2 id="hud-character-name" class="font-serif text-lg font-bold text-red-600 tracking-wide" aria-label="Nome do personagem">Karl Brujah</h2>
+                    <p id="hud-clan-name" class="text-xs text-zinc-400 font-mono uppercase tracking-widest mt-0.5" aria-label="Clã e geração do personagem">Brujah (Geração 11)</p>
+                </div>
+                <!-- Botão de Fechar no Mobile (Oculto no Desktop) -->
+                <button id="btn-close-sheet" aria-label="Fechar aba da ficha de personagem no dispositivo móvel" class="lg:hidden p-1.5 text-zinc-400 hover:text-white rounded border border-zinc-800 hover:bg-zinc-900 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+            </header>
 
-            <div class="hud-item">
-                <h3>Vida</h3>
-                <div id="hud-health" class="tracker-group"></div>
-            </div>
+            <!-- Corpo da Ficha (Grid de 2 Colunas Principais) -->
+            <div class="flex-1 overflow-y-auto p-5 space-y-6">
+                <div class="grid grid-cols-2 gap-4 flex-wrap">
+                    
+                    <!-- COLUNA 1: STATUS -->
+                    <div class="space-y-4 min-w-0" aria-label="Valores de integridade física e mental">
+                        <h3 class="text-xs font-serif uppercase text-red-700 border-b border-zinc-800 pb-1 tracking-wider" aria-hidden="true">Status</h3>
+                        
+                        <!-- Fome (Círculos) -->
+                        <div class="space-y-1.5">
+                            <span class="text-xs font-serif text-zinc-300 block" aria-label="Medidor de Fome atual">Fome</span>
+                            <div id="hud-hunger" class="flex flex-wrap gap-1" aria-label="Indicadores circulares de Fome">
+                                <span class="pip-hunger-empty" aria-hidden="true"></span>
+                                <span class="pip-hunger-empty" aria-hidden="true"></span>
+                                <span class="pip-hunger-empty" aria-hidden="true"></span>
+                                <span class="pip-hunger-empty" aria-hidden="true"></span>
+                                <span class="pip-hunger-empty" aria-hidden="true"></span>
+                            </div>
+                        </div>
 
-            <div class="hud-item">
-                <h3>Força de Vontade</h3>
-                <div id="hud-willpower" class="tracker-group"></div>
-            </div>
+                        <!-- Vida (Quadrados) -->
+                        <div class="space-y-1.5">
+                            <span class="text-xs font-serif text-zinc-300 block" aria-label="Medidor de Vida e dano sofrido">Membro / Vida</span>
+                            <div id="hud-health" class="flex flex-wrap gap-1" aria-label="Quadrados indicadores de integridade física e ferimentos">
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                            </div>
+                        </div>
 
-            <div class="hud-item">
-                <h3>Experiência (XP)</h3>
-                <div id="hud-xp-avb">0</div>
-            </div>
+                        <!-- Vontade (Quadrados) -->
+                        <div class="space-y-1.5">
+                            <span class="text-xs font-serif text-zinc-300 block" aria-label="Medidor de Força de Vontade e dano mental">Força de Vontade</span>
+                            <div id="hud-willpower" class="flex flex-wrap gap-1" aria-label="Quadrados indicadores de força de vontade e fadiga mental">
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                                <span class="pip-quadrado-vazio" aria-hidden="true"></span>
+                            </div>
+                        </div>
 
-            <div class="hud-item">
-                <h3>Máculas</h3>
-                <div id="hud-banes" class="hidden"></div>
+                        <!-- Experiência (XP) -->
+                        <div class="space-y-1 text-xs">
+                            <span class="font-serif text-zinc-300 block" aria-label="Pontos de Experiência disponíveis">Experiência Disponível</span>
+                            <span id="hud-xp-avb" class="font-mono font-bold text-red-500" aria-live="polite">0 XP</span>
+                        </div>
+                    </div>
+
+                    <!-- COLUNA 2: ATRIBUTOS -->
+                    <div class="space-y-4 min-w-0" aria-label="Atributos fundamentais do personagem">
+                        <h3 class="text-xs font-serif uppercase text-red-700 border-b border-zinc-800 pb-1 tracking-wider" aria-hidden="true">Atributos</h3>
+                        <div class="space-y-2 text-xs font-mono" id="hud-attributes" aria-label="Valores numéricos de atributos">
+                            <div class="flex justify-between items-center bg-zinc-900/40 p-1.5 border border-zinc-900 rounded">
+                                <span class="text-zinc-400">Força</span>
+                                <span id="attr-strength" class="text-v5-parchment font-bold" aria-label="Força física nível 3">3</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-zinc-900/40 p-1.5 border border-zinc-900 rounded">
+                                <span class="text-zinc-400">Destreza</span>
+                                <span id="attr-dexterity" class="text-v5-parchment font-bold" aria-label="Destreza nível 2">2</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-zinc-900/40 p-1.5 border border-zinc-900 rounded">
+                                <span class="text-zinc-400">Carisma</span>
+                                <span id="attr-charisma" class="text-v5-parchment font-bold" aria-label="Carisma nível 3">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPONENTES DE COMPRESSÃO DE DADOS (Dropdowns autossuficientes sem cabeçalhos textuais redundantes) -->
+                
+                <!-- Habilidades (Dropdown) -->
+                <div class="w-full" aria-label="Habilidades aprendidas pelo personagem">
+                    <select id="hud-skills-select" aria-label="Visualizar e acionar Habilidades do personagem" 
+                            class="w-full bg-zinc-900 border border-zinc-800 text-zinc-300 rounded px-2.5 py-2 text-xs font-mono focus:outline-none focus:border-red-900 cursor-pointer">
+                        <option value="" disabled selected hidden>Usar Habilidade...</option>
+                    </select>
+                </div>
+
+                <!-- Disciplinas (Dropdown) -->
+                <div class="w-full" aria-label="Disciplinas e poderes sobrenaturais de sangue">
+                    <select id="hud-disciplines-select" aria-label="Visualizar e ativar Disciplinas sobrenaturais" 
+                            class="w-full bg-zinc-900 border border-zinc-800 text-zinc-300 rounded px-2.5 py-2 text-xs font-mono focus:outline-none focus:border-red-900 cursor-pointer">
+                        <option value="" disabled selected hidden>Ativar Disciplina de Sangue...</option>
+                    </select>
+                </div>
+
+                <!-- Relações (Dropdown) -->
+                <div class="w-full" aria-label="Teia de relações e favores com NPCs locais">
+                    <select id="hud-relations-select" aria-label="Visualizar e consultar relacionamentos com NPCs da cidade" 
+                            class="w-full bg-zinc-900 border border-zinc-800 text-zinc-300 rounded px-2.5 py-2 text-xs font-serif focus:outline-none focus:border-red-900 cursor-pointer">
+                        <option value="" disabled selected hidden>Consultar Relacionamento...</option>
+                    </select>
+                </div>
+
             </div>
         </aside>
     </main>
+
+    <!-- BOTTOM NAVIGATION BAR (Exibida apenas em telas pequenas / Fácil acesso via polegar no Mobile) -->
+    <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 h-16 bg-zinc-950 border-t border-zinc-800 flex items-center justify-around z-40 lg:hidden shadow-2xl" role="navigation" aria-label="Navegação inferior mobile">
+        <button id="btn-nav-about" aria-label="Abrir modal sobre o motor narrativo" class="flex flex-col items-center justify-center text-zinc-400 hover:text-red-500 transition-colors w-full h-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 111.086 1.086L12.5 13.5l-.041.02a.75.75 0 11-1.086-1.086L11.75 12.5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 12a6 6 0 11-12 0 6 6 0 0112 0z" />
+            </svg>
+            <span class="text-[9px] uppercase tracking-wider mt-0.5 font-serif font-semibold">Sobre</span>
+        </button>
+        <button id="btn-nav-help" aria-label="Abrir guia de ajuda e comandos" class="flex flex-col items-center justify-center text-zinc-400 hover:text-red-500 transition-colors w-full h-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-[9px] uppercase tracking-wider mt-0.5 font-serif font-semibold">Ajuda</span>
+        </button>
+        <button id="btn-nav-sheet" aria-label="Abrir a ficha completa do personagem" class="flex flex-col items-center justify-center text-zinc-400 hover:text-red-500 transition-colors w-full h-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span class="text-[9px] uppercase tracking-wider mt-0.5 font-serif font-semibold">Ficha</span>
+        </button>
+    </nav>
+
+    <!-- Modais de Contexto (Ajuda / Sobre) -->
+    <div id="modal-container" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 select-none" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-zinc-900 border border-zinc-800 rounded p-6 max-w-md w-full space-y-4 shadow-2xl relative">
+            <h2 id="modal-title" class="font-serif text-xl font-bold text-red-600 border-b border-zinc-800 pb-2">Sobre</h2>
+            <div id="modal-body" class="text-sm font-serif text-zinc-300 space-y-3 leading-relaxed">
+                <!-- Injetado Dinamicamente -->
+            </div>
+            <div class="flex justify-end pt-2">
+                <button id="btn-close-modal" aria-label="Fechar painel explicativo flutuante" class="bg-v5-blood hover:bg-v5-crimson border border-red-900 text-v5-parchment font-serif px-4 py-1.5 rounded transition-all active:scale-95 text-xs">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Principal -->
     <script src="app.js" defer></script>
 </body>
 </html>
