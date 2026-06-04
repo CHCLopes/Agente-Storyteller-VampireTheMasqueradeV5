@@ -71,6 +71,7 @@ class StatusModel(BaseModel):
     humanity: int
     health_tracker: TrackerModel
     willpower_tracker: TrackerModel
+    stains: int = 0
 
 class PredatorEngineData(BaseModel):
     hunting_pool: list[str]
@@ -227,3 +228,20 @@ def calculate_resolution(payload: V5ActionPayload, current_hunger: int, dice_poo
         hunger_rolls=hunger_rolls,
         margin=margin
     )
+
+def calculate_remorse(sheet: PlayerSheetModel) -> PlayerSheetModel:
+    """
+    Mecânica de Remorso e degeneração de Humanidade baseada em máculas (stains).
+    """
+    stains = sheet.status.stains
+    if stains == 0:
+        return sheet
+        
+    pool = max(10 - stains, 1)
+    roll_res = _roll_v5_dice(dice_pool=pool, hunger=0, difficulty=1)
+    
+    if roll_res.successes == 0:
+        sheet.status.humanity = max(0, sheet.status.humanity - 1)
+        
+    sheet.status.stains = 0
+    return sheet

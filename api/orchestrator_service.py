@@ -9,8 +9,9 @@ from .metagame_service import apply_willpower_reroll
 from .physiology_service import get_blood_surge_bonus, get_healing_amount
 from .parser_service import extract_intent
 from .state_service import save_session_state
+from .core.config import Settings
 
-LM_STUDIO_BASE_URL = "http://localhost:1234/v1"
+settings = Settings()
 
 def load_skill_prompt(skill_name: str) -> str:
     path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "skills", f"{skill_name}.md")
@@ -48,6 +49,7 @@ class SystemLogBuilder:
 
 async def run_narrator_stream(user_input: str, system_log: str):
     h6_payload = {
+        "model": settings.LMSTUDIO_MODEL,
         "messages": [
             {"role": "system", "content": STORYTELLER_SYSTEM_PROMPT},
             {"role": "user", "content": f"{user_input}\n{system_log}"}
@@ -56,7 +58,7 @@ async def run_narrator_stream(user_input: str, system_log: str):
         "stream": True
     }
     async with httpx.AsyncClient() as client:
-        async with client.stream("POST", f"{LM_STUDIO_BASE_URL}/chat/completions", json=h6_payload, timeout=30.0) as response:
+        async with client.stream("POST", f"{settings.lm_studio_base_url}/chat/completions", json=h6_payload, timeout=float(settings.LMSTUDIO_TIMEOUT)) as response:
             response.raise_for_status()
             async for chunk in response.aiter_lines():
                 if chunk.startswith("data: "):

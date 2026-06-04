@@ -4,8 +4,9 @@ import re
 import os
 from pydantic import ValidationError
 from .rules_service import V5ActionPayload
+from .core.config import Settings
 
-LM_STUDIO_BASE_URL = "http://localhost:1234/v1"
+settings = Settings()
 
 def load_skill_prompt(skill_name: str) -> str:
     path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "skills", f"{skill_name}.md")
@@ -42,12 +43,13 @@ async def extract_intent(user_input: str) -> V5ActionPayload:
 
 async def _call_h1(messages: list) -> V5ActionPayload:
     h1_payload = {
+        "model": settings.LMSTUDIO_MODEL,
         "messages": messages,
         "temperature": 0.1,
         "stream": False
     }
     async with httpx.AsyncClient() as client:
-        resp = await client.post(f"{LM_STUDIO_BASE_URL}/chat/completions", json=h1_payload, timeout=30.0)
+        resp = await client.post(f"{settings.lm_studio_base_url}/chat/completions", json=h1_payload, timeout=float(settings.LMSTUDIO_TIMEOUT))
         resp.raise_for_status()
         data = resp.json()
         h1_reply = data["choices"][0]["message"]["content"]
