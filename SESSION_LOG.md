@@ -2,7 +2,7 @@
 PROJECT: Agente Storyteller | Motor Narrativo V5 🦇
 STACK: Python (FastAPI), WebSocket, Ollama, Vanilla JS (Frontend)
 LAST_SESSION: 2026-06-07
-SESSION_COUNT: 12
+SESSION_COUNT: 13
 
 ## DECISIONS_LOCKED
 - **Engine Split:** Isolamento total do Motor Mecânico V5 em relação à camada de inferência de linguagem do LLM.
@@ -20,10 +20,12 @@ SESSION_COUNT: 12
 | client/app.js | SEALED - Foundation V1 | 1 |
 | DESIGN.md | COMPLETED | 7 |
 | DESIGN_SYSTEM.md | COMPLETED | 8 |
+| Iniciar o Jogo.lnk | COMPLETED | 13 |
 | PLANO_GERADO.md | COMPLETED | 12 |
 | PRODUTO.md | COMPLETED | 6 |
 | pyrightconfig.json | COMPLETED | 9 |
 | requirements.txt | COMPLETED | 5 |
+| sync_public.py | COMPLETED | 13 |
 | api/core/__init__.py | DONE | 5 |
 | api/core/config.py | DONE | 5 |
 | .env.example | DONE | 5 |
@@ -36,11 +38,11 @@ SESSION_COUNT: 12
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 13] Criação de atalho Windows 'Iniciar o Jogo.lnk', estruturação do repositório de distribuição pública limpo em AgenteStoryteller_Public, geração de README.md humanizado focado em jogadores e escrita do script sync_public.py de sincronização.
 - [Sessão 12] Implementação e homologação de todos os Acceptance Criteria pendentes em PLANO_GERADO.md: injeção dinâmica de ficha/lore no Narrador, rotas POST de gerenciamento e upgrades de XP, e testes unitários/latência de cobertura.
 - [Sessão 11] Execução do spec-driven-executor para gerar e atualizar PLANO_GERADO.md contendo referências de especificações, 9 ACs (com AC 1, AC 2 e AC 3 marcados como DONE) e alinhamento do design.
 - [Sessão 10] Criação do commit inicial (root-commit) do repositório contendo fontes, testes e especificações atualizadas, omitindo arquivos temporários.
 - [Sessão 9] Correção de desvios de contrato de infraestrutura: criação de pyrightconfig.json e ajuste de stack do frontend no log para Vanilla JS.
-- [Sessão 8] Unificação de design system em DESIGN_SYSTEM.md contemplando paletas, componentes, App-Shell e acessibilidade WCAG AA.
 - [Sessão 7] Unificação da especificação técnica em DESIGN.md contemplando diagramas ASCII, padrões de código e targets de performance.
 - [Sessão 6] Unificação de escopo, restrições e novos Acceptance Criteria (AC 1 a AC 9) em PRODUTO.md com Decision Log arquitetural.
 - [Sessão 5] Módulo D: config centralizada via `pydantic-settings`. Módulo C: schema de Humanidade e Remorso com testes aprovados.
