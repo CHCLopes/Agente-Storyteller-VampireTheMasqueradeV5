@@ -162,6 +162,9 @@ def test_pipeline_willpower_reroll(mock_httpx_post):
         MockResponse(h1_json_reroll)
     ]
     
+    save_path = os.path.join(SAVE_DIR, "test_wp.json")
+    if os.path.exists(save_path): os.remove(save_path)
+
     from api.main import active_sessions, SessionData, StateEnum
     session = SessionData()
     session.state = StateEnum.PLAYING
@@ -779,3 +782,145 @@ def test_insufficient_xp_block():
     assert success is False
     assert result_sheet.available_xp == 10
     assert result_sheet.attributes["Strength"] == 2
+
+
+def test_endpoint_xp_award():
+    from api.state_service import sync_event_from_context, save_session_state
+    session_id = "test_xp_award"
+    
+    # Prepara estado em disco
+    initial_context = {
+        "player_sheet": {
+            "clan": "brujah",
+            "attributes": {"Strength": 3},
+            "skills": {"Brawl": 2},
+            "disciplines": {},
+            "status": {
+                "blood_potency": 1,
+                "current_hunger": 1,
+                "humanity": 7,
+                "health_tracker": {"size": 7, "superficial": 0, "aggravated": 0},
+                "willpower_tracker": {"size": 5, "superficial": 0, "aggravated": 0}
+            },
+            "available_xp": 5
+        }
+    }
+    event_data = sync_event_from_context(session_id, initial_context)
+    
+    # Persiste estado de teste de forma síncrona/segura
+    async def prep():
+        await save_session_state(session_id, event_data)
+    asyncio.run(prep())
+    
+    response = client.post(f"/session/{session_id}/xp/award?amount=3")
+    assert response.status_code == 200
+    res_data = response.json()
+    assert res_data["player_sheet"]["player_sheet"]["available_xp"] == 8
+
+def test_endpoint_xp_upgrade():
+    from api.state_service import sync_event_from_context, save_session_state
+    session_id = "test_xp_upgrade"
+    
+    initial_context = {
+        "player_sheet": {
+            "clan": "brujah",
+            "attributes": {"Strength": 2},
+            "skills": {"Brawl": 2},
+            "disciplines": {},
+            "status": {
+                "blood_potency": 1,
+                "current_hunger": 1,
+                "humanity": 7,
+                "health_tracker": {"size": 7, "superficial": 0, "aggravated": 0},
+                "willpower_tracker": {"size": 5, "superficial": 0, "aggravated": 0}
+            },
+            "available_xp": 20
+        }
+    }
+    event_data = sync_event_from_context(session_id, initial_context)
+    
+    async def prep():
+        await save_session_state(session_id, event_data)
+    asyncio.run(prep())
+    
+    # Tenta melhorar Força para 3 (custo 15). Temos 20.
+    response = client.post(f"/session/{session_id}/xp/upgrade", json={
+        "trait_category": "attribute",
+        "trait_name": "Strength",
+        "new_level": 3
+    })
+    assert response.status_code == 200
+    res_data = response.json()
+    assert res_data["success"] is True
+    assert res_data["state"]["player_sheet"]["player_sheet"]["available_xp"] == 5
+    assert res_data["state"]["player_sheet"]["player_sheet"]["attributes"]["Strength"] == 3
+
+
+@pytest.mark.anyio
+async def test_narrator_dynamic_injection():
+    from api.orchestrator_service import run_narrator_stream
+    
+    player_sheet = {
+        "clan": "gangrel",
+        "predator_type": "alleycat",
+        "status": {
+            "current_hunger": 3,
+            "humanity": 6,
+            "health_tracker": {"size": 7, "superficial": 1, "aggravated": 0},
+            "willpower_tracker": {"size": 5, "superficial": 0, "aggravated": 0}
+        }
+    }
+    
+    # Mock do stream de completions para validar a injeção
+    class MockStream:
+        async def __aenter__(self): return self
+        async def __aexit__(self, exc_type, exc_val, exc_tb): pass
+        def raise_for_status(self): pass
+        async def aiter_lines(self):
+            yield 'data: {"choices": [{"delta": {"content": "Test"}}]}'
+            yield 'data: [DONE]'
+            
+    with patch('httpx.AsyncClient.stream', return_value=MockStream()) as mock_stream:
+        async for chunk in run_narrator_stream("Eu corro", "Sucesso", player_sheet=player_sheet):
+            pass
+        
+        # Verifica se o payload HTTP contém a ficha formatada no system prompt
+        call_args = mock_stream.call_args
+        json_payload = call_args[1]["json"]
+        system_prompt = json_payload["messages"][0]["content"]
+        
+        assert "Clã: gangrel" in system_prompt
+        assert "Tipo de Predador: alleycat" in system_prompt
+        assert "Fome: 3" in system_prompt
+        assert "Humanidade: 6" in system_prompt
+
+def test_llm_stream_latency():
+    import time
+    import httpx
+    
+    # Verifica se o LM Studio está rodando localmente
+    lm_studio_active = False
+    try:
+        resp = httpx.get("http://localhost:1234/v1/models", timeout=0.1)
+        if resp.status_code == 200:
+            lm_studio_active = True
+    except Exception:
+        pass
+        
+    if not lm_studio_active:
+        pytest.skip("LM Studio não ativo em localhost:1234. Pulando teste de latência real.")
+        
+    # Teste de latência real de streaming
+    from api.orchestrator_service import run_narrator_stream
+    
+    async def measure():
+        start = time.time()
+        first_token_received = False
+        async for chunk in run_narrator_stream("Olá", "Ação comum"):
+            if not first_token_received:
+                latency = (time.time() - start) * 1000
+                first_token_received = True
+                assert latency < 500, f"Latência de stream muito alta: {latency}ms"
+                break
+                
+    asyncio.run(measure())

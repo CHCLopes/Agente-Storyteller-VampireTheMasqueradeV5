@@ -2,7 +2,7 @@
 PROJECT: Agente Storyteller | Motor Narrativo V5 🦇
 STACK: Python (FastAPI), WebSocket, Ollama, Vanilla JS (Frontend)
 LAST_SESSION: 2026-06-07
-SESSION_COUNT: 10
+SESSION_COUNT: 12
 
 ## DECISIONS_LOCKED
 - **Engine Split:** Isolamento total do Motor Mecânico V5 em relação à camada de inferência de linguagem do LLM.
@@ -20,13 +20,14 @@ SESSION_COUNT: 10
 | client/app.js | SEALED - Foundation V1 | 1 |
 | DESIGN.md | COMPLETED | 7 |
 | DESIGN_SYSTEM.md | COMPLETED | 8 |
+| PLANO_GERADO.md | COMPLETED | 12 |
 | PRODUTO.md | COMPLETED | 6 |
 | pyrightconfig.json | COMPLETED | 9 |
 | requirements.txt | COMPLETED | 5 |
 | api/core/__init__.py | DONE | 5 |
 | api/core/config.py | DONE | 5 |
 | .env.example | DONE | 5 |
-| api/orchestrator_service.py | DONE | 5 |
+| api/orchestrator_service.py | DONE | 12 |
 | api/parser_service.py | DONE | 5 |
 | api/state_service.py | DONE | 5 |
 | api/rules_service.py | DONE | 5 |
@@ -35,6 +36,8 @@ SESSION_COUNT: 10
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 12] Implementação e homologação de todos os Acceptance Criteria pendentes em PLANO_GERADO.md: injeção dinâmica de ficha/lore no Narrador, rotas POST de gerenciamento e upgrades de XP, e testes unitários/latência de cobertura.
+- [Sessão 11] Execução do spec-driven-executor para gerar e atualizar PLANO_GERADO.md contendo referências de especificações, 9 ACs (com AC 1, AC 2 e AC 3 marcados como DONE) e alinhamento do design.
 - [Sessão 10] Criação do commit inicial (root-commit) do repositório contendo fontes, testes e especificações atualizadas, omitindo arquivos temporários.
 - [Sessão 9] Correção de desvios de contrato de infraestrutura: criação de pyrightconfig.json e ajuste de stack do frontend no log para Vanilla JS.
 - [Sessão 8] Unificação de design system em DESIGN_SYSTEM.md contemplando paletas, componentes, App-Shell e acessibilidade WCAG AA.

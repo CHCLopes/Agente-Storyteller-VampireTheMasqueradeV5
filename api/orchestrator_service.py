@@ -47,11 +47,28 @@ class SystemLogBuilder:
             log += f"\n{self.lore_context}"
         return log
 
-async def run_narrator_stream(user_input: str, system_log: str):
+async def run_narrator_stream(user_input: str, system_log: str, player_sheet: dict | None = None):
+    system_content = STORYTELLER_SYSTEM_PROMPT
+    if player_sheet:
+        status = player_sheet.get("status", {})
+        health = status.get("health_tracker", {})
+        willpower = status.get("willpower_tracker", {})
+        
+        char_context = (
+            f"\n\n## FICHA ATUAL DO PERSONAGEM (CONTEXTO DE REGRAS):\n"
+            f"- Clã: {player_sheet.get('clan', 'Desconhecido')}\n"
+            f"- Tipo de Predador: {player_sheet.get('predator_type', 'Desconhecido')}\n"
+            f"- Fome: {status.get('current_hunger', 0)}\n"
+            f"- Humanidade: {status.get('humanity', 7)}\n"
+            f"- Vida (Tracker): Superficial {health.get('superficial', 0)}, Agravado {health.get('aggravated', 0)} (Tamanho Máximo: {health.get('size', 7)})\n"
+            f"- Força de Vontade (Tracker): Superficial {willpower.get('superficial', 0)}, Agravado {willpower.get('aggravated', 0)} (Tamanho Máximo: {willpower.get('size', 5)})\n"
+        )
+        system_content += char_context
+
     h6_payload = {
         "model": settings.LMSTUDIO_MODEL,
         "messages": [
-            {"role": "system", "content": STORYTELLER_SYSTEM_PROMPT},
+            {"role": "system", "content": system_content},
             {"role": "user", "content": f"{user_input}\n{system_log}"}
         ],
         "temperature": 0.7,

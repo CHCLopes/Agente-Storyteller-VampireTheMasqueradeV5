@@ -202,7 +202,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 # Stream narrative de volta para o cliente
                 await websocket.send_json({"action": "stream_start"})
                 try:
-                    async for chunk in run_narrator_stream(user_input, system_log):
+                    async for chunk in run_narrator_stream(user_input, system_log, player_sheet=session.context):
                         await websocket.send_json({"action": "stream_chunk", "chunk": chunk})
                 except Exception as e:
                     await websocket.send_json({"action": "error", "message": f"[H6 Error] {str(e)}"})
@@ -213,3 +213,69 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 
     except WebSocketDisconnect:
         pass
+
+
+class UpgradeRequest(BaseModel):
+    trait_category: str
+    trait_name: str
+    new_level: int
+
+@app.post("/session/{session_id}/xp/award")
+async def award_xp(session_id: str, amount: int = 1):
+    event_data = await load_session_state(session_id)
+    if not event_data:
+        return {"error": "Sessão não encontrada"}
+    
+    if not event_data.player_sheet:
+        return {"error": "Ficha do jogador ausente"}
+        
+    from .rules_service import PlayerSheetModel
+    from .progression_service import award_session_xp
+    
+    # Suporte ao envelope herdado do player_sheet
+    player_sheet_dict = event_data.player_sheet.get("player_sheet", {}) if "player_sheet" in event_data.player_sheet else event_data.player_sheet
+    sheet = PlayerSheetModel(**player_sheet_dict)
+    sheet = award_session_xp(sheet, amount)
+    
+    new_context = event_data.player_sheet
+    new_context["player_sheet"] = sheet.model_dump()
+    
+    event_data = sync_event_from_context(session_id, new_context)
+    await save_session_state(session_id, event_data)
+    
+    # Atualiza em memória se a sessão estiver ativa
+    if session_id in active_sessions:
+        active_sessions[session_id].context = event_data.player_sheet or {}
+        
+    return event_data.model_dump()
+
+@app.post("/session/{session_id}/xp/upgrade")
+async def upgrade_trait(session_id: str, req: UpgradeRequest):
+    event_data = await load_session_state(session_id)
+    if not event_data:
+        return {"success": False, "error": "Sessão não encontrada"}
+        
+    if not event_data.player_sheet:
+        return {"success": False, "error": "Ficha do jogador ausente"}
+        
+    from .rules_service import PlayerSheetModel
+    from .progression_service import purchase_upgrade
+    
+    player_sheet_dict = event_data.player_sheet.get("player_sheet", {}) if "player_sheet" in event_data.player_sheet else event_data.player_sheet
+    sheet = PlayerSheetModel(**player_sheet_dict)
+    success, updated_sheet = purchase_upgrade(sheet, req.trait_category, req.trait_name, req.new_level)
+    
+    if not success:
+        return {"success": False, "error": "XP insuficiente ou melhoria inválida"}
+        
+    new_context = event_data.player_sheet
+    new_context["player_sheet"] = updated_sheet.model_dump()
+    
+    event_data = sync_event_from_context(session_id, new_context)
+    await save_session_state(session_id, event_data)
+    
+    # Atualiza em memória se a sessão estiver ativa
+    if session_id in active_sessions:
+        active_sessions[session_id].context = event_data.player_sheet or {}
+        
+    return {"success": True, "state": event_data.model_dump()}
