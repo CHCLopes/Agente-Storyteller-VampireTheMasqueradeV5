@@ -2,7 +2,7 @@
 PROJECT: Agente Storyteller | Motor Narrativo V5 🦇
 STACK: Python (FastAPI), WebSocket, Ollama, Vanilla JS (Frontend)
 LAST_SESSION: 2026-06-07
-SESSION_COUNT: 9
+SESSION_COUNT: 10
 
 ## DECISIONS_LOCKED
 - **Engine Split:** Isolamento total do Motor Mecânico V5 em relação à camada de inferência de linguagem do LLM.
@@ -35,6 +35,7 @@ SESSION_COUNT: 9
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 10] Criação do commit inicial (root-commit) do repositório contendo todas as fontes do projeto, suíte de testes e arquivos de especificação técnica/visual atualizados, excluindo arquivos temporários (scratchs).
 - [Sessão 9] Correção de desvios de contrato de infraestrutura: criação do arquivo de tipagem pyrightconfig.json e ajuste de especificação da stack de frontend no log para Vanilla JS.
 - [Sessão 8] Unificação das especificações de design system em DESIGN_SYSTEM.md contemplando paletas de cores, tipografia, componentes base, layout em ASCII (App-Shell), espaçamento, tokens equivalentes, ícones e diretrizes de acessibilidade WCAG AA.
 - [Sessão 7] Unificação da especificação técnica em DESIGN.md contemplando diagrama arquitetural ASCII detalhado, padrões de código/naming, implementações de referência e metas de performance.

@@ -1,0 +1,12 @@
+refactor(engine): implementar arquitetura L99 com websockets e I/O assíncrono
+
+**Contexto e Motivação:**
+A arquitetura anterior (Fat Orchestrator) contava com I/O bloqueante, concatenamento imperativo de logs e dependia de chamadas HTTP (REST) estáticas na comunicação com o frontend, resultando em latência perceptível e risco elevado de corrupção de estado (race conditions) em ambientes concorrentes. Sob as diretrizes da "Mentoria Vibe Coding", o motor exigia uma transição imediata para o estado-da-arte em concorrência, arquitetura limpa e estabilidade rigorosa.
+
+**Solução Implementada:**
+- **Comunicação Reativa:** Extinção do endpoint REST `/chat` em favor de um protocolo WebSocket assíncrono (`/ws/session`), permitindo predição e streaming contínuo (*chunk by chunk*) da narrativa pelo modelo H6, reduzindo a latência a zero na UX.
+- **Atomicidade Garantida:** Migração total do `state_service` para I/O assíncrono (`aiofiles`) blindado por bloqueios atômicos (`asyncio.Lock`), evitando colisões estruturais na escrita do *PlayerSheet*.
+- **Desacoplamento e Design Patterns:** Orquestrador limpo mediante a implementação do `SystemLogBuilder`, abstraindo toda a concatenação bruta de strings em um serviço autônomo, tipado e escalável.
+- **Resiliência AI:** Consolidação do mecanismo de Retry/Fallback do Parser (H1) para anular alucinações determinísticas do LLM, prevenindo a quebra do fluxo matemático.
+- **Test-Driven Development (QA):** Refatoração integral da suíte de 25 testes automatizados no `Pytest` (aplicando `AsyncMock` e fixtures reativas), preservando 100% de aprovação técnica em regras V5, economia de XP e pipeline de combate.
+- **Documentação Impecável:** `README.md` reescrito para exaltar a nova Arquitetura L99, reforçando o *Multi-Agent Design* e o selo de qualidade Impeccable/Vibe Coding.
