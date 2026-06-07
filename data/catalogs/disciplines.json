@@ -1,0 +1,58 @@
+{
+  "feral_weapons": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": null, "dice_bonus_stat": "brawl", "is_aggravated": true, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "O vampiro distorce suas mãos em garras ósseas ou unhas negras e animalescas que rasgam aço e carne.",
+      "masquerade_threat": "Extrema. Transfiguração física óbvia. Quebra da Máscara imediata se visto por mortais."
+    }
+  },
+  "soaring_leap": {
+    "engine_data": { "rouse_cost": 0, "scaling_stat": null, "dice_bonus_stat": "athletics", "is_aggravated": false, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "Impulsionado por Força preternatural (Potência), o vampiro salta distâncias impossíveis para a biomecânica humana.",
+      "masquerade_threat": "Alta. Um salto que desafia a gravidade chama a atenção de qualquer observador."
+    }
+  },
+  "awe": {
+    "engine_data": { "rouse_cost": 0, "scaling_stat": "presence", "dice_bonus_stat": "persuasion", "is_aggravated": false, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "A postura do vampiro irradia um magnetismo preternatural, capturando as emoções e a adoração de todos ao redor.",
+      "masquerade_threat": "Nenhuma. Manifestação invisível e psicológica."
+    }
+  },
+  "flesh_of_marble": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": "fortitude", "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "A carne adquire a resistência de chumbo sob impacto. Balas achatam-se, lâminas resvalam sem penetrar a pele.",
+      "masquerade_threat": "Extrema. Mortais entrarão em pânico ao ver armamento letal falhar contra pele nua."
+    }
+  },
+  "dementation": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": "dominate", "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": ["obfuscate"] },
+    "narrative_data": {
+      "visual_manifestation": "Usando os ecos da própria loucura (Amálgama Malkaviano), o vampiro sussurra fragmentos de verdades fraturadas que quebram a sanidade do alvo.",
+      "masquerade_threat": "Baixa. O alvo enlouquece ou entra em colapso, mas o vampiro apenas parece estar conversando com ele."
+    }
+  },
+  "fleshcrafting": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": "protean", "dice_bonus_stat": null, "is_aggravated": true, "amalgam_req": ["dominate"] },
+    "narrative_data": {
+      "visual_manifestation": "A antiga arte da Vicissitude (Amálgama Tzimisce). O vampiro molda osso, carne e cartilagem do alvo como se fosse argila molhada.",
+      "masquerade_threat": "Extrema e repulsiva. Tortura biológica que quebra a sanidade de quem assiste e o Véu da Máscara."
+    }
+  },
+  "shadow_cast": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": "oblivion", "dice_bonus_stat": "stealth", "is_aggravated": false, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "As sombras na sala começam a se esticar, distorcer e rastejar independentes das fontes de luz, atendendo à vontade do Lasombra.",
+      "masquerade_threat": "Alta. Se for notado que as sombras violam as leis da física, o terror se instala rapidamente."
+    }
+  },
+  "scorpion_touch": {
+    "engine_data": { "rouse_cost": 1, "scaling_stat": "blood_sorcery", "dice_bonus_stat": null, "is_aggravated": true, "amalgam_req": [] },
+    "narrative_data": {
+      "visual_manifestation": "A vitae do vampiro transmuta-se num veneno letal. O contato causa falência nos órgãos em mortais e necrose em Membros.",
+      "masquerade_threat": "Moderada. O sangue negro pode ser disfarçado, mas o colapso fulminante do alvo é suspeito."
+    }
+  }
+}

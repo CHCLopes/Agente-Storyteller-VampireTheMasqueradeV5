@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+pytest
+pip-audit
+httpx
+aiofiles
+types-aiofiles
+pydantic-settings
+python-dotenv

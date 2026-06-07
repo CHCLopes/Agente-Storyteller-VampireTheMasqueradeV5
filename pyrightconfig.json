@@ -1,0 +1,14 @@
+{
+  "include": [
+    "api"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    ".venv"
+  ],
+  "venvPath": ".",
+  "venv": ".venv",
+  "analysisDiagnosticsRules": {
+    "reportMissingTypeStubs": false
+  }
+}

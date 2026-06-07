@@ -1,0 +1,242 @@
+{
+  "brujah": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["celerity", "potence", "presence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Anarchs (Maioria) / Camarilla (Minoria)",
+      "bane_description": "Sangue Fervente: Subtrai a Severidade da Perdição da parada de dados em todos os testes para resistir ao Frenesi de Fúria.",
+      "compulsion_description": "Rebelião: Sofre -2 dados em todos os testes até que consiga desafiar ou subverter uma autoridade na cena.",
+      "lore_summary": "A Ralé, Rebeldes, Filósofos Caídos. Agem com paixão explosiva e pavio curto. Lutam contra o sistema.",
+      "narrator_enforcement": "Se o jogador for submisso, covarde ou aceitar insultos calado, descreva o Sangue fervendo e a Besta exigindo violência.",
+      "behavioral_penalty": "Se o jogador ignorar o aviso e mantiver a passividade extrema, imponha 1 ponto de Fome."
+    }
+  },
+  "gangrel": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["animalism", "fortitude", "protean"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Anarchs / Independentes",
+      "bane_description": "Características Animais: Em Frenesi, ganham características bestiais temporárias que reduzem Atributos Sociais.",
+      "compulsion_description": "Instintos Ferais: -2 dados em qualquer ação que envolva manipulação complexa ou tecnologia.",
+      "lore_summary": "O Clã da Fera, Sobreviventes, Nômades. Práticos, territorialistas e próximos da natureza. Desprezam a política de salão.",
+      "narrator_enforcement": "Se o jogador agir de forma excessivamente polida, burocrática ou covarde, narre o desconforto físico e a necessidade de instinto bruto.",
+      "behavioral_penalty": "Se insistir em soluções burocráticas quando a violência ou fuga seriam o instinto, aplique Dificuldade +1 à ação."
+    }
+  },
+  "malkavian": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["auspex", "dominate", "obfuscate"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla / Anarchs",
+      "bane_description": "Afligidos: Falhas bestiais acionam alucinações severas.",
+      "compulsion_description": "Delírio: Sofrem penalidade em interações sociais normais até que ajam com base em uma visão ou paranoia.",
+      "lore_summary": "Oráculos, Lunáticos, Videntes. Enxergam a verdade através de mentes fraturadas. Prosa deve ser enigmática.",
+      "narrator_enforcement": "Se o jogador agir de forma excessivamente lógica e ignorar seus instintos/visões, narre sussurros perturbadores.",
+      "behavioral_penalty": "Ignorar a loucura impõe a perda de 1 ponto de Força de Vontade temporária na cena."
+    }
+  },
+  "nosferatu": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["animalism", "obfuscate", "potence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla / Anarchs",
+      "bane_description": "Repulsivos: Falham automaticamente em qualquer rolagem social para se passarem por humanos. A aparência é monstruosa.",
+      "compulsion_description": "Criptofilia: Obsessão por segredos. -2 dados em ações até descobrirem uma informação oculta na cena.",
+      "lore_summary": "Ratos de Esgoto, Corretores de Informação. Escondem-se nas sombras, valorizam a sobrevivência e os segredos.",
+      "narrator_enforcement": "Se o jogador tentar ser sedutor ou agir abertamente em público humano, descreva as reações de pânico inevitáveis.",
+      "behavioral_penalty": "Quebra automática da Máscara se não usar Ofuscação perto de mortais; testes sociais de persuasão falham automaticamente."
+    }
+  },
+  "toreador": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["auspex", "celerity", "presence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla / Anarchs",
+      "bane_description": "Fascínio Estético: Sofrem penalidades ao usar Disciplinas em ambientes feios ou precários.",
+      "compulsion_description": "Obsessão: Ficam fascinados por algo belo na cena, falhando em notar arredores.",
+      "lore_summary": "Divas, Artistas, Sensações. Sociais, manipuladores e obcecados pela humanidade e beleza. Vaidosos e cruéis.",
+      "narrator_enforcement": "Se o jogador operar na sujeira ou ignorar a estética e status social, descreva a repulsa física de sua alma.",
+      "behavioral_penalty": "-1 dado em paradas mentais se forçados a operar na feiura sem resolver o desconforto."
+    }
+  },
+  "tremere": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["auspex", "blood_sorcery", "dominate"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla",
+      "bane_description": "Sangue Deficiente: Incapazes de criar Laços de Sangue (Blood Bonds) com outros vampiros.",
+      "compulsion_description": "Perfeccionismo: -2 dados em rolagens até conseguirem um Acerto Crítico ou a cena acabar.",
+      "lore_summary": "Usurpadores, Bruxos, Ocultistas. Metódicos, paranóicos e sedentos de conhecimento arcano.",
+      "narrator_enforcement": "Se o jogador agir por emoção irracional ou compartilhar conhecimento oculto de graça, exija racionalidade.",
+      "behavioral_penalty": "Descontar 1 ponto de Força de Vontade por agir como um tolo irracional."
+    }
+  },
+  "ventrue": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["dominate", "fortitude", "presence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla",
+      "bane_description": "Paladar Refinado: Só podem beber de um tipo específico de mortal. Vomitam outras vítimas.",
+      "compulsion_description": "Arrogância: Sofre -2 dados em tudo até ditar uma ordem e ser obedecido na cena.",
+      "lore_summary": "O Clã dos Reis, Tiranos, Sangue-Azul. Controladores, exigem submissão e detestam desobediência.",
+      "narrator_enforcement": "Se o jogador for submisso, implorar ou beber sangue inferior, narre repulsa extrema e orgulho ferido.",
+      "behavioral_penalty": "Vômito imediato se beber presa errada. -2 dados se obedecer submissamente a outro."
+    }
+  },
+  "lasombra": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["dominate", "oblivion", "potence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla / Sabbat",
+      "bane_description": "Distorção de Reflexos: Reflexos fogem, câmeras falham. Penalidade ao usar tecnologia moderna.",
+      "compulsion_description": "Crueldade: Precisam demonstrar superioridade impiedosa sobre alguém.",
+      "lore_summary": "Magistrados, Sombras. Implacáveis, darwinistas sociais. Dominam pela força e pelas trevas.",
+      "narrator_enforcement": "Se o jogador demonstrar empatia genuína ou fraqueza, a Besta os julga indignos e exige crueldade.",
+      "behavioral_penalty": "Aumentar a Fome em 1 se agir com fraqueza que ponha o clã em risco."
+    }
+  },
+  "banu_haqim": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["blood_sorcery", "celerity", "obfuscate"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Camarilla / Independentes",
+      "bane_description": "Vício em Sangue: Risco extremo de diablerie se provarem sangue de outro vampiro.",
+      "compulsion_description": "Julgamento: Precisam punir alguém que consideram um transgressor na cena.",
+      "lore_summary": "Juízes, Assassinos. Focados em justiça dogmática, códigos rigorosos e contratos letais.",
+      "narrator_enforcement": "Se o jogador quebrar a sua palavra, contrato ou agir com injustiça flagrante, a sua moralidade sofre.",
+      "behavioral_penalty": "Aplicar 1 de Dano Superficial na Força de Vontade por quebra de juramento formal."
+    }
+  },
+  "tzimisce": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["animalism", "dominate", "protean"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Sabbat / Independentes",
+      "bane_description": "Aterramento: Precisam dormir cercados por algo que governam (terra, possessões). Sem isso, sofrem penalidades severas.",
+      "compulsion_description": "Cobiça: Precisam adquirir e possuir algo na cena, impondo sua vontade.",
+      "lore_summary": "Demônios, Dragões. Fascinados por evolução carnal (Fleshcrafting) e possessividade suprema.",
+      "narrator_enforcement": "Se o jogador permitir que entrem no seu domínio sem convite ou doarem algo, a possessividade explode.",
+      "behavioral_penalty": "-2 dados em rolagens sociais que não envolvam intimidação se não estiverem no controle de suas posses."
+    }
+  },
+  "ministry": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["obfuscate", "presence", "protean"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Anarchs",
+      "bane_description": "Sensibilidade à Luz: Subtraem a Severidade da parada para resistir ao terror da luz e sol.",
+      "compulsion_description": "Transgressão: Precisam fazer alguém quebrar os seus próprios princípios morais na cena.",
+      "lore_summary": "Serpentes, Tentadores. Vendem liberdade através da corrupção e destruição de dogmas alheios.",
+      "narrator_enforcement": "Se o jogador apoiar instituições morais rígidas ou defender o puritanismo, a sua natureza corruptora intervém.",
+      "behavioral_penalty": "-1 dado social ao tentar ser honesto ou moralista de forma genuína."
+    }
+  },
+  "ravnos": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["animalism", "obfuscate", "presence"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Independentes",
+      "bane_description": "Condenados: Risco de combustão se dormirem no mesmo lugar mais de uma vez em uma semana.",
+      "compulsion_description": "Tentar o Destino: Precisam realizar um ato audacioso, roubo ou truque perigoso.",
+      "lore_summary": "Malandros, Ilusionistas. Impulsionados pelo risco, sobrevivência e movimento constante.",
+      "narrator_enforcement": "Se o jogador evitar riscos excessivamente ou tentar criar raízes, a paranoia claustrofóbica sufoca.",
+      "behavioral_penalty": "Perde a capacidade de recuperar Força de Vontade dormindo se não se mover."
+    }
+  },
+  "hecata": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["auspex", "fortitude", "oblivion"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Independentes",
+      "bane_description": "O Beijo Doloroso: O beijo causa dor agonizante. Impossível se alimentar de forma sutil.",
+      "compulsion_description": "Morbidez: Precisam interagir com a morte, decadência ou dor na cena.",
+      "lore_summary": "Necromantes, O Clã da Morte. Focados em comércio de almas e segredos familiares do submundo.",
+      "narrator_enforcement": "Se o jogador demonstrar nojo da morte ou tentar agir como um curandeiro bondoso, o Sangue putrefeito protesta.",
+      "behavioral_penalty": "Tentativas de alimentação sedutora falham, resultando em dano letal à presa e quebra da Máscara."
+    }
+  },
+  "salubri": {
+    "engine_data": {
+      "bane_severity_multiplier": 1,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["auspex", "dominate", "fortitude"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Independentes",
+      "bane_description": "Presa: Sangue incrivelmente tentador. Outros vampiros sofrem testes para não os diablerizar.",
+      "compulsion_description": "Empatia Afetiva: Precisam aliviar o sofrimento de alguém na cena a qualquer custo.",
+      "lore_summary": "Curandeiros, Ciclopes. Possuem um terceiro olho. Carregam o fardo do martírio e são caçados ativamente.",
+      "narrator_enforcement": "Se o jogador infligir dor desnecessária ou negar socorro, a culpa fragmenta sua mente.",
+      "behavioral_penalty": "Ganha 1 Mácula (Stain) automática se ignorar o sofrimento inocente ou ferir cruelmente."
+    }
+  },
+  "caitiff": {
+    "engine_data": {
+      "bane_severity_multiplier": 0,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": []
+    },
+    "narrative_data": {
+      "faction_loyalty": "Nenhuma",
+      "bane_description": "Sem clã: Não possuem fraquezas hereditárias, mas iniciam com custo de XP maior para aprender qualquer disciplina.",
+      "compulsion_description": "A própria Besta dita uma compulsão variada a cada cena (role 1d10).",
+      "lore_summary": "Os Sem-Clã, Lixo, Divergentes. Desprezados pela sociedade, sobrevivem nas margens sem mentores.",
+      "narrator_enforcement": "Se o jogador exigir respeito por ancestralidade ou tentar invocar direitos de Clã, o mundo o lembrará de que ele é nada.",
+      "behavioral_penalty": "Falha social imediata ao tentar influenciar elites vampíricas invocando Status."
+    }
+  },
+  "thin_blooded": {
+    "engine_data": {
+      "bane_severity_multiplier": 0,
+      "compulsion_dice_penalty": 2,
+      "favored_disciplines": ["thin_blood_alchemy"]
+    },
+    "narrative_data": {
+      "faction_loyalty": "Nenhuma / Anarchs",
+      "bane_description": "Crepusculares: Sangue fraco. Não sofrem dano total do sol, não criam laços de sangue e mal usam disciplinas.",
+      "compulsion_description": "Sobrevivência: Foco extremo em evitar predação por vampiros mais velhos.",
+      "lore_summary": "Sanguessugas, Sangue-Ralo, A 14ª, 15ª ou 16ª Geração. Quase mortais. Caçados e temidos como o prenúncio da Gehenna.",
+      "narrator_enforcement": "Se o jogador tentar exercer poder vampírico bruto ou dominar imortais velhos, narre sua patética insuficiência.",
+      "behavioral_penalty": "Não conseguem ativar o Surto de Sangue (Blood Surge) nem curar danos agravados naturalmente."
+    }
+  }
+}

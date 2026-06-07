@@ -1,0 +1,82 @@
+{
+  "unarmed": {
+    "engine_data": { "damage_modifier": 0, "is_concealable": true, "weapon_type": "BRAWL", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Punhos, chutes ou socos.",
+      "impact_flavor": "Contusões contundentes, hematomas e ossos fraturados sob a força do impacto.",
+      "masquerade_threat": "Baixa. Uma briga de rua comum."
+    }
+  },
+  "light_melee": {
+    "engine_data": { "damage_modifier": 1, "is_concealable": true, "weapon_type": "MELEE", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Facas de combate, canivetes, socos ingleses ou estacas de madeira.",
+      "impact_flavor": "Cortes limpos ou perfurações pontuais. O sangue escorre manchando as roupas.",
+      "masquerade_threat": "Moderada. Um esfaqueamento exige encobrimento rápido."
+    }
+  },
+  "heavy_melee": {
+    "engine_data": { "damage_modifier": 3, "is_concealable": false, "weapon_type": "MELEE", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Montantes, katanas, machados de incêndio, tacos de beisebol.",
+      "impact_flavor": "Lacerações brutais e amputações. Traumas esmagadores que destroem a anatomia do alvo.",
+      "masquerade_threat": "Alta. Impossível de esconder. Exibição pública gera pânico civil."
+    }
+  },
+  "light_firearm": {
+    "engine_data": { "damage_modifier": 2, "is_concealable": true, "weapon_type": "RANGED", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Pistolas calibre 9mm, revólveres ou submetralhadoras compactas.",
+      "impact_flavor": "Estalo seco seguido de perfuração balística. Danos localizados, letais para mortais, buracos limpos em vampiros.",
+      "masquerade_threat": "Alta. Estampidos de tiro acionam chamadas à polícia local imediatamente."
+    }
+  },
+  "heavy_firearm": {
+    "engine_data": { "damage_modifier": 4, "is_concealable": false, "weapon_type": "RANGED", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Espingardas cal. 12, fuzis de assalto táticos ou rifles de precisão.",
+      "impact_flavor": "Impacto ensurdecedor. Destrói carne e osso, deixando cavidades abertas. Sangue espirra em grandes padrões.",
+      "masquerade_threat": "Extrema. Armamento de guerra na rua aciona unidades táticas da polícia humana (SWAT)."
+    }
+  },
+  "incendiary": {
+    "engine_data": { "damage_modifier": 2, "is_concealable": false, "weapon_type": "MELEE", "is_aggravated_to_vampires": true },
+    "narrative_data": {
+      "description": "Tochas improvisadas, lança-chamas portáteis ou fontes de calor extremo (ex: lasers industriais pesados).",
+      "impact_flavor": "Carne carbonizada derretendo sob chamas ou calor inextinguível. O cheiro de cinzas empesteia o ar.",
+      "masquerade_threat": "Extrema. Incêndios chamam bombeiros, e o fogo aterroriza a Besta (risco de Rötschreck)."
+    }
+  },
+  "electrical": {
+    "engine_data": { "damage_modifier": 1, "is_concealable": true, "weapon_type": "MELEE", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Tasers, bastões de choque ou fios de alta tensão.",
+      "impact_flavor": "Estalos elétricos, espasmos musculares incontroláveis e cheiro de ozônio.",
+      "masquerade_threat": "Baixa a Moderada. Confundido com equipamento de defesa pessoal civil ou acidente local."
+    }
+  },
+  "chemical": {
+    "engine_data": { "damage_modifier": 2, "is_concealable": true, "weapon_type": "RANGED", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Ácidos industriais, compostos de fósforo branco ou soluções experimentais da Segunda Inquisição.",
+      "impact_flavor": "Fervura química nauseante. A pele borbulha e corrói lentamente, deixando cicatrizes horríveis.",
+      "masquerade_threat": "Alta. O uso de agentes químicos remete a terrorismo."
+    }
+  },
+  "heavy_machinery": {
+    "engine_data": { "damage_modifier": 4, "is_concealable": false, "weapon_type": "MELEE", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Prensas hidráulicas, empilhadoras ou impacto veicular pesado.",
+      "impact_flavor": "Esmagamento total. Ossos viram pó e órgãos rompem sob toneladas de pressão mecânica.",
+      "masquerade_threat": "Alta. Requer investigação policial e forense no local."
+    }
+  },
+  "holy_artifact": {
+    "engine_data": { "damage_modifier": 0, "is_concealable": true, "weapon_type": "MELEE", "is_aggravated_to_vampires": false },
+    "narrative_data": {
+      "description": "Crucifixos benzidos, relíquias de santos ou água abençoada.",
+      "impact_flavor": "A luz divina queima a carne morta como ácido estelar. O vampiro sente a sua alma corrompida a ser julgada.",
+      "masquerade_threat": "Incomum. Mortais veem apenas um extremista religioso, mas a manifestação da Fé afeta a mente."
+    }
+  }
+}

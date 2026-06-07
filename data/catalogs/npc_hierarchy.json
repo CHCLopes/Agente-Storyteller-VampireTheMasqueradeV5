@@ -1,0 +1,74 @@
+{
+  "prince": {
+    "engine_data": { "base_dice_pool": 8, "threat_level": 5, "is_supernatural": true, "has_true_faith": false, "corruption_index": 2 },
+    "narrative_data": {
+      "description": "Governante absoluto da Camarilla na cidade. Antigo, paranoico e incrivelmente poderoso.",
+      "combat_tactics": "Raramente luta sozinho. Convoca o Xerife ou usa controle mental. Se forçado, destrói o alvo de forma letal.",
+      "social_standing": "Exige submissão total. Falhas de etiqueta resultam em punições severas."
+    }
+  },
+  "sheriff": {
+    "engine_data": { "base_dice_pool": 7, "threat_level": 4, "is_supernatural": true, "has_true_faith": false, "corruption_index": 1 },
+    "narrative_data": {
+      "description": "O executor do Príncipe. Predador veterano treinado para manter as Tradições.",
+      "combat_tactics": "Tático e letal. Explora fraquezas. Imobiliza ou destrói a ameaça de forma cirúrgica.",
+      "social_standing": "Intimidador e taciturno. Não tem paciência para jogos políticos."
+    }
+  },
+  "ghoul": {
+    "engine_data": { "base_dice_pool": 5, "threat_level": 2, "is_supernatural": false, "has_true_faith": false, "corruption_index": 1 },
+    "narrative_data": {
+      "description": "Servo mortal viciado em Vitae. Leal até à morte ao seu Domitor (Laço de Sangue).",
+      "combat_tactics": "Protege o mestre cegamente. Ignora ferimentos leves devido ao sangue no sistema.",
+      "social_standing": "Subserviente a vampiros, mas arrogante com mortais."
+    }
+  },
+  "inquisitor": {
+    "engine_data": { "base_dice_pool": 7, "threat_level": 4, "is_supernatural": false, "has_true_faith": false, "corruption_index": 1 },
+    "narrative_data": {
+      "description": "Agente letal da Segunda Inquisição. Treinado para exterminar Blankbodys.",
+      "combat_tactics": "Usa táticas de esquadrão, munição incendiária e flashbangs. Nunca recua, não negocia.",
+      "social_standing": "Hostilidade absoluta. Finge submissão apenas para armar emboscadas."
+    }
+  },
+  "clergy": {
+    "engine_data": { "base_dice_pool": 4, "threat_level": 3, "is_supernatural": false, "has_true_faith": true, "corruption_index": 1 },
+    "narrative_data": {
+      "description": "Membro devoto do clero, armado com convicção espiritual inabalável.",
+      "combat_tactics": "Afasta a Besta usando Relíquias e orações (Fé Verdadeira). Evita o combate físico direto.",
+      "social_standing": "Pilar da comunidade local. A sua presença queima a carne vampírica se provocado."
+    }
+  },
+  "politician": {
+    "engine_data": { "base_dice_pool": 3, "threat_level": 2, "is_supernatural": false, "has_true_faith": false, "corruption_index": 5 },
+    "narrative_data": {
+      "description": "Figura de autoridade mortal (Presidente de Câmara, Juiz). Rico e influente.",
+      "combat_tactics": "Foge e chama a segurança corporativa. Não sabe lutar.",
+      "social_standing": "Arrogante com mortais, mas covarde e facilmente subornado ou chantageado por vampiros."
+    }
+  },
+  "thug": {
+    "engine_data": { "base_dice_pool": 5, "threat_level": 2, "is_supernatural": false, "has_true_faith": false, "corruption_index": 4 },
+    "narrative_data": {
+      "description": "Membro de gangue, segurança de discoteca ou criminoso violento.",
+      "combat_tactics": "Usa força bruta e armas brancas pesadas. Foge se a vítima demonstrar poder sobrenatural óbvio.",
+      "social_standing": "Opera nas ruas. Respeita a força física e o dinheiro vivo."
+    }
+  },
+  "civilian": {
+    "engine_data": { "base_dice_pool": 2, "threat_level": 1, "is_supernatural": false, "has_true_faith": false, "corruption_index": 3 },
+    "narrative_data": {
+      "description": "Um cidadão comum. A presa típica de um vampiro.",
+      "combat_tactics": "Grita, chora e entra em pânico. Tenta fugir atabalhoadamente.",
+      "social_standing": "Alheio ao Mundo das Trevas. Presa fácil para alimentação."
+    }
+  },
+  "animal_predator": {
+    "engine_data": { "base_dice_pool": 5, "threat_level": 2, "is_supernatural": false, "has_true_faith": false, "corruption_index": 1 },
+    "narrative_data": {
+      "description": "Cão de guarda, lobo ou predador de grande porte.",
+      "combat_tactics": "Morde e agarra. Os animais têm pavor instintivo de vampiros, atacando apenas se encurralados ou ordenados.",
+      "social_standing": "Incorruptível por dinheiro, apenas dominado por instinto ou disciplina de Animalismo."
+    }
+  }
+}
