@@ -53,9 +53,13 @@ O motor opera sob uma rígida separação de responsabilidades. Abaixo, os pilar
 Para jogadores e engenheiros iniciarem o Motor V5 de forma unificada:
 
 1. **Instale** o [LM Studio](https://lmstudio.ai/) no seu computador.
-2. Certifique-se de baixar ao menos um dos modelos recomendados no LM Studio (`qwen`, `deepseek` ou `llama`).
+2. **Baixe obrigatoriamente os três modelos de LLM** recomendados no LM Studio:
+   *   🧠 **Árbitro de Regras (`qwen2.5-1.5b-instruct`):** Responsável por interpretar a matemática de VTM V5, dados de fome e mecânicas brutas.
+   *   👁️ **Relacionamentos e Memória (`deepseek-r1-distill-qwen-7b`):** Gerencia as intrigas, contatos e o estado contínuo do Mundo das Trevas.
+   *   🎭 **O Narrador (`llama-3.2-3b-instruct`):** Lapida a escrita gótica imersiva e a condução da história.
+   *   *Nota: A orquestração paralela dos três modelos de forma independente e segregada é necessária para evitar alucinações conceituais e garantir a fidelidade às mecânicas durante a sessão.*
 3. Dê duplo clique no atalho **`Iniciar o Jogo`** na raiz do projeto (ou execute `INICIAR_JOGO.bat` no terminal).
-4. O inicializador inteligente cuidará de verificar as portas do LM Studio, carregar os modelos, subir o backend FastAPI e abrir o navegador em `http://localhost:8000` automaticamente.
+4. O inicializador inteligente cuidará de verificar as portas do LM Studio, validar a presença dos três modelos, subir o backend FastAPI e abrir o navegador em `http://localhost:8000` automaticamente.
 
 ---
 
