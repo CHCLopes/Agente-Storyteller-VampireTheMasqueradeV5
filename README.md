@@ -2,21 +2,22 @@
   
   # Agente Storyteller | Motor Narrativo V5 🦇
   
-  **Um motor de RPG de mesa bare-metal e assíncrono projetado para mestrar 'Vampiro: A Máscara 5ª Edição' com inteligência local avançada, concorrência atômica e zero latência criativa.**
+  **Um motor de RPG de mesa bare-metal e assíncrono projetado para mestrar 'Vampiro: A Máscara 5ª Edição' com inteligência local avançada, concorrência atômica, frontend moderno em React e zero latência criativa.**
 
-  **Stack Tecnológico**
+  **Stack Tecnológico do Backend**
   <br>
   [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
   [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
   [![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
   [![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
-  [![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socket.io&logoColor=white)](#)
 
-  **Metodologia & Infraestrutura**
+  **Stack Tecnológico do Frontend**
   <br>
-  [![Impeccable Architecture](https://img.shields.io/badge/Impeccable_Architecture-000000?style=for-the-badge&logo=architecture&logoColor=white)](#)
-  [![Vibe Coding Guidelines](https://img.shields.io/badge/Vibe_Coding-FF8C00?style=for-the-badge&logo=star&logoColor=white)](#)
-  [![Test Driven Development](https://img.shields.io/badge/TDD_100%25-2E8B57?style=for-the-badge&logo=testing&logoColor=white)](#)
+  [![React](https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+  [![Vitest](https://img.shields.io/badge/Vitest-Test-729B1B?style=for-the-badge&logo=vitest&logoColor=white)](#)
+
 </div>
 
 <br />
@@ -25,35 +26,36 @@
 
 ## 📖 Visão Geral
 
-O projeto **Agente Storyteller** é um motor de orquestração local de Inteligência Artificial desenhado sob rigorosas práticas da **Mentoria Vibe Coding**. Concebido para atuar como o Mestre de Jogo de 'Vampiro: A Máscara', o sistema agora roda suportando WebSockets nativos para streaming reativo, validação estrita de contratos de dados (Pydantic), concorrência atômica e design orientado a múltiplos agentes.
+O **Agente Storyteller** é um motor de orquestração local de Inteligência Artificial desenhado sob rigorosas práticas da **Mentoria Vibe Coding**. Concebido para atuar como o Mestre de Jogo de 'Vampiro: A Máscara', o sistema foi modernizado na **Fase 2** para incorporar um frontend modular em React 18+ com TypeScript Strict Mode e Tailwind CSS v4, acessibilidade WCAG AA com toggle de temas (Claro/Escuro), e inicialização zero-friction em cascata.
 
-Esta iteração assegura *zero technical debt*, eliminando I/O bloqueante e centralizando o estado através de um Pipeline robusto e altamente testado.
+> [!NOTE]
+> Este é o **repositório de desenvolvimento (Core)**. Para acessar a versão de distribuição empacotada e higienizada focada exclusivamente na experiência de jogo do jogador, acesse: [Agente Storyteller - Distribuição Pública (Foco do Jogador)](../AgenteStoryteller_Public/README.md).
 
 ---
 
-## 🚀 Engenharia de Software
+## 🚀 Engenharia de Software & Refatoração React
 
-O motor opera sob uma rígida separação de responsabilidades (Backend vs Engine de IA). Abaixo, os pilares técnicos que compõem o nosso padrão *Impeccable*:
+O motor opera sob uma rígida separação de responsabilidades. Abaixo, os pilares técnicos que compõem o nosso padrão *Impeccable* após a refatoração da Fase 2:
 
-| Pilar Técnico | Implementação (Agente Storyteller V5) |
+| Pilar Técnico | Implementação (Fase 2) |
 | :--- | :--- |
-| 🌐 **Rede e Streaming** | Migração total para protocolo **WebSockets** em chamadas assíncronas, garantindo streaming de texto (H6) *chunk* por *chunk*, reduzindo drasticamente a latência percebida no Frontend. |
-| 🧠 **Multi-Agent Design** | Orquestração segregada: **Parser (H1)** com Retry/Fallback para extração matemática determinística de intenções e **Narrador (H6)** para injeção criativa de *Lore* Sombrio de VTM. |
-| 🔒 **Atomicidade de Estado** | Sistema de arquivos assíncrono (`aiofiles`) operando sob `asyncio.Lock()`. Mutações no JSON do *PlayerSheet* ocorrem em concorrência isolada e segura por `session_id`. |
-| 🛡️ **Validação de Contrato** | Base de Conhecimento V5 (Clãs, Disciplinas, NPCs, Economia de XP) construída em arquivos JSON estáticos rigorosamente validados na inicialização por schemas `Pydantic`. |
-| 🏗️ **Fat-Orchestrator Removido** | Refatoração de *Design Patterns*: Criação do isolado `SystemLogBuilder`, limpando o orquestrador e construindo contextos semânticos para o LLM programaticamente. |
-| ⚡ **Quality Assurance (TDD)** | Pipeline validado por 25 testes de integração assíncronos via `Pytest`, assegurando 100% de estabilidade nas mecânicas de Progressão, Combate, Danos Banes e Rerrolagem de Força de Vontade. |
+| 🌐 **Rede e Streaming** | Protocolo **WebSockets** em chamadas assíncronas no FastAPI servindo o build React estático de forma nativa na porta `8000` (rota raiz). |
+| ⚛️ **Modernização da UI** | Migração completa de Vanilla JS para **React 18+** com **TypeScript strict: true**. Lógica reativa para rolagens de dados, upgrades de XP e controle de Frenesi. |
+| 🎨 **Design System & Acessibilidade** | Estilização reestruturada sob **Tailwind CSS v4** sem CSS manual legado. Implementado suporte a **Dark Mode** (Charcoal + Crimson) e **Light Mode** gótico (Pergaminho + Terra) em conformidade com contraste **WCAG AA** e persistência no `localStorage`. |
+| ⚡ **Auto-Inicialização** | Script Python (`scripts/initialize_game.py`) em cascata. Detecta a instalação do LM Studio no PATH ou diretórios padrões de usuário, valida a porta `1234`, escaneia e valida a presença de modelos recomendados, inicia o backend e abre o navegador automaticamente. |
+| 🔒 **Atomicidade de Estado** | Sistema de arquivos assíncrono (`aiofiles`) operando sob `asyncio.Lock()` no backend para salvar mutações no JSON do *PlayerSheet* de forma segura. |
+| 🧪 **Testes Automatizados** | Validação transversal: Cobertura de regras e latência no backend via **Pytest**, e testes de renderização de componentes de HUD via **Vitest** no frontend. |
 
 ---
 
-## 🛠️ Guia de Inicialização Rápida
+## 🛠️ Guia de Inicialização Rápida (Zero-Friction)
 
-Para jogadores e engenheiros iniciarem o Motor V5:
+Para jogadores e engenheiros iniciarem o Motor V5 de forma unificada:
 
-1. **Baixe e Instale** o [LM Studio](https://lmstudio.ai/).
-2. Carregue os modelos configurados na porta `1234`.
-3. Abra a pasta do projeto e execute o **`INICIAR_JOGO.bat`** (valida o ambiente `.venv` e orquestra FastAPI).
-4. Acione a interface de usuário (Web/Terminal) apontando para o Endpoint de WebSocket `/ws/session/local_player` na porta `8000`.
+1. **Instale** o [LM Studio](https://lmstudio.ai/) no seu computador.
+2. Certifique-se de baixar ao menos um dos modelos recomendados no LM Studio (`qwen`, `deepseek` ou `llama`).
+3. Dê duplo clique no atalho **`Iniciar o Jogo`** na raiz do projeto (ou execute `INICIAR_JOGO.bat` no terminal).
+4. O inicializador inteligente cuidará de verificar as portas do LM Studio, carregar os modelos, subir o backend FastAPI e abrir o navegador em `http://localhost:8000` automaticamente.
 
 ---
 

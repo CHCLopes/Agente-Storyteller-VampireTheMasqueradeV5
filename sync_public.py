@@ -10,8 +10,8 @@ def main():
     os.makedirs(dest_dir, exist_ok=True)
     
     # 1. Pastas e arquivos essenciais
-    dirs_to_copy = ["api", "client", "data", "skills"]
-    files_to_copy = ["requirements.txt", ".env.example", "INICIAR_JOGO.bat"]
+    dirs_to_copy = ["api", "client", "data", "skills", "scripts"]
+    files_to_copy = ["requirements.txt", ".env.example", "INICIAR_JOGO.bat", "vampire-icon.ico"]
     
     # Limpa destino se já existir para uma sincronização limpa (preservando o .git)
     if os.path.exists(dest_dir):

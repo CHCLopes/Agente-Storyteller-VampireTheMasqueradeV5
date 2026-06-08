@@ -1,4 +1,6 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from enum import Enum
 import json
@@ -279,3 +281,38 @@ async def upgrade_trait(session_id: str, req: UpgradeRequest):
         active_sessions[session_id].context = event_data.player_sheet or {}
         
     return {"success": True, "state": event_data.model_dump()}
+
+
+# --- SERVIR FRONTEND E ARQUIVOS ESTÁTICOS COMPILADOS ---
+
+DIST_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "client", "dist")
+
+# Rota para o index.html principal
+@app.get("/")
+async def serve_index():
+    index_path = os.path.join(DIST_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return HTMLResponse("<h1>Agente Storyteller V5</h1><p>Aguardando compilação do frontend React...</p>")
+
+# Montar a pasta de assets se ela existir
+assets_dir = os.path.join(DIST_DIR, "assets")
+if os.path.exists(assets_dir):
+    app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+# Rota curinga para arquivos avulsos no dist (favicon, etc) ou index.html para SPA router
+@app.get("/{catchall:path}")
+async def serve_static_or_spa(catchall: str):
+    # Ignora caminhos que começam com rotas da api ou ws
+    if catchall.startswith("api/") or catchall.startswith("ws/") or catchall.startswith("session/"):
+        return {"error": "Not Found"}
+        
+    file_path = os.path.join(DIST_DIR, catchall)
+    if os.path.exists(file_path) and os.path.isfile(file_path):
+        return FileResponse(file_path)
+        
+    index_path = os.path.join(DIST_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return HTMLResponse("<h1>Agente Storyteller V5</h1><p>Arquivo não encontrado.</p>", status_code=404)
+

@@ -14,3 +14,7 @@ __pycache__/
 .env
 .venv/
 venv/
+
+# Legacy Client Backup
+/client_legacy/
+

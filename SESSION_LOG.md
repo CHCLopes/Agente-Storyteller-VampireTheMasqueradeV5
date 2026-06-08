@@ -15,17 +15,25 @@ SESSION_COUNT: 13
 ## FILE_STATUS
 | Arquivo | Status | Sessão |
 |---|---|---|
-| client/index.html | SEALED - Foundation V1 | 1 |
-| client/style.css | SEALED - Foundation V1 | 1 |
-| client/app.js | SEALED - Foundation V1 | 1 |
+| client/index.html | COMPLETED - React Scaffold | 14 |
+| client/src/App.tsx | COMPLETED - React | 14 |
+| client/src/components/* | COMPLETED - React UI Components | 14 |
+| client/src/hooks/* | COMPLETED - Custom React Hooks | 14 |
+| client/vite.config.ts | COMPLETED - Vite/Vitest Config | 14 |
+| api/main.py | COMPLETED - Serves static files | 14 |
+| scripts/initialize_game.py| COMPLETED - Cascade Init | 14 |
+| scripts/generate_ico.py   | COMPLETED - ICO Gen | 14 |
+| scripts/update_shortcut.ps1| COMPLETED - Shortcut Gen | 14 |
 | DESIGN.md | COMPLETED | 7 |
 | DESIGN_SYSTEM.md | COMPLETED | 8 |
-| Iniciar o Jogo.lnk | COMPLETED | 13 |
+| Iniciar o Jogo.lnk | COMPLETED | 14 |
+| README.md | COMPLETED - Dev Core | 14 |
+| AgenteStoryteller_Public/README.md | COMPLETED - Player Focus | 14 |
 | PLANO_GERADO.md | COMPLETED | 12 |
 | PRODUTO.md | COMPLETED | 6 |
 | pyrightconfig.json | COMPLETED | 9 |
 | requirements.txt | COMPLETED | 5 |
-| sync_public.py | COMPLETED | 13 |
+| sync_public.py | COMPLETED | 14 |
 | api/core/__init__.py | DONE | 5 |
 | api/core/config.py | DONE | 5 |
 | .env.example | DONE | 5 |
@@ -38,6 +46,7 @@ SESSION_COUNT: 13
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 14] Migração total do frontend de Vanilla JS para React 18+ com TypeScript strict mode e Tailwind CSS v4. Implementação de testes unitários com Vitest e cobertura completa de pips. Inclusão de Dark/Light mode com persistência e acessibilidade WCAG AA. Criação de script de inicialização inteligente em cascata (initialize_game.py) que detecta LM Studio no Windows, testa portas, modelos locais e serve o client compilado de forma transparente. Geração de ícone personalizado (vampire-icon.ico) e atalho do Windows atualizado. Configuração e sincronização de ambos os READMEs (dev e public) com guias rápidos simplificados de inicialização em 1 clique e atalhos cruzados. Repositório público sincronizado.
 - [Sessão 13] Criação de atalho Windows 'Iniciar o Jogo.lnk', estruturação do repositório de distribuição pública limpo em AgenteStoryteller_Public, geração de README.md humanizado focado em jogadores e escrita do script sync_public.py de sincronização.
 - [Sessão 12] Implementação e homologação de todos os Acceptance Criteria pendentes em PLANO_GERADO.md: injeção dinâmica de ficha/lore no Narrador, rotas POST de gerenciamento e upgrades de XP, e testes unitários/latência de cobertura.
 - [Sessão 11] Execução do spec-driven-executor para gerar e atualizar PLANO_GERADO.md contendo referências de especificações, 9 ACs (com AC 1, AC 2 e AC 3 marcados como DONE) e alinhamento do design.
