@@ -29,7 +29,7 @@
 O **Agente Storyteller** é um motor de orquestração local de Inteligência Artificial desenhado sob rigorosas práticas da **Mentoria Vibe Coding**. Concebido para atuar como o Mestre de Jogo de 'Vampiro: A Máscara', o sistema foi modernizado na **Fase 2** para incorporar um frontend modular em React 18+ com TypeScript Strict Mode e Tailwind CSS v4, acessibilidade WCAG AA com toggle de temas (Claro/Escuro), e inicialização zero-friction em cascata.
 
 > [!NOTE]
-> Este é o **repositório de desenvolvimento (Core)**. Para acessar a versão de distribuição empacotada e higienizada focada exclusivamente na experiência de jogo do jogador, acesse: [Agente Storyteller - Distribuição Pública (Foco do Jogador)](../AgenteStoryteller_Public/README.md).
+> Este é o **repositório de desenvolvimento (Core)**. Para acessar a versão de distribuição empacotada e higienizada focada exclusivamente na experiência de jogo do jogador, acesse: [Agente Storyteller - Distribuição Pública (Foco do Jogador)](https://github.com/CHCLopes/AgenteStorytellerGame_Public).
 
 ---
 
