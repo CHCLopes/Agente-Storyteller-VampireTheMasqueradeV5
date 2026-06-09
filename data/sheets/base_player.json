@@ -40,9 +40,9 @@
         "Technology": 0
     },
     "disciplines": {
-        "feral_weapons": true,
-        "soaring_leap": true,
-        "awe": true
+        "feral_weapons": 1,
+        "soaring_leap": 1,
+        "awe": 1
     },
     "status": {
         "blood_potency": 1,

@@ -10,7 +10,7 @@
 
 ### Modo Dark/Light
 - Dark Mode (default): Charcoal + Crimson
-- Light Mode: Branco + Marrom escuro (futuro)
+- Light Mode: Branco + Marrom escuro (implementado via persistencia de useDarkMode)
 
 ### Tipografia
 - **Font Family**: Outfit (títulos), Inter (corpo)
@@ -120,7 +120,7 @@ Exemplo (HTML):
 
 ## Tokens Tailwind (Se aplicável)
 ```javascript
-// tailwind.config.js (futuro, se migrar de Vanilla)
+// Tailwind CSS v4 Theme Config (implementado em client/src/index.css)
 module.exports = {
   theme: {
     colors: {

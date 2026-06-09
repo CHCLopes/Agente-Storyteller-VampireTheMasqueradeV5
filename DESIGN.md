@@ -2,8 +2,8 @@
 
 ## Arquitetura Alto Nível
 ┌─────────────────────────────────────────────────┐
-│                 Cliente (Vanilla JS)            │
-│           /client (HTML5 + CSS3 + JS)           │
+│               Cliente (React 19 + TS)           │
+│         /client (Vite + React + TS)             │
 └────────────────────┬────────────────────────────┘
 │ WebSocket (/ws/session/{id})
 ↓
@@ -45,7 +45,7 @@
 | **Validação** | Pydantic v2 | Tipo-seguro, validação automática de schemas |
 | **Config** | pydantic-settings | Variáveis de ambiente, type-safe |
 | **LLMs** | LM Studio local | Offline, controle total, nenhuma API key necessária |
-| **Frontend** | Vanilla JS | Projeto não precisa de SPA. Vanilla é suficiente e mais leve |
+| **Frontend** | React 19 + TypeScript | Interface interativa modularizada com Tailwind CSS v4 e logs estruturados em cascata no HUD |
 
 ## Padrões de Código
 
@@ -61,9 +61,13 @@ AgenteStoryteller/
 │   ├── rules_service.py         (Regras VTM v5)
 │   └── parser_service.py        (Parsing de ações)
 ├── client/
-│   ├── index.html               (SEALED)
-│   ├── style.css                (SEALED)
-│   └── app.js                   (SEALED)
+│   ├── index.html               (Vite Entrypoint)
+│   ├── src/                     (React Application)
+│   │   ├── App.tsx              (Main Component)
+│   │   ├── main.tsx
+│   │   ├── components/          (HUD & Actions)
+│   │   └── hooks/               (State & WebSockets)
+├── client_legacy/               (Legado - Nao utilizar para novos desenvolvimentos)
 ├── tests/
 │   ├── test_concurrency.py
 │   ├── test_websocket_flows.py

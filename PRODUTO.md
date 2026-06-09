@@ -48,7 +48,7 @@ O Agente Storyteller V5 é um motor de narrativa interativa local e offline para
 
 ### Negócio
 - Simplicidade cirúrgica: Nenhum boilerplate corporativo
-- Isolamento: client/ é SEALED (Foundation V1) — sem refatoração visual sem ordem explícita
+- Isolamento: client_legacy/ é legado. O frontend principal agora reside em client/ em React 19 com Tailwind CSS v4.
 - Exclusividade: 1 sessão ativa por vez (não multiplayer massivo)
 
 ## Decision Log
@@ -58,4 +58,4 @@ O Agente Storyteller V5 é um motor de narrativa interativa local e offline para
 | 2026-06-04 | Engine Split: Motor Mecânico ≠ LLM | Separação de conceitos. Regras são determinísticas, narrativa é generativa | Permite trocar LLM sem refatorar regras |
 | 2026-06-04 | WebSocket assíncrono | Latência real-time necessária para interação narrativa | Complexidade de asyncio, mas não há alternativa para offline |
 | 2026-06-01 | LM Studio local (não Ollama remoto) | Controle total, sem latência de rede | Uso local apenas, sem escalabilidade de usuários |
-| 2026-05-30 | Vanilla JS (não React) | Simplicidade. Projeto não precisa de SPA complexa | Manutenção mais fácil, mas menos reusabilidade de componentes |
+| 2026-06-08 | React 19 + TS (Migrado) | Maior interatividade, componentização e reatividade nos logs em tempo real | Melhoria drástica na experiência do jogador e robustez técnica |

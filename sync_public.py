@@ -29,7 +29,10 @@ def main():
         src_path = os.path.join(src_dir, d)
         dest_path = os.path.join(dest_dir, d)
         if os.path.exists(src_path):
-            shutil.copytree(src_path, dest_path)
+            if d == "client":
+                shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns('node_modules', '.git', '.venv', '__pycache__', '.pytest_cache'))
+            else:
+                shutil.copytree(src_path, dest_path)
             
     # Copia arquivos
     for f in files_to_copy:

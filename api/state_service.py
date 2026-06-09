@@ -9,12 +9,22 @@ from typing import List, Optional
 SAVE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "saves")
 os.makedirs(SAVE_DIR, exist_ok=True)
 
+# Lock global para operações de longa duração do LLM
+global_llm_operation_lock = asyncio.Lock()
+
 _session_locks: dict[str, asyncio.Lock] = {}
+_session_processing_locks: dict[str, asyncio.Lock] = {}
 
 def get_session_lock(session_id: str) -> asyncio.Lock:
     if session_id not in _session_locks:
         _session_locks[session_id] = asyncio.Lock()
     return _session_locks[session_id]
+
+def acquire_session_lock(session_id: str) -> asyncio.Lock:
+    """Adquire lock exclusivo para sessão"""
+    if session_id not in _session_processing_locks:
+        _session_processing_locks[session_id] = asyncio.Lock()
+    return _session_processing_locks[session_id]
 
 # --- SCHEMAS PYDANTIC DO CONTRATO ALVO ---
 

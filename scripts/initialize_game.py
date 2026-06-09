@@ -12,8 +12,21 @@ import subprocess
 import webbrowser
 import asyncio
 import argparse
+import logging
 from pathlib import Path
 import httpx
+
+# Configurar logging estruturado
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('initialize_game.log', mode='w', encoding='utf-8')
+    ]
+)
+logger = logging.getLogger(__name__)
 
 class GameInitializerWithFeedback:
     def __init__(self, no_browser=False):
@@ -43,13 +56,22 @@ class GameInitializerWithFeedback:
             "warning": "[⚠]",
             "pending": "[...]"
         }.get(status, "[*]")
-        print(f"{prefix} {message}")
+        
+        log_msg = f"{prefix} {message}"
+        if status == "success":
+            logger.info(log_msg)
+        elif status == "error":
+            logger.error(log_msg)
+        elif status == "warning":
+            logger.warning(log_msg)
+        else:
+            logger.info(log_msg)
 
         try:
             url = f"http://127.0.0.1:{self.backend_port}/api/initialization/logs"
             res = await self.client.post(url, json=payload)
             if res.status_code != 200:
-                print(f"[Fallback] Servidor respondeu com status {res.status_code}")
+                logger.warning(f"[Fallback] Servidor respondeu com status {res.status_code}")
         except Exception:
             pass
 
@@ -261,10 +283,10 @@ class GameInitializerWithFeedback:
     async def run(self) -> bool:
         self.select_browser()
 
-        print("\n[*] Verificando infraestrutura local...")
+        logger.info("[*] Verificando infraestrutura local...")
         backend_ready = await self.run_backend_server()
         if not backend_ready:
-            print("[✗] Erro crítico: Não foi possível iniciar o backend na porta 8000.")
+            logger.error("[✗] Erro crítico: Não foi possível iniciar o backend na porta 8000.")
             return False
 
         await self.send_log("pending", "[0/5] Abrindo navegador...", 0)
