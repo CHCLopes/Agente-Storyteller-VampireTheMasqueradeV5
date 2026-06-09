@@ -10,7 +10,7 @@ def main():
     os.makedirs(dest_dir, exist_ok=True)
     
     # 1. Pastas e arquivos essenciais
-    dirs_to_copy = ["api", "client", "data", "skills", "scripts"]
+    dirs_to_copy = ["api", "client", "data", "skills", "scripts", "models"]
     files_to_copy = ["requirements.txt", ".env.example", "INICIAR_JOGO.bat", "vampire-icon.ico"]
     
     # Limpa destino se já existir para uma sincronização limpa (preservando o .git)
@@ -31,6 +31,8 @@ def main():
         if os.path.exists(src_path):
             if d == "client":
                 shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns('node_modules', '.git', '.venv', '__pycache__', '.pytest_cache'))
+            elif d == "models":
+                shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns('*.gguf', '.git', '__pycache__'))
             else:
                 shutil.copytree(src_path, dest_path)
             
@@ -65,6 +67,12 @@ env/
 /logs/
 *.log
 
+# Modelos locais (ignorar arquivos GGUF gigantes)
+/models/**/*.gguf
+/models/*.gguf
+!/models/**/.gitkeep
+!/models/.gitkeep
+
 # Caches de compilação Python
 __pycache__/
 *.pyc
@@ -77,6 +85,21 @@ __pycache__/
     os.makedirs(saves_dir, exist_ok=True)
     with open(os.path.join(saves_dir, ".gitkeep"), "w") as gitkeep:
         pass
+        
+    # Garante a estrutura de models vazia rastreada por Git com .gitkeep
+    models_paths = [
+        "models",
+        os.path.join("models", "Qwen"),
+        os.path.join("models", "Qwen", "Qwen2.5-1.5B-Instruct-GGUF"),
+        os.path.join("models", "bartowski"),
+        os.path.join("models", "bartowski", "DeepSeek-R1-Distill-Qwen-7B-GGUF"),
+        os.path.join("models", "bartowski", "Llama-3.2-3B-Instruct-GGUF")
+    ]
+    for rel_path in models_paths:
+        full_p = os.path.join(dest_dir, rel_path)
+        os.makedirs(full_p, exist_ok=True)
+        with open(os.path.join(full_p, ".gitkeep"), "w") as gk:
+            pass
         
     with open(os.path.join(dest_dir, ".gitignore"), "w", encoding="utf-8") as g:
         g.write(gitignore_content)

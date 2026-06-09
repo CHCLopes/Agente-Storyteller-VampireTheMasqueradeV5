@@ -1,7 +1,10 @@
-# Models
-/models/
-*.gguf
-*.bin
+# Models (ignora arquivos gigantes, rastreia estrutura)
+/models/**/*.gguf
+/models/**/*.bin
+/models/*.gguf
+/models/*.bin
+!/models/**/.gitkeep
+!/models/.gitkeep
 
 # Saves and Logs
 /data/saves/
