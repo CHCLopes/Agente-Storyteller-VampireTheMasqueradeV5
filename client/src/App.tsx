@@ -10,10 +10,25 @@ import { BottomNav } from './components/BottomNav';
 import { AboutModal, HelpModal } from './components/GameModals';
 import type { NarrativeMessage } from './types/narrative';
 import { X } from 'lucide-react';
+import { InitializationPanel } from './components/InitializationPanel';
+
 
 export default function App() {
   const { isDark, toggle: toggleTheme } = useDarkMode();
   const { sheet, updateSheetFromEvent } = useCharacterState();
+
+  const [initializationComplete, setInitializationComplete] = useState(false);
+  const [isPanelFadingOut, setIsPanelFadingOut] = useState(false);
+
+  const handleInitializationComplete = useCallback((success: boolean) => {
+    if (success) {
+      setIsPanelFadingOut(true);
+      setTimeout(() => {
+        setInitializationComplete(true);
+        setIsPanelFadingOut(false);
+      }, 500);
+    }
+  }, []);
 
   // Estados dos Modais
   const [isHelpOpen, setIsHelpOpen] = useState(false);
@@ -136,8 +151,16 @@ export default function App() {
     ]);
   };
 
+  if (!initializationComplete) {
+    return (
+      <div className={isPanelFadingOut ? 'animate-fade-out pointer-events-none' : ''}>
+        <InitializationPanel onInitializationComplete={handleInitializationComplete} />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen font-sans overflow-hidden flex flex-col relative select-none">
+    <div className="min-h-screen font-sans overflow-hidden flex flex-col relative select-none animate-fade-in">
       {/* Noise Overlay */}
       <div className="noise-overlay fixed inset-0 pointer-events-none z-50 opacity-100" aria-hidden="true" />
 

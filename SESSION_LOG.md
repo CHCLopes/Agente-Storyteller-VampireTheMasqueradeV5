@@ -16,12 +16,14 @@ SESSION_COUNT: 13
 | Arquivo | Status | Sessão |
 |---|---|---|
 | client/index.html | COMPLETED - React Scaffold | 14 |
-| client/src/App.tsx | COMPLETED - React | 14 |
+| client/src/App.tsx | COMPLETED - React with Init integration | 15 |
+| client/src/components/InitializationPanel.tsx | COMPLETED - Visual feedback HUD | 15 |
+| client/src/hooks/useInitializationLog.ts | COMPLETED - Custom React Hook | 15 |
 | client/src/components/* | COMPLETED - React UI Components | 14 |
 | client/src/hooks/* | COMPLETED - Custom React Hooks | 14 |
 | client/vite.config.ts | COMPLETED - Vite/Vitest Config | 14 |
-| api/main.py | COMPLETED - Serves static files | 14 |
-| scripts/initialize_game.py| COMPLETED - Cascade Init | 14 |
+| api/main.py | COMPLETED - Added Init WS & REST | 15 |
+| scripts/initialize_game.py| COMPLETED - Async httpx feedback loop | 15 |
 | scripts/generate_ico.py   | COMPLETED - ICO Gen | 14 |
 | scripts/update_shortcut.ps1| COMPLETED - Shortcut Gen | 14 |
 | DESIGN.md | COMPLETED | 7 |
@@ -46,6 +48,7 @@ SESSION_COUNT: 13
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 15] Implementação do novo fluxo de inicialização da Fase 2.5. Refatoração do script `scripts/initialize_game.py` para usar um loop assíncrono e enviar logs via HTTP POST com fallback e tratamento de seleção de navegador no terminal. Criação do hook React `useInitializationLog.ts` e do componente de HUD `InitializationPanel.tsx` no client, integrando-o ao `App.tsx` com transições de fade (fade-in 0.3s nos logs, fade-out 0.5s no painel e fade-in no HUD). Adição das rotas WebSocket `/ws/initialization` e endpoints REST `/api/initialization/logs` e `/api/initialization/retry` em `api/main.py`. Validação realizada com build do Vite e pytest bem-sucedidos.
 - [Sessão 14] Migração total do frontend de Vanilla JS para React 18+ com TypeScript strict mode e Tailwind CSS v4. Implementação de testes unitários com Vitest e cobertura completa de pips. Inclusão de Dark/Light mode com persistência e acessibilidade WCAG AA. Criação de script de inicialização inteligente em cascata (initialize_game.py) que detecta LM Studio no Windows, testa portas, modelos locais e serve o client compilado de forma transparente. Geração de ícone personalizado (vampire-icon.ico) e atalho do Windows atualizado. Configuração e sincronização de ambos os READMEs (dev e public) com caminhos e guias rápidos simplificados. Refinamento das especificações de IA definindo a obrigatoriedade dos três LLMs locais e seus papéis segregados de mitigação de alucinações. Repositório público sincronizado.
 - [Sessão 13] Criação de atalho Windows 'Iniciar o Jogo.lnk', estruturação do repositório de distribuição pública limpo em AgenteStoryteller_Public, geração de README.md humanizado focado em jogadores e escrita do script sync_public.py de sincronização.
 - [Sessão 12] Implementação e homologação de todos os Acceptance Criteria pendentes em PLANO_GERADO.md: injeção dinâmica de ficha/lore no Narrador, rotas POST de gerenciamento e upgrades de XP, e testes unitários/latência de cobertura.

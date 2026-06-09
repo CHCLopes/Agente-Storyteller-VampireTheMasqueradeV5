@@ -26,6 +26,78 @@ from .state_service import (
 
 app = FastAPI(title="Agente Storyteller Motor V5")
 
+# --- GERENCIADOR DE INICIALIZAÇÃO (WS & LOGS) ---
+class InitializationManager:
+    def __init__(self):
+        self.active_connections: list[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+    async def broadcast(self, message: dict):
+        for connection in list(self.active_connections):
+            try:
+                await connection.send_json(message)
+            except Exception:
+                if connection in self.active_connections:
+                    self.active_connections.remove(connection)
+
+initialization_manager = InitializationManager()
+
+class InitLogPayload(BaseModel):
+    status: str
+    message: str
+    phase: int
+    timestamp: float
+
+@app.post("/api/initialization/logs")
+async def receive_init_log(payload: InitLogPayload):
+    data = payload.model_dump()
+    data["id"] = f"{payload.timestamp}-{hash(payload.message)}"
+    await initialization_manager.broadcast(data)
+    return {"status": "ok", "log_id": data["id"]}
+
+@app.websocket("/ws/initialization")
+async def websocket_initialization(websocket: WebSocket):
+    await initialization_manager.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            if data == "ping":
+                await websocket.send_text("pong")
+    except WebSocketDisconnect:
+        initialization_manager.disconnect(websocket)
+    except Exception:
+        initialization_manager.disconnect(websocket)
+
+@app.post("/api/initialization/retry")
+async def retry_initialization():
+    import subprocess
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    script_path = os.path.join(project_root, "scripts", "initialize_game.py")
+    venv_python = os.path.join(project_root, ".venv", "Scripts", "python.exe") if os.name == 'nt' else os.path.join(project_root, ".venv", "bin", "python")
+    if not os.path.exists(venv_python):
+        venv_python = "python"
+        
+    cmd = [venv_python, script_path, "--no-browser"]
+    try:
+        subprocess.Popen(
+            cmd,
+            cwd=project_root,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if os.name == 'nt' else 0
+        )
+        return {"status": "ok"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
 SHEETS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "sheets")
 os.makedirs(SHEETS_DIR, exist_ok=True)
 
