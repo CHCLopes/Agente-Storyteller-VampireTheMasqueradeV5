@@ -1,0 +1,33 @@
+# ==============================================================================
+# DEPENDÊNCIAS PYTHON - BACKEND (FastAPI)
+# ==============================================================================
+# Instale usando: pip install -r api/requirements.txt
+# Todas as versões são exatas (pinned) para garantir consistência em produção.
+# ==============================================================================
+
+# --- Web Framework & Servidor ASGI ---
+fastapi==0.111.0          # Web framework assíncrono moderno e de alta performance
+uvicorn[standard]==0.30.1 # Servidor ASGI rápido com suporte a websockets baseado em uvloop
+
+# --- Validação de Dados & Configurações ---
+pydantic==2.7.4           # Validação e parsing de dados tipados (V2)
+pydantic-settings==2.3.3  # Gerenciador de configurações de variáveis de ambiente baseadas em Pydantic V2
+python-dotenv==1.0.1      # Carrega variáveis do arquivo .env de forma transparente
+
+# --- Clientes HTTP & Requisições Assíncronas ---
+httpx==0.27.0             # Cliente HTTP assíncrono de alta performance para conexões com a API do Gemini
+
+# --- I/O de Arquivos Assíncrono ---
+aiofiles==23.2.1          # Leitura e escrita de arquivos assíncrona não bloqueante
+types-aiofiles==23.2.0.20240403 # Definições de tipo estático Mypy para aiofiles
+
+# --- Banco de Dados & Persistência ---
+SQLAlchemy==2.0.31        # ORM SQL moderno compatível com SQLite e PostgreSQL
+
+# --- Manipulação de Imagens e Assets ---
+Pillow==11.0.0            # Biblioteca para processamento de imagens (requisito para geração de assets/ícones)
+
+# --- Testes Unitários & Integração ---
+pytest==8.2.2             # Framework para testes unitários e de integração
+pytest-asyncio==0.23.7    # Extensão do pytest para suporte simplificado a corotinas assíncronas
+pip-audit==2.7.3          # Auditoria de segurança automatizada de dependências PyPI

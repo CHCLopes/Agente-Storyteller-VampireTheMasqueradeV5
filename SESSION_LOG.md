@@ -37,8 +37,15 @@ SESSION_COUNT: 13
 | pyrightconfig.json | COMPLETED | 9 |
 | requirements.txt | COMPLETED - Incluido Pillow | 16 |
 | sync_public.py | COMPLETED | 14 |
+| DESIGN_MIGRACAO_DISTRIBUIDA.md | COMPLETED - Blueprint de Migração Distribuída | 17 |
+| Dockerfile | COMPLETED - Setup de container Railway | 18 |
+| netlify.toml | COMPLETED - Setup de redirecionamento SPA Netlify | 18 |
+| api/.env.example | COMPLETED - Configurações backend | 18 |
+| client/.env.example | COMPLETED - Variáveis React/Vite | 18 |
+| api/requirements.txt | COMPLETED - Dependências de produção | 18 |
+| scripts/validate_phase0.py | COMPLETED - Validador automático | 18 |
 | api/core/__init__.py | DONE | 5 |
-| api/core/config.py | DONE | 5 |
+| api/core/config.py | COMPLETED - Pydantic Settings & Gemini | 18 |
 | .env.example | DONE | 5 |
 | api/orchestrator_service.py | DONE | 12 |
 | api/parser_service.py | DONE | 5 |
@@ -49,6 +56,8 @@ SESSION_COUNT: 13
 | tests/test_remorse.py | COMPLETED | 5 |
 
 ## COMPLETED
+- [Sessão 18] Implementação da Fase 0 (Setup de Infraestrutura) da migração distribuída: criação de Dockerfile para Railway, netlify.toml com redirecionamentos SPA e proxy de API para Netlify, arquivos de template api/.env.example e client/.env.example, requirements.txt do backend com versões exatas, refatoração de api/core/config.py com Pydantic Settings/Gemini e criação do script de validação de pré-deploy scripts/validate_phase0.py.
+- [Sessão 17] Elaboração da especificação de arquitetura distribuída (DESIGN_MIGRACAO_DISTRIBUIDA.md) detalhando integração com Gemini Free API, persistência distribuída via snapshots JSON sem estado (stateless prompt injection) e plano de deploy Vercel + Railway.
 - [Sessão 16] Resolução de incompatibilidades de infraestrutura baseadas na auditoria forense. Correção do arquivo `INICIAR_JOGO.bat` com 4 passos de diagnóstico, automatização do build do frontend e tratamento de erro estruturado com pause. Adição de `Pillow==11.0.0` no `requirements.txt` e alinhamento dos tipos de dados de disciplinas em `data/sheets/base_player.json` de `boolean` para `int`. Configuração de concorrência no backend `api/main.py` e `api/state_service.py` injetando locks de exclusão mútua em chamadas WebSocket de sessão e lock de concorrência global de LLM. Refatoração do script `scripts/initialize_game.py` substituindo prints genéricos por logger estruturado de Python escrevendo logs persistentes em `initialize_game.log`. Atualização de design e produto em `DESIGN.md`, `PRODUTO.md` e `DESIGN_SYSTEM.md` alinhando a documentação da stack com React 19 / Tailwind CSS v4.
 - [Sessão 15] Implementação do novo fluxo de inicialização da Fase 2.5. Refatoração do script `scripts/initialize_game.py` para usar um loop assíncrono e enviar logs via HTTP POST com fallback e tratamento de seleção de navegador no terminal. Criação do hook React `useInitializationLog.ts` e do componente de HUD `InitializationPanel.tsx` no client, integrando-o ao `App.tsx` com transições de fade (fade-in 0.3s nos logs, fade-out 0.5s no painel e fade-in no HUD). Adição das rotas WebSocket `/ws/initialization` e endpoints REST `/api/initialization/logs` e `/api/initialization/retry` em `api/main.py`. Validação realizada com build do Vite e pytest bem-sucedidos.
 - [Sessão 14] Migração total do frontend de Vanilla JS para React 18+ com TypeScript strict mode e Tailwind CSS v4. Implementação de testes unitários com Vitest e cobertura completa de pips. Inclusão de Dark/Light mode com persistência e acessibilidade WCAG AA. Criação de script de inicialização inteligente em cascata (initialize_game.py) que detecta LM Studio no Windows, testa portas, modelos locais e serve o client compilado de forma transparente. Geração de ícone personalizado (vampire-icon.ico) e atalho do Windows atualizado. Configuração e sincronização de ambos os READMEs (dev e public) com caminhos e guias rápidos simplificados. Refinamento das especificações de IA definindo a obrigatoriedade dos três LLMs locais e seus papéis segregados de mitigação de alucinações. Repositório público sincronizado.
@@ -69,7 +78,7 @@ SESSION_COUNT: 13
 Bloqueio: NENHUM
 
 ## NEXT_STEP
-1. Iniciar Módulo A (Evolução e XP) ou Módulo B (Frenesi e Torpor) conforme prioridade definida no plano arquitetural.
+1. Executar validação local via scripts/validate_phase0.py e iniciar a Fase 1 (Mocks e stubs do backend).
 
 ## ERROS_ENCONTRADOS_E_RESOLUCOES_IMPLEMENTADAS
 - **ValidationError ao instanciar TrackersModel em testes unitários:** O script de validação obrigatório de humanidade e máculas resultava em falha de inicialização por ausência de `health` e `willpower` no payload.

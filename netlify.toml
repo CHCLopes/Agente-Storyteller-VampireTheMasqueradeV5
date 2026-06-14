@@ -1,0 +1,65 @@
+# ==============================================================================
+# Configuração do Netlify para o Frontend React 19 / Vite
+# ==============================================================================
+# ATENÇÃO: O domínio 'agente-storyteller-api.railway.app' configurado nas regras
+# de redirecionamento deste arquivo serve como placeholder temporário. Após criar
+# o projeto no Railway, você receberá um domínio de produção dinâmico real.
+# É obrigatório atualizar as diretivas 'to' das seções [[redirects]] com a nova
+# URL válida da API no Railway ANTES de disparar o deploy de produção no Netlify.
+# ==============================================================================
+
+[build]
+  # Diretório base para a execução de builds e comandos (raiz do repositório)
+  base = ""
+
+  # Comando de build: acessa a pasta do cliente, instala dependências e compila os estáticos
+  command = "cd client && npm install && npm run build"
+
+  # Diretório contendo os arquivos estáticos compilados para publicação (Vite compila em client/dist)
+  publish = "client/dist"
+
+# Redirecionamentos para SPA Fallback
+# Permite que rotas desconhecidas sejam respondidas pelo index.html para o React Router gerenciar
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Redirecionamento e Proxying de API HTTP
+# Encaminha requisições do frontend de /api/* e /session/* para o backend FastAPI hospedado no Railway
+[[redirects]]
+  from = "/api/*"
+  to = "https://agente-storyteller-api.railway.app/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/session/*"
+  to = "https://agente-storyteller-api.railway.app/session/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/health"
+  to = "https://agente-storyteller-api.railway.app/health"
+  status = 200
+  force = true
+
+# Configuração de Headers globais de Segurança e Política de CORS
+[[headers]]
+  for = "/*"
+    [headers.values]
+      # Permite o compartilhamento de recursos entre origens (CORS)
+      Access-Control-Allow-Origin = "*"
+      Access-Control-Allow-Methods = "GET, POST, OPTIONS, PUT, DELETE"
+      Access-Control-Allow-Headers = "Content-Type, Authorization"
+      
+      # Segurança contra Clickjacking
+      X-Frame-Options = "DENY"
+      
+      # Proteção contra farejamento de MIME (MIME-sniffing)
+      X-Content-Type-Options = "nosniff"
+      
+      # Definição de Política de Segurança de Conteúdo (CSP)
+      Content-Security-Policy = "default-src 'self'; connect-src 'self' https://generativelanguage.googleapis.com https://agente-storyteller-api.railway.app wss://agente-storyteller-api.railway.app; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;"
