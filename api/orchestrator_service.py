@@ -8,7 +8,6 @@ from .discipline_service import get_power_cost, apply_power_modifiers
 from .metagame_service import apply_willpower_reroll
 from .physiology_service import get_blood_surge_bonus, get_healing_amount
 from .parser_service import extract_intent
-from .state_service import save_session_state
 from .core.config import Settings
 
 settings = Settings()
@@ -33,6 +32,8 @@ class SystemLogBuilder:
         self.economy_log = ""
         self.willpower_reroll = "Não"
         self.lore_context = ""
+        self.memory_context = ""
+        self.relationship_context = ""
         
     def build(self) -> str:
         log = (
@@ -45,6 +46,10 @@ class SystemLogBuilder:
         )
         if self.lore_context:
             log += f"\n{self.lore_context}"
+        if self.memory_context:
+            log += f"\n{self.memory_context}"
+        if self.relationship_context:
+            log += f"\n{self.relationship_context}"
         return log
 
 async def run_narrator_stream(user_input: str, system_log: str, player_sheet: dict | None = None):
@@ -263,11 +268,35 @@ async def process_turn_pipeline(user_input: str, session_id: str, context: dict,
     log_builder.hunger = current_hunger
     
     context["player_sheet"] = player_sheet.model_dump()
-    await save_session_state(session_id, context, chronicle_name, turn)
     
     from .lore_service import get_contextual_lore
     lore_context = get_contextual_lore(user_input, action_payload, player_sheet)
     if lore_context:
         log_builder.lore_context = lore_context
-        
-    return log_builder.build(), context
+
+    # --- Camada de Memória (E-02/E-03) ---
+    from .memory_service import load_memory, save_memory, update_scene_memory, build_memory_prompt_fragment
+    session_memory = await load_memory(session_id)
+    partial_log = log_builder.build()
+    session_memory = update_scene_memory(session_memory, partial_log, user_input, turn)
+    memory_fragment = build_memory_prompt_fragment(session_memory)
+    if memory_fragment:
+        log_builder.memory_context = memory_fragment
+    await save_memory(session_memory)
+
+    # --- Motor Relacional — Camada 2 (E-01) ---
+    from .relationship_service import (
+        load_relationships, save_relationships,
+        update_relationships_from_action, build_relationship_prompt_fragment,
+        get_relationships_for_frontend
+    )
+    rel_state = await load_relationships(session_id)
+    is_aggressive = action_payload.is_aggressive if action_payload else False
+    rel_state = update_relationships_from_action(rel_state, user_input, partial_log, is_aggressive, turn)
+    rel_fragment = build_relationship_prompt_fragment(rel_state)
+    if rel_fragment:
+        log_builder.relationship_context = rel_fragment
+    await save_relationships(rel_state)
+    relationships_for_frontend = get_relationships_for_frontend(rel_state)
+
+    return log_builder.build(), context, relationships_for_frontend

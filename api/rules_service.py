@@ -95,6 +95,8 @@ class BloodPotencyModel(BaseModel):
     engine_data: BloodPotencyEngineData
 
 class PlayerSheetModel(BaseModel):
+    nome: str = "Neófito"
+    geracao: str = "13ª Geração"
     clan: str = "brujah"
     predator_type: str = "alleycat"
     attributes: Dict[str, int]
@@ -210,7 +212,7 @@ def calculate_resolution(payload: V5ActionPayload, current_hunger: int, dice_poo
     is_success = margin >= 0
     
     messy_critical = (crit_pairs > 0) and (hunger_10s > 0)
-    bestial_failure = any(d == 1 for d in hunger_rolls)
+    bestial_failure = any(d == 1 for d in hunger_rolls) and not is_success
     
     summary = f"Rolagem Concluída. {successes} sucessos (Margem {margin})."
     if messy_critical:

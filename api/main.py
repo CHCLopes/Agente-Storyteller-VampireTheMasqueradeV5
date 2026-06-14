@@ -172,6 +172,10 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
     if session.state == StateEnum.MENU:
         session.active_campaign_id = create_new_campaign()
         session.state = StateEnum.PLAYING
+        # Carrega relacionamentos iniciais
+        from .relationship_service import load_relationships, get_relationships_for_frontend
+        rel_state = await load_relationships(session_id)
+        event_data.relationships = get_relationships_for_frontend(rel_state)
         await websocket.send_json(event_data.model_dump())
         await websocket.send_json({"action": "chat_response", "message": "Iniciado."})
 
@@ -193,6 +197,9 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 
                 # --- INTERCEPTOR DE TORPOR (Passo 2) ---
                 if event_data.character.status == "TORPOR":
+                    from .relationship_service import load_relationships, get_relationships_for_frontend
+                    rel_state = await load_relationships(session_id)
+                    event_data.relationships = get_relationships_for_frontend(rel_state)
                     await websocket.send_json({
                         "action": "error",
                         "message": "[BLOQUEIO DE FLUXO] O personagem está em TORPOR e não pode realizar ações físicas ou narrativas."
@@ -207,9 +214,12 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                     
                     from .rules_service import _roll_v5_dice
                     roll_result = _roll_v5_dice(dice_pool=pool_size, hunger=hunger, difficulty=3)
+
+                    from .relationship_service import load_relationships, get_relationships_for_frontend
+                    rel_state = await load_relationships(session_id)
+                    event_data.relationships = get_relationships_for_frontend(rel_state)
                     
                     if roll_result.is_success:
-                        # Sucesso! Restaura status para ACTIVE
                         event_data.character.status = "ACTIVE"
                         event_data.context.current_state = "ACTIVE"
                         event_data.context.blocking = False
@@ -223,7 +233,6 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         })
                         await websocket.send_json(event_data.model_dump())
                     else:
-                        # Falha! Personagem sucumbe ao Frenesi
                         await websocket.send_json({
                             "action": "chat_response",
                             "message": f"[TESTE DE FRENESI] Falha! A Besta assume o controle. Você entrou em FRENESI. Rolagem: {roll_result.normal_rolls} / dados de fome: {roll_result.hunger_rolls}. {roll_result.summary}"
@@ -232,7 +241,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                     continue
 
                 if session.state == StateEnum.PLAYING:
-                    system_log, updated_context = await process_turn_pipeline(
+                    system_log, updated_context, relationships_data = await process_turn_pipeline(
                         user_input=user_input, 
                         session_id=session_id, 
                         context=session.context,
@@ -256,6 +265,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         status_override = "TORPOR"
                         
                     event_data = sync_event_from_context(session_id, updated_context, status_override=status_override)
+                    event_data.relationships = relationships_data
                     await save_session_state(session_id, event_data)
                     
                     # Envia o JSON estruturado do evento para o cliente

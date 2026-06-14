@@ -15,7 +15,7 @@ import { InitializationPanel } from './components/InitializationPanel';
 
 export default function App() {
   const { isDark, toggle: toggleTheme } = useDarkMode();
-  const { sheet, updateSheetFromEvent } = useCharacterState();
+  const { sheet, relationships, updateSheetFromEvent } = useCharacterState();
 
   const [initializationComplete, setInitializationComplete] = useState(false);
   const [isPanelFadingOut, setIsPanelFadingOut] = useState(false);
@@ -181,6 +181,7 @@ export default function App() {
           <NarrativeLog messages={messages} currentStreamText={currentStreamText} />
           <ActionPanel
             sheet={sheet}
+            relationships={relationships}
             onSendAction={handleSendAction}
             onConsultRelation={handleConsultRelation}
             disabled={isLoading}

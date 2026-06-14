@@ -73,6 +73,7 @@ class StateUpdateEvent(BaseModel):
     character: CharacterModel
     context: ContextModel
     player_sheet: Optional[dict] = None  # Metadados de compatibilidade com o front passivo
+    relationships: Optional[list] = None  # Motor relacional — Camada 2
 
 # --- FUNÇÕES DE PERSISTÊNCIA ASSÍNCRONA SEGURA ---
 
@@ -98,7 +99,7 @@ def sync_event_from_context(session_id: str, context: dict, status_override: Opt
         character_status = status_override
         
     character = CharacterModel(
-        id="karl_brujah",
+        id=session_id,
         trackers=TrackersModel(
             health=TrackerDetail(
                 superficial=health_data.get("superficial", 0),

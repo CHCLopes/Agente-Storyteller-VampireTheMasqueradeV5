@@ -1,13 +1,6 @@
 import random
 from .rules_service import ResolutionResult
 
-def get_blood_surge_bonus(blood_potency: int) -> int:
-    if blood_potency <= 1: return 1
-    if blood_potency <= 3: return 2
-    if blood_potency <= 5: return 3
-    if blood_potency <= 7: return 4
-    return 5
-
 def apply_willpower_reroll(last_resolution: ResolutionResult, target_successes: int) -> ResolutionResult:
     import random
     

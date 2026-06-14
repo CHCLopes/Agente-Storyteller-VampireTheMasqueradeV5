@@ -10,12 +10,19 @@ export const useWebSocket = ({ sessionId, onMessage }: UseWebSocketProps) => {
   const [connectionError, setConnectionError] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
   const reconnectTimeoutRef = useRef<number | null>(null);
+  const reconnectAttemptsRef = useRef(0);
+  const onMessageRef = useRef(onMessage);
+
+  // Mantém a referência do callback atualizada sem causar re-render/reconexão
+  useEffect(() => {
+    onMessageRef.current = onMessage;
+  }, [onMessage]);
 
   const connect = useCallback(() => {
     if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) return;
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = window.location.host || 'localhost:8000';
+    const host = window.location.port === '5173' ? 'localhost:8000' : (window.location.host || 'localhost:8000');
     const wsUrl = `${protocol}//${host}/ws/session/${sessionId}`;
 
     console.log(`[WS] Conectando a ${wsUrl}...`);
@@ -25,12 +32,13 @@ export const useWebSocket = ({ sessionId, onMessage }: UseWebSocketProps) => {
       console.log('[WS] Conectado.');
       setIsConnected(true);
       setConnectionError(false);
+      reconnectAttemptsRef.current = 0;
     };
 
     socket.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        onMessage(data);
+        onMessageRef.current(data);
       } catch (err) {
         console.error('[WS] Erro ao parsear mensagem:', err, event.data);
       }
@@ -43,7 +51,6 @@ export const useWebSocket = ({ sessionId, onMessage }: UseWebSocketProps) => {
     };
 
     socket.onclose = () => {
-      console.log('[WS] Desconectado. Tentando reconectar em 3s...');
       setIsConnected(false);
       
       // Limpa timeout anterior se houver
@@ -51,13 +58,25 @@ export const useWebSocket = ({ sessionId, onMessage }: UseWebSocketProps) => {
         clearTimeout(reconnectTimeoutRef.current);
       }
       
+      // Backoff exponencial: 1s, 2s, 4s, 8s, 16s, max 30s — limite de 10 tentativas
+      const attempt = reconnectAttemptsRef.current;
+      if (attempt >= 10) {
+        console.warn('[WS] Limite de reconexões atingido (10). Parado.');
+        setConnectionError(true);
+        return;
+      }
+
+      const delay = Math.min(1000 * Math.pow(2, attempt), 30000);
+      console.log(`[WS] Desconectado. Tentativa ${attempt + 1}/10 em ${delay / 1000}s...`);
+      reconnectAttemptsRef.current = attempt + 1;
+      
       reconnectTimeoutRef.current = window.setTimeout(() => {
         connect();
-      }, 3000);
+      }, delay);
     };
 
     wsRef.current = socket;
-  }, [sessionId, onMessage]);
+  }, [sessionId]);
 
   useEffect(() => {
     connect();

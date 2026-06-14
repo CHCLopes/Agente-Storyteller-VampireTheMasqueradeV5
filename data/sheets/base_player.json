@@ -1,4 +1,8 @@
 {
+    "nome": "Neófito",
+    "clan": "brujah",
+    "geracao": "13ª Geração",
+    "predator_type": "alleycat",
     "attributes": {
         "Strength": 3,
         "Dexterity": 2,

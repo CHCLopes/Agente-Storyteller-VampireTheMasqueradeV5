@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { PlayerSheet } from '../types/character';
+import type { PlayerSheet, Relationship } from '../types/character';
 
 const defaultPlayerSheet: PlayerSheet = {
   nome: "Karl Brujah",
@@ -32,6 +32,7 @@ const defaultPlayerSheet: PlayerSheet = {
 
 export const useCharacterState = () => {
   const [sheet, setSheet] = useState<PlayerSheet>(defaultPlayerSheet);
+  const [relationships, setRelationships] = useState<Relationship[]>([]);
 
   const updateSheetFromEvent = useCallback((eventData: any) => {
     if (!eventData) return;
@@ -79,10 +80,16 @@ export const useCharacterState = () => {
 
       return newSheet;
     });
+
+    // Atualiza relacionamentos se presentes
+    if (eventData.relationships && Array.isArray(eventData.relationships)) {
+      setRelationships(eventData.relationships);
+    }
   }, []);
 
   return {
     sheet,
+    relationships,
     updateSheetFromEvent
   };
 };

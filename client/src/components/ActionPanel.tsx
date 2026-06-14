@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
-import type { PlayerSheet } from '../types/character';
+import type { PlayerSheet, Relationship } from '../types/character';
 
 interface ActionPanelProps {
   sheet: PlayerSheet;
+  relationships: Relationship[];
   onSendAction: (action: string) => void;
   onConsultRelation: (title: string, desc: string) => void;
   disabled?: boolean;
@@ -35,14 +36,11 @@ const translateDiscipline = (key: string): string => {
   return map[key] || key.replace(/_/g, " ");
 };
 
-const defaultRelations = [
-  { id: "xerife", titulo: "Favor devedor ao Xerife de Câmera", desc: "Você deve um favor menor a ele por ocultar uma quebra de Máscara no cais." },
-  { id: "primogenito", titulo: "Aliança de Sangue com Primogênito Brujah", desc: "Apoiando sua causa em troca de futura lealdade na corte local." },
-  { id: "principe", titulo: "Vigilância Constante do Príncipe Villon", desc: "Olhar vigilante constante sobre suas atividades no centro da cidade." }
-];
+
 
 export const ActionPanel: React.FC<ActionPanelProps> = ({
   sheet,
+  relationships,
   onSendAction,
   onConsultRelation,
   disabled
@@ -74,10 +72,11 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
     if (!val || disabled) return;
 
     if (type === 'relation') {
-      const found = defaultRelations.find(r => r.id === val);
+      const found = relationships.find(r => r.id === val);
       if (found) {
         onConsultRelation(found.titulo, found.desc);
-        onSendAction(`Consultando relacionamento com ${found.titulo.split(':')[0]}`);
+        const npcName = found.titulo.split('—')[1]?.trim() || found.titulo;
+        onSendAction(`Consultando relacionamento com ${npcName}`);
       }
     } else {
       onSendAction(val);
@@ -183,7 +182,7 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
           aria-label="Consultar relacionamento"
         >
           <option value="" disabled selected hidden>Relacionamentos...</option>
-          {defaultRelations.map((item) => (
+          {relationships.map((item) => (
             <option key={item.id} value={item.id}>
               {item.titulo}
             </option>

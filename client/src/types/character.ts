@@ -45,4 +45,7 @@ export interface Relationship {
   id: string;
   titulo: string;
   desc: string;
+  disposition?: string;
+  trust_level?: number;
+  favor_balance?: number;
 }

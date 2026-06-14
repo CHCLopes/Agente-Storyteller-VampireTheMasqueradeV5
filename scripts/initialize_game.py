@@ -207,6 +207,26 @@ class GameInitializerWithFeedback:
         except Exception:
             return False
 
+    def _update_env_model(self, env_path: str, model_name: str):
+        """Grava o modelo detectado no .env, criando ou atualizando a linha LMSTUDIO_MODEL."""
+        lines = []
+        if os.path.exists(env_path):
+            with open(env_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+
+        updated = False
+        for i, line in enumerate(lines):
+            if line.strip().startswith("LMSTUDIO_MODEL="):
+                lines[i] = f"LMSTUDIO_MODEL={model_name}\n"
+                updated = True
+                break
+
+        if not updated:
+            lines.append(f"LMSTUDIO_MODEL={model_name}\n")
+
+        with open(env_path, "w", encoding="utf-8") as f:
+            f.writelines(lines)
+
     def is_port_open(self, port: int) -> bool:
         """Verifica se uma porta local está aberta"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -331,6 +351,35 @@ class GameInitializerWithFeedback:
             await self.send_log("success", f"Modelos encontrados: {', '.join(found)}", 4)
         if missing:
             await self.send_log("warning", f"Aviso: Modelos recomendados em falta: {', '.join(missing)}", 4)
+
+        # Validação do LMSTUDIO_MODEL no .env
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+        env_model = None
+        if os.path.exists(env_path):
+            with open(env_path, "r", encoding="utf-8") as ef:
+                for line in ef:
+                    if line.strip().startswith("LMSTUDIO_MODEL="):
+                        env_model = line.strip().split("=", 1)[1].strip()
+                        break
+        
+        if not env_model or env_model == "nome-do-modelo":
+            # Tenta detectar modelo carregado via API do LM Studio
+            detected_model = None
+            try:
+                resp = await self.client.get(f"http://127.0.0.1:{self.lm_studio_port}/v1/models", timeout=5.0)
+                if resp.status_code == 200:
+                    models_data = resp.json()
+                    if models_data.get("data"):
+                        detected_model = models_data["data"][0].get("id")
+            except Exception:
+                pass
+
+            if detected_model:
+                # Auto-configura o .env com o modelo detectado
+                self._update_env_model(env_path, detected_model)
+                await self.send_log("success", f"Modelo '{detected_model}' detectado e configurado automaticamente no .env", 4)
+            else:
+                await self.send_log("warning", "ATENÇÃO: LMSTUDIO_MODEL no .env ainda é 'nome-do-modelo'. Carregue um modelo no LM Studio e reinicie.", 4)
 
         await self.send_log("success", "[5/5] Sistema Pronto! Boa Caçada! 🦇", 5)
         return True
