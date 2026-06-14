@@ -94,22 +94,48 @@ async def run_narrator_stream(user_input: str, system_log: str, player_sheet: di
                     except Exception:
                         pass
 
-async def process_turn_pipeline(user_input: str, session_id: str, context: dict, turn: int, chronicle_name: str) -> tuple[str, dict]:
+async def process_turn_pipeline(user_input: str, session_id: str, context: dict, turn: int, chronicle_name: str) -> tuple[str, dict, list[dict] | None]:
     from .rules_service import V5ActionTarget
     import re
-    
+
+    # --- H0 Controller: Triagem e enriquecimento (E-04) ---
+    from .h0_controller_service import triage_input
+    h0_result = await triage_input(user_input)
+
+    # Se for consulta de lore, roteia para H4 sem pipeline mecânico
+    if h0_result.is_lore_query:
+        player_sheet_dict = context.get("player_sheet", {})
+        try:
+            from .rules_service import PlayerSheetModel as PSM
+            ps = PSM(**player_sheet_dict)
+        except Exception:
+            ps = None
+
+        from .h4_lore_expert_service import answer_lore_query
+        if ps:
+            lore_answer = await answer_lore_query(user_input, ps)
+        else:
+            lore_answer = "Conhecimento indisponível no momento."
+
+        # Carrega relationships para manter consistência no retorno
+        from .relationship_service import load_relationships, get_relationships_for_frontend
+        rel_state = await load_relationships(session_id)
+        relationships_for_frontend = get_relationships_for_frontend(rel_state)
+
+        return f"[LORE_RESPONSE] {lore_answer}", context, relationships_for_frontend
+
     try:
         action_payload = await extract_intent(user_input)
         if action_payload.intent.startswith("[FALLBACK]"):
-            return f"[ERROR Parser H1] {action_payload.intent}", context
+            return f"[ERROR Parser H1] {action_payload.intent}", context, None
     except Exception as e:
-        return f"[ERROR Parser H1] {str(e)}", context
+        return f"[ERROR Parser H1] {str(e)}", context, None
 
     player_sheet_dict = context.get("player_sheet", {})
     try:
         player_sheet = PlayerSheetModel(**player_sheet_dict)
     except Exception as e:
-        return f"[ERROR Player Sheet Validation] {str(e)}", context
+        return f"[ERROR Player Sheet Validation] {str(e)}", context, None
 
     status = player_sheet.status
     current_hunger = status.current_hunger
@@ -269,10 +295,26 @@ async def process_turn_pipeline(user_input: str, session_id: str, context: dict,
     
     context["player_sheet"] = player_sheet.model_dump()
     
+    # --- H4 Lore Expert: enriquecimento via LLM (E-05) ---
     from .lore_service import get_contextual_lore
-    lore_context = get_contextual_lore(user_input, action_payload, player_sheet)
-    if lore_context:
-        log_builder.lore_context = lore_context
+    static_lore = get_contextual_lore(user_input, action_payload, player_sheet)
+
+    from .h4_lore_expert_service import generate_lore_context
+    enriched_lore = await generate_lore_context(
+        user_input, action_payload, player_sheet,
+        lore_keywords=h0_result.lore_keywords,
+        static_lore=static_lore
+    )
+    if enriched_lore:
+        log_builder.lore_context = enriched_lore
+
+    # Injeta scene_notes do H0 no lore_context se disponível
+    if h0_result.scene_notes and h0_result.scene_notes.strip():
+        scene_fragment = f"[NOTAS DE CENA (H0)]: {h0_result.scene_notes}"
+        if log_builder.lore_context:
+            log_builder.lore_context = f"{scene_fragment}\n{log_builder.lore_context}"
+        else:
+            log_builder.lore_context = scene_fragment
 
     # --- Camada de Memória (E-02/E-03) ---
     from .memory_service import load_memory, save_memory, update_scene_memory, build_memory_prompt_fragment

@@ -271,6 +271,13 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                     # Envia o JSON estruturado do evento para o cliente
                     await websocket.send_json(event_data.model_dump())
                     
+                    # Se o H0 roteou para lore_query, envia resposta direta sem narrador
+                    if system_log.startswith("[LORE_RESPONSE]"):
+                        lore_text = system_log.replace("[LORE_RESPONSE] ", "", 1)
+                        session.turn -= 1  # Consulta de lore não conta como turno
+                        await websocket.send_json({"action": "chat_response", "message": f"📜 {lore_text}"})
+                        continue
+
                     # Se pipeline resultou em erro, envia erro e interrompe processamento
                     if system_log.startswith("[ERROR"):
                         await websocket.send_json({"action": "error", "message": system_log})
