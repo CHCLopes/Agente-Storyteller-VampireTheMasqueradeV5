@@ -1,76 +1,154 @@
 <div align="center">
+  <img src="vampire-icon.ico" alt="Logo Agente Storyteller" width="96" height="96" />
   
   # Agente Storyteller | Motor Narrativo V5 🦇
   
-  **Um motor de RPG de mesa bare-metal e assíncrono projetado para mestrar 'Vampiro: A Máscara 5ª Edição' com inteligência local avançada, concorrência atômica, frontend moderno em React e zero latência criativa.**
-
-  **Stack Tecnológico do Backend**
-  <br>
-  [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+  **Um motor de RPG de mesa assíncrono e de alto desempenho projetado para mestrar 'Vampiro: A Máscara 5ª Edição' utilizando processamento local paralelo, concorrência atômica, streaming em tempo real e frontend modular em React.**
+  
+  [![Licença](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)](LICENSE)
+  [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
   [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-  [![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
-  [![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
-
-  **Stack Tecnológico do Frontend**
-  <br>
-  [![React](https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-  [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-  [![Vitest](https://img.shields.io/badge/Vitest-Test-729B1B?style=for-the-badge&logo=vitest&logoColor=white)](#)
 
 </div>
 
-<br />
-
 ---
 
-## 📖 Visão Geral
+## 📖 Visão Geral (Storytelling Técnico)
 
-O **Agente Storyteller** é um motor de orquestração local de Inteligência Artificial desenhado sob rigorosas práticas da **Mentoria Vibe Coding**. Concebido para atuar como o Mestre de Jogo de 'Vampiro: A Máscara', o sistema foi modernizado na **Fase 2** para incorporar um frontend modular em React 18+ com TypeScript Strict Mode e Tailwind CSS v4, acessibilidade WCAG AA com toggle de temas (Claro/Escuro), e inicialização zero-friction em cascata.
+O **Agente Storyteller** é um motor de orquestração local de Inteligência Artificial concebido sob as diretrizes de **Engenharia de Software Acelerada por IA**. Criado com a finalidade de atuar como o Mestre de Jogo do universo de 'Vampiro: A Máscara', o sistema superou as limitações de latência criativa e gargalos de concorrência dos setups tradicionais de IA. 
+
+Anteriormente estruturado em Vanilla JS com concorrência frágil (causando perdas de dados nas atualizações simultâneas de fichas), o ecossistema foi refatorado para incorporar um backend assíncrono robusto em FastAPI Python e um frontend moderno baseado em React com tipagem TypeScript estrita e Tailwind CSS v4. A orquestração distribui de forma inteligente as requisições entre três modelos locais em execução paralela, garantindo fidelidade absoluta às regras oficiais e imersão narrativa sob zero latência criativa.
 
 > [!NOTE]
-> Este é o **repositório de desenvolvimento (Core)**. Para acessar a versão de distribuição empacotada e higienizada focada exclusivamente na experiência de jogo do jogador, acesse: [Agente Storyteller - Distribuição Pública (Foco do Jogador)](https://github.com/CHCLopes/AgenteStorytellerGame_Public).
+> Este é o **repositório de desenvolvimento (Core)**. Para acessar a versão de distribuição empacotada e higienizada focada exclusivamente na experiência final de jogo do jogador, acesse: [Agente Storyteller - Distribuição Pública](https://github.com/CHCLopes/AgenteStorytellerGame_Public).
 
 ---
 
-## 🚀 Engenharia de Software & Refatoração React
+## 🎨 Showcase Visual
 
-O motor opera sob uma rígida separação de responsabilidades. Abaixo, os pilares técnicos que compõem o nosso padrão *Impeccable* após a refatoração da Fase 2:
+A interface do usuário do frontend foi projetada para acomodar o clima gótico sem degradar a legibilidade e acessibilidade. 
 
-| Pilar Técnico | Implementação (Fase 2) |
-| :--- | :--- |
-| 🌐 **Rede e Streaming** | Protocolo **WebSockets** em chamadas assíncronas no FastAPI servindo o build React estático de forma nativa na porta `8000` (rota raiz). |
-| ⚛️ **Modernização da UI** | Migração completa de Vanilla JS para **React 18+** com **TypeScript strict: true**. Lógica reativa para rolagens de dados, upgrades de XP e controle de Frenesi. |
-| 🎨 **Design System & Acessibilidade** | Estilização reestruturada sob **Tailwind CSS v4** sem CSS manual legado. Implementado suporte a **Dark Mode** (Charcoal + Crimson) e **Light Mode** gótico (Pergaminho + Terra) em conformidade com contraste **WCAG AA** e persistência no `localStorage`. |
-| ⚡ **Auto-Inicialização** | Script Python (`scripts/initialize_game.py`) em cascata. Detecta a instalação do LM Studio no PATH ou diretórios padrões de usuário, valida a porta `1234`, escaneia e valida a presença de modelos recomendados, inicia o backend e abre o navegador automaticamente. |
-| 🔒 **Atomicidade de Estado** | Sistema de arquivos assíncrono (`aiofiles`) operando sob `asyncio.Lock()` no backend para salvar mutações no JSON do *PlayerSheet* de forma segura. |
-| 🧪 **Testes Automatizados** | Validação transversal: Cobertura de regras e latência no backend via **Pytest**, e testes de renderização de componentes de HUD via **Vitest** no frontend. |
+| Tema | Paleta de Cores | Contraste e Acessibilidade (WCAG AA) |
+|---|---|---|
+| **Dark Mode (Padrão)** | Crimson (#990000) + Charcoal (#121212) | Contraste de alto nível para sessões de jogo noturnas; redução de fadiga ocular. |
+| **Light Mode (Gótico)** | Terra Gasta (#8B4513) + Pergaminho (#F5F5DC) | Simula folhas de fichas de papel antigas; foco em legibilidade diurna e contraste semântico. |
 
 ---
 
-## 🛠️ Guia de Inicialização Rápida (Zero-Friction)
+## ⚡ Arquitetura & Stack de Engenharia
 
-Para jogadores e engenheiros iniciarem o Motor V5 de forma unificada:
+O motor divide-se em serviços independentes que evitam a sobrecarga computacional de modelos locais:
 
-1. **Instale** o [LM Studio](https://lmstudio.ai/) no seu computador.
-2. **Baixe obrigatoriamente os três modelos de LLM** recomendados no LM Studio:
-   *   🧠 **Árbitro de Regras (`qwen2.5-1.5b-instruct`):** Responsável por interpretar a matemática de VTM V5, dados de fome e mecânicas brutas.
-   *   👁️ **Relacionamentos e Memória (`deepseek-r1-distill-qwen-7b`):** Gerencia as intrigas, contatos e o estado contínuo do Mundo das Trevas.
-   *   🎭 **O Narrador (`llama-3.2-3b-instruct`):** Lapida a escrita gótica imersiva e a condução da história.
-   *   *Nota: A orquestração paralela dos três modelos de forma independente e segregada é necessária para evitar alucinações conceituais e garantir a fidelidade às mecânicas durante a sessão.*
-3. Dê duplo clique no atalho **`Iniciar o Jogo`** na raiz do projeto (ou execute `INICIAR_JOGO.bat` no terminal).
-4. O inicializador inteligente cuidará de verificar as portas do LM Studio, validar a presença dos três modelos, subir o backend FastAPI e abrir o navegador em `http://localhost:8000` automaticamente.
+```mermaid
+graph TD
+    User([Jogador / Frontend]) -->|WebSocket | API[FastAPI Web Server]
+    API -->|asyncio.Lock| PS[PlayerSheet JSON State]
+    API -->|Orquestrador| Orchestrator[Orchestrator Service]
+    Orchestrator -->|Regras / qwen2.5-1.5b| LM1[LM Studio - Modelo 1]
+    Orchestrator -->|Memória / deepseek-r1| LM2[LM Studio - Modelo 2]
+    Orchestrator -->|Narrador / llama-3.2| LM3[LM Studio - Modelo 3]
+```
+
+### Por que estas decisões de Engenharia?
+*   **Atomicidade de Estado (`asyncio.Lock` + `aiofiles`)**: Garante que modificações em tempo real na ficha do jogador (XP, fome, frenesi) sejam gravadas sem colisões ou arquivos corrompidos.
+*   **WebSockets & Streaming**: A geração de texto dos modelos locais é transmitida em tempo real para o frontend, eliminando a percepção de tempo de resposta longo de LLMs rodando em hardware doméstico.
+*   **Segregação de Carga (3 Modelos Locais)**: Separar o Narrador, o Árbitro de Regras e a Memória do Mundo evita a alucinação de regras do sistema de jogo e otimiza o uso de VRAM.
 
 ---
 
-## 📬 Contato
+## 🛠️ Developer Setup (Quickstart)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-lopes-b445aa201)
-[![E-mail](https://img.shields.io/badge/E--mail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:[carloshcldev@gmail.com])
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CHCLopes)
+### Pré-requisitos
+*   Python 3.11 ou superior
+*   Node.js 18 ou superior
+*   [LM Studio](https://lmstudio.ai/) ativo na porta padrão `1234`
+
+### 1. Preparação do Ambiente e Backend
+```bash
+# Clone o repositório
+git clone https://github.com/CHCLopes/AgenteStoryteller.git
+cd AgenteStoryteller
+
+# Criar e ativar ambiente virtual
+python -m venv .venv
+source .venv/Scripts/activate # No Windows
+
+# Instalar dependências do backend
+pip install -r requirements.txt
+```
+
+### 2. Instalação do Frontend
+```bash
+cd client
+npm install
+```
+
+### 3. Execução em Desenvolvimento
+Você pode utilizar o inicializador automático que valida as portas do LM Studio e orquestra a subida do servidor:
+```bash
+# Na raiz do repositório
+python scripts/initialize_game.py
+```
+Ou rodar manualmente os servidores em terminais separados:
+```bash
+# Terminal 1 (Backend)
+uvicorn api.main:app --host 127.0.0.1 --port 8000 --reload
+
+# Terminal 2 (Frontend)
+cd client
+npm run dev
+```
+
+### 4. Executando os Testes
+```bash
+# Testes do Backend (Pytest)
+pytest tests/
+
+# Testes do Frontend (Vitest)
+cd client
+npm run test
+```
+
+---
+
+## 📂 Topologia (File Tree)
+
+```text
+AgenteStoryteller/
+├── api/                           # Backend FastAPI
+│   ├── core/                      # Configurações centrais do sistema
+│   ├── main.py                    # Entrypoint uvicorn e rotas do servidor
+│   ├── orchestrator_service.py    # Orquestração paralela dos 3 LLMs
+│   └── rules_service.py           # Mecânicas do sistema de regras V5
+├── client/                        # Frontend React 19 / TypeScript
+│   ├── src/                       # Componentes, hooks e lógica do HUD
+│   │   ├── components/            # Ficha de jogador, logs de rolagens e HUD
+│   │   └── App.tsx                # Renderizador principal da SPA
+│   ├── package.json               # Dependências frontend (Vite, Tailwind v4)
+│   └── vite.config.ts             # Configuração de bundler e testes
+├── data/                          # Dados de persistência do jogador (PlayerSheet)
+├── scripts/                       # Scripts auxiliares e automatizadores
+│   └── initialize_game.py         # Script de auto-inicialização inteligente
+├── tests/                         # Testes automatizados da aplicação
+└── INICIAR_JOGO.bat               # Atalho de execução rápida para usuários
+```
+
+---
+
+## 🛠️ Guia de Manutenção Dev-para-Dev
+
+*   **Isolamento de Estado**: Qualquer alteração nas estatísticas ou atributos do jogador no frontend deve enviar um payload JSON via WebSocket para as rotas do FastAPI. Evite mutar estados de forma local e persistente no React sem sincronizar com o backend.
+*   **Adição de Novas LLMs**: Para integrar novos modelos de linguagem locais, edite o arquivo [orchestrator_service.py](file:///c:/Users/skate/Desktop/WorkSpace/Antigravity/SandBox/AgenteStoryteller/api/orchestrator_service.py) e inclua as definições de endpoint correspondentes.
+*   **Padrão Estritamente Modular de Dados**: Siga a segregação estrita das métricas e logs em tabelas/arquivos específicos (como o isolamento do estado da crônica em relação ao histórico de rolagens), garantindo a scalabilidade futura para bancos de dados relacionais dedicados.
 
 ---
 
 <div align="center">
-  Refatorado e mantido segundo o mais alto padrão com Prompt Engineering voltada para qualidade do código e experiência do usuário. 🦇✨
+  
+  Desenvolvido e mantido sob rígidos padrões de engenharia e otimização local. 🦇✨
+  
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-lopes-b445aa201)
+  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/CHCLopes)
+
 </div>
