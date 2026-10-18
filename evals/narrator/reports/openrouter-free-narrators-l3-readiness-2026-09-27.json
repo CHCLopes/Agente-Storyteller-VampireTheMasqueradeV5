@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-27",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L3-STRICT-OVERLOAD-RETRY",
+  "status": "prepared_offline_waiting_new_free_daily_window",
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "narrator_admitted": false,
+  "runtime_default_changed": false,
+  "execution_window": "new_free_daily_window_only",
+  "limits": {
+    "slots": 24,
+    "max_attempts_per_slot": 2,
+    "max_calls": 48,
+    "max_output_tokens_per_call": 2048,
+    "max_total_output_tokens": 98304
+  },
+  "retry_policy": {
+    "category": "provider_unavailable",
+    "code": "openrouter_provider_overloaded",
+    "retryable_must_be_true": true,
+    "same_request": true,
+    "max_retries_per_slot": 1,
+    "retry_other_errors": false
+  },
+  "verification": {
+    "own_tests_passed": 14,
+    "combined_tests_passed": 43,
+    "powershell_parse_errors": 0,
+    "preflight_exit_code": 0,
+    "preflight_sha256": "20d612cd88d7de6f29773cf37fdc30c78bc0cab58532ec7bae9e1556f508807b"
+  },
+  "sha256": {
+    "runner": "730d6f57edacfaa0efa83f34d750f0ad453f599f07d4a09e362e0a6b29d3dbff",
+    "launcher": "dd89e23f87139a8fa8aeb616e187542e64c8ec56347cf06ff761130177eb3b95",
+    "tests": "4ecc56f7ba2496efc438d6e5b44b3b8e26ba19b1b6d37fd11500b841efa659a2",
+    "gate": "81ba33bf24bd124f8ecb290ecf421cf2651a99f15f42b3fffffc9fae066131d7"
+  }
+}

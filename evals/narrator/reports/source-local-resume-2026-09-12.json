@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-12",
+  "technical_composition": "completed",
+  "real_model_calls": 0,
+  "credential_entry": "completed_not_provider_validated",
+  "checkpoint": "eval-results/checkpoints/source-local-resume-20260912/manifest.json",
+  "checkpoint_sha256": "2fad286df4180c25d4bbba91add64195374f986275610c0c2c2ecfffadce75d2",
+  "checkpoint_copies": 101,
+  "report_sha256": "07e9422702d6cbd95228e156b291ab405ed071f7c25ccc453a9252085a8567c9",
+  "test_results": {
+    "asgi": {
+      "passed": 29,
+      "new": 4
+    },
+    "fixture_launcher": {
+      "distinct_passed_in_stages": 33,
+      "final_affected_passed": 9,
+      "final_deselected": 24
+    },
+    "view_scroll": {
+      "revalidated": 1,
+      "filtered_out": 15
+    },
+    "view_guidance": {
+      "new_passed": 1,
+      "filtered_out": 16
+    },
+    "final_lint": "passed",
+    "final_app_tsc": "passed"
+  },
+  "runs": [
+    {
+      "run_id": "d249b3fc-f045-4438-97d2-4d3da9e462a9",
+      "turns": 2,
+      "lifecycle": "failed",
+      "host_exec_exit_code": 1,
+      "logical_hash_after_actions_queries_shutdown": "2a3b5285477d8cbf3688fdcba91d2f6d257a253897e8266ba68bc53f31c96411"
+    },
+    {
+      "run_id": "d8abaa85-5c57-40ee-aa4e-041d95513806",
+      "turns": 1,
+      "rejected_preparations": 1,
+      "lifecycle": "stopped",
+      "host_exec_exit_code": 1,
+      "python_exit_code": null,
+      "logical_hash_after_actions_queries_shutdown": "d703a93352aef2134c81aae34b35f454990ba0c29bed8533dbd8871e84e68c11"
+    }
+  ],
+  "historical_integrity": {
+    "pause_copies": 75,
+    "comparison_copies": 53,
+    "comparison_originals": 6,
+    "all_hashes_match": true,
+    "historical_verifier_rerun": false
+  },
+  "git": {
+    "branch": "codex/planejamento-agente-storyteller-v5",
+    "head": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "original_master_clean": true,
+    "preexisting_tracked_changes": 39,
+    "commit_push_merge": false
+  },
+  "limits": [
+    "Synthetic authored fixture; no model quality or product approval.",
+    "Interactive host exit code is not separately measured Python exit code.",
+    "Read-only snapshots prove database comparisons; H rows are not provider call counts.",
+    "The prior failed run and model comparison are not reclassified."
+  ]
+}

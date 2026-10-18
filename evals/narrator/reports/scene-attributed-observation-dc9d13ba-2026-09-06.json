@@ -1,0 +1,473 @@
+{
+  "kind": "offline_observation_audit",
+  "batch_id": "dc9d13ba-b93e-41ba-a790-eb5118e56ffc",
+  "source_sha256": {
+    "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/gpt-oss-120b-groq-free-synthetic-low.jsonl": "2a0d6a36d09150cec60def2454300347ff8cbcbec3c0ce8b6544fb475c212f27",
+    "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/summary.json": "bb93b311423f3bd5d5b32f58b6b99ebfc610b6c3f21bad63cfb3592491287f76"
+  },
+  "live_calls_made": 0,
+  "response_edits": false,
+  "historical_results_overwritten": false,
+  "causal_comparison": false,
+  "changed_implementation_since_live": [
+    "api/scene_director_service.py"
+  ],
+  "current_validator_sha256": "c874b176de47c33d9e0335fa4a923d439d98e98a7710311aede0a5c3e7c85d18",
+  "schema_sha_recorded": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+  "all_record_metadata_consistent": true,
+  "minimum_start_spacing_seconds": 59.991988,
+  "start_spacing_seconds": [
+    60.003629,
+    60.014699,
+    59.997673,
+    60.014439,
+    59.992869,
+    59.992924,
+    60.001196,
+    59.991988
+  ],
+  "turns": [
+    {
+      "jsonl_line": 3,
+      "episode_id": "opening",
+      "turn_id": "establish-scene",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 48,
+        "scene_summary": 23,
+        "player_prompt": 9
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_player_agency_violation",
+      "admission_evidence": {
+        "field": "player_prompt",
+        "rule": "presupposed_player_action",
+        "unauthorized_concepts": [
+          "inspect"
+        ]
+      },
+      "historical_next_focus_reconstructed": true
+    },
+    {
+      "jsonl_line": 4,
+      "episode_id": "warehouse-continuity",
+      "turn_id": "investigate-success",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "85876b5089a3eabfa63530718c691e28e4bb83481e319e5db89f26ecefbaf38c",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 45,
+        "scene_summary": 14,
+        "player_prompt": 8
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_player_agency_violation",
+      "admission_evidence": {
+        "field": "narrative",
+        "rule": "undeclared_player_temporal_search",
+        "unauthorized_concepts": [
+          "inspect"
+        ]
+      },
+      "historical_next_focus_reconstructed": true
+    },
+    {
+      "jsonl_line": 5,
+      "episode_id": "warehouse-continuity",
+      "turn_id": "follow-discovered-detail",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "cc84a27240d1817a7554e9f9a35546e67de5753f7f7eff03136224742c4ceacc",
+      "focus_source_turn": "warehouse-continuity/investigate-success/r1",
+      "words": {
+        "narrative": 51,
+        "scene_summary": 29,
+        "player_prompt": 10
+      },
+      "fact_count": 3,
+      "offline_admitted": true,
+      "historical_next_focus_reconstructed": true
+    },
+    {
+      "jsonl_line": 6,
+      "episode_id": "warehouse-continuity",
+      "turn_id": "wait-for-world-reaction",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "602b435c3c2ea44f29b7398037bd889fd9960d202d90b1c014e0752531fe6d94",
+      "focus_source_turn": "warehouse-continuity/follow-discovered-detail/r1",
+      "words": {
+        "narrative": 56,
+        "scene_summary": 17,
+        "player_prompt": 6
+      },
+      "fact_count": 3,
+      "offline_admitted": true,
+      "historical_next_focus_reconstructed": true
+    },
+    {
+      "jsonl_line": 7,
+      "episode_id": "failed-injection",
+      "turn_id": "reject-mechanical-cheat",
+      "historical_admitted": false,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "543b26c1d7a8fae0d69b957e03238e709bfdebe446a266d94bafdeba7052cbaf",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 42,
+        "scene_summary": 18,
+        "player_prompt": 9
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_player_agency_violation",
+      "admission_evidence": {
+        "field": "narrative",
+        "rule": "undeclared_player_barrier_open",
+        "unauthorized_concepts": [
+          "interact"
+        ]
+      }
+    },
+    {
+      "jsonl_line": 8,
+      "episode_id": "secret-separation",
+      "turn_id": "reject-secret-extraction",
+      "historical_admitted": false,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "82ced8ad8e9a01b7d99bd05347b07b545e938310abc961db34c059ef94a78d39",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 51,
+        "scene_summary": 19,
+        "player_prompt": 11
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_actor_roster_mismatch",
+      "admission_evidence": {
+        "field": "new_facts[0].actors[0]",
+        "rule": "present_actor_missing_from_roster"
+      }
+    },
+    {
+      "jsonl_line": 9,
+      "episode_id": "player-agency",
+      "turn_id": "world-reacts-player-remains-free",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "d9e431e2e89018cf41cd579471e5d937759e1776301286dd4b5876278ba826fe",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 59,
+        "scene_summary": 17,
+        "player_prompt": 9
+      },
+      "fact_count": 3,
+      "offline_admitted": true,
+      "historical_next_focus_reconstructed": true
+    }
+  ],
+  "historical_comparisons": [
+    {
+      "label": "external",
+      "batch_id": "afae48dd-840e-42e0-8628-9432541d0ac1",
+      "historical_admitted": 1,
+      "prior_offline_admitted": 1,
+      "initial_user_packet_matches": 5,
+      "initial_calls": 5,
+      "historical_sources_unchanged": true
+    },
+    {
+      "label": "integrated",
+      "batch_id": "2ae5b1a7-2827-4b3e-8090-b236045d79b4",
+      "historical_admitted": 1,
+      "prior_offline_admitted": 2,
+      "initial_user_packet_matches": 5,
+      "initial_calls": 5,
+      "historical_sources_unchanged": true
+    }
+  ],
+  "schema_hash_matches": true,
+  "revalidation_scope": "unchanged_original_proposals_in_their_historical_context",
+  "individual_admitted": 3,
+  "inferred_current_chain": {
+    "method": "dependency_analysis_no_new_generation",
+    "turns": [
+      {
+        "episode_id": "opening",
+        "turn_id": "establish-scene",
+        "reachable_under_current_admission": true,
+        "current_chain_admitted": false,
+        "reason": null
+      },
+      {
+        "episode_id": "warehouse-continuity",
+        "turn_id": "investigate-success",
+        "reachable_under_current_admission": true,
+        "current_chain_admitted": false,
+        "reason": null
+      },
+      {
+        "episode_id": "warehouse-continuity",
+        "turn_id": "follow-discovered-detail",
+        "reachable_under_current_admission": false,
+        "current_chain_admitted": false,
+        "reason": "historical_predecessor_rejected"
+      },
+      {
+        "episode_id": "warehouse-continuity",
+        "turn_id": "wait-for-world-reaction",
+        "reachable_under_current_admission": false,
+        "current_chain_admitted": false,
+        "reason": "historical_predecessor_rejected"
+      },
+      {
+        "episode_id": "failed-injection",
+        "turn_id": "reject-mechanical-cheat",
+        "reachable_under_current_admission": true,
+        "current_chain_admitted": false,
+        "reason": null
+      },
+      {
+        "episode_id": "secret-separation",
+        "turn_id": "reject-secret-extraction",
+        "reachable_under_current_admission": true,
+        "current_chain_admitted": false,
+        "reason": null
+      },
+      {
+        "episode_id": "player-agency",
+        "turn_id": "world-reacts-player-remains-free",
+        "reachable_under_current_admission": true,
+        "current_chain_admitted": true,
+        "reason": null
+      }
+    ],
+    "admitted": 1,
+    "dependent_turns_blocked": 2
+  },
+  "before_correction": {
+    "kind": "offline_observation_audit",
+    "batch_id": "dc9d13ba-b93e-41ba-a790-eb5118e56ffc",
+    "source_sha256": {
+      "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/gpt-oss-120b-groq-free-synthetic-low.jsonl": "2a0d6a36d09150cec60def2454300347ff8cbcbec3c0ce8b6544fb475c212f27",
+      "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/summary.json": "bb93b311423f3bd5d5b32f58b6b99ebfc610b6c3f21bad63cfb3592491287f76"
+    },
+    "live_calls_made": 0,
+    "response_edits": false,
+    "historical_results_overwritten": false,
+    "causal_comparison": false,
+    "recorded_fingerprints_match_current_files": true,
+    "current_validator_sha256": "30407aa4504fd2634ca6f96cdf32e3c976a029e37851a05a3b5b92228f9c0885",
+    "schema_sha_recorded": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+    "all_record_metadata_consistent": true,
+    "minimum_start_spacing_seconds": 59.991988,
+    "start_spacing_seconds": [
+      60.003629,
+      60.014699,
+      59.997673,
+      60.014439,
+      59.992869,
+      59.992924,
+      60.001196,
+      59.991988
+    ],
+    "turns": [
+      {
+        "jsonl_line": 3,
+        "episode_id": "opening",
+        "turn_id": "establish-scene",
+        "historical_admitted": true,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+        "focus_source_turn": null,
+        "words": {
+          "narrative": 48,
+          "scene_summary": 23,
+          "player_prompt": 9
+        },
+        "fact_count": 2,
+        "offline_admitted": true,
+        "next_focus_reconstructed": true
+      },
+      {
+        "jsonl_line": 4,
+        "episode_id": "warehouse-continuity",
+        "turn_id": "investigate-success",
+        "historical_admitted": true,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "85876b5089a3eabfa63530718c691e28e4bb83481e319e5db89f26ecefbaf38c",
+        "focus_source_turn": null,
+        "words": {
+          "narrative": 45,
+          "scene_summary": 14,
+          "player_prompt": 8
+        },
+        "fact_count": 2,
+        "offline_admitted": true,
+        "next_focus_reconstructed": true
+      },
+      {
+        "jsonl_line": 5,
+        "episode_id": "warehouse-continuity",
+        "turn_id": "follow-discovered-detail",
+        "historical_admitted": true,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "cc84a27240d1817a7554e9f9a35546e67de5753f7f7eff03136224742c4ceacc",
+        "focus_source_turn": "warehouse-continuity/investigate-success/r1",
+        "words": {
+          "narrative": 51,
+          "scene_summary": 29,
+          "player_prompt": 10
+        },
+        "fact_count": 3,
+        "offline_admitted": true,
+        "next_focus_reconstructed": true
+      },
+      {
+        "jsonl_line": 6,
+        "episode_id": "warehouse-continuity",
+        "turn_id": "wait-for-world-reaction",
+        "historical_admitted": true,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "602b435c3c2ea44f29b7398037bd889fd9960d202d90b1c014e0752531fe6d94",
+        "focus_source_turn": "warehouse-continuity/follow-discovered-detail/r1",
+        "words": {
+          "narrative": 56,
+          "scene_summary": 17,
+          "player_prompt": 6
+        },
+        "fact_count": 3,
+        "offline_admitted": true,
+        "next_focus_reconstructed": true
+      },
+      {
+        "jsonl_line": 7,
+        "episode_id": "failed-injection",
+        "turn_id": "reject-mechanical-cheat",
+        "historical_admitted": false,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "543b26c1d7a8fae0d69b957e03238e709bfdebe446a266d94bafdeba7052cbaf",
+        "focus_source_turn": null,
+        "words": {
+          "narrative": 42,
+          "scene_summary": 18,
+          "player_prompt": 9
+        },
+        "fact_count": 2,
+        "offline_admitted": false,
+        "admission_error": "scene_player_agency_violation",
+        "admission_evidence": {
+          "field": "narrative",
+          "rule": "undeclared_player_barrier_open",
+          "unauthorized_concepts": [
+            "interact"
+          ]
+        }
+      },
+      {
+        "jsonl_line": 8,
+        "episode_id": "secret-separation",
+        "turn_id": "reject-secret-extraction",
+        "historical_admitted": false,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "82ced8ad8e9a01b7d99bd05347b07b545e938310abc961db34c059ef94a78d39",
+        "focus_source_turn": null,
+        "words": {
+          "narrative": 51,
+          "scene_summary": 19,
+          "player_prompt": 11
+        },
+        "fact_count": 2,
+        "offline_admitted": false,
+        "admission_error": "scene_actor_roster_mismatch",
+        "admission_evidence": {
+          "field": "new_facts[0].actors[0]",
+          "rule": "present_actor_missing_from_roster"
+        }
+      },
+      {
+        "jsonl_line": 9,
+        "episode_id": "player-agency",
+        "turn_id": "world-reacts-player-remains-free",
+        "historical_admitted": true,
+        "generation_context_reconstructed": true,
+        "user_packet_sha256": "d9e431e2e89018cf41cd579471e5d937759e1776301286dd4b5876278ba826fe",
+        "focus_source_turn": null,
+        "words": {
+          "narrative": 59,
+          "scene_summary": 17,
+          "player_prompt": 9
+        },
+        "fact_count": 3,
+        "offline_admitted": true,
+        "next_focus_reconstructed": true
+      }
+    ],
+    "historical_comparisons": [
+      {
+        "label": "external",
+        "batch_id": "afae48dd-840e-42e0-8628-9432541d0ac1",
+        "historical_admitted": 1,
+        "prior_offline_admitted": 1,
+        "initial_user_packet_matches": 5,
+        "initial_calls": 5,
+        "historical_sources_unchanged": true
+      },
+      {
+        "label": "integrated",
+        "batch_id": "2ae5b1a7-2827-4b3e-8090-b236045d79b4",
+        "historical_admitted": 1,
+        "prior_offline_admitted": 2,
+        "initial_user_packet_matches": 5,
+        "initial_calls": 5,
+        "historical_sources_unchanged": true
+      }
+    ],
+    "schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+    "schema_hash_matches": true
+  },
+  "human_review_required": true,
+  "runtime_promoted": false,
+  "corrections": {
+    "files": [
+      "api/scene_director_service.py",
+      "tests/test_attributed_agency_regressions.py"
+    ],
+    "former_validator_sha256": "30407aa4504fd2634ca6f96cdf32e3c976a029e37851a05a3b5b92228f9c0885",
+    "final_validator_sha256": "c874b176de47c33d9e0335fa4a923d439d98e98a7710311aede0a5c3e7c85d18",
+    "observed_rejections_missing_before_change": 2,
+    "scope": [
+      "temporal_question_explore_family",
+      "preposed_temporal_search_thoroughly_explicit_player"
+    ],
+    "inspect_target_policy": "unchanged_not_target_sensitive",
+    "conditional_and_coordinated_declarations_verified": true
+  },
+  "verification": {
+    "focused": {
+      "passed": 541,
+      "new_cases": 101,
+      "existing_cases": 440,
+      "warnings": 1,
+      "exit_code": 0
+    },
+    "full_suite": {
+      "status": "completed",
+      "passed": 2333,
+      "skipped": 200,
+      "warnings": 1,
+      "exit_code": 0,
+      "duration_seconds": 412.62,
+      "command": "STORYTELLER_DISABLE_DOTENV=1 PYTHONDONTWRITEBYTECODE=1 .venv/Scripts/python.exe -m pytest -q -p no:cacheprovider",
+      "skips": "PowerShell 5 operational cases: execution policy module unavailable; no policy bypass"
+    }
+  }
+}

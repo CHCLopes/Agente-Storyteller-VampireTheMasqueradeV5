@@ -1,0 +1,183 @@
+{
+  "version": "closed-world-render-responses-v1",
+  "protocol": "closed-world-render-contract-v1",
+  "review_metadata": {
+    "batch_id": "4f13b856-6bf8-4eab-8639-188fc32b05b3",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-25",
+    "human_admission_required": true,
+    "source_summary_sha256": "cbe2715a43fdad5c917fab0a3875c230689dca378835bdd54871a689d508ac77",
+    "source_records_sha256": "6ce0be7896e76e3e01f398fa829526cbc9f70da30a1d5e779cac5de08e2e6391"
+  },
+  "input_hashes": {
+    "corpus_sha256": "1b620a84bc9a61d63f1abd51e9e08dfbd856fbb804dd0c806bd7588daf42b72b",
+    "protocol_sha256": "0ab8cec17e225bfd98cee1957c2338f9341138fda60440e8440f9d1a4c0a21fb"
+  },
+  "target": {
+    "requested": {"target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink", "provider": "Groq", "model": "qwen/qwen3.8-27b", "reasoning": "none"},
+    "reported": {"target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink", "provider": "Groq", "model": "qwen/qwen3.8-27b", "reasoning": "none"}
+  },
+  "invocation": {"retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "hold-silent-bell",
+      "narrative": "O pequeno sino de bronze permanece imóvel, suspenso no ar parado. A corda continua fora do alcance imediato, pendurada na escuridão. O ar junto ao arco de pedra é frio, tocando a pele com uma brisa constante. O recinto de pedra devolve um eco baixo da respiração ambiente, um som suave que preenche o silêncio. Nada se move além da correnteza invisível do ar frio. O arco de pedra continua visível atrás do sino, marcando o fundo da cena.",
+      "rendered_unit_ids": ["bell-still", "cord-out-of-reach", "arch-visible", "cool-air", "stone-echo"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "A espera e as unidades obrigatórias são preservadas, mas escuridão, brisa constante, som suave e correnteza invisível não correspondem a unidades fornecidas."
+      }
+    },
+    {
+      "case_id": "authorized-single-bell",
+      "narrative": "O ar frio continua tocando a pele, mas a imobilidade do sino é rompida por uma única nota metálica, breve e cortante. A corda, pendurada na escuridão, permanece perfeitamente imóvel e fora do alcance imediato. O eco da nota reverbera por um instante antes de desaparecer no arco de pedra visível ao fundo. O silêncio retorna denso, sem qualquer explicação visível para o som ou para a finalidade do objeto. A brisa constante segue o seu curso, e a cena mantém a tensão da espera.",
+      "rendered_unit_ids": ["bell-one-note", "cord-remains-still", "arch-visible", "brief-metal-note", "echo-fades"],
+      "transition_id": "bell-rings-once",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": true,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A nota única e a corda imóvel são corretas, mas o texto repete ar frio e brisa do turno anterior e acrescenta escuridão, silêncio denso e tensão, ausentes do plano deste caso."
+      }
+    },
+    {
+      "case_id": "known-sealed-tube",
+      "narrative": "O tubo de latão repousa na prateleira, sua superfície exibindo um brilho opaco sob a luz ambiente. A madeira em que ele assenta é seca, com texturas visíveis de desgaste. No topo da peça, o lacre de cera azul permanece intacto, selando o conteúdo com uma marca circular que não revela inscrições legíveis à distância. O objeto está parado, aguardando, enquanto o ar ao seu redor permanece quieto e inalterado.",
+      "rendered_unit_ids": ["tube-on-shelf", "wax-seal-intact", "seal-mark", "brass-dull", "shelf-dry"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "As unidades do tubo e do lacre estão presentes, porém luz ambiente, desgaste da madeira, objeto aguardando e ar quieto são afirmações fora do plano fechado."
+      }
+    },
+    {
+      "case_id": "unknown-glass-disc",
+      "narrative": "Um disco de vidro negro está fixado à parede. A superfície é escura e uniforme, contrastando com a parede ao redor, que é clara. Uma borda metálica estreita contorna o disco. O objeto permanece imóvel, sem indicar qualquer atividade interna ou propósito definido.",
+      "rendered_unit_ids": ["disc-visible", "metal-rim", "surface-dark", "wall-pale"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "As unidades visuais são respeitadas e função e atividade continuam desconhecidas, mas a imobilidade do objeto não é uma unidade autorizada."
+      }
+    },
+    {
+      "case_id": "favorable-shutter-result",
+      "narrative": "A madeira raspa no trilho com um som seco e áspero enquanto a veneziana sobe. A estrutura cede à força aplicada, subindo até abrir uma fresta da largura de uma mão. A veneziana para nessa posição, imóvel. Uma corrente de ar estreita atravessa a abertura, tocando o rosto com um frio leve. O espaço além da fresta permanece obscuro e não definido.",
+      "rendered_unit_ids": ["test-succeeded", "shutter-hand-width", "shutter-stops", "wood-scrapes", "thin-air-current"],
+      "transition_id": "shutter-opens-hand-width",
+      "asserted_unknown_ids": ["space-beyond-shutter"],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A abertura e o limite mecânico são respeitados, mas som seco e áspero, frio no rosto e a afirmação de que o espaço é obscuro extrapolam o plano e qualificam o desconhecido."
+      }
+    },
+    {
+      "case_id": "unfavorable-slab-result",
+      "narrative": "Sua empurrada encontra a resistência imóvel da laje. A superfície áspera da pedra escura não cede, mantendo-se exatamente na posição anterior. Sob o esforço, uma pequena parte da marca de giz desfaça-se, soltando flocos claros que se acumulam sobre a rocha. O pó branco contrasta com a textura rugosa, marcando o local exato onde a pressão falhou. A estrutura permanece firme, sem qualquer sinal de movimento ou resposta interna.",
+      "rendered_unit_ids": ["test-failed", "slab-remains", "chalk-flakes", "stone-rough", "chalk-pale"],
+      "transition_id": "chalk-mark-flakes",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "O fracasso, a laje imóvel e os flocos são preservados, mas acúmulo sobre a rocha, local exato e ausência de resposta interna são detalhes não autorizados."
+      }
+    },
+    {
+      "case_id": "npc-protected-code",
+      "narrative": "Iara não revela o código. Ela oferece um cartão com a rota até o zelador. O cartão é de papel creme. A rota está traçada em tinta azul.",
+      "rendered_unit_ids": ["iara-withholds-code", "iara-offers-route-card", "card-cream", "ink-blue"],
+      "transition_id": "iara-offers-route-card",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "O segredo é preservado e todas as afirmações correspondem a unidades fornecidas, mas a resposta fica abaixo do mínimo de 30 palavras."
+      }
+    },
+    {
+      "case_id": "ambiguous-sealed-boxes",
+      "narrative": "O piso termina onde começa a base de pedra lisa. Sobre ela, quatro caixas seladas repousam, cada uma com um tamanho diferente. A iluminação do recinto é uniforme, sem criar sombras que indiquem conteúdo ou peso. Nenhuma caixa foi escolhida ou aberta. O silêncio do espaço permanece intacto, aguardando sem pressa.",
+      "rendered_unit_ids": ["four-boxes", "no-box-chosen", "different-sizes", "support-stone", "room-light-even"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": false,
+        "rationale": "As caixas permanecem fechadas, mas piso, ausência de sombras, peso e silêncio são detalhes não listados; a pergunta limita a próxima ação a observar uma caixa e não preserva afastar-se."
+      }
+    }
+  ]
+}

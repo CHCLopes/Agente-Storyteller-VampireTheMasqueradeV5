@@ -1,0 +1,107 @@
+{
+  "observation_date": "2026-09-25",
+  "execution_date": "2026-09-22",
+  "status": "batch_verified_no_candidate_eligible_human_accepted",
+  "human_acceptance": {
+    "date": "2026-09-25",
+    "response": "Aceito HYP-001-L1: nenhum candidato elegível; nenhum narrador admitido.",
+    "semantic_classification_accepted": true,
+    "narrator_admitted": false
+  },
+  "hypothesis_id": "grounded_progression_contract_v1",
+  "option": "L1",
+  "batch_id": "c03cff72-817f-4881-a864-8a5848011c0a",
+  "execution": {
+    "started_at": "2026-09-22T23:23:58.430349+00:00",
+    "finished_at": "2026-09-22T23:38:59.676217+00:00",
+    "calls_made": 16,
+    "completed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "process_exit_code": 0,
+    "artifact_verification_exit_code": 0,
+    "artifact_verified": true
+  },
+  "usage_reported": {
+    "qwen-3.8-27b-groq-free-synthetic-nonthink": {
+      "input_tokens": 7525,
+      "output_tokens": 998,
+      "narratives_without_terminal_punctuation": 5
+    },
+    "gpt-oss-120b-groq-free-synthetic-low": {
+      "input_tokens": 8521,
+      "output_tokens": 1419,
+      "narratives_without_terminal_punctuation": 0
+    }
+  },
+  "credential_handling": {
+    "method": "masked_interactive_terminal_input",
+    "credential_value_observed": false,
+    "persisted_to_file": false,
+    "removed_from_terminal_environment_after_execution": true
+  },
+  "hashes": {
+    "preflight": "d2c647a04435413e2395b858fe436e82bad44f415744076d68ffa2ec584dd348",
+    "summary": "d6c49b33ea03edc16f5c4322ce3eaf4101bab090664cab3d49fefada28af331e",
+    "records": "3466fe2c77d4e079e59e4df928dc3b294e3414fd8f6c7440a80d8d5ff491c578",
+    "qwen_review": "18160a021df7c60c408f57cd86b37c0815a753fbb26a9a40981ef07a1dae90f3",
+    "gpt_oss_review": "9eece69ac74ec050e615a86120c22fa3c82ef1a17fad4b8822e28e870c20f806",
+    "qwen_verification": "45deb4a23e38adb48cb9e673a133d861d788d79c75dcf6da349477a878654ec4",
+    "gpt_oss_verification": "fe0e87c5dd601f92a1aad9835dff3b153a6a96d528eefba26350db705278aac6",
+    "launcher": "9a7dc3104d8d85b29e611ed8650c7f379e53689c5a82d8fcd3a9966dfceaacfa",
+    "launcher_tests": "32777a07a71ca7415792d4e1f3cc137779813f90f12c2fa78aebdc78de901e62"
+  },
+  "semantic_review": {
+    "reviewer": "codex-independent-semantic-review",
+    "narratives_byte_matched_to_records": true,
+    "narrative_mismatches": 0,
+    "human_admission_required": true,
+    "candidates": [
+      {
+        "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+        "passed_count": 2,
+        "failed_count": 6,
+        "qualified_in_protocol": false,
+        "failed_cases": [
+          "wait-without-authorized-progression",
+          "wait-with-authorized-event",
+          "known-object-state",
+          "unknown-object-state",
+          "unfavorable-mechanical-result",
+          "npc-protected-secret"
+        ]
+      },
+      {
+        "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+        "passed_count": 5,
+        "failed_count": 3,
+        "qualified_in_protocol": false,
+        "failed_cases": [
+          "wait-without-authorized-progression",
+          "known-object-state",
+          "ambiguous-action-preserves-choice"
+        ]
+      }
+    ]
+  },
+  "admission": {
+    "qualified_candidates": [],
+    "narrator_admitted": false,
+    "runtime_default_eligible": false,
+    "batch_repeat_allowed": false,
+    "campaign_hybrid_unblocked": false
+  },
+  "verification": {
+    "focused_tests_passed": 32,
+    "focused_tests_failed": 0,
+    "related_tests_passed_latest": 421,
+    "powershell_parse_errors": 0,
+    "launcher_without_credential_exit_code": 3
+  },
+  "remaining_gate": "protected_groq_credential_then_single_authentication_check_then_hypothesis_002_authorization",
+  "required_human_response_if_accepted": null,
+  "next_attempt_requires": "distinct_prospective_hypothesis_and_separate_human_authorization"
+}

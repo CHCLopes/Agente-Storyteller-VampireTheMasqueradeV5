@@ -1,0 +1,284 @@
+{
+  "schema": "storyteller.narrative-source-local-bridge-review.v1",
+  "recorded_at": "2026-09-08T01:01:15.200135+00:00",
+  "status": "completed_local_opt_in_bridge",
+  "protocol": "narrative-source-turn-v1",
+  "application_policy": "narrative-source-application-v1",
+  "context_protocol": "narrative-source-application-context-v1",
+  "operation": "H6.narrative_source",
+  "scope": "authored fixtures, FakeLLMAdapter, temporary SQLite; no default activation",
+  "files": {
+    "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+    "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+    "api/narrative_source_execution_service.py": "119d55548637b1c1e15f20da5da1e71a1184711c7cf08d30046096af6314ca2c",
+    "api/persistence.py": "14d109ce6d17f97cd0dcf3d0e19d4aa8758565a79ccf71dae2f6b05bc9fc59ce",
+    "tests/test_narrative_source_bridge.py": "cf65be6ade788ab0335630c54fcf17cb8f8a2b0c8782e75917a269d49316be13",
+    "tests/test_narrative_source_turn.py": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+    "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+    "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+    "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921"
+  },
+  "persistence_delta_from_before_bridge": {
+    "added": 193,
+    "removed": 1,
+    "before_sha256": "69a31ecf2ad25fad899f3453feca98647200d7b2924889e6ac76ad285e4a63ea"
+  },
+  "profile_algorithms_equal_after_declared_identity_and_docstring_changes": true,
+  "verification": {
+    "contract_cases": 85,
+    "persistence_cases": 29,
+    "legacy_persistence_cases": 7,
+    "integration_cases": 31,
+    "distinct_passed_across_focused_stages": 152,
+    "single_full_suite_claim": false,
+    "integration_final_hashes_stable": true,
+    "git_diff_check_exit_code": 0,
+    "warning": "pre-existing python_multipart PendingDeprecationWarning",
+    "external_calls": 0,
+    "real_campaigns_accessed": false
+  },
+  "test_evidence": [
+    {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-turn-contract-20260907\\final.json",
+      "sha256": "83fcc713ea09364d50150a32074e86c115a28e79593b188e90a13c4825f2b192",
+      "record": {
+        "files": {
+          "api/narrative_source_turn.py": {
+            "sha256": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+            "lines": 285,
+            "prior_state": "absent"
+          },
+          "tests/test_narrative_source_turn.py": {
+            "sha256": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+            "lines": 359,
+            "prior_state": "absent"
+          }
+        },
+        "verification": {
+          "tests": 85,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "pytest_seconds": 1.83,
+          "initial_80_superseded": true,
+          "red_literal_ids": {
+            "failed_as_expected": 5,
+            "seconds": 0.71
+          },
+          "syntax": "passed",
+          "trailing_whitespace": "none",
+          "integration_tests_run_here": false,
+          "external_calls": 0,
+          "dotenv": "disabled",
+          "network": "blocked_by_existing_conftest"
+        },
+        "scope": "two_new_files_only",
+        "semantic_truth_evaluation": false,
+        "runtime_activation": false,
+        "delta": {
+          "change": "reject silently normalized NarrativeRecord identities and source_event_ids",
+          "from_sha256": "7acc446926a90cc072d57c18c0c1d9714b8764fc56242ff895d8fc375ec0fbbb"
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-persistence-20260907\\final-tests.json",
+      "sha256": "027e38619070ac2f278ed391c8b17f26ea88e46a27cc685bb0cb43d1d9abef68",
+      "record": {
+        "started_at": "2026-09-08T00:40:51.728059+00:00",
+        "finished_at": "2026-09-08T00:40:55.909141+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_narrative_source_persistence.py::test_source_roundtrip_restart_and_chronological_window_preserve_literal_text",
+          "--tb=short"
+        ],
+        "exit_code": 0,
+        "final_distinct_passed": 32,
+        "new_cases": 25,
+        "existing_cases": 7,
+        "initial_group": {
+          "passed": 31,
+          "failed": 1,
+          "pytest_seconds": 3.11,
+          "evidence": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-persistence-20260907\\after-tests.json"
+        },
+        "corrected_fixture_only": {
+          "passed": 1,
+          "reason": "The first positive fixture was 584 characters; only this case now appends a neutral sentence and exceeds600."
+        },
+        "hashes_before": {
+          "api/persistence.py": "11ed038144216d949adecf35d713b0e100168c2eb87612bf6a95f61bbad7a318",
+          "tests/test_narrative_source_persistence.py": "6327ee15aaa29d2b5a1585e03d8396ef2531196b55e1f084a55be5a615954e3f",
+          "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30",
+          "api/narrative_source_turn.py": "7acc446926a90cc072d57c18c0c1d9714b8764fc56242ff895d8fc375ec0fbbb",
+          "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413"
+        },
+        "hashes_after": {
+          "api/persistence.py": "11ed038144216d949adecf35d713b0e100168c2eb87612bf6a95f61bbad7a318",
+          "tests/test_narrative_source_persistence.py": "6327ee15aaa29d2b5a1585e03d8396ef2531196b55e1f084a55be5a615954e3f",
+          "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30",
+          "api/narrative_source_turn.py": "7acc446926a90cc072d57c18c0c1d9714b8764fc56242ff895d8fc375ec0fbbb",
+          "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413"
+        },
+        "old_test_file_unchanged": true,
+        "no_runtime_changes_after_initial_test": true,
+        "provider_calls": 0
+      }
+    },
+    {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-persistence-replay-20260907\\final.json",
+      "sha256": "bf2807229e9267561aaa0b08edf4575a7f6b0f708b26d3ef0ecea1243be4d0bd",
+      "record": {
+        "checked_at": "2026-09-08T00:53:27.690182+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_narrative_source_persistence.py::test_idempotent_source_replay_rejects_torn_terminal_attempt",
+          "tests/test_narrative_source_persistence.py::test_idempotent_source_commit_still_checks_obligation_and_digest",
+          "--tb=short"
+        ],
+        "exit_code": 0,
+        "distinct_new_cases": 4,
+        "existing_control_repeated": 1,
+        "hashes_before": {
+          "api/persistence.py": "14d109ce6d17f97cd0dcf3d0e19d4aa8758565a79ccf71dae2f6b05bc9fc59ce",
+          "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+          "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+          "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30"
+        },
+        "hashes_after": {
+          "api/persistence.py": "14d109ce6d17f97cd0dcf3d0e19d4aa8758565a79ccf71dae2f6b05bc9fc59ce",
+          "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+          "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+          "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30"
+        },
+        "git_diff_check_exit_code": 0,
+        "provider_calls": 0,
+        "delta": {
+          "persistence_added": 17,
+          "persistence_removed": 0
+        },
+        "red": {
+          "file": "red.json",
+          "sha256": "d9d3b6849e1fbf08e38255f35aefda3eb5e1e5869f517c7543244e59d6a22cb2",
+          "expected_failures": 4
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-bridge-20260907\\integrated-initial.json",
+      "sha256": "6080d6b6aefe33b9f4cf15ac7792c038d465f4269cb599d4653354700c48801d",
+      "record": {
+        "started_at": "2026-09-08T00:55:18.886614+00:00",
+        "finished_at": "2026-09-08T00:55:25.635087+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_narrative_source_bridge.py",
+          "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-bridge-20260907\\integrated-initial.xml",
+          "--tb=short"
+        ],
+        "exit_code": 0,
+        "counts": {
+          "tests.test_narrative_source_bridge": {
+            "total": 31,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        },
+        "hashes_before": {
+          "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+          "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+          "api/narrative_source_execution_service.py": "119d55548637b1c1e15f20da5da1e71a1184711c7cf08d30046096af6314ca2c",
+          "api/persistence.py": "14d109ce6d17f97cd0dcf3d0e19d4aa8758565a79ccf71dae2f6b05bc9fc59ce",
+          "tests/test_narrative_source_bridge.py": "cf65be6ade788ab0335630c54fcf17cb8f8a2b0c8782e75917a269d49316be13",
+          "tests/test_narrative_source_turn.py": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+          "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+          "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921"
+        },
+        "hashes_after": {
+          "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+          "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+          "api/narrative_source_execution_service.py": "119d55548637b1c1e15f20da5da1e71a1184711c7cf08d30046096af6314ca2c",
+          "api/persistence.py": "14d109ce6d17f97cd0dcf3d0e19d4aa8758565a79ccf71dae2f6b05bc9fc59ce",
+          "tests/test_narrative_source_bridge.py": "cf65be6ade788ab0335630c54fcf17cb8f8a2b0c8782e75917a269d49316be13",
+          "tests/test_narrative_source_turn.py": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+          "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+          "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921"
+        },
+        "network": "conftest blocks external network; OS-only environment allowlist; dotenv disabled",
+        "provider_calls": 0
+      }
+    }
+  ],
+  "legacy_modules_preserved": {
+    "api/turn_execution_service.py": "a44f1739d8447067c41a10e590732aac2258bc2eb3d1748760bbe7fdeacb038c",
+    "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+    "api/memory_service.py": "4a8bfa8004879053417771b3f69020b48b5eaa18be4af6ca73e2040ca1755cf4",
+    "api/orchestrator_service.py": "6b3a594d7b20dc215003389512d2f1ce4fa6b36072358ffc8b72e5278d6b7da7",
+    "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+    "api/context_service.py": "7fcbec6660602aa1b6d7859536b5d1275b2d641a6d198f8d23cb9c69c99bcac3",
+    "api/main.py": "861e3991f058b8070ebfeccc7dfbd24bc176fdde5b1268a09c0178ba7a28bdd1",
+    "api/relationship_service.py": "6b66c06c2c2eb9e7ef3ec3c4ee15acd614038215af090398d97fc1a00a0b56ce"
+  },
+  "closed_live_artifacts_preserved": [
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/summary.json",
+      "sha256": "dfd1cc00a85e477db693954a70160c6b7e37e188fe7b631ef5bec6bfb14ea420"
+    },
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "ac84ccc41acd53fa828a7b0a95e06cde6f037d64577c5653fa4094476a83109b"
+    },
+    {
+      "file": "eval-results/20260908T001535Z-66580329-11ac-44ba-93ee-37ad18d5671e/summary.json",
+      "sha256": "e7c958477f55986412d58286de4f52d5a94133aa210a5489946782b6239a5e55"
+    },
+    {
+      "file": "eval-results/20260908T001535Z-66580329-11ac-44ba-93ee-37ad18d5671e/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "fe48bfd2ccce003ff35c55c19ba2197d0bdad92b3c74500d251bf5f5f8510189"
+    }
+  ],
+  "observed_behavior": [
+    "Three authored turns commit and restore after new persistence instances; full n above600 survives and last two sources are chronological.",
+    "Question stays outside source; no NarrativeSource text is inserted as CanonicalFact, MemoryCandidate, EpisodicMemory or CONHECIDO.",
+    "Literal source, narrative, question, IDs, audience, antecedents and completed invocation are checked before delivery and in commit.",
+    "Server attempt anchors the obligation before generation; removing argument and envelope cannot bypass it.",
+    "Replay terminal is paired and does not invoke or deliver again; static divergent request conflicts.",
+    "Final USER over12000 characters, incompatible caller context/scene or unsupported fact/event kinds fail before gateway.",
+    "Schema, word count, agency, secret, question and mechanical policy failures do not deliver or commit.",
+    "Delivery is provisional; callback failure, token cancellation and CAS do not commit. Task cancellation waits for commit outcome and preserves a won commit."
+  ],
+  "limitations": [
+    "Source identity is source_only/not_assessed, never semantic truth, general implication, provider authentication or CAP approval.",
+    "Trusted server is responsible for provenance of supplied draft, state and known l/p scene. No adapter of arbitrary old saves is implemented.",
+    "At most two required recent committed sources; no long history, opening, arbitrary scene transition, lore or direct scene-query integration.",
+    "The source getter uses a single SQLite read snapshot. Execution replay uses separate existing readers, without a cross-reader snapshot guarantee.",
+    "Stored turn and attempt digests are paired; the old full aggregate digest cannot be reconstructed from all fields currently persisted.",
+    "Bytes delivered by on_chunk cannot be withdrawn on a later commit failure. No global PRNG rollback guarantee.",
+    "Product composition, all legacy reader routes, real saves and default remain outside this completed local increment."
+  ],
+  "human_credential_dependency_now": false,
+  "runtime_activation": false,
+  "cap_001_approval": false,
+  "live_observation_effect": "Neither historical batch was replayed or reclassified. Courtyard remains one source handoff and a second word-count refusal."
+}

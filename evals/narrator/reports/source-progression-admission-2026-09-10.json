@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-09-11T00:31:30.997018+00:00",
+  "status": "passed",
+  "scope": "offline authored fixture admission only",
+  "worktree": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+  "owned_files": {
+    "tests/test_narrative_source_progression_admission.py": "e2d02e390876526500c1c7ffc03b01c78f96543a7a595d20f516eb52c666f7d8"
+  },
+  "verification": {
+    "distinct_tests": 4,
+    "passed": 4,
+    "failures": 0,
+    "skips": 0,
+    "pytest_seconds": 1.74,
+    "junit_seconds": 1.619,
+    "network": "conftest block active; FakeLLM only",
+    "core_edits": false,
+    "preserved_file_count": 55,
+    "preserved_changes": {},
+    "first_fixture_matches_observed_synthetic_response": true,
+    "second_fixture_origin": "independent_agent_authored_not_provider_observation",
+    "positive": "two commits, full first source in second USER, typed sources after restart, no-call/no-chunk replay, canonical scene/state/relationships unchanged",
+    "negatives": {
+      "forced-action": "scene_player_agency_violation",
+      "forced-emotion": "scene_player_agency_violation",
+      "internal-mechanics": "scene_internal_content"
+    },
+    "limitation": "internal mechanical content only; no general damage/resource detector claim for unresolved outcome; no model capability or CAP approval"
+  },
+  "fixture_counts": {
+    "OBSERVED_FIRST": {
+      "characters": 474,
+      "whitespace_words": 77
+    },
+    "OBSERVED_QUESTION": {
+      "characters": 21,
+      "whitespace_words": 5
+    },
+    "AUTHORED_CONTINUATION": {
+      "characters": 448,
+      "whitespace_words": 70
+    },
+    "AUTHORED_QUESTION": {
+      "characters": 39,
+      "whitespace_words": 7
+    }
+  },
+  "evidence_files": {
+    "before.json": "8c41a8c45564e021e09837cd494f13e1eace550bc70861fbc89796bb27f8951a",
+    "tests-initial.xml": "72b18948cefd092a4998387f5fe69d3acf110079fad28a9be7767f72467ca72a",
+    "tests-initial.txt": "b0a3133c800e2086680d8ae8ec73cdef5d643236a1f986de7bc01d6e4bf45171",
+    "owned.diff": "7ffb66202acdbeb8ba32a6765f2ecd783e1846d895f46654d3090703619b2614"
+  },
+  "schema": "storyteller.eval.source-progression-admission-review.v1",
+  "date_local": "2026-09-10",
+  "proof_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-progression-admission-20260910\\final.json",
+  "proof_sha256": "5e055bdd686aaca1f9bd35b3138ea0ba8e83a0df3811a4f32e57e65a4510fee4",
+  "fixtures": {
+    "OBSERVED_FIRST": "O silêncio da galeria parece espesso, quebrado apenas pelo zumbido abafado de um ar-condicionado distante. Luzes frias e direcionadas caem sobre as superfícies das obras, criando um jogo de sombras nítidas no piso de mármore polido. Não há movimento nas molduras; apenas o próprio reflexo seu, distorcido e pálido, acompanha o seu olhar ao longo da parede. Uma pequena poeira flutua lentamente no feixe de luz central, um ponto solitário contra a escuridão do canto da sala.",
+    "OBSERVED_QUESTION": "O que você faz agora?",
+    "AUTHORED_CONTINUATION": "O zumbido do ar-condicionado se interrompe. Por um instante, a luz central enfraquece, e a partícula de poeira desaparece no escuro. Quando o feixe retorna, pulsa duas vezes; seu brilho descontínuo recorta as molduras e faz o reflexo no mármore surgir e sumir. O ar-condicionado continua silencioso. Após uma pausa, as duas pulsações se repetem, enquanto o restante da galeria conserva a iluminação fria. A causa dessas pulsações permanece incerta.",
+    "AUTHORED_QUESTION": "O que você faz diante dessas pulsações?"
+  },
+  "independent_review": "No blocker; authored event is observable, preserves player agency and unknown cause.",
+  "interpretation": "Existing admission permits this concrete progression. This is not evidence of model ability, universal admission quality or live narrative progression.",
+  "next_step": "Prepare two independent authored-context generation observations under the unchanged progressing SYSTEM, target and profile.",
+  "runtime_approved": false,
+  "cap_001_evaluated": false
+}

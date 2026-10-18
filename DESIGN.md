@@ -1,5 +1,8 @@
 # DESIGN.md — Agente Storyteller V5
 
+> [!IMPORTANT]
+> Documento histórico, anterior à arquitetura LLM-001 e ao store transacional. Para o desenho vigente, consulte `README.md` e `plan/architecture-llm-memory-turns-1.md`.
+
 ## Arquitetura Alto Nível
 ┌─────────────────────────────────────────────────┐
 │               Cliente (React 19 + TS)           │

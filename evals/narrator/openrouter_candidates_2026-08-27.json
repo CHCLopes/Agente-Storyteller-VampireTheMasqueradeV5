@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-08-27",
+  "catalog_source": "https://openrouter.ai/api/v1/models",
+  "candidates": [
+    {
+      "candidate_id": "glm-5.2-free-decarts-zdr",
+      "model": "z-ai/glm-5.2:free",
+      "upstream_provider": "decart",
+      "structured_mode": "native",
+      "require_zdr": true,
+      "allow_data_collection": false,
+      "campaign_data_eligible": true,
+      "expiration_date": null,
+      "notes": "Único candidato gratuito encontrado neste snapshot com JSON Schema e endpoint ZDR; português e narrativa ainda exigem teste empírico."
+    },
+    {
+      "candidate_id": "gemma-4-31b-free-portuguese-control",
+      "model": "google/gemma-4-31b-it:free",
+      "upstream_provider": "google-ai-studio",
+      "structured_mode": "emulated",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "notes": "Controle multilíngue com JSON validado localmente; o endpoint observado retém dados e só pode receber o corpus sintético."
+    },
+    {
+      "candidate_id": "nemotron-3-super-free-native-control",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "upstream_provider": "nvidia",
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "notes": "Controle de JSON Schema e latência; português não consta entre os idiomas pós-treinamento declarados e o provedor observado retém dados."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-003-GEMINI-FREE-L4",
+  "option": "GEMINI-FREE-L4-INTEGRAL-TRANSPORT-RETRY",
+  "protocol": "gemini-free-closed-world-live-v4",
+  "status": "offline_ready_human_credential_pending",
+  "l3_classification_accepted": true,
+  "integral_eight_case_batch_approved": true,
+  "aggregate_prior_responses": false,
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "paid_spend_authorized": false,
+  "synthetic_only": true,
+  "max_cases": 8,
+  "max_provider_attempts": 16,
+  "transport_retry_policy": {
+    "eligible_http_statuses": [408, 429, "5xx"],
+    "only_without_response": true,
+    "eligible_phase": "connect",
+    "max_retries_per_case": 2,
+    "backoff_base_seconds": [60, 180],
+    "deterministic_jitter_seconds": [0, 15],
+    "narrative_retries": 0,
+    "all_attempts_persisted": true
+  },
+  "verification": {
+    "focused_tests_passed": 47,
+    "related_regression_tests_passed": 61,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_exit_code": 0,
+    "tamper_counterproof_passed": true,
+    "credential_echo_counterproof_passed": true
+  },
+  "candidate_admitted": false,
+  "default_created": false
+}

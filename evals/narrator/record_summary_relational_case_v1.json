@@ -1,0 +1,17 @@
+{
+  "schema": "storyteller.eval.inline-evidence-input.v1",
+  "case_id": "gallery-reflection",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "narrative": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede.",
+  "source_units": [
+    {
+      "id": "n0",
+      "text": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. "
+    },
+    {
+      "id": "n1",
+      "text": "Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede."
+    }
+  ]
+}

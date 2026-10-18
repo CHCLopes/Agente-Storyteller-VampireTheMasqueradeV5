@@ -5,9 +5,10 @@ import type { PlayerSheet, Relationship } from '../types/character';
 interface ActionPanelProps {
   sheet: PlayerSheet;
   relationships: Relationship[];
-  onSendAction: (action: string) => void;
+  onSendAction: (action: string) => boolean;
   onConsultRelation: (title: string, desc: string) => void;
   disabled?: boolean;
+  submissionBlocked?: boolean;
 }
 
 const translateSkill = (key: string): string => {
@@ -36,6 +37,13 @@ const translateDiscipline = (key: string): string => {
   return map[key] || key.replace(/_/g, " ");
 };
 
+const supportedPowerIds = new Set([
+  'awe',
+  'feral_weapons',
+  'scorpion_touch',
+  'soaring_leap',
+]);
+
 
 
 export const ActionPanel: React.FC<ActionPanelProps> = ({
@@ -43,20 +51,23 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
   relationships,
   onSendAction,
   onConsultRelation,
-  disabled
+  disabled,
+  submissionBlocked = false,
 }) => {
   const [inputText, setInputText] = useState('');
   const [isFlashing, setIsFlashing] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputText.trim() || disabled) return;
+    if (!inputText.trim() || disabled || submissionBlocked) return;
+
+    const accepted = onSendAction(inputText.trim());
+    if (!accepted) return;
 
     // Efeito de flash de envio
     setIsFlashing(true);
     setTimeout(() => setIsFlashing(false), 500);
 
-    onSendAction(inputText.trim());
     setInputText('');
   };
 
@@ -71,19 +82,24 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
     const val = e.target.value;
     if (!val || disabled) return;
 
+    let accepted = false;
     if (type === 'relation') {
       const found = relationships.find(r => r.id === val);
       if (found) {
-        onConsultRelation(found.titulo, found.desc);
         const npcName = found.titulo.split('—')[1]?.trim() || found.titulo;
-        onSendAction(`Consultando relacionamento com ${npcName}`);
+        accepted = onSendAction(`Consultando relacionamento com ${npcName}`);
+        if (accepted) {
+          onConsultRelation(found.titulo, found.desc);
+        }
       }
     } else {
-      onSendAction(val);
+      accepted = onSendAction(val);
     }
 
-    // Reset dropdown selection
-    e.target.selectedIndex = 0;
+    if (accepted) {
+      // Reset dropdown selection only after the transport accepts the action.
+      e.target.selectedIndex = 0;
+    }
   };
 
   return (
@@ -99,8 +115,9 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onKeyDown={handleKeyDown}
+          maxLength={500}
           disabled={disabled}
-          placeholder={disabled ? "Aguardando resposta do Narrador..." : "Descreva sua ação (ex: 'Investigar o galpão abandonado') ou rolagem..."}
+          placeholder={disabled ? "Aguardando conexão ou resposta..." : submissionBlocked ? "Você pode preparar a próxima ação; envie após resolver a pausa." : "Descreva sua ação ou use: 'Fazer teste de Raciocínio + Investigação'..."}
           className="flex-1 min-h-[44px] max-h-[120px] bg-zinc-950/40 dark:bg-zinc-950/40 light:bg-v5light-card border border-zinc-800 dark:border-zinc-800 light:border-v5light-border rounded p-2 text-sm focus:outline-none focus:ring-1 focus:ring-v5-crimson dark:focus:ring-v5-crimson light:focus:ring-v5light-earth resize-none leading-relaxed text-primary"
           style={{ color: 'var(--text-primary)' }}
           rows={2}
@@ -108,7 +125,7 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
         />
         <button
           type="submit"
-          disabled={disabled || !inputText.trim()}
+          disabled={disabled || submissionBlocked || !inputText.trim()}
           id="btn-send-trigger"
           className="w-12 bg-v5-crimson hover:bg-red-800 dark:bg-v5-crimson dark:hover:bg-red-800 light:bg-v5light-earth light:hover:bg-amber-900 text-white rounded flex items-center justify-center cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           title="Enviar Ação"
@@ -123,25 +140,22 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
         {/* Macros */}
         <select
           id="macro-select"
-          disabled={disabled}
+          disabled={disabled || submissionBlocked}
           onChange={(e) => handleSelectChange(e, 'macro')}
           className="bg-zinc-950/40 dark:bg-zinc-950/40 light:bg-v5light-card border border-zinc-800 dark:border-zinc-800 light:border-v5light-border rounded p-1.5 focus:outline-none text-secondary"
           style={{ color: 'var(--text-secondary)' }}
           aria-label="Macros de ações rápidas"
         >
           <option value="" disabled selected hidden>Ações Rápidas...</option>
-          <option value="Inicie uma nova crônica.">Iniciar Nova Crônica</option>
           <option value="Fazer teste de Força + Briga com Dificuldade 3">Atacar com Briga (Força + Briga, Dif 3)</option>
           <option value="Fazer teste de Destreza + Furtividade com Dificuldade 2">Esgueirar-se (Destreza + Fur, Dif 2)</option>
           <option value="Fazer teste de Raciocínio + Percepção com Dificuldade 3">Investigar Ambiente (Wits + Aware, Dif 3)</option>
-          <option value="Usar poder de Rapidez para esquiva rápida">Ativar Rapidez (Esquiva)</option>
-          <option value="Realizar teste de Humanidade para resistir a máculas">Resistir a Máculas (Humanidade)</option>
         </select>
 
         {/* Habilidades */}
         <select
           id="hud-skills-select"
-          disabled={disabled}
+          disabled={disabled || submissionBlocked}
           onChange={(e) => handleSelectChange(e, 'skill')}
           className="bg-zinc-950/40 dark:bg-zinc-950/40 light:bg-v5light-card border border-zinc-800 dark:border-zinc-800 light:border-v5light-border rounded p-1.5 focus:outline-none text-secondary"
           style={{ color: 'var(--text-secondary)' }}
@@ -158,14 +172,16 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
         {/* Disciplinas */}
         <select
           id="hud-disciplines-select"
-          disabled={disabled}
+          disabled={disabled || submissionBlocked}
           onChange={(e) => handleSelectChange(e, 'discipline')}
           className="bg-zinc-950/40 dark:bg-zinc-950/40 light:bg-v5light-card border border-zinc-800 dark:border-zinc-800 light:border-v5light-border rounded p-1.5 focus:outline-none text-secondary"
           style={{ color: 'var(--text-secondary)' }}
           aria-label="Ativar disciplina"
         >
           <option value="" disabled selected hidden>Disciplinas...</option>
-          {Object.entries(sheet.disciplines).map(([key, val]) => (
+          {Object.entries(sheet.disciplines)
+            .filter(([key]) => supportedPowerIds.has(key))
+            .map(([key, val]) => (
             <option key={key} value={`Ativar disciplina ${translateDiscipline(key)}`}>
               {translateDiscipline(key)} (Nível {val})
             </option>
@@ -175,7 +191,7 @@ export const ActionPanel: React.FC<ActionPanelProps> = ({
         {/* Relacionamentos */}
         <select
           id="hud-relations-select"
-          disabled={disabled}
+          disabled={disabled || submissionBlocked}
           onChange={(e) => handleSelectChange(e, 'relation')}
           className="bg-zinc-950/40 dark:bg-zinc-950/40 light:bg-v5light-card border border-zinc-800 dark:border-zinc-800 light:border-v5light-border rounded p-1.5 focus:outline-none text-secondary"
           style={{ color: 'var(--text-secondary)' }}

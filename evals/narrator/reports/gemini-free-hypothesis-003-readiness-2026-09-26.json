@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-26",
+  "status": "offline_ready_free_tier_credential_pending",
+  "hypothesis": "HYP-003-GEMINI-FREE-L1",
+  "decision": {
+    "provider": "Google Gemini Free Tier",
+    "model": "gemini-3.8-flash",
+    "authorized_spend_usd": 0.0,
+    "synthetic_only": true,
+    "campaign_data_eligible": false,
+    "free_tier_content_may_improve_google_products": true
+  },
+  "limits": {
+    "generation_calls": 8,
+    "max_output_tokens_per_call": 768,
+    "minimum_start_interval_seconds": 60,
+    "reasoning_effort": "low",
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "tools": false,
+    "grounding": false
+  },
+  "verification": {
+    "focused_tests_passed": 68,
+    "focused_tests_failed": 0,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_exit": 0,
+    "provider_calls": 0,
+    "credential_inspected": false,
+    "live_inference_calls": 0
+  },
+  "frozen_hashes": {
+    "corpus": "93aac2f44742787de386eb57d8d313b3d64e5525f8a0254b056baa440dee34db",
+    "candidate_manifest": "be2d3d65294d64917ad42279c662b3f0e172419eaae4421fbe1c28783940cbeb",
+    "runner": "fad74248cf7202de0aeac30898579a8f65c192c19b4847cf8e4f87e1f0618c1a",
+    "launcher": "9749ddd49293dd259bf459dcb6756ba9030db198c979d032331f8d770087b002",
+    "tests": "6abe8ba010c77a1fbea91094a215bd3c01673dcba8619f7ee5cf988a85287208",
+    "gemini_adapter": "f907a6ec49a2efbdfd6487f3d15ed738bea188b9734c66865c0edadec5662687",
+    "base_prompt": "87b9cbcd67a67b9d25b97c2b25276e83af56d48c09f53843a64b8e77303b1a0e",
+    "closed_world_prompt": "22a75a5808fad849f8b1cec1fd59fd5cf4c58be52913604d6e84b35a0ec83ce3"
+  },
+  "human_dependency": {
+    "free_tier_project_without_billing_confirmation": true,
+    "masked_credential_entry": true
+  },
+  "narrator_admitted": false,
+  "runtime_default_changed": false,
+  "hybrid_campaign_may_start": false
+}

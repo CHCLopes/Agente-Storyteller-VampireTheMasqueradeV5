@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "catalog_checked_at": "2026-09-26",
+  "provider": "SiliconFlow",
+  "base_url": "https://api.siliconflow.cn/v1",
+  "catalog_source": "https://www.siliconflow.cn/models",
+  "api_source": "https://docs.siliconflow.cn/docs/api/chat-completions-post",
+  "rate_limit_source": "https://docs.siliconflow.cn/docs/userguide/faqs/rate-limit-and-upgradation",
+  "candidates": [
+    {
+      "candidate_id": "xing4-29b-siliconflow-free-synthetic",
+      "provider_label": "SiliconFlow",
+      "model": "XingChenAGI/Xing4.0-29B",
+      "structured_mode": "native",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_observed_cny_per_million_input": 0,
+      "price_observed_cny_per_million_output": 0
+    },
+    {
+      "candidate_id": "qwen3.5-4b-siliconflow-free-synthetic",
+      "provider_label": "SiliconFlow",
+      "model": "Qwen/Qwen3.5-4B",
+      "structured_mode": "native",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_classification": "free_model"
+    },
+    {
+      "candidate_id": "glm4-9b-siliconflow-free-synthetic",
+      "provider_label": "SiliconFlow",
+      "model": "THUDM/GLM-4-9B-0414",
+      "structured_mode": "native",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_classification": "free_model"
+    }
+  ]
+}
+

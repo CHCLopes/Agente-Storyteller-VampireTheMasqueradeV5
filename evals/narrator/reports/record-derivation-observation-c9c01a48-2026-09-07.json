@@ -1,0 +1,540 @@
+{
+  "document_kind": "record_derivation_observation_review",
+  "date": "2026-09-07",
+  "batch_id": "c9c01a48-a69d-43bd-9fa2-414ad0d6685b",
+  "evaluation_invocation_id": "8db00c2e-ec83-4c63-b80a-399db4be6599",
+  "scope": {
+    "analysis_completed": true,
+    "live_calls_by_agent": 0,
+    "new_generation": false,
+    "raw_artifacts_modified": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "automatic_repetition": false
+  },
+  "source": {
+    "summary": "eval-results/20260907T102110Z-8db00c2e-ec83-4c63-b80a-399db4be6599/summary.json",
+    "summary_sha256": "e9ffcc02d4f5d7f543282f9c89f70ae020da4265068f3e82fbba9ca45a13a42d",
+    "jsonl": "eval-results/20260907T102110Z-8db00c2e-ec83-4c63-b80a-399db4be6599/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+    "jsonl_sha256": "ad875eda442f3cd4d75d23733a079a53ab8a08397ae37800afc3371c15891f8d",
+    "preparation": "evals/narrator/reports/record-derivation-v1-2026-09-06.json",
+    "preparation_sha256": "ca32f991d822d9f3340b5d9cba7f2d153d9de60843ecae5c5ff34b593f35ab61"
+  },
+  "operational": {
+    "calls_made": 2,
+    "unique_invocation_ids": 2,
+    "diagnostics": 0,
+    "retries": 0,
+    "skips": 0,
+    "errors": 0,
+    "schema_valid": 2,
+    "final_schema_valid": 2,
+    "admitted": 2,
+    "process_exit_code": 0,
+    "route": {
+      "status": "verified",
+      "calls_made": 2,
+      "verified_calls": 2,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "usage": {
+      "status": "reported",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 2,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 3234,
+        "output_tokens": 956,
+        "total_tokens": 4190
+      },
+      "reported_subtotals": {
+        "input_tokens": 3234,
+        "output_tokens": 956,
+        "total_tokens": 4190
+      }
+    },
+    "cost": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 0,
+      "unavailable_calls": 2,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "local_adapter_utc_start_interval_seconds": 60.249545,
+    "batch_duration_seconds": 63.16501,
+    "timestamp_limit": "Local UTC observations, not provider arrival times or a stored monotonic trace.",
+    "outputs_below_token_limit": [
+      435,
+      521
+    ],
+    "parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 768
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "low"
+      },
+      "max_total_output_tokens": 1536,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    }
+  },
+  "offline_verification": {
+    "prepared_metadata_matches": true,
+    "record_metadata_matches": true,
+    "all_recorded_hashes_match_current_files": true,
+    "all_preparation_file_hashes_match_current_files": true,
+    "fixed_narratives_match_original": true,
+    "packets_rebuilt_exactly": 2,
+    "composed_proposals_rebuilt_exactly": 2,
+    "actor_checks_passed": 2,
+    "admission_checks_passed": 2,
+    "summary_recomputed_exactly": true,
+    "credentials_accessed": false,
+    "network_calls": 0,
+    "full_pytest_suite_rerun": false,
+    "why_no_full_suite": "No code changes; actual artifacts and authored in-memory counterexamples revalidated offline.",
+    "independent_review_completed": true
+  },
+  "semantic_fidelity_review": {
+    "status": "completed_by_agent",
+    "human_acceptance": null,
+    "overall": "hypothesis_not_supported_in_this_probe",
+    "reason": "Opening retains a presupposition of actual observation while the fixed narrative establishes only a suggestion.",
+    "registered_rule": "If any unsupported relationship recurs, the hypothesis is not supported in this probe.",
+    "confidentiality_evaluated": false
+  },
+  "cases": [
+    {
+      "case_id": "opening",
+      "narrative": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe.",
+      "records": {
+        "o": "unresolved",
+        "l": "corredor de pedra fria",
+        "s": "Um corredor de pedra fria iluminado por néon, com fumaça, chuva e um sussurro distante que indica presença observadora.",
+        "p": [],
+        "f": [
+          {
+            "k": "observation",
+            "s": "Corredor de pedra fria iluminado por néon, cheiro de fumaça e chuva, sussurro distante sugerindo alguém observando.",
+            "v": "public",
+            "i": 0.5,
+            "p": false,
+            "a": []
+          }
+        ],
+        "t": [
+          "Quem ou o que está observando ao longe?",
+          "De onde vem o sussurro distante?"
+        ],
+        "r": [],
+        "q": "O que você faz agora?"
+      },
+      "result": "certainty_recurrence",
+      "limits": {
+        "summary_words": 19,
+        "question_words": 5,
+        "facts": 1,
+        "threads": 2
+      },
+      "fields": [
+        {
+          "field": "o",
+          "assessment": "coherent",
+          "reason": "unresolved matches original mechanics."
+        },
+        {
+          "field": "l",
+          "assessment": "grounded",
+          "reason": "Only the corridor and cold stone from n; underground and old factory from bb98 were not repeated."
+        },
+        {
+          "field": "s",
+          "assessment": "certainty_strengthened",
+          "evidence": "indica presença observadora",
+          "source": "sugerindo que algo ou alguém observa ao longe",
+          "reason": "Strengthens the suggestion toward a presence; t[0] is the clearer presupposition and decisive finding.",
+          "ambiguity": "com fumaça, chuva may abbreviate the smell; no definitive claim of indoor rain is inferred by the review."
+        },
+        {
+          "field": "p",
+          "assessment": "coherent",
+          "reason": "Empty roster does not identify an unseen NPC."
+        },
+        {
+          "field": "f[0].s",
+          "assessment": "qualified",
+          "reason": "Retains sugerindo but narrows algo ou alguém to alguém. No specific NPC is named; loss of alternatives is a secondary concern."
+        },
+        {
+          "field": "t[0]",
+          "assessment": "unsupported_presupposition",
+          "evidence": "Quem ou o que está observando ao longe?",
+          "reason": "Asks for identity as though observation exists; n merely suggests it."
+        },
+        {
+          "field": "t[1]",
+          "assessment": "grounded",
+          "reason": "The whisper is established; its source remains open."
+        },
+        {
+          "field": "r",
+          "assessment": "coherent",
+          "reason": "No invented resolution."
+        },
+        {
+          "field": "q",
+          "assessment": "agency_preserved",
+          "reason": "Open invitation; no imposed player action."
+        }
+      ]
+    },
+    {
+      "case_id": "mara",
+      "narrative": "Mara fixa o olhar na sua postura, os dedos tremem levemente dentro do casaco. Ela respira fundo, deixa escapar um suspiro cansado e desliza, quase imperceptivelmente, um pedaço de papel amassado sobre o balcão. Não fala, mas o gesto indica que algo está prestes a ser revelado, enquanto a sirene ecoa na rua.",
+      "records": {
+        "o": "unresolved",
+        "l": "Bar fechado",
+        "s": "Mara coloca um papel amassado no balcão, respira fundo e observa, enquanto a sirene ecoa na rua.",
+        "p": [
+          "Mara"
+        ],
+        "f": [
+          {
+            "k": "npc_action",
+            "s": "Mara desliza papel amassado sobre o balcão",
+            "v": "public",
+            "i": 0.5,
+            "p": true,
+            "a": [
+              {
+                "n": "Mara",
+                "p": "present"
+              }
+            ]
+          },
+          {
+            "k": "observation",
+            "s": "Sirene ecoa na rua",
+            "v": "public",
+            "i": 0.3,
+            "p": false,
+            "a": []
+          }
+        ],
+        "t": [
+          "Mara entregará o endereço?",
+          "Qual será a reação do jogador ao papel?"
+        ],
+        "r": [],
+        "q": "O que você faz em resposta ao papel deixado por Mara?"
+      },
+      "result": "targeted_paper_address_error_not_repeated_with_qualitative_reservations",
+      "limits": {
+        "summary_words": 17,
+        "question_words": 11,
+        "facts": 2,
+        "threads": 2
+      },
+      "fields": [
+        {
+          "field": "o",
+          "assessment": "coherent",
+          "reason": "unresolved matches original mechanics."
+        },
+        {
+          "field": "l",
+          "assessment": "preserved",
+          "reason": "Exact original Bar fechado."
+        },
+        {
+          "field": "s",
+          "assessment": "supported_with_ambiguity",
+          "reason": "Actor, paper and counter preserved; no receipt by player. Verb enumeration differs from n, but has no explicit then/before marker, so a chronological contradiction is not asserted."
+        },
+        {
+          "field": "p",
+          "assessment": "preserved",
+          "reason": "Mara remains present."
+        },
+        {
+          "field": "f[0]",
+          "assessment": "grounded",
+          "reason": "Mara slides paper on counter; npc_action has a matching present actor."
+        },
+        {
+          "field": "f[1]",
+          "assessment": "grounded",
+          "reason": "Siren sounding in street is present in n; no actor invented."
+        },
+        {
+          "field": "t[0]",
+          "assessment": "legitimate_prior_context",
+          "reason": "Paraphrases the unresolved original question whether Mara will give the address. It does not equate the paper with the address."
+        },
+        {
+          "field": "t[1]",
+          "assessment": "qualitative_reservation",
+          "reason": "Generic player-reaction question redundant with q; no specific reaction is assigned and no NPC decision is transferred."
+        },
+        {
+          "field": "r",
+          "assessment": "coherent",
+          "reason": "Empty: no unsupported resolution in actual output."
+        },
+        {
+          "field": "q",
+          "assessment": "agency_preserved",
+          "reason": "Response to paper left on counter remains free; no receiving/picking up presumed."
+        }
+      ]
+    }
+  ],
+  "comparisons": {
+    "historical_only": true,
+    "causal_conclusion": false,
+    "opening_location": "unsupported underground/factory detail absent now",
+    "opening_certainty": "presupposition still present",
+    "mara_paper_address": "unsupported fact not repeated",
+    "mara_fact_count": "3 previously, 2 now, satisfying the stated maximum"
+  },
+  "unchanged_original_review_status": {
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "reason": "The original runtime artifact retains not_performed; this separate review records subsequent analysis without rewriting history."
+  },
+  "next_step": {
+    "offline_counterexamples_completed": true,
+    "repeat_probe": false,
+    "new_live_experiment_prepared": false,
+    "new_scope_decision_required_before_material_experiment": true,
+    "proposal_file": "evals/narrator/reports/record-evidence-hypothesis-c9c01a48-2026-09-07.md",
+    "proposal_status": "documented_not_implemented",
+    "human_dependency": "Specific authorization to prepare the proposed evidence/modality response envelope; current two-call observation and analysis are complete."
+  },
+  "offline_matrix": {
+    "executions": 9,
+    "schema_passed": 9,
+    "actor_passed": 9,
+    "admission_passed": 8,
+    "admission_rejected": 1,
+    "new_live_samples": 0,
+    "source_narrative_and_context_preserved": true,
+    "each_mutation_changes_only_one_field": true,
+    "semantic_labels_apply_only_to_indicated_dimension": true,
+    "rows": [
+      {
+        "case_id": "opening_original",
+        "origin": "model_observed",
+        "field": "unchanged",
+        "value": "s/t[0] observados",
+        "dimension": "Compressão de modalidade; t[0] pressupõe observação.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_original",
+        "origin": "model_observed",
+        "field": "unchanged",
+        "value": "registros observados",
+        "dimension": "Vínculo papel=endereço não reaparece; reação futura permanece livre.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_modal_summary",
+        "origin": "authored_counterexample",
+        "field": "s",
+        "value": "Um corredor de pedra fria, luzes de néon e um sussurro sugerem possível observação distante.",
+        "dimension": "Preserva modalidade nesta dimensão; demais campos permanecem iguais ao original.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_confirmed_summary",
+        "origin": "authored_counterexample",
+        "field": "s",
+        "value": "Um sussurro distante confirma que uma presença observa o corredor de pedra fria.",
+        "dimension": "Reforço inequívoco de certeza sem suporte.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_modal_thread",
+        "origin": "authored_counterexample",
+        "field": "t[0]",
+        "value": "Há algo ou alguém observando ao longe?",
+        "dimension": "Mantém a existência em dúvida.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_literal_fact_control",
+        "origin": "unchanged_field_control",
+        "field": "f[0].s",
+        "value": "Mara desliza papel amassado sobre o balcão",
+        "dimension": "Controle literal idêntico ao campo observado; não é amostra independente.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_address_fact",
+        "origin": "authored_counterexample",
+        "field": "f[0].s",
+        "value": "Mara desliza sobre o balcão um papel que contém o endereço.",
+        "dimension": "Vínculo papel=endereço inventado.",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_player_action",
+        "origin": "authored_counterexample",
+        "field": "t[0]",
+        "value": "Você pega o papel.",
+        "dimension": "Ação do jogador não declarada.",
+        "schema": true,
+        "actors": true,
+        "admitted": false,
+        "error": {
+          "code": "scene_player_agency_violation",
+          "field": "open_threads[0]",
+          "rule": "undeclared_player_action",
+          "concept": "take"
+        }
+      },
+      {
+        "case_id": "mara_premature_resolution",
+        "origin": "authored_counterexample",
+        "field": "r",
+        "value": [
+          "Descobrir se Mara entregará o endereço"
+        ],
+        "dimension": "Resolução não sustentada pela narrativa; saída real tem r=[].",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      }
+    ],
+    "root_confirmation": [
+      {
+        "case_id": "opening_original",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_original",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_modal_summary",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_confirmed_summary",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "opening_modal_thread",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_literal_fact_control",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_address_fact",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      },
+      {
+        "case_id": "mara_player_action",
+        "schema": true,
+        "actors": true,
+        "admitted": false,
+        "error": "scene_player_agency_violation"
+      },
+      {
+        "case_id": "mara_premature_resolution",
+        "schema": true,
+        "actors": true,
+        "admitted": true
+      }
+    ]
+  },
+  "out_of_scope_findings": [
+    {
+      "id": "premature_thread_resolution_counterexample",
+      "origin": "authored_offline_control_not_model_output",
+      "actual_response_resolved_threads": [],
+      "file": "api/scene_director_service.py",
+      "function": "_thread_resolution_is_grounded",
+      "observation": "Resolution marker matches revelado in prestes a ser revelado; unresolved marker misses it; shared token mara suffices. Authored premature resolution is admitted.",
+      "blocks_current_analysis": false,
+      "code_changed": false,
+      "recommendation": "Separate scoped regression investigation of prospective resolution before any runtime claim."
+    },
+    {
+      "id": "semantic_thread_duplication",
+      "origin": "in_memory_projection_only_not_executed_by_live_probe",
+      "observation": "Original thread remains and paraphrase merges as a separate label, yielding 3 strings rather than deleting the original.",
+      "live_state_projected": false,
+      "code_changed": false,
+      "blocks_current_analysis": false
+    }
+  ],
+  "final_review": {
+    "operational": "completed_without_contradiction",
+    "semantic": "completed_by_root_and_independent_reviewer",
+    "gate_boundary_matrix": "independently_executed_and_confirmed_by_root",
+    "documentation": "completed_without_actionable_findings",
+    "outstanding_in_scope_findings": 0
+  },
+  "final_integrity": {
+    "original_artifacts_and_preparation_hashes_preserved": true,
+    "preparation_file_hashes_checked": 15,
+    "local_document_links_checked": 15,
+    "autonomy_section_preserved": true,
+    "runtime_or_evaluator_code_changed": false,
+    "new_external_calls": 0
+  },
+  "supporting_document_sha256": {
+    "evals/narrator/reports/record-derivation-observation-c9c01a48-2026-09-07.md": "cd8938c4defe1a54ad383e9d804385f47e59a04dda43235b6008a8ee28a07c81",
+    "evals/narrator/reviews/modality-thread-matrix-c9c01a48-2026-09-07.md": "a1d9da83ae19519a65cebd5ca7b8256b6f4bf7e7e5ab875d84cab865a3c54881",
+    "evals/narrator/reports/record-evidence-hypothesis-c9c01a48-2026-09-07.md": "37db81d11a7f53044c18d215be14b17cb368c19c5558a14393d195fa6d903877"
+  }
+}

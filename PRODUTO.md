@@ -1,5 +1,8 @@
 # PRODUTO.md — Agente Storyteller V5
 
+> [!IMPORTANT]
+> Documento histórico, anterior às decisões ARC-001/LLM-001. Não use os provedores ou modelos abaixo como configuração vigente; consulte `README.md`.
+
 ## Visão
 
 O Agente Storyteller V5 é um motor de narrativa interativa local e offline para Vampiro: A Máscara 5ª Edição (VTM v5). Executa in-loco em LM Studio com 3 agentes especializados (Árbitro, Memória, Narrador), oferecendo uma experiência de RPG narrativo persistente via WebSocket e integração assíncrona, sem dependência de internet ou APIs externas.

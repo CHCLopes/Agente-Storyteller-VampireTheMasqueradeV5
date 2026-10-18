@@ -13,8 +13,18 @@ import webbrowser
 import asyncio
 import argparse
 import logging
-from pathlib import Path
 import httpx
+
+
+REQUIRED_LLM_SETTINGS = (
+    "LLM_TARGET_ID",
+    "LLM_PROVIDER_LABEL",
+    "LLM_MODEL",
+    "LLM_BASE_URL",
+    "LLM_ADAPTER_KIND",
+    "LLM_STRUCTURED_GENERATION",
+    "LLM_STREAMING",
+)
 
 # Configurar logging estruturado
 logging.basicConfig(
@@ -30,7 +40,6 @@ logger = logging.getLogger(__name__)
 
 class GameInitializerWithFeedback:
     def __init__(self, no_browser=False):
-        self.lm_studio_port = 1234
         self.backend_port = 8000
         self.frontend_url = f"http://localhost:{self.backend_port}"
         self.no_browser = no_browser
@@ -169,100 +178,11 @@ class GameInitializerWithFeedback:
         else:
             webbrowser.open(url)
 
-    def find_lm_studio(self) -> str | None:
-        """Verifica se LM Studio está instalado e retorna o executável"""
-        try:
-            cmd = 'where' if sys.platform == 'win32' else 'which'
-            res = subprocess.run([cmd, 'lm-studio'], capture_output=True, text=True)
-            if res.returncode == 0:
-                path = res.stdout.strip().split('\n')[0]
-                if os.path.exists(path):
-                    return path
-        except Exception:
-            pass
-
-        if sys.platform == 'win32':
-            user_profile = os.environ.get('USERPROFILE', '')
-            program_files = os.environ.get('ProgramFiles', '')
-            local_appdata = os.environ.get('LOCALAPPDATA', '')
-            
-            common_paths = [
-                os.path.join(local_appdata, 'Programs', 'lm-studio', 'LM Studio.exe'),
-                os.path.join(program_files, 'LM Studio', 'LM Studio.exe'),
-                os.path.join(user_profile, 'AppData', 'Local', 'Programs', 'lm-studio', 'LM Studio.exe'),
-            ]
-            for path in common_paths:
-                if os.path.exists(path):
-                    return path
-        return None
-
-    def start_lm_studio(self, path: str) -> bool:
-        """Tenta iniciar o processo do LM Studio"""
-        try:
-            if sys.platform == 'win32':
-                os.startfile(path)
-            else:
-                subprocess.Popen([path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            return True
-        except Exception:
-            return False
-
-    def _update_env_model(self, env_path: str, model_name: str):
-        """Grava o modelo detectado no .env, criando ou atualizando a linha LMSTUDIO_MODEL."""
-        lines = []
-        if os.path.exists(env_path):
-            with open(env_path, "r", encoding="utf-8") as f:
-                lines = f.readlines()
-
-        updated = False
-        for i, line in enumerate(lines):
-            if line.strip().startswith("LMSTUDIO_MODEL="):
-                lines[i] = f"LMSTUDIO_MODEL={model_name}\n"
-                updated = True
-                break
-
-        if not updated:
-            lines.append(f"LMSTUDIO_MODEL={model_name}\n")
-
-        with open(env_path, "w", encoding="utf-8") as f:
-            f.writelines(lines)
-
     def is_port_open(self, port: int) -> bool:
         """Verifica se uma porta local está aberta"""
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.settimeout(0.5)
             return s.connect_ex(('127.0.0.1', port)) == 0
-
-    def scan_local_models(self) -> list[str]:
-        """Procura modelos .gguf na pasta de cache padrão do LM Studio"""
-        models_dir = Path.home() / '.cache' / 'lm-studio' / 'models'
-        if not models_dir.exists():
-            return []
-        
-        gguf_files = []
-        for root, _, files in os.walk(models_dir):
-            for file in files:
-                if file.endswith('.gguf'):
-                    gguf_files.append(file.lower())
-        return gguf_files
-
-    def check_recommended_models(self, installed_files: list[str]) -> tuple[list[str], list[str]]:
-        """Verifica se os modelos recomendados estão instalados"""
-        recommended = {
-            'qwen': 'Qwen (ex: qwen2.5-1.5b-instruct)',
-            'deepseek': 'DeepSeek (ex: deepseek-r1-distill-qwen-7b)',
-            'llama': 'Llama (ex: llama-3.2-3b-instruct)'
-        }
-        found = []
-        missing = []
-        
-        for key, name in recommended.items():
-            is_present = any(key in f for f in installed_files)
-            if is_present:
-                found.append(name)
-            else:
-                missing.append(name)
-        return found, missing
 
     async def wait_for_port(self, port: int, timeout_sec: int = 15) -> bool:
         """Espera até que a porta especificada abra"""
@@ -272,6 +192,66 @@ class GameInitializerWithFeedback:
                 return True
             await asyncio.sleep(1)
         return False
+
+    async def check_llm_connection(self) -> bool:
+        """Valida o alvo explícito pelo diagnóstico canônico de prontidão."""
+        url = f"http://127.0.0.1:{self.backend_port}/api/llm/test-connection"
+        try:
+            # The readiness endpoint performs three fail-fast probes under one
+            # 60-second server-side budget.  Keep a small transport margin so
+            # a healthy but slower remote target is not reported as offline.
+            response = await self.client.post(url, timeout=70.0)
+            response.raise_for_status()
+            payload = response.json()
+        except (httpx.HTTPError, ValueError) as exc:
+            await self.send_log(
+                "error",
+                f"Falha ao executar o teste de conexão do alvo LLM: {exc}",
+                1,
+            )
+            return False
+
+        if not isinstance(payload, dict):
+            await self.send_log(
+                "error",
+                "O endpoint de teste do alvo LLM retornou uma resposta inválida.",
+                1,
+            )
+            return False
+
+        if payload.get("configured") is not True:
+            required = ", ".join(REQUIRED_LLM_SETTINGS)
+            detail = payload.get("message")
+            detail_suffix = f" Detalhe: {detail}" if isinstance(detail, str) else ""
+            await self.send_log(
+                "error",
+                f"Configuração LLM incompleta. Preencha explicitamente: {required}. "
+                "O perfil OpenRouter também exige LLM_ADAPTER_KIND=openrouter, "
+                "LLM_OPENROUTER_PROVIDER e LLM_API_KEY; o perfil Gemini exige "
+                "LLM_ADAPTER_KIND=gemini, o endpoint oficial, LLM_API_KEY e "
+                "LLM_CAMPAIGN_DATA_ALLOWED=true após revisão da política; o "
+                "perfil NVIDIA exige LLM_ADAPTER_KIND=nvidia, NVIDIA NIM, o "
+                "endpoint e modelo fixos, LLM_API_KEY e o mesmo opt-in explícito "
+                "após revisão da política."
+                f"{detail_suffix}",
+                1,
+            )
+            return False
+
+        if payload.get("ready") is not True or payload.get("success") is not True:
+            await self.send_log(
+                "error",
+                "O alvo LLM configurado não passou no diagnóstico de prontidão.",
+                1,
+            )
+            return False
+
+        await self.send_log(
+            "success",
+            "O alvo LLM configurado passou no diagnóstico de prontidão.",
+            1,
+        )
+        return True
 
     async def run_backend_server(self) -> bool:
         """Inicia o servidor FastAPI em background se ele não estiver rodando"""
@@ -309,79 +289,21 @@ class GameInitializerWithFeedback:
             logger.error("[✗] Erro crítico: Não foi possível iniciar o backend na porta 8000.")
             return False
 
-        await self.send_log("pending", "[0/5] Abrindo navegador...", 0)
+        await self.send_log("success", "[0/3] Backend disponível", 0)
+        await self.send_log("pending", "[1/3] Testando o alvo LLM configurado...", 1)
+        if not await self.check_llm_connection():
+            return False
+
+        await self.send_log("pending", "[2/3] Abrindo navegador...", 2)
         try:
             self.open_browser()
             await asyncio.sleep(1.0)
-            await self.send_log("success", "Navegador aberto com sucesso", 0)
+            await self.send_log("success", "Navegador aberto com sucesso", 2)
         except Exception as e:
-            await self.send_log("error", f"Falha ao abrir navegador: {str(e)}", 0)
+            await self.send_log("error", f"Falha ao abrir navegador: {str(e)}", 2)
             return False
 
-        await self.send_log("pending", "[1/5] Detectando LM Studio...", 1)
-        lm_path = self.find_lm_studio()
-        if not lm_path:
-            await self.send_log("error", "LM Studio não encontrado. Instale em https://lmstudio.ai/", 1)
-            return False
-        await self.send_log("success", f"LM Studio encontrado em: {lm_path}", 1)
-
-        await self.send_log("pending", "[2/5] Iniciando LM Studio...", 2)
-        if self.is_port_open(self.lm_studio_port):
-            await self.send_log("success", "LM Studio já está respondendo na porta 1234.", 2)
-            await self.send_log("success", "[3/5] Porta 1234 disponível", 3)
-        else:
-            await self.send_log("pending", "LM Studio offline. Iniciando processo local...", 2)
-            if not self.start_lm_studio(lm_path):
-                await self.send_log("error", "Não foi possível carregar o executável do LM Studio.", 2)
-                return False
-            
-            await self.send_log("pending", "[3/5] Testando porta 1234 (aguardando servidor)...", 3)
-            if await self.wait_for_port(self.lm_studio_port, timeout_sec=20):
-                await self.send_log("success", "LM Studio carregado e respondendo na porta 1234.", 2)
-                await self.send_log("success", "Porta 1234 ativada com sucesso.", 3)
-            else:
-                await self.send_log("error", "O servidor do LM Studio não respondeu na porta 1234 (timeout 20s).", 3)
-                return False
-
-        await self.send_log("pending", "[4/5] Verificando modelos necessários...", 4)
-        installed_files = self.scan_local_models()
-        found, missing = self.check_recommended_models(installed_files)
-        
-        if found:
-            await self.send_log("success", f"Modelos encontrados: {', '.join(found)}", 4)
-        if missing:
-            await self.send_log("warning", f"Aviso: Modelos recomendados em falta: {', '.join(missing)}", 4)
-
-        # Validação do LMSTUDIO_MODEL no .env
-        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
-        env_model = None
-        if os.path.exists(env_path):
-            with open(env_path, "r", encoding="utf-8") as ef:
-                for line in ef:
-                    if line.strip().startswith("LMSTUDIO_MODEL="):
-                        env_model = line.strip().split("=", 1)[1].strip()
-                        break
-        
-        if not env_model or env_model == "nome-do-modelo":
-            # Tenta detectar modelo carregado via API do LM Studio
-            detected_model = None
-            try:
-                resp = await self.client.get(f"http://127.0.0.1:{self.lm_studio_port}/v1/models", timeout=5.0)
-                if resp.status_code == 200:
-                    models_data = resp.json()
-                    if models_data.get("data"):
-                        detected_model = models_data["data"][0].get("id")
-            except Exception:
-                pass
-
-            if detected_model:
-                # Auto-configura o .env com o modelo detectado
-                self._update_env_model(env_path, detected_model)
-                await self.send_log("success", f"Modelo '{detected_model}' detectado e configurado automaticamente no .env", 4)
-            else:
-                await self.send_log("warning", "ATENÇÃO: LMSTUDIO_MODEL no .env ainda é 'nome-do-modelo'. Carregue um modelo no LM Studio e reinicie.", 4)
-
-        await self.send_log("success", "[5/5] Sistema Pronto! Boa Caçada! 🦇", 5)
+        await self.send_log("success", "[3/3] Sistema Pronto! Boa Caçada! 🦇", 3)
         return True
 
 if __name__ == '__main__':

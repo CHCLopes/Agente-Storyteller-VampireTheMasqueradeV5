@@ -1,0 +1,624 @@
+{
+  "document_kind": "summary_only_observation_analysis",
+  "recorded_at_utc": "2026-09-07T19:13:17.396923+00:00",
+  "status": "closed_with_fidelity_failure",
+  "batch_id": "21cf338b-5783-43a4-91ad-82f8bac86e96",
+  "run_dir": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16",
+  "case_id": "archive-vibration",
+  "purpose": "summary_only_qwen_probe",
+  "experiment_version": "record-summary-only-qwen-observation-v1",
+  "protocol": "record-summary-only-v1",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "full_record_derivation": false,
+  "actor_admission": "not_applied",
+  "launcher": {
+    "process_id": 26012,
+    "phase": "finished",
+    "finished_at_utc": "2026-09-07T19:04:30.3081925Z",
+    "exit_code": 0,
+    "credential_retained": false
+  },
+  "raw_artifacts": {
+    "summary.json": {
+      "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json",
+      "sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2"
+    },
+    "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": {
+      "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d"
+    }
+  },
+  "preparation_at_execution": {
+    "file": "evals/narrator/reports/record-summary-only-v1-2026-09-07.json",
+    "snapshot_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-close-21cf338b-9a_fald4\\evals\\narrator\\reports\\record-summary-only-v1-2026-09-07.json",
+    "snapshot_sha256": "eb85b90d6271c86fdb026945ed1ea2dbc8e79143e002638bee0bd13b2f791998",
+    "protected_preparation_fields_preserved": true,
+    "preparation_test_count": 336,
+    "tests_reexecuted_for_this_analysis": 0
+  },
+  "frozen_inputs": {
+    "dossier": {
+      "file": "evals/narrator/reports/record-summary-only-dossier-94a95216-2026-09-07.json",
+      "sha256": "4e7486ae1498e799b0b59997e2de73ff94fd3cabc7a9762416609923585079ea",
+      "body_sha256": "b95c1cb7e0bcf93f02a09d2f2a1a4df3b874d505a9c4748aad0722b630dc895f"
+    },
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "case": {
+      "file": "evals/narrator/record_inline_case_v1.json",
+      "sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+      "case_id": "archive-vibration"
+    },
+    "prompt": {
+      "variant": "record-summary-only-v1",
+      "file": "evals/narrator/prompts/record-summary-only-v1.md",
+      "file_sha256": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+      "sha256": "94c47c36b620628bb07b74f308adb6d556db7050f31d2aa2c262daa693c0a5d7"
+    },
+    "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "measurement_policy": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "max_words": 25,
+      "changes_exit_code": false,
+      "semantic_validation": false
+    },
+    "observation_policy": {
+      "max_error_body_bytes": 65536,
+      "raw_error_retained": false,
+      "raw_reasoning_retained": false
+    },
+    "implementation": [
+      {
+        "file": "scripts/narrator_summary_only.py",
+        "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "ec7113ffafd4dce96442d18494982afbd4cae352438c0d7bd08df0aab794a5d2"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "archive-vibration",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "case_file": "evals/narrator/record_inline_case_v1.json",
+          "case_sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+          "field": "narrative",
+          "narrative_sha256": "70adab37989c455858052582a4dba8e2edfa3fbce0d1d2ca8257a18aa37e8685"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "b7706e060b634d25235955eb43dd3720051916947b7ef508afb02fa75badc7bc",
+          "source_units_sha256": "b327fdb6be496eb5028dd640fd7ee9fa5e97e2d98e2288b612948146f9a4ec2b",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. "
+            },
+            {
+              "id": "n1",
+              "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 168
+          }
+        }
+      }
+    ]
+  },
+  "evaluator_at_execution": {
+    "file": "scripts/evaluate_narrator_summary_only.py",
+    "sha256": "662cfc8dd243053865f42fb10dfc38df539310e798fbbe30f5089cd014241b33",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "operational_result": {
+    "purpose": "summary_only_qwen_probe",
+    "probe_kind": "summary_only_qwen_probe",
+    "experiment_version": "record-summary-only-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluation_stage": "summary_only_qwen_probe",
+    "calls_made": 1,
+    "cases_skipped": 0,
+    "schema_valid": 1,
+    "instruction_measurements": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "word_count": 21,
+      "max_words": 25,
+      "within_word_limit": true,
+      "semantic_fidelity_evaluated": false
+    },
+    "transport_and_schema_passed": true,
+    "operational_probe_passed": true,
+    "availability_failure": false,
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1ym3vxbeafrkj8s5sp61s60",
+      "provider_code": null,
+      "model": "qwen/qwen3.8-27b",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 472,
+        "output_tokens": 39,
+        "total_tokens": 511,
+        "reasoning_tokens": null
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "mismatched_calls": 0,
+      "unavailable_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "reported",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 1,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 472,
+        "output_tokens": 39,
+        "total_tokens": 511
+      },
+      "reported_subtotals": {
+        "input_tokens": 472,
+        "output_tokens": 39,
+        "total_tokens": 511
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "process_exit_code": 0
+  },
+  "literal_response": {
+    "response_structure": {
+      "summary": "No arquivo municipal, luz vermelha ilumina mesa com pastas. Perto da porta fechada, vibração leve sugere possível motor do outro lado."
+    },
+    "summary_text": "No arquivo municipal, luz vermelha ilumina mesa com pastas. Perto da porta fechada, vibração leve sugere possível motor do outro lado.",
+    "character_count": 134,
+    "instruction_measurements": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "word_count": 21,
+      "max_words": 25,
+      "within_word_limit": true,
+      "semantic_fidelity_evaluated": false
+    }
+  },
+  "agent_semantic_review": {
+    "reviewer": "independent_agent_review",
+    "status": "completed_criteria_not_satisfied",
+    "raw_automated_review_unchanged": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "word_limit": {
+      "status": "satisfied",
+      "word_count": 21,
+      "character_count": 134,
+      "max_words": 25,
+      "operational_exit_changed": false
+    },
+    "fidelity": {
+      "status": "not_satisfied",
+      "findings": [
+        {
+          "field": "summary",
+          "source_id": "n0",
+          "source_quote": "a luz de uma lanterna vermelha",
+          "response_quote": "luz vermelha",
+          "classification": "unsupported_property_transfer",
+          "explanation": "The source attributes red to the lantern; the response attributes red to the emitted light. The latter is not established and is not a mere omission of the lantern."
+        }
+      ]
+    },
+    "supported_claims": [
+      {
+        "response_quote": "No arquivo municipal",
+        "source_id": "n0",
+        "assessment": "Location preserved."
+      },
+      {
+        "response_quote": "ilumina mesa com pastas",
+        "source_id": "n0",
+        "assessment": "Illumination preserved; mesa com pastas is a legitimate weaker compression of mesa coberta de pastas."
+      },
+      {
+        "response_quote": "Perto da porta fechada, vibração leve",
+        "source_id": "n1",
+        "assessment": "Vibration position and intensity and the closed door are preserved."
+      },
+      {
+        "response_quote": "sugere possível motor do outro lado",
+        "source_id": "n1",
+        "assessment": "Existence and position remain within the suggested possibility; neither is confirmed."
+      }
+    ],
+    "omitted_dimensions": [
+      {
+        "dimension": "motor operation",
+        "source_quote": "funcionando",
+        "status": "not_informative",
+        "omission_penalized": false
+      }
+    ],
+    "invented_player_or_npc_actions_detected": false,
+    "questions_and_modal_segmentation": "not_requested_not_evaluated",
+    "local_measurement_or_retention_defect_demonstrated": false,
+    "semantic_approval": false,
+    "runtime_approval": false,
+    "cap_001_approval": false
+  },
+  "descriptive_comparison": {
+    "basis_batch": "94a95216-9d0b-479e-85d3-e6c577ce4fa3",
+    "prior_words": 32,
+    "current_words": 21,
+    "prior_characters": 191,
+    "current_characters": 134,
+    "prior_text_fidelity": "preserved_literal_source_copy",
+    "current_text_fidelity": "unsupported_light_color",
+    "causal_comparison": false,
+    "model_superiority_demonstrated": false,
+    "task_and_system_and_schema_changed": true,
+    "questions_and_annotations_removed_not_reclassified": true
+  },
+  "operational_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-only-live-20260907\\artifact-audit.json",
+    "sha256": "53b96a0d6fb4c851df71b8eb1f90d5865bdf2ee2c38449ccd903bb17687e47f4",
+    "record": {
+      "batch_id": "21cf338b-5783-43a4-91ad-82f8bac86e96",
+      "run_dir": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16",
+      "finished_confirmed": true,
+      "launcher_finished_status": {
+        "exit_code": 0,
+        "at_utc": "2026-09-07T19:04:30.3081925Z",
+        "process_id": 26012,
+        "phase": "finished"
+      },
+      "audit_scope": "offline operational provenance, strict schema and literal word measurement; no semantic approval",
+      "audit_script_sha256": "7cc4bdeb4052aa587c9fdf8ef3aa9b4ddf635ce19c96ebd6f14d45b47c76d70e",
+      "working_directory": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+      "raw_artifact_hashes": {
+        "summary.json": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+        "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d"
+      },
+      "raw_artifacts_unchanged": true,
+      "preflight_matches_initial_final_preparation_and_raw_metadata_exactly": true,
+      "canonical_json_comparison_preserves_scalar_types": true,
+      "summary_reconstructed_exactly": true,
+      "strict_response_schema_revalidated": true,
+      "summary_text_preserved_literally": true,
+      "instruction_measurements_reconstructed_exactly": true,
+      "independent_frozen_regex_measurement_matches": true,
+      "preparation_fingerprints_verified": {
+        "scripts/narrator_summary_only.py": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182",
+        "scripts/evaluate_narrator_summary_only.py": "662cfc8dd243053865f42fb10dfc38df539310e798fbbe30f5089cd014241b33",
+        "scripts/run_groq_summary_only_probe.ps1": "6bc2628f98899d57f812f9fa1104d5908d475e84e2ba8fb793a0138907548e65",
+        "scripts/evaluate_narrator_models.py": "ec7113ffafd4dce96442d18494982afbd4cae352438c0d7bd08df0aab794a5d2",
+        "tests/test_summary_only_execution.py": "ca8d5da8455d011c9435427a7f2ae5f4c2139d6a2f6e48d34cef2b685b8678a9",
+        "tests/test_summary_only_runner.py": "95ec0f7835a978b4c23cac06608ebbe702548d99a3d543c7b415d92bba9ff7b2",
+        "tests/test_summary_only_replay_boundary.py": "2c5d8a468f1445eb64dcc28c792ff43686d140a218dd56f68c6102ea86b543ba",
+        "evals/narrator/prompts/record-summary-only-v1.md": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+        "evals/narrator/reports/record-summary-only-design-94a95216-2026-09-07.md": "3f64e1b183499dc8d7eab1389652e42a97fd576999b574f75418f82f7be1ef73",
+        "evals/narrator/reports/record-summary-only-dossier-94a95216-2026-09-07.json": "4e7486ae1498e799b0b59997e2de73ff94fd3cabc7a9762416609923585079ea"
+      },
+      "fingerprints": {
+        "scripts/narrator_summary_only.py": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182",
+        "scripts/evaluate_narrator_summary_only.py": "662cfc8dd243053865f42fb10dfc38df539310e798fbbe30f5089cd014241b33",
+        "scripts/run_groq_summary_only_probe.ps1": "6bc2628f98899d57f812f9fa1104d5908d475e84e2ba8fb793a0138907548e65",
+        "scripts/evaluate_narrator_models.py": "ec7113ffafd4dce96442d18494982afbd4cae352438c0d7bd08df0aab794a5d2",
+        "tests/test_summary_only_execution.py": "ca8d5da8455d011c9435427a7f2ae5f4c2139d6a2f6e48d34cef2b685b8678a9",
+        "tests/test_summary_only_runner.py": "95ec0f7835a978b4c23cac06608ebbe702548d99a3d543c7b415d92bba9ff7b2",
+        "tests/test_summary_only_replay_boundary.py": "2c5d8a468f1445eb64dcc28c792ff43686d140a218dd56f68c6102ea86b543ba",
+        "evals/narrator/prompts/record-summary-only-v1.md": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+        "evals/narrator/reports/record-summary-only-design-94a95216-2026-09-07.md": "3f64e1b183499dc8d7eab1389652e42a97fd576999b574f75418f82f7be1ef73",
+        "evals/narrator/reports/record-summary-only-dossier-94a95216-2026-09-07.json": "4e7486ae1498e799b0b59997e2de73ff94fd3cabc7a9762416609923585079ea",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "evals/narrator/record_inline_case_v1.json": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "historical_fingerprints_verified": {
+        "scripts/narrator_inline_evidence.py": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+        "scripts/evaluate_narrator_inline_evidence.py": "a771a2e8ba384c7de1b910d61ce2b094edbe5853a6b1eac6f246c7dbe3fcf907",
+        "scripts/run_groq_inline_evidence_probe.ps1": "30f0229909fdfa6c6b7e3f18a120307b6b4163adcd8878b8a7bf2359d98ca85d",
+        "tests/test_narrator_inline_evidence.py": "1ebe1049765328ca77f3cf6cba05dd605cece56d865418023a4555a7d9b5b7ff",
+        "tests/test_inline_evidence_execution.py": "d2f6ff0d6a7c10e7584f54c992725c8aa03598278f68417276417450f4833ca3",
+        "tests/test_inline_evidence_runner.py": "8580f01294df6021d23b686c545495120c278c2f3eab9f022e4ee852e0c8bb1e",
+        "tests/test_inline_evidence_replay_boundary.py": "2bbed5b1587da15ea7a5dfcccdbc9f54bf387f6e9c1601da7368ebec64d69763",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "evals/narrator/reports/record-inline-evidence-dossier-d1b9a968-2026-09-07.json": "e86fe2a035e4f3435fe8fda9794c9699eef37ac1da971fa65056fb8e99407088",
+        "evals/narrator/record_inline_case_v1.json": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-inline-evidence-v1.md": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+        "scripts/narrator_record_independent_cases.py": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+        "scripts/evaluate_narrator_record_independent_cases.py": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+        "scripts/run_groq_record_independent_cases_probe.ps1": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+        "scripts/narrator_record_derivation.py": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+        "tests/test_record_independent_cases.py": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+        "tests/test_record_independent_case_boundary.py": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+        "tests/test_record_independent_execution.py": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+        "tests/test_record_independent_runner.py": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+        "tests/test_record_independent_replay_boundary.py": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034",
+        "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+        "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "evals/narrator/record_independent_cases_v1.json": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+        "scripts/evaluate_narrator_inline_evidence_qwen.py": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+        "scripts/run_groq_inline_evidence_qwen_probe.ps1": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+        "tests/test_inline_evidence_qwen_execution.py": "ed822d24a5afc729044b7d565a23b9f2b855ae80b512211b2dff71bd5258efd8",
+        "tests/test_inline_evidence_qwen_runner.py": "c39742b4c0b62d3809a31226158805b6c40a951ecfde3697ca3c1e5be7bf7ccb",
+        "tests/test_inline_evidence_qwen_replay_boundary.py": "4d6068cc91d4c560271b95d33353c1755688cd5d31aadcdbf1c8c3c167611c0d",
+        "evals/narrator/reports/record-inline-evidence-qwen-design-6876955e-2026-09-07.md": "b0fd5834bf944e41a29583915daa3b19e65c155f5d89bb9837189dd69444d91c",
+        "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30"
+      },
+      "historical_raw_hashes_verified": {
+        "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/gpt-oss-120b-groq-free-synthetic-low.jsonl": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+        "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/summary.json": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f",
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/gpt-oss-120b-groq-free-synthetic-medium.jsonl": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/summary.json": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+        "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/summary.json": "0726add81d3e95543ba837e6f4bb7ad3a36385d96b1401b9c72feb7266615824",
+        "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/gpt-oss-120b-groq-free-synthetic-low.jsonl": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624",
+        "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/summary.json": "795cc05b6211fdbf0961d61b938fb3f14a02a8b688fb541c61584c8c1e98edee",
+        "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a"
+      },
+      "prior_preflight_audit": {
+        "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-only-live-20260907\\final-preflight-audit.json",
+        "sha256": "313f557a232cb18f7841fc0deeda89c49f27af7dc378a204d8ff52fe4a2aebbd"
+      },
+      "initial_preparation_evidence": {
+        "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-only-execution-20260907\\after.json",
+        "sha256": "6fd5b7eca41810a65abe2703085cfc0319afa0b8af30dfce33704155feb64e24"
+      },
+      "preparation_test_counts_checked_without_execution": {
+        "distinct": 336,
+        "new": 243,
+        "existing": 93,
+        "groups": [
+          82,
+          136,
+          118
+        ]
+      },
+      "request_reconstruction": {
+        "body_sha256": "b95c1cb7e0bcf93f02a09d2f2a1a4df3b874d505a9c4748aad0722b630dc895f",
+        "user_packet_sha256": "b7706e060b634d25235955eb43dd3720051916947b7ef508afb02fa75badc7bc",
+        "schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+        "exact_dossier_body_match": true,
+        "whole_user_packet_unchanged": true,
+        "changed_body_fields": [
+          "messages[0].content",
+          "response_format.json_schema.name",
+          "response_format.json_schema.schema"
+        ]
+      },
+      "calls_made": 1,
+      "cases_skipped": 0,
+      "max_calls": 1,
+      "max_output_tokens": 3072,
+      "reasoning_effort": "none",
+      "temperature": 0.65,
+      "automatic_retries": 0,
+      "fallback": false,
+      "diagnostics_executed": false,
+      "schema_valid": 1,
+      "response_structure": {
+        "summary": "No arquivo municipal, luz vermelha ilumina mesa com pastas. Perto da porta fechada, vibração leve sugere possível motor do outro lado."
+      },
+      "summary_characters": 134,
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 21,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "provider_observation": {
+        "schema": "storyteller.eval.record-budget-observation.v1",
+        "http_status": 200,
+        "request_id": "req_01m1ym3vxbeafrkj8s5sp61s60",
+        "provider_code": null,
+        "model": "qwen/qwen3.8-27b",
+        "finish_reason": "stop",
+        "usage": {
+          "input_tokens": 472,
+          "output_tokens": 39,
+          "total_tokens": 511,
+          "reasoning_tokens": null
+        },
+        "error_body": {
+          "status": "unavailable",
+          "complete": null,
+          "bytes": null,
+          "json_valid": null
+        },
+        "failed_generation": {
+          "status": "unavailable",
+          "present": null,
+          "characters": null,
+          "json_valid": null,
+          "error_position": null
+        }
+      },
+      "route_verification": {
+        "status": "verified",
+        "calls_made": 1,
+        "verified_calls": 1,
+        "mismatched_calls": 0,
+        "unavailable_calls": 0,
+        "identity_consistent": true
+      },
+      "usage_aggregate": {
+        "status": "reported",
+        "expected_calls": 1,
+        "calls_made": 1,
+        "reported_calls": 1,
+        "unavailable_calls": 0,
+        "totals": {
+          "input_tokens": 472,
+          "output_tokens": 39,
+          "total_tokens": 511
+        },
+        "reported_subtotals": {
+          "input_tokens": 472,
+          "output_tokens": 39,
+          "total_tokens": 511
+        }
+      },
+      "cost_aggregate": {
+        "status": "unavailable",
+        "expected_calls": 1,
+        "calls_made": 1,
+        "reported_calls": 0,
+        "unavailable_calls": 1,
+        "total_amount": null,
+        "reported_amount_subtotal": null,
+        "currency": null
+      },
+      "reasoning_tokens_status": "unreported_not_zero",
+      "timing": {
+        "raw_timestamps_preserved": {
+          "run_started_at": "2026-09-07T19:03:28.162563+00:00",
+          "adapter_started_at": "2026-09-07T19:04:28.661139+00:00",
+          "adapter_finished_at": "2026-09-07T19:04:29.869208+00:00",
+          "run_finished_at": "2026-09-07T19:04:29.873192+00:00"
+        },
+        "normalized_utc_timestamps": {
+          "run_started_at": "2026-09-07T19:03:28.162563+00:00",
+          "adapter_started_at": "2026-09-07T19:04:28.661139+00:00",
+          "adapter_finished_at": "2026-09-07T19:04:29.869208+00:00",
+          "run_finished_at": "2026-09-07T19:04:29.873192+00:00"
+        },
+        "run_start_to_adapter_start_wall_seconds": 60.498576,
+        "adapter_wall_seconds": 1.208069,
+        "local_elapsed_perf_counter_seconds": 1.209086,
+        "within_batch_start_gaps_seconds": [],
+        "start_gap_applicability": "not_applicable_single_call",
+        "frozen_code_initial_quiet_seconds": 60,
+        "frozen_code_deadline_seconds_after_wait_and_integrity": 60,
+        "exact_monotonic_wait_and_absolute_deadline_persisted": false,
+        "limitation": "UTC wall timestamps do not reconstruct the exact monotonic wait or absolute deadline and do not measure remote arrival time. Raw aware timestamps were preserved; normalization is report-only."
+      },
+      "process_exit_code": 0,
+      "operational_probe_passed": true,
+      "semantic_fidelity_review": {
+        "status": "not_performed",
+        "approval": null
+      },
+      "actor_admission": "not_applied",
+      "full_record_derivation": false,
+      "automated_gates_passed": false,
+      "runtime_promoted": false,
+      "cap_001_status": "not_evaluated",
+      "new_provider_calls_by_audit": 0,
+      "tests_executed_by_audit": 0,
+      "credentials_read": false,
+      "raw_error_or_reasoning_accessed": false,
+      "actionable_operational_contradictions": []
+    }
+  },
+  "next_step": {
+    "status": "preparation_in_progress",
+    "description": "Prepare an independently authored contrastive pair of new sources with the same summary-only SYSTEM, schema and parameters. Preparation is in progress, not ready for execution. Close archive-vibration without retry, prompt loop, effort/token escalation or a new send. Continuous authority remains valid; only credentials or direct human intervention can require the user.",
+    "current_batch_closed": true,
+    "another_send_performed": false,
+    "next_experiment_ready": false,
+    "new_generic_user_approval_required": false
+  },
+  "limits": [
+    "One observation and one fixed case do not establish a rate or generalization.",
+    "The joint task/SYSTEM/schema change does not isolate a causal component.",
+    "Questions, annotations, eight fields, actors, runtime and CAP-001 remain unapproved.",
+    "Reasoning token count is unavailable, not zero; cost is unavailable.",
+    "The 336 tests belong to preparation and were not rerun for this analysis."
+  ]
+}

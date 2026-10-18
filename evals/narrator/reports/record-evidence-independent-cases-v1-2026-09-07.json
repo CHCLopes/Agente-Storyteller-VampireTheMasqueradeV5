@@ -1,0 +1,871 @@
+{
+  "document_kind": "record_independent_cases_preparation",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T16:30:47.631421+00:00",
+  "status": "executed_closed",
+  "authorization": {
+    "source": "continuous_user_authority",
+    "new_observations_authorized": true,
+    "new_batch_approval_required": false,
+    "remaining_human_dependency": "secure credential entry"
+  },
+  "prepared_metadata": {
+    "purpose": "record_evidence_independent_cases_probe",
+    "probe_kind": "record_evidence_independent_cases_probe",
+    "experiment_version": "record-evidence-independent-cases-v1",
+    "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "support_validation_scope": "structural_only",
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_record_independent_cases.py",
+      "sha256": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low"
+    },
+    "evidence_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "low"
+      },
+      "max_total_output_tokens": 6144,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json",
+        "sha256": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+        "original_body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+        "requests": [
+          {
+            "case_id": "uncertain-signal",
+            "body_sha256": "dfeab91b18a02b969f887ff06877e576c6f6dc3fd1b55fcb652a1ec6ab5c4840"
+          },
+          {
+            "case_id": "sensory-evidence",
+            "body_sha256": "2a762328afd75a5951071f9d39cffeee329e3184cfeaec2cc86dc13333f1b40b"
+          }
+        ],
+        "changed_payload_fields": [
+          "messages[1].content"
+        ]
+      },
+      "baseline_dossier": {
+        "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+        "sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209"
+      },
+      "support_resolution_policy": {
+        "method": "unique_exact_target_quote",
+        "quote_protocol": "record-evidence-target-quotes-v1",
+        "matching": "literal_unicode_code_points",
+        "ambiguous_quote": "reject",
+        "missing_quote": "reject",
+        "records_rewritten": false,
+        "offsets_purpose": "audit_only",
+        "coverage_validation": false,
+        "entailment_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "corpus": {
+        "file": "record_independent_cases_v1.json",
+        "sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353"
+      },
+      "prompt": {
+        "variant": "record-evidence-claim-check-v1",
+        "file": "evals/narrator/prompts/record-evidence-claim-check-v1.md",
+        "sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839"
+      },
+      "response_schema_sha256": "225adcde7c70dbd5be868b06a8731fc59f00bf11de80cc9639a88d7573db15d8",
+      "provider_schema_sha256": "fe5e9738d12ca0b094643c04e45cdbf87aee17588b0889f75927ec8df663cff2",
+      "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+      "implementation": [
+        {
+          "file": "scripts/narrator_record_independent_cases.py",
+          "sha256": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/narrator_record_quote_evidence.py",
+          "sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58"
+        },
+        {
+          "file": "scripts/narrator_record_evidence.py",
+          "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+        },
+        {
+          "file": "scripts/narrator_record_derivation.py",
+          "sha256": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "692eb80bed0f0c9b96d52f22f5ec14f1147a9bd03b155bf583e9d643533328f7"
+        },
+        {
+          "file": "scripts/narrator_actor_contract.py",
+          "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "uncertain-signal",
+          "episode_id": "independent-uncertainty",
+          "turn_id": "derive-uncertainty",
+          "source": {
+            "case_binding": "record-independent-cases-v1",
+            "origin": "agent_authored_synthetic_cases",
+            "synthetic_only": true,
+            "corpus_id": "storyteller-record-independent-cases-v1",
+            "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+            "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+            "case_path": "/cases/0",
+            "case_id": "uncertain-signal",
+            "episode_id": "independent-uncertainty",
+            "turn_id": "derive-uncertainty",
+            "field": "narrative",
+            "narrative_sha256": "0fab6e6c72d44d20f2c8512650ba99861b069e381d6354bdc37c140b96dc865a",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "generation_context": {
+            "version": "record-evidence-v1",
+            "user_packet_sha256": "8406c7783c645b9f8df1ca1d1d856c19f48f4f3fd6b178010a811d8613710602",
+            "source_units_sha256": "299a9e3059c1bab58762a720409ad35c79d823833e43671763ecf1889f84b130",
+            "source_units": [
+              {
+                "id": "n0",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 0,
+                "end": 95,
+                "text": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento. "
+              },
+              {
+                "id": "n1",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 95,
+                "end": 186,
+                "text": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali."
+              },
+              {
+                "id": "a0",
+                "origin": "player_input",
+                "path": "/player_input/text",
+                "value": "Onde estou?"
+              },
+              {
+                "id": "m0",
+                "origin": "mechanics",
+                "path": "/expected_outcome/value",
+                "value": "unresolved"
+              },
+              {
+                "id": "c0",
+                "origin": "known_context",
+                "path": "/context/known_context/text",
+                "value": "A crônica é urbana, contemporânea e gótico-punk."
+              }
+            ],
+            "narrative_reconstructed_exactly": true,
+            "source": {
+              "case_binding": "record-independent-cases-v1",
+              "origin": "agent_authored_synthetic_cases",
+              "synthetic_only": true,
+              "corpus_id": "storyteller-record-independent-cases-v1",
+              "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+              "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+              "case_path": "/cases/0",
+              "case_id": "uncertain-signal",
+              "episode_id": "independent-uncertainty",
+              "turn_id": "derive-uncertainty",
+              "field": "narrative",
+              "narrative_sha256": "0fab6e6c72d44d20f2c8512650ba99861b069e381d6354bdc37c140b96dc865a",
+              "context_origin": "original_synthetic_corpus",
+              "protected_secrets_count": 0
+            },
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 385,
+              "omitted_background_details": 0
+            }
+          }
+        },
+        {
+          "case_id": "sensory-evidence",
+          "episode_id": "independent-sensory",
+          "turn_id": "derive-sensory",
+          "source": {
+            "case_binding": "record-independent-cases-v1",
+            "origin": "agent_authored_synthetic_cases",
+            "synthetic_only": true,
+            "corpus_id": "storyteller-record-independent-cases-v1",
+            "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+            "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+            "case_path": "/cases/1",
+            "case_id": "sensory-evidence",
+            "episode_id": "independent-sensory",
+            "turn_id": "derive-sensory",
+            "field": "narrative",
+            "narrative_sha256": "5db12d31eb1f50451261f84dbc5e4ca493728ecb3ef0b49bee7d02847608f79e",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "generation_context": {
+            "version": "record-evidence-v1",
+            "user_packet_sha256": "67686acf1d0bbbf56575a8987ff18dd21019083e1bed740e06c1d6054efb3b96",
+            "source_units_sha256": "592a45e5b1a43340d8095dd16cef101344943e7bb2ca7aa2543daa57e7ae34ca",
+            "source_units": [
+              {
+                "id": "n0",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 0,
+                "end": 96,
+                "text": "No interior da oficina deserta, há um cheiro de tinta fresca que permanece no ar daquele lugar. "
+              },
+              {
+                "id": "n1",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 96,
+                "end": 178,
+                "text": "Sobre a bancada da oficina, uma lâmpada de cor azul pisca de maneira intermitente."
+              },
+              {
+                "id": "a0",
+                "origin": "player_input",
+                "path": "/player_input/text",
+                "value": "Onde estou?"
+              },
+              {
+                "id": "m0",
+                "origin": "mechanics",
+                "path": "/expected_outcome/value",
+                "value": "unresolved"
+              },
+              {
+                "id": "c0",
+                "origin": "known_context",
+                "path": "/context/known_context/text",
+                "value": "A crônica é urbana, contemporânea e gótico-punk."
+              }
+            ],
+            "narrative_reconstructed_exactly": true,
+            "source": {
+              "case_binding": "record-independent-cases-v1",
+              "origin": "agent_authored_synthetic_cases",
+              "synthetic_only": true,
+              "corpus_id": "storyteller-record-independent-cases-v1",
+              "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+              "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+              "case_path": "/cases/1",
+              "case_id": "sensory-evidence",
+              "episode_id": "independent-sensory",
+              "turn_id": "derive-sensory",
+              "field": "narrative",
+              "narrative_sha256": "5db12d31eb1f50451261f84dbc5e4ca493728ecb3ef0b49bee7d02847608f79e",
+              "context_origin": "original_synthetic_corpus",
+              "protected_secrets_count": 0
+            },
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 381,
+              "omitted_background_details": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "preflight_revision": {
+    "reason": "Original independent narratives were19/18words, shorter than existing30word visible-text admission. Revised before any live call to31words each; neutral player question admitted without gate change.",
+    "source_snapshot": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-independent-minimum-9hhtqcpx",
+    "old_preparation_test_results_are_final": false
+  },
+  "verification": {
+    "distinct_tests_passed": 494,
+    "new_tests_passed": 237,
+    "existing_tests_passed": 257,
+    "failures": 0,
+    "skips": 0,
+    "full_repository_suite": false,
+    "groups": [
+      {
+        "files": [
+          "tests/test_record_independent_cases.py"
+        ],
+        "passed": 44,
+        "separate_group_seconds": [
+          1.54,
+          0.33
+        ]
+      },
+      {
+        "files": [
+          "tests/test_record_independent_case_boundary.py",
+          "tests/test_narrator_record_derivation_contract.py",
+          "tests/test_narrator_record_evidence_contract.py",
+          "tests/test_record_quote_evidence_contract.py"
+        ],
+        "passed": 261,
+        "seconds": 5.16,
+        "new": 47,
+        "existing": 214
+      },
+      {
+        "files": [
+          "tests/test_record_independent_execution.py"
+        ],
+        "passed": 42,
+        "seconds": 29.7
+      },
+      {
+        "files": [
+          "tests/test_record_independent_runner.py"
+        ],
+        "passed": 83,
+        "seconds": 188.28
+      },
+      {
+        "files": [
+          "tests/test_record_independent_replay_boundary.py",
+          "tests/test_record_medium_replay_boundary.py",
+          "tests/test_narrator_replay_skips.py"
+        ],
+        "passed": 64,
+        "seconds": 1.12,
+        "new": 21,
+        "existing": 43
+      }
+    ],
+    "warning": "pre-existing python_multipart PendingDeprecationWarning",
+    "independent_review": "no unresolved material findings after correcting nested provider observations in wrapper",
+    "preflight_audit": {
+      "metadata": {
+        "purpose": "record_evidence_independent_cases_probe",
+        "probe_kind": "record_evidence_independent_cases_probe",
+        "experiment_version": "record-evidence-independent-cases-v1",
+        "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+        "full_evaluation": false,
+        "synthetic_only": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated",
+        "automated_gates_passed": false,
+        "human_review_required": true,
+        "diagnostics_executed": false,
+        "automatic_retries": 0,
+        "max_calls": 2,
+        "repetitions": 1,
+        "causal_comparison": false,
+        "narrative_generation_calls": 0,
+        "support_validation_scope": "structural_only",
+        "evaluator": {
+          "file": "scripts/evaluate_narrator_record_independent_cases.py",
+          "sha256": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+          "python_version": "3.12.2",
+          "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+          "git_dirty": true
+        },
+        "candidate_policy": {
+          "adapter_kind": "groq",
+          "provider_label": "Groq",
+          "effective_provider": "Groq",
+          "upstream_provider": null,
+          "structured_mode": "native",
+          "require_zdr": false,
+          "allow_data_collection": true,
+          "campaign_data_eligible": false,
+          "expiration_date": null,
+          "reasoning_effort": "low"
+        },
+        "evidence_generation_parameters": {
+          "deadline_seconds": 60,
+          "minimum_inter_call_delay_seconds": 60,
+          "requested": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072
+          },
+          "transmitted": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072,
+            "reasoning_effort": "low"
+          },
+          "max_total_output_tokens": 6144,
+          "user_packet_budget": {
+            "estimated_tokens": 2000,
+            "method": "characters_divided_by_4"
+          }
+        },
+        "inputs": {
+          "dossier": {
+            "file": "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json",
+            "sha256": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+            "original_body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+            "requests": [
+              {
+                "case_id": "uncertain-signal",
+                "body_sha256": "dfeab91b18a02b969f887ff06877e576c6f6dc3fd1b55fcb652a1ec6ab5c4840"
+              },
+              {
+                "case_id": "sensory-evidence",
+                "body_sha256": "2a762328afd75a5951071f9d39cffeee329e3184cfeaec2cc86dc13333f1b40b"
+              }
+            ],
+            "changed_payload_fields": [
+              "messages[1].content"
+            ]
+          },
+          "baseline_dossier": {
+            "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+            "sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+            "body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209"
+          },
+          "support_resolution_policy": {
+            "method": "unique_exact_target_quote",
+            "quote_protocol": "record-evidence-target-quotes-v1",
+            "matching": "literal_unicode_code_points",
+            "ambiguous_quote": "reject",
+            "missing_quote": "reject",
+            "records_rewritten": false,
+            "offsets_purpose": "audit_only",
+            "coverage_validation": false,
+            "entailment_validation": false
+          },
+          "observation_policy": {
+            "max_error_body_bytes": 65536,
+            "raw_error_retained": false,
+            "raw_reasoning_retained": false
+          },
+          "manifest": {
+            "file": "groq_candidates_2026-09-05.json",
+            "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+          },
+          "corpus": {
+            "file": "record_independent_cases_v1.json",
+            "sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353"
+          },
+          "prompt": {
+            "variant": "record-evidence-claim-check-v1",
+            "file": "evals/narrator/prompts/record-evidence-claim-check-v1.md",
+            "sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839"
+          },
+          "response_schema_sha256": "225adcde7c70dbd5be868b06a8731fc59f00bf11de80cc9639a88d7573db15d8",
+          "provider_schema_sha256": "fe5e9738d12ca0b094643c04e45cdbf87aee17588b0889f75927ec8df663cff2",
+          "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+          "implementation": [
+            {
+              "file": "scripts/narrator_record_independent_cases.py",
+              "sha256": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada"
+            },
+            {
+              "file": "scripts/narrator_record_budget_observer.py",
+              "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+            },
+            {
+              "file": "scripts/narrator_record_quote_evidence.py",
+              "sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58"
+            },
+            {
+              "file": "scripts/narrator_record_evidence.py",
+              "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+            },
+            {
+              "file": "scripts/narrator_record_derivation.py",
+              "sha256": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857"
+            },
+            {
+              "file": "scripts/evaluate_narrator_models.py",
+              "sha256": "692eb80bed0f0c9b96d52f22f5ec14f1147a9bd03b155bf583e9d643533328f7"
+            },
+            {
+              "file": "scripts/narrator_actor_contract.py",
+              "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+            },
+            {
+              "file": "api/scene_director_service.py",
+              "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+            },
+            {
+              "file": "api/scene_service.py",
+              "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+            },
+            {
+              "file": "api/llm/adapters/groq.py",
+              "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+            },
+            {
+              "file": "api/llm/adapters/openai_compatible.py",
+              "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+            },
+            {
+              "file": "api/llm/contract.py",
+              "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+            }
+          ],
+          "cases": [
+            {
+              "case_id": "uncertain-signal",
+              "episode_id": "independent-uncertainty",
+              "turn_id": "derive-uncertainty",
+              "source": {
+                "case_binding": "record-independent-cases-v1",
+                "origin": "agent_authored_synthetic_cases",
+                "synthetic_only": true,
+                "corpus_id": "storyteller-record-independent-cases-v1",
+                "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+                "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+                "case_path": "/cases/0",
+                "case_id": "uncertain-signal",
+                "episode_id": "independent-uncertainty",
+                "turn_id": "derive-uncertainty",
+                "field": "narrative",
+                "narrative_sha256": "0fab6e6c72d44d20f2c8512650ba99861b069e381d6354bdc37c140b96dc865a",
+                "context_origin": "original_synthetic_corpus",
+                "protected_secrets_count": 0
+              },
+              "generation_context": {
+                "version": "record-evidence-v1",
+                "user_packet_sha256": "8406c7783c645b9f8df1ca1d1d856c19f48f4f3fd6b178010a811d8613710602",
+                "source_units_sha256": "299a9e3059c1bab58762a720409ad35c79d823833e43671763ecf1889f84b130",
+                "source_units": [
+                  {
+                    "id": "n0",
+                    "origin": "narrative",
+                    "path": "/fixed_narrative/text",
+                    "start": 0,
+                    "end": 95,
+                    "text": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento. "
+                  },
+                  {
+                    "id": "n1",
+                    "origin": "narrative",
+                    "path": "/fixed_narrative/text",
+                    "start": 95,
+                    "end": 186,
+                    "text": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali."
+                  },
+                  {
+                    "id": "a0",
+                    "origin": "player_input",
+                    "path": "/player_input/text",
+                    "value": "Onde estou?"
+                  },
+                  {
+                    "id": "m0",
+                    "origin": "mechanics",
+                    "path": "/expected_outcome/value",
+                    "value": "unresolved"
+                  },
+                  {
+                    "id": "c0",
+                    "origin": "known_context",
+                    "path": "/context/known_context/text",
+                    "value": "A crônica é urbana, contemporânea e gótico-punk."
+                  }
+                ],
+                "narrative_reconstructed_exactly": true,
+                "source": {
+                  "case_binding": "record-independent-cases-v1",
+                  "origin": "agent_authored_synthetic_cases",
+                  "synthetic_only": true,
+                  "corpus_id": "storyteller-record-independent-cases-v1",
+                  "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+                  "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+                  "case_path": "/cases/0",
+                  "case_id": "uncertain-signal",
+                  "episode_id": "independent-uncertainty",
+                  "turn_id": "derive-uncertainty",
+                  "field": "narrative",
+                  "narrative_sha256": "0fab6e6c72d44d20f2c8512650ba99861b069e381d6354bdc37c140b96dc865a",
+                  "context_origin": "original_synthetic_corpus",
+                  "protected_secrets_count": 0
+                },
+                "budget": {
+                  "scope": "user_packet_only",
+                  "method": "characters_divided_by_4",
+                  "limit": 2000,
+                  "estimated_tokens": 385,
+                  "omitted_background_details": 0
+                }
+              }
+            },
+            {
+              "case_id": "sensory-evidence",
+              "episode_id": "independent-sensory",
+              "turn_id": "derive-sensory",
+              "source": {
+                "case_binding": "record-independent-cases-v1",
+                "origin": "agent_authored_synthetic_cases",
+                "synthetic_only": true,
+                "corpus_id": "storyteller-record-independent-cases-v1",
+                "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+                "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+                "case_path": "/cases/1",
+                "case_id": "sensory-evidence",
+                "episode_id": "independent-sensory",
+                "turn_id": "derive-sensory",
+                "field": "narrative",
+                "narrative_sha256": "5db12d31eb1f50451261f84dbc5e4ca493728ecb3ef0b49bee7d02847608f79e",
+                "context_origin": "original_synthetic_corpus",
+                "protected_secrets_count": 0
+              },
+              "generation_context": {
+                "version": "record-evidence-v1",
+                "user_packet_sha256": "67686acf1d0bbbf56575a8987ff18dd21019083e1bed740e06c1d6054efb3b96",
+                "source_units_sha256": "592a45e5b1a43340d8095dd16cef101344943e7bb2ca7aa2543daa57e7ae34ca",
+                "source_units": [
+                  {
+                    "id": "n0",
+                    "origin": "narrative",
+                    "path": "/fixed_narrative/text",
+                    "start": 0,
+                    "end": 96,
+                    "text": "No interior da oficina deserta, há um cheiro de tinta fresca que permanece no ar daquele lugar. "
+                  },
+                  {
+                    "id": "n1",
+                    "origin": "narrative",
+                    "path": "/fixed_narrative/text",
+                    "start": 96,
+                    "end": 178,
+                    "text": "Sobre a bancada da oficina, uma lâmpada de cor azul pisca de maneira intermitente."
+                  },
+                  {
+                    "id": "a0",
+                    "origin": "player_input",
+                    "path": "/player_input/text",
+                    "value": "Onde estou?"
+                  },
+                  {
+                    "id": "m0",
+                    "origin": "mechanics",
+                    "path": "/expected_outcome/value",
+                    "value": "unresolved"
+                  },
+                  {
+                    "id": "c0",
+                    "origin": "known_context",
+                    "path": "/context/known_context/text",
+                    "value": "A crônica é urbana, contemporânea e gótico-punk."
+                  }
+                ],
+                "narrative_reconstructed_exactly": true,
+                "source": {
+                  "case_binding": "record-independent-cases-v1",
+                  "origin": "agent_authored_synthetic_cases",
+                  "synthetic_only": true,
+                  "corpus_id": "storyteller-record-independent-cases-v1",
+                  "corpus_file": "evals/narrator/record_independent_cases_v1.json",
+                  "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+                  "case_path": "/cases/1",
+                  "case_id": "sensory-evidence",
+                  "episode_id": "independent-sensory",
+                  "turn_id": "derive-sensory",
+                  "field": "narrative",
+                  "narrative_sha256": "5db12d31eb1f50451261f84dbc5e4ca493728ecb3ef0b49bee7d02847608f79e",
+                  "context_origin": "original_synthetic_corpus",
+                  "protected_secrets_count": 0
+                },
+                "budget": {
+                  "scope": "user_packet_only",
+                  "method": "characters_divided_by_4",
+                  "limit": 2000,
+                  "estimated_tokens": 381,
+                  "omitted_background_details": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "requests": [
+        {
+          "case_id": "uncertain-signal",
+          "body_sha256": "dfeab91b18a02b969f887ff06877e576c6f6dc3fd1b55fcb652a1ec6ab5c4840"
+        },
+        {
+          "case_id": "sensory-evidence",
+          "body_sha256": "2a762328afd75a5951071f9d39cffeee329e3184cfeaec2cc86dc13333f1b40b"
+        }
+      ],
+      "changed_body_paths": [
+        "/messages/1/content"
+      ],
+      "historical_raw_artifacts_preserved": {
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/gpt-oss-120b-groq-free-synthetic-medium.jsonl": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/summary.json": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae"
+      },
+      "deliberate_shared_deltas": {
+        "scripts/narrator_record_derivation.py": {
+          "added": 6,
+          "removed": 0,
+          "before_sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+          "after_sha256": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857"
+        },
+        "scripts/evaluate_narrator_models.py": {
+          "added": 12,
+          "removed": 0,
+          "before_sha256": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424",
+          "after_sha256": "692eb80bed0f0c9b96d52f22f5ec14f1147a9bd03b155bf583e9d643533328f7"
+        }
+      },
+      "criteria_sha256": "7b5a33984f3d289a394b5286ed905ea68da1f4919d86866fd53e2afa95f8df42"
+    },
+    "historical_packet_parity": {
+      "wires_byte_identical": 6,
+      "audits_identical": 6,
+      "schemas_identical": 3,
+      "historical_low_and_medium_bodies_identical": true,
+      "snapshot": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-independent-case-boundary-oryfv7w6"
+    },
+    "real_empty_key_integration": {
+      "verification": "real_wrapper_and_cli_empty_secure_string",
+      "preparation_revision": "minimum_narrative_length_before_first_independent_live_call",
+      "exit_code": 3,
+      "stage": "credential validation",
+      "preflight_passed": true,
+      "key_present_in_child_environment": false,
+      "supplied_secure_string_empty": true,
+      "stderr_empty": true,
+      "new_artifact_paths": 0,
+      "removed_artifact_paths": 0,
+      "provider_calls": 0,
+      "executor": {
+        "file": "scripts/evaluate_narrator_record_independent_cases.py",
+        "sha256": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0"
+      },
+      "wrapper": {
+        "file": "scripts/run_groq_record_independent_cases_probe.ps1",
+        "sha256": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2"
+      },
+      "corpus_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+      "dossier_sha256": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+      "executor_hash_unchanged_after_verification": true,
+      "raw_logs_retained": false,
+      "credentials_retained": false
+    }
+  },
+  "files": {
+    "scripts/narrator_record_independent_cases.py": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+    "scripts/evaluate_narrator_record_independent_cases.py": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+    "scripts/run_groq_record_independent_cases_probe.ps1": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+    "scripts/narrator_record_derivation.py": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+    "scripts/evaluate_narrator_models.py": "692eb80bed0f0c9b96d52f22f5ec14f1147a9bd03b155bf583e9d643533328f7",
+    "tests/test_record_independent_cases.py": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+    "tests/test_record_independent_case_boundary.py": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+    "tests/test_record_independent_execution.py": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+    "tests/test_record_independent_runner.py": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+    "tests/test_record_independent_replay_boundary.py": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034"
+  },
+  "interactive_launcher": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-independent-live-20260907\\launch-independent.ps1",
+    "sha256": "ff5be6f99465870d316c33099d253ec3d337ac27da69a269f65149b341ab79b5",
+    "status": "finished",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-independent-live-20260907\\status.json",
+    "credential_retained": false,
+    "launch": {
+      "interactive_credential_prompt": true,
+      "process_id": 24764,
+      "launched_at_utc": "2026-09-07T16:31:21.9336559Z",
+      "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-independent-live-20260907\\launch-independent.ps1",
+      "purpose": "record_evidence_independent_cases_probe"
+    },
+    "latest_observed_status": {
+      "exit_code": 1,
+      "process_id": 24764,
+      "phase": "finished",
+      "at_utc": "2026-09-07T16:33:52.4228205Z"
+    }
+  },
+  "next_step": {
+    "action": "At most two fixed independent cases, no retry; inspect current launcher status before any dispatch.",
+    "case_ids": [
+      "uncertain-signal",
+      "sensory-evidence"
+    ],
+    "stop_after_batch": true,
+    "stop_on_first_operational_or_admission_failure": true,
+    "target_omission_is": "non_informative_not_proved_success",
+    "criteria": "evals/narrator/reports/record-evidence-independent-cases-design-84ea2c0c-2026-09-07.md",
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "execution_result": {
+    "batch_id": "d1b9a968-d9f1-4c98-94b8-7a9bdd441ea8",
+    "report": "evals/narrator/reports/record-evidence-independent-cases-observation-d1b9a968-2026-09-07.md",
+    "exit_code": 1
+  }
+}

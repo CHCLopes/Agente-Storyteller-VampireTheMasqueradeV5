@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-27",
+  "status": "authorized_offline_preparation_live_only_after_new_free_daily_window",
+  "human_authorization": [
+    "Aceito HYP-005-L2-B: Nemotron inelegível; Liquid e DeepSeek inconclusivos e inelegíveis neste lote; nenhum candidato elegível; nenhum narrador admitido.",
+    "Aprovo HYP-005-L3-B: no máximo um retry estrito da mesma requisição somente para provider_unavailable/openrouter_provider_overloaded, máximo teórico de 48 chamadas gratuitas, preservando todos os demais gates e executando somente em nova janela diária gratuita."
+  ],
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L3-STRICT-OVERLOAD-RETRY",
+  "selected_option": "L3-B",
+  "supersedes": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "single_changed_variable": {
+    "name": "overload_retry_policy",
+    "from": "zero_retries",
+    "to": "one_same_request_retry_only_for_provider_unavailable_openrouter_provider_overloaded"
+  },
+  "live_inference_authorized": true,
+  "execution_window": "new_free_daily_window_only",
+  "credential_status": "pending",
+  "provider_calls_at_gate_creation": 0,
+  "paid_spend_authorized": false,
+  "constraints": {
+    "synthetic_only": true,
+    "models": 3,
+    "cases_per_model": 8,
+    "slots": 24,
+    "max_attempts_per_slot": 2,
+    "max_calls": 48,
+    "max_output_tokens_per_call": 2048,
+    "max_total_output_tokens": 98304,
+    "retry_category": "provider_unavailable",
+    "retry_code": "openrouter_provider_overloaded",
+    "retry_same_request_body": true,
+    "retry_same_target": true,
+    "retry_other_errors": false,
+    "repair": false,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "dynamic_router": false,
+    "target_switch": false,
+    "reasoning_policy_changed": false,
+    "reported_cost_must_equal_zero_openrouter_credits": true,
+    "aggregate_with_prior_hypotheses": false,
+    "best_of_selection": false,
+    "admission_threshold_per_candidate": "8/8"
+  }
+}
+

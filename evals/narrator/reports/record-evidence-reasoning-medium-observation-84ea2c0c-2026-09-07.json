@@ -1,0 +1,395 @@
+{
+  "document_kind": "record_reasoning_medium_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T15:57:58.981605+00:00",
+  "status": "closed_provider_schema_error_semantics_not_evaluable",
+  "batch_id": "84ea2c0c-4a90-4213-ac80-1c9bcacc2910",
+  "evaluation_invocation_id": "6a663ad4-0cf0-46a3-8ee5-fcd83d721f38",
+  "source": {
+    "directory": "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-medium.jsonl": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+      "summary.json": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22"
+    }
+  },
+  "scope": {
+    "calls": 1,
+    "retries": 0,
+    "fallback": false,
+    "raw_artifacts_modified": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "provider_observation": {
+    "schema": "storyteller.eval.record-budget-observation.v1",
+    "http_status": 400,
+    "request_id": "req_01m1y8z10kezpvxctck41d4z4z",
+    "provider_code": "json_validate_failed",
+    "model": null,
+    "finish_reason": null,
+    "usage": {
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "reasoning_tokens": null
+    },
+    "error_body": {
+      "status": "complete",
+      "complete": true,
+      "bytes": 981,
+      "json_valid": true
+    },
+    "failed_generation": {
+      "status": "observed",
+      "present": true,
+      "characters": 586,
+      "json_valid": true,
+      "error_position": null
+    }
+  },
+  "llm_error": {
+    "category": "invalid_request",
+    "code": "groq_json_validate_failed",
+    "phase": "connect",
+    "safe_message": "LLM target rejected the request.",
+    "partial_output": false,
+    "external_id": "req_01m1y8z10kezpvxctck41d4z4z",
+    "status_code": 400,
+    "retryable": false,
+    "retry_after_seconds": null,
+    "rate_limit": null
+  },
+  "evidence": {
+    "invocation_id": "d5ed8108-e4e8-4651-b8aa-838e61d0a7a5",
+    "requested_target": {
+      "profile": "record-reasoning-medium-gpt-oss-120b-groq-free-synthetic-medium",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b"
+    },
+    "adapter": {
+      "name": "groq-chat-completions-record-medium-probe",
+      "version": "1.0"
+    },
+    "effective_model": {
+      "value": null,
+      "source": "unknown"
+    },
+    "effective_provider": {
+      "value": "Groq",
+      "source": "observed"
+    },
+    "started_at": "2026-09-07T15:49:35.706104+00:00",
+    "finished_at": "2026-09-07T15:49:43.333180+00:00",
+    "usage": {
+      "status": "unavailable",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "source": null
+    },
+    "cost": {
+      "status": "unavailable",
+      "amount": null,
+      "currency": null,
+      "source": null
+    }
+  },
+  "verification": {
+    "audit_kind": "offline_sanitized_artifact_integrity",
+    "batch_id": "84ea2c0c-4a90-4213-ac80-1c9bcacc2910",
+    "evaluation_invocation_id": "6a663ad4-0cf0-46a3-8ee5-fcd83d721f38",
+    "artifact_directory": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38",
+    "artifact_files": {
+      "gpt-oss-120b-groq-free-synthetic-medium.jsonl": {
+        "bytes": 13249,
+        "sha256": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8"
+      },
+      "summary.json": {
+        "bytes": 13554,
+        "sha256": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22"
+      }
+    },
+    "raw_artifacts_unchanged": true,
+    "preflight_exactly_matches_summary_and_all_rows": true,
+    "summary_reconstruction_exact": true,
+    "recorded_file_sha256": {
+      "scripts/narrator_record_medium_observer.py": "94d73c898c65157273d8b71b3888c07607b408c3b492c3a9248486573ff87765",
+      "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+      "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+      "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+      "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+      "scripts/evaluate_narrator_models.py": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424",
+      "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+      "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+      "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+      "scripts/evaluate_narrator_record_medium.py": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c",
+      "evals/narrator/reports/record-evidence-reasoning-medium-dossier-9192b8fa-2026-09-07.json": "9ef9ed8115a28fc6e4b36bab0fb629f7b3e8b311afa23defa50217eb447d5d51",
+      "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+      "evals/narrator/groq_medium_observation_profile_2026-09-07.json": "c85fd64d933907a948cf6f666fb98fd17859dc4a23fc4f9c099b231aef22e935",
+      "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+      "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+      "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288"
+    },
+    "current_file_sha256": {
+      "scripts/narrator_record_medium_observer.py": "94d73c898c65157273d8b71b3888c07607b408c3b492c3a9248486573ff87765",
+      "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+      "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+      "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+      "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+      "scripts/evaluate_narrator_models.py": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424",
+      "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+      "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+      "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+      "scripts/evaluate_narrator_record_medium.py": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c",
+      "evals/narrator/reports/record-evidence-reasoning-medium-dossier-9192b8fa-2026-09-07.json": "9ef9ed8115a28fc6e4b36bab0fb629f7b3e8b311afa23defa50217eb447d5d51",
+      "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+      "evals/narrator/groq_medium_observation_profile_2026-09-07.json": "c85fd64d933907a948cf6f666fb98fd17859dc4a23fc4f9c099b231aef22e935",
+      "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+      "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+      "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288"
+    },
+    "recorded_files_match_current": true,
+    "verified_recorded_file_count": 19,
+    "prompt_body_sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839",
+    "prompt_file_sha256": "b392c740bf0977ef9a65c1283ac04b1ff0e2e3185ac1da039cc6a45486e76ea2",
+    "body_sha256": "5037c4c4e040c6ce800d848217951374ef19489c18bd4857aaf5ca652e13cdaf",
+    "reconstructed_request_matches_frozen_dossier": true,
+    "model_requested": {
+      "profile": "record-reasoning-medium-gpt-oss-120b-groq-free-synthetic-medium",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b"
+    },
+    "adapter_recorded": {
+      "name": "groq-chat-completions-record-medium-probe",
+      "version": "1.0"
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "medium"
+    },
+    "evidence_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "medium"
+      },
+      "max_total_output_tokens": 3072,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "source_candidate": "gpt-oss-120b-groq-free-synthetic-low",
+    "timing": {
+      "run_started_at": "2026-09-07T15:48:35.122895+00:00",
+      "run_finished_at": "2026-09-07T15:49:43.336191+00:00",
+      "adapter_started_at": "2026-09-07T15:49:35.706104+00:00",
+      "adapter_finished_at": "2026-09-07T15:49:43.333180+00:00",
+      "run_elapsed_utc_seconds": 68.213296,
+      "run_start_to_adapter_start_utc_seconds": 60.583209,
+      "adapter_interval_utc_seconds": 7.627076,
+      "local_latency_perf_counter_seconds": 7.631969,
+      "previous_batch_id": "9192b8fa-398a-4b72-9d37-b91f1963bf99",
+      "previous_adapter_started_at": "2026-09-07T15:23:59.572129+00:00",
+      "previous_adapter_finished_at": "2026-09-07T15:24:02.395449+00:00",
+      "previous_start_to_current_start_utc_seconds": 1536.133975,
+      "previous_finish_to_current_start_utc_seconds": 1533.310655,
+      "initial_quiet_period_configured_seconds": 60,
+      "actual_monotonic_quiet_wait_persisted": false,
+      "deadline_configured_seconds_after_pacing": 60,
+      "historical_absolute_request_deadline_persisted": false,
+      "limitation": "UTC durations include local preparation/transport overhead and are not remote server arrival times or a separately measured sleep; the frozen code uses perf_counter and creates its 60-second deadline after pacing."
+    },
+    "automated_counts": {
+      "calls_made": 1,
+      "schema_valid": 0,
+      "envelope_valid": 0,
+      "final_schema_valid": 0,
+      "admitted": 0,
+      "cases_skipped": 0,
+      "process_exit_code": 1,
+      "operational_probe_passed": false,
+      "transport_and_schema_passed": false
+    },
+    "error": {
+      "category": "invalid_request",
+      "code": "groq_json_validate_failed",
+      "phase": "connect",
+      "safe_message": "LLM target rejected the request.",
+      "partial_output": false,
+      "external_id": "req_01m1y8z10kezpvxctck41d4z4z",
+      "status_code": 400,
+      "retryable": false,
+      "retry_after_seconds": null,
+      "rate_limit": null
+    },
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 400,
+      "request_id": "req_01m1y8z10kezpvxctck41d4z4z",
+      "provider_code": "json_validate_failed",
+      "model": null,
+      "finish_reason": null,
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "reasoning_tokens": null
+      },
+      "error_body": {
+        "status": "complete",
+        "complete": true,
+        "bytes": 981,
+        "json_valid": true
+      },
+      "failed_generation": {
+        "status": "observed",
+        "present": true,
+        "characters": 586,
+        "json_valid": true,
+        "error_position": null
+      }
+    },
+    "route_verification": {
+      "status": "unavailable",
+      "calls_made": 1,
+      "verified_calls": 0,
+      "unavailable_calls": 1,
+      "mismatched_calls": 0,
+      "identity_consistent": null
+    },
+    "usage_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "generated_record_fields_absent": [
+      "response_envelope",
+      "derived_records",
+      "support_validation",
+      "composed_proposal"
+    ],
+    "interpretation": {
+      "failed_generation_json_valid_is_not_schema_valid": true,
+      "effective_model_unknown": true,
+      "provider_observed": "Groq",
+      "semantic_fidelity_assessable": false,
+      "support_coverage_assessable": false,
+      "finish_reason_unknown": true,
+      "token_usage_unknown": true,
+      "truncation_not_established": true,
+      "stop_rule": "Medium line closed after the single configured call; no new call, retry or budget/prompt escalation."
+    },
+    "audit_actions": {
+      "provider_calls": 0,
+      "credentials_read": false,
+      "environment_files_read": false,
+      "raw_provider_error_or_failed_generation_recovered": false,
+      "code_or_docs_edited": false
+    },
+    "contradictions": []
+  },
+  "console_observation": {
+    "source": "authenticated Groq Console Logs visible UI",
+    "url": "https://console.groq.com/dashboard/logs?cursor=&page_size=1000",
+    "observed_date": "2026-09-07",
+    "correlation": {
+      "local_request_id": "req_01m1y8z10kezpvxctck41d4z4z",
+      "visible_request_label": "req_0...4z4z",
+      "matching_fields": [
+        "request time 12:49:35 UTC-03",
+        "request suffix 4z4z",
+        "model",
+        "HTTP status"
+      ],
+      "full_request_id_expanded": false
+    },
+    "request_time_local": "2026-09-07T12:49:35-03:00",
+    "model": "openai/gpt-oss-120b",
+    "http_status": 400,
+    "input_tokens": 2936,
+    "output_tokens": 3072,
+    "ttft_seconds": 0.377679,
+    "latency_seconds": 6.873564,
+    "error_code": "json_validate_failed",
+    "error_type": "invalid_request_error",
+    "validation_detail": "jsonschema: '' does not validate with /required: missing properties: 'supports'",
+    "raw_error_or_failed_generation_exported": false,
+    "reasoning_text_read": false,
+    "local_api_artifact_overwritten": false
+  },
+  "interactive_final_status": {
+    "at_utc": "2026-09-07T15:49:43.7707218Z",
+    "phase": "finished",
+    "process_id": 21268,
+    "exit_code": 1
+  },
+  "stages": {
+    "provider_schema": "rejected_missing_required_supports_per_console",
+    "local_schema": "not_reached",
+    "support_envelope": "not_reached",
+    "final_schema": "not_reached",
+    "admission": "not_reached",
+    "semantic_fidelity": "not_evaluable",
+    "support_coverage": "not_evaluable"
+  },
+  "interpretation": {
+    "json_valid_means": "Python json.loads success only; not schema compliance",
+    "api_usage_model_finish": "unavailable; kept as originally recorded",
+    "console_output_reaches_ceiling": true,
+    "ceiling_caused_omission": "plausible hypothesis, not proved",
+    "missing_supports_cause": "provider validation message visible in Console",
+    "narrative_quality_improved_or_worsened": "not_evaluable",
+    "low_vs_medium_comparison": "Historical single-case observations, not causal A/B",
+    "local_defect_demonstrated": false,
+    "cost": "unavailable"
+  },
+  "next_step": {
+    "opening_prompt_effort_line": "closed",
+    "automatic_high_or_token_or_system_escalation": false,
+    "continuity": "Prepare a bounded independent-case observation under continuous authority; no retry of this request and no product adoption."
+  }
+}

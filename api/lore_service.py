@@ -1,70 +1,58 @@
-import re
-import os
-import json
+from __future__ import annotations
+
+from .catalog_models import CatalogContextCandidate, CatalogDomain, CatalogRelevanceSignals
 from .rules_service import PlayerSheetModel, V5ActionPayload
+from .turn_models import RecordReference, Visibility
 
-_CACHE = {}
 
-def _load_catalog(name: str) -> dict:
-    if name not in _CACHE:
-        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogs", f"{name}.json")
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                _CACHE[name] = json.load(f)
-        except Exception:
-            _CACHE[name] = {}
-    return _CACHE[name]
+def _source_ref(domain: CatalogDomain, entry_id: str) -> tuple[RecordReference, ...]:
+    return (RecordReference(record_id=f"catalog:{domain.value}/{entry_id}", record_type="catalog_entry", relation="derived_from"),)
 
-def get_contextual_lore(user_input: str, payload: V5ActionPayload, player_sheet: PlayerSheetModel) -> str:
-    blocks = []
-    
+
+def get_contextual_lore_candidates(user_input: str, payload: V5ActionPayload, player_sheet: PlayerSheetModel) -> tuple[CatalogContextCandidate, ...]:
+    """Produce typed candidates before ranking, budgeting, or truncation."""
+    candidates: list[CatalogContextCandidate] = []
     if payload.is_feeding:
         from .physiology_service import get_predator_model
         pred = get_predator_model(player_sheet.predator_type)
         if pred:
-            blocks.append(f"Predador ({player_sheet.predator_type}): {pred.narrative_data.hunting_method}")
-            
+            entry_id = player_sheet.predator_type
+            candidates.append(CatalogContextCandidate(domain=CatalogDomain.PREDATOR_TYPE, entry_id=entry_id, minimal_text=f"Predador ({entry_id}): {pred.narrative_data.hunting_method}", visibility=Visibility.PLAYER, signals=CatalogRelevanceSignals(rule_triggered=True), importance=0.8, source_refs=_source_ref(CatalogDomain.PREDATOR_TYPE, entry_id)))
+
     from .clan_service import get_clan_narrative
     clan_data = get_clan_narrative(player_sheet.clan)
     if clan_data:
-        blocks.append(f"Clã ({player_sheet.clan}): {clan_data.lore_summary} Perdição: {clan_data.bane_description} Compulsão: {clan_data.compulsion_description} {clan_data.narrator_enforcement}")
-        
+        entry_id = player_sheet.clan
+        candidates.append(CatalogContextCandidate(domain=CatalogDomain.CLAN, entry_id=entry_id, minimal_text=f"Clã ({entry_id}): {clan_data.lore_summary} Perdição: {clan_data.bane_description} Compulsão: {clan_data.compulsion_description} {clan_data.narrator_enforcement}", visibility=Visibility.PLAYER, signals=CatalogRelevanceSignals(text_relevant=True), importance=0.6, source_refs=_source_ref(CatalogDomain.CLAN, entry_id)))
+
     if payload.power_used:
         from .discipline_service import get_discipline_model
         power_data = get_discipline_model(payload.power_used)
         if power_data:
-            blocks.append(f"Disciplina ({payload.power_used}): {power_data.narrative_data.visual_manifestation} Risco: {power_data.narrative_data.masquerade_threat}")
-            
+            entry_id = payload.power_used
+            candidates.append(CatalogContextCandidate(domain=CatalogDomain.DISCIPLINE_POWER, entry_id=entry_id, minimal_text=f"Disciplina ({entry_id}): {power_data.narrative_data.visual_manifestation} Risco: {power_data.narrative_data.masquerade_threat}", visibility=Visibility.PLAYER, signals=CatalogRelevanceSignals(explicitly_selected=True, rule_triggered=True), importance=0.9, source_refs=_source_ref(CatalogDomain.DISCIPLINE_POWER, entry_id)))
+
     if payload.weapon_category:
         from .combat_service import get_weapon_model
-        weapon_data = get_weapon_model(payload.weapon_category.value)
+        entry_id = payload.weapon_category.value
+        weapon_data = get_weapon_model(entry_id)
         if weapon_data:
-            blocks.append(f"Arma ({payload.weapon_category.value}): {weapon_data.narrative_data.description} Impacto: {weapon_data.narrative_data.impact_flavor} Máscara: {weapon_data.narrative_data.masquerade_threat}")
-            
-    from .npc_service import get_all_npcs
-    npcs = get_all_npcs()
-    npc_keywords = []
-    
-    # Simple regex to find words like "principe", "xerife" without accents
-    normalized_input = user_input.lower()
-    normalized_input = normalized_input.replace('í', 'i').replace('ç', 'c')
-    
-    for npc_key in npcs.keys():
-        if re.search(r'\b' + re.escape(npc_key) + r'\b', normalized_input):
-            npc_keywords.append(npc_key)
-            
-    if npc_keywords:
-        npc_keywords.sort(key=lambda k: npcs[k].engine_data.threat_level, reverse=True)
-        top_npc = npc_keywords[0]
-        npc_data = npcs[top_npc]
-        blocks.append(f"NPC ({top_npc}): {npc_data.narrative_data.social_standing} Tática: {npc_data.narrative_data.combat_tactics}")
-        
-    limited_blocks = blocks[:3]
-    if not limited_blocks:
+            candidates.append(CatalogContextCandidate(domain=CatalogDomain.WEAPON, entry_id=entry_id, minimal_text=f"Arma ({entry_id}): {weapon_data.narrative_data.description} Impacto: {weapon_data.narrative_data.impact_flavor} Máscara: {weapon_data.narrative_data.masquerade_threat}", visibility=Visibility.PLAYER, signals=CatalogRelevanceSignals(explicitly_selected="weapon_category" in payload.model_fields_set, rule_triggered=payload.is_aggressive), importance=0.7, source_refs=_source_ref(CatalogDomain.WEAPON, entry_id)))
+
+    from .npc_service import find_npc_ids, get_npc_model
+    for entry_id in find_npc_ids(user_input):
+        npc_data = get_npc_model(entry_id)
+        if npc_data:
+            candidates.append(CatalogContextCandidate(domain=CatalogDomain.NPC_ARCHETYPE, entry_id=entry_id, minimal_text=f"NPC ({entry_id}): {npc_data.narrative_data.social_standing} Tática: {npc_data.narrative_data.combat_tactics}", visibility=Visibility.PLAYER, signals=CatalogRelevanceSignals(explicitly_mentioned=True), importance=npc_data.engine_data.threat_level / 5, source_refs=_source_ref(CatalogDomain.NPC_ARCHETYPE, entry_id)))
+    return tuple(candidates)
+
+
+def project_contextual_lore(candidates: tuple[CatalogContextCandidate, ...]) -> str:
+    """Temporary textual compatibility projection; selection happens later."""
+    if not candidates:
         return ""
-        
-    lore_text = "[CONTEXTO DE MUNDO]:\n"
-    for b in limited_blocks:
-        lore_text += f"- {b}\n"
-        
-    return lore_text
+    return "[CONTEXTO DE MUNDO]:\n" + "".join(f"- {candidate.minimal_text}\n" for candidate in candidates)
+
+
+def get_contextual_lore(user_input: str, payload: V5ActionPayload, player_sheet: PlayerSheetModel) -> str:
+    return project_contextual_lore(get_contextual_lore_candidates(user_input, payload, player_sheet))

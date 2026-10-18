@@ -66,13 +66,13 @@ echo.
 
 :: Passo 3: Instalar dependências
 echo [3/4] Instalando dependencias...
-pip install -r requirements.txt >nul 2>&1
+pip install -r api\requirements.txt >nul 2>&1
 if errorlevel 1 (
     echo [ERRO] Nao foi possivel instalar dependencias
     echo.
     echo Tente manualmente:
     echo   .venv\Scripts\activate
-    echo   pip install -r requirements.txt
+    echo   pip install -r api\requirements.txt
     echo.
     pause
     exit /b 1
@@ -103,8 +103,8 @@ if %SCRIPT_ERROR% equ 0 (
     echo Verifique a saida acima para mensagens de erro.
     echo Se o terminal fechou sem mensagem, verifique:
     echo   1. Python esta em PATH? (python --version)
-    echo   2. requirements.txt foi instalado? (pip list)
-    echo   3. Backend esta rodando? (python api/main.py)
+    echo   2. api\requirements.txt foi instalado? (pip list)
+    echo   3. Backend esta rodando? (python -m uvicorn api.main:app)
     echo.
 )
 

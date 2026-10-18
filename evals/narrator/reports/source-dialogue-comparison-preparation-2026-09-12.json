@@ -1,0 +1,459 @@
+{
+  "status": "offline_preparation_completed_live_pending",
+  "preflight": {
+    "exit_code": 0,
+    "preflight_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\preflight.json",
+    "preflight_sha256": "65b51c6042f39b396945f01c97b9947c3ae701aed38e4f84f1abfebdf0375096",
+    "batch_id": "2b399092-bd38-42b9-839a-5a3919908950",
+    "command": [
+      "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "-NoProfile",
+      "-File",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\run_groq_source_dialogue_comparison.ps1",
+      "-PreflightOnly"
+    ],
+    "sources": {
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\run_groq_source_dialogue_comparison.ps1": "5d4b36d1dfb70f8abf9d5f8c43c48a1d984213a4e460bd462ca3ecf3f9becbab",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_source_dialogue_comparison.py": "76d6b51537285dbf9da11983f2e4bd4b60864a852e09ba50b1a495ed48ac6b65",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_director_service.py": "898c7e9134acee08c711196f2ee4230ddf968f767da87d30047a8e6f7aa93953"
+    },
+    "new_provider_calls": 0,
+    "credential_supplied": false,
+    "live_directory_created": false,
+    "evidence": [
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-root-preflight-20260912.py",
+        "sha256": "c2649f81bc40677457f004d724f76402890249dc90f0b72f7e5c87233f83d332"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-root-preflight-20260912.log",
+        "sha256": "7146b84e3afb19f9231b31555beb9787804880b213a6ee3c8993ab07f2f6da7d"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\preflight.json",
+        "sha256": "65b51c6042f39b396945f01c97b9947c3ae701aed38e4f84f1abfebdf0375096"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\binding.json",
+        "sha256": "b743be4398c2f6abe0bd6705c261f413ee6bd364824928cbcdfb9f7be36a11b7"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\lifecycle.json",
+        "sha256": "a03773ddfe8f8a41f1f56b8437e7f219ccc772bd034076faff03d24ef5a011f8"
+      }
+    ]
+  },
+  "independent_review": {
+    "version": 1,
+    "date": "2026-09-12",
+    "reviewer": "resume_view_scroll",
+    "verdict": "approved_scoped_offline_preparation",
+    "open_material_findings": [],
+    "sources": [
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\plan\\verify-source-dialogue-comparison-1.md",
+        "sha256": "8c88f2c170a8b6507e249ef7789eb5d2e152e06d141c8f109e54bcca45bafbbf"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_comparison_v1.json",
+        "sha256": "1a67f9af65b10409908a4ec79d1ecca3f65b185b1dcc0b9a6d9f48a43120b8c5"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_comparison_protocol_v1.md",
+        "sha256": "3320be5729851e0a9cd30063cdbf27b5c2e79e3cd81e981064a82d9a401481f7"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\prompts\\narrative-source-dialogue-v1.md",
+        "sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_source_dialogue_comparison.py",
+        "sha256": "76d6b51537285dbf9da11983f2e4bd4b60864a852e09ba50b1a495ed48ac6b65"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_source_dialogue_comparison.py",
+        "sha256": "3e729040f852c577f30b678d914c283a60ff18464fa3f0212d732824c418edbe"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\run_groq_source_dialogue_comparison.ps1",
+        "sha256": "5d4b36d1dfb70f8abf9d5f8c43c48a1d984213a4e460bd462ca3ecf3f9becbab"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_source_dialogue_comparison_launcher.py",
+        "sha256": "ccd02f957f7ad4680b03ffc4df110f699a8c4e4b6361f0abb4733ebc350fd38f"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_retained_source.py",
+        "sha256": "c09be39a25d822f8992082cf3cfd422f7200673aece0d6bdb4f6c05f03b7c230"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\persistence.py",
+        "sha256": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8"
+      },
+      {
+        "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_director_service.py",
+        "sha256": "898c7e9134acee08c711196f2ee4230ddf968f767da87d30047a8e6f7aa93953"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\delivery.json",
+        "sha256": "832f11ee6ab5797d6f0c56b23bb9b31cd52b0b398c4869b34fe8f05411ae1244"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\delivery.json",
+        "sha256": "c80608c91a2fd7e727eec294ef79e7095f86f9e9cba342828bc12f88174bf98e"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-root-preflight-20260912.json",
+        "sha256": "5825ec0f651faf26ba901d3805fb18bef60a43401aba98f2919e9802a2d06383"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-prospective-review-20260912.md",
+        "sha256": "d6f3a99daeadfdb889ab2763a891610fa6befb0e5a7db36007f9a858bf81759a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-prospective-review-20260912.json",
+        "sha256": "5988bf28aa995ea2f41a7030e2e86cc4c5802ce5f6f6b8a005978da5943972c4"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\preflight-initial.json",
+        "sha256": "7f4254fc28cf27b0276f9ec5cd34259e59bb0abc78e09d01b244d3b256ea3a54"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1-r2-invocations.json",
+        "sha256": "08196e14602d242ab2600b5aabbfa8f1d599f5973594420bb1257410bdc1de5b"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1-before.json",
+        "sha256": "08358bc38bb8eaf15b7b99e2ccce5a7a91748b7b624ec7fd35cdba97e587df71"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1-after.json",
+        "sha256": "08358bc38bb8eaf15b7b99e2ccce5a7a91748b7b624ec7fd35cdba97e587df71"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1.log",
+        "sha256": "d835ee9ab16d9544b32366308718a4833e63b3b9ebf3f43501e5833c200de9ac"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1.xml",
+        "sha256": "83214220969c79603aef7b6e8d086e539d2c7142d2ff37476cbdae1fd40ed31a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r2-before.json",
+        "sha256": "e740c7c7494823253c1bfa61f8a4660833b690df8319d24fb3d345c5b6a037f8"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r2-after.json",
+        "sha256": "e740c7c7494823253c1bfa61f8a4660833b690df8319d24fb3d345c5b6a037f8"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r2.log",
+        "sha256": "1cb03903f82d7f5fadaaf7005c699b1f67ceab33ab8791d689cf9d58f61cf9fb"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r2.xml",
+        "sha256": "6320045f3fc3fb939daf0c2362be34531f65b0d203e478edb44a9fdaaa2dd7b3"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r3-checks.json",
+        "sha256": "d39098feafdd1622c7f00352f35c0ac639e1d2e02e88ba4279fdc199d6967d5f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r3.log",
+        "sha256": "d69e31bbda222bc136cb132765c1476d9ec5f63462aae5d2fe83886476ecb37f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r3.xml",
+        "sha256": "adf28a23c4869822dc37b092d9a2dd6639f0d5e9cae79fef220d0ea82e7412e7"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r4-checks.json",
+        "sha256": "4f4b50b1cf85b63a460a3adb39c3c73467104ee98f004e6a44ca701219377b92"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r4.log",
+        "sha256": "82f59f404762a488c484008ad241b394e0854a59bbe84123ae0820ffd25c9c20"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r4.xml",
+        "sha256": "ce754cf77e5d5fe3b37fb7e935f69d32536fdc48fffdfb99a26be9acc801663a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\run-r3.py",
+        "sha256": "43974b169397327a761698831eb5a7fa8b2a3b4bc28c7916107a81edf6e5a74b"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\run-r4.py",
+        "sha256": "9d0a843001b18d341cae264ab733e78f77cb39a9de5646809936b957ba1d8745"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\consumer-r1.py",
+        "sha256": "a504daa26aaf7c02acebded11e70d71fa760efcb596735c8c0c3a3442cc70ce7"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\consumer-candidate.py",
+        "sha256": "ee035446cb34af509f43cf37586d22716fec5db1dda50c5089bbb7d65c91e6e1"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\test-r1.py",
+        "sha256": "a57f8dd49f94fb4925d06a4824d32dddd268a6ce699fd591a0cf2dd0d94b37ff"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\test-r2.py",
+        "sha256": "b8de81ea043d22ca7fff55f20e25be16df113c719d600108c5ef79a3a8faa2d6"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\candidate.diff",
+        "sha256": "e654da10d72e72765e5c71ac0fbaf27d4a14c738e0e9eee9a364520401dbaa3c"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\candidate-r3-r4.diff",
+        "sha256": "975f02898ab568e20606d491f7b7c4b2309d8ec24d293212ccae7bf55704f878"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\final-consumer.diff",
+        "sha256": "f5bd7448e6002545b62dd729ccd281dfa93522af00aab138cbe5d9624b6c58ee"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\final-tests.diff",
+        "sha256": "ab98332e5003425ebd35fb3f072961b57108b341bdbe43b5f6a8862de9bba0b1"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\reconciliation.json",
+        "sha256": "db6105753c804363a29967d81003b6ffecb5004d0257d08abc19285dc17b519f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\review.md",
+        "sha256": "fcb412fa8262d0d69f49419a9c5e6b44ab0eec2ce4c53ab0e65de0b0cf2d293f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\baseline.json",
+        "sha256": "97dde4ca66a8ed540a607814a5a27b1426e2e1d99bcd1f79472f67f2a597d5f3"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\staged-sources.json",
+        "sha256": "4a99b4e338fe539196a3c45e3fde58ce4fbffc1abcdcb398698899e99ed8c1fd"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\run_groq_source_dialogue_comparison.ps1",
+        "sha256": "5d4b36d1dfb70f8abf9d5f8c43c48a1d984213a4e460bd462ca3ecf3f9becbab"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\test_source_dialogue_comparison_launcher.py",
+        "sha256": "ccd02f957f7ad4680b03ffc4df110f699a8c4e4b6361f0abb4733ebc350fd38f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-build.py",
+        "sha256": "155a9595611ecc27d0b722dc48a91d1f2c52ab5b95f938117d5ecf03e7191c58"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-tests.py",
+        "sha256": "b6d0d85a580fae8bbb7c5c813f6b9257c6d53bc97ca068875e3ec7ed5214b087"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-close.py",
+        "sha256": "32f58abdb470d9284ff0112dec41fccb0f8142042f63fe1aa021b29a9fdddcff"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\launcher-vs-continuity.diff",
+        "sha256": "17fab55a5c5294c7b40c0c7f862044b848e3c6cbc1592382a7956160481f74e5"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\tests-vs-continuity.diff",
+        "sha256": "2ef6f120fdc5935de9bad194d3e9156d764a56284af95498d45b3f098d044050"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\reconciliation.json",
+        "sha256": "f64b0fac7819520fcce9985393d0364294423ed4fbffe57061f2f5feca86f254"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\review.md",
+        "sha256": "22a49ef0086a19e7070d1432f7dddbbb96c8f69db90890f5a04a00617951b402"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r1-before.json",
+        "sha256": "e015e5a71cdad6237b6bae762fd96a53f04580168eb6269f79acaf442689e741"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r1-result.json",
+        "sha256": "2430a86e3f3583cd43fac79dac7fa462d13928572487eead77ff8244c55054c5"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r1.log",
+        "sha256": "0b4af4cbefe3c6dd79b52bbbd6ed05da1a0b46286c3202402ce5718d90bceb4e"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r1.xml",
+        "sha256": "12e5a60ddc2fa2ef8cf06461b3c53789e5db373ca0f481c08e5326f0b39506d0"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r2-before.json",
+        "sha256": "62766a049edef473c35086485d802ae6a7a2e988e413b8818fdbaf981c700b10"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r2-result.json",
+        "sha256": "2d33eb3e3b6bb35a4ea2e53006e1a38cd86b390bc2efc8b9427f3eb6ae6c1dcc"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r2.log",
+        "sha256": "a3fdc81b5cd8690d2a791a1d39a8b94579746d34ba5dd54515239705b949f003"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r2.xml",
+        "sha256": "8e0dbd6ce22eac1b75954d388d937d50a827a9c88c6efd89985227187d4df10a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-root-preflight-20260912.py",
+        "sha256": "c2649f81bc40677457f004d724f76402890249dc90f0b72f7e5c87233f83d332"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-root-preflight-20260912.log",
+        "sha256": "7146b84e3afb19f9231b31555beb9787804880b213a6ee3c8993ab07f2f6da7d"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\preflight.json",
+        "sha256": "65b51c6042f39b396945f01c97b9947c3ae701aed38e4f84f1abfebdf0375096"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\binding.json",
+        "sha256": "b743be4398c2f6abe0bd6705c261f413ee6bd364824928cbcdfb9f7be36a11b7"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-comparison-window-2b399092-bd38-42b9-839a-5a3919908950\\lifecycle.json",
+        "sha256": "a03773ddfe8f8a41f1f56b8437e7f219ccc772bd034076faff03d24ef5a011f8"
+      }
+    ],
+    "checks": {
+      "protocol_and_new_code_read_in_full": true,
+      "rubric_lf_sha256": "f21711cb210a3461c9cbed6b027a4de2e1b7e10397c7ee14e81fe8fc5ae1582c",
+      "consumer_receipt_items_rehashed": 34,
+      "launcher_receipt_items_rehashed": 24,
+      "receipt_hash_mismatches": 0,
+      "independent_test_reexecution": false,
+      "original_databases_opened": false,
+      "provider_calls": 0,
+      "credentials_used": false
+    },
+    "test_results": {
+      "consumer_distinct": 31,
+      "launcher_distinct": 76,
+      "total_distinct": 107,
+      "all_latest_passed": true,
+      "consumer_stages": [
+        {
+          "stage": "r1",
+          "passed": 25,
+          "failed": 1,
+          "exit_code": 1
+        },
+        {
+          "stage": "r2",
+          "passed": 4,
+          "failed": 1,
+          "exit_code": 1
+        },
+        {
+          "stage": "r3",
+          "passed": 2,
+          "failed": 1,
+          "exit_code": 1
+        },
+        {
+          "stage": "r4",
+          "passed": 1,
+          "failed": 0,
+          "exit_code": 0
+        }
+      ],
+      "launcher_stages": [
+        9,
+        67
+      ],
+      "single_final_suite": false,
+      "skips": 0
+    },
+    "integrated_preflight": {
+      "batch_id": "2b399092-bd38-42b9-839a-5a3919908950",
+      "sha256": "65b51c6042f39b396945f01c97b9947c3ae701aed38e4f84f1abfebdf0375096",
+      "exit_code": 0,
+      "status": "preflight_only_completed",
+      "receipt_rehashed": true,
+      "executed_by": "root",
+      "reexecuted_by_reviewer": false
+    },
+    "limitations": [
+      "Aprovação técnica local; nenhuma aprovação narrativa, de modelo, piloto, default ou CAP-001.",
+      "Hashes demonstram consistência local, não autenticidade independente do provedor.",
+      "Encerramento limitado ao stub/worker próprio, sem garantia após interrupção abrupta do host.",
+      "Nenhuma suíte ou preflight duplicado pelo revisor, nenhuma chave, inferência ou banco original acessado."
+    ],
+    "report": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-independent-review-20260912.md",
+      "sha256": "0c1bea7a14d302bef3f0676222a8e71217004ed27fde7d3d7c3e4aaae4e210fb"
+    }
+  },
+  "test_stages": [
+    {
+      "role": "consumer",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r1.xml",
+      "expected_count": 26
+    },
+    {
+      "role": "consumer",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r2.xml",
+      "expected_count": 5
+    },
+    {
+      "role": "consumer",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r3.xml",
+      "expected_count": 3
+    },
+    {
+      "role": "consumer",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-consumer-20260912\\r4.xml",
+      "expected_count": 1
+    },
+    {
+      "role": "launcher",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r1.xml",
+      "expected_count": 9
+    },
+    {
+      "role": "launcher",
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-comparison-launcher-20260912\\r2.xml",
+      "expected_count": 67
+    }
+  ],
+  "distinct_cases": 107,
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-comparison-preparation-20260912/manifest.json",
+    "sha256": "59a899b352456dc47f36c7cdc7da70f866f26c6508b0de8f3b511ce0f4b03e3b",
+    "copies": 98
+  },
+  "historical_anchors_preserved": [
+    [
+      "source-dialogue-observer-correction-20260912",
+      "6379c44e32b3c052a6f5addef65669b75f96238f5550c50db7d97e38e4d1e002",
+      68
+    ],
+    [
+      "source-dialogue-continuity-observation-87e187bb-20260912",
+      "14ec252d78315976047649c765a21825545ca6bdc2c3eaf44e575be42d307fe0",
+      69
+    ],
+    [
+      "source-dialogue-continuity-preparation-20260912",
+      "ebe2721a72838aaaaf2be744aadb39a0af9914dfa4f99878183a88e3ffd1ce50",
+      97
+    ]
+  ],
+  "new_provider_calls": 0,
+  "approvals": {
+    "model_selection": false,
+    "runtime_default": false,
+    "campaign": false,
+    "CAP-001": false
+  }
+}

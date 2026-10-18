@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-12",
+  "run_id": "49fffca2-3d4e-4e6c-9dba-ed813c86d985",
+  "session_id": "source-groq-trial.49fffca2-3d4e-4e6c-9dba-ed813c86d985",
+  "scope": "Closed bounded interactive observation; technical integrity and narrative review are separate.",
+  "technical": {
+    "verdict": "passed",
+    "checks_passed": 23,
+    "records": 4,
+    "http_200_stop": 4,
+    "counts": {
+      "P": 4,
+      "K": 4,
+      "H": 4,
+      "attempts": 12,
+      "turns": 4,
+      "events": 4
+    },
+    "attempt_status_counts": {
+      "completed": 12
+    },
+    "event_type_counts": {
+      "player_action_declared": 4
+    },
+    "source_inputs_verified": 45,
+    "binding_inputs_verified": 50,
+    "token_totals": {
+      "input_tokens": 9264,
+      "output_tokens": 750,
+      "total_tokens": 10014
+    },
+    "http_start_gaps_seconds": [
+      1076.325654,
+      120.834625,
+      111.685396
+    ],
+    "all_deadlines_respected": true,
+    "launcher_lifecycle": {
+      "run_id": "49fffca2-3d4e-4e6c-9dba-ed813c86d985",
+      "exit_code": 0,
+      "updated_at": "2026-09-12T17:16:05.0730475Z",
+      "forced_shutdown": false,
+      "status": "stopped",
+      "session_id": "source-groq-trial.49fffca2-3d4e-4e6c-9dba-ed813c86d985"
+    },
+    "backend_lifecycle": {
+      "status": "stopped",
+      "calls_started": 4,
+      "terminal_reason": "budget_completed",
+      "admission_allowed": false
+    },
+    "original_artifacts_unchanged": true
+  },
+  "narrative": {
+    "verdict": "conversational_responsiveness_failed",
+    "direct_conversational_requests_without_useful_reply": 4,
+    "questions_with_unsupported_response_premise": [
+      1,
+      2
+    ],
+    "turn3_agency": {
+      "finding": "Speech was narrated as executed movement under a retained dialogue-only envelope.",
+      "nuance": "The quoted Vamos andando is a colloquially understandable invitation to move. The issue is the narrow retained speech contract, not absence of any user mention of walking."
+    },
+    "permitted_novelty": "New sensory scenery and an NPC object are not automatically fidelity failures; the setup did not close those details. Their repeated use to postpone an answer is the experience problem.",
+    "strengths": [
+      "Readable sensory atmosphere",
+      "Continuity of setting, water, torches, bag and NPC posture",
+      "Open and coherent final q"
+    ],
+    "prompt_hypothesis": "Environment emphasis plus repeated silence sources may favor atmospheric postponement; this single uncontrolled session does not establish causality or justify choosing another model."
+  },
+  "proposed_next_diagnostic": {
+    "status": "preparation_in_new_files",
+    "independent_cases": 3,
+    "purpose": "Observe useful NPC response, consequence of repeated questioning, q grounded in n and speech/agency separation with unchanged gates.",
+    "live_execution_in_this_report": false,
+    "retroactive_reclassification": false
+  },
+  "approvals": {
+    "narrative_quality": false,
+    "model_selection": false,
+    "pilot": false,
+    "runtime_default": false,
+    "CAP-001": false
+  },
+  "checkpoint": {
+    "manifest": "eval-results\\checkpoints\\source-player-interactive-observation-49fffca2-20260912\\manifest.json",
+    "sha256": "b4e3a5da047d42bc9bf9fc586dac63f4c673c3bd832390a80534076889042366",
+    "copy_count": 66,
+    "bytes_total": 1786581,
+    "correction_anchor_sha256": "5e289f429062c8039dcc6cbb12aaafd6556cf475898bc1a11b313431d15ac10c",
+    "sources_from_frozen_correction": 45,
+    "raw_artifacts": 9,
+    "evidence_files": 11,
+    "anchors": 1
+  },
+  "sources": {
+    "technical_audit": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-trial-final-audit-49fffca2-20260912\\audit-final.json",
+      "sha256": "e25c033340a42a8d295ba4fc43b896fc86fb405e7a91522e373589bb8654b8f2"
+    },
+    "narrative_review": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-narrative-review-49fffca2-20260912.md",
+      "sha256": "d272bd5a751ad4ac5242e00aa7c005607f67b7ad8ed65353216cebdd541ada5f"
+    },
+    "records_jsonl": {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-local-groq-trial-49fffca2-3d4e-4e6c-9dba-ed813c86d985\\records.jsonl",
+      "bytes": 63026,
+      "sha256": "fb1dd816f9ba20c5ff9e6e7022d34a2fa834714b2d544ab407d67899a2bfe3d7"
+    },
+    "partial_snapshot_preserved": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-trial-preflight-audit-49fffca2-20260912.json",
+      "sha256": "c3755b023f81773401d20c8a04de3de8dac447fc6d95f76cd62afa176accff4a"
+    }
+  },
+  "limits": [
+    "The completed original database had a nonempty WAL. Queries ran only on a verified byte-identical TEMP DB/WAL/SHM snapshot using mode=ro/query_only/BEGIN-ROLLBACK; immutable was not used.",
+    "The process termination and port absence are root observations; this helper did not inspect process memory, credentials or environment.",
+    "HTTP metadata are locally captured adapter evidence, not independently retrieved provider billing logs.",
+    "Initial quiet-time enforcement is established by the frozen source guard; campaign creation to first HTTP is a timing observation, not the exact private monotonic control epoch.",
+    "Technical persistence and n/q fidelity do not certify narrative quality, causal world truth, campaign readiness, runtime default or CAP-001. No inference or historical rerun was executed.",
+    "The earlier partial observation and checkpoint remain unchanged. This report closes the run without converting subsequent diagnostics or fixes into results of this original session.",
+    "Initial audit-helper expectation errors are preserved and explained in audit-final.json; execution artifacts were not corrected."
+  ]
+}

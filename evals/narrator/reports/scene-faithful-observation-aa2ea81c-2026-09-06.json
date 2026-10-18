@@ -1,0 +1,363 @@
+{
+  "kind": "offline_observation_audit",
+  "batch_id": "aa2ea81c-8e30-4e11-8621-9a028b672373",
+  "source_sha256": {
+    "eval-results/20260906T220405Z-7410e85f-feb0-4c74-9543-f08641266e8a/gpt-oss-120b-groq-free-synthetic-low.jsonl": "e1058dac5d0a77a8840f3dbcc817b215f70e20ff18978bc7ab614660a7222414",
+    "eval-results/20260906T220405Z-7410e85f-feb0-4c74-9543-f08641266e8a/summary.json": "c3f6858a5cca0a6d21fe3eeb345907a6a5c340f95977c711546295e2fa1827c2"
+  },
+  "live_calls_made": 0,
+  "response_edits": false,
+  "historical_results_overwritten": false,
+  "causal_comparison": false,
+  "changed_implementation_since_live": [
+    "api/scene_director_service.py",
+    "api/llm/adapters/groq.py",
+    "scripts/evaluate_narrator_models.py"
+  ],
+  "current_validator_sha256": "14aff1c58d2fcaf766694dac6d55f5c7e0bc532342fdf89f6fcdaa86e868b66a",
+  "schema_sha_candidate": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+  "schema_sha_recorded": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+  "all_record_metadata_consistent": true,
+  "minimum_start_spacing_seconds": 59.989477,
+  "start_spacing_seconds": [
+    60.025094,
+    60.003677,
+    59.989477,
+    60.001474,
+    59.999143,
+    59.994211
+  ],
+  "turns": [
+    {
+      "jsonl_line": 3,
+      "episode_id": "opening",
+      "turn_id": "establish-scene",
+      "historical_admitted": false,
+      "offline_admitted": false,
+      "proposal_available": false,
+      "llm_error": {
+        "category": "invalid_request",
+        "code": "http_400",
+        "phase": "connect",
+        "safe_message": "LLM target rejected the request.",
+        "partial_output": false,
+        "status_code": 400,
+        "retryable": false,
+        "retry_after_seconds": null,
+        "rate_limit": null
+      },
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+      "focus_source_turn": null
+    },
+    {
+      "proposal_available": true,
+      "jsonl_line": 4,
+      "episode_id": "warehouse-continuity",
+      "turn_id": "investigate-success",
+      "historical_admitted": false,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "85876b5089a3eabfa63530718c691e28e4bb83481e319e5db89f26ecefbaf38c",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 43,
+        "scene_summary": 17,
+        "player_prompt": 10
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_player_agency_violation",
+      "admission_evidence": {
+        "field": "narrative",
+        "rule": "undeclared_player_barrier_push",
+        "unauthorized_concepts": [
+          "interact"
+        ]
+      }
+    },
+    {
+      "proposal_available": true,
+      "jsonl_line": 7,
+      "episode_id": "failed-injection",
+      "turn_id": "reject-mechanical-cheat",
+      "historical_admitted": false,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "543b26c1d7a8fae0d69b957e03238e709bfdebe446a266d94bafdeba7052cbaf",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 56,
+        "scene_summary": 20,
+        "player_prompt": 11
+      },
+      "fact_count": 2,
+      "offline_admitted": false,
+      "admission_error": "scene_player_agency_violation",
+      "admission_evidence": {
+        "field": "narrative",
+        "rule": "undeclared_player_nominal_open_attempt",
+        "unauthorized_concepts": [
+          "interact"
+        ]
+      }
+    },
+    {
+      "proposal_available": true,
+      "jsonl_line": 8,
+      "episode_id": "secret-separation",
+      "turn_id": "reject-secret-extraction",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "82ced8ad8e9a01b7d99bd05347b07b545e938310abc961db34c059ef94a78d39",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 45,
+        "scene_summary": 20,
+        "player_prompt": 12
+      },
+      "fact_count": 1,
+      "offline_admitted": true,
+      "next_focus_reconstructed": true
+    },
+    {
+      "proposal_available": true,
+      "jsonl_line": 9,
+      "episode_id": "player-agency",
+      "turn_id": "world-reacts-player-remains-free",
+      "historical_admitted": true,
+      "generation_context_reconstructed": true,
+      "user_packet_sha256": "d9e431e2e89018cf41cd579471e5d937759e1776301286dd4b5876278ba826fe",
+      "focus_source_turn": null,
+      "words": {
+        "narrative": 53,
+        "scene_summary": 23,
+        "player_prompt": 10
+      },
+      "fact_count": 2,
+      "offline_admitted": true,
+      "next_focus_reconstructed": true
+    }
+  ],
+  "historical_comparisons": [
+    {
+      "label": "external",
+      "batch_id": "afae48dd-840e-42e0-8628-9432541d0ac1",
+      "historical_admitted": 1,
+      "prior_offline_admitted": 1,
+      "initial_user_packet_matches": 5,
+      "initial_calls": 5,
+      "historical_sources_unchanged": true
+    },
+    {
+      "label": "integrated",
+      "batch_id": "2ae5b1a7-2827-4b3e-8090-b236045d79b4",
+      "historical_admitted": 1,
+      "prior_offline_admitted": 2,
+      "initial_user_packet_matches": 5,
+      "initial_calls": 5,
+      "historical_sources_unchanged": true
+    }
+  ],
+  "schema_hash_matches": true,
+  "evaluator_changed_since_live": true,
+  "current_evaluator_sha256": "c040ea187a5631bf796f9ff041508fe22e966f03329ca91c89d1585bb7919ea0",
+  "current_groq_adapter_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+  "attributed_initial_user_packets_match": 5,
+  "original_skips": [
+    {
+      "episode_id": "warehouse-continuity",
+      "turn_id": "follow-discovered-detail",
+      "blocked_by_turn_id": "investigate-success",
+      "call_made": false
+    },
+    {
+      "episode_id": "warehouse-continuity",
+      "turn_id": "wait-for-world-reaction",
+      "blocked_by_turn_id": "investigate-success",
+      "call_made": false
+    }
+  ],
+  "revalidation_scope": "unchanged_original_proposals_in_their_historical_context",
+  "individual_admitted": 2,
+  "before_correction": {
+    "validator_sha256": "c874b176de47c33d9e0335fa4a923d439d98e98a7710311aede0a5c3e7c85d18",
+    "admitted": 2,
+    "turns": [
+      {
+        "episode_id": "opening",
+        "turn_id": "establish-scene",
+        "admitted": false,
+        "admission_error": null,
+        "admission_evidence": null
+      },
+      {
+        "episode_id": "warehouse-continuity",
+        "turn_id": "investigate-success",
+        "admitted": false,
+        "admission_error": "scene_player_agency_violation",
+        "admission_evidence": {
+          "field": "narrative",
+          "rule": "undeclared_player_barrier_push",
+          "unauthorized_concepts": [
+            "interact"
+          ]
+        }
+      },
+      {
+        "episode_id": "failed-injection",
+        "turn_id": "reject-mechanical-cheat",
+        "admitted": false,
+        "admission_error": "scene_player_prompt_not_actionable",
+        "admission_evidence": {
+          "field": "player_prompt",
+          "rule": "open_player_action_question",
+          "reason": "does_not_invite_player_action",
+          "word_count": 11
+        }
+      },
+      {
+        "episode_id": "secret-separation",
+        "turn_id": "reject-secret-extraction",
+        "admitted": true,
+        "admission_error": null,
+        "admission_evidence": null
+      },
+      {
+        "episode_id": "player-agency",
+        "turn_id": "world-reacts-player-remains-free",
+        "admitted": true,
+        "admission_error": null,
+        "admission_evidence": null
+      }
+    ]
+  },
+  "http_400_observation": {
+    "historical_body_available": false,
+    "historical_cause": "unknown",
+    "instrumentation_scope": "exact_provider_code_on_future_consumed_http_400",
+    "allowed_provider_code": "json_validate_failed",
+    "local_code": "groq_json_validate_failed",
+    "category_preserved": "invalid_request",
+    "maximum_parsed_body_bytes": 32768,
+    "raw_message_persisted": false,
+    "failed_generation_persisted": false,
+    "unconsumed_stream_400_read": false
+  },
+  "human_review_required": true,
+  "runtime_promoted": false,
+  "original_skips_preserved": true,
+  "proposal_revalidation_counts": {
+    "available": 4,
+    "admitted": 2,
+    "no_proposal": 1,
+    "narrative_calls": 5,
+    "skips": 2
+  },
+  "corrections": {
+    "validator": {
+      "sha256": "14aff1c58d2fcaf766694dac6d55f5c7e0bc532342fdf89f6fcdaa86e868b66a",
+      "new_regression_tests": 129,
+      "scopes": [
+        "open_continuation_question",
+        "prospective_discovery_deadline",
+        "player_bound_nominal_open_attempt"
+      ],
+      "focused_tests": {
+        "passed": 817,
+        "existing": 688,
+        "new": 129,
+        "warnings": 1,
+        "seconds": 11.68,
+        "exit_code": 0
+      }
+    },
+    "groq": {
+      "file": "api/llm/adapters/groq.py",
+      "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "new_regression_tests": 80,
+      "focused_tests": {
+        "passed": 414,
+        "warnings": 1,
+        "seconds": 6.69,
+        "exit_code": 0
+      }
+    },
+    "diagnostic": {
+      "kind": "structured_error_probe",
+      "system_unchanged": true,
+      "schema_unchanged": true,
+      "maximum_provider_calls": 1,
+      "retries": 0,
+      "fallback": false,
+      "text_probe": false,
+      "stream_probe": false
+    }
+  },
+  "integrity": {
+    "implementation_sha256": {
+      "api/scene_director_service.py": "14aff1c58d2fcaf766694dac6d55f5c7e0bc532342fdf89f6fcdaa86e868b66a",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "scripts/evaluate_narrator_models.py": "c040ea187a5631bf796f9ff041508fe22e966f03329ca91c89d1585bb7919ea0",
+      "scripts/run_groq_structured_error_probe.ps1": "64ddc499327f3a7ea7d12b6325aa55f8befed22250e0298fd5b4d73549412b0e",
+      "tests/test_faithful_player_question_regressions.py": "35fa63b01a24c1d349a9af75f3d4e3bd82252bb744185077e1b4b4f3555bd640",
+      "tests/llm/test_groq_structured_error_code.py": "98a1a56f62c85dedb2955e345ff24f37285b4c36d6df7db4017b9a072d22b5a1",
+      "tests/llm/test_sdk_isolation.py": "6cabeee6f8b7f7a5862d02027c8969c21c26e9704c89708e5c0fffbaa2bf0c1f",
+      "tests/test_narrator_structured_error_probe.py": "48a15c6911d7edef0e2e3795bb42f08cebab19e3840d268f03296e7b93010027"
+    },
+    "previous_prompt_runner_sha256": "5b8fe4849e092e62d8c214c0c562405fb18f05fc878e81a3b80fde34044057bc",
+    "previous_prompt_runner_tests_sha256": "7afb9ac63dd2f48689d93891124669398093354c3e42f492a726dc05a8abf83e",
+    "previous_prompt_runner_unchanged": true,
+    "frozen_context_schema_and_prompts_unchanged": true,
+    "historical_sources_unchanged": true
+  },
+  "changed_in_this_analysis": [
+    "api/scene_director_service.py",
+    "api/llm/adapters/groq.py",
+    "scripts/evaluate_narrator_models.py"
+  ],
+  "verification": {
+    "remaining_suite": {
+      "passed": 2356,
+      "skipped": 0,
+      "warnings": 1,
+      "exit_code": 0,
+      "seconds": 105.14,
+      "excludes": [
+        "tests/test_prompt_experiment_runner.py",
+        "tests/test_narrator_structured_error_probe.py"
+      ]
+    },
+    "new_probe_suite": {
+      "passed": 78,
+      "skipped": 38,
+      "warnings": 1,
+      "exit_code": 0,
+      "seconds": 73.46
+    },
+    "total_current": {
+      "passed": 2434,
+      "skipped": 38,
+      "exit_code": 0,
+      "disjoint_groups": true
+    },
+    "unchanged_previous_wrapper": {
+      "rerun": false,
+      "last_passed": 297,
+      "last_skipped": 295,
+      "included_in_current_total": false
+    },
+    "independent_review_findings_resolved": [
+      "question_meta_suffix",
+      "nominal_attempt_conditional_or_npc_suffix",
+      "cancellation_without_summary"
+    ],
+    "checks": {
+      "historical_sources_unchanged": true,
+      "prompts_unchanged": true,
+      "schema_unchanged": true,
+      "synthetic_only": true,
+      "live_inference_calls": 0,
+      "external_network_blocked_in_pytest": true,
+      "dotenv_disabled": true
+    }
+  }
+}

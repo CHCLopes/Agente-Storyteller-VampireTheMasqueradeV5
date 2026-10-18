@@ -1,0 +1,377 @@
+{
+  "document_kind": "summary_relational_observation_preparation",
+  "recorded_at_utc": "2026-09-07T21:42:23.564196+00:00",
+  "status": "executed_closed_and_analyzed",
+  "authorization": {
+  "source": "continuous_user_authority",
+  "new_observation_approval_required": false,
+  "human_dependency": null
+},
+  "basis_batch": "0e7b0ac3-b88a-4962-b383-cc6f813c9d4a",
+  "basis_batch_closed": true,
+  "prepared_metadata": {
+    "purpose": "summary_relational_qwen_probe",
+    "probe_kind": "summary_relational_qwen_probe",
+    "experiment_version": "record-summary-relational-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_summary_relational.py",
+      "sha256": "98af671d8fefc1ca5a75051cb16657321558960bca4dab7ac0530b207fa8535e",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "none"
+    },
+    "summary_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 768
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "max_total_output_tokens": 1536,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-summary-relational-dossier-0e7b0ac3-2026-09-07.json",
+        "sha256": "6c970ba2a5dbc8f3fe0d57914b668fa8efecaa6a1b99ec5b96fa15b9c7b338d9",
+        "requests": [
+          {
+            "arm_id": "control",
+            "case_id": "gallery-reflection",
+            "body_sha256": "cdd9507caa318b6d74e92863e84e483571bdddce0fbbf618e730121e8177a5c9",
+            "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680"
+          },
+          {
+            "arm_id": "relational",
+            "case_id": "gallery-reflection",
+            "body_sha256": "7599cb88ff1f4085ada54469c7749d6ef7aaebbd2287ad207be47e29dd3043ec",
+            "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680"
+          }
+        ]
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "case": {
+        "file": "evals/narrator/record_summary_relational_case_v1.json",
+        "sha256": "8a42c7ccb56c8002d1a50ae5294bf5dce55babd8ab07cd7774a9e95bb54d3148",
+        "case_id": "gallery-reflection",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "case_file": "evals/narrator/record_summary_relational_case_v1.json",
+          "case_sha256": "8a42c7ccb56c8002d1a50ae5294bf5dce55babd8ab07cd7774a9e95bb54d3148",
+          "field": "narrative",
+          "narrative_sha256": "d4c35498866e4113f2d0506f56b545896a2efae825756ccc4ba582aadacff326"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680",
+          "source_units_sha256": "f253397c5dd107bb563710933353709cca4a9fcd85e0a1fe91d0fc4a8248dd33",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. "
+            },
+            {
+              "id": "n1",
+              "text": "Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 174
+          }
+        }
+      },
+      "arms": [
+        {
+          "arm_id": "control",
+          "arm_index": 0,
+          "case_id": "gallery-reflection",
+          "prompt": {
+            "variant": "record-summary-budget-v1",
+            "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+            "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+            "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+          },
+          "request": {
+            "operation": "summary-relational.control",
+            "body_sha256": "cdd9507caa318b6d74e92863e84e483571bdddce0fbbf618e730121e8177a5c9"
+          }
+        },
+        {
+          "arm_id": "relational",
+          "arm_index": 1,
+          "case_id": "gallery-reflection",
+          "prompt": {
+            "variant": "record-summary-relational-v1",
+            "file": "evals/narrator/prompts/record-summary-relational-v1.md",
+            "file_sha256": "b93760ae4e578871729b203091183fca8f8e47f348f7768972e9e14ad5253101",
+            "sha256": "afa04554805097ded8a1bbb45caa43c02a6743d4b6f63b79ad6e0cf1df179c11"
+          },
+          "request": {
+            "operation": "summary-relational.relational",
+            "body_sha256": "7599cb88ff1f4085ada54469c7749d6ef7aaebbd2287ad207be47e29dd3043ec"
+          }
+        }
+      ],
+      "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "measurement_policy": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "max_words": 25,
+        "changes_exit_code": false,
+        "semantic_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "stopping_policy": {
+        "order": [
+          "control",
+          "relational"
+        ],
+        "stop_on_first_operational_failure": true,
+        "operational_failures_include": [
+          "transport_or_provider_error",
+          "deadline",
+          "route_unverified_or_mismatched",
+          "schema_invalid",
+          "local_error",
+          "cancellation"
+        ],
+        "persist_remaining_skips": true,
+        "repeat_after_result": false,
+        "word_limit_failure_stops_next_arm": false,
+        "semantic_review_stops_next_arm": false,
+        "replacement_arm": false
+      },
+      "implementation": [
+        {
+          "file": "scripts/narrator_summary_only.py",
+          "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "16074216b0dbb40bbeac1813ce2435a5344f7fde8c2be236051992f5bf8393dc"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ]
+    }
+  },
+  "files": {
+    "evals/narrator/record_summary_relational_case_v1.json": "8a42c7ccb56c8002d1a50ae5294bf5dce55babd8ab07cd7774a9e95bb54d3148",
+    "evals/narrator/prompts/record-summary-relational-v1.md": "b93760ae4e578871729b203091183fca8f8e47f348f7768972e9e14ad5253101",
+    "evals/narrator/reports/record-summary-relational-dossier-0e7b0ac3-2026-09-07.json": "6c970ba2a5dbc8f3fe0d57914b668fa8efecaa6a1b99ec5b96fa15b9c7b338d9",
+    "evals/narrator/reports/record-summary-relational-design-0e7b0ac3-2026-09-07.md": "963c2a9eb5304b2607c2b694bf4e1b8f7af8fb08d581c8d2a7f20878ab840922",
+    "scripts/run_groq_summary_relational_probe.ps1": "867bd41cf2458f1c1b5d2f69b8e8fef8da38812c8f7b3adf7200bd451744d292",
+    "tests/test_summary_relational_runner.py": "762c044ea373ae0e459eee35f59c3199844d0c4e147673ea66356c68a888bdad",
+    "scripts/evaluate_narrator_summary_relational.py": "98af671d8fefc1ca5a75051cb16657321558960bca4dab7ac0530b207fa8535e",
+    "tests/test_summary_relational_execution.py": "3e92bcf8c3ca5d96e902b7f87a94bf55b51d34aa027c77553405d3474aac9b7d",
+    "scripts/evaluate_narrator_models.py": "16074216b0dbb40bbeac1813ce2435a5344f7fde8c2be236051992f5bf8393dc",
+    "tests/test_summary_relational_replay_boundary.py": "39eeb5f21c8e56f8c9a2e7d1990a8ad960a29d5f89c7dfa52ff98e8b10dfa819"
+  },
+  "verification": {
+    "focused_tests": {
+      "distinct_passed": 86,
+      "new_passed": 86,
+      "existing_passed": 0,
+      "remaining_failures": 0,
+      "groups": [
+        {
+          "file": "tests/test_summary_relational_execution.py",
+          "passed": 26,
+          "seconds": 19.73
+        },
+        {
+          "file": "tests/test_summary_relational_runner.py",
+          "passed": 49,
+          "seconds": 96.9
+        },
+        {
+          "file": "tests/test_summary_relational_replay_boundary.py",
+          "passed": 11,
+          "seconds": 0.41
+        }
+      ]
+    },
+    "independent_static_review": {
+      "reviewer": "Socrates",
+      "findings": [],
+      "executor_sha256": "98af671d8fefc1ca5a75051cb16657321558960bca4dab7ac0530b207fa8535e",
+      "wrapper_sha256": "867bd41cf2458f1c1b5d2f69b8e8fef8da38812c8f7b3adf7200bd451744d292",
+      "scope": "one source and two arm identities; exclusive SYSTEM/request bindings; waits/deadlines; stop/skips; credentials; literal retention; status and CAP boundaries"
+    },
+    "independent_wire_reconstruction": true,
+    "cli_preflight_matches_imported": true,
+    "real_empty_key_integration": {
+      "passed": true,
+      "expected_exit": 3,
+      "failure_stage": "credential validation",
+      "provider_calls": 0,
+      "new_artifacts": 0
+    },
+    "historical_files_preserved": 81,
+    "historical_raw_artifacts_preserved": 20,
+    "shared_change": {
+      "added_lines": 12,
+      "removed_lines": 0,
+      "scope": "new exact identities refused at both CAP replay entries"
+    },
+    "runtime_and_provider_adapters_changed": false,
+    "warning": "Pre-existing Starlette multipart PendingDeprecationWarning; outside this change."
+  },
+  "scope": {
+    "new_case": "gallery-reflection",
+    "arm_order": [
+      "control",
+      "relational"
+    ],
+    "same_full_user_packet": true,
+    "only_changed_http_field_between_arms": "messages[0].content",
+    "max_calls": 2,
+    "max_output_tokens_per_call": 768,
+    "max_total_output_tokens": 1536,
+    "initial_wait_seconds": 60,
+    "minimum_start_interval_seconds": 60,
+    "deadline_after_wait_seconds": 60,
+    "stop_on_first_operational_failure": true,
+    "persist_remaining_skips": true,
+    "word_limit_and_semantics_stop_next_arm": false,
+    "retries": 0,
+    "fallback": false,
+    "synthetic_only": true,
+    "semantic_approval": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "reformulation_loop": false
+  },
+  "evidence_files": {
+    "executor_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-execution-uimivp7j\\after.json",
+      "sha256": "13c39e20571ac0bb0e985bb12c0f2dd0ce55697aa21fa97274332d6e2a65cd15"
+    },
+    "wrapper_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-preparation-k59rcdws\\after-tests.json",
+      "sha256": "d049dc5189eefe08c3bf0562ac3f8fe3a1d8aa5d9b8a8976d7492b30a7404485"
+    },
+    "replay_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\replay-boundary-verification.json",
+      "sha256": "88592087f261cc9ea69df48db70ecc2d4940652ff1802a98b1e01b874890d390"
+    },
+    "independent_wire": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\independent-wire-audit.json",
+      "sha256": "1194a179716a083885b19691a8e012401880587c25e6a0db0e7dc3b4b70b1ef5"
+    },
+    "real_empty_key": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\real-empty-key-integration.json",
+      "sha256": "819ff0ed80ada5b3d45363e1fa929aa63df3df65cb3c184e89f38df4f2b12f5d"
+    },
+    "final_preflight": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\final-preflight-audit.json",
+      "sha256": "08ca01cbc4b08bf0ba751f53b16315205e5df917b336d301dbda83768cf4f635"
+    }
+  },
+  "live_execution": {
+  "state": "finished",
+  "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\launch-summary-relational.ps1",
+  "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\status.json",
+  "process_id": 1096,
+  "started_at_utc": "2026-09-07T21:43:54.8938495Z",
+  "status_snapshot": {
+    "phase": "finished",
+    "process_id": 1096,
+    "at_utc": "2026-09-07T21:47:25.3117077Z",
+    "exit_code": 0
+  },
+  "window_title": "Agente Storyteller - Qwen relacoes - chave protegida",
+  "launcher_sha256": "b25383cf4c2058409fe6309dabf674a3f5be5b6db34d98e31bc5fcfe34bf32ec",
+  "launch_record": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\launch-record.json",
+  "launch_record_sha256": "d39df35b59ae19b75303a7583b0a9028e82715f3095a54195feccb525a363527",
+  "preparation_sha256_before_launch": "49a21c54072f59efdc38a4c254895edad0ff2edbc5fd55f447aa0787a0898ee4",
+  "automatic_relaunch": false,
+  "finished_at_utc": "2026-09-07T21:47:25.3117077Z",
+  "process_exit_code": 0,
+  "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+  "run_directory": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2",
+  "closure_report": "evals/narrator/reports/record-summary-relational-observation-faad6837-2026-09-07.md",
+  "closure_report_json": "evals/narrator/reports/record-summary-relational-observation-faad6837-2026-09-07.json",
+  "credential_discarded": true,
+  "analysis_status": "closed_shared_target_attachment_ambiguous",
+  "next_step": {
+    "status": "authorized_offline_consolidation",
+    "action": "Consolidar as evidências summary-only, budget, color e relational; separar resultados informativos, ambiguidades, omissões e lacunas para definir a próxima direção.",
+    "scheduled_provider_calls": 0,
+    "credential_dependency": null,
+    "new_prompt_or_batch_prepared": false,
+    "generic_human_approval_required": false,
+    "constraints": [
+      "Hipótese relacional encerrada após os dois braços.",
+      "Não preparar novo SYSTEM ou repetir esta hipótese em sequência.",
+      "Não repetir fontes/lotes encerrados ou preencher skips.",
+      "Não converter a consolidação em aprovação de runtime ou CAP-001."
+    ]
+  }
+}
+}

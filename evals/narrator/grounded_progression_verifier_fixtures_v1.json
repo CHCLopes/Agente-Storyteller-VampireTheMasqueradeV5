@@ -1,0 +1,14 @@
+{
+  "version": "grounded-progression-verifier-fixtures-v1",
+  "purpose": "offline_verifier_mutation_matrix",
+  "fixtures": [
+    {"fixture_id": "target-mismatch", "mutation": "target.reported.model", "expected": "integrity_error"},
+    {"fixture_id": "hidden-retry", "mutation": "invocation.retry_count", "expected": "integrity_error"},
+    {"fixture_id": "input-hash-mismatch", "mutation": "input_hashes.corpus_sha256", "expected": "integrity_error"},
+    {"fixture_id": "fatal-semantic-gate", "mutation": "responses[0].review.invented_state_or_transition", "expected": "case_rejected"},
+    {"fixture_id": "unknown-state-asserted", "mutation": "responses[0].asserted_state_ids", "expected": "case_rejected"},
+    {"fixture_id": "forbidden-marker", "mutation": "responses[0].narrative", "expected": "case_rejected"},
+    {"fixture_id": "required-transition-missing", "mutation": "responses[1].transition_id", "expected": "case_rejected"},
+    {"fixture_id": "word-budget-exceeded", "mutation": "responses[0].narrative", "expected": "case_rejected"}
+  ]
+}

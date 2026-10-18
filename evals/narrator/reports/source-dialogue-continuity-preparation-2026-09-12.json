@@ -1,0 +1,129 @@
+{
+  "date": "2026-09-12",
+  "status": "offline_preparation_completed_live_pending",
+  "real_http_calls": 0,
+  "test_results": {
+    "consumer": {
+      "distinct": 33,
+      "passed": 33,
+      "failed": 0,
+      "stages": [
+        {
+          "stage": "r1",
+          "exit_code": 1,
+          "passed": 27,
+          "failed": 5,
+          "errors": 0,
+          "deselected": 0,
+          "source_hashes_unchanged_during_execution": true
+        },
+        {
+          "stage": "r2",
+          "exit_code": 0,
+          "passed": 13,
+          "failed": 0,
+          "errors": 0,
+          "deselected": 19,
+          "source_hashes_unchanged_during_execution": true
+        },
+        {
+          "stage": "r3-red",
+          "exit_code": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "deselected": 32,
+          "source_hashes_unchanged_during_execution": true
+        },
+        {
+          "stage": "r3-green",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "errors": 0,
+          "deselected": 29,
+          "source_hashes_unchanged_during_execution": true
+        }
+      ],
+      "reconciliation": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-runner-20260912\\reconciliation.json",
+      "warning": "PendingDeprecationWarning de Starlette/python_multipart; dependências inalteradas."
+    },
+    "launcher": {
+      "distinct": 60,
+      "passed": 60
+    }
+  },
+  "independent_review": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-independent-review-20260912.json",
+    "sha256": "ac81da9dd3d7d9532d5ac6d097bd05b3e64a05f98ed23bd5d1125524c6a4ca81",
+    "verdict": "offline_preparation_ready_for_bounded_observation_with_explicit_limits"
+  },
+  "preflight": {
+    "batch_id": "9b21955c-3d46-4c76-a453-8d703a7f5891",
+    "sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6",
+    "inputs": 33,
+    "exit_code": 0,
+    "live_request_bodies_frozen": false
+  },
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-continuity-preparation-20260912/manifest.json",
+    "sha256": "ebe2721a72838aaaaf2be744aadb39a0af9914dfa4f99878183a88e3ffd1ce50",
+    "copies": 97
+  },
+  "verification_notes": {
+    "verification": "Foram aprovados 33 casos distintos do consumidor em etapas e 60 casos do lançador, sem chamadas reais. Não se somaram reexecuções como casos novos. O consumidor usa as APIs reais de preparação, retenção e aplicação sobre SQLite sintético; o transporte HTTP dos testes é simulado.\n\nO primeiro recorte do consumidor teve 27 aprovações e cinco falhas. Treze casos afetados passaram após correções localizadas: preservação do timestamp de envio ao descartar eco de credencial, recomposição correta do estado timed_out e rejeição de observações HTTP/finish incompatíveis com sucesso. Uma contraprova adicional demonstrou snapshots com dados de erro apesar de declararem indisponibilidade; a correção exige igualdade com o snapshot vazio completo. Os quatro casos finais selecionados passaram, incluindo a composição válida de dois commits. Os 33 identificadores foram reconciliados pelo último resultado; versões, deltas e resultados vermelhos permanecem arquivados.\n\nO lançador passou em duas seleções disjuntas de nove e 51 casos com as mesmas versões de código e testes. Foram verificados isolamento da credencial, orçamento, integridade do preflight e encerramento do processo próprio. O consumidor verificou o uso do n commitado em T2, separação de q, parada antes de T2 em falhas, deadline compartilhado, replay sem gateway/produção/RNG, adulterações e inspeção da persistência antes da gravação do resumo nos casos de eco sintético.\n\nA revisão independente leu os deltas e as provas, sem repetir as suítes. As receitas de reprodução do consumidor foram registradas após as execuções; os logs, XML e hashes antes/depois constituem as provas das execuções observadas. O aviso preexistente de depreciação Starlette/python_multipart foi preservado, sem mudança de dependências. Não houve nova inferência, leitura de .env ou uso de credencial real nesta preparação.",
+    "consumer_distinct_passed": 33,
+    "launcher_distinct_passed": 60,
+    "total_distinct_passed": 93,
+    "consumer_stages": [
+      {
+        "name": "r1",
+        "passed": 27,
+        "failed": 5
+      },
+      {
+        "name": "r2",
+        "passed": 13,
+        "failed": 0,
+        "deselected": 19
+      },
+      {
+        "name": "r3-red",
+        "passed": 0,
+        "failed": 1,
+        "deselected": 32
+      },
+      {
+        "name": "r3-green",
+        "passed": 4,
+        "failed": 0,
+        "deselected": 29
+      }
+    ],
+    "root_final_preflight": {
+      "batch": "9b21955c-3d46-4c76-a453-8d703a7f5891",
+      "exit_code": 0,
+      "status": "preflight_only_completed",
+      "input_files": 33,
+      "preflight_sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6",
+      "consumer_sha256": "fa6af4f8acb227be32bda3789f77c7bfa00b28f1323043a06a7d182874a2c119",
+      "launcher_sha256": "f5dfc061d2db6d34eedaa68c71679f9c7bbfa6e6bad27f56048223db676cb5a0",
+      "credentials_requested": false,
+      "real_http_calls": 0
+    },
+    "git_verified_before_close": {
+      "worktree": "C:/Users/skate/.codex/worktrees/b008/AgenteStoryteller",
+      "branch": "codex/planejamento-agente-storyteller-v5",
+      "head": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "preexisting_tracked_modifications": 39,
+      "original_checkout_branch": "master",
+      "original_checkout_clean": true
+    }
+  },
+  "approvals": {
+    "model": false,
+    "runtime_default": false,
+    "campaign": false,
+    "CAP-001": false
+  }
+}

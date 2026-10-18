@@ -1,0 +1,34 @@
+{
+  "protocol": "source-dialogue-comparison-secondary-semantic-review-v1",
+  "reviewed_at": "2026-09-14",
+  "batch_id": "095e7efd-081b-474f-b5ed-179658373ec2",
+  "source_artifacts_mutated": false,
+  "provider_calls_made": 0,
+  "separation": {
+    "different_model_from_principal_review": true,
+    "independent_from_generators": true,
+    "blind_to_candidate_identity": false,
+    "blind_to_principal_conclusion": false,
+    "organizationally_independent": false,
+    "classification": "secondary_review_with_explicit_context_limit"
+  },
+  "scores": [
+    {"candidate":"qwen","scene":"workshop","turn":"dialogue","status":"committed","utility":2,"advance":2,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"qwen","scene":"workshop","turn":"wait","status":"committed","utility":2,"advance":1,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"qwen","scene":"workshop","turn":"continuity","status":"committed","utility":2,"advance":2,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"gpt_oss","scene":"workshop","turn":"dialogue","status":"rejected_proposal","utility":2,"advance":2,"clarity":1,"semantic_gates":"pass_historical_rejection_preserved"},
+    {"candidate":"gpt_oss","scene":"archive","turn":"dialogue","status":"committed","utility":2,"advance":2,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"gpt_oss","scene":"archive","turn":"wait","status":"committed","utility":2,"advance":2,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"gpt_oss","scene":"archive","turn":"continuity","status":"committed","utility":2,"advance":0,"clarity":2,"semantic_gates":"pass"},
+    {"candidate":"qwen","scene":"archive","turn":"dialogue","status":"rejected_proposal","utility":2,"advance":2,"clarity":1,"semantic_gates":"pass_historical_length_rejection_preserved"}
+  ],
+  "agreement_with_principal": {
+    "score_vectors": "8_of_8",
+    "semantic_gate_outcomes": "8_of_8",
+    "candidate_qualification": "none"
+  },
+  "pilot_recommendation": "no_candidate_qualified",
+  "runtime_default_eligible": false,
+  "campaign_data_eligible": false,
+  "cap_001_approved": false
+}

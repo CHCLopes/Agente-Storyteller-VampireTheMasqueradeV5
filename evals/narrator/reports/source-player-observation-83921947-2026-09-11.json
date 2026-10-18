@@ -1,0 +1,144 @@
+{
+  "date": "2026-09-11",
+  "batch_id": "83921947-4094-4798-990c-af65f7963e61",
+  "status": "closed",
+  "lifecycle": {
+    "exit_code": 0,
+    "batch_id": "83921947-4094-4798-990c-af65f7963e61",
+    "status": "finished",
+    "updated_at": "2026-09-11T22:03:31.3129964Z"
+  },
+  "started_at": "2026-09-11T22:01:19.153642+00:00",
+  "finished_at": "2026-09-11T22:03:25.160111+00:00",
+  "operational": {
+    "calls_made": 2,
+    "campaign_data_eligible": false,
+    "cap_001_approved": false,
+    "capsules_retained": 2,
+    "experiment_version": "source-player-observation-v1",
+    "input_replays_verified": 2,
+    "max_calls": 2,
+    "operational_probe_passed": true,
+    "probe_kind": "source_player_probe",
+    "process_exit_code": 0,
+    "producer_completions": 2,
+    "protocol": "narrative-source-application-v1",
+    "purpose": "source_player_probe",
+    "replays_verified": 2,
+    "route_verified": 2,
+    "runtime_default_eligible": false,
+    "schema_valid": 2,
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "semantic_fidelity_review": {
+      "approval": null,
+      "status": "not_performed"
+    },
+    "semantic_not_evaluated": true,
+    "synthetic_only": true,
+    "turns_committed": 2,
+    "turns_processed": 2,
+    "turns_skipped": 0
+  },
+  "offline_verifier": {
+    "verified": true,
+    "exit_code": 0,
+    "evidence": "existing CLI --verify-artifacts run by root; validated on disposable SQLite copy; no provider call"
+  },
+  "chronology": {
+    "initial_http_delay_seconds": 62.731411,
+    "inter_http_start_seconds": 61.972224,
+    "timestamps_are_local_observations": true,
+    "deadline_verification": "60-second configured deadline; no independent persisted deadline claim"
+  },
+  "usage": {
+    "input_tokens": 3110,
+    "output_tokens": 365,
+    "cost_status": "unavailable"
+  },
+  "turns": [
+    {
+      "key": "dialogue",
+      "http_started_at": "2026-09-11T22:02:21.885053+00:00",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "evidence_started_at": "2026-09-11T22:02:20.316256+00:00",
+      "evidence_finished_at": "2026-09-11T22:02:22.966651+00:00",
+      "response_n_sha256": "39071afeec9bf77ab9f1a01d10fbf9b414534f0e4bf6cb80944d949ef9803641",
+      "response_q_sha256": "c22ec8ce3d12cde9511cc28b947c020db7ef6ab39a06b581edd51c14a78ba071"
+    },
+    {
+      "key": "wait",
+      "http_started_at": "2026-09-11T22:03:23.857277+00:00",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "evidence_started_at": "2026-09-11T22:03:22.607713+00:00",
+      "evidence_finished_at": "2026-09-11T22:03:24.726167+00:00",
+      "response_n_sha256": "9de548de82424804b5a677f67c083efa1af3c0154e77b57118e27883bf722915",
+      "response_q_sha256": "18183a5b4db0abb340dbdabd903477faa3ac21d3d9e283e3c4e0ae3683d40fb7"
+    }
+  ],
+  "narrative_review": {
+    "reviewer": "root and independent source_player_independent_review",
+    "status": "completed_separate_from_raw",
+    "overall": "partial_experience_gate_not_demonstrated",
+    "dialogue_relevance": "partial_metaphorical_answer_without_concrete_information",
+    "perceptible_reaction": "present_fluorescent_flicker_and_pencil_motion_stop",
+    "substantive_progress": "insufficient_silence_returns_initiative_to_player",
+    "continuity": "preserved_in_two_turns",
+    "agency": "preserved_in_two_turns",
+    "uncertainty": "preserved_in_two_turns",
+    "attribution": "Voce sente is inside Mara speech, not narrator-imposed player emotion",
+    "improvisation": "Sketch, pencil, fluorescent light and paint smell are plausible local additions, not automatically violations",
+    "lexical_defect": "contrainharem",
+    "cap_001_approved": false,
+    "runtime_approved": false
+  },
+  "limits": [
+    "two synthetic turns only",
+    "not causal A/B against historical batches",
+    "technical success does not approve narrative experience or campaign",
+    "raw semantic review flag intentionally unchanged"
+  ],
+  "implementation_hashes": {
+    "scripts/evaluate_retained_source.py": "c09be39a25d822f8992082cf3cfd422f7200673aece0d6bdb4f6c05f03b7c230",
+    "scripts/evaluate_narrator_source.py": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+    "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+    "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+    "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+    "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+    "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+    "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+    "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+    "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+    "api/persistence.py": "50d4b069a5fe80ab1a86e23211763a90936895e86381e0bd763efe267ca58b3e",
+    "api/scene_service.py": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+    "api/scene_director_service.py": "661e2a0dbbc2ea092fa43bd7a1495a458cfe08612fe2c16176057c5aa573e0d4",
+    "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+    "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+    "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+    "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+    "scripts/evaluate_source_player.py": "7b67261cd21aed3c90cca579bc648c1a4b952652c27b90bc6d3a5b56b35a0d1e",
+    "api/narrative_source_setup.py": "32956acf98f92ab3b48e7e410b35c7ccb863042da99f1ce26031fbe93c07a60e",
+    "api/narrative_source_setup_service.py": "806d40407c790dc4a077a61e1e5f6bf57ecdd60b6f9a585bf979dec5081b01c7",
+    "api/narrative_source_entry.py": "7e1941fda8792785fa61eb7a393745706df7792f01038ad40b4be7ef334b2757",
+    "api/narrative_source_input.py": "9369f04ec863f68097379aa234f44c909f84e15cc528ba9dca631d82d3bd4fe0",
+    "api/narrative_source_input_service.py": "68a2a3a96601e3f63d30963798644234ec048b73e5655986b67c940e6dcd5b28",
+    "api/narrative_source_action_producer.py": "00a9c5ca32a0226b992f0c7b09f5ccfb8a2a479ad456087b774c52cd7597eec5",
+    "api/narrative_source_status.py": "446331f5f5ed15fa14446187ec948d45c012075b23a2afcf71339d53047a8318",
+    "api/rules_service.py": "979059639aac0356f7280d0fa92a2db9c34542e1fc9c32185634b7a4002e78eb"
+  },
+  "protected_artifact_hashes": {
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "8eba50db144ab00e88268ff6e4fc53106ac6248560ddcd9bc4fa2de1f13bd45a",
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\source-player.sqlite3": "108e22e32b88c2b7875ecb777ef6c92ac43ec57cc755ba2d07eb5f8310f61331",
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\summary.json": "d4340540a106a3f31047ff7a4481233f07e7c73adf49224ce7c44a01350a6a2a",
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\working.sqlite3": "9ca863e36bf24d389d640e422f0d334c9608d0b7e8a8c8c55227632b1ea03ae4",
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\working.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-player-83921947-4094-4798-990c-af65f7963e61\\working.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-83921947-4094-4798-990c-af65f7963e61\\binding.json": "3ed559d133e81b5189a1c9b0a75c95dc8d6ef714f8ce5dc29c03b1230469cd8e",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-83921947-4094-4798-990c-af65f7963e61\\lifecycle.json": "2ad84fd61042c5ea19f6d15a75af3bd2cdad5b98050bb2f00c3a78b02c122c07",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-83921947-4094-4798-990c-af65f7963e61\\preflight.json": "587d44eb4459a09d64e2bf6a5670bb94bd279ee1a68ef27f21ba5549b32db62c"
+  },
+  "next_step": "inactive pure public projections; route/access and experience remain gated; no repeat of closed batch"
+}

@@ -2,6 +2,12 @@
   "session_id": "chronicle_001",
   "chronicle_name": "Noites de Sangue",
   "turn": 1,
+  "catalog_contract": {
+    "schema_version": "1.0",
+    "validation": "read_compatible",
+    "unknown_ids": "reject",
+    "legacy_input": "preserve_without_automatic_rewrite"
+  },
   "context": {
     "location": "Elysium",
     "npcs_present": ["Príncipe", "Xerife"],

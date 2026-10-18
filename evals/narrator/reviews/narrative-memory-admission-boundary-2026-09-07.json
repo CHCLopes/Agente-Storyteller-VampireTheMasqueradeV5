@@ -1,0 +1,419 @@
+{
+  "document_kind": "authored_narrative_memory_admission_boundary_audit",
+  "recorded_at_utc": "2026-09-07T22:19:09.642722+00:00",
+  "status": "closed_local_work_completed",
+  "scope": {
+    "synthetic_only": true,
+    "provider_calls_for_audit": 0,
+    "campaign_data_used": false,
+    "runtime_or_cap_promoted": false,
+    "product_contract_changed": false,
+    "bounded_controls": 3,
+    "local_provenance_fix_files": 2
+  },
+  "requirements": [
+    {
+      "id": "REQ-015",
+      "file": "plan/architecture-llm-memory-turns-1.md",
+      "line": 35
+    },
+    {
+      "id": "AC-IMP-005",
+      "file": "spec/spec-improvisational-scene-direction.md",
+      "line": 132
+    },
+    {
+      "id": "explicit_semantic_limit",
+      "file": "spec/spec-improvisational-scene-direction.md",
+      "line": 148
+    },
+    {
+      "id": "ALT-004",
+      "file": "plan/architecture-llm-memory-turns-1.md",
+      "line": 135
+    }
+  ],
+  "traceability": [
+    {
+      "stage": "proposta e política",
+      "sources": [
+        {
+          "file": "api/scene_director_service.py",
+          "line": 68
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "line": 844
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "line": 2631
+        }
+      ],
+      "mechanical_guarantee": "Campos separados n/s/f/t/r, schema e verificações delimitadas de mecânica, agência, visibilidade, transição, presença, pergunta e pendências.",
+      "semantic_limit": "Não prova implicação geral entre narrativa e resumo/fatos/pendências."
+    },
+    {
+      "stage": "proposta para cena e evento",
+      "sources": [
+        {
+          "file": "api/scene_director_service.py",
+          "line": 1000
+        },
+        {
+          "file": "api/turn_execution_service.py",
+          "line": 452
+        },
+        {
+          "file": "api/turn_execution_service.py",
+          "line": 587
+        }
+      ],
+      "mechanical_guarantee": "Produto atribui IDs/fontes; s vai para cena/evento; f visíveis para detalhes, segredos ficam separados.",
+      "semantic_limit": "A referência à invocação/política não comprova equivalência entre n e s."
+    },
+    {
+      "stage": "evento para candidato",
+      "sources": [
+        {
+          "file": "api/memory_service.py",
+          "line": 163
+        },
+        {
+          "file": "api/turn_execution_service.py",
+          "line": 1122
+        }
+      ],
+      "mechanical_guarantee": "Copia resumo e metadados; narrativa é origem LLM quando usada como alternativa sem resumo canônico.",
+      "semantic_limit": "O chamador de cena usa semantic_grounding_confirmed=proposal is not None."
+    },
+    {
+      "stage": "validação e promoção",
+      "sources": [
+        {
+          "file": "api/memory_service.py",
+          "line": 210
+        },
+        {
+          "file": "api/memory_service.py",
+          "line": 309
+        }
+      ],
+      "mechanical_guarantee": "Referências, fatos, sessão/turno, cobertura narrativa e visibilidade são verificadas; somente ACCEPTED é promovido.",
+      "semantic_limit": "Com confirmação do chamador, a validação é estrutural; não compara o significado do resumo às fontes."
+    },
+    {
+      "stage": "commit e recuperação",
+      "sources": [
+        {
+          "file": "api/turn_execution_service.py",
+          "line": 1206
+        },
+        {
+          "file": "api/persistence.py",
+          "line": 2092
+        },
+        {
+          "file": "api/persistence.py",
+          "line": 2659
+        }
+      ],
+      "mechanical_guarantee": "Commit único e correspondência candidato/memória; restaura texto/metadados e filtra visibilidade antes de selecionar.",
+      "semantic_limit": "Persistir corretamente não corrige uma relação já admitida."
+    },
+    {
+      "stage": "memória e cena para contexto",
+      "sources": [
+        {
+          "file": "api/orchestrator_service.py",
+          "line": 1125
+        },
+        {
+          "file": "api/context_service.py",
+          "line": 162
+        },
+        {
+          "file": "api/scene_service.py",
+          "line": 111
+        }
+      ],
+      "mechanical_guarantee": "Summary vira content; seleção mantém itens inteiros sob orçamento; cena quente traz resumo/detalhes/pendências.",
+      "semantic_limit": "Não há nova avaliação semântica na montagem de CONHECIDO/CONFIDENCIAL."
+    }
+  ],
+  "controls": {
+    "recorded_at_utc": "2026-09-07T22:14:33.2668378Z",
+    "status": "completed",
+    "command": ".\\.venv\\Scripts\\python.exe C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\run_after_review.py",
+    "exit_code": 0,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "pytest_seconds": 1.21,
+    "xml_seconds": 1.066,
+    "cases": [
+      {
+        "name": "test_authored_faithful_summary_survives_the_real_local_chain",
+        "seconds": 0.122
+      },
+      {
+        "name": "test_authored_unknown_reference_is_rejected_at_memory_boundary",
+        "seconds": 0.082
+      },
+      {
+        "name": "test_authored_color_transfer_survives_current_policy_despite_valid_references",
+        "seconds": 0.089
+      }
+    ],
+    "execution_count": 1,
+    "provider_calls": 0,
+    "fake_adapter_invocations": 3,
+    "repo_source_writes": 0,
+    "hashes_before_after_equal": true,
+    "changed_paths": [],
+    "hashes": {
+      "api/persistence.py": "69a31ecf2ad25fad899f3453feca98647200d7b2924889e6ac76ad285e4a63ea",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\test_authored_memory_boundary_controls.py": "2259453961b9c1086a43467d76fa5522f790fd5dd0a72f16d09a53c7c4b32c2c",
+      "api/turn_execution_service.py": "a44f1739d8447067c41a10e590732aac2258bc2eb3d1748760bbe7fdeacb038c",
+      "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+      "api/orchestrator_service.py": "6b3a594d7b20dc215003389512d2f1ce4fa6b36072358ffc8b72e5278d6b7da7",
+      "api/memory_service.py": "4a8bfa8004879053417771b3f69020b48b5eaa18be4af6ca73e2040ca1755cf4",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\run_after_review.py": "70ce3bd09771755c3c11c42980cd69df17863febf3d3cdcc44ebda617be63c2d",
+      "tests/test_turn_execution_service.py": "31d0e08047cda9990690d788eb7251ca33607b35471788180e1cb2ef70485a50",
+      "tests/conftest.py": "d779c64e08bd1f7ea4fac9db97ad1287478281c7cbf2a88c60fb0e06824688ed",
+      "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+      "api/context_service.py": "7fcbec6660602aa1b6d7859536b5d1275b2d641a6d198f8d23cb9c69c99bcac3",
+      "api/llm/testing.py": "0195ee6b0445591f3c3f0b397b3fa96a15598e0969082b03bdb20c9c93940255"
+    },
+    "observations": {
+      "invalid-reference": {
+        "origin": "authored_control_not_model_sample",
+        "provider_calls": 0,
+        "scope": "direct_memory_validation_after_faithful_turn",
+        "unknown_reference_rejected": true,
+        "additional_memory_promoted": false,
+        "semantic_approval": null
+      },
+      "color-transfer": {
+        "origin": "authored_control_not_model_sample",
+        "provider_calls": 0,
+        "narrative": "A porta cede e revela a sala vazia. Uma luminária de base azul ilumina o mapa dobrado sobre a mesa. Um estojo fechado repousa junto ao mapa; duas poltronas estão afastadas da estante.",
+        "summary": "Uma luminária emite luz azul sobre o mapa dobrado na sala vazia.",
+        "agent_semantic_classification": "unsupported_base_to_emission_transfer",
+        "turn_status": "completed",
+        "candidate_status": "accepted",
+        "context_text": "CONHECIDO\n- Uma luminária emite luz azul sobre o mapa dobrado na sala vazia.",
+        "semantic_approval": null,
+        "test_meaning": "characterizes_current_gap_does_not_approve_or_fix_it"
+      },
+      "faithful": {
+        "origin": "authored_control_not_model_sample",
+        "provider_calls": 0,
+        "narrative": "A porta cede e revela a sala vazia. Uma luminária de base azul ilumina o mapa dobrado sobre a mesa. Um estojo fechado repousa junto ao mapa; duas poltronas estão afastadas da estante.",
+        "summary": "Uma luminária de base azul ilumina o mapa dobrado na sala vazia.",
+        "agent_semantic_classification": "faithful",
+        "turn_status": "completed",
+        "candidate_status": "accepted",
+        "context_text": "CONHECIDO\n- Uma luminária de base azul ilumina o mapa dobrado na sala vazia.",
+        "semantic_approval": null
+      }
+    },
+    "semantic_approval": null,
+    "warning": "PytestAssertRewriteWarning for already imported anyio from loading repository conftest before pytest.main; no test failures.",
+    "limitations": [
+      "Authored controls, not historical model samples or CAP replay.",
+      "Invalid source reference is tested directly at memory validation after a faithful committed turn, not injected through the model schema.",
+      "Retrieval and context formatting are exercised without a second LLM invocation.",
+      "Passing characterization of color transfer documents a semantic limit; it does not approve fidelity or apply a repair."
+    ]
+  },
+  "local_fix": {
+    "recorded_at": "2026-09-07T22:14:18.327001+00:00",
+    "worktree": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+    "scope": [
+      "api/memory_service.py",
+      "tests/test_memory_service.py"
+    ],
+    "files": [
+      {
+        "file": "api/memory_service.py",
+        "before_sha256": "6cf9f743a661cf54be2fdb149da2ddd03189f5db79e4ca9adcda17168f742326",
+        "after_sha256": "4a8bfa8004879053417771b3f69020b48b5eaa18be4af6ca73e2040ca1755cf4",
+        "added_lines": 1,
+        "removed_lines": 1
+      },
+      {
+        "file": "tests/test_memory_service.py",
+        "before_sha256": "38ab4a320e5329c665aceee0fc6e25bbb34125c85df8b9d0f96e536630ffa29f",
+        "after_sha256": "2407825b5e1125e25c38c72a2fb70527e044c266a401cccd96e00784699af54d",
+        "added_lines": 33,
+        "removed_lines": 2
+      }
+    ],
+    "red": {
+      "test": "tests/test_memory_service.py::test_derivation_uses_a_semantic_unit_without_character_truncation",
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 1,
+      "seconds": 0.51,
+      "warning": "pre-existing Starlette/python_multipart PendingDeprecationWarning",
+      "failure": "empty summary retains CandidateProposer.DETERMINISTIC instead of LLM",
+      "api_before_sha256": "6cf9f743a661cf54be2fdb149da2ddd03189f5db79e4ca9adcda17168f742326",
+      "red_test_sha256": "c75496b38802a1556456102a66db386546c8a2c390f819ed4f429d8bec7afd59",
+      "provider_calls": 0
+    },
+    "final_focused_verification": {
+      "command": "$env:STORYTELLER_DISABLE_DOTENV = 1; $env:PYTHONDONTWRITEBYTECODE = 1; .venv/Scripts/python.exe -B -m pytest -q -p no:cacheprovider tests/test_memory_service.py",
+      "exit_code": 0,
+      "passed": 15,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "seconds": 0.33,
+      "warning": "pre-existing Starlette/python_multipart PendingDeprecationWarning",
+      "execution_count_after_final_fix": 1
+    },
+    "diff_check": {
+      "command": "git diff --check -- api/memory_service.py tests/test_memory_service.py",
+      "exit_code": 0,
+      "whitespace_errors": false,
+      "warning": "Git noted LF will be replaced by CRLF for api/memory_service.py on next Git write; no rewrite performed"
+    },
+    "diff": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-empty-origin-6e6cnho3\\scoped-change.diff",
+      "sha256": "861c236b56c6b2b78945c6b801029c9ee902a44b1a5b1dfce8bf395f973aa30f"
+    },
+    "provider_calls": 0,
+    "credentials_accessed": false,
+    "dotenv_disabled": true,
+    "original_checkout_modified": false,
+    "limitation": "This corrects provenance classification only; it does not establish general semantic grounding."
+  },
+  "source_evidence": {
+    "controls_after": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\after.json",
+      "sha256": "ac3da4007dea7e671c33e71b1dc0a88a4e27915103577a92a08edeff2bde683e"
+    },
+    "fix_after": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-empty-origin-6e6cnho3\\after.json",
+      "sha256": "840f419142739bc2307eb99f9acf6c53678ee77158189a9f7c4143b51cf7caf0"
+    },
+    "control_test": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\test_authored_memory_boundary_controls.py",
+      "sha256": "2259453961b9c1086a43467d76fa5522f790fd5dd0a72f16d09a53c7c4b32c2c",
+      "text": "\"\"\"Three authored offline controls. Passing tests characterize current behavior;\nthey do not approve semantic fidelity, repair model samples, or execute CAP.\nThe negative-reference control checks the memory boundary directly after a\nfaithful committed turn; the model cannot supply canonical source event IDs.\n\"\"\"\nfrom __future__ import annotations\n\nimport importlib.util\nimport json\nfrom pathlib import Path\n\nimport pytest\n\nfrom api.context_service import ContextQuery, assemble_context\nfrom api.llm.contract import CancellationToken\nfrom api.llm.testing import FakeLLMAdapter\nfrom api.memory_service import validate_memory_candidate\nfrom api.orchestrator_service import _context_prompt, _stored_memory_context_item\nfrom api.persistence import SQLitePersistence\nfrom api.scene_director_service import SceneContinuationProposal\nfrom api.scene_service import scene_fact_text, scene_from_context\nfrom api.state_service import sync_event_from_context\nfrom api.turn_execution_service import execute_prepared_turn\nfrom api.turn_models import CanonicalEvent, CanonicalFact, MemoryCandidate\n\nREPO = Path(r\"C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\")\nPROOF = Path(__file__).parent\n_spec = importlib.util.spec_from_file_location(\n    \"authored_boundary_existing_fixture_helpers\",\n    REPO / \"tests\" / \"test_turn_execution_service.py\",\n)\nassert _spec is not None and _spec.loader is not None\n_helpers = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_helpers)\n\nNARRATIVE = (\n    \"A porta cede e revela a sala vazia. Uma luminária de base azul ilumina \"\n    \"o mapa dobrado sobre a mesa. Um estojo fechado repousa junto ao mapa; \"\n    \"duas poltronas estão afastadas da estante.\"\n)\nFAITHFUL = \"Uma luminária de base azul ilumina o mapa dobrado na sala vazia.\"\nTRANSFERRED = \"Uma luminária emite luz azul sobre o mapa dobrado na sala vazia.\"\n\n\ndef authored_proposal(summary: str) -> SceneContinuationProposal:\n    return SceneContinuationProposal.model_validate({\n        \"narrative\": NARRATIVE,\n        \"outcome\": \"success\",\n        \"location\": \"Sala vazia\",\n        \"scene_summary\": summary,\n        \"npcs_present\": [],\n        \"new_facts\": [{\n            \"kind\": \"observation\",\n            \"summary\": \"Um estojo fechado repousa junto ao mapa.\",\n            \"visibility\": \"player\",\n            \"importance\": 0.5,\n            \"pending\": False,\n        }],\n        \"open_threads\": [],\n        \"resolved_threads\": [],\n        \"player_prompt\": \"O que você faz agora?\",\n    })\n\n\ndef record_evidence(name: str, value: dict) -> None:\n    (PROOF / f\"{name}.json\").write_text(\n        json.dumps(value, ensure_ascii=False, indent=2) + \"\\n\", encoding=\"utf-8\"\n    )\n\n\nasync def completed_authored_turn(tmp_path: Path, summary: str, operation: str):\n    prepared = _helpers._prepared(operation)\n    store = SQLitePersistence(tmp_path / \"authored.sqlite3\")\n    initial = sync_event_from_context(\"session\", prepared.updated_context)\n    await store.ensure_campaign(\"session\", initial_state=initial.model_dump(mode=\"json\"))\n    target, capabilities = _helpers._target_and_capabilities()\n    proposal = authored_proposal(summary)\n    gateway = FakeLLMAdapter(\n        capability_set=capabilities, structured_payload=proposal.model_dump(mode=\"json\")\n    )\n    delivered = []\n\n    async def collect(value):\n        delivered.append(value)\n\n    result = await execute_prepared_turn(\n        prepared,\n        session_id=\"session\",\n        operation_id=operation,\n        user_input=prepared.draft.player_input,\n        chronicle_name=\"Authored offline boundary controls\",\n        store=store,\n        gateway=gateway,\n        target=target,\n        cancellation=CancellationToken(),\n        on_chunk=collect,\n    )\n    assert result.status == \"completed\", result.error\n    assert result.narrative is not None\n    assert delivered == [proposal.player_text]\n    assert result.narrative.text == proposal.player_text\n    assert gateway.external_call_count == 1  # FakeLLMAdapter counter, zero network.\n    turns = await store.list_turns(\"session\")\n    events = await store.list_events(\"session\")\n    candidates = await store.list_memory_candidates(\"session\")\n    memories = await store.list_episodic_memories(\"session\")\n    assert len(turns) == len(candidates) == len(memories) == 1\n    event = next(item for item in events if item[\"event_type\"] == \"scene_established\")\n    assert event[\"summary\"] == candidates[0][\"summary\"] == memories[0][\"summary\"] == summary\n    assert candidates[0][\"validation_status\"] == \"accepted\"\n    assert candidates[0][\"source_event_ids\"] == [event[\"event_id\"]]\n    scene = scene_from_context(prepared.updated_context)\n    assert scene is not None and scene.summary == summary\n    assert summary in scene_fact_text(scene)\n\n    restored = await store.retrieve_memories(\n        \"session\", query=\"luminária mapa\", allowed_visibilities=(\"public\", \"player\"),\n        token_budget=2000,\n    )\n    assert len(restored) == 1\n    context_item = _stored_memory_context_item(restored[0])\n    assert context_item is not None\n    packet = assemble_context(\n        [context_item], ContextQuery(query_text=\"luminária mapa\", token_budget=2000)\n    )\n    assert len(packet.selected) == 1\n    context_text = _context_prompt(packet)\n    assert summary in context_text\n    return {\n        \"proposal\": proposal, \"store\": store, \"result\": result,\n        \"turns\": turns, \"events\": events, \"candidates\": candidates,\n        \"memories\": memories, \"context_text\": context_text,\n    }\n\n\n@pytest.mark.asyncio\nasync def test_authored_faithful_summary_survives_the_real_local_chain(tmp_path):\n    data = await completed_authored_turn(tmp_path, FAITHFUL, \"faithful-authored\")\n    record_evidence(\"faithful\", {\n        \"origin\": \"authored_control_not_model_sample\", \"provider_calls\": 0,\n        \"narrative\": NARRATIVE, \"summary\": FAITHFUL,\n        \"agent_semantic_classification\": \"faithful\",\n        \"turn_status\": data[\"result\"].status,\n        \"candidate_status\": data[\"candidates\"][0][\"validation_status\"],\n        \"context_text\": data[\"context_text\"], \"semantic_approval\": None,\n    })\n\n\n@pytest.mark.asyncio\nasync def test_authored_unknown_reference_is_rejected_at_memory_boundary(tmp_path):\n    data = await completed_authored_turn(tmp_path, FAITHFUL, \"invalid-ref-authored\")\n    candidate = MemoryCandidate.model_validate(data[\"candidates\"][0][\"payload\"])\n    forged_data = candidate.model_dump(mode=\"json\")\n    forged_data.update(\n        source_event_ids=[\"authored-event-does-not-exist\"],\n        validation_status=\"pending\", validation_notes=[],\n    )\n    forged = MemoryCandidate.model_validate(forged_data)\n    events = tuple(CanonicalEvent.model_validate(item[\"payload\"]) for item in data[\"events\"])\n    facts = tuple(CanonicalFact.model_validate(item) for item in data[\"turns\"][0][\"facts\"])\n    with pytest.raises(ValueError, match=\"references unknown event\"):\n        validate_memory_candidate(\n            forged, events=events, narratives=(data[\"result\"].narrative,), facts=facts,\n            semantic_grounding_confirmed=True,\n        )\n    assert len(await data[\"store\"].list_episodic_memories(\"session\")) == 1\n    record_evidence(\"invalid-reference\", {\n        \"origin\": \"authored_control_not_model_sample\", \"provider_calls\": 0,\n        \"scope\": \"direct_memory_validation_after_faithful_turn\",\n        \"unknown_reference_rejected\": True, \"additional_memory_promoted\": False,\n        \"semantic_approval\": None,\n    })\n\n\n@pytest.mark.asyncio\nasync def test_authored_color_transfer_survives_current_policy_despite_valid_references(tmp_path):\n    faithful = authored_proposal(FAITHFUL).model_dump(mode=\"json\")\n    transferred = authored_proposal(TRANSFERRED).model_dump(mode=\"json\")\n    assert {key for key in faithful if faithful[key] != transferred[key]} == {\"scene_summary\"}\n    assert \"base azul\" in NARRATIVE and \"luz azul\" not in NARRATIVE\n    data = await completed_authored_turn(tmp_path, TRANSFERRED, \"color-transfer-authored\")\n    record_evidence(\"color-transfer\", {\n        \"origin\": \"authored_control_not_model_sample\", \"provider_calls\": 0,\n        \"narrative\": NARRATIVE, \"summary\": TRANSFERRED,\n        \"agent_semantic_classification\": \"unsupported_base_to_emission_transfer\",\n        \"turn_status\": data[\"result\"].status,\n        \"candidate_status\": data[\"candidates\"][0][\"validation_status\"],\n        \"context_text\": data[\"context_text\"], \"semantic_approval\": None,\n        \"test_meaning\": \"characterizes_current_gap_does_not_approve_or_fix_it\",\n    })"
+    },
+    "control_runner": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-boundary-controls-20260907\\run_after_review.py",
+      "sha256": "70ce3bd09771755c3c11c42980cd69df17863febf3d3cdcc44ebda617be63c2d",
+      "text": "\"\"\"Run only the three reviewed Temp controls with repository safety fixtures.\"\"\"\nfrom __future__ import annotations\nimport importlib.util\nimport os\nfrom pathlib import Path\nimport sys\n\nos.environ[\"STORYTELLER_DISABLE_DOTENV\"] = \"1\"\nos.environ[\"PYTHONDONTWRITEBYTECODE\"] = \"1\"\nsys.dont_write_bytecode = True\nREPO = Path(r\"C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\")\nPROOF = Path(__file__).parent\nos.chdir(REPO)\nsys.path.insert(0, str(REPO))\nimport pytest\nspec = importlib.util.spec_from_file_location(\"authored_boundary_safety\", REPO / \"tests\" / \"conftest.py\")\nassert spec is not None and spec.loader is not None\nsafety = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(safety)\nraise SystemExit(pytest.main([\n    \"-q\", \"-p\", \"no:cacheprovider\", \"--rootdir\", str(REPO),\n    str(PROOF / \"test_authored_memory_boundary_controls.py\"),\n    \"--junitxml\", str(PROOF / \"controls.xml\"),\n], plugins=[safety]))"
+    },
+    "fix_diff": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-memory-empty-origin-6e6cnho3\\scoped-change.diff",
+      "sha256": "861c236b56c6b2b78945c6b801029c9ee902a44b1a5b1dfce8bf395f973aa30f",
+      "text": "--- before/api/memory_service.py\n+++ after/api/memory_service.py\n@@ -179,7 +179,7 @@\n     _validate_event_narrative_pair(event, narrative)\n     semantic_summary = summary or event.summary or narrative.text\n     effective_proposer = proposed_by\n-    if summary is None and event.summary is None:\n+    if not summary and not event.summary:\n         # Narrative prose is model output, even when this helper is called from\n         # deterministic application code.  It must remain pending until an\n         # explicit grounding step confirms it against canonical facts.\n--- before/tests/test_memory_service.py\n+++ after/tests/test_memory_service.py\n@@ -1,6 +1,7 @@\n from datetime import datetime, timezone\n \n import pytest\n+from pydantic import ValidationError\n \n from api.memory_service import (\n     CampaignMemory,\n@@ -119,13 +120,16 @@\n     assert \"Mortes causadas na campanha: 1\" in fragment\n \n \n-def test_derivation_uses_a_semantic_unit_without_character_truncation() -> None:\n+@pytest.mark.parametrize(\"summary\", [None, \"\"], ids=[\"none\", \"empty\"])\n+def test_derivation_uses_a_semantic_unit_without_character_truncation(\n+    summary: str | None,\n+) -> None:\n     long_semantic_text = \"Consequência persistente. \" * 20\n     source_event = event(summary=None)\n     source_narrative = narrative(text=long_semantic_text)\n \n     candidate = derive_memory_candidate(\n-        source_event, source_narrative, candidate_id=\"candidate-1\"\n+        source_event, source_narrative, candidate_id=\"candidate-1\", summary=summary\n     )\n \n     # NonEmptyStr normalizes surrounding whitespace, but keeps the full unit.\n@@ -145,6 +149,33 @@\n     assert still_pending.validation_status is CandidateValidationStatus.PENDING\n     with pytest.raises(ValueError, match=\"only an accepted\"):\n         promote_memory_candidate(still_pending, memory_id=\"memory-from-prose\")\n+\n+\n+@pytest.mark.parametrize(\"summary\", [None, \"\"], ids=[\"none\", \"empty\"])\n+def test_empty_summary_uses_existing_canonical_event_summary(summary: str | None) -> None:\n+    source_event = event()\n+    source_narrative = narrative(text=\"Uma versão narrativa diferente da fonte canônica.\")\n+    candidate = derive_memory_candidate(\n+        source_event, source_narrative, candidate_id=\"event-summary\", summary=summary\n+    )\n+    assert candidate.summary == source_event.summary\n+    assert candidate.proposed_by is CandidateProposer.DETERMINISTIC\n+\n+    accepted = validate_memory_candidate(\n+        candidate, events=(source_event,), narratives=(source_narrative,), facts=(fact(),)\n+    )\n+    memory = promote_memory_candidate(accepted, memory_id=\"event-memory\")\n+    assert memory.summary == source_event.summary\n+    assert memory.source_event_ids == (source_event.event_id,)\n+\n+\n+@pytest.mark.parametrize(\"event_summary\", [None, \"O resultado canônico permanece válido.\"])\n+def test_whitespace_summary_still_fails_normal_validation(event_summary: str | None) -> None:\n+    with pytest.raises(ValidationError):\n+        derive_memory_candidate(\n+            event(summary=event_summary), narrative(),\n+            candidate_id=\"whitespace-summary\", summary=\" \\t\\n \",\n+        )\n \n \n def test_derivation_rejects_mismatched_session_turn_or_source() -> None:\n"
+    },
+    "corpus_final_audit": {
+      "recorded_at_utc": "2026-09-07T22:07:29.001870+00:00",
+      "package_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.json",
+      "package_sha256": "9dba9b55d19721e7a00e0d7e4e80f0232043d0aaa5100630d1f75b6ccd5484cd",
+      "raw_files_verified": {
+        "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+        "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+        "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/summary.json": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211",
+        "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f",
+        "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e",
+        "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+        "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+        "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c"
+      },
+      "records_verified": [
+        {
+          "id": "21cf-archive-vibration",
+          "raw_jsonl": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 1,
+          "case_id": "archive-vibration",
+          "arm_id": null,
+          "relations": 6
+        },
+        {
+          "id": "95dd-station-clock",
+          "raw_jsonl": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 1,
+          "case_id": "station-clock",
+          "arm_id": null,
+          "relations": 6
+        },
+        {
+          "id": "0e7b-reading-room-a",
+          "raw_jsonl": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 1,
+          "case_id": "reading-room-a",
+          "arm_id": null,
+          "relations": 9
+        },
+        {
+          "id": "0e7b-reading-room-b",
+          "raw_jsonl": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 2,
+          "case_id": "reading-room-b",
+          "arm_id": null,
+          "relations": 9
+        },
+        {
+          "id": "faad-control",
+          "raw_jsonl": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 1,
+          "case_id": "gallery-reflection",
+          "arm_id": "control",
+          "relations": 8
+        },
+        {
+          "id": "faad-relational",
+          "raw_jsonl": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "line_1based": 2,
+          "case_id": "gallery-reflection",
+          "arm_id": "relational",
+          "relations": 8
+        }
+      ],
+      "record_count": 6,
+      "raw_file_count": 8,
+      "relation_count": 46,
+      "markdown_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.md",
+      "markdown_sha256": "e9e9bcc493ff1127980f6d0df03d5e108ae74e67a2005e850632f59cb9c139ea",
+      "markdown_records_and_relation_rows_match_json": true,
+      "schema_constraint_checks": 6,
+      "instruction_measurements_checked": 6,
+      "verifier_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-semantic-corpus-audit-20260907\\verify_package.py",
+      "verifier_sha256": "f271e383f5bfe82e1cb12145e19e45fd6ccfa3debd30517d286d92db3938710e",
+      "spans_checked": 81,
+      "all_literals_exact": true,
+      "semantic_classifications_evaluated": false,
+      "provider_calls": 0,
+      "credential_reads": false,
+      "tests_run": 0,
+      "repository_writes": false,
+      "contradictions": []
+    }
+  },
+  "review": {
+    "root": "read controls, runner, evidence, fix diff and requirements",
+    "independent_code_review": "faithful_runner: no material findings, no test rerun",
+    "independent_boundary_review": "final_attributed_diff and faithful_code_review: code tracing plus the three controls"
+  },
+  "conclusions": [
+    "A transferência autorada base azul → luz azul foi aceita e reapareceu no contexto sob referências válidas. Não demonstra incidente de campanha nem desempenho de um modelo real.",
+    "A rejeição por referência inexistente e a preservação literal após commit funcionam no escopo testado.",
+    "O defeito estreito de origem no fallback vazio foi reproduzido e corrigido, sem trocar a política de admissão de cena.",
+    "A política atual não prova fidelidade geral, limite já reconhecido na especificação. Não foi encontrado outro defeito local demonstrado nesta auditoria que resolva esse problema geral.",
+    "A revisão de autoridade de registros é proposta de produto separada, não aprovação de runtime/CAP nem nova observação agendada."
+  ],
+  "next_decision": {
+    "file": "evals/narrator/reviews/narrative-memory-grounding-decision-2026-09-07.md",
+    "status": "proposed_not_approved",
+    "current_behavior_preserved": true
+  }
+}

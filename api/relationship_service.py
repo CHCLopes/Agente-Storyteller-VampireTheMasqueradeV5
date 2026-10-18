@@ -2,15 +2,10 @@
 api/relationship_service.py
 Motor Relacional — Camada 2.
 Gerencia relacionamentos políticos com NPCs da campanha.
-Persiste em JSON por sessão, evolui com base em ações, gera fragmento de prompt.
+Projeta o agregado transacional da campanha, evolui com base em ações e gera
+um fragmento estruturado para o contexto narrativo.
 """
-import os
-import json
-import re
-import aiofiles
 from pydantic import BaseModel, Field
-
-SAVE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "saves")
 
 
 class NpcRelationship(BaseModel):
@@ -56,32 +51,62 @@ _DEFAULT_RELATIONSHIPS = {
 
 
 async def load_relationships(session_id: str) -> RelationshipState:
-    """Carrega relacionamentos da sessão. Inicializa com defaults se inexistente."""
-    path = os.path.join(SAVE_DIR, f"{session_id}_relationships.json")
-    if not os.path.exists(path):
-        state = RelationshipState(
-            session_id=session_id,
-            relationships={k: v.model_copy() for k, v in _DEFAULT_RELATIONSHIPS.items()}
-        )
-        await save_relationships(state)
-        return state
-    try:
-        async with aiofiles.open(path, "r", encoding="utf-8") as f:
-            content = await f.read()
-            data = json.loads(content)
-            return RelationshipState(**data)
-    except Exception:
-        return RelationshipState(
-            session_id=session_id,
-            relationships={k: v.model_copy() for k, v in _DEFAULT_RELATIONSHIPS.items()}
-        )
+    """Load the canonical relationship aggregate without write side effects."""
+
+    from .state_service import get_persistence
+
+    campaign = await get_persistence().load_campaign(session_id)
+    raw = campaign.get("relationships") if campaign else None
+    if isinstance(raw, dict) and "relationships" in raw:
+        return RelationshipState(**raw)
+    if isinstance(raw, list):
+        restored: dict[str, NpcRelationship] = {}
+        for item in raw:
+            if not isinstance(item, dict) or not item.get("id"):
+                continue
+            restored[str(item["id"])] = NpcRelationship(
+                npc_id=str(item["id"]),
+                disposition=str(item.get("disposition", "neutral")),
+                favor_balance=int(item.get("favor_balance", 0)),
+                trust_level=int(item.get("trust_level", 3)),
+                history=[str(item["desc"])] if item.get("desc") else [],
+            )
+        if restored:
+            return RelationshipState(session_id=session_id, relationships=restored)
+    return RelationshipState(
+        session_id=session_id,
+        relationships={
+            key: value.model_copy(deep=True)
+            for key, value in _DEFAULT_RELATIONSHIPS.items()
+        },
+    )
 
 
 async def save_relationships(state: RelationshipState):
-    """Persiste relacionamentos em disco."""
-    path = os.path.join(SAVE_DIR, f"{state.session_id}_relationships.json")
-    async with aiofiles.open(path, "w", encoding="utf-8") as f:
-        await f.write(json.dumps(state.model_dump(), indent=4, ensure_ascii=False))
+    """Persist a control-operation relationship snapshot.
+
+    Narrated turns pass the aggregate directly to ``commit_turn`` and must not
+    call this compatibility function before narrative validation.
+    """
+
+    from .state_service import get_persistence
+
+    store = get_persistence()
+    campaign = await store.load_campaign(state.session_id)
+    if campaign is None:
+        await store.ensure_campaign(
+            state.session_id,
+            initial_state={},
+            relationships=state.model_dump(mode="json"),
+        )
+        return
+    await store.update_campaign_snapshot(
+        state.session_id,
+        state=campaign.get("state") or {},
+        relationships=state.model_dump(mode="json"),
+        expected_turn=int(campaign.get("current_turn") or 0),
+        expected_revision=int(campaign.get("state_revision") or 0),
+    )
 
 
 _DISPOSITION_LADDER = ["hostile", "unfavorable", "neutral", "favorable", "allied"]
@@ -102,25 +127,27 @@ def _shift_disposition_down(rel: NpcRelationship):
 def update_relationships_from_action(
     state: RelationshipState,
     user_input: str,
-    system_log: str,
     action_is_aggressive: bool,
-    turn: int
+    turn: int,
+    *,
+    resolution_success: bool | None,
+    action_skill: str | None,
+    messy_critical: bool = False,
 ) -> RelationshipState:
-    """Atualiza relacionamentos com base nas ações do jogador (Camada 2 programática)."""
-    from .npc_service import get_all_npcs
+    """Update relationships only from structured deterministic outcomes."""
+    from .npc_service import find_npc_ids, get_all_npcs
 
     npcs = get_all_npcs()
-    normalized = user_input.lower().replace('í', 'i').replace('ç', 'c')
+    relationship_ids = {"sheriff": "xerife", "prince": "principe"}
+    involved_npcs = [
+        (relationship_ids.get(npc_id, npc_id), npc_id)
+        for npc_id in find_npc_ids(user_input)
+    ]
 
-    involved_npcs = []
-    for npc_key in npcs.keys():
-        if re.search(r'\b' + re.escape(npc_key) + r'\b', normalized):
-            involved_npcs.append(npc_key)
-
-    for npc_key in involved_npcs:
+    for npc_key, catalog_id in involved_npcs:
         # Cria relacionamento se NPC é encontrado pela primeira vez
         if npc_key not in state.relationships:
-            npc_data = npcs.get(npc_key)
+            npc_data = npcs.get(catalog_id)
             initial_trust = 2 if (npc_data and npc_data.engine_data.is_supernatural) else 3
             state.relationships[npc_key] = NpcRelationship(
                 npc_id=npc_key,
@@ -130,27 +157,27 @@ def update_relationships_from_action(
         rel = state.relationships[npc_key]
         rel.last_interaction_turn = turn
 
-        is_success = "sucesso" in system_log.lower() or "Ação executada" in system_log
-
         if action_is_aggressive:
             # Agressão deteriora o relacionamento
             rel.trust_level = max(1, rel.trust_level - 1)
             _shift_disposition_down(rel)
 
             event = f"T{turn}: Ação agressiva"
-            if "Messy Critical" in system_log:
+            if messy_critical:
                 event += " (violenta e descontrolada)"
                 rel.trust_level = max(1, rel.trust_level - 1)
             rel.history.append(event)
         else:
             # Interações sociais bem-sucedidas melhoram
-            social_skills = [
-                "persuasion", "persuasão", "etiquette", "etiqueta",
-                "subterfuge", "subterfúgio", "intimidation", "intimidação"
-            ]
-            is_social = any(s in system_log.lower() or s in user_input.lower() for s in social_skills)
+            social_skills = {
+                "Persuasion",
+                "Etiquette",
+                "Subterfuge",
+                "Intimidation",
+            }
+            is_social = action_skill in social_skills
 
-            if is_success and is_social:
+            if resolution_success is True and is_social:
                 rel.trust_level = min(5, rel.trust_level + 1)
                 _shift_disposition_up(rel)
                 rel.history.append(f"T{turn}: Interação social bem-sucedida")
@@ -187,7 +214,7 @@ def build_relationship_prompt_fragment(state: RelationshipState) -> str:
 
 
 def get_relationships_for_frontend(state: RelationshipState) -> list[dict]:
-    """Formata relacionamentos para envio ao frontend via WebSocket."""
+    """Return a player-safe projection, never storyteller-only counters."""
     disp_titles = {
         "hostile": "Inimigo declarado",
         "unfavorable": "Relação tensa",
@@ -205,9 +232,6 @@ def get_relationships_for_frontend(state: RelationshipState) -> list[dict]:
             "id": npc_id,
             "titulo": title,
             "desc": desc,
-            "disposition": rel.disposition,
-            "trust_level": rel.trust_level,
-            "favor_balance": rel.favor_balance,
         })
 
     return result

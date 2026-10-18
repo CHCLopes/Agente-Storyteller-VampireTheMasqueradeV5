@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-22",
+  "status": "accepted_offline_preparation_verified_live_inference_pending",
+  "origin_decision": "A_no_candidate_admitted",
+  "human_acceptance": {
+    "date": "2026-09-22",
+    "response": "Aprovo HYP-001",
+    "scope": "offline_protocol_preparation_only"
+  },
+  "hypothesis_id": "grounded_progression_contract_v1",
+  "question": "Can an explicit canonical progression contract prevent invented state while producing authorized progression and preserving player agency?",
+  "distinct_variable": "structured_grounded_progression_contract",
+  "case_classes": [
+    "wait_without_authorized_progression",
+    "wait_with_authorized_canonical_event",
+    "known_object_state",
+    "unknown_object_state",
+    "favorable_mechanical_result",
+    "unfavorable_mechanical_result",
+    "npc_question_with_protected_secret",
+    "ambiguous_action_preserving_next_player_choice"
+  ],
+  "fatal_criteria": [
+    "zero_canonical_fact_contradictions",
+    "zero_invented_object_states_or_transitions",
+    "zero_player_agency_attribution",
+    "zero_unauthorized_secret_disclosure",
+    "exact_target_identity_and_provenance",
+    "valid_schema_and_capsule_linkage",
+    "no_hidden_retry_or_fallback"
+  ],
+  "offline_preparation_verified": true,
+  "preparation_report": "evals/narrator/reports/grounded-progression-contract-preparation-2026-09-22.json",
+  "related_tests_passed": 230,
+  "authorization_if_accepted": "offline_protocol_preparation_only",
+  "live_inference_authorized": false,
+  "product_configuration_authorized": false
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-25",
+  "status": "route_a_gemini_free_selected_credential_pending",
+  "decision": {
+    "recorded_on": "2026-09-26",
+    "selected_option": "A",
+    "user_statement": "Aprovo NARRATOR-ROUTE-A",
+    "proposal": "narrator-route-a-hypothesis-003-proposal-2026-09-26.md",
+    "target_decision_on": "2026-09-26",
+    "target_user_statement": "No momento, o uso de provedores pagos está fora de questão. Faça novos testes no Gemini Flash gratuito",
+    "selected_target": "gemini-3.8-flash",
+    "selected_provider": "Google Gemini Free Tier",
+    "authorized_spend_usd": 0.0
+  },
+  "decision_id": "NARRATOR-ROUTE",
+  "prerequisites": {
+    "hypothesis_001": "closed_no_candidate_eligible_human_accepted",
+    "hypothesis_002": "closed_no_candidate_eligible_human_accepted",
+    "narrator_admitted": false,
+    "hybrid_campaign_may_start": false
+  },
+  "recommended_option": "A",
+  "options": {
+    "A": {
+      "label": "evaluate_new_candidate_preserving_architecture_and_gates",
+      "recommended": true,
+      "authorization_text": "Aprovo NARRATOR-ROUTE-A",
+      "next_action": "research_current_shortlist_then_request_exact_target_provider_cost_and_credential_decision_before_network"
+    },
+    "B": {
+      "label": "deterministic_hybrid_renderer_for_high_risk_classes",
+      "recommended": false,
+      "authorization_text": "Aprovo NARRATOR-ROUTE-B",
+      "requires_new_architecture_decision": true
+    },
+    "C": {
+      "label": "provisional_gpt_oss_admission_by_explicit_exception",
+      "recommended": false,
+      "authorization_text": "Aprovo NARRATOR-ROUTE-C",
+      "overrides_existing_admission_evidence": true
+    },
+    "D": {
+      "label": "stop_mvp_at_narrator_checkpoint",
+      "recommended": false,
+      "authorization_text": "Escolho NARRATOR-ROUTE-D",
+      "blocks_short_campaign_and_full_mvp_acceptance": true
+    }
+  },
+  "not_authorized_by_this_document": [
+    "provider_or_model_selection",
+    "paid_spend",
+    "credential_use",
+    "live_inference",
+    "runtime_default",
+    "cap_001",
+    "hybrid_campaign",
+    "gate_relaxation"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "document_kind": "provider_console_observation",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T12:44:53.255973+00:00",
+  "status": "lookup_completed_cause_unresolved",
+  "source": {
+    "kind": "authenticated_provider_console_ui",
+    "url": "https://console.groq.com/dashboard/logs?cursor=&page_size=1000",
+    "project": "Default Project",
+    "method": "Target row DOM and Request ID/Error copy buttons, read through browser clipboard. Not an HTTP response capture or bulk export."
+  },
+  "request_id": "req_01m1xtmhhdeyjbew0n7ffxv9tg",
+  "identity": {
+    "full_id_copied": true,
+    "matches_local_external_id": true,
+    "matches_error_copy_request_id": true
+  },
+  "console_row": {
+    "displayed_local_time": "07/09/2026, 08:39:11",
+    "local_utc_offset": "-03:00",
+    "model": "openai/gpt-oss-120b",
+    "status_code": 400,
+    "ttft_seconds": 0.331918,
+    "latency_seconds": 1.959371,
+    "input_tokens": 2320,
+    "output_tokens": 768
+  },
+  "console_error_copy": {
+    "request_id": "req_01m1xtmhhdeyjbew0n7ffxv9tg",
+    "created_at": "2026-09-07T11:39:11.789Z",
+    "error": {
+      "message": "Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.",
+      "type": "invalid_request_error",
+      "param": "",
+      "code": "json_validate_failed"
+    }
+  },
+  "local_source": {
+    "batch_id": "2c1cafde-7508-43a6-b415-172f2c139aa0",
+    "evaluation_invocation_id": "6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa",
+    "invocation_id": "ec8d8f97-da69-4024-99f0-62c0190b539c",
+    "request_id": "req_01m1xtmhhdeyjbew0n7ffxv9tg",
+    "case_id": "opening",
+    "summary": {
+      "file": "eval-results/20260907T113910Z-6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa/summary.json",
+      "sha256": "f8726f97ca49d7845ed59c8fd3c4fa7227e47b1c713a26fb2d291eb7137553cd"
+    },
+    "jsonl": {
+      "file": "eval-results/20260907T113910Z-6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+      "sha256": "1ce49265ddfd8702691ca586360d0f27066dbd7d8dd2161251273b7e66e95eac",
+      "line_number": 1
+    },
+    "observed_error": {
+      "category": "invalid_request",
+      "code": "groq_json_validate_failed",
+      "phase": "connect",
+      "safe_message": "LLM target rejected the request.",
+      "partial_output": false,
+      "external_id": "req_01m1xtmhhdeyjbew0n7ffxv9tg",
+      "status_code": 400,
+      "retryable": false,
+      "retry_after_seconds": null,
+      "rate_limit": null
+    },
+    "observed_effective_model": {
+      "value": null,
+      "source": "unknown"
+    },
+    "observed_effective_provider": {
+      "value": "Groq",
+      "source": "observed"
+    },
+    "observed_usage": {
+      "status": "unavailable",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "source": null
+    },
+    "observed_cost": {
+      "status": "unavailable",
+      "amount": null,
+      "currency": null,
+      "source": null
+    },
+    "response_envelope_available": false,
+    "second_case": {
+      "case_id": "mara",
+      "call_made": false,
+      "reason": "previous_operational_failure"
+    }
+  },
+  "derived": {
+    "input_plus_output_tokens": 3088,
+    "total_source": "arithmetic sum of console columns; not a returned total_tokens field",
+    "configured_max_completion_tokens": 768,
+    "output_equals_configured_ceiling": true,
+    "console_created_at_within_local_provider_call_window": true
+  },
+  "unavailable_in_inspected_console_record": [
+    "failed_generation",
+    "finish_reason",
+    "rejected_schema_path",
+    "reasoning_token_breakdown",
+    "cost"
+  ],
+  "interpretation": {
+    "budget_exhaustion": "supported hypothesis, not proven cause",
+    "generation": "provider accounts for output tokens; no response envelope was returned to the evaluator",
+    "semantic_review": "not possible without records/supports",
+    "local_defect_demonstrated": false,
+    "retention_elsewhere": "unknown; absence from inspected UI/copy does not prove absence at provider",
+    "latency": "Console and local evaluator timings cover different scopes; no network latency attribution inferred"
+  },
+  "integrity": {
+    "original_summary_sha256": "f8726f97ca49d7845ed59c8fd3c4fa7227e47b1c713a26fb2d291eb7137553cd",
+    "original_jsonl_sha256": "1ce49265ddfd8702691ca586360d0f27066dbd7d8dd2161251273b7e66e95eac",
+    "dossier_sha256": "a891c19c40be27c98d15f37e42a2f9f8a9706589403060d63c9cd41ced46c0fc",
+    "implementation_sha256": {
+      "scripts/evaluate_narrator_record_evidence.py": "25b500339fd0418714889d7b87b4a6b078e1f0dd4ee073346c7259424c629974",
+      "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+      "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+      "scripts/evaluate_narrator_models.py": "140c4cb0e602a7e84058980c7c6ec815e44c49829c7d177efd0b1eae373a5765",
+      "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+      "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+      "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+      "scripts/run_groq_record_evidence_probe.ps1": "b4305a01f8cd8647fb3ddc71badf89b389a772d10ff1247c4aa5ef3e531c42cc",
+      "skills/H6_vtm_narrator.md": "55fcd71a6367c42c3c5d1fa5e5589423d94af57b6a26af65cfdfab263d13eb70"
+    },
+    "implementation_hashes_matched": 12
+  },
+  "actions": {
+    "new_inference_calls": 0,
+    "provider_support_messages_sent": 0,
+    "code_changed": false,
+    "tests_changed": false,
+    "original_evaluation_artifacts_changed": false,
+    "credentials_read": false,
+    "runtime_promoted": false,
+    "cap_001_approved": false
+  },
+  "official_documentation": [
+    {
+      "url": "https://console.groq.com/docs/api-reference",
+      "claim": "include_reasoning controls inclusion of reasoning in the response; GPT-OSS supports low/medium/high; max_completion_tokens limits generated completion tokens."
+    }
+  ],
+  "review": {
+    "independent_interpretation_completed": true,
+    "result": "768 at the ceiling supports a budget hypothesis; missing finish_reason/failed_generation prevents confirmation; no local repair demonstrated."
+  }
+}

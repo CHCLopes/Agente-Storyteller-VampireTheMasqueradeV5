@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-25",
+  "hypothesis": "HYP-002-L2",
+  "batch_id": "4f13b856-6bf8-4eab-8639-188fc32b05b3",
+  "status": "human_accepted_no_candidate_eligible_no_narrator_admitted",
+  "integrity": {
+    "live_exit": 0,
+    "artifact_verifier_exit": 0,
+    "calls_made": 16,
+    "completed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "retry_count": 0,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "narrative_byte_differences": 0,
+    "preflight_sha256": "3c01ece8624b014e31cb108b8220ad3645013b8cd6b33898cc0443d1c847df93",
+    "summary_sha256": "cbe2715a43fdad5c917fab0a3875c230689dca378835bdd54871a689d508ac77",
+    "records_sha256": "6ce0be7896e76e3e01f398fa829526cbc9f70da30a1d5e779cac5de08e2e6391",
+    "credential_removed_after_run": true
+  },
+  "result": {
+    "admission_threshold": "8/8",
+    "eligible_candidates": [],
+    "narrator_admitted": false,
+    "runtime_default_created": false,
+    "candidates": [
+      {
+        "model": "qwen/qwen3.8-27b",
+        "reasoning": "none",
+        "passed": 0,
+        "failed": 8,
+        "input_tokens_reported": 9691,
+        "output_tokens_reported": 807,
+        "verification": "evals/narrator/reports/closed-world-render-live-4f13b856-qwen-verification.json"
+      },
+      {
+        "model": "openai/gpt-oss-120b",
+        "reasoning": "low",
+        "passed": 0,
+        "failed": 8,
+        "input_tokens_reported": 10677,
+        "output_tokens_reported": 1839,
+        "verification": "evals/narrator/reports/closed-world-render-live-4f13b856-gpt-oss-verification.json"
+      }
+    ]
+  },
+  "review_artifacts": {
+    "qwen": {"file": "evals/narrator/reviews/closed-world-render-live-4f13b856-qwen-codex.json", "sha256": "eaf7e03899e2fca35978527795aa21e00b8e47ac4c2baee0b11e9508ccce2f6b"},
+    "gpt_oss": {"file": "evals/narrator/reviews/closed-world-render-live-4f13b856-gpt-oss-codex.json", "sha256": "e8bc84042a6f7e5948aa5ec80c61179aac3888cf988442e01d2fd5826239b9b9"}
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "date": "2026-09-25",
+    "text": "Aceito HYP-002-L2: nenhum candidato elegível; nenhum narrador admitido."
+  }
+}

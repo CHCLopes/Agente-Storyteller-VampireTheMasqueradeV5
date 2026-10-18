@@ -1,0 +1,217 @@
+{
+  "schema": "storyteller.narrative-source-authored-review.v1",
+  "recorded_at": "2026-09-07T23:56:39.709077+00:00",
+  "batch_id": "f97a8568-4b67-4f8a-b975-78f4b6e5638b",
+  "status": "closed_first_policy_failure",
+  "raw_result_reclassified": false,
+  "artifacts": [
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/summary.json",
+      "sha256": "dfd1cc00a85e477db693954a70160c6b7e37e188fe7b631ef5bec6bfb14ea420"
+    },
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "ac84ccc41acd53fa828a7b0a95e06cde6f037d64577c5653fa4094476a83109b"
+    }
+  ],
+  "verification_before_policy_correction": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-live-verification-f97a8568.json",
+    "sha256": "9354ac3bc03d8f853b730477521a25bbd3b88d3bee5b7ef49d67eded1ae06fb4",
+    "record": {
+      "artifact_hashes": {
+        "jsonl": "ac84ccc41acd53fa828a7b0a95e06cde6f037d64577c5653fa4094476a83109b",
+        "summary": "dfd1cc00a85e477db693954a70160c6b7e37e188fe7b631ef5bec6bfb14ea420"
+      },
+      "batch_id": "f97a8568-4b67-4f8a-b975-78f4b6e5638b",
+      "evaluation_status": "completed",
+      "process_exit_code": 1,
+      "summary": {
+        "automated_gates_passed": false,
+        "automatic_retries": 0,
+        "availability_failure": false,
+        "calls_made": 1,
+        "canonical_admission": false,
+        "cap_001_status": "not_evaluated",
+        "causal_comparison": false,
+        "cost_aggregate": {
+          "calls_made": 1,
+          "currency": null,
+          "expected_calls": 2,
+          "reported_amount_subtotal": null,
+          "reported_calls": 0,
+          "status": "unavailable",
+          "total_amount": null,
+          "unavailable_calls": 1
+        },
+        "diagnostics_executed": false,
+        "evaluation_stage": "narrative_source_probe",
+        "experiment_version": "narrative-source-observation-v1",
+        "full_evaluation": false,
+        "full_record_derivation": false,
+        "human_review_required": true,
+        "max_calls": 2,
+        "operational_probe_passed": false,
+        "policy_valid": 0,
+        "probe_kind": "narrative_source_probe",
+        "process_exit_code": 1,
+        "projection_valid": 0,
+        "protocol": "narrative-source-profile-v1",
+        "provider_observation": {
+          "error_body": {
+            "bytes": null,
+            "complete": null,
+            "json_valid": null,
+            "status": "unavailable"
+          },
+          "failed_generation": {
+            "characters": null,
+            "error_position": null,
+            "json_valid": null,
+            "present": null,
+            "status": "unavailable"
+          },
+          "finish_reason": "stop",
+          "http_status": 200,
+          "model": "qwen/qwen3.8-27b",
+          "provider_code": null,
+          "request_id": "req_01m1z43szsefx919zbhxq3zxq5",
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "usage": {
+            "input_tokens": 574,
+            "output_tokens": 163,
+            "reasoning_tokens": null,
+            "total_tokens": 737
+          }
+        },
+        "provider_observations": [
+          {
+            "observation": {
+              "error_body": {
+                "bytes": null,
+                "complete": null,
+                "json_valid": null,
+                "status": "unavailable"
+              },
+              "failed_generation": {
+                "characters": null,
+                "error_position": null,
+                "json_valid": null,
+                "present": null,
+                "status": "unavailable"
+              },
+              "finish_reason": "stop",
+              "http_status": 200,
+              "model": "qwen/qwen3.8-27b",
+              "provider_code": null,
+              "request_id": "req_01m1z43szsefx919zbhxq3zxq5",
+              "schema": "storyteller.eval.record-budget-observation.v1",
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 163,
+                "reasoning_tokens": null,
+                "total_tokens": 737
+              }
+            },
+            "turn_id": "observe"
+          }
+        ],
+        "purpose": "narrative_source_probe",
+        "repetitions": 1,
+        "route_verification": {
+          "calls_made": 1,
+          "identity_consistent": true,
+          "mismatched_calls": 0,
+          "status": "verified",
+          "unavailable_calls": 0,
+          "verified_calls": 1
+        },
+        "runtime_promoted": false,
+        "schema_valid": 1,
+        "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+        "semantic_fidelity_review": {
+          "approval": null,
+          "status": "not_performed"
+        },
+        "semantic_not_evaluated": true,
+        "synthetic_only": true,
+        "turns_skipped": 1,
+        "usage_aggregate": {
+          "calls_made": 1,
+          "expected_calls": 2,
+          "reported_calls": 1,
+          "reported_subtotals": {
+            "input_tokens": 574,
+            "output_tokens": 163,
+            "total_tokens": 737
+          },
+          "status": "partial",
+          "totals": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "total_tokens": null
+          },
+          "unavailable_calls": 0
+        }
+      },
+      "summary_path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da\\summary.json",
+      "verification_scope": "local_artifact_consistency_not_provider_authentication",
+      "verified": true
+    }
+  },
+  "historical_policy_snapshot": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-scene-director-before-fazes-520ad02b.py.txt",
+    "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+    "temporary_copy": true
+  },
+  "lifecycle": {
+    "updated_at": "2026-09-07T23:44:08.2047125Z",
+    "batch_id": "f97a8568-4b67-4f8a-b975-78f4b6e5638b",
+    "exit_code": 1,
+    "status": "finished"
+  },
+  "console_pid": 22460,
+  "console_process_termination_verified": false,
+  "observed": {
+    "calls": 1,
+    "skips": 1,
+    "http_status": 200,
+    "finish_reason": "stop",
+    "route": "verified",
+    "schema_valid": 1,
+    "policy_valid": 0,
+    "projection_valid": 0,
+    "policy_error": "scene_player_prompt_not_actionable",
+    "response_structure": {
+      "n": "O ar da estufa é pesado e quente, cheirando a terra húmida e folhas esmagadas. Gotas de orvalho pendem das nervuras das folhas largas acima, tremendo sob a luz filtrada pelo vidro. Frascos de vidro e etiquetas de papel amarelado ocupam as prateleiras de ferro, enquanto o silêncio é apenas quebrado pelo zumbido abafado de insetos para além das grades. O chão de cimento está manchado com traças de água e raízes secas, e a temperatura elevada faz o ar ondular suavemente perto do solo. Nenhuma mão se move, e o espaço permanece intacto, aguardando o seu próximo gesto.",
+      "q": "O que fazes?"
+    },
+    "n_characters": 569,
+    "n_words": 99,
+    "q_characters": 12,
+    "q_words": 3,
+    "second_user_dispatched": false,
+    "usage_reported_subtotals": {
+      "input_tokens": 574,
+      "output_tokens": 163,
+      "total_tokens": 737
+    },
+    "reasoning_tokens": null,
+    "cost": "unavailable"
+  },
+  "authored_review": {
+    "status": "performed_by_agents_not_human_acceptance",
+    "question": "Valid open next-action request to player; false negative in recognition of fazes.",
+    "agency": "No clear new positive player action, decision, speech or emotion. Nenhuma mão se move adds a bodily stillness inference not literally required by sem tocar; not an unequivocal agency violation in this sample.",
+    "quality": [
+      "Sensory description compatible with passive observation; new environmental details are improvisation, not previously established canonical facts.",
+      "húmida departs from expected Brazilian spelling; traças de água is lexically unclear. Original text preserved."
+    ],
+    "continuity": "not_observed",
+    "later_policy_gates": "not_reached",
+    "semantic_truth": "not_assessed",
+    "canonical_admission": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "next_work": "Correct the bounded second-person action cue with regression controls; specify integration conditions. Never fill this skip or repeat the closed batch."
+}

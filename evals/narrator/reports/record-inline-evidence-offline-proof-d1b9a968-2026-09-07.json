@@ -1,0 +1,29 @@
+{
+  "document_kind": "inline_evidence_offline_proof",
+  "date": "2026-09-07",
+  "status": "complete",
+  "protocol": "record-inline-evidence-v1",
+  "scope": "summary_and_open_questions_only",
+  "files": {
+    "scripts/narrator_inline_evidence.py": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+    "tests/test_narrator_inline_evidence.py": "1ebe1049765328ca77f3cf6cba05dd605cece56d865418023a4555a7d9b5b7ff"
+  },
+  "verification": {
+    "distinct_tests_passed": 86,
+    "seconds": 1.56,
+    "failures": 0,
+    "skips": 0,
+    "warning": "pre-existing python_multipart PendingDeprecationWarning",
+    "independent_review": "no unresolved findings after array schema correction",
+    "historical_fingerprints_preserved": 23,
+    "provider_calls": 0,
+    "runtime_import_isolation_verified": true
+  },
+  "corrections_before_first_observation": [
+    "reject unordered collections before Pydantic coercion",
+    "Field precedes BeforeValidator for nested question array to emit minItems/maxItems, not string length keywords"
+  ],
+  "semantic_fidelity": "not_evaluated",
+  "runtime_promoted": false,
+  "cap_001_status": "not_evaluated"
+}

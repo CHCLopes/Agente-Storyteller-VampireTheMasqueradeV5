@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-28",
+  "run_id": "413d4983-ea8a-488c-8687-e31f5c4ac13f",
+  "session_id": "source-luna-trial.413d4983-ea8a-488c-8687-e31f5c4ac13f",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "calls_started": 3,
+  "calls_completed": 3,
+  "automatic_retries": 0,
+  "repair": false,
+  "fallback": false,
+  "operator_stopped_before_fourth_call": true,
+  "human_observation": {
+    "progression": "insufficient",
+    "experience": "moment_in_loop",
+    "future_expectation": "more_positive_progression"
+  },
+  "observable_findings": {
+    "fixed_scene_scope": true,
+    "environmental_variation_without_dramatic_progression": true,
+    "direct_questions_to_mara": 2,
+    "direct_answers_by_mara": 0
+  },
+  "classification": "manual_trial_failed_to_demonstrate_progression_and_npc_responsiveness",
+  "universal_model_rejection_inferred": false,
+  "narrator_admitted": false,
+  "runtime_default_changed": false,
+  "human_candidate_classification_pending": false,
+  "human_candidate_classification": "technically_safe_but_narratively_ineligible_for_mvp",
+  "human_classification_accepted_on": "2026-09-28",
+  "progression_issue_mvp_impact": "high",
+  "progression_issue_scheduling": "pending_human_decision"
+}

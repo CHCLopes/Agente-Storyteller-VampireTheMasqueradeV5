@@ -1,0 +1,17 @@
+{
+  "schema": "storyteller.eval.inline-evidence-input.v1",
+  "case_id": "archive-vibration",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "narrative": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+  "source_units": [
+    {
+      "id": "n0",
+      "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. "
+    },
+    {
+      "id": "n1",
+      "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado."
+    }
+  ]
+}

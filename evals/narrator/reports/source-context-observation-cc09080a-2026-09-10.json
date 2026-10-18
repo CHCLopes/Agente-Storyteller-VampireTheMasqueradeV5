@@ -1,0 +1,349 @@
+{
+  "schema": "storyteller.eval.source-context-authored-review.v1",
+  "recorded_at": "2026-09-11T01:06:33.576682+00:00",
+  "date_local": "2026-09-10",
+  "batch_id": "cc09080a-8368-421c-b892-b18dfa79bc85",
+  "status": "closed",
+  "operational_audit": {
+    "status": "passed",
+    "audited_at": "2026-09-11T01:03:04.259215+00:00",
+    "batch_id": "cc09080a-8368-421c-b892-b18dfa79bc85",
+    "summary_path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-context-cc09080a-8368-421c-b892-b18dfa79bc85\\summary.json",
+    "preflight_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-window-cc09080a-8368-421c-b892-b18dfa79bc85\\preflight.json",
+    "initial_preflight_proof": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-20260910\\preflight-final.json",
+      "sha256": "8f20acf6a1757df553c40f34677df73b80b93f8aaef520918ac4a964faea74fa"
+    },
+    "binding": {
+      "preflight_sha256": "66c2de8e8ab3725fb45ef1bb45bd0d8c7a81a5c95f7615a3a61bdea4f751b311",
+      "batch_id": "cc09080a-8368-421c-b892-b18dfa79bc85",
+      "evaluator_sha256": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f"
+    },
+    "lifecycle": {
+      "exit_code": 0,
+      "batch_id": "cc09080a-8368-421c-b892-b18dfa79bc85",
+      "status": "finished",
+      "updated_at": "2026-09-11T01:01:15.7238699Z"
+    },
+    "verifier": {
+      "command": [
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_source_context.py",
+        "--verify-artifacts",
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-context-cc09080a-8368-421c-b892-b18dfa79bc85\\summary.json",
+        "--expected-preflight",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-window-cc09080a-8368-421c-b892-b18dfa79bc85\\preflight.json",
+        "--expected-preflight-sha256",
+        "66c2de8e8ab3725fb45ef1bb45bd0d8c7a81a5c95f7615a3a61bdea4f751b311",
+        "--batch-id",
+        "cc09080a-8368-421c-b892-b18dfa79bc85"
+      ],
+      "exit_code": 0,
+      "stderr_empty": true,
+      "result": {
+        "batch_id": "cc09080a-8368-421c-b892-b18dfa79bc85",
+        "process_exit_code": 0,
+        "summary_path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-context-cc09080a-8368-421c-b892-b18dfa79bc85\\summary.json",
+        "verified": true
+      }
+    },
+    "started_at": "2026-09-11T00:59:09.305586+00:00",
+    "finished_at": "2026-09-11T01:01:12.561402+00:00",
+    "evaluation_status": "completed",
+    "summary": {
+      "calls_made": 2,
+      "campaign_data_eligible": false,
+      "cap_001_approved": false,
+      "conditions_processed": 2,
+      "conditions_skipped": 0,
+      "experiment_version": "source-context-observation-v1",
+      "max_calls": 2,
+      "operational_probe_passed": true,
+      "policy_valid": 2,
+      "probe_kind": "source_context_probe",
+      "process_exit_code": 0,
+      "projection_valid": 2,
+      "protocol": "narrative-source-application-v1",
+      "purpose": "source_context_probe",
+      "route_verified": 2,
+      "runtime_default_eligible": false,
+      "schema_valid": 2,
+      "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "semantic_fidelity_review": {
+        "approval": null,
+        "status": "not_performed"
+      },
+      "semantic_not_evaluated": true,
+      "synthetic_only": true
+    },
+    "conditions": [
+      {
+        "condition_id": "steady",
+        "outcome": "accepted",
+        "route_status": "verified",
+        "http_status": 200,
+        "finish_reason": "stop",
+        "model": "qwen/qwen3.8-27b",
+        "provider": {
+          "source": "observed",
+          "value": "Groq"
+        },
+        "request_id": "req_01m26zn9qvedj923ngyt8msmqc",
+        "usage": {
+          "input_tokens": 1672,
+          "output_tokens": 105,
+          "reasoning_tokens": null,
+          "total_tokens": 1777
+        },
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "source": null,
+          "status": "unavailable"
+        },
+        "deadline_at": "2026-09-11T01:01:09.605960+00:00",
+        "deadline_created_at_derived": "2026-09-11T01:00:09.605960+00:00",
+        "invocation_started_at": "2026-09-11T01:00:09.613958+00:00",
+        "http_started_at": "2026-09-11T01:00:10.258633+00:00",
+        "invocation_finished_at": "2026-09-11T01:00:14.148080+00:00",
+        "initial_or_previous_http_delay_seconds": 60.953047,
+        "invocation_duration_seconds": 4.534122,
+        "http_to_invocation_finish_seconds": 3.889447,
+        "finished_before_deadline": true,
+        "frozen_body_sha256": "9101fe0643c1dbbceeb25ca87b7d96063426a96f7e4190731f95b354dd2022ea",
+        "credential_echo_blocked": false
+      },
+      {
+        "condition_id": "event_started",
+        "outcome": "accepted",
+        "route_status": "verified",
+        "http_status": 200,
+        "finish_reason": "stop",
+        "model": "qwen/qwen3.8-27b",
+        "provider": {
+          "source": "observed",
+          "value": "Groq"
+        },
+        "request_id": "req_01m26zq546evwaa2p0f1kpc9tm",
+        "usage": {
+          "input_tokens": 1699,
+          "output_tokens": 190,
+          "reasoning_tokens": null,
+          "total_tokens": 1889
+        },
+        "cost": {
+          "amount": null,
+          "currency": null,
+          "source": null,
+          "status": "unavailable"
+        },
+        "deadline_at": "2026-09-11T01:02:10.592931+00:00",
+        "deadline_created_at_derived": "2026-09-11T01:01:10.592931+00:00",
+        "invocation_started_at": "2026-09-11T01:01:10.600933+00:00",
+        "http_started_at": "2026-09-11T01:01:11.191421+00:00",
+        "invocation_finished_at": "2026-09-11T01:01:12.545401+00:00",
+        "initial_or_previous_http_delay_seconds": 60.932788,
+        "invocation_duration_seconds": 1.944468,
+        "http_to_invocation_finish_seconds": 1.35398,
+        "finished_before_deadline": true,
+        "frozen_body_sha256": "97eb581a739dd57dc21a16add89c3c79725af61dff09cf42ed5609ae986e98f4",
+        "credential_echo_blocked": false
+      }
+    ],
+    "usage_total": {
+      "input_tokens": 3371,
+      "output_tokens": 295,
+      "total_tokens": 3666
+    },
+    "artifact_hashes_preserved": {
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-window-cc09080a-8368-421c-b892-b18dfa79bc85\\preflight.json": "66c2de8e8ab3725fb45ef1bb45bd0d8c7a81a5c95f7615a3a61bdea4f751b311",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-window-cc09080a-8368-421c-b892-b18dfa79bc85\\binding.json": "2e27f8b7d83707f64ad8d5b3e755e687ab9b9646696c6de5f10c795b14e54bab",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-context-window-cc09080a-8368-421c-b892-b18dfa79bc85\\lifecycle.json": "db214f10c1e1e7d0f592417365abf193fe86e48774f522dc25c699e6e7a38d39",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-context-cc09080a-8368-421c-b892-b18dfa79bc85\\summary.json": "0ac8f243273f19ab2b7d1755193ad3af223043fb8aec33d371c6c451841867f1",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-context-cc09080a-8368-421c-b892-b18dfa79bc85\\qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "b0cf4665a486dd6ddb44213d04704e13bc812d13274333993a366c895e528156"
+    },
+    "files_preserved": {
+      "scripts/evaluate_source_context.py": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f",
+      "scripts/evaluate_progressing_source.py": "8adc2bde0e7bc86063e2c516356279f7bec98fdc1c0bd9fc3be4ae3d4ca19f57",
+      "scripts/evaluate_narrator_source.py": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+      "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+      "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+      "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+      "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+      "api/scene_service.py": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+      "api/scene_director_service.py": "661e2a0dbbc2ea092fa43bd7a1495a458cfe08612fe2c16176057c5aa573e0d4",
+      "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+      "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+      "scripts/run_groq_source_context_probe.ps1": "dd2ac96f43cb987874eb5e742343c5dce750a8c28b979daa9e9fb70653c89255",
+      "tests/test_source_context_probe_wrapper.py": "59a6e781c93d419899d54e5508201b11b263ba5f7fef1d09014a3569cccf0218",
+      "tests/test_source_context_probe.py": "a168921dd142559b5892fc87170510741bd46f7b993007ca34bebbf1807543d7",
+      "evals/narrator/source_context_cases_v1.json": "372cac22b21ae1df8bd5572c0d498c72bcc51fa65f5c2091d852e263c78a5524",
+      "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+      "evals/narrator/prompts/narrative-source-progress-v1.md": "87b9cbcd67a67b9d25b97c2b25276e83af56d48c09f53843a64b8e77303b1a0e"
+    },
+    "integrity": {
+      "prepared_initial_window_raw_current_equal": true,
+      "summary_and_rows_reconstructed_by_existing_verifier": true,
+      "frozen_bodies_and_authored_sources_verified": true,
+      "component_files": 13,
+      "additional_files": 6,
+      "artifact_files": 5
+    },
+    "limits": {
+      "max_calls": 2,
+      "max_output_tokens_per_call": 768,
+      "max_total_output_tokens": 1536,
+      "initial_quiet_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "deadline_seconds": 60
+    },
+    "limitations": [
+      "Timestamps are local UTC captures; remote arrival and monotonic clock are not persisted.",
+      "Reasoning tokens are null, not zero; costs are unavailable.",
+      "Verification establishes local artifact consistency, not independent provider authentication or semantic quality.",
+      "Authored sources remain synthetic fixtures; no campaign, SQLite, application commit or replay is present."
+    ],
+    "audit_provider_calls": 0,
+    "audit_credential_read": false,
+    "raw_files_modified": false
+  },
+  "audit_sha256": "c1c7193dac6fb040e9987b56e4bb52065399a0ec460496bb86d41f6f9b18c87f",
+  "authored_review": {
+    "reviewers": [
+      "root",
+      "campaign_checklist_review"
+    ],
+    "criteria_plan": "plan/feature-source-progression-diagnostic-1.md",
+    "agreement": "Neither condition meets all preregistered criteria; event_started is partial novelty, not mere total repetition.",
+    "conditions": [
+      {
+        "condition_id": "steady",
+        "criterion_met": false,
+        "progression": "not_substantive",
+        "agency_local_roster": "preserved",
+        "uncertainty_issue": null,
+        "evidence": "Nenhuma nova mudança ocorre na sala, apenas a continuidade silenciosa do ambiente.",
+        "reading": "Poeira muda de direção, mas a continuação repete o estado recebido e não oferece abertura concreta.",
+        "response_structure": {
+          "n": "O zumbido do ar-condicionado mantém sua frequência constante. A partícula de poeira no feixe de luz descreve um traço lento, mudando de direção sem pressa. As sombras das luminárias permanecem nítidas contra as paredes claras, e o reflexo das luzes continua visível no piso de mármore polido. Nenhuma nova mudança ocorre na sala, apenas a continuidade silenciosa do ambiente.",
+          "q": "O que você faz?"
+        },
+        "authored_source": {
+          "origin": "authored_synthetic_fixture",
+          "projection": {
+            "assessment": {
+              "code": "narrative_grounding_whole_source_identity",
+              "decision": "source_only",
+              "policy_version": "narrative-grounding.v1",
+              "protocol": "narrative-derivation-assessment-v1",
+              "reference_status": "valid",
+              "semantic_status": "not_assessed",
+              "text_relation": "identical"
+            },
+            "binding": {
+              "derived_sha256": "e34df52b3712ef5e97c6749f72add042859459a6c96c89545afcb43e62550d07",
+              "destination": "narrative_source_view",
+              "invocation_id": "authoring-4b05a8f1-c19d-5258-8b2d-2be9d00dcab7",
+              "protocol": "narrative-derivation-binding-v1",
+              "session_id": "fixture-session-31099d3a-06c0-56c7-a640-49e505ae68cb",
+              "source_fingerprint": "a8f6e5d1555e076dfd1bbf45efea88c27a17f27aad9c52e870e60d5e17aa159c",
+              "source_id": "fixture-source-49284160-dafa-5586-a49f-7ba6420a99d7",
+              "source_sha256": "e34df52b3712ef5e97c6749f72add042859459a6c96c89545afcb43e62550d07",
+              "turn_id": "fixture-turn-b49b2a96-7050-5c9b-9da8-b6944c10a64f"
+            },
+            "protocol": "narrative-source-projection-v1",
+            "representation": "projected_source",
+            "source": {
+              "invocation_id": "authoring-4b05a8f1-c19d-5258-8b2d-2be9d00dcab7",
+              "protocol": "narrative-source-v1",
+              "session_id": "fixture-session-31099d3a-06c0-56c7-a640-49e505ae68cb",
+              "sha256": "e34df52b3712ef5e97c6749f72add042859459a6c96c89545afcb43e62550d07",
+              "source_id": "fixture-source-49284160-dafa-5586-a49f-7ba6420a99d7",
+              "source_policy": "narrative-source-application-v1",
+              "text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido continua uniforme, e a luz central conserva o mesmo brilho.",
+              "turn_id": "fixture-turn-b49b2a96-7050-5c9b-9da8-b6944c10a64f",
+              "visibility": "player"
+            },
+            "text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido continua uniforme, e a luz central conserva o mesmo brilho."
+          },
+          "provider_evidence": null
+        },
+        "word_counts": {
+          "n": 59,
+          "q": 4
+        }
+      },
+      {
+        "condition_id": "event_started",
+        "criterion_met": false,
+        "progression": "partial_novelty",
+        "agency_local_roster": "preserved",
+        "uncertainty_issue": [
+          "instabilidade elétrica que percorre o espaço",
+          "o equipamento para de funcionar",
+          "uma leve brisa natural entra por uma fresta invisível"
+        ],
+        "evidence": "fazendo o feixe de luz central oscilar suavemente para a esquerda",
+        "reading": "Há material novo (frio aparente, brisa e deslocamento do feixe), além de repetição do pulso. Causas são afirmadas sem suporte perceptível; ligação brisa/feixe fica pouco inteligível.",
+        "response_structure": {
+          "n": "O zumbido do ar-condicionado permanece ausente, deixando o silêncio da galeria mais denso. A luz central continua a pulsar em intervalos irregulares, projetando sombras que se alongam e encurtam no piso de mármore polido. O reflexo das luminárias no chão treme levemente a cada variação de brilho, enquanto a partícula de poeira no feixe de luz parece suspensa, ignorando a flutuação do ar. As molduras escuras nas paredes claras continuam imóveis, testemunhas da instabilidade elétrica que percorre o espaço sem afetar as obras expostas. O ar parece mais frio à medida que o equipamento para de funcionar, e uma leve brisa natural entra por uma fresta invisível, fazendo o feixe de luz central oscilar suavemente para a esquerda.",
+          "q": "O que você faz agora?"
+        },
+        "authored_source": {
+          "origin": "authored_synthetic_fixture",
+          "projection": {
+            "assessment": {
+              "code": "narrative_grounding_whole_source_identity",
+              "decision": "source_only",
+              "policy_version": "narrative-grounding.v1",
+              "protocol": "narrative-derivation-assessment-v1",
+              "reference_status": "valid",
+              "semantic_status": "not_assessed",
+              "text_relation": "identical"
+            },
+            "binding": {
+              "derived_sha256": "b0011a8c75bfa78262cd875a3196a90d69d8981b05c478328b287f80ed32d09a",
+              "destination": "narrative_source_view",
+              "invocation_id": "authoring-4b05a8f1-c19d-5258-8b2d-2be9d00dcab7",
+              "protocol": "narrative-derivation-binding-v1",
+              "session_id": "fixture-session-31099d3a-06c0-56c7-a640-49e505ae68cb",
+              "source_fingerprint": "3310d7757e9c043a940b4b1c7aae503f388e4ff9291398c2177b08b6a7856b00",
+              "source_id": "fixture-source-49284160-dafa-5586-a49f-7ba6420a99d7",
+              "source_sha256": "b0011a8c75bfa78262cd875a3196a90d69d8981b05c478328b287f80ed32d09a",
+              "turn_id": "fixture-turn-b49b2a96-7050-5c9b-9da8-b6944c10a64f"
+            },
+            "protocol": "narrative-source-projection-v1",
+            "representation": "projected_source",
+            "source": {
+              "invocation_id": "authoring-4b05a8f1-c19d-5258-8b2d-2be9d00dcab7",
+              "protocol": "narrative-source-v1",
+              "session_id": "fixture-session-31099d3a-06c0-56c7-a640-49e505ae68cb",
+              "sha256": "b0011a8c75bfa78262cd875a3196a90d69d8981b05c478328b287f80ed32d09a",
+              "source_id": "fixture-source-49284160-dafa-5586-a49f-7ba6420a99d7",
+              "source_policy": "narrative-source-application-v1",
+              "text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido se interrompe, e a luz central começa a pulsar em intervalos irregulares.",
+              "turn_id": "fixture-turn-b49b2a96-7050-5c9b-9da8-b6944c10a64f",
+              "visibility": "player"
+            },
+            "text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido se interrompe, e a luz central começa a pulsar em intervalos irregulares."
+          },
+          "provider_evidence": null
+        },
+        "word_counts": {
+          "n": 118,
+          "q": 5
+        }
+      }
+    ],
+    "technical_gates_reclassified": false,
+    "causal_or_general_capability_claim": false
+  },
+  "interpretation": "A fonte em movimento foi seguida por mais material nesta amostra, com fechamento causal indevido. A fonte estável permaneceu descritiva. Duas amostras únicas não isolam efeito causal robusto nem demonstram incapacidade geral.",
+  "next_step": "Inspect and implement a minimal typed read-only status query for retained B operations, preserving terminal no-resend and original safe failure diagnostics; no new prompt paraphrase or automatic observation.",
+  "cap_001_approved": false,
+  "runtime_approved": false,
+  "raw_artifacts_modified": false
+}

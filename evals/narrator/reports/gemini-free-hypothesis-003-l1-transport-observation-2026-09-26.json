@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-003-GEMINI-FREE-L1",
+  "batch_id": "d56a55b2-e01f-4436-8c97-68dcaebffef2",
+  "classification": "transport_failed_closed_no_semantic_evidence",
+  "free_tier_project_confirmed": true,
+  "paid_spend_authorized": false,
+  "calls_made": 1,
+  "completed": 0,
+  "failed": 1,
+  "skipped": 7,
+  "automatic_retries": 0,
+  "repair": false,
+  "fallback": false,
+  "status_code": 400,
+  "provider_error": "INVALID_ARGUMENT",
+  "preflight_sha256": "67a73046a404c5a433a7ecd095a8cde4d3e1b7c029992c3e626990802336b42a",
+  "artifact_verification_before_local_fix": true,
+  "root_cause": {
+    "field": "generationConfig.responseFormat.text.mimeType",
+    "sent": "application/json",
+    "required": "APPLICATION_JSON",
+    "store_false_valid": true
+  },
+  "semantic_evidence": false,
+  "candidate_admitted": false,
+  "default_created": false,
+  "disposition": "preserve_immutable_do_not_resume_prepare_distinct_l2"
+}

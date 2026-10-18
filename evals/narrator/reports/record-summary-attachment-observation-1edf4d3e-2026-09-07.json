@@ -1,0 +1,1233 @@
+{
+  "document_kind": "summary_attachment_observation_analysis",
+  "recorded_at_utc": "2026-09-07T19:49:59.412313+00:00",
+  "status": "closed_with_rate_limit_no_semantic_result",
+  "batch_id": "1edf4d3e-13f0-4161-916c-a178b58c1825",
+  "run_dir": "eval-results/20260907T193504Z-6322b0c6-b87e-4eb2-b0d8-a2404e694515",
+  "purpose": "summary_attachment_qwen_probe",
+  "experiment_version": "record-summary-attachment-qwen-observation-v1",
+  "protocol": "record-summary-only-v1",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_cases",
+  "launcher": {
+    "process_id": 24720,
+    "phase": "finished",
+    "finished_at_utc": "2026-09-07T19:36:06.2011876Z",
+    "exit_code": 2,
+    "credential_retained": false
+  },
+  "raw_artifacts": {
+    "summary.json": {
+      "file": "eval-results/20260907T193504Z-6322b0c6-b87e-4eb2-b0d8-a2404e694515/summary.json",
+      "sha256": "77090a6559e696e0caecc28c6726cbf4f3d68b4b9187b36f00ae1faa6ad085e5"
+    },
+    "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": {
+      "file": "eval-results/20260907T193504Z-6322b0c6-b87e-4eb2-b0d8-a2404e694515/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "91482cf3cfcfb06fe24e8deab5dfeab93a66838048e587e9bb63aea0743f79da"
+    }
+  },
+  "preparation_at_execution": {
+    "file": "evals/narrator/reports/record-summary-attachment-v1-2026-09-07.json",
+    "snapshot_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-attachment-close-1edf4d3e-b829hver\\evals\\narrator\\reports\\record-summary-attachment-v1-2026-09-07.json",
+    "snapshot_sha256": "6060740014bb88058b437e58de89d59d2aadb7e193d9757783ace719b764a95a",
+    "protected_preparation_fields_preserved": true,
+    "preparation_test_count": 199,
+    "tests_reexecuted_for_this_analysis": 0
+  },
+  "frozen_inputs": {
+    "dossier": {
+      "file": "evals/narrator/reports/record-summary-attachment-dossier-21cf338b-2026-09-07.json",
+      "sha256": "0a81ebf88c7ef86e0830404933663ab4b5db6ab2768186f4aa7e24a3c5f405a7",
+      "requests": [
+        {
+          "case_id": "observatory-a",
+          "body_sha256": "51265c46c0acf56e6a8b85470715e54606f65dabf6b146db415fb28ed4e4312d",
+          "user_packet_sha256": "7a56db6bcaadb137df1aeb4e49652151ca12f0b3819e7b90ccfdd2c054454176"
+        },
+        {
+          "case_id": "observatory-b",
+          "body_sha256": "7206a854871290ae9bc592a30468bec9ba51de3c81e4c713d834395c7b0a04d2",
+          "user_packet_sha256": "a5448889ea27e163957405c5f5ca79eca73dedacda020832afaa20297a709d2d"
+        }
+      ]
+    },
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "corpus": {
+      "file": "record_summary_attachment_cases_v1.json",
+      "sha256": "f21d9a8d17017626a28bcc3b0f1c97bf02b9a24e8057789baa96e8832de9ac8f"
+    },
+    "prompt": {
+      "variant": "record-summary-only-v1",
+      "file": "evals/narrator/prompts/record-summary-only-v1.md",
+      "file_sha256": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+      "sha256": "94c47c36b620628bb07b74f308adb6d556db7050f31d2aa2c262daa693c0a5d7"
+    },
+    "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "measurement_policy": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "max_words": 25,
+      "changes_exit_code": false,
+      "semantic_validation": false
+    },
+    "observation_policy": {
+      "max_error_body_bytes": 65536,
+      "raw_error_retained": false,
+      "raw_reasoning_retained": false
+    },
+    "stopping_policy": {
+      "order": [
+        "observatory-a",
+        "observatory-b"
+      ],
+      "stop_on_first_operational_failure": true,
+      "operational_failures_include": [
+        "transport_or_provider_error",
+        "deadline",
+        "route_unverified_or_mismatched",
+        "schema_invalid",
+        "local_error",
+        "cancellation"
+      ],
+      "persist_remaining_skips": true,
+      "word_limit_failure_stops_next_case": false,
+      "semantic_review_stops_next_case": false,
+      "replacement_case": false,
+      "repeat_after_result": false
+    },
+    "implementation": [
+      {
+        "file": "scripts/narrator_summary_only.py",
+        "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "b0dfb5971ff508fa5c675fffda9e9ae236457da3fab93ead6c1fa80f83e3f667"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "observatory-a",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "corpus_file": "evals/narrator/record_summary_attachment_cases_v1.json",
+          "corpus_sha256": "f21d9a8d17017626a28bcc3b0f1c97bf02b9a24e8057789baa96e8832de9ac8f",
+          "case_id": "observatory-a",
+          "case_index": 0,
+          "field": "narrative",
+          "narrative_sha256": "3024c009e6ce91efac84ba39ba53c5b72b30fffd4e3d0bbdc6cceaaf116457d8"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "7a56db6bcaadb137df1aeb4e49652151ca12f0b3819e7b90ccfdd2c054454176",
+          "source_units_sha256": "0309cd9a4aad5f54f45c792f1168616a65a69bdffd7eb97deb07674089c91b1c",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "No observatório vazio, uma luminária de carcaça verde ilumina um painel fosco. "
+            },
+            {
+              "id": "n1",
+              "text": "Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 170
+          }
+        }
+      },
+      {
+        "case_id": "observatory-b",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "corpus_file": "evals/narrator/record_summary_attachment_cases_v1.json",
+          "corpus_sha256": "f21d9a8d17017626a28bcc3b0f1c97bf02b9a24e8057789baa96e8832de9ac8f",
+          "case_id": "observatory-b",
+          "case_index": 1,
+          "field": "narrative",
+          "narrative_sha256": "55ed1c4959dfd9d335acfc2760479ec2d15dd2fb0c59e544391aa2c49a2f2790"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "a5448889ea27e163957405c5f5ca79eca73dedacda020832afaa20297a709d2d",
+          "source_units_sha256": "c99430cb5ab4770f8c992d43987d919720daa911fcbb224c548f84090c8192cf",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "No observatório vazio, uma luminária emite luz verde sobre um painel fosco. "
+            },
+            {
+              "id": "n1",
+              "text": "Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 168
+          }
+        }
+      }
+    ]
+  },
+  "evaluator_at_execution": {
+    "file": "scripts/evaluate_narrator_summary_attachment.py",
+    "sha256": "c93d2a8992425a5d081dbfcf427c3f28af943da0072e9ee8b5496a52abc40b50",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "operational_result": {
+    "purpose": "summary_attachment_qwen_probe",
+    "probe_kind": "summary_attachment_qwen_probe",
+    "experiment_version": "record-summary-attachment-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluation_stage": "summary_attachment_qwen_probe",
+    "calls_made": 1,
+    "cases_skipped": 1,
+    "schema_valid": 0,
+    "case_measurements": [
+      {
+        "case_id": "observatory-a",
+        "instruction_measurements": null
+      },
+      {
+        "case_id": "observatory-b",
+        "instruction_measurements": null
+      }
+    ],
+    "transport_and_schema_passed": false,
+    "operational_probe_passed": false,
+    "availability_failure": true,
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 429,
+      "request_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+      "provider_code": "rate_limit_exceeded",
+      "model": null,
+      "finish_reason": null,
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "reasoning_tokens": null
+      },
+      "error_body": {
+        "status": "complete",
+        "complete": true,
+        "bytes": 475,
+        "json_valid": true
+      },
+      "failed_generation": {
+        "status": "absent",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "provider_observations": [
+      {
+        "case_id": "observatory-a",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 429,
+          "request_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+          "provider_code": "rate_limit_exceeded",
+          "model": null,
+          "finish_reason": null,
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "total_tokens": null,
+            "reasoning_tokens": null
+          },
+          "error_body": {
+            "status": "complete",
+            "complete": true,
+            "bytes": 475,
+            "json_valid": true
+          },
+          "failed_generation": {
+            "status": "absent",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      }
+    ],
+    "route_verification": {
+      "status": "unavailable",
+      "calls_made": 1,
+      "verified_calls": 0,
+      "mismatched_calls": 0,
+      "unavailable_calls": 1,
+      "identity_consistent": null
+    },
+    "usage_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "process_exit_code": 2
+  },
+  "call_error_and_evidence": {
+    "llm_error": {
+      "category": "rate_limited",
+      "code": "http_429",
+      "phase": "connect",
+      "safe_message": "LLM target rate-limited the operation.",
+      "partial_output": false,
+      "external_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+      "status_code": 429,
+      "retryable": true,
+      "retry_after_seconds": null,
+      "rate_limit": {
+        "origin": "unknown",
+        "limit": null,
+        "remaining": null,
+        "reset": null,
+        "provider_code": "rate_limit_exceeded",
+        "resource": "tokens",
+        "quotas": [
+          {
+            "resource": "requests",
+            "window_seconds": 86400,
+            "limit": 1000,
+            "remaining": 1000,
+            "reset_after_seconds": 0.001
+          },
+          {
+            "resource": "tokens",
+            "window_seconds": 60,
+            "limit": 8000,
+            "remaining": 8000,
+            "reset_after_seconds": 0.001
+          }
+        ]
+      }
+    },
+    "evidence": {
+      "invocation_id": "7347228b-a157-4be6-be47-b6ea66794331",
+      "requested_target": {
+        "profile": "summary-attachment-qwen-3.8-27b-groq-free-synthetic-nonthink",
+        "provider": "Groq",
+        "model": "qwen/qwen3.8-27b"
+      },
+      "adapter": {
+        "name": "groq-chat-completions",
+        "version": "1.0"
+      },
+      "effective_model": {
+        "value": null,
+        "source": "unknown"
+      },
+      "effective_provider": {
+        "value": "Groq",
+        "source": "observed"
+      },
+      "started_at": "2026-09-07T19:36:04.916166+00:00",
+      "finished_at": "2026-09-07T19:36:05.671689+00:00",
+      "usage": {
+        "status": "unavailable",
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "source": null
+      },
+      "cost": {
+        "status": "unavailable",
+        "amount": null,
+        "currency": null,
+        "source": null
+      }
+    }
+  },
+  "stages": [
+    {
+      "case_id": "observatory-a",
+      "call_made": true,
+      "http_status": 429,
+      "schema_validation": "not_reached_without_generated_summary",
+      "word_measurement": "not_reached",
+      "semantic_review": "not_evaluable_without_text"
+    },
+    {
+      "case_id": "observatory-b",
+      "call_made": false,
+      "skipped_reason": "previous_operational_failure",
+      "schema_validation": "not_reached",
+      "word_measurement": "not_reached",
+      "semantic_review": "not_evaluated_not_called"
+    }
+  ],
+  "semantic_interpretation": {
+    "status": "not_evaluable",
+    "response_text_available": false,
+    "source_attachment_dimension": "not_observed",
+    "word_limit_dimension": "not_observed",
+    "model_inadequacy_demonstrated": false,
+    "omitted_content_is_not_a_model_omission": true,
+    "raw_review_unchanged": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "semantic_approval": false,
+    "runtime_approval": false,
+    "cap_001_approval": false
+  },
+  "rate_limit_interpretation": {
+    "local_evidence_only": {
+      "category": "rate_limited",
+      "normalized_code": "http_429",
+      "provider_code": "rate_limit_exceeded",
+      "http_status": 429,
+      "request_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+      "resource": "tokens",
+      "origin": "unknown",
+      "retry_after_seconds": null,
+      "effective_provider": "Groq",
+      "effective_provider_source": "observed",
+      "effective_model": null,
+      "model_route_verified": false,
+      "model_usage_finish_unavailable": true,
+      "retryable_flag_does_not_authorize_retry": true,
+      "quota_headers_do_not_identify_blocking_window": true,
+      "eta_established_by_local_artifact": false
+    },
+    "root_conclusion": "A consulta autenticada ao Console confirmou a linha compatível com horário, modelo solicitado, HTTP 429 e ID abreviado `req_0...hgjy`. O detalhe sanitizado informa serviço `on_demand` e limite de **output tokens per minute (OTPM): 1.000**, com **Requested: 1.096**, descrito pelo provedor como expectativa de saída do pedido acima do limite. Isso documenta o motivo informado pelo provedor; não revela a fórmula de estimativa, consumo efetivo, janela diária, reset ou capacidade restabelecida. A coluna do Console é o modelo solicitado, não confirmação do efetivo, e seus zeros de uso não substituem os `null` da API. A [documentação oficial de limites da Groq](https://console.groq.com/docs/rate-limits), consultada pelo root, distingue ITPM/OTPM em certas organizações e os headers genéricos TPM/RPD. Assim, a anotação externa sobre OTPM permanece separada de `origin: unknown` no bruto local, sem sobrescrevê-lo. Aguardar, por si só, não demonstra que um pedido cuja expectativa excede o limite informado seria aceito.",
+    "root_evidence": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-attachment-live-20260907\\provider-console-observation.json",
+      "sha256": "5c1b44c181113d24f3d5e58ecfc452532725e8d95957481b26ee590c009faf65",
+      "record": {
+        "schema": "storyteller.eval.provider-console-observation.v1",
+        "observed_at_utc": "2026-09-07T19:46:44.8478080Z",
+        "batch_id": "1edf4d3e-13f0-4161-916c-a178b58c1825",
+        "request_id_from_raw": "req_01m1ynxqgxe7etempc1qjyhgjy",
+        "console_request_id_abbreviated": "req_0...hgjy",
+        "console_time_local": "07/09/2026, 16:36:04",
+        "source_url": "https://console.groq.com/dashboard/logs?cursor=&page_size=1000",
+        "observation_method": "authenticated_browser_visible_error_tooltip_then_readonly_dom_text",
+        "requested_model": "qwen/qwen3.8-27b",
+        "effective_model_confirmed": false,
+        "http_status": 429,
+        "provider_error_code": "rate_limit_exceeded",
+        "provider_error_type": "tokens",
+        "service_tier_reported": "on_demand",
+        "quota_metric_reported": "output tokens per minute (OTPM)",
+        "quota_limit_reported": 1000,
+        "requested_estimate_reported": 1096,
+        "retained_message_sanitized": "Request too large for model qwen/qwen3.8-27b [organization identifier omitted] service tier on_demand on output tokens per minute (OTPM): Limit 1000, Requested 1096. The request expected output tokens exceed the enforced limit; reduce max_tokens (or the request expected output).",
+        "omissions": [
+          "organization identifier",
+          "billing upgrade suggestion",
+          "unrelated account and key labels"
+        ],
+        "console_displayed_input_tokens": 0,
+        "console_displayed_output_tokens": 0,
+        "api_usage_remains_null": true,
+        "provider_report_does_not_prove": [
+          "effective model",
+          "actual output token use",
+          "estimation formula",
+          "daily exhaustion",
+          "reset time or restored capacity"
+        ],
+        "api_calls_during_inspection": 0,
+        "settings_changed": false
+      },
+      "official_documentation": {
+        "url": "https://console.groq.com/docs/rate-limits",
+        "consulted_by": "root",
+        "supports": "ITPM and OTPM may be separate organization limits; generic headers expose TPM and RPD."
+      }
+    }
+  },
+  "operational_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-attachment-live-20260907\\artifact-audit.json",
+    "sha256": "20bf6150940fdac8c8be8507226aa67f7c8bdb2b14f17cacf3eb23e837ed2676",
+    "record": {
+      "document_kind": "summary_attachment_operational_artifact_audit",
+      "recorded_at_utc": "2026-09-07T19:39:46.321208+00:00",
+      "workdir": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+      "batch_id": "1edf4d3e-13f0-4161-916c-a178b58c1825",
+      "evaluation_invocation_id": "6322b0c6-b87e-4eb2-b0d8-a2404e694515",
+      "run_directory": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T193504Z-6322b0c6-b87e-4eb2-b0d8-a2404e694515",
+      "audit_scope": "read-only artifact reconstruction and file hashing; output only this Temp JSON",
+      "provider_calls_by_auditor": 0,
+      "tests_run_by_auditor": 0,
+      "credential_read_by_auditor": false,
+      "preparation_evidence": {
+        "preparation_file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\reports\\record-summary-attachment-v1-2026-09-07.json",
+        "preparation_sha256_at_audit": "6060740014bb88058b437e58de89d59d2aadb7e193d9757783ace719b764a95a",
+        "final_preflight_audit_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-attachment-live-20260907\\final-preflight-audit.json",
+        "final_preflight_audit_sha256": "1d1edac0e27ed3ef93479a2979a4b1b63f3df3cc693c56e8d8bf17114a3a0bd0",
+        "initial_preflight_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-attachment-execution-20260907\\preflight.json",
+        "initial_preflight_sha256": "3c2e50d443911450fed45ab914c2616d06f68714ba3567512c0434c0cd3cd615"
+      },
+      "exact_reconstruction": {
+        "current_preflight_equals_preparation": true,
+        "current_preflight_equals_final_preflight_audit": true,
+        "current_preflight_equals_initial_preflight": true,
+        "current_preflight_equals_raw_summary_metadata": true,
+        "current_preflight_equals_every_jsonl_metadata": true,
+        "preparation_files_equals_audit_files": true,
+        "reconstructed_summary_equals_raw_summary": true,
+        "top_summary_and_launcher_exit_agree": true
+      },
+      "prepared_metadata_canonical_sha256": "b62f20134767dd094a45790b7a98afa2342fe9cb446da0de80d70bcf87f8d7d8",
+      "reconstructed_summary_canonical_sha256": "6f1cea8546b9c412e6b45e4d3b44f8b4f926e24d78834c822d3fd94dde2c4da3",
+      "raw_artifacts": [
+        {
+          "file": "summary.json",
+          "expected_sha256": "77090a6559e696e0caecc28c6726cbf4f3d68b4b9187b36f00ae1faa6ad085e5",
+          "current_sha256": "77090a6559e696e0caecc28c6726cbf4f3d68b4b9187b36f00ae1faa6ad085e5",
+          "unchanged": true
+        },
+        {
+          "file": "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "expected_sha256": "91482cf3cfcfb06fe24e8deab5dfeab93a66838048e587e9bb63aea0743f79da",
+          "current_sha256": "91482cf3cfcfb06fe24e8deab5dfeab93a66838048e587e9bb63aea0743f79da",
+          "unchanged": true
+        }
+      ],
+      "integrity_counts": {
+        "preparation_files": 9,
+        "historical_files": 48,
+        "historical_raw_artifacts": 14,
+        "all_unchanged": true
+      },
+      "integrity": {
+        "preparation": [
+          {
+            "file": "scripts/evaluate_narrator_summary_attachment.py",
+            "expected_sha256": "c93d2a8992425a5d081dbfcf427c3f28af943da0072e9ee8b5496a52abc40b50",
+            "current_sha256": "c93d2a8992425a5d081dbfcf427c3f28af943da0072e9ee8b5496a52abc40b50",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/run_groq_summary_attachment_probe.ps1",
+            "expected_sha256": "3afa60dab804808605c12d5fd4666a428ceb042bb0a3dbc64a38b390903e34fe",
+            "current_sha256": "3afa60dab804808605c12d5fd4666a428ceb042bb0a3dbc64a38b390903e34fe",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/evaluate_narrator_models.py",
+            "expected_sha256": "b0dfb5971ff508fa5c675fffda9e9ae236457da3fab93ead6c1fa80f83e3f667",
+            "current_sha256": "b0dfb5971ff508fa5c675fffda9e9ae236457da3fab93ead6c1fa80f83e3f667",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_attachment_execution.py",
+            "expected_sha256": "72deca569d9003b36a865e55bd1d3c8849e82be48307916984f97fca530d0e5a",
+            "current_sha256": "72deca569d9003b36a865e55bd1d3c8849e82be48307916984f97fca530d0e5a",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_attachment_runner.py",
+            "expected_sha256": "c18cfac5e81ce58b4a96c406018f462f8b1b99e658671adfb4578bca00bfe73f",
+            "current_sha256": "c18cfac5e81ce58b4a96c406018f462f8b1b99e658671adfb4578bca00bfe73f",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_attachment_replay_boundary.py",
+            "expected_sha256": "4c7f6b9531acd4984996dfe8f785a9f223ae92d4b776d92ad75b6ac42b2f7d0b",
+            "current_sha256": "4c7f6b9531acd4984996dfe8f785a9f223ae92d4b776d92ad75b6ac42b2f7d0b",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/record_summary_attachment_cases_v1.json",
+            "expected_sha256": "f21d9a8d17017626a28bcc3b0f1c97bf02b9a24e8057789baa96e8832de9ac8f",
+            "current_sha256": "f21d9a8d17017626a28bcc3b0f1c97bf02b9a24e8057789baa96e8832de9ac8f",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-summary-attachment-design-21cf338b-2026-09-07.md",
+            "expected_sha256": "341b0ffc3a242aa8626b26a92a69cfa2b4b506a456d41c0d493ddc66ff6a4fb5",
+            "current_sha256": "341b0ffc3a242aa8626b26a92a69cfa2b4b506a456d41c0d493ddc66ff6a4fb5",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-summary-attachment-dossier-21cf338b-2026-09-07.json",
+            "expected_sha256": "0a81ebf88c7ef86e0830404933663ab4b5db6ab2768186f4aa7e24a3c5f405a7",
+            "current_sha256": "0a81ebf88c7ef86e0830404933663ab4b5db6ab2768186f4aa7e24a3c5f405a7",
+            "unchanged": true
+          }
+        ],
+        "historical": [
+          {
+            "file": "scripts/narrator_inline_evidence.py",
+            "expected_sha256": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+            "current_sha256": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/evaluate_narrator_inline_evidence.py",
+            "expected_sha256": "a771a2e8ba384c7de1b910d61ce2b094edbe5853a6b1eac6f246c7dbe3fcf907",
+            "current_sha256": "a771a2e8ba384c7de1b910d61ce2b094edbe5853a6b1eac6f246c7dbe3fcf907",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/run_groq_inline_evidence_probe.ps1",
+            "expected_sha256": "30f0229909fdfa6c6b7e3f18a120307b6b4163adcd8878b8a7bf2359d98ca85d",
+            "current_sha256": "30f0229909fdfa6c6b7e3f18a120307b6b4163adcd8878b8a7bf2359d98ca85d",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_narrator_inline_evidence.py",
+            "expected_sha256": "1ebe1049765328ca77f3cf6cba05dd605cece56d865418023a4555a7d9b5b7ff",
+            "current_sha256": "1ebe1049765328ca77f3cf6cba05dd605cece56d865418023a4555a7d9b5b7ff",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_execution.py",
+            "expected_sha256": "d2f6ff0d6a7c10e7584f54c992725c8aa03598278f68417276417450f4833ca3",
+            "current_sha256": "d2f6ff0d6a7c10e7584f54c992725c8aa03598278f68417276417450f4833ca3",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_runner.py",
+            "expected_sha256": "8580f01294df6021d23b686c545495120c278c2f3eab9f022e4ee852e0c8bb1e",
+            "current_sha256": "8580f01294df6021d23b686c545495120c278c2f3eab9f022e4ee852e0c8bb1e",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_replay_boundary.py",
+            "expected_sha256": "2bbed5b1587da15ea7a5dfcccdbc9f54bf387f6e9c1601da7368ebec64d69763",
+            "current_sha256": "2bbed5b1587da15ea7a5dfcccdbc9f54bf387f6e9c1601da7368ebec64d69763",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_record_budget_observer.py",
+            "expected_sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+            "current_sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+            "unchanged": true
+          },
+          {
+            "file": "api/llm/adapters/groq.py",
+            "expected_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+            "current_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+            "unchanged": true
+          },
+          {
+            "file": "api/llm/adapters/openai_compatible.py",
+            "expected_sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+            "current_sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+            "unchanged": true
+          },
+          {
+            "file": "api/llm/contract.py",
+            "expected_sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+            "current_sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-inline-evidence-dossier-d1b9a968-2026-09-07.json",
+            "expected_sha256": "e86fe2a035e4f3435fe8fda9794c9699eef37ac1da971fa65056fb8e99407088",
+            "current_sha256": "e86fe2a035e4f3435fe8fda9794c9699eef37ac1da971fa65056fb8e99407088",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/record_inline_case_v1.json",
+            "expected_sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+            "current_sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/groq_candidates_2026-09-05.json",
+            "expected_sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+            "current_sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/prompts/record-inline-evidence-v1.md",
+            "expected_sha256": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+            "current_sha256": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_record_independent_cases.py",
+            "expected_sha256": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+            "current_sha256": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/evaluate_narrator_record_independent_cases.py",
+            "expected_sha256": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+            "current_sha256": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/run_groq_record_independent_cases_probe.ps1",
+            "expected_sha256": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+            "current_sha256": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_record_derivation.py",
+            "expected_sha256": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+            "current_sha256": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_record_independent_cases.py",
+            "expected_sha256": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+            "current_sha256": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_record_independent_case_boundary.py",
+            "expected_sha256": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+            "current_sha256": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_record_independent_execution.py",
+            "expected_sha256": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+            "current_sha256": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_record_independent_runner.py",
+            "expected_sha256": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+            "current_sha256": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_record_independent_replay_boundary.py",
+            "expected_sha256": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034",
+            "current_sha256": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_record_quote_evidence.py",
+            "expected_sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+            "current_sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_record_evidence.py",
+            "expected_sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+            "current_sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_actor_contract.py",
+            "expected_sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+            "current_sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+            "unchanged": true
+          },
+          {
+            "file": "api/scene_director_service.py",
+            "expected_sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+            "current_sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+            "unchanged": true
+          },
+          {
+            "file": "api/scene_service.py",
+            "expected_sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+            "current_sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json",
+            "expected_sha256": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+            "current_sha256": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+            "expected_sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+            "current_sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/record_independent_cases_v1.json",
+            "expected_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+            "current_sha256": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/evaluate_narrator_inline_evidence_qwen.py",
+            "expected_sha256": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+            "current_sha256": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/run_groq_inline_evidence_qwen_probe.ps1",
+            "expected_sha256": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+            "current_sha256": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_qwen_execution.py",
+            "expected_sha256": "ed822d24a5afc729044b7d565a23b9f2b855ae80b512211b2dff71bd5258efd8",
+            "current_sha256": "ed822d24a5afc729044b7d565a23b9f2b855ae80b512211b2dff71bd5258efd8",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_qwen_runner.py",
+            "expected_sha256": "c39742b4c0b62d3809a31226158805b6c40a951ecfde3697ca3c1e5be7bf7ccb",
+            "current_sha256": "c39742b4c0b62d3809a31226158805b6c40a951ecfde3697ca3c1e5be7bf7ccb",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_inline_evidence_qwen_replay_boundary.py",
+            "expected_sha256": "4d6068cc91d4c560271b95d33353c1755688cd5d31aadcdbf1c8c3c167611c0d",
+            "current_sha256": "4d6068cc91d4c560271b95d33353c1755688cd5d31aadcdbf1c8c3c167611c0d",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-inline-evidence-qwen-design-6876955e-2026-09-07.md",
+            "expected_sha256": "b0fd5834bf944e41a29583915daa3b19e65c155f5d89bb9837189dd69444d91c",
+            "current_sha256": "b0fd5834bf944e41a29583915daa3b19e65c155f5d89bb9837189dd69444d91c",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json",
+            "expected_sha256": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30",
+            "current_sha256": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/narrator_summary_only.py",
+            "expected_sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182",
+            "current_sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/evaluate_narrator_summary_only.py",
+            "expected_sha256": "662cfc8dd243053865f42fb10dfc38df539310e798fbbe30f5089cd014241b33",
+            "current_sha256": "662cfc8dd243053865f42fb10dfc38df539310e798fbbe30f5089cd014241b33",
+            "unchanged": true
+          },
+          {
+            "file": "scripts/run_groq_summary_only_probe.ps1",
+            "expected_sha256": "6bc2628f98899d57f812f9fa1104d5908d475e84e2ba8fb793a0138907548e65",
+            "current_sha256": "6bc2628f98899d57f812f9fa1104d5908d475e84e2ba8fb793a0138907548e65",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_only_execution.py",
+            "expected_sha256": "ca8d5da8455d011c9435427a7f2ae5f4c2139d6a2f6e48d34cef2b685b8678a9",
+            "current_sha256": "ca8d5da8455d011c9435427a7f2ae5f4c2139d6a2f6e48d34cef2b685b8678a9",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_only_runner.py",
+            "expected_sha256": "95ec0f7835a978b4c23cac06608ebbe702548d99a3d543c7b415d92bba9ff7b2",
+            "current_sha256": "95ec0f7835a978b4c23cac06608ebbe702548d99a3d543c7b415d92bba9ff7b2",
+            "unchanged": true
+          },
+          {
+            "file": "tests/test_summary_only_replay_boundary.py",
+            "expected_sha256": "2c5d8a468f1445eb64dcc28c792ff43686d140a218dd56f68c6102ea86b543ba",
+            "current_sha256": "2c5d8a468f1445eb64dcc28c792ff43686d140a218dd56f68c6102ea86b543ba",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/prompts/record-summary-only-v1.md",
+            "expected_sha256": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+            "current_sha256": "71df999d6f1ff6f77ec2bd9f2744878e11ee31a43e4f3abd4302499e81c91146",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-summary-only-design-94a95216-2026-09-07.md",
+            "expected_sha256": "3f64e1b183499dc8d7eab1389652e42a97fd576999b574f75418f82f7be1ef73",
+            "current_sha256": "3f64e1b183499dc8d7eab1389652e42a97fd576999b574f75418f82f7be1ef73",
+            "unchanged": true
+          },
+          {
+            "file": "evals/narrator/reports/record-summary-only-dossier-94a95216-2026-09-07.json",
+            "expected_sha256": "4e7486ae1498e799b0b59997e2de73ff94fd3cabc7a9762416609923585079ea",
+            "current_sha256": "4e7486ae1498e799b0b59997e2de73ff94fd3cabc7a9762416609923585079ea",
+            "unchanged": true
+          }
+        ],
+        "historical_raw": [
+          {
+            "file": "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "expected_sha256": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+            "current_sha256": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/summary.json",
+            "expected_sha256": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f",
+            "current_sha256": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/gpt-oss-120b-groq-free-synthetic-medium.jsonl",
+            "expected_sha256": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+            "current_sha256": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/summary.json",
+            "expected_sha256": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+            "current_sha256": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "expected_sha256": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+            "current_sha256": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json",
+            "expected_sha256": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+            "current_sha256": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "expected_sha256": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+            "current_sha256": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json",
+            "expected_sha256": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+            "current_sha256": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/summary.json",
+            "expected_sha256": "0726add81d3e95543ba837e6f4bb7ad3a36385d96b1401b9c72feb7266615824",
+            "current_sha256": "0726add81d3e95543ba837e6f4bb7ad3a36385d96b1401b9c72feb7266615824",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "expected_sha256": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624",
+            "current_sha256": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/summary.json",
+            "expected_sha256": "795cc05b6211fdbf0961d61b938fb3f14a02a8b688fb541c61584c8c1e98edee",
+            "current_sha256": "795cc05b6211fdbf0961d61b938fb3f14a02a8b688fb541c61584c8c1e98edee",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+            "expected_sha256": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a",
+            "current_sha256": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json",
+            "expected_sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+            "current_sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+            "unchanged": true
+          },
+          {
+            "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+            "expected_sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+            "current_sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+            "unchanged": true
+          }
+        ]
+      },
+      "reconstructed_requests": [
+        {
+          "case_id": "observatory-a",
+          "reconstructed_body_sha256": "51265c46c0acf56e6a8b85470715e54606f65dabf6b146db415fb28ed4e4312d",
+          "dossier_body_exact": true,
+          "only_user_differs_from_baseline": true,
+          "user_packet_sha256": "7a56db6bcaadb137df1aeb4e49652151ca12f0b3819e7b90ccfdd2c054454176",
+          "operation": "summary-attachment.observatory-a",
+          "actual_dispatch_recorded": true
+        },
+        {
+          "case_id": "observatory-b",
+          "reconstructed_body_sha256": "7206a854871290ae9bc592a30468bec9ba51de3c81e4c713d834395c7b0a04d2",
+          "dossier_body_exact": true,
+          "only_user_differs_from_baseline": true,
+          "user_packet_sha256": "a5448889ea27e163957405c5f5ca79eca73dedacda020832afaa20297a709d2d",
+          "operation": "summary-attachment.observatory-b",
+          "actual_dispatch_recorded": false
+        }
+      ],
+      "observed_inventory": {
+        "ordered_cases": [
+          "observatory-a",
+          "observatory-b"
+        ],
+        "calls_made": 1,
+        "cases_skipped": 1,
+        "schema_valid": 0,
+        "case_b_skipped_reason": "previous_operational_failure",
+        "returned_summary_text_present": false,
+        "case_measurements": [
+          {
+            "case_id": "observatory-a",
+            "instruction_measurements": null
+          },
+          {
+            "case_id": "observatory-b",
+            "instruction_measurements": null
+          }
+        ],
+        "evaluation_status": "completed",
+        "exit_code": 2,
+        "availability_failure": true
+      },
+      "route": {
+        "requested_target": {
+          "profile": "summary-attachment-qwen-3.8-27b-groq-free-synthetic-nonthink",
+          "provider": "Groq",
+          "model": "qwen/qwen3.8-27b"
+        },
+        "adapter": {
+          "name": "groq-chat-completions",
+          "version": "1.0"
+        },
+        "effective_model": {
+          "value": null,
+          "source": "unknown"
+        },
+        "effective_provider": {
+          "value": "Groq",
+          "source": "observed"
+        },
+        "recomputed_route_status": "unavailable",
+        "summary_route_verification": {
+          "status": "unavailable",
+          "calls_made": 1,
+          "verified_calls": 0,
+          "mismatched_calls": 0,
+          "unavailable_calls": 1,
+          "identity_consistent": null
+        }
+      },
+      "safe_error": {
+        "category": "rate_limited",
+        "code": "http_429",
+        "phase": "connect",
+        "safe_message": "LLM target rate-limited the operation.",
+        "partial_output": false,
+        "external_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+        "status_code": 429,
+        "retryable": true,
+        "retry_after_seconds": null,
+        "rate_limit": {
+          "origin": "unknown",
+          "limit": null,
+          "remaining": null,
+          "reset": null,
+          "provider_code": "rate_limit_exceeded",
+          "resource": "tokens",
+          "quotas": [
+            {
+              "resource": "requests",
+              "window_seconds": 86400,
+              "limit": 1000,
+              "remaining": 1000,
+              "reset_after_seconds": 0.001
+            },
+            {
+              "resource": "tokens",
+              "window_seconds": 60,
+              "limit": 8000,
+              "remaining": 8000,
+              "reset_after_seconds": 0.001
+            }
+          ]
+        }
+      },
+      "safe_provider_observation": {
+        "schema": "storyteller.eval.record-budget-observation.v1",
+        "http_status": 429,
+        "request_id": "req_01m1ynxqgxe7etempc1qjyhgjy",
+        "provider_code": "rate_limit_exceeded",
+        "model": null,
+        "finish_reason": null,
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "reasoning_tokens": null
+        },
+        "error_body": {
+          "status": "complete",
+          "complete": true,
+          "bytes": 475,
+          "json_valid": true
+        },
+        "failed_generation": {
+          "status": "absent",
+          "present": null,
+          "characters": null,
+          "json_valid": null,
+          "error_position": null
+        }
+      },
+      "usage_aggregate": {
+        "status": "unavailable",
+        "expected_calls": 2,
+        "calls_made": 1,
+        "reported_calls": 0,
+        "unavailable_calls": 1,
+        "totals": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null
+        },
+        "reported_subtotals": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null
+        }
+      },
+      "cost_aggregate": {
+        "status": "unavailable",
+        "expected_calls": 2,
+        "calls_made": 1,
+        "reported_calls": 0,
+        "unavailable_calls": 1,
+        "total_amount": null,
+        "reported_amount_subtotal": null,
+        "currency": null
+      },
+      "limits": {
+        "max_calls": 2,
+        "per_call_output_ceiling": 3072,
+        "maximum_planned_total_output_tokens": 6144,
+        "dispatched_output_ceiling_total": 3072,
+        "actual_output_token_count": null,
+        "temperature": 0.65,
+        "reasoning_effort": "none",
+        "initial_quiet_seconds": 60,
+        "minimum_between_start_seconds": 60,
+        "deadline_after_wait_and_checks_seconds": 60,
+        "automatic_retries": 0,
+        "fallback": false,
+        "diagnostic_calls": 0
+      },
+      "timing": {
+        "raw_run_started_at": "2026-09-07T19:35:04.388153+00:00",
+        "raw_adapter_started_at": "2026-09-07T19:36:04.916166+00:00",
+        "raw_adapter_finished_at": "2026-09-07T19:36:05.671689+00:00",
+        "raw_run_finished_at": "2026-09-07T19:36:05.676690+00:00",
+        "launcher_finished_at_utc": "2026-09-07T19:36:06.2011876Z",
+        "launcher_pid": 24720,
+        "run_start_to_adapter_start_wall_seconds": 60.528013,
+        "adapter_wall_seconds": 0.755523,
+        "row_perf_latency_seconds": 0.756475,
+        "run_wall_seconds": 61.288537,
+        "inter_call_start_gap_seconds": null
+      },
+      "interpretation_limits": [
+        "HTTP429 availability refusal occurred before a returned summary; no narrative fidelity, attachment or schema-content failure is inferable.",
+        "The effective model and usage are unreported, not confirmed Qwen execution or zero usage.",
+        "No cost was reported; this does not prove zero cost.",
+        "RPD and TPM quota metadata do not establish a TPD allowance, TPD reset or a retry time. Origin remains unknown and retry_after_seconds/reset remain null.",
+        "retryable=true is a normalized error property; no retry was performed and the frozen batch is closed.",
+        "UTC timestamps are preserved with their explicit +00:00 offsets. Run-start to adapter-start includes the initial quiet interval plus local work; exact monotonic sleep and absolute request deadline were not persisted.",
+        "Only one dispatch exists, so there is no observed between-call start interval. Local pacing/deadline policy does not prove remote arrival timing.",
+        "Both HTTP bodies were reconstructed exactly from current frozen code and dossier; no raw transmitted HTTP request capture exists in these artifacts."
+      ],
+      "approval": {
+        "semantic_fidelity_review": {
+          "status": "not_performed",
+          "approval": null
+        },
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated",
+        "automated_gates_passed": false
+      },
+      "contradictions": []
+    }
+  },
+  "next_step": {
+    "current_batch_closed": true,
+    "repeat_or_fill_second_case": false,
+    "new_send_performed_by_closure": false,
+    "description": "Preparar offline uma observação operacional independente com orçamento de saída reduzido a no máximo 768 tokens, fonte sintética nova, mesmo Qwen/Groq gratuito e limite de uma chamada. O desenho e a implementação exatos ainda estão em decisão/preparação; não estão declarados prontos e não houve novo envio. A hipótese será observar compatibilidade operacional nesse orçamento, sem garantia de sucesso ou avaliação de narrativa/CAP-001. Não repetir A, preencher B ou reutilizar o par; concluir as verificações locais antes de depender de uma nova entrada protegida de credencial.",
+    "human_dependency": null,
+    "new_generic_user_approval_required": false
+  },
+  "limits": [
+    "No generated text means neither fidelity nor word compliance was evaluated.",
+    "A rate limit is not evidence of inadequate summary capability.",
+    "Groq was observed but no effective model was reported, so the model route is unavailable.",
+    "Null usage and finish reason mean unavailable, not zero consumption or a demonstrated finish mode.",
+    "The local quota headers do not establish the blocking window or an ETA.",
+    "This batch is closed; retryable metadata does not authorize retry, filling B, or changing the experiment.",
+    "No past semantic result or prepared criterion is reclassified."
+  ]
+}

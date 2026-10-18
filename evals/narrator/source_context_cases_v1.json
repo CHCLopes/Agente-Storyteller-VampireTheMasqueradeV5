@@ -1,0 +1,34 @@
+{
+  "schema": "storyteller.eval.source-context-cases.v1",
+  "case_id": "gallery-authored-state-vs-event",
+  "source_origin": "authored_synthetic_fixture",
+  "synthetic_only": true,
+  "campaign_data_eligible": false,
+  "scene": {
+    "location": "Galeria",
+    "npcs_present": [],
+    "summary": "",
+    "details": [],
+    "open_threads": [],
+    "last_turn": 0
+  },
+  "player_input": "Aguardo no mesmo lugar sem tocar em nada.",
+  "source_question": "O que você faz agora?",
+  "common_source_prefix": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto.",
+  "conditions": [
+    {
+      "condition_id": "steady",
+      "source_text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido continua uniforme, e a luz central conserva o mesmo brilho."
+    },
+    {
+      "condition_id": "event_started",
+      "source_text": "A galeria tem paredes claras, molduras escuras e um piso de mármore polido. Um feixe de luz central recorta o ar; uma partícula de poeira flutua nele. Outras luminárias iluminam as obras, com sombras nítidas junto às molduras. O reflexo das luzes aparece no mármore. O ar-condicionado produz um zumbido baixo, vindo de uma grade perto do teto. O zumbido se interrompe, e a luz central começa a pulsar em intervalos irregulares."
+    }
+  ],
+  "order": [
+    "steady",
+    "event_started"
+  ],
+  "conditions_independent": true,
+  "interpretation": "One exploratory observation per condition; no repeated samples, causal effect estimate, campaign seed or provider provenance for authored text."
+}

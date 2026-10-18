@@ -1,0 +1,727 @@
+{
+  "date": "2026-09-12",
+  "batch_id": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+  "status": "closed_with_policy_rejection",
+  "technical_audit": {
+    "batch_id": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+    "checks": [
+      {
+        "name": "lifecycle_terminal_finished_exit1",
+        "passed": true
+      },
+      {
+        "name": "summary_terminal_coherence",
+        "passed": true
+      },
+      {
+        "name": "metadata_exact",
+        "passed": true
+      },
+      {
+        "name": "preflight_binding_sha",
+        "passed": true
+      },
+      {
+        "name": "initial_frozen_97_copies",
+        "passed": true
+      },
+      {
+        "name": "current_and_frozen_34_inputs",
+        "passed": true
+      },
+      {
+        "name": "records_sha",
+        "passed": true
+      },
+      {
+        "name": "database_sealed_sha",
+        "passed": true
+      },
+      {
+        "name": "sidecars_sealed_sha",
+        "passed": true
+      },
+      {
+        "name": "two_rows_two_calls",
+        "passed": true
+      },
+      {
+        "name": "unique_call_operation_and_invocation_ids",
+        "passed": true
+      },
+      {
+        "name": "preflight_budget_and_target",
+        "passed": true
+      },
+      {
+        "name": "no_promotions",
+        "passed": true
+      },
+      {
+        "name": "sqlite_integrity",
+        "passed": true
+      },
+      {
+        "name": "logical_database_sha",
+        "passed": true
+      },
+      {
+        "name": "sqlite_counts",
+        "passed": true
+      },
+      {
+        "name": "only_session",
+        "passed": true
+      },
+      {
+        "name": "campaign_state_preserved",
+        "passed": true
+      },
+      {
+        "name": "no_memories_or_consolidations",
+        "passed": true
+      },
+      {
+        "name": "setup_manifest_saved_exact",
+        "passed": true
+      },
+      {
+        "name": "p_k_h_counts_and_states",
+        "passed": true
+      },
+      {
+        "name": "no_pending_attempt",
+        "passed": true
+      },
+      {
+        "name": "actual_committed_envelope_matches_record",
+        "passed": true
+      },
+      {
+        "name": "t1_projection_n_only",
+        "passed": true
+      },
+      {
+        "name": "stored_narrative_and_events_match_t1",
+        "passed": true
+      },
+      {
+        "name": "t2_has_no_commit_or_event",
+        "passed": true
+      },
+      {
+        "name": "t1_stored_p_claim_equal",
+        "passed": true
+      },
+      {
+        "name": "t1_stored_k_capsule_equal",
+        "passed": true
+      },
+      {
+        "name": "t1_declared_no_roll_or_state_change",
+        "passed": true
+      },
+      {
+        "name": "t1_aliases_and_source_policy",
+        "passed": true
+      },
+      {
+        "name": "t1_actual_prior_commit_in_p_and_k",
+        "passed": true
+      },
+      {
+        "name": "t1_user_source_only",
+        "passed": true
+      },
+      {
+        "name": "t1_fixed_literal_input",
+        "passed": true
+      },
+      {
+        "name": "t1_user_prompt_binding",
+        "passed": true
+      },
+      {
+        "name": "t1_body_and_schema_hash",
+        "passed": true
+      },
+      {
+        "name": "t1_body_model_and_params",
+        "passed": true
+      },
+      {
+        "name": "t1_reported_route_and_invocation",
+        "passed": true
+      },
+      {
+        "name": "t1_schema_error_coherence",
+        "passed": true
+      },
+      {
+        "name": "t1_usage_consistent_and_in_budget",
+        "passed": true
+      },
+      {
+        "name": "t1_stored_h_evidence_and_usage",
+        "passed": true
+      },
+      {
+        "name": "t1_shared_absolute_deadline",
+        "passed": true
+      },
+      {
+        "name": "t1_p_k_h_within_turn",
+        "passed": true
+      },
+      {
+        "name": "t1_stored_h_terminal",
+        "passed": true
+      },
+      {
+        "name": "t2_stored_p_claim_equal",
+        "passed": true
+      },
+      {
+        "name": "t2_stored_k_capsule_equal",
+        "passed": true
+      },
+      {
+        "name": "t2_declared_no_roll_or_state_change",
+        "passed": true
+      },
+      {
+        "name": "t2_aliases_and_source_policy",
+        "passed": true
+      },
+      {
+        "name": "t2_actual_prior_commit_in_p_and_k",
+        "passed": true
+      },
+      {
+        "name": "t2_user_source_only",
+        "passed": true
+      },
+      {
+        "name": "t2_fixed_literal_input",
+        "passed": true
+      },
+      {
+        "name": "t2_user_prompt_binding",
+        "passed": true
+      },
+      {
+        "name": "t2_body_and_schema_hash",
+        "passed": true
+      },
+      {
+        "name": "t2_body_model_and_params",
+        "passed": true
+      },
+      {
+        "name": "t2_reported_route_and_invocation",
+        "passed": true
+      },
+      {
+        "name": "t2_schema_error_coherence",
+        "passed": true
+      },
+      {
+        "name": "t2_usage_consistent_and_in_budget",
+        "passed": true
+      },
+      {
+        "name": "t2_stored_h_evidence_and_usage",
+        "passed": true
+      },
+      {
+        "name": "t2_shared_absolute_deadline",
+        "passed": true
+      },
+      {
+        "name": "t2_p_k_h_within_turn",
+        "passed": true
+      },
+      {
+        "name": "t2_stored_h_terminal",
+        "passed": true
+      },
+      {
+        "name": "t1_confirmed_replay_flag",
+        "passed": true
+      },
+      {
+        "name": "t2_failed_admission_no_false_replay",
+        "passed": true
+      },
+      {
+        "name": "t2_db_policy_error",
+        "passed": true
+      },
+      {
+        "name": "batch_quota",
+        "passed": true
+      },
+      {
+        "name": "quiet_and_intercall_pacing",
+        "passed": true
+      },
+      {
+        "name": "t2_after_t1_commit",
+        "passed": true
+      },
+      {
+        "name": "summary_and_lifecycle_chronology",
+        "passed": true
+      },
+      {
+        "name": "summary_counts_recomputed",
+        "passed": true
+      },
+      {
+        "name": "eight_raw_files_unchanged",
+        "passed": true
+      },
+      {
+        "name": "source_freeze_unchanged_after",
+        "passed": true
+      }
+    ],
+    "checks_failed": 0,
+    "checks_passed": 70,
+    "counts": {
+      "calls_made": 2,
+      "capsules_retained": 2,
+      "input_replays_verified": 2,
+      "producer_completions": 2,
+      "replays_verified": 1,
+      "route_verified": 2,
+      "schema_valid": 2,
+      "turns_committed": 1,
+      "turns_processed": 2,
+      "turns_skipped": 0
+    },
+    "database": {
+      "counts": {
+        "attempts": 6,
+        "campaigns": 1,
+        "consolidations": 0,
+        "episodic_memories": 0,
+        "events": 1,
+        "legacy_imports": 0,
+        "memory_candidates": 0,
+        "schema_meta": 1,
+        "turns": 1
+      },
+      "logical_sha256": "f85bff77097600f385bcc157ef7bbac9f3747b2240a496255708219607a89792",
+      "read_mode": "disposable copy only; mode=ro; query_only; BEGIN; rollback; no immutable",
+      "sidecar_bytes": {
+        "source-dialogue-continuity.sqlite3": 196608,
+        "source-dialogue-continuity.sqlite3-shm": 32768,
+        "source-dialogue-continuity.sqlite3-wal": 0
+      }
+    },
+    "limitations": [
+      "No provider call, production API replay or CLI verifier was executed by this audit.",
+      "Replay flags are compared with persisted outcomes; root owns the separate CLI verification.",
+      "Local integrity does not authenticate an externally fabricated full history.",
+      "Merit of the agency policy rejection and narrative quality are outside this audit.",
+      "No model/default/runtime/CAP-001 approval."
+    ],
+    "preparation_manifest_sha256": "ebe2721a72838aaaaf2be744aadb39a0af9914dfa4f99878183a88e3ffd1ce50",
+    "raw_after": [
+      {
+        "bytes": 14888,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json",
+        "sha256": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+      },
+      {
+        "bytes": 87129,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl",
+        "sha256": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0"
+      },
+      {
+        "bytes": 196608,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3",
+        "sha256": "f701829a389205819cb4bdee48c0f5f41792e4e8e5d401f29c9902131fdb99fc"
+      },
+      {
+        "bytes": 0,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-wal",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 32768,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-shm",
+        "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+      },
+      {
+        "bytes": 12136,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json",
+        "sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6"
+      },
+      {
+        "bytes": 331,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\binding.json",
+        "sha256": "b85c2d02d0a65a1f6f3e271c968d9155d851fe41be65c7092bfde575dd5bfd89"
+      },
+      {
+        "bytes": 152,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json",
+        "sha256": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc"
+      }
+    ],
+    "raw_before": [
+      {
+        "bytes": 14888,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json",
+        "sha256": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+      },
+      {
+        "bytes": 87129,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl",
+        "sha256": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0"
+      },
+      {
+        "bytes": 196608,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3",
+        "sha256": "f701829a389205819cb4bdee48c0f5f41792e4e8e5d401f29c9902131fdb99fc"
+      },
+      {
+        "bytes": 0,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-wal",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 32768,
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-shm",
+        "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+      },
+      {
+        "bytes": 12136,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json",
+        "sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6"
+      },
+      {
+        "bytes": 331,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\binding.json",
+        "sha256": "b85c2d02d0a65a1f6f3e271c968d9155d851fe41be65c7092bfde575dd5bfd89"
+      },
+      {
+        "bytes": 152,
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json",
+        "sha256": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc"
+      }
+    ],
+    "schema": "source-dialogue-continuity-independent-audit-v1",
+    "timing": {
+      "initial_http_wait_seconds": 61.429911,
+      "initial_preparation_wait_seconds": 60.331548,
+      "inter_http_seconds": 61.403569,
+      "next_preparation_after_previous_http_seconds": 60.301123
+    },
+    "tokens": {
+      "input_tokens": 3574,
+      "output_tokens": 320,
+      "total_tokens": 3894
+    },
+    "turns": [
+      {
+        "body_sha256": "2d22c28b6a3329821196eeb5665d4a4e21527283c4fa1ba7c2e409465cef44e6",
+        "deadline": "2026-09-12T20:36:21.644613+00:00",
+        "deadline_remaining_seconds": 57.992726,
+        "error": null,
+        "finish_reason": "stop",
+        "finished_at": "2026-09-12T20:35:23.651887+00:00",
+        "http_started_at": "2026-09-12T20:35:22.742976+00:00",
+        "http_status": 200,
+        "input_tokens": 1280,
+        "n_sha256": "5885833622521f8a3b7e3f171eaeb20f7c5c74a2617470d8f407742b369abb2a",
+        "n_words": 96,
+        "operation_id": "e66df24b-6cc4-51af-a08e-94c246e10139",
+        "operation_started_at": "2026-09-12T20:35:21.644613+00:00",
+        "output_tokens": 158,
+        "q_sha256": "4a0a6a5c5fbd6e7e9d32cc61077ba0d11cd8783b7a3706dd0f5975d2f97832d7",
+        "q_words": 6,
+        "request_id": "req_01m2bn9xz6ev2b40kvx1naajd6",
+        "result": "completed",
+        "system_sha256": "393f522ec10fad6ab096df3e13de06f6b83314ce2c44352c3f120b6241247608",
+        "total_tokens": 1438,
+        "turn_slot": "turn-1",
+        "user_sha256": "b53156bc57c7583f39be29f36ea99c90bc8ade699110b200912b3f77d5d37ad4"
+      },
+      {
+        "body_sha256": "ec9c4869842f58a9c89f9ec393b1c15ab9a65af05d7fdc8eee2afa3fbda2e6fa",
+        "deadline": "2026-09-12T20:37:23.044099+00:00",
+        "deadline_remaining_seconds": 58.040793,
+        "error": {
+          "code": "scene_player_agency_violation",
+          "stage": "policy"
+        },
+        "finish_reason": "stop",
+        "finished_at": "2026-09-12T20:36:25.003306+00:00",
+        "http_started_at": "2026-09-12T20:36:24.146545+00:00",
+        "http_status": 200,
+        "input_tokens": 2294,
+        "n_sha256": "bcc5ab5974f039fd66f36045578d6fe84f4cc8f1272ab7986a3dee91caf44a36",
+        "n_words": 104,
+        "operation_id": "97b59700-4af4-5da9-9bad-05159834ba4a",
+        "operation_started_at": "2026-09-12T20:36:23.044099+00:00",
+        "output_tokens": 162,
+        "q_sha256": "5c6cd0f4d3bc2133df65022fb5b40a16309a8a7a59750ab6c78f2e3d44d56176",
+        "q_words": 5,
+        "request_id": "req_01m2bnbstvefa9tpvqhj5cehea",
+        "result": "failed",
+        "system_sha256": "393f522ec10fad6ab096df3e13de06f6b83314ce2c44352c3f120b6241247608",
+        "total_tokens": 2456,
+        "turn_slot": "turn-2",
+        "user_sha256": "9b69246f0a9e6f4962a6edab53ea04fa0d6c849c4a55711e69a418cdb2a01ab6"
+      }
+    ],
+    "verdict": "artifact_integrity_passed_observation_failed_at_t2_policy"
+  },
+  "narrative_review": {
+    "review_kind": "independent_semantic_review",
+    "date": "2026-09-12",
+    "batch_id": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+    "scope": "read_only_completed_artifacts_no_database_open",
+    "verdict": "continuidade_textual_pertinente_mas_abstrata_segundo_texto_recusado_pelo_gate",
+    "observed_technical_result": {
+      "lifecycle_status": "finished",
+      "lifecycle_exit_code": 1,
+      "calls_made": 2,
+      "turns_committed": 1,
+      "operational_probe_passed": false,
+      "turn1_status": "completed",
+      "turn2_status": "failed",
+      "turn2_error": {
+        "code": "scene_player_agency_violation",
+        "stage": "policy"
+      },
+      "turn2_envelope_absent": true,
+      "independent_database_audit": false
+    },
+    "source_linkage": {
+      "basis": "JSONL request and completed envelope, not a new database audit",
+      "first_user_source_count": 0,
+      "second_user_source_count": 1,
+      "raw_n1_equals_envelope_projection_and_user2_source": true,
+      "n1_sha256": "5885833622521f8a3b7e3f171eaeb20f7c5c74a2617470d8f407742b369abb2a",
+      "q1_in_source": false,
+      "source_only_not_canonical_truth": true,
+      "system_text_sha256": "393f522ec10fad6ab096df3e13de06f6b83314ce2c44352c3f120b6241247608"
+    },
+    "criteria": [
+      {
+        "turn_slot": "turn-1",
+        "criterion_index": 0,
+        "criterion": "NPC offers relevant information or an intelligible refusal in n.",
+        "judgment": "atendido_no_minimo",
+        "quotes": [
+          "É um espaço entre o que foi criado e o que se perdeu",
+          "Guardam intenções."
+        ],
+        "reason": "Mara dá uma resposta temática reconhecível e pertinente, mas quase não orienta sobre a função concreta desta Galeria. Não é recusa nem silêncio."
+      },
+      {
+        "turn_slot": "turn-1",
+        "criterion_index": 1,
+        "criterion": "Atmosphere does not substitute for the response.",
+        "judgment": "atendido_com_ressalva",
+        "quotes": [
+          "Galerias guardam mais do que quadros, sabia?"
+        ],
+        "reason": "Há duas falas efetivas; a atmosfera não substitui inteiramente a resposta. A linguagem figurada ainda toma o lugar de uma explicação mais precisa."
+      },
+      {
+        "turn_slot": "turn-1",
+        "criterion_index": 2,
+        "criterion": "q describes no absent response and leaves player agency intact.",
+        "judgment": "atendido",
+        "quotes": [
+          "O que você faz em seguida?"
+        ],
+        "reason": "Pergunta aberta sem pressupor resposta ausente, deslocamento ou decisão. Quem dá um passo é Mara; observar a reação do interlocutor não especifica uma reação particular."
+      },
+      {
+        "turn_slot": "turn-2",
+        "criterion_index": 0,
+        "criterion": "Narrative addresses the clarification request consistently with the actual preceding NPC response or refusal.",
+        "judgment": "atendido_na_proposta",
+        "quotes": [
+          "Intenção é o que resta quando a matéria falha"
+        ],
+        "reason": "O esclarecimento retoma o conceito realmente usado por Mara em T1 e presente na fonte integral recebida."
+      },
+      {
+        "turn_slot": "turn-2",
+        "criterion_index": 1,
+        "criterion": "Response adds an explanation, a concrete intelligible limit or another pertinent consequence instead of merely repeating atmospheric hesitation.",
+        "judgment": "atendido_com_ressalva_na_proposta",
+        "quotes": [
+          "Cada obra traz a marca de quem a criou, mas também a ausência do que não pôde ser dito."
+        ],
+        "reason": "Acrescenta explicação interpretativa sobre criação e ausências, além de hesitação. Permanece abstrata, sem exemplo concreto ou consequência prática. O critério aceita explicação, sem exigir revelação de segredos."
+      },
+      {
+        "turn_slot": "turn-2",
+        "criterion_index": 2,
+        "criterion": "No player action or decision is imposed; q refers only to what n actually showed.",
+        "judgment": "atendido_semanticamente_com_divergencia_do_gate",
+        "quotes": [
+          "Ela para, observando você com atenção, esperando para ver se a explicação ressoa ou se permanece vaga.",
+          "Como você responde a Mara?"
+        ],
+        "reason": "Mara observa e espera; a compreensão do jogador continua em alternativa, sem pensamento ou decisão consumada. q pede iniciativa futura após fala real. O gate recusou por scene_player_agency_violation: esta revisão não altera a recusa nem demonstra sua causa lexical."
+      }
+    ],
+    "descriptive_comparison_81cb": "Em81 o primeiro diálogo respondeu É um acervo e o caso após silêncio apresentou recusa genérica; eram contextos independentes. Aqui os dois textos mantêm o tópico intenções e o segundo o desenvolve. As respostas continuam pouco concretas. T2 deste lote foi recusado e não commitado, enquanto os três casos81 foram tecnicamente aceitos. O controle de espera81 não foi repetido. Mesma versão SYSTEM não torna diferentes amostras uma comparação causal.",
+    "limitations": [
+      "Não há dois turnos narrativos commitados: T2 é proposta recusada, examinada somente para diagnóstico semântico.",
+      "Nenhuma causa técnica da recusa foi demonstrada por esta revisão.",
+      "Não foi aberto SQLite original ou cópia; a auditoria técnica de persistência cabe ao root.",
+      "Interpretar Mara não confirma suas alegações como cânone.",
+      "Galeria/Mara eram os únicos fatos iniciais de cena; paredes escuras/luz e gestos são improvisação permitida, sem fonte anterior contradita.",
+      "Duas amostras e fontes distintas das81 não sustentam causalidade, escolha de modelo ou aprovação de produto."
+    ],
+    "approvals": {
+      "model": false,
+      "runtime_default": false,
+      "campaign": false,
+      "ui": false,
+      "CAP_001": false
+    },
+    "sources": [
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl",
+        "sha256": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json",
+        "sha256": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json",
+        "sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json",
+        "sha256": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_continuity_v1.json",
+        "sha256": "851a9e60262bc2d5b29fd13f40eb2a76ba4a7b39436df427ff8a773f6b61b2df"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_continuity_protocol_v1.md",
+        "sha256": "705dc27554ed07bfee20ed9effc0311589936b2db0578d4660c21d47ac1ba4ba"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\prompts\\narrative-source-dialogue-v1.md",
+        "sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-response-narrative-review-81cb2b57-20260912.md",
+        "sha256": "ec6045c7f13234e2ad7618ac8fe8563425f3a35f0d3d15436632cb58327f4341"
+      }
+    ]
+  },
+  "policy_diagnostic": {
+    "batch_id": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+    "verdict": "false_positive_reproduced_offline_no_fix_applied",
+    "observations": 14,
+    "production_modified": false,
+    "historical_artifacts_modified": false,
+    "original_database_accessed": false,
+    "network_used": false,
+    "files": [
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnose.py",
+        "sha256": "3200c8c98dd8bfef562b05666f7779ab1da3697253179e0c34fba91271cd7fde",
+        "bytes": 6662
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnose.log",
+        "sha256": "741f7476106f8890b4a1862f85254abdfed95eebb586c45b1c6ae566204cc688",
+        "bytes": 5356
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnosis.json",
+        "sha256": "0950a7184a2e6d126b2eadd6f99a05d3ce3da80de09c3a9a2bf390cd108502ca",
+        "bytes": 26340
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnosis.md",
+        "sha256": "f3285968d08c07abd20ef32e58df0ee226e5eb2f49ad76f02e3c99bd1ce265b8",
+        "bytes": 3730
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnose-first.log",
+        "sha256": "78b0ddd3d17e696500afac3969201a0e2876c79b41ec56112146d91c7432daa0",
+        "bytes": 287
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnose-exploratory.py",
+        "sha256": "171101a2bde022473f39b1bdd0b368557f36812b96d795241d50ad8c288be1ee",
+        "bytes": 6437
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnose-exploratory.log",
+        "sha256": "4165d2f9a0e42fa37d88ac60bec42144dbf426ee76d3c1e6fae582c265a48324",
+        "bytes": 5575
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-continuity-policy-87e187bb-20260912\\diagnosis-exploratory.json",
+        "sha256": "fe038de88d5ce9fedf8cdeec9aefbe9d09952fa2785e67a6743f36b46558785e",
+        "bytes": 26115
+      }
+    ],
+    "trigger": [
+      "esperando: wait/wait after object voce",
+      "permanece: wait/remain, subject a explicacao"
+    ],
+    "final_diagnostic_exit": 0
+  },
+  "root_cli_verifier": {
+    "date_utc": "2026-09-12T20:37:14.121667+00:00",
+    "batch_id": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+    "mode": "verify-artifacts",
+    "exit_code": 0,
+    "stdout": "{\"batch_id\":\"87e187bb-61e7-4949-9574-4aea19f23c9f\",\"process_exit_code\":1,\"summary_path\":\"C:\\\\Users\\\\skate\\\\.codex\\\\worktrees\\\\b008\\\\AgenteStoryteller\\\\eval-results\\\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\\\summary.json\",\"verified\":true}\n",
+    "stderr": "",
+    "before": {
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\binding.json": "b85c2d02d0a65a1f6f3e271c968d9155d851fe41be65c7092bfde575dd5bfd89",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3": "f701829a389205819cb4bdee48c0f5f41792e4e8e5d401f29c9902131fdb99fc",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+    },
+    "after": {
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\binding.json": "b85c2d02d0a65a1f6f3e271c968d9155d851fe41be65c7092bfde575dd5bfd89",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3": "f701829a389205819cb4bdee48c0f5f41792e4e8e5d401f29c9902131fdb99fc",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+    },
+    "original_artifacts_unchanged": true,
+    "real_http_calls": 0,
+    "credential_given": false
+  },
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-continuity-observation-87e187bb-20260912/manifest.json",
+    "sha256": "14ec252d78315976047649c765a21825545ca6bdc2c3eaf44e575be42d307fe0",
+    "copies": 69
+  },
+  "next_step": "bounded_local_subject_attribution_fix",
+  "approvals": {
+    "model_selection": false,
+    "runtime_default": false,
+    "campaign": false,
+    "CAP-001": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-22",
+  "status": "completed_no_candidate_admitted",
+  "scope": "mvp_narrator_admission",
+  "human_decision": {
+    "date": "2026-09-22",
+    "option": "A",
+    "outcome": "no_candidate_admitted"
+  },
+  "current_evidence": {
+    "qwen_qualified": false,
+    "gpt_oss_qualified": false,
+    "rerun_without_new_hypothesis_supported": false,
+    "immediate_code_or_inference_needed": false
+  },
+  "recommended_option": "A",
+  "options": {
+    "A": "do_not_admit_any_candidate_now",
+    "B": "provisionally_admit_gpt_oss_with_separate_pending_gates",
+    "C": "provisionally_admit_qwen_with_separate_pending_gates"
+  },
+  "not_authorized_by_this_gate": [
+    "campaign_architecture",
+    "provider",
+    "account_or_credentials",
+    "cost_or_budget",
+    "fallback_policy",
+    "CAP-001",
+    "prompt_change",
+    "new_inference"
+  ]
+}

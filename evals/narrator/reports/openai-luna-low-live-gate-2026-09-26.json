@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-26",
+  "status": "completed_human_rejected_after_manual_trial",
+  "human_request": "E por último, avalie a api do luna no esforço baixo.",
+  "hypothesis_id": "HYP-006-OPENAI-LUNA-LOW-L1",
+  "offline_preparation_authorized": true,
+  "live_inference_authorized": false,
+  "credential_status": "removed_after_batch",
+  "provider_calls_at_gate_creation": 0,
+  "paid_spend_authorized": false,
+  "final_human_classification": "technically_safe_but_narratively_ineligible_for_mvp",
+  "final_human_classification_accepted_on": "2026-09-28",
+  "narrator_admitted": false,
+  "authorization_evidence": {
+    "paid_provider_policy": "temporarily_allowed_for_testing",
+    "human_request": "Revogue temporariamente a decisao provedores pagos fora de questao para podermos realizar os testes.",
+    "billing_observed_on": "2026-09-28",
+    "prepaid_credit_usd": 5.0,
+    "automatic_recharge": false,
+    "organization_hard_spend_limit_usd": 0.05,
+    "observed_usage_at_activation_usd": 0.0,
+    "enforcement_note": "Provider warns enforcement is not instantaneous and final usage may exceed the limit by a small amount."
+  },
+  "completed_batch": {
+    "batch_id": "c875289b-e3f0-4907-8301-2408781a96ce",
+    "calls_made": 8,
+    "completed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "artifact_verification_passed": true,
+    "paid_live_gate_reclosed": true
+  },
+  "required_future_authorization": {
+    "exact_model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "max_calls": 8,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 6144,
+    "account_spend_limit_required_usd": 0.05
+  }
+}

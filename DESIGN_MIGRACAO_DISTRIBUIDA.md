@@ -1,5 +1,8 @@
 # Especificação Técnica: Orquestrador de Narrativa RPG Vampire V5 — Arquitetura Web Distribuída
 
+> [!IMPORTANT]
+> Proposta histórica não adotada pelo MVP local-first atual. Ela não aprova provedor, cloud, microsserviços, retry ou fallback; consulte `README.md` e o plano vigente.
+
 Este documento formaliza a arquitetura e o plano de migração do Agente Storyteller V5 para uma infraestrutura distribuída na nuvem (Vercel + Railway + Gemini Free API), otimizando o reúso dos componentes existentes.
 
 ## 1. Validação Executiva

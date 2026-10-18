@@ -1,0 +1,39 @@
+{
+  "schema": "storyteller.eval.summary-attachment-corpus.v1",
+  "cases": [
+    {
+      "schema": "storyteller.eval.inline-evidence-input.v1",
+      "case_id": "observatory-a",
+      "synthetic_only": true,
+      "origin": "agent_authored_synthetic_case",
+      "narrative": "No observatório vazio, uma luminária de carcaça verde ilumina um painel fosco. Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa.",
+      "source_units": [
+        {
+          "id": "n0",
+          "text": "No observatório vazio, uma luminária de carcaça verde ilumina um painel fosco. "
+        },
+        {
+          "id": "n1",
+          "text": "Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa."
+        }
+      ]
+    },
+    {
+      "schema": "storyteller.eval.inline-evidence-input.v1",
+      "case_id": "observatory-b",
+      "synthetic_only": true,
+      "origin": "agent_authored_synthetic_case",
+      "narrative": "No observatório vazio, uma luminária emite luz verde sobre um painel fosco. Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa.",
+      "source_units": [
+        {
+          "id": "n0",
+          "text": "No observatório vazio, uma luminária emite luz verde sobre um painel fosco. "
+        },
+        {
+          "id": "n1",
+          "text": "Um caderno fechado repousa junto à régua metálica sobre a bancada; perto da janela, uma cadeira está afastada da mesa."
+        }
+      ]
+    }
+  ]
+}

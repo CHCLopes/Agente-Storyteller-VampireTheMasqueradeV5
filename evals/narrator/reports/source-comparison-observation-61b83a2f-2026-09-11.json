@@ -1,0 +1,348 @@
+{
+  "date": "2026-09-11",
+  "batch_id": "61b83a2f-f407-4d19-8c9f-5c1516b89f08",
+  "status": "closed_no_candidate_qualified",
+  "summary_sha256": "1a3157c3f665adb8b9a419af8ad509ba7203676e645b439573240abe89e9421f",
+  "checkpoint": "eval-results/checkpoints/source-comparison-observation-61b83a2f-20260911",
+  "frozen_snapshot_files": 36,
+  "artifact_integrity": "verified_before_followup_correction",
+  "summary_metrics": {
+    "by_block": {
+      "block-1": {
+        "calls_made": 1,
+        "capsules_retained": 1,
+        "input_replays_verified": 1,
+        "replays_verified": 0,
+        "requested_output_token_ceiling": 768,
+        "route_verified": 1,
+        "schema_valid": 1,
+        "turns_committed": 0,
+        "turns_processed": 1,
+        "usage_reported": {
+          "input_tokens": 1035,
+          "output_tokens": 242,
+          "reasoning_tokens": null,
+          "total_tokens": 1277
+        }
+      },
+      "block-2": {
+        "calls_made": 3,
+        "capsules_retained": 3,
+        "input_replays_verified": 3,
+        "replays_verified": 3,
+        "requested_output_token_ceiling": 2304,
+        "route_verified": 3,
+        "schema_valid": 3,
+        "turns_committed": 3,
+        "turns_processed": 3,
+        "usage_reported": {
+          "input_tokens": 5871,
+          "output_tokens": 699,
+          "reasoning_tokens": 160,
+          "total_tokens": 6570
+        }
+      },
+      "block-3": {
+        "calls_made": 1,
+        "capsules_retained": 1,
+        "input_replays_verified": 1,
+        "replays_verified": 0,
+        "requested_output_token_ceiling": 768,
+        "route_verified": 1,
+        "schema_valid": 1,
+        "turns_committed": 0,
+        "turns_processed": 1,
+        "usage_reported": {
+          "input_tokens": 1113,
+          "output_tokens": 235,
+          "reasoning_tokens": 61,
+          "total_tokens": 1348
+        }
+      },
+      "block-4": {
+        "calls_made": 2,
+        "capsules_retained": 2,
+        "input_replays_verified": 2,
+        "replays_verified": 1,
+        "requested_output_token_ceiling": 1536,
+        "route_verified": 2,
+        "schema_valid": 2,
+        "turns_committed": 1,
+        "turns_processed": 2,
+        "usage_reported": {
+          "input_tokens": 3047,
+          "output_tokens": 406,
+          "reasoning_tokens": null,
+          "total_tokens": 3453
+        }
+      }
+    },
+    "by_candidate": {
+      "gpt-oss-120b-groq-free-synthetic-low": {
+        "calls_made": 4,
+        "capsules_retained": 4,
+        "input_replays_verified": 4,
+        "replays_verified": 3,
+        "requested_output_token_ceiling": 3072,
+        "route_verified": 4,
+        "schema_valid": 4,
+        "turns_committed": 3,
+        "turns_processed": 4,
+        "usage_reported": {
+          "input_tokens": 6984,
+          "output_tokens": 934,
+          "reasoning_tokens": 221,
+          "total_tokens": 7918
+        }
+      },
+      "qwen-3.8-27b-groq-free-synthetic-nonthink": {
+        "calls_made": 3,
+        "capsules_retained": 3,
+        "input_replays_verified": 3,
+        "replays_verified": 1,
+        "requested_output_token_ceiling": 2304,
+        "route_verified": 3,
+        "schema_valid": 3,
+        "turns_committed": 1,
+        "turns_processed": 3,
+        "usage_reported": {
+          "input_tokens": 4082,
+          "output_tokens": 648,
+          "reasoning_tokens": null,
+          "total_tokens": 4730
+        }
+      }
+    },
+    "calls_made": 7,
+    "campaign_data_eligible": false,
+    "cap_001_approved": false,
+    "capsules_retained": 7,
+    "experiment_version": "source-comparison-v1",
+    "global_stop_reason": null,
+    "input_replays_verified": 7,
+    "max_calls": 12,
+    "operational_comparison_passed": false,
+    "probe_kind": "source_model_comparison",
+    "process_exit_code": 1,
+    "protocol": "narrative-source-application-v1",
+    "purpose": "source_model_comparison",
+    "replays_verified": 4,
+    "requested_output_token_ceiling": 5376,
+    "route_verified": 7,
+    "runtime_default_eligible": false,
+    "schema_valid": 7,
+    "selected_candidate_ids": [
+      "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "gpt-oss-120b-groq-free-synthetic-low"
+    ],
+    "semantic_fidelity_review": {
+      "approval": null,
+      "status": "not_performed"
+    },
+    "semantic_not_evaluated": true,
+    "synthetic_only": true,
+    "turns_committed": 4,
+    "turns_processed": 7,
+    "turns_skipped": 5,
+    "usage_reported": {
+      "input_tokens": 11066,
+      "output_tokens": 1582,
+      "reasoning_tokens": null,
+      "total_tokens": 12648
+    }
+  },
+  "reconciliation": {
+    "ratings": [
+      {
+        "block": "block-2",
+        "turn": 1,
+        "confirmed": true,
+        "primary_original": [
+          2,
+          2,
+          2
+        ],
+        "independent": [
+          2,
+          2,
+          2
+        ],
+        "final_scores": [
+          2,
+          2,
+          2
+        ],
+        "pilot_scores": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "block": "block-2",
+        "turn": 2,
+        "confirmed": true,
+        "primary_original": [
+          1,
+          1,
+          2
+        ],
+        "independent": [
+          1,
+          1,
+          1
+        ],
+        "final_scores": [
+          1,
+          1,
+          1
+        ],
+        "pilot_scores": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "block": "block-2",
+        "turn": 3,
+        "confirmed": true,
+        "primary_original": [
+          2,
+          1,
+          1
+        ],
+        "independent": [
+          2,
+          1,
+          1
+        ],
+        "final_scores": [
+          2,
+          1,
+          1
+        ],
+        "pilot_scores": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "block": "block-3",
+        "turn": 1,
+        "confirmed": false,
+        "primary_original": [
+          2,
+          2,
+          1
+        ],
+        "independent": [
+          2,
+          2,
+          1
+        ],
+        "final_scores": [
+          2,
+          2,
+          1
+        ],
+        "pilot_scores": null
+      },
+      {
+        "block": "block-1",
+        "turn": 1,
+        "confirmed": false,
+        "primary_original": [
+          1,
+          2,
+          2
+        ],
+        "independent": [
+          2,
+          2,
+          1
+        ],
+        "final_scores": [
+          2,
+          2,
+          1
+        ],
+        "pilot_scores": null
+      },
+      {
+        "block": "block-4",
+        "turn": 1,
+        "confirmed": true,
+        "primary_original": [
+          2,
+          2,
+          1
+        ],
+        "independent": [
+          2,
+          2,
+          1
+        ],
+        "final_scores": [
+          2,
+          2,
+          1
+        ],
+        "pilot_scores": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "block": "block-4",
+        "turn": 2,
+        "confirmed": false,
+        "primary_original": [
+          0,
+          0,
+          1
+        ],
+        "independent": [
+          1,
+          1,
+          1
+        ],
+        "final_scores": [
+          1,
+          1,
+          1
+        ],
+        "pilot_scores": null
+      }
+    ],
+    "primary_adjustments": [
+      "Qwen/Oficina: a rubrica exige resposta concreta do NPC, não exclusivamente fala. O gesto que aponta a mancha satisfaz utilidade2. A exigência verbal da primeira leitura foi uma interpretação excessiva, corrigida sem alterar o protocolo. Extensão acima do teto sustenta clareza1 na leitura conjunta.",
+      "GPT-OSS/Oficina espera: adotada clareza1 pela redundância explícita entre torno girando e parecer em funcionamento.",
+      "Qwen/Arquivo espera: microgestos existem, portanto utilidade/progressão1 descrevem melhor o texto que0; continuam insuficientes para avanço2 e a proposta não conta para piloto."
+    ],
+    "conclusion": "Nenhum candidato qualificado neste protocolo. Concordância na ausência de progresso substantivo e na insuficiência de turnos confirmados. Sem média comparativa entre denominadores diferentes."
+  },
+  "cause_analysis": {
+    "qwen_workshop_T1": {
+      "code": "scene_narrative_too_long",
+      "word_count": 155,
+      "limit": 150
+    },
+    "qwen_archive_T2": {
+      "code": "scene_narrative_too_long",
+      "word_count": 157,
+      "limit": 150
+    },
+    "gpt_oss_archive_T1": {
+      "code": "scene_player_agency_violation",
+      "diagnosis": "Bounded false positive: hypothetical procura plus modal seguir were parsed as performed inspect/move. Original rejection remains immutable; separate local correction follows."
+    }
+  },
+  "followup": "plan/fix-hypothetical-interest-agency-1.md",
+  "model_selected": null,
+  "runtime_default_changed": false,
+  "cap_001_approved": false,
+  "no_more_calls_in_this_batch": true
+}

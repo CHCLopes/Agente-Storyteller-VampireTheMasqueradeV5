@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-04",
+  "catalog_source": "https://openrouter.ai/api/v1/models",
+  "provider_policy_source": "https://openrouter.ai/providers",
+  "candidates": [
+    {
+      "candidate_id": "deepseek-v4-flash-0731-deepinfra-zdr-nonthink",
+      "adapter_kind": "openrouter",
+      "provider_label": "OpenRouter",
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "effective_provider": "deepinfra",
+      "upstream_provider": "deepinfra",
+      "structured_mode": "native",
+      "require_zdr": true,
+      "allow_data_collection": false,
+      "campaign_data_eligible": true,
+      "expiration_date": null,
+      "reasoning_effort": "none",
+      "notes": "Rota fixa DeepInfra FP8 verificada em 2026-09-04; JSON Schema e reasoning_effort disponíveis, retenção zero, sem fallback."
+    },
+    {
+      "candidate_id": "glm-5.2-free-decarts-zdr-nonthink",
+      "adapter_kind": "openrouter",
+      "provider_label": "OpenRouter",
+      "model": "z-ai/glm-5.2:free",
+      "effective_provider": "decart",
+      "upstream_provider": "decart",
+      "structured_mode": "native",
+      "require_zdr": true,
+      "allow_data_collection": false,
+      "campaign_data_eligible": true,
+      "expiration_date": null,
+      "reasoning_effort": "none",
+      "notes": "Controle gratuito com rota Decart FP4 verificada em 2026-09-04; JSON Schema e reasoning_effort disponíveis, retenção zero, sem fallback."
+    }
+  ]
+}

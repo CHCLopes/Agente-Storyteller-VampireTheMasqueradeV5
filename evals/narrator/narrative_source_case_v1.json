@@ -1,0 +1,11 @@
+{
+  "schema": "storyteller.eval.narrative-source-case.v1",
+  "case_id": "greenhouse-observe-wait",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "scene": {"location": "Estufa", "npcs_present": []},
+  "turns": [
+    {"turn_id": "observe", "player_input": "Observo a estufa do lugar onde estou, sem tocar em nada."},
+    {"turn_id": "wait", "player_input": "Permaneço no mesmo lugar e espero, sem tocar em nada."}
+  ]
+}

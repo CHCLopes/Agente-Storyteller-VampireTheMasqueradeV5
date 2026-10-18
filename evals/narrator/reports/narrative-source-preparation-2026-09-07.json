@@ -1,0 +1,624 @@
+{
+  "schema": "storyteller.narrative-source-preparation.v1",
+  "prepared_at": "2026-09-07T23:38:52.411900+00:00",
+  "prepared_scope": {
+    "direction": "B",
+    "human_direction_approved": true,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "max_calls": 2,
+    "additional_human_approval_required": false,
+    "credential_input_required": true
+  },
+  "prepared_metadata": {
+    "automated_gates_passed": false,
+    "automatic_retries": 0,
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "effective_provider": "Groq",
+      "expiration_date": null,
+      "provider_label": "Groq",
+      "reasoning_effort": "none",
+      "require_zdr": false,
+      "structured_mode": "native",
+      "upstream_provider": null
+    },
+    "canonical_admission": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "diagnostics_executed": false,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_source.py",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true,
+      "python_version": "3.12.2",
+      "sha256": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986"
+    },
+    "experiment_version": "narrative-source-observation-v1",
+    "full_evaluation": false,
+    "full_record_derivation": false,
+    "human_review_required": true,
+    "inputs": {
+      "case": {
+        "canonical_scene": {
+          "location": "Estufa",
+          "npcs_present": []
+        },
+        "case_id": "greenhouse-observe-wait",
+        "file": "evals/narrator/narrative_source_case_v1.json",
+        "origin": "agent_authored_synthetic_case",
+        "sha256": "32f99638fed2c2acf7cdd59744d1217e3e2357401d5186e7a506ed939cacd1d8",
+        "turns": [
+          {
+            "player_input": "Observo a estufa do lugar onde estou, sem tocar em nada.",
+            "turn_id": "observe"
+          },
+          {
+            "player_input": "Permaneço no mesmo lugar e espero, sem tocar em nada.",
+            "turn_id": "wait"
+          }
+        ]
+      },
+      "first_request": {
+        "body_sha256": "747c05d4ed2cbff718169f94053f78c032baadabe3a5c5fb853d72fc290c237a",
+        "user_estimated_tokens": 137,
+        "user_packet_sha256": "ab29bb7fdc090b5648946bfe772660fea4bc690a9a703dd73944651301b808a0"
+      },
+      "implementation": [
+        {
+          "file": "api/narrative_grounding.py",
+          "sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3"
+        },
+        {
+          "file": "scripts/narrator_source_profile.py",
+          "sha256": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/turn_models.py",
+          "sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "prompt": {
+        "file": "evals/narrator/prompts/narrative-source-v1.md",
+        "file_sha256": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d",
+        "sha256": "147588db153513bb5da8a0aff3f0ef67773481b8feabc40093de4f8bd259084c",
+        "variant": "narrative-source-v1"
+      },
+      "provider_schema_sha256": "db09e29a802160d7bb6931bcdffc8fedc565d3389f1d243cd2043e148c1f6166",
+      "response_schema_sha256": "db09e29a802160d7bb6931bcdffc8fedc565d3389f1d243cd2043e148c1f6166",
+      "source_policy": {
+        "canonical_truth_confirmed": false,
+        "core_protocol": "narrative-source-v1",
+        "invocation_id": "uuid5(batch_id,narrative-source.turn_id)",
+        "normalization": "collapse_unicode_whitespace",
+        "profile": "narrative-source-profile-v1",
+        "question_is_source": false,
+        "representation": "projected_source",
+        "second_user": "previous_complete_source_only",
+        "session_id": "batch_id",
+        "source_field": "n",
+        "turn_ids": [
+          "observe",
+          "wait"
+        ],
+        "user_serialization": "json_unicode_sorted_compact"
+      },
+      "stopping_policy": {
+        "fallback": false,
+        "fill_skips": false,
+        "narrative_retries": 0,
+        "stop_on_first_operational_or_policy_failure": true
+      }
+    },
+    "max_calls": 2,
+    "narrative_generation_parameters": {
+      "deadline_seconds": 60,
+      "initial_quiet_seconds": 60,
+      "max_total_output_tokens": 1536,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "max_output_tokens": 768,
+        "temperature": 0.65
+      },
+      "transmitted": {
+        "max_output_tokens": 768,
+        "reasoning_effort": "none",
+        "temperature": 0.65
+      },
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "probe_kind": "narrative_source_probe",
+    "protocol": "narrative-source-profile-v1",
+    "purpose": "narrative_source_probe",
+    "repetitions": 1,
+    "runtime_promoted": false,
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "semantic_not_evaluated": true,
+    "synthetic_only": true
+  },
+  "prepared_files": [
+    {
+      "file": "api/narrative_grounding.py",
+      "sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3"
+    },
+    {
+      "file": "scripts/narrator_source_profile.py",
+      "sha256": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112"
+    },
+    {
+      "file": "scripts/evaluate_narrator_source.py",
+      "sha256": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986"
+    },
+    {
+      "file": "scripts/run_groq_narrative_source_probe.ps1",
+      "sha256": "7436a084615d0c8ba37cfd9da3f4989fbe07c29b9472127fc0a3b9192b221c43"
+    },
+    {
+      "file": "scripts/evaluate_narrator_models.py",
+      "sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59"
+    },
+    {
+      "file": "tests/test_narrative_grounding.py",
+      "sha256": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+    },
+    {
+      "file": "tests/test_narrator_source_profile.py",
+      "sha256": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+    },
+    {
+      "file": "tests/test_narrator_source_runner.py",
+      "sha256": "671ab4a53ac1f7325ff1d49c45bf1657636fec27642f73c31b441f0f4e6ff821"
+    },
+    {
+      "file": "tests/test_narrator_source_replay_boundary.py",
+      "sha256": "b105f82be8d51540e4fabdb6ee4e649812ae8660ef8731dd67240c44c0896dc7"
+    },
+    {
+      "file": "tests/test_narrator_source_execution.py",
+      "sha256": "71171929b9d8f370b2ad44af216e1cfdf0c2a52a751e36ef31e898cdbe2ba203"
+    },
+    {
+      "file": "evals/narrator/prompts/narrative-source-v1.md",
+      "sha256": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d"
+    },
+    {
+      "file": "evals/narrator/narrative_source_case_v1.json",
+      "sha256": "32f99638fed2c2acf7cdd59744d1217e3e2357401d5186e7a506ed939cacd1d8"
+    }
+  ],
+  "evidence_files": {
+    "design": {
+      "file": "evals/narrator/reports/narrative-source-design-2026-09-07.json",
+      "sha256": "89c04deae4fa76df48dd4b0b9fa226ebb04d177ced670efcf403fcd2a6d43fe1"
+    },
+    "console_launcher": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-console-20260907.ps1",
+      "sha256": "d42f47554298ad66c5b0dd03b13c9b5f386af8072a32803924f88a8ff37f49d6"
+    }
+  },
+  "prepared_verification": {
+    "distinct_green_cases": 152,
+    "groups": {
+      "foundation": 24,
+      "profile": 57,
+      "executor": 31,
+      "runner_including_real_empty_key": 27,
+      "cap_replay": 13
+    },
+    "external_calls": 0,
+    "preflight_command": [
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_narrator_source.py",
+      "--preflight"
+    ],
+    "preflight_exit_code": 0,
+    "historical_raw_files_unchanged": 8,
+    "independent_review": "closed_no_material_findings",
+    "proofs": {
+      "foundation": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\after.json",
+        "source_sha256": "10356cb76a0e5becf877a99b6b22c715ba8c6771f0d2786ab3f0678b23ac5f28",
+        "record_view": "complete_json_record",
+        "record": {
+          "status": "passed",
+          "started_at": "2026-09-07T22:59:45.468898+00:00",
+          "finished_at": "2026-09-07T22:59:49.220819+00:00",
+          "elapsed_seconds": 3.7490587000502273,
+          "cwd": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+          "command": [
+            "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "tests/test_narrative_grounding.py"
+          ],
+          "process_exit_code": 0,
+          "distinct_test_cases": 24,
+          "cases_by_function": {
+            "test_whole_source_view_preserves_literal_n_and_attribution_without_truth_approval": 1,
+            "test_identical_text_does_not_establish_a_canonical_assertion": 1,
+            "test_changed_text_is_indeterminate_even_with_a_valid_reference": 6,
+            "test_binding_from_another_context_cannot_materialize_same_text": 4,
+            "test_old_binding_rejects_source_metadata_changes_even_when_text_hash_matches": 2,
+            "test_stale_or_forged_content_hashes_are_integrity_rejections": 3,
+            "test_forged_binding_instance_is_revalidated_before_deciding": 1,
+            "test_forged_source_only_assessment_cannot_materialize_an_unestablished_derivation": 2,
+            "test_existing_projection_instance_is_rechecked_after_text_and_binding_are_changed": 1,
+            "test_whole_source_projection_preserves_restricted_visibility": 2,
+            "test_non_utf8_source_metadata_is_rejected_with_a_closed_diagnostic": 1
+          },
+          "hashes_before": {
+            "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+            "tests/test_narrative_grounding.py": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+          },
+          "hashes_after": {
+            "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+            "tests/test_narrative_grounding.py": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+          },
+          "files_unchanged_during_test": true,
+          "pytest_runs": 1,
+          "legacy_test_files_executed": [],
+          "network_policy": "tests/conftest.py unchanged: external HTTPX and non-loopback sockets blocked",
+          "environment_policy": "allowlisted OS paths only; dotenv and pyc disabled; no credentials inherited",
+          "unicode_finding": "Static hypothesis was not reproduced; existing revalidation returns source_invalid. No module fix was needed.",
+          "stdout_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\pytest.stdout.txt",
+          "stderr_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\pytest.stderr.txt"
+        }
+      },
+      "profile": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\final.json",
+        "source_sha256": "c3c5720313dae3559174c33024248661be6517088224598059c021364fc4b39c",
+        "record_view": "complete_json_record",
+        "record": {
+          "initial_run": {
+            "exit_code": 1,
+            "passed": 55,
+            "failed": 1,
+            "pytest_seconds": 1.44
+          },
+          "final_affected_run": {
+            "command": [
+              "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+              "-B",
+              "-m",
+              "pytest",
+              "-q",
+              "tests/test_narrator_source_profile.py",
+              "-k",
+              "test_question_cannot_delegate_npc_or_story_authority",
+              "-p",
+              "no:cacheprovider",
+              "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\question-family.xml",
+              "--basetemp=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\question-temp"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 3.684768100036308,
+            "cases": 3
+          },
+          "distinct_final_cases": 57,
+          "all_final_cases_passed": true,
+          "files": {
+            "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+            "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016",
+            "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+            "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+            "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+            "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7"
+          },
+          "unchanged_during_final_run": true,
+          "initial_implementation_preserved": true,
+          "live_calls": 0,
+          "test_scope": "only new test module; affected question family repeated after expectation correction"
+        }
+      },
+      "runner_replay": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrator-source-runner-tests-20260907\\after-tests.json",
+        "source_sha256": "09acb8bbb79889f4aacf24d4b1509b78e12a090bb945e814505a73172dc93c5b",
+        "record_view": "complete_json_record",
+        "record": {
+          "status": "complete",
+          "recorded_at": "2026-09-07T23:34:49.065820+00:00",
+          "scope": "two new test files; wrapper review; one actual empty-key integration; no external calls",
+          "distinct_passed": 40,
+          "failed": 0,
+          "skipped": 0,
+          "runner_distinct_passed": 27,
+          "replay_distinct_passed": 13,
+          "groups": [
+            {
+              "passed": 39,
+              "deselected": 1,
+              "pytest_seconds": 45.39,
+              "scope": "26 fake runner/parser cases plus 13 replay boundaries",
+              "evidence_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrator-source-runner-tests-20260907\\focused-after.json",
+              "evidence_sha256": "02faad028625a207753ab1522e8dddc0cfba9b7d82038ce683e42939de4ff235"
+            },
+            {
+              "passed": 1,
+              "deselected": 26,
+              "pytest_seconds": 4.39,
+              "scope": "actual keyless preflight and empty SecureString only",
+              "evidence_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrator-source-runner-tests-20260907\\real-empty-key-integration.json",
+              "evidence_sha256": "88176451749b39ecf48777fb7389f74e9665a79452ae4935ed790a16ba0a8132"
+            }
+          ],
+          "final_hashes": {
+            "scripts/evaluate_narrator_source.py": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986",
+            "scripts/run_groq_narrative_source_probe.ps1": "7436a084615d0c8ba37cfd9da3f4989fbe07c29b9472127fc0a3b9192b221c43",
+            "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+            "tests/test_narrator_source_runner.py": "671ab4a53ac1f7325ff1d49c45bf1657636fec27642f73c31b441f0f4e6ff821",
+            "tests/test_narrator_source_replay_boundary.py": "b105f82be8d51540e4fabdb6ee4e649812ae8660ef8731dd67240c44c0896dc7"
+          },
+          "all_hashes_unchanged_during_respective_runs": true,
+          "eval_result_files_preserved_during_real_integration": 181,
+          "external_calls": 0,
+          "legacy_test_files_executed": [],
+          "review_findings_resolved_before_tests": [
+            "Root added strict integer checks for max_calls and automatic_retries plus purpose/experiment identity guards.",
+            "Root forwards the same expected preflight to live execution and offline verification."
+          ],
+          "lifecycle_verified": "safe four-field records; no record before failed preflight; running and verification have null exit; final code matches wrapper",
+          "remaining_wrapper_findings": [],
+          "document_review": "Two source-design proof timestamp strings and one skip sentence corrected by root; rechecked exact Temp proof records and local links.",
+          "warnings": "Existing Starlette PendingDeprecationWarning requests python_multipart import; one warning in each disjoint pytest run."
+        }
+      },
+      "empty_key_integration": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrator-source-runner-tests-20260907\\real-empty-key-integration.json",
+        "source_sha256": "88176451749b39ecf48777fb7389f74e9665a79452ae4935ed790a16ba0a8132",
+        "record_view": "inventory_maps_omitted",
+        "record": {
+          "status": "passed",
+          "started_at": "2026-09-07T23:33:34.629951+00:00",
+          "finished_at": "2026-09-07T23:33:42.420483+00:00",
+          "elapsed_seconds": 7.7907695000758395,
+          "cwd": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+          "command": [
+            "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "tests/test_narrator_source_runner.py",
+            "-k",
+            "real_preflight"
+          ],
+          "pytest_process_exit_code": 0,
+          "expected_wrapper_exit_code": 3,
+          "required_wrapper_stage": "protected credential entry after successful actual offline preflight",
+          "assertions_checked_by_test": [
+            "actual wrapper/evaluator preflight",
+            "blank SecureString",
+            "key absent before and after",
+            "no Protected credential accepted output",
+            "wrapper stderr empty",
+            "eval-results inventory identical"
+          ],
+          "hashes_before": {
+            "scripts/evaluate_narrator_source.py": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986",
+            "scripts/run_groq_narrative_source_probe.ps1": "7436a084615d0c8ba37cfd9da3f4989fbe07c29b9472127fc0a3b9192b221c43",
+            "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+            "tests/test_narrator_source_runner.py": "671ab4a53ac1f7325ff1d49c45bf1657636fec27642f73c31b441f0f4e6ff821",
+            "tests/test_narrator_source_replay_boundary.py": "b105f82be8d51540e4fabdb6ee4e649812ae8660ef8731dd67240c44c0896dc7"
+          },
+          "hashes_after": {
+            "scripts/evaluate_narrator_source.py": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986",
+            "scripts/run_groq_narrative_source_probe.ps1": "7436a084615d0c8ba37cfd9da3f4989fbe07c29b9472127fc0a3b9192b221c43",
+            "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+            "tests/test_narrator_source_runner.py": "671ab4a53ac1f7325ff1d49c45bf1657636fec27642f73c31b441f0f4e6ff821",
+            "tests/test_narrator_source_replay_boundary.py": "b105f82be8d51540e4fabdb6ee4e649812ae8660ef8731dd67240c44c0896dc7"
+          },
+          "files_unchanged": true,
+          "eval_result_file_count_before": 181,
+          "eval_result_file_count_after": 181,
+          "eval_result_inventory_unchanged": true,
+          "real_empty_key_runs": 1,
+          "external_calls": 0,
+          "credentials_inherited": false,
+          "environment_policy": "explicit OS path allowlist including PATHEXT/COMSPEC; no credential variable",
+          "fakes_repeated": false
+        }
+      },
+      "executor": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-execution-5omwyi_0\\final.json",
+        "source_sha256": "9c292c285b7627ffe2dea4cb8b6ebce2e5baa4c6c303daddef03124691e830c5",
+        "record_view": "complete_json_record",
+        "record": {
+          "initial_group": {
+            "test_cases": 30,
+            "exit_code": 0,
+            "pytest_seconds": 39.2,
+            "evidence": "after.json"
+          },
+          "additional_snapshot_case": {
+            "command": [
+              "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+              "-B",
+              "-m",
+              "pytest",
+              "-q",
+              "tests/test_narrator_source_execution.py",
+              "-k",
+              "test_provider_snapshot_rejects_free_text_even_with_a_consistently_recomputed_summary",
+              "-p",
+              "no:cacheprovider",
+              "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-execution-5omwyi_0\\snapshot.xml",
+              "--basetemp=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-execution-5omwyi_0\\snapshot-temp"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 6.549060800112784,
+            "test_cases": 1,
+            "failures": 0
+          },
+          "distinct_test_cases": 31,
+          "all_cases_passed": true,
+          "files": {
+            "scripts/evaluate_narrator_source.py": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986",
+            "tests/test_narrator_source_execution.py": "71171929b9d8f370b2ad44af216e1cfdf0c2a52a751e36ef31e898cdbe2ba203",
+            "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+            "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+            "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+            "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+            "evals/narrator/prompts/narrative-source-v1.md": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d",
+            "evals/narrator/narrative_source_case_v1.json": "32f99638fed2c2acf7cdd59744d1217e3e2357401d5186e7a506ed939cacd1d8"
+          },
+          "unchanged_during_final_run": true,
+          "implementation_and_inputs_unchanged": true,
+          "live_provider_calls": 0
+        }
+      },
+      "executor_local": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-executor-build-20260907\\final-local-verification.json",
+        "source_sha256": "ab843fe408e988dd2fc670b84dd68a049851f9f060f2d5ecb023296405738073",
+        "record_view": "complete_json_record",
+        "record": {
+          "executor": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_narrator_source.py",
+          "executor_sha256": "1a23450952b32b054218796fdab84a9ca048ade5948e6299fc038662be228986",
+          "syntax_compile": true,
+          "preflight_exit_code": 0,
+          "git_diff_check_exit_code": 0,
+          "first_request": {
+            "body_sha256": "747c05d4ed2cbff718169f94053f78c032baadabe3a5c5fb853d72fc290c237a",
+            "user_estimated_tokens": 137,
+            "user_packet_sha256": "ab29bb7fdc090b5648946bfe772660fea4bc690a9a703dd73944651301b808a0"
+          },
+          "preflight_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-executor-build-20260907\\preflight-final.json",
+          "provider_calls": 0,
+          "scope": "final local executor guards; independent tests and empty-key integration separately owned"
+        }
+      },
+      "historical_preservation": {
+        "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-historical-preservation-20260907.json",
+        "source_sha256": "d3716a7819cc927c61aa41d161277935d2caee97f1354753d5615c3cf0d0954a",
+        "record_view": "complete_json_record",
+        "record": {
+          "checked_at": "2026-09-07T23:32:09.201211+00:00",
+          "historical_raw_files": [
+            {
+              "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json",
+              "expected_sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+              "sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+              "expected_sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+              "sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/summary.json",
+              "expected_sha256": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211",
+              "sha256": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+              "expected_sha256": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f",
+              "sha256": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json",
+              "expected_sha256": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e",
+              "sha256": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+              "expected_sha256": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+              "sha256": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json",
+              "expected_sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+              "sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+              "unchanged": true
+            },
+            {
+              "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+              "expected_sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+              "sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+              "unchanged": true
+            }
+          ],
+          "all_unchanged": true,
+          "files_modified": 0
+        }
+      }
+    }
+  },
+  "lifecycle": {
+    "status": "finished",
+    "window_launched": true,
+    "window_pid": 22460,
+    "window_title": "Agente Storyteller - Fonte integral - chave protegida",
+    "batch_id": "f97a8568-4b67-4f8a-b975-78f4b6e5638b",
+    "launched_at": "2026-09-07T23:41:20.2886393Z",
+    "status_observed_at": "2026-09-07T23:43:54.037891+00:00",
+    "state_updated_at": "2026-09-07T23:43:01.6737527Z",
+    "live_execution_started": true,
+    "exit_code": 1,
+    "lifecycle_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-window-f97a8568-4b67-4f8a-b975-78f4b6e5638b\\lifecycle.json",
+    "window_preflight_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-window-f97a8568-4b67-4f8a-b975-78f4b6e5638b\\preflight.json",
+    "window_preflight_matches_prepared": true,
+    "launch_record_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-launch-20260907.json",
+    "do_not_relaunch": true,
+    "observed_at": "2026-09-07T23:44:08.2047125Z",
+    "result_report": "evals/narrator/reports/narrative-source-observation-f97a8568-2026-09-07.json",
+    "batch_closed": true,
+    "next_action": "local_question_policy_correction_and_integration_design",
+    "credential_input_required_now": false
+  },
+  "next_step": "Open exactly one protected credential console; after user entry run this bounded probe, audit its artifacts and authored continuity, then advance the approved integration plan. Do not repeat closed sources or promote runtime/CAP."
+}

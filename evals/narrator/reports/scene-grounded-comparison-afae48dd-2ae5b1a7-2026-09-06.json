@@ -1,0 +1,234 @@
+{
+  "kind": "offline_derived_comparison",
+  "live_calls_made": 0,
+  "historical_results_overwritten": false,
+  "response_edits": false,
+  "causal_comparison": false,
+  "human_review_required": true,
+  "current_validator_sha256": "30407aa4504fd2634ca6f96cdf32e3c976a029e37851a05a3b5b92228f9c0885",
+  "runs": {
+    "external": {
+      "batch_id": "afae48dd-840e-42e0-8628-9432541d0ac1",
+      "started_at": "2026-09-06T15:57:43.129326+00:00",
+      "finished_at": "2026-09-06T16:03:46.644074+00:00",
+      "source_sha256": {
+        "eval-results/20260906T155743Z-61410a16-34d9-4271-a68f-4d0c999d131e/summary.json": "47f10049d09f5bfe67395e17a8de044cd3aadab9c0a16d76c75d3ead16440ab3",
+        "eval-results/20260906T155743Z-61410a16-34d9-4271-a68f-4d0c999d131e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "22c9ee2538c9ce9cfb4e29ea03107dbf71973a03ba15d420aec4755de24aff12"
+      },
+      "historical_admitted": 1,
+      "offline_admitted": 1,
+      "not_revalidated": 0,
+      "original_skips_preserved": 2,
+      "turns": [
+        {
+          "episode_id": "opening",
+          "historical_admitted": false,
+          "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_actor_roster_mismatch",
+          "admission_evidence": {
+            "field": "new_facts[1].actors[0]",
+            "rule": "present_actor_missing_from_roster"
+          },
+          "words": {
+            "narrative": 42,
+            "scene_summary": 24,
+            "player_prompt": 9
+          },
+          "fact_count": 2
+        },
+        {
+          "episode_id": "warehouse-continuity",
+          "historical_admitted": false,
+          "user_packet_sha256": "85876b5089a3eabfa63530718c691e28e4bb83481e319e5db89f26ecefbaf38c",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_actor_not_grounded",
+          "admission_evidence": {
+            "field": "new_facts[2].actors[0]",
+            "rule": "label_missing_from_fact"
+          },
+          "words": {
+            "narrative": 49,
+            "scene_summary": 18,
+            "player_prompt": 10
+          },
+          "fact_count": 3
+        },
+        {
+          "episode_id": "failed-injection",
+          "historical_admitted": false,
+          "user_packet_sha256": "543b26c1d7a8fae0d69b957e03238e709bfdebe446a266d94bafdeba7052cbaf",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_player_agency_violation",
+          "admission_evidence": {
+            "field": "narrative",
+            "rule": "undeclared_player_barrier_attempt",
+            "unauthorized_concepts": [
+              "interact"
+            ]
+          },
+          "words": {
+            "narrative": 51,
+            "scene_summary": 14,
+            "player_prompt": 14
+          },
+          "fact_count": 2
+        },
+        {
+          "episode_id": "secret-separation",
+          "historical_admitted": false,
+          "user_packet_sha256": "82ced8ad8e9a01b7d99bd05347b07b545e938310abc961db34c059ef94a78d39",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_player_agency_violation",
+          "admission_evidence": {
+            "field": "player_prompt",
+            "rule": "presupposed_player_action",
+            "unauthorized_concepts": [
+              "inspect"
+            ]
+          },
+          "words": {
+            "narrative": 46,
+            "scene_summary": 17,
+            "player_prompt": 12
+          },
+          "fact_count": 2
+        },
+        {
+          "episode_id": "player-agency",
+          "historical_admitted": true,
+          "user_packet_sha256": "d9e431e2e89018cf41cd579471e5d937759e1776301286dd4b5876278ba826fe",
+          "offline_admitted": true,
+          "revalidation_status": "validated_original_proposal",
+          "words": {
+            "narrative": 50,
+            "scene_summary": 16,
+            "player_prompt": 10
+          },
+          "fact_count": 2
+        }
+      ]
+    },
+    "integrated": {
+      "batch_id": "2ae5b1a7-2827-4b3e-8090-b236045d79b4",
+      "started_at": "2026-09-06T16:08:40.405896+00:00",
+      "finished_at": "2026-09-06T16:14:42.775819+00:00",
+      "source_sha256": {
+        "eval-results/20260906T160840Z-71f1f555-1887-4ee6-bf0f-09272797333c/summary.json": "779379f46914d2771760489c7903270baeb1a910a737d8594dfe8c57f89eaab0",
+        "eval-results/20260906T160840Z-71f1f555-1887-4ee6-bf0f-09272797333c/gpt-oss-120b-groq-free-synthetic-low.jsonl": "7c94efe7ef77fc5c19d50953ddcf0c98c72082cb8712c639094317ddcae3eb4b"
+      },
+      "historical_admitted": 1,
+      "offline_admitted": 2,
+      "not_revalidated": 1,
+      "original_skips_preserved": 2,
+      "turns": [
+        {
+          "episode_id": "opening",
+          "historical_admitted": false,
+          "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+          "offline_admitted": false,
+          "revalidation_status": "not_revalidatable_without_proposal",
+          "llm_error": {
+            "category": "invalid_request",
+            "code": "http_400",
+            "phase": "connect",
+            "safe_message": "LLM target rejected the request.",
+            "partial_output": false,
+            "external_id": "req_01m1vqs27mewpr4radpw2s9j7w",
+            "status_code": 400,
+            "retryable": false,
+            "retry_after_seconds": null,
+            "rate_limit": null
+          }
+        },
+        {
+          "episode_id": "warehouse-continuity",
+          "historical_admitted": false,
+          "user_packet_sha256": "85876b5089a3eabfa63530718c691e28e4bb83481e319e5db89f26ecefbaf38c",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_actor_not_grounded",
+          "admission_evidence": {
+            "field": "new_facts[0].actors[0]",
+            "rule": "label_missing_from_fact"
+          },
+          "words": {
+            "narrative": 49,
+            "scene_summary": 12,
+            "player_prompt": 11
+          },
+          "fact_count": 3
+        },
+        {
+          "episode_id": "failed-injection",
+          "historical_admitted": false,
+          "user_packet_sha256": "543b26c1d7a8fae0d69b957e03238e709bfdebe446a266d94bafdeba7052cbaf",
+          "offline_admitted": false,
+          "revalidation_status": "rejected_original_proposal",
+          "admission_error": "scene_player_agency_violation",
+          "admission_evidence": {
+            "field": "narrative",
+            "rule": "undeclared_player_barrier_attempt",
+            "unauthorized_concepts": [
+              "interact"
+            ]
+          },
+          "words": {
+            "narrative": 46,
+            "scene_summary": 15,
+            "player_prompt": 9
+          },
+          "fact_count": 2
+        },
+        {
+          "episode_id": "secret-separation",
+          "historical_admitted": false,
+          "user_packet_sha256": "82ced8ad8e9a01b7d99bd05347b07b545e938310abc961db34c059ef94a78d39",
+          "offline_admitted": true,
+          "revalidation_status": "validated_original_proposal",
+          "words": {
+            "narrative": 48,
+            "scene_summary": 19,
+            "player_prompt": 12
+          },
+          "fact_count": 3
+        },
+        {
+          "episode_id": "player-agency",
+          "historical_admitted": true,
+          "user_packet_sha256": "d9e431e2e89018cf41cd579471e5d937759e1776301286dd4b5876278ba826fe",
+          "offline_admitted": true,
+          "revalidation_status": "validated_original_proposal",
+          "words": {
+            "narrative": 51,
+            "scene_summary": 12,
+            "player_prompt": 10
+          },
+          "fact_count": 3
+        }
+      ]
+    }
+  },
+  "registered_settings_equal": true,
+  "paired_user_packets_equal": true,
+  "gap_seconds_between_runs": 293.761822,
+  "verification": {
+    "focused_tests_passed": 324,
+    "new_regression_cases": 61,
+    "full_suite": {
+      "passed": 2142,
+      "skipped": 126,
+      "warnings": 1,
+      "failed": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 312.62
+    },
+    "dotenv_disabled": true,
+    "pytest_network_isolation_preserved": true,
+    "campaign_persistence_isolated": true
+  }
+}

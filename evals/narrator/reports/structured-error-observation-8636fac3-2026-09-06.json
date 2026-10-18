@@ -1,0 +1,2319 @@
+{
+  "batch_id": "8636fac3-d5a7-4a23-90e4-f2cadd2dba98",
+  "source_sha256": {
+    "eval-results/20260906T225218Z-c690ce7b-60c8-44b9-bd92-ba9019374e80/gpt-oss-120b-groq-free-synthetic-low.jsonl": "a5248ba397e6cd9783407366f6d1b4e315efb5ed8743a9a3f2d852ca733f217e",
+    "eval-results/20260906T225218Z-c690ce7b-60c8-44b9-bd92-ba9019374e80/summary.json": "895e5475566490fe29872a37b22db160c29a0655a964611a71f9a74a6cfff5df"
+  },
+  "record_count": 1,
+  "summary": {
+    "purpose": "operational_probe",
+    "full_evaluation": false,
+    "human_review_required": true,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "operational_probe_passed": false,
+    "availability_failure": false,
+    "failure": {
+      "category": "admission",
+      "code": "scene_player_prompt_not_actionable",
+      "field": "player_prompt"
+    },
+    "admission_error": "scene_player_prompt_not_actionable",
+    "admission_evidence": {
+      "field": "player_prompt",
+      "rule": "open_player_action_question",
+      "reason": "does_not_invite_player_action",
+      "word_count": 5
+    },
+    "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "model": "openai/gpt-oss-120b",
+    "evaluation_stage": "structured_error_probe",
+    "probe_kind": "structured_error_probe",
+    "runtime_promoted": false,
+    "local_failure": false,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "narrative_calls": 1,
+    "schema_valid": 1,
+    "admitted": 0,
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "rate_limit_events": [],
+    "latency_seconds": 2.400136,
+    "usage_aggregate": {
+      "status": "reported",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 1,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 2703,
+        "output_tokens": 659,
+        "total_tokens": 3362
+      },
+      "reported_subtotals": {
+        "input_tokens": 2703,
+        "output_tokens": 659,
+        "total_tokens": 3362
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    }
+  },
+  "original_admission": {
+    "admitted": false,
+    "error": "scene_player_prompt_not_actionable",
+    "evidence": {
+      "field": "player_prompt",
+      "rule": "open_player_action_question",
+      "reason": "does_not_invite_player_action",
+      "word_count": 5
+    }
+  },
+  "offline_revalidation": {
+    "admitted": false,
+    "error": "scene_player_agency_violation",
+    "evidence": {
+      "field": "narrative",
+      "rule": "undeclared_player_action",
+      "subject": "voce",
+      "clause_index": 0,
+      "unauthorized_concepts": [
+        "interact"
+      ]
+    }
+  },
+  "current_validator_sha256": "3c963e608942919361444ec9d07504a38b62ebcbbceebbca2c6ec4368911bdfb",
+  "implementation_hash_matches": {
+    "scripts/evaluate_narrator_models.py": true,
+    "scripts/narrator_scene_focus.py": true,
+    "scripts/narrator_actor_contract.py": true,
+    "api/scene_director_service.py": false,
+    "api/scene_service.py": true,
+    "api/llm/adapters/groq.py": true
+  },
+  "user_packet_reconstructed": true,
+  "user_packet_sha256": "729575cdb2ad329d1bc93769389ba78f421824cd1b1773b2927fce58903a0dd1",
+  "same_as_failed_faithful_opening": true,
+  "schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+  "faithful_system_sha256": "76a9ffdb37296be672e94e1a8c741d90cb5c44164c8dcf888107d308865218d2",
+  "word_counts": {
+    "narrative": 91,
+    "scene_summary": 15,
+    "player_prompt": 5
+  },
+  "simple_word_counts": {
+    "narrative": 91,
+    "scene_summary": 15,
+    "player_prompt": 5
+  },
+  "original_proposal_unchanged": true,
+  "prior_source_hashes_unchanged": true,
+  "live_calls_made_by_agent": 0,
+  "kind": "offline_structured_error_observation",
+  "purpose": "operational_probe",
+  "probe_kind": "structured_error_probe",
+  "full_evaluation": false,
+  "causal_comparison": false,
+  "runtime_promoted": false,
+  "cap_001_status": "not_evaluated",
+  "http_400": {
+    "observed": false,
+    "earlier_cause": "unknown",
+    "new_error_code_path_exercised": false,
+    "retry_recommended": false
+  },
+  "semantic_review": {
+    "player_question": "valid_open_player_question",
+    "undeclared_action": {
+      "text": "Você abre os olhos",
+      "field": "narrative",
+      "rule": "undeclared_player_action",
+      "concept": "interact",
+      "proven_waking_or_amnesia": false
+    },
+    "narrative_words": 91,
+    "requested_narrative_range": [
+      35,
+      70
+    ],
+    "runtime_narrative_maximum_unchanged": 150,
+    "summary_words": 15,
+    "question_words": 5,
+    "facts": 2,
+    "open_threads": 2,
+    "protected_secrets_in_episode": 0,
+    "confidentiality_evidence": "not_tested_by_this_episode",
+    "caveats": [
+      "location_label_only_in_location_field",
+      "weak_inference_from_smell_to_smugglers"
+    ],
+    "main_visible_records": "preserve_narrated_details"
+  },
+  "next_observation": {
+    "purpose": "single_bounded_repeatability_and_coverage_observation",
+    "prompt_variant": "scene-faithful-v1",
+    "new_prompt": false,
+    "new_runner": false,
+    "runner": "scripts/run_groq_prompt_experiment.ps1",
+    "mode": "FaithfulOnly",
+    "candidate": "gpt-oss-120b-groq-free-synthetic-low",
+    "normal_calls_max": 9,
+    "bounded_diagnostic_retries_max": 2,
+    "narrative_retries": 0,
+    "fallback": false,
+    "repetitions": 1,
+    "inter_call_delay_seconds": 60,
+    "narrative_tokens": 768,
+    "diagnostic_tokens": 128,
+    "temperature": 0.65,
+    "deadline_seconds": 60,
+    "baseline_run_or_imported": false,
+    "import_probe_as_predecessor": false,
+    "requires_protected_key_entry": true,
+    "preregistered_questions": [
+      "Does a new opening preserve player agency?",
+      "Do the already observed physical-method and narrative-to-memory failures recur?",
+      "Does a naturally admitted warehouse predecessor allow evaluation of the two continuation turns?"
+    ],
+    "stopping_rule": "exactly_one_complete_observation_then_offline_analysis; no automatic repeat, extra prompt, changed model, or promotion",
+    "expected_result": "unknown; no corrected_generation_claim"
+  },
+  "before_correction": {
+    "validator_sha256": "14aff1c58d2fcaf766694dac6d55f5c7e0bc532342fdf89f6fcdaa86e868b66a",
+    "offline_revalidation": {
+      "admitted": false,
+      "error": "scene_player_prompt_not_actionable",
+      "evidence": {
+        "field": "player_prompt",
+        "rule": "open_player_action_question",
+        "reason": "does_not_invite_player_action",
+        "word_count": 5
+      }
+    },
+    "implementation_hash_matches": {
+      "scripts/evaluate_narrator_models.py": true,
+      "scripts/narrator_scene_focus.py": true,
+      "scripts/narrator_actor_contract.py": true,
+      "api/scene_director_service.py": true,
+      "api/scene_service.py": true,
+      "api/llm/adapters/groq.py": true
+    }
+  },
+  "changed_code_files": [
+    "api/scene_director_service.py",
+    "tests/test_structured_probe_player_question_regressions.py"
+  ],
+  "current_implementation_sha256": {
+    "api/scene_director_service.py": "3c963e608942919361444ec9d07504a38b62ebcbbceebbca2c6ec4368911bdfb",
+    "tests/test_structured_probe_player_question_regressions.py": "bbd8cb7599e2b6e3b8fecf4bf167e7fa74783daab979dd064b938bab17d66011",
+    "scripts/evaluate_narrator_models.py": "c040ea187a5631bf796f9ff041508fe22e966f03329ca91c89d1585bb7919ea0",
+    "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+  },
+  "preserved_wrapper_sha256": {
+    "scripts/run_groq_prompt_experiment.ps1": "5b8fe4849e092e62d8c214c0c562405fb18f05fc878e81a3b80fde34044057bc",
+    "tests/test_prompt_experiment_runner.py": "7afb9ac63dd2f48689d93891124669398093354c3e42f492a726dc05a8abf83e",
+    "scripts/run_groq_structured_error_probe.ps1": "64ddc499327f3a7ea7d12b6325aa55f8befed22250e0298fd5b4d73549412b0e",
+    "tests/test_narrator_structured_error_probe.py": "48a15c6911d7edef0e2e3795bb42f08cebab19e3840d268f03296e7b93010027"
+  },
+  "verified_correction_scopes": [
+    "whole_modal_player_question",
+    "balanced_quoted_question_marks",
+    "multiple_unquoted_questions",
+    "bounded_current_and_recent_barrier_opening_in_question",
+    "positive_barrier_declaration_target_matching",
+    "local_conditional_scope"
+  ],
+  "preexisting_relative_opening_gap": {
+    "proven_on_validator": "14aff1c58d2fcaf766694dac6d55f5c7e0bc532342fdf89f6fcdaa86e868b66a",
+    "example": "O que você faz diante da porta que você acaba de abrir?",
+    "player_input": "Observo o cais.",
+    "baseline_admitted": true,
+    "corrected_in_this_step": true
+  },
+  "independent_review": {
+    "final_sha256": "3c963e608942919361444ec9d07504a38b62ebcbbceebbca2c6ec4368911bdfb",
+    "remaining_actionable_findings": 0,
+    "scope": "demonstrated_question_and_barrier_presupposition_changes"
+  },
+  "verification": {
+    "focused": {
+      "passed": 703,
+      "new": 187,
+      "existing": 516,
+      "warnings": 1,
+      "seconds": 9.77,
+      "exit_code": 0
+    },
+    "probe_python": {
+      "passed": 38,
+      "deselected": 78,
+      "warnings": 1,
+      "seconds": 2.11,
+      "exit_code": 0
+    },
+    "remaining": {
+      "passed": 1840,
+      "skipped": 0,
+      "warnings": 1,
+      "seconds": 93.45,
+      "exit_code": 0,
+      "excludes": [
+        "tests/test_structured_probe_player_question_regressions.py",
+        "tests/test_faithful_player_question_regressions.py",
+        "tests/test_grounded_player_question_regressions.py",
+        "tests/test_player_question_verification.py",
+        "tests/test_player_prompt_aliases.py",
+        "tests/test_attributed_agency_regressions.py",
+        "tests/test_scene_director_service.py",
+        "tests/test_prompt_experiment_runner.py",
+        "tests/test_narrator_structured_error_probe.py"
+      ]
+    },
+    "total_current": {
+      "passed": 2581,
+      "skipped": 0,
+      "exit_code": 0,
+      "disjoint_groups": true
+    },
+    "unchanged_powershell_wrappers": {
+      "rerun": false,
+      "hashes_preserved": true,
+      "prior_results_not_counted": true,
+      "explanation": "Unchanged full prompt wrapper test file was excluded; 78 operational/parser tests in the structured probe module were deselected. The 38 Python probe integration tests ran."
+    }
+  },
+  "question_matrix": {
+    "expectations_unchanged": true,
+    "changed_classifications": 7,
+    "counted_in_pytest_total": false,
+    "source_sha256": {
+      "before": "84c38abdb6121d059131d972e5b926c23317b7153d8960c3897e18d5ca10dddd",
+      "final_after": "ec03f5d1a04da37628f69e2f951c7b190e596f19bdd83634549f0bb559a6f3cb",
+      "repeat_script": "03e35bf2e418d54736e69c42a7277af32d8f523d783d7e1ffc5bd4c9b7ad17dc"
+    },
+    "before": {
+      "validator_hash_before": "c7cd1fdde2da6aabc94a1c0e8eea96ead3d037980f17c6b21e29aa9870a2b125",
+      "validator_hash_after": "c7cd1fdde2da6aabc94a1c0e8eea96ead3d037980f17c6b21e29aa9870a2b125",
+      "stable": true,
+      "cases": 50,
+      "valid_cases": 25,
+      "invalid_cases": 25,
+      "counts": {
+        "correct": 43,
+        "FP": 6,
+        "FN": 1
+      },
+      "records": [
+        {
+          "question": "O que você faz agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você deseja fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que Neófito deseja fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que Dario deseja fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que quer fazer agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 5
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 5
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "O que você quer fazer agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "O que pretende fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você pretende fazer agora?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que gostaria de fazer agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "Como deseja prosseguir?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como você deseja prosseguir?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como Neófito deseja prosseguir?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como pretende prosseguir?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como você pretende prosseguir?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como gostaria de prosseguir?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "Como deseja prosseguir diante de Mara?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer diante de Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "O que deseja fazer em relação ao cadeado?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 8
+            }
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 8
+            }
+          },
+          "classification": "FP"
+        },
+        {
+          "question": "Qual o próximo passo deseja tomar?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Qual será seu próximo passo?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Qual é sua próxima atitude diante de Mara?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como você verifica suas condições imediatas?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como você verificará suas condições imediatas?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": true,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que Mara deseja fazer agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 6
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 6
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que a informante deseja fazer agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer, Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Mara, o que deseja fazer?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como Mara deseja prosseguir?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como deseja prosseguir, Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como deseja prosseguir Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que acontece agora?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que há atrás da porta?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Qual segredo Mara esconde?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você acha que Mara fará?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você deseja que Mara faça?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como deve Mara reagir?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que deseja fazer com a narrativa?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como deseja prosseguir com a história?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Como você narrará o destino de Mara?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Que rumo deseja dar à história?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Você deseja abrir a porta?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "closed_player_question",
+              "word_count": 5
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "closed_player_question",
+              "word_count": 5
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Deseja prosseguir?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 2
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 2
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você faz agora ao abrir a porta?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_agency_violation",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "presupposed_player_action",
+              "unauthorized_concepts": [
+                "interact"
+              ]
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "Qual será seu próximo passo ao explorar o beco?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_agency_violation",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "presupposed_player_action",
+              "unauthorized_concepts": [
+                "inspect"
+              ]
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você faz agora.",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "missing_question_mark",
+              "word_count": 5
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "missing_question_mark",
+              "word_count": 5
+            }
+          },
+          "classification": "correct"
+        },
+        {
+          "question": "O que você faz agora? Quem Mara obedece?",
+          "question_check": {
+            "accepted": true
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "FN"
+        },
+        {
+          "question": "O que você pretende fazer agora diante desta situação no beco escuro perto da porta fechada?",
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_too_long",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "word_limit_exceeded",
+              "word_count": 16
+            }
+          },
+          "expected_accept": false,
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_too_long",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "word_limit_exceeded",
+              "word_count": 16
+            }
+          },
+          "classification": "correct"
+        }
+      ],
+      "audit_id": "player-question-matrix-50-20260906",
+      "validation_context": {
+        "facts": [],
+        "current_scene": null,
+        "player_input": "Onde estou?",
+        "player_aliases": [
+          "Neófito",
+          "Dario"
+        ],
+        "npc_aliases": [
+          "Mara",
+          "informante"
+        ]
+      },
+      "carrier": {
+        "n": "A chuva fina escorre pelos postes e deixa o asfalto brilhando sob a luz vermelha. Você está num beco estreito, entre caixotes úmidos e uma parede coberta de pichações antigas. Um letreiro falha acima da rua, enquanto passos distantes quebram o silêncio sem decidir seu rumo.",
+        "o": "unresolved",
+        "l": "Beco sob néon",
+        "s": "O Neófito está em um beco estreito sob um letreiro instável.",
+        "f": [
+          {
+            "k": "observation",
+            "s": "Caixotes úmidos ocupam um lado do beco."
+          }
+        ],
+        "t": [
+          "Identificar a origem dos passos"
+        ],
+        "q": "O que você faz primeiro?"
+      }
+    },
+    "after": {
+      "audit_id": "player-question-matrix-50-20260906",
+      "source_audit_sha256": "84c38abdb6121d059131d972e5b926c23317b7153d8960c3897e18d5ca10dddd",
+      "validator_hash_before": "3c963e608942919361444ec9d07504a38b62ebcbbceebbca2c6ec4368911bdfb",
+      "validator_hash_after": "3c963e608942919361444ec9d07504a38b62ebcbbceebbca2c6ec4368911bdfb",
+      "stable": true,
+      "cases": 50,
+      "valid_cases": 25,
+      "invalid_cases": 25,
+      "counts": {
+        "correct": 50,
+        "FP": 0,
+        "FN": 0
+      },
+      "changed_cases": 7,
+      "records": [
+        {
+          "question": "O que você faz agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você deseja fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que Neófito deseja fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que Dario deseja fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que quer fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "O que você quer fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "O que pretende fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você pretende fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que gostaria de fazer agora?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "Como deseja prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como você deseja prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como Neófito deseja prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como pretende prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como você pretende prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como gostaria de prosseguir?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "Como deseja prosseguir diante de Mara?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer diante de Mara?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "O que deseja fazer em relação ao cadeado?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "FP",
+          "changed": true
+        },
+        {
+          "question": "Qual o próximo passo deseja tomar?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Qual será seu próximo passo?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Qual é sua próxima atitude diante de Mara?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como você verifica suas condições imediatas?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como você verificará suas condições imediatas?",
+          "expected_accept": true,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": true
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que Mara deseja fazer agora?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 6
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 6
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que a informante deseja fazer agora?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer Mara?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer, Mara?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Mara, o que deseja fazer?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 5
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como Mara deseja prosseguir?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como deseja prosseguir, Mara?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como deseja prosseguir Mara?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que acontece agora?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que há atrás da porta?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Qual segredo Mara esconde?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você acha que Mara fará?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você deseja que Mara faça?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como deve Mara reagir?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 4
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que deseja fazer com a narrativa?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 7
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como deseja prosseguir com a história?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Como você narrará o destino de Mara?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "addresses_non_player_actor",
+              "word_count": 7
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Que rumo deseja dar à história?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 6
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Você deseja abrir a porta?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "closed_player_question",
+              "word_count": 5
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "closed_player_question",
+              "word_count": 5
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Deseja prosseguir?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 2
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "does_not_invite_player_action",
+              "word_count": 2
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você faz agora ao abrir a porta?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_agency_violation",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "presupposed_player_action",
+              "unauthorized_concepts": [
+                "interact"
+              ]
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "Qual será seu próximo passo ao explorar o beco?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": true
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_agency_violation",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "presupposed_player_action",
+              "unauthorized_concepts": [
+                "inspect"
+              ]
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você faz agora.",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "missing_question_mark",
+              "word_count": 5
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_open",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "missing_question_mark",
+              "word_count": 5
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        },
+        {
+          "question": "O que você faz agora? Quem Mara obedece?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "multiple_questions",
+              "word_count": 8
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_not_actionable",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "multiple_questions",
+              "word_count": 8
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "FN",
+          "changed": true
+        },
+        {
+          "question": "O que você pretende fazer agora diante desta situação no beco escuro perto da porta fechada?",
+          "expected_accept": false,
+          "question_check": {
+            "accepted": false,
+            "code": "scene_player_prompt_too_long",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "word_limit_exceeded",
+              "word_count": 16
+            }
+          },
+          "full_proposal": {
+            "accepted": false,
+            "code": "scene_player_prompt_too_long",
+            "evidence": {
+              "field": "player_prompt",
+              "rule": "open_player_action_question",
+              "reason": "word_limit_exceeded",
+              "word_count": 16
+            }
+          },
+          "classification": "correct",
+          "previous_classification": "correct",
+          "changed": false
+        }
+      ]
+    }
+  }
+}

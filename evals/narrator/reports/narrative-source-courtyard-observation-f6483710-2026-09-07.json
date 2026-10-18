@@ -1,0 +1,239 @@
+{
+  "schema": "storyteller.narrative-source-courtyard-authored-review.v1",
+  "recorded_at": "2026-09-08T00:22:55.286741+00:00",
+  "batch_id": "f6483710-ae78-4024-a2c5-25bbcd5e9cf0",
+  "status": "closed_two_calls_second_policy_failure",
+  "raw_result_reclassified": false,
+  "artifacts": [
+    {
+      "file": "eval-results/20260908T001535Z-66580329-11ac-44ba-93ee-37ad18d5671e/summary.json",
+      "sha256": "e7c958477f55986412d58286de4f52d5a94133aa210a5489946782b6239a5e55"
+    },
+    {
+      "file": "eval-results/20260908T001535Z-66580329-11ac-44ba-93ee-37ad18d5671e/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "fe48bfd2ccce003ff35c55c19ba2197d0bdad92b3c74500d251bf5f5f8510189"
+    }
+  ],
+  "lifecycle": {
+    "exit_code": 1,
+    "batch_id": "f6483710-ae78-4024-a2c5-25bbcd5e9cf0",
+    "status": "finished",
+    "updated_at": "2026-09-08T00:17:39.8680031Z"
+  },
+  "console_pid": 4080,
+  "console_process_termination_verified": false,
+  "verification": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-live-verification-f6483710.json",
+    "sha256": "bc5539c792097fbb4e2b05faa29df197d7a74508a853d185e850ff424732ec7c",
+    "record": {
+      "artifact_hashes": {
+        "jsonl": "fe48bfd2ccce003ff35c55c19ba2197d0bdad92b3c74500d251bf5f5f8510189",
+        "summary": "e7c958477f55986412d58286de4f52d5a94133aa210a5489946782b6239a5e55"
+      },
+      "batch_id": "f6483710-ae78-4024-a2c5-25bbcd5e9cf0",
+      "evaluation_status": "completed",
+      "process_exit_code": 1,
+      "summary": {
+        "automated_gates_passed": false,
+        "automatic_retries": 0,
+        "availability_failure": false,
+        "calls_made": 2,
+        "canonical_admission": false,
+        "cap_001_status": "not_evaluated",
+        "causal_comparison": false,
+        "cost_aggregate": {
+          "calls_made": 2,
+          "currency": null,
+          "expected_calls": 2,
+          "reported_amount_subtotal": null,
+          "reported_calls": 0,
+          "status": "unavailable",
+          "total_amount": null,
+          "unavailable_calls": 2
+        },
+        "diagnostics_executed": false,
+        "evaluation_stage": "narrative_source_probe",
+        "experiment_version": "narrative-source-observation-v1",
+        "full_evaluation": false,
+        "full_record_derivation": false,
+        "human_review_required": true,
+        "max_calls": 2,
+        "operational_probe_passed": false,
+        "policy_valid": 1,
+        "probe_kind": "narrative_source_probe",
+        "process_exit_code": 1,
+        "projection_valid": 1,
+        "protocol": "narrative-source-profile-v1",
+        "provider_observation": null,
+        "provider_observations": [
+          {
+            "observation": {
+              "error_body": {
+                "bytes": null,
+                "complete": null,
+                "json_valid": null,
+                "status": "unavailable"
+              },
+              "failed_generation": {
+                "characters": null,
+                "error_position": null,
+                "json_valid": null,
+                "present": null,
+                "status": "unavailable"
+              },
+              "finish_reason": "stop",
+              "http_status": 200,
+              "model": "qwen/qwen3.8-27b",
+              "provider_code": null,
+              "request_id": "req_01m1z5zbjjemcap5b8746ef8x9",
+              "schema": "storyteller.eval.record-budget-observation.v1",
+              "usage": {
+                "input_tokens": 580,
+                "output_tokens": 164,
+                "reasoning_tokens": null,
+                "total_tokens": 744
+              }
+            },
+            "turn_id": "observe"
+          },
+          {
+            "observation": {
+              "error_body": {
+                "bytes": null,
+                "complete": null,
+                "json_valid": null,
+                "status": "unavailable"
+              },
+              "failed_generation": {
+                "characters": null,
+                "error_position": null,
+                "json_valid": null,
+                "present": null,
+                "status": "unavailable"
+              },
+              "finish_reason": "stop",
+              "http_status": 200,
+              "model": "qwen/qwen3.8-27b",
+              "provider_code": null,
+              "request_id": "req_01m1z6169me5faejz37qnzvg3k",
+              "schema": "storyteller.eval.record-budget-observation.v1",
+              "usage": {
+                "input_tokens": 1482,
+                "output_tokens": 236,
+                "reasoning_tokens": null,
+                "total_tokens": 1718
+              }
+            },
+            "turn_id": "wait"
+          }
+        ],
+        "purpose": "narrative_source_probe",
+        "repetitions": 1,
+        "route_verification": {
+          "calls_made": 2,
+          "identity_consistent": true,
+          "mismatched_calls": 0,
+          "status": "verified",
+          "unavailable_calls": 0,
+          "verified_calls": 2
+        },
+        "runtime_promoted": false,
+        "schema_valid": 2,
+        "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+        "semantic_fidelity_review": {
+          "approval": null,
+          "status": "not_performed"
+        },
+        "semantic_not_evaluated": true,
+        "synthetic_only": true,
+        "turns_skipped": 0,
+        "usage_aggregate": {
+          "calls_made": 2,
+          "expected_calls": 2,
+          "reported_calls": 2,
+          "reported_subtotals": {
+            "input_tokens": 2062,
+            "output_tokens": 400,
+            "total_tokens": 2462
+          },
+          "status": "reported",
+          "totals": {
+            "input_tokens": 2062,
+            "output_tokens": 400,
+            "total_tokens": 2462
+          },
+          "unavailable_calls": 0
+        }
+      },
+      "summary_path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260908T001535Z-66580329-11ac-44ba-93ee-37ad18d5671e\\summary.json",
+      "verification_scope": "local_artifact_consistency_not_provider_authentication",
+      "verified": true
+    }
+  },
+  "observed": {
+    "calls": 2,
+    "skips": 0,
+    "http_statuses": [
+      200,
+      200
+    ],
+    "routes": "verified",
+    "schemas_valid": 2,
+    "policies_valid": 1,
+    "projections_valid": 1,
+    "second_rejection": "scene_narrative_too_long",
+    "first_source_in_second_user_exactly": true,
+    "question_excluded_from_source": true,
+    "two_admitted_sources": false,
+    "initial_quiet_seconds_observed": 60.467005,
+    "call_start_gap_seconds_observed": 60.219655,
+    "usage_totals": {
+      "input_tokens": 2062,
+      "output_tokens": 400,
+      "total_tokens": 2462
+    },
+    "reasoning_tokens": [
+      null,
+      null
+    ],
+    "cost": "unavailable",
+    "outputs": [
+      {
+        "turn_id": "observe",
+        "n": "O pátio coberto repousa sob uma penumbra estática. Colunas de pedra lisa sustentam o teto, onde gotas antigas deixaram marcas escuras na madeira. O ar é parado, carregado de um cheiro misto de poeira fina e madeira velha. Nenhuma folha se move, e a luz fraca que entra pelas frestas das paredes laterais desenha sombras longas e imóveis no chão de ladrilhos. O silêncio é absoluto, apenas interrompido pelo eco distante de uma gota caindo em algum lugar fora de vista. Tudo permanece exatamente onde está, aguardando o tempo passar sem alterar uma única partícula do cenário ao seu redor.",
+        "q": "O que você faz?",
+        "n_words": 100,
+        "q_words": 4,
+        "total_words": 104,
+        "n_characters": 588,
+        "request_body_sha256": "675fc683b16c053baaec0b1c6b6b942f33551a0d6d6b21e9a76cd95ceb1f0249",
+        "user_sha256": "c38b444f7b58a9c14136374857c3dbb5bffb9038fc90ae1083baa6ad2ac19351"
+      },
+      {
+        "turn_id": "wait",
+        "n": "A imobilidade do pátio parece intensificar-se sob a sua presença imóvel. A penumbra, densa e inerte, mantém as colunas de pedra lisa ancoradas no chão de ladrilhos, enquanto marcas escuras de gotas antigas permanecem fixas na madeira do teto. O ar parado carrega o perfume morno de poeira fina e madeira velha, que parece mais espesso, quase palpável, ao redor de você. Nenhuma folha se move, nem a mais fraca brisa ousa perturbar a luz fraca que se filtra pelas frestas laterais, desenhando sombras longas e imóveis no piso. O silêncio é absoluto, absoluto a ponto de se sentir pesado, apenas cortado, de tempos em tempos, pelo eco distante e solitário de uma gota caindo em algum lugar fora de vista. Tudo permanece exatamente onde está, aguardando o tempo passar sem alterar uma única partícula do cenário ao seu redor, criando uma atmosfera de suspense suspenso que aguarda o próximo impulso.",
+        "q": "O que você faz?",
+        "n_words": 151,
+        "q_words": 4,
+        "total_words": 155,
+        "n_characters": 896,
+        "request_body_sha256": "4be3c60567b07994852963beb192d2d2af46eff8707d32ce8e33bd6d2db32064",
+        "user_sha256": "176c6b0c3056efac9af4fd0d6c03ac925200c3d743af05fd8104450dc95a1e26"
+      }
+    ]
+  },
+  "authored_review": {
+    "status": "agent_authored_not_human_acceptance",
+    "agency": "No clear new player action/decision/speech/thought/emotion, displacement or NPC imposed; open next-action questions in both.",
+    "continuity": "Strong referential continuity of columns, marked wooden ceiling, tiles, dust/wood smell, lateral gaps, still shadows and unseen drop. One source handoff observed, not two admitted turns.",
+    "novelty": "Mostly repetition and rhetorical intensification; repeated drop is a small compatible temporal extension, without significant new concrete development.",
+    "quality": "Comprehensible Portuguese; second response is redundant and artificial: absoluto, absoluto and suspense suspenso, with near repeated ending.",
+    "conflict": "No unequivocal cross-turn contradiction identified. Absolute silence/unaltered particles versus falling drop is rhetorical tension/imprecision, not automatically canonical contradiction.",
+    "length_error": "Valid rejection:155 total words against150; do not loosen or repair.",
+    "semantic_truth": "not_assessed",
+    "canonical_admission": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "next_work": "Local opt-in source turn bridge with FakeLLMAdapter and temporary SQLite per reviewed integration design. No further live observation, retry or prompt reformulation scheduled."
+}

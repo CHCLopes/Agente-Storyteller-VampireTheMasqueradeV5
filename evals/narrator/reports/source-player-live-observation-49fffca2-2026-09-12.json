@@ -1,0 +1,77 @@
+{
+  "observed_at": "2026-09-12T16:58:52.591589+00:00",
+  "run_id": "49fffca2-3d4e-4e6c-9dba-ed813c86d985",
+  "status": "live_observation_not_final_audit",
+  "launcher": {
+    "run_id": "49fffca2-3d4e-4e6c-9dba-ed813c86d985",
+    "exit_code": null,
+    "updated_at": "2026-09-12T16:52:34.5620536Z",
+    "forced_shutdown": false,
+    "status": "running",
+    "session_id": "source-groq-trial.49fffca2-3d4e-4e6c-9dba-ed813c86d985"
+  },
+  "database_read": "mode=ro, query_only=ON, BEGIN/ROLLBACK; no immutable on active WAL",
+  "campaign_current_turn": 1,
+  "campaign_state_revision": 1,
+  "counts": {
+    "attempts": 3,
+    "turns": 1,
+    "events": 1
+  },
+  "records_observed": 1,
+  "records_snapshot_sha256": "1ab2a57dc60f6f517999ec1e30764de316225660acf2ed27d91760fc9ea969a8",
+  "records_unchanged_during_read": true,
+  "first_call": {
+    "outcome": "generated",
+    "observation": {
+      "error_body": {
+        "bytes": null,
+        "complete": null,
+        "json_valid": null,
+        "status": "unavailable"
+      },
+      "failed_generation": {
+        "characters": null,
+        "error_position": null,
+        "json_valid": null,
+        "present": null,
+        "status": "unavailable"
+      },
+      "finish_reason": "stop",
+      "http_status": 200,
+      "model": "qwen/qwen3.8-27b",
+      "provider_code": null,
+      "request_id": "req_01m2b8n05aegj8ynksbm6cmphx",
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "usage": {
+        "input_tokens": 1009,
+        "output_tokens": 156,
+        "reasoning_tokens": null,
+        "total_tokens": 1165
+      }
+    },
+    "http_started_at": "2026-09-12T16:54:13.721615+00:00",
+    "player_input": "Digo a Mara: \"Mara, o que é este lugar?\"",
+    "narrative": {
+      "n": "A voz do jogador ecoa nas paredes de pedra, misturando-se ao som rítmico da água corrente ao fundo. Mara para de andar e vira-se lentamente, os olhos refletindo a luz trêmula das tochas que iluminam a Galeria. Ela não responde imediatamente, observando o espaço ao redor com uma expressão que mistura curiosidade e cautela. O ar parece mais denso aqui, carregado de um cheiro antigo de mofo e pedra fria. A pergunta paira no silêncio, esperando uma resposta que ainda não foi dada, enquanto a água continua seu curso silencioso ao longe, marcando o tempo neste lugar desconhecido.",
+      "q": "Como você reage à resposta de Mara?"
+    }
+  },
+  "local_preparation_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-trial-preflight-audit-49fffca2-20260912.json",
+    "sha256": "c3755b023f81773401d20c8a04de3de8dac447fc6d95f76cd62afa176accff4a",
+    "verified_inputs": 45,
+    "verified_binding_entries": 50
+  },
+  "technical_observation": "Corrected input reached Groq and at least one turn was committed.",
+  "narrative_observation": "First output adds atmosphere but Mara does not answer the direct question about this place. Final question presupposes an answer that the narrative explicitly withholds.",
+  "assessment_scope": "First turn only; not a final narrative assessment or model qualification.",
+  "status_counter_limit": "status.json is a lifecycle snapshot; its calls_started=0 is stale while records.jsonl shows the completed call.",
+  "actions_by_agent": {
+    "provider_calls": 0,
+    "player_actions_submitted": 0,
+    "sources_changed": false,
+    "session_stopped": false
+  },
+  "next_step": "User continues this same session. After closure inspect final artifacts before deciding any correction."
+}

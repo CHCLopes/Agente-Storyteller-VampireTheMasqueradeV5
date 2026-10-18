@@ -1,5 +1,8 @@
 # DESIGN.md — Agente Storyteller V5 — Phase 2.5 (Novo Fluxo de Inicialização)
 
+> [!IMPORTANT]
+> Especificação histórica substituída pelo inicializador e contrato operacional descritos em `README.md`; não use as instruções de LM Studio abaixo como requisito vigente.
+
 ## Arquitetura Geral
 
 ```

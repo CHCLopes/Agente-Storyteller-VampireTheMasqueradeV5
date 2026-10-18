@@ -1,0 +1,295 @@
+{
+  "document_kind": "summary_budget_observation_preparation",
+  "recorded_at_utc": "2026-09-07T20:06:59.181828+00:00",
+  "status": "observed_closed_operational_success",
+  "authorization": {
+    "source": "continuous_user_authority",
+    "new_observation_approval_required": false,
+    "human_dependency": null
+  },
+  "basis_batch": "1edf4d3e-13f0-4161-916c-a178b58c1825",
+  "basis_batch_closed": true,
+  "prepared_metadata": {
+    "purpose": "summary_budget_qwen_probe",
+    "probe_kind": "summary_budget_qwen_probe",
+    "experiment_version": "record-summary-budget-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_summary_budget.py",
+      "sha256": "f2fe52f134df0fd97f843a257f2edb6023be56b233b8f9a50c903f48bb2af3d0",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "none"
+    },
+    "summary_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 768
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "max_total_output_tokens": 768,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-summary-budget-dossier-1edf4d3e-2026-09-07.json",
+        "sha256": "8df1c12ea57076dd44a5aca2173b06b693f1904fada52bfd8b041bcebc557cac",
+        "body_sha256": "d494be582e549a917419c06229fed3acb60f092f7f7bcbc982ebe8caea804eac"
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "case": {
+        "file": "evals/narrator/record_summary_budget_case_v1.json",
+        "sha256": "98cf0817f45f18cf39e6ead2d0825a18134d71e5e38213e789a0a0fce2e0415a",
+        "case_id": "station-clock"
+      },
+      "prompt": {
+        "variant": "record-summary-budget-v1",
+        "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+        "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+        "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+      },
+      "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "measurement_policy": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "max_words": 25,
+        "changes_exit_code": false,
+        "semantic_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "implementation": [
+        {
+          "file": "scripts/narrator_summary_only.py",
+          "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "e596329c9f63598533f91bde1f87ff881d59eda1b4912e47ab586b3ec3e857f5"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "station-clock",
+          "source": {
+            "origin": "agent_authored_synthetic_case",
+            "synthetic_only": true,
+            "case_file": "evals/narrator/record_summary_budget_case_v1.json",
+            "case_sha256": "98cf0817f45f18cf39e6ead2d0825a18134d71e5e38213e789a0a0fce2e0415a",
+            "field": "narrative",
+            "narrative_sha256": "2191a03f86fa363ab4cdfdf83dd360124454a18992c1eab88e49443f1fbc8b2b"
+          },
+          "generation_context": {
+            "version": "record-inline-evidence-v1",
+            "user_packet_sha256": "e82e044261995d7cf942da383756a1e15d3c94efae7f52143f32327b6c896758",
+            "source_units_sha256": "df7fdae143699d07a94032a1d97eaf962a958fc1d299d2598ccbe845930d7d44",
+            "source_units": [
+              {
+                "id": "n0",
+                "text": "Na estação vazia, um relógio parado marca seis horas. "
+              },
+              {
+                "id": "n1",
+                "text": "Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa."
+              }
+            ],
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 147
+            }
+          }
+        }
+      ]
+    }
+  },
+  "files": {
+    "scripts/evaluate_narrator_summary_budget.py": "f2fe52f134df0fd97f843a257f2edb6023be56b233b8f9a50c903f48bb2af3d0",
+    "scripts/run_groq_summary_budget_probe.ps1": "303e0da123542587fc9c7d2756fe1a64393e3b4fdc7da38abcf1fc211d238d3f",
+    "scripts/evaluate_narrator_models.py": "e596329c9f63598533f91bde1f87ff881d59eda1b4912e47ab586b3ec3e857f5",
+    "tests/test_narrator_summary_budget_probe.py": "9b40216f3107925786d14e695009b6e17b8441713146ce70fd4e5294e89f87bb",
+    "tests/test_summary_budget_runner.py": "f0b4c8a032db7b4c5ee26ec3af91da8c2ca9311cd5a6dc9bfb9cdc3383f2c42e",
+    "tests/test_summary_budget_replay_boundary.py": "b40244e87c49355478b0d1a7a205c260042e41bdfd290e9269a4e981ad8cee3a",
+    "evals/narrator/record_summary_budget_case_v1.json": "98cf0817f45f18cf39e6ead2d0825a18134d71e5e38213e789a0a0fce2e0415a",
+    "evals/narrator/prompts/record-summary-budget-v1.md": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+    "evals/narrator/reports/record-summary-budget-design-1edf4d3e-2026-09-07.md": "af9083585e8ec3640ebdf4c01f4ff8a7ce7114eb015327e4cdd2e9292dbe94be",
+    "evals/narrator/reports/record-summary-budget-dossier-1edf4d3e-2026-09-07.json": "8df1c12ea57076dd44a5aca2173b06b693f1904fada52bfd8b041bcebc557cac"
+  },
+  "verification": {
+    "focused_tests": {
+      "distinct_passed": 65,
+      "new_passed": 65,
+      "existing_passed": 0,
+      "remaining_failures": 0,
+      "groups": [
+        {
+          "file": "tests/test_narrator_summary_budget_probe.py",
+          "passed": 23,
+          "seconds": 12.08
+        },
+        {
+          "file": "tests/test_summary_budget_runner.py",
+          "passed": 31,
+          "seconds": 63.33
+        },
+        {
+          "file": "tests/test_summary_budget_replay_boundary.py",
+          "passed": 11,
+          "seconds": 0.4
+        }
+      ]
+    },
+    "independent_static_review": {
+      "reviewer": "Socrates",
+      "findings": [],
+      "executor_sha256": "f2fe52f134df0fd97f843a257f2edb6023be56b233b8f9a50c903f48bb2af3d0",
+      "wrapper_sha256": "303e0da123542587fc9c7d2756fe1a64393e3b4fdc7da38abcf1fc211d238d3f",
+      "scope": "finite derivation; one-use body; wait/deadline; credentials; literal retention; status and CAP boundaries"
+    },
+    "independent_wire_reconstruction": true,
+    "cli_preflight_matches_imported": true,
+    "real_empty_key_integration": {
+      "passed": true,
+      "expected_exit": 3,
+      "failure_stage": "credential validation",
+      "provider_calls": 0,
+      "new_artifacts": 0
+    },
+    "historical_files_preserved": 60,
+    "historical_raw_artifacts_preserved": 16,
+    "shared_change": {
+      "added_lines": 12,
+      "removed_lines": 0,
+      "scope": "new exact identities refused at both CAP replay entries"
+    },
+    "runtime_and_provider_adapters_changed": false,
+    "warning": "Pre-existing Starlette multipart PendingDeprecationWarning; outside this change."
+  },
+  "scope": {
+    "new_case": "station-clock",
+    "max_calls": 1,
+    "max_output_tokens": 768,
+    "initial_wait_seconds": 60,
+    "deadline_after_wait_seconds": 60,
+    "retries": 0,
+    "fallback": false,
+    "synthetic_only": true,
+    "semantic_approval": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "evidence_files": {
+    "executor_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-execution-v2r1zovb\\after.json",
+      "sha256": "16058c8e41118796c4c6177f014dfe573264bf7731fe5816a7264e3a819348b2"
+    },
+    "wrapper_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-preparation-0rche6zu\\after-tests.json",
+      "sha256": "7420601f0751dd04fd1b064b2405ced68fc47f3d1732fd29e0b5447dca924500"
+    },
+    "replay_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\replay-boundary-verification.json",
+      "sha256": "9c4a95185c18dd930398e807e0e7065692a50052b3645467a546ddb8fea132ea"
+    },
+    "independent_wire": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\independent-wire-audit.json",
+      "sha256": "a63096e6daa51d3a4aa4dc99f839a6ec31557e3d89fc51af67b9c799a5529bc0"
+    },
+    "real_empty_key": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\real-empty-key-integration.json",
+      "sha256": "dad9157fcb669a272493d4dcdedb11d8f08736cbfc57b900e997eb8dfd94cb0a"
+    },
+    "final_preflight": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\final-preflight-audit.json",
+      "sha256": "f3d9e0f1d2a7c296b86d9d14470323a8e733e65632084341cb30695ad7ba08fe"
+    }
+  },
+  "live_execution": {
+    "state": "finished",
+    "launch_record": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\launch-record.json",
+    "process_id": 21744,
+    "started_at_utc": "2026-09-07T20:08:03.3315844Z",
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\launch-summary-budget.ps1",
+    "launcher_sha256": "aeee78938b3a607f77bad6c4890c35c3edb253f0b23807f7ed163148f0a8a68c",
+    "window_title": "Agente Storyteller - Qwen 768 - chave protegida",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\status.json",
+    "observed_status": {
+      "process_id": 21744,
+      "phase": "finished",
+      "exit_code": 0,
+      "at_utc": "2026-09-07T20:41:18.2606505Z"
+    },
+    "batch_id": "95dd9fd2-f78f-4467-858f-b3948479aa10",
+    "run_dir": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9",
+    "finished_at_utc": "2026-09-07T20:41:18.2606505Z",
+    "exit_code": 0,
+    "credential_retained": false,
+    "observation_report": "evals/narrator/reports/record-summary-budget-observation-95dd9fd2-2026-09-07.md",
+    "observation_analysis": "evals/narrator/reports/record-summary-budget-observation-95dd9fd2-2026-09-07.json",
+    "operational_probe_passed": true,
+    "closed": true
+  }
+}

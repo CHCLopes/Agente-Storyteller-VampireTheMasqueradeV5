@@ -1,0 +1,30 @@
+{
+  "protocol": "deterministic-catalogs-phase0-v1",
+  "observed_at": "2026-09-16",
+  "catalogs": {
+    "clans.json": {"entries": 16, "status": "partial"},
+    "weapons.json": {"entries": 10, "status": "partial"},
+    "disciplines.json": {"entries": 8, "status": "partial"},
+    "predator_types.json": {"entries": 5, "status": "partial"},
+    "blood_potency.json": {"entries": 11, "status": "partial"},
+    "npc_hierarchy.json": {"entries": 9, "status": "partial"},
+    "progression_costs.json": {"entries": 7, "status": "partial"}
+  },
+  "baseline": {
+    "h0_default": "local",
+    "h1_default": "local",
+    "h4_action_enrichment_default": "disabled",
+    "fictional_turn_max_h6": 1,
+    "direct_lore_h6": 0,
+    "tests_passed": 4,
+    "tests_failed": 0,
+    "warnings": 3
+  },
+  "tasks": {
+    "TASK-001": "completed",
+    "TASK-002": "completed",
+    "TASK-003": "awaiting_DEC-001_through_DEC-005",
+    "TASK-004": "completed"
+  },
+  "catalog_content_changed": false
+}

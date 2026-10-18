@@ -1,0 +1,41 @@
+{
+  "version": "narrator-prospective-decision-v1",
+  "date": "2026-09-27",
+  "source_hypothesis": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "source_batch_id": "47f0c07f-ed8a-49b1-a9a6-4b760e7c4ffd",
+  "provider_calls": 0,
+  "live_inference_authorized": false,
+  "decision_required": true,
+  "conditional_recommendation": "B_if_free_search_continues_else_A",
+  "options": {
+    "A": {
+      "action": "close_hyp_005_without_narrator",
+      "max_calls": 0
+    },
+    "B": {
+      "hypothesis_id": "HYP-005-OPENROUTER-FREE-L3-STRICT-OVERLOAD-RETRY",
+      "single_changed_variable": "overload_retry_policy",
+      "max_retries_per_request": 1,
+      "retry_category": "provider_unavailable",
+      "retry_code": "openrouter_provider_overloaded",
+      "max_calls": 48,
+      "execute_after_new_free_daily_window": true,
+      "max_output_tokens": 2048,
+      "model_fallback": false,
+      "provider_fallback": false,
+      "exact_zero_cost_required": true,
+      "synthetic_only": true,
+      "admission_threshold": "8/8 per candidate"
+    },
+    "C": {
+      "action": "new_free_candidate_screening",
+      "requires_target_approval": true
+    },
+    "D": {
+      "action": "change_reasoning_prompt_or_contract",
+      "recommended": false,
+      "requires_separate_hypothesis": true
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "surfaces_sha256": {
+    "api/main.py": "3e01bb3a845d0bfe0f36ca44ca1e1d3a6d7fbd9d3ae69c99838b05b8ad0da515",
+    "api/local_request_security.py": "78adfbde2b7dd2d2747c1f0f9bf0061beeca7595e0720c44b4c6c03c2c3aabd8",
+    "scripts/run_campaign_source_offline_trial.py": "fca92da7f61cc2a36c1465985f91bef3c4481540811648ce8c5b3de9286449a0",
+    "tests/test_security_audit_regressions.py": "5e0012b30ac67a00ac3b834047f28f82048f960c66cbdf8722244161193cf833",
+    "tests/conftest.py": "a908e207dbedb33e52b01fe1fa23f62fa009e206592019019f047bd7d3bcd47f",
+    "tests/test_campaign_source_offline_trial.py": "2360013f93adb6b16f36a7601804a62dfc7d2587b1c8c5baf0a151f041e93c6d",
+    "tests/test_perf_sec.py": "477b9e9e55254a7fc4d9688416c153b23aa520889850d25148a168ca4bda0268",
+    "client/src/components/NarrativeLog.test.tsx": "7e3659ec06b75aec694521a37ae2a29c6a8d210b4bbc6ef1b783cccf14d40c97"
+  },
+  "pdf_sha256": "d526675296573b0820c224abc189ce5eee832961180c3b4cfbaaf3b524e806c9",
+  "pages": 11,
+  "findings": 2,
+  "corrected": 2
+}

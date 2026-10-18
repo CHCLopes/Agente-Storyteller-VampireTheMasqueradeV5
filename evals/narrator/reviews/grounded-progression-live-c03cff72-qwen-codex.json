@@ -1,0 +1,184 @@
+{
+  "version": "grounded-progression-responses-v1",
+  "protocol": "grounded-progression-contract-v1",
+  "review_metadata": {
+    "batch_id": "c03cff72-817f-4881-a864-8a5848011c0a",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-22",
+    "human_admission_required": true,
+    "source_summary_sha256": "d6c49b33ea03edc16f5c4322ce3eaf4101bab090664cab3d49fefada28af331e"
+  },
+  "input_hashes": {
+    "corpus_sha256": "e3d9252090f7c1208039c74f01bdf4bf2c9940d5560fbd43a003a9c3a7e939e4",
+    "protocol_sha256": "da938d4380c6cb73036522d407583aa26aec1ef78a05e253efef9a396ee79fb3"
+  },
+  "target": {
+    "requested": {
+      "target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "provider": "Groq",
+      "model": "qwen/qwen3.8-27b",
+      "reasoning": "none"
+    },
+    "reported": {
+      "target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "provider": "Groq",
+      "model": "qwen/qwen3.8-27b",
+      "reasoning": "none"
+    }
+  },
+  "invocation": {"retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "wait-without-authorized-progression",
+      "narrative": "O silêncio se instala na sala, pesado e denso. A luz da tarde atravessa as janelas, projetando retângulos dourados sobre o chão de madeira. O livro-caixa permanece imóvel sobre a mesa, suas páginas cerradas como um segredo guardado. A água, espalhada no piso, avança lentamente em direção aos móveis, mas ainda não alcançou o objeto de capa grossa. O cheiro de umidade se mistura ao aroma do papel velho, criando uma atmosfera opressiva. Nenhuma mudança ocorre na porta lateral; seu estado perman",
+      "grounded_fact_ids": ["ledger-on-table", "water-short-of-ledger"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A água avança apesar de não haver transição autorizada; a resposta também termina no meio de uma palavra."
+      }
+    },
+    {
+      "case_id": "wait-with-authorized-event",
+      "narrative": "A poça escura avança pelo assoalho, subindo pelas frestas das tábuas com um zumbido quase inaudível. Gotas ressoam no silêncio pesado da sala, marcando o tempo. A água toca a borda do livro-caixa, escurecendo a capa grossa e transformando o risco em uma ameaça concreta e presente. O líquido lambe a superfície, espalhando umidade pelo objeto. O cheiro de papel encharcado começa a subir, misturando-se à umidade do ar. O livro permanece imóvel, mas sua margem agora pulsa com a presença da água.",
+      "grounded_fact_ids": ["ledger-on-table", "water-nears-ledger"],
+      "transition_id": "water-reaches-ledger",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A chegada à borda é narrada, mas a umidade espalhada pelo objeto e o papel já encharcado avançam além do risco imediato autorizado."
+      }
+    },
+    {
+      "case_id": "known-object-state",
+      "narrative": "A tapeçaria pesa no ar, suas bordas gastas revelando a presença do cofre de metal escuro. A superfície fria reflete a luz fraca da sala, destacando a fechadura robusta e central. Ela está firmemente travada, os dentes internos alinhados em silêncio absoluto. Não há sons de engrenagens se movendo nem qualquer indicação de que a estrutura esteja comprometida. O objeto permanece imóvel, uma barreira sólida entre o espaço aberto e o interior desconhecido. A poeira flutua lentamente ao redor da t",
+      "grounded_fact_ids": ["safe-visible", "safe-locked"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": false,
+        "rationale": "A resposta afirma o alinhamento interno dos dentes e a integridade da estrutura sem base canônica e termina cortada."
+      }
+    },
+    {
+      "case_id": "unknown-object-state",
+      "narrative": "A luz fraca da sala incide lateralmente sobre a superfície lisa do painel vermelho, fixado na parede. A tinta tem um brilho sutil, quase fosco, que absorve a penumbra ao redor. Não há fios visíveis saindo da base, nem etiquetas adesivas indicando uso. O silêncio ao seu redor é denso, quebrado apenas pelo zumbido distante de alguma fiação antiga no forro. O objeto permanece imóvel, uma mancha de cor intensa contra o branco amarelado da alvenaria, esperando que a distância entre você e ele se缩",
+      "grounded_fact_ids": ["red-panel-visible"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": false,
+        "rationale": "Fios, etiquetas e fiação no forro são estados não fornecidos; o texto termina cortado e troca de idioma no último caractere."
+      }
+    },
+    {
+      "case_id": "favorable-mechanical-result",
+      "narrative": "O metal frio cede sob a pressão da ferramenta. Um clique seco rompe o silêncio. A trava interna desliza com um atrito curto, liberando a maçaneta que permanece imóvel até agora. O ar parado do corredor parece mudar de textura no instante em que a barreira física se dissolve. A porta, antes rígida, está pronta para girar, mas ainda não se move. O espaço além da madeira permanece uma incógnita total, sem luz, som ou cheiro que antecipe o que há do outro lado. A ferramenta ainda está na sua mão",
+      "grounded_fact_ids": ["lockpick-success"],
+      "transition_id": "lock-opens",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A fechadura cede, a porta fica apta a abrir e o conteúdo além dela permanece desconhecido."
+      }
+    },
+    {
+      "case_id": "unfavorable-mechanical-result",
+      "narrative": "Meto a ferramenta na fechadura e aplico pressão. A ponta metálica cede com um estalo abafado, entortando sob o esforço. A fechadura permanece travada, sem qualquer sinal de abertura.",
+      "grounded_fact_ids": ["lockpick-failure", "tool-bends"],
+      "transition_id": "tool-bends",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "O resultado mecânico é respeitado, mas a narrativa possui somente 29 palavras e falha no orçamento mínimo congelado."
+      }
+    },
+    {
+      "case_id": "npc-protected-secret",
+      "narrative": "Mara ergue os olhos, evitando o confronto direto com a pergunta. Seus dedos tamborilam suavemente na superfície de madeira gasta da mesa, um gesto nervoso que denuncia a hesitação. Ela não oferece uma resposta verbal, mas desliza a mão para baixo, retirando um volume grosso e empoeirado de uma prateleira lateral. O cheiro de papel antigo e mofo sobe do encadernamento. Ela empurra o objeto até a beirada da mesa, parando exatamente na sua frente. A capa, desbotada pelo tempo, exibe apenas um r",
+      "grounded_fact_ids": [],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": false,
+        "rationale": "O segredo é preservado, mas o texto não identifica o objeto como índice, não realiza a transição exigida e termina cortado."
+      }
+    },
+    {
+      "case_id": "ambiguous-action-preserves-choice",
+      "narrative": "O granito frio da bancada reflete a luz suave do ambiente. Três instrumentos distintos repousam ali, cada um com sua própria textura e peso aparente. O silêncio do lugar parece se aprofundar, aguardando a próxima interação. A superfície polida não esconde as marcas de uso, e o ar permanece parado, carregado de expectativa.",
+      "grounded_fact_ids": ["three-instruments-visible"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "rationale": "Os três instrumentos permanecem genéricos, nenhuma escolha é imposta e a próxima decisão fica aberta."
+      }
+    }
+  ]
+}

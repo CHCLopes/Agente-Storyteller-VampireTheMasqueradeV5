@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-11",
+  "status": "pure_public_projection_completed",
+  "distinct_passed": 215,
+  "new_cases": 205,
+  "existing_regressions": 10,
+  "evidence": {
+    "round1": {
+      "tests": 202,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.092,
+      "command_result": {
+        "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-round1\\pytest.log",
+        "command_ok": true,
+        "exit_code": 0,
+        "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-round1\\results.xml"
+      },
+      "files": {
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-round1\\results.xml": "dd035328392af75fa681b61edb02787ab5d07eec5283f1aabc8e2cd1ea76bc87",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-round1\\pytest.log": "309386c256650425b4ebc2dc939d6ff89ba47e324092d8a7815871cd3f141d17",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-round1\\result.json": "635b9f8df5fef22efa2131aa38f70071cc7a1223c33f3be09508092eda2ce5de"
+      }
+    },
+    "regression": {
+      "tests": 3,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.225,
+      "command_result": {
+        "command_ok": false,
+        "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-regression\\results.xml",
+        "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-regression\\pytest.log",
+        "exit_code": 1
+      },
+      "files": {
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-regression\\results.xml": "05e57cfb3c768af81188f7f395ec0780950a6cb499c24e6268283e480af4ed13",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-regression\\pytest.log": "53e8b729c16407838f54245cb5eb7ff6a5a45c44774c33092b099d72d058cb97",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-regression\\result.json": "b539a1470887794b17f9eead4a47a72d87b8286dd8b3aab972a300a7f46fe497"
+      }
+    },
+    "final": {
+      "tests": 215,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.892,
+      "command_result": {
+        "exit_code": 0,
+        "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-final\\results.xml",
+        "command_ok": true,
+        "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-final\\pytest.log"
+      },
+      "files": {
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-final\\results.xml": "a2f7575f93cfeab88941b5988f61b2413defd4f0d42e5451731d91a6176b38d7",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-final\\pytest.log": "8df0fc36954286202d783f1570344bff65d6bdec433f63f15922a3d28b037ac3",
+        "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-public-projection-tests-20260911-final\\result.json": "9c4b745a4a0ddc1634b5a7b7f66bc7e6261b16f4cb91c67a6a76d9f4b92e8381"
+      }
+    }
+  },
+  "code_hashes": {
+    "api/narrative_source_transport.py": "ad28de63a88dafecd4cc37b3f7aeab486c906a4804c85d84230518eafc99ac0d",
+    "tests/test_narrative_source_transport.py": "3fb0126285afbe1ff9642b03c6adc3dc23c40e6af90704070ef7ffa0000cf2e3"
+  },
+  "review": "root and independent reviewer; final review recorded in closure",
+  "correction": {
+    "real_paths": [
+      "source_turn_provider_failure/timeout",
+      "source_turn_provider_failure/cancelled",
+      "source_turn_delivery_failed/cancelled"
+    ],
+    "approach": "three explicit code/status pairs; executor plus persisted reader regression; no internal contract changes"
+  },
+  "preserved": {
+    "frozen_implementation_files": 28,
+    "prior_live_artifacts": true
+  },
+  "delivered": [
+    "strict frozen public models and union validator",
+    "authored briefing projection",
+    "preparation pending/ready/rejected",
+    "retained_unstarted distinct from pending",
+    "completed snapshot/envelope binding to session/operation/committed turn",
+    "whole n and q separated without current-turn relabeling",
+    "closed safe diagnostics and unavailable",
+    "recursive forged-extra rejection; no I/O or execution authority"
+  ],
+  "not_delivered": [
+    "route selection or authentication",
+    "handler",
+    "frontend",
+    "live inference",
+    "narrative quality approval",
+    "CAP-001",
+    "commit or GitHub publication"
+  ],
+  "next_step": "define inactive local opt-in selection before legacy handlers; experience gate and any direct remote access architecture remain separate"
+}

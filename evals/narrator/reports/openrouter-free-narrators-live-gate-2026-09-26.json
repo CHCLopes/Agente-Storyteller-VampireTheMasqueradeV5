@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-26",
+  "status": "authorized_offline_preparation_and_live_after_secure_credential",
+  "human_authorization": [
+    "Avalie modelos chineses com api grátis.",
+    "Inclua modelos não chineses que também atendam os outros critérios.",
+    "Continue"
+  ],
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L1",
+  "selected_option": "L1",
+  "supersedes": "HYP-005-SILICONFLOW-FREE-CHINESE-L1",
+  "supersession_reason": "SiliconFlow China did not allow foreign registration and Alibaba verification SMS did not arrive; OpenRouter account access was confirmed by the user.",
+  "live_inference_authorized": true,
+  "credential_status": "pending",
+  "provider_calls_at_gate_creation": 0,
+  "paid_spend_authorized": false,
+  "constraints": {
+    "synthetic_only": true,
+    "models": 3,
+    "non_chinese_models": 2,
+    "chinese_models": 1,
+    "cases_per_model": 8,
+    "max_calls": 24,
+    "retry": false,
+    "repair": false,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "dynamic_router": false,
+    "target_switch": false,
+    "reported_cost_must_equal_zero_openrouter_credits": true,
+    "aggregate_with_prior_hypotheses": false,
+    "best_of_selection": false,
+    "admission_threshold_per_candidate": "8/8"
+  }
+}

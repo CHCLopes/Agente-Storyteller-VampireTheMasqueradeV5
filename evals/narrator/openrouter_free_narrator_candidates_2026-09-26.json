@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "catalog_checked_at": "2026-09-26",
+  "provider": "OpenRouter",
+  "base_url": "https://openrouter.ai/api/v1",
+  "catalog_source": "https://openrouter.ai/models?pricing=free",
+  "structured_outputs_source": "https://openrouter.ai/docs/guides/features/structured-outputs",
+  "free_tier_source": "https://openrouter.ai/pricing",
+  "candidates": [
+    {
+      "candidate_id": "nemotron-3-super-openrouter-free-synthetic",
+      "provider_label": "OpenRouter",
+      "upstream_provider": "nvidia",
+      "developer": "NVIDIA",
+      "origin_classification": "non_chinese",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "model_source": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free",
+      "structured_mode": "native",
+      "schema_enforcement": "json_schema_strict",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_observed_usd_per_million_input": 0,
+      "price_observed_usd_per_million_output": 0
+    },
+    {
+      "candidate_id": "lfm-2.5-2.6b-openrouter-free-synthetic",
+      "provider_label": "OpenRouter",
+      "upstream_provider": "liquid",
+      "developer": "Liquid AI",
+      "origin_classification": "non_chinese",
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "model_source": "https://openrouter.ai/liquid/lfm-2.5-2.6b:free",
+      "structured_mode": "native",
+      "schema_enforcement": "json_schema_strict",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_observed_usd_per_million_input": 0,
+      "price_observed_usd_per_million_output": 0
+    },
+    {
+      "candidate_id": "deepseek-v4-flash-0731-openrouter-free-synthetic",
+      "provider_label": "OpenRouter",
+      "upstream_provider": "deepseek",
+      "developer": "DeepSeek",
+      "origin_classification": "chinese",
+      "model": "deepseek/deepseek-v4-flash-0731:free",
+      "model_source": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731:free",
+      "structured_mode": "native",
+      "schema_enforcement": "json_schema_strict",
+      "campaign_data_eligible": false,
+      "reasoning_effort": null,
+      "price_observed_usd_per_million_input": 0,
+      "price_observed_usd_per_million_output": 0
+    }
+  ]
+}

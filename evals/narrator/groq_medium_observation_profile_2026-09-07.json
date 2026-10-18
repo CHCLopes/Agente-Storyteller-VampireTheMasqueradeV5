@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "document_kind": "isolated_synthetic_reasoning_observation_profile",
+  "status": "authorized_under_continuous_user_instruction",
+  "experiment_version": "record-evidence-reasoning-medium-v1",
+  "base_manifest": {
+    "file": "evals/narrator/groq_candidates_2026-09-05.json",
+    "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+    "candidate_id": "gpt-oss-120b-groq-free-synthetic-low"
+  },
+  "candidate": {
+    "candidate_id": "gpt-oss-120b-groq-free-synthetic-medium",
+    "adapter_kind": "groq",
+    "provider_label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "effective_provider": "Groq",
+    "upstream_provider": null,
+    "structured_mode": "native",
+    "require_zdr": false,
+    "allow_data_collection": true,
+    "campaign_data_eligible": false,
+    "expiration_date": null,
+    "reasoning_effort": "medium"
+  },
+  "target_profile": "record-reasoning-medium-gpt-oss-120b-groq-free-synthetic-medium",
+  "adapter_name": "groq-chat-completions-record-medium-probe",
+  "scope": {
+    "case_id": "opening",
+    "max_calls": 1,
+    "max_completion_tokens": 3072,
+    "temperature": 0.65,
+    "minimum_initial_delay_seconds": 60,
+    "deadline_after_wait_seconds": 60,
+    "retries": 0,
+    "fallback": false,
+    "causal_comparison": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  }
+}

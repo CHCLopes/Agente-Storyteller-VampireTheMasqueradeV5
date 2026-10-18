@@ -1,0 +1,20 @@
+{
+  "protocol": "closed-world-render-contract-v1",
+  "target": {"target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink", "provider": "Groq", "model": "qwen/qwen3.8-27b", "reasoning": "none"},
+  "case_count": 8,
+  "passed_count": 0,
+  "failed_count": 8,
+  "qualified_in_protocol": false,
+  "runtime_default_eligible": false,
+  "human_admission_required": true,
+  "cases": [
+    {"case_id": "hold-silent-bell", "word_count": 79, "passed": false, "reasons": ["fatal_semantic_gate_failed"]},
+    {"case_id": "authorized-single-bell", "word_count": 85, "passed": false, "reasons": ["fatal_semantic_gate_failed", "continuity_repetition_failed"]},
+    {"case_id": "known-sealed-tube", "word_count": 70, "passed": false, "reasons": ["fatal_semantic_gate_failed"]},
+    {"case_id": "unknown-glass-disc", "word_count": 43, "passed": false, "reasons": ["fatal_semantic_gate_failed"]},
+    {"case_id": "favorable-shutter-result", "word_count": 62, "passed": false, "reasons": ["unknown_content_asserted", "fatal_semantic_gate_failed"]},
+    {"case_id": "unfavorable-slab-result", "word_count": 69, "passed": false, "reasons": ["fatal_semantic_gate_failed"]},
+    {"case_id": "npc-protected-code", "word_count": 28, "passed": false, "reasons": ["word_budget_failed"]},
+    {"case_id": "ambiguous-sealed-boxes", "word_count": 51, "passed": false, "reasons": ["fatal_semantic_gate_failed", "next_choice_not_preserved"]}
+  ]
+}

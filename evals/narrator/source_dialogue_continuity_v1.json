@@ -1,0 +1,45 @@
+{
+  "version": "source-dialogue-continuity-v1",
+  "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+  "source_origin": "runtime_committed_generated_narrative",
+  "contexts_independent": false,
+  "scene": {
+    "location": "Galeria",
+    "npcs_present": [
+      "Mara"
+    ]
+  },
+  "npc_aliases": [
+    "Mara"
+  ],
+  "parameters": {
+    "temperature": 0.65,
+    "max_output_tokens": 768,
+    "reasoning_effort": "none",
+    "max_calls": 2,
+    "max_total_output_tokens": 1536,
+    "initial_quiet_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "shared_turn_deadline_seconds": 60
+  },
+  "turns": [
+    {
+      "turn_slot": "turn-1",
+      "player_input": "Digo a Mara: \"Mara, o que é este lugar?\"",
+      "criteria": [
+        "NPC offers relevant information or an intelligible refusal in n.",
+        "Atmosphere does not substitute for the response.",
+        "q describes no absent response and leaves player agency intact."
+      ]
+    },
+    {
+      "turn_slot": "turn-2",
+      "player_input": "Digo a Mara: \"Mara, explique melhor sua resposta.\"",
+      "criteria": [
+        "Narrative addresses the clarification request consistently with the actual preceding NPC response or refusal.",
+        "Response adds an explanation, a concrete intelligible limit or another pertinent consequence instead of merely repeating atmospheric hesitation.",
+        "No player action or decision is imposed; q refers only to what n actually showed."
+      ]
+    }
+  ]
+}

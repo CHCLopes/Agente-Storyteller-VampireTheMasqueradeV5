@@ -1,0 +1,5 @@
+# Preserve exact bytes: evaluation manifests hash prompts and implementation.
+# Do not normalize historical evidence or source line endings on add/checkout.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.png binary
+*.pdf binary

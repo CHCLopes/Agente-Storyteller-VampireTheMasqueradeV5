@@ -1,0 +1,53 @@
+{
+  "version": "closed-world-render-partial-responses-v1",
+  "protocol": "gemini-free-closed-world-live-v3",
+  "review_metadata": {
+    "batch_id": "0164d8e2-1c2f-448a-b8db-8a8f744d4466",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-26",
+    "human_admission_required": true,
+    "source_summary_sha256": "ed6b3935f8177b5d53e62d236ad85f107f380d830619cb77469cd43ba80b33bd",
+    "source_records_sha256": "1a31c4e55bec63229bcf179be5e76d40acde058f53bce398f55b774c9542b4b7",
+    "completed_cases": 1,
+    "scheduled_cases": 8
+  },
+  "target": {
+    "requested_provider": "Google Gemini",
+    "requested_model": "gemini-3.8-flash",
+    "reported_provider": "Google Gemini",
+    "reported_model": "gemini-3.8-flash",
+    "reasoning": "low"
+  },
+  "invocation": {"calls_made": 2, "retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "map-cylinder-hold",
+      "narrative": "Você permanece imóvel junto à bancada baixa, que continua visível diante de você sob a constante iluminação branca. Sobre a superfície, o cilindro de mapas permanece lacrado, enquanto o odor seco de papel preenche o ar do depósito.",
+      "question": "O que você faz agora?",
+      "rendered_unit_ids": ["cylinder-sealed", "white-light-steady", "bench-visible", "paper-dry-scent"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "As unidades obrigatórias, a unidade opcional e a paleta sensorial são renderizadas sem transição, contato ou presença inventada; a pergunta aberta preserva a escolha do jogador."
+      },
+      "case_passed": true
+    }
+  ],
+  "partial_result": {
+    "completed_passed": 1,
+    "completed_failed": 0,
+    "unreviewable_due_provider_failure": 7,
+    "candidate_eligible": false,
+    "reason": "O gate exige evidência dos oito casos; a indisponibilidade HTTP 503 no segundo dispatch encerrou o lote e deixou sete casos sem resposta."
+  }
+}

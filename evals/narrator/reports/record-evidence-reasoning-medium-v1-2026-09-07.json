@@ -1,0 +1,650 @@
+{
+  "document_kind": "record_reasoning_medium_preparation",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T15:47:38.456688+00:00",
+  "status": "executed_and_analyzed_provider_schema_error",
+  "authorization": {
+    "source": "continuous_user_authority",
+    "new_observations_authorized": true,
+    "new_batch_approval_required": false,
+    "remaining_human_dependency": null
+  },
+  "prepared_metadata": {
+    "purpose": "record_evidence_reasoning_medium_probe",
+    "probe_kind": "record_evidence_reasoning_medium_probe",
+    "experiment_version": "record-evidence-reasoning-medium-v1",
+    "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-medium",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "support_validation_scope": "structural_only",
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_record_medium.py",
+      "sha256": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "medium"
+    },
+    "evidence_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "medium"
+      },
+      "max_total_output_tokens": 3072,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "experimental_profile": {
+        "file": "evals/narrator/groq_medium_observation_profile_2026-09-07.json",
+        "sha256": "c85fd64d933907a948cf6f666fb98fd17859dc4a23fc4f9c099b231aef22e935",
+        "base_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+        "candidate_id": "gpt-oss-120b-groq-free-synthetic-medium",
+        "target_profile": "record-reasoning-medium-gpt-oss-120b-groq-free-synthetic-medium",
+        "adapter_name": "groq-chat-completions-record-medium-probe"
+      },
+      "dossier": {
+        "file": "evals/narrator/reports/record-evidence-reasoning-medium-dossier-9192b8fa-2026-09-07.json",
+        "sha256": "9ef9ed8115a28fc6e4b36bab0fb629f7b3e8b311afa23defa50217eb447d5d51",
+        "original_body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+        "proposed_body_sha256": "5037c4c4e040c6ce800d848217951374ef19489c18bd4857aaf5ca652e13cdaf",
+        "changed_payload_fields": [
+          "reasoning_effort"
+        ]
+      },
+      "baseline_dossier": {
+        "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+        "sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209"
+      },
+      "support_resolution_policy": {
+        "method": "unique_exact_target_quote",
+        "quote_protocol": "record-evidence-target-quotes-v1",
+        "matching": "literal_unicode_code_points",
+        "ambiguous_quote": "reject",
+        "missing_quote": "reject",
+        "records_rewritten": false,
+        "offsets_purpose": "audit_only",
+        "coverage_validation": false,
+        "entailment_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "corpus": {
+        "file": "corpus_v1.json",
+        "sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283"
+      },
+      "prompt": {
+        "variant": "record-evidence-claim-check-v1",
+        "file": "evals/narrator/prompts/record-evidence-claim-check-v1.md",
+        "sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839"
+      },
+      "response_schema_sha256": "225adcde7c70dbd5be868b06a8731fc59f00bf11de80cc9639a88d7573db15d8",
+      "provider_schema_sha256": "fe5e9738d12ca0b094643c04e45cdbf87aee17588b0889f75927ec8df663cff2",
+      "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+      "implementation": [
+        {
+          "file": "scripts/narrator_record_medium_observer.py",
+          "sha256": "94d73c898c65157273d8b71b3888c07607b408c3b492c3a9248486573ff87765"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/narrator_record_quote_evidence.py",
+          "sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58"
+        },
+        {
+          "file": "scripts/narrator_record_evidence.py",
+          "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+        },
+        {
+          "file": "scripts/narrator_record_derivation.py",
+          "sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424"
+        },
+        {
+          "file": "scripts/narrator_actor_contract.py",
+          "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "opening",
+          "episode_id": "opening",
+          "turn_id": "establish-scene",
+          "source": {
+            "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+            "line_number": 3,
+            "field": "proposal.narrative",
+            "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+            "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "episode_id": "opening",
+            "turn_id": "establish-scene",
+            "repetition": 1,
+            "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+            "corpus_file": "evals/narrator/corpus_v1.json",
+            "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "generation_context": {
+            "version": "record-evidence-v1",
+            "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+            "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+            "source_units": [
+              {
+                "id": "n0",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 0,
+                "end": 197,
+                "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+              },
+              {
+                "id": "a0",
+                "origin": "player_input",
+                "path": "/player_input/text",
+                "value": "Onde estou?"
+              },
+              {
+                "id": "m0",
+                "origin": "mechanics",
+                "path": "/expected_outcome/value",
+                "value": "unresolved"
+              },
+              {
+                "id": "c0",
+                "origin": "known_context",
+                "path": "/context/known_context/text",
+                "value": "A crônica é urbana, contemporânea e gótico-punk."
+              }
+            ],
+            "narrative_reconstructed_exactly": true,
+            "source": {
+              "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+              "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+              "line_number": 3,
+              "field": "proposal.narrative",
+              "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+              "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+              "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+              "episode_id": "opening",
+              "turn_id": "establish-scene",
+              "repetition": 1,
+              "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+              "corpus_file": "evals/narrator/corpus_v1.json",
+              "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+              "context_origin": "original_synthetic_corpus",
+              "protected_secrets_count": 0
+            },
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 367,
+              "omitted_background_details": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "verification": {
+    "distinct_tests_passed": 219,
+    "new_tests_passed": 176,
+    "existing_tests_passed": 43,
+    "failures": 0,
+    "skips": 0,
+    "full_repository_suite": false,
+    "groups": [
+      {
+        "files": [
+          "tests/test_record_medium_observer.py"
+        ],
+        "passed": 35,
+        "seconds": 0.79
+      },
+      {
+        "files": [
+          "tests/test_record_medium_execution.py"
+        ],
+        "passed": 52,
+        "seconds": 27.37
+      },
+      {
+        "files": [
+          "tests/test_record_medium_runner.py"
+        ],
+        "passed": 68,
+        "seconds": 148.52
+      },
+      {
+        "files": [
+          "tests/test_record_medium_replay_boundary.py",
+          "tests/test_record_claim_check_replay_boundary.py",
+          "tests/test_narrator_replay_skips.py"
+        ],
+        "passed": 64,
+        "seconds": 1.37
+      }
+    ],
+    "warning": "pre-existing python_multipart PendingDeprecationWarning",
+    "independent_review": "no material findings in profile/body/executor/wrapper/criteria/report",
+    "preflight_audit": {
+      "metadata": {
+        "purpose": "record_evidence_reasoning_medium_probe",
+        "probe_kind": "record_evidence_reasoning_medium_probe",
+        "experiment_version": "record-evidence-reasoning-medium-v1",
+        "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-medium",
+        "full_evaluation": false,
+        "synthetic_only": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated",
+        "automated_gates_passed": false,
+        "human_review_required": true,
+        "diagnostics_executed": false,
+        "automatic_retries": 0,
+        "max_calls": 1,
+        "repetitions": 1,
+        "causal_comparison": false,
+        "narrative_generation_calls": 0,
+        "support_validation_scope": "structural_only",
+        "evaluator": {
+          "file": "scripts/evaluate_narrator_record_medium.py",
+          "sha256": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c",
+          "python_version": "3.12.2",
+          "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+          "git_dirty": true
+        },
+        "candidate_policy": {
+          "adapter_kind": "groq",
+          "provider_label": "Groq",
+          "effective_provider": "Groq",
+          "upstream_provider": null,
+          "structured_mode": "native",
+          "require_zdr": false,
+          "allow_data_collection": true,
+          "campaign_data_eligible": false,
+          "expiration_date": null,
+          "reasoning_effort": "medium"
+        },
+        "evidence_generation_parameters": {
+          "deadline_seconds": 60,
+          "minimum_inter_call_delay_seconds": 60,
+          "requested": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072
+          },
+          "transmitted": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072,
+            "reasoning_effort": "medium"
+          },
+          "max_total_output_tokens": 3072,
+          "user_packet_budget": {
+            "estimated_tokens": 2000,
+            "method": "characters_divided_by_4"
+          }
+        },
+        "inputs": {
+          "experimental_profile": {
+            "file": "evals/narrator/groq_medium_observation_profile_2026-09-07.json",
+            "sha256": "c85fd64d933907a948cf6f666fb98fd17859dc4a23fc4f9c099b231aef22e935",
+            "base_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-medium",
+            "target_profile": "record-reasoning-medium-gpt-oss-120b-groq-free-synthetic-medium",
+            "adapter_name": "groq-chat-completions-record-medium-probe"
+          },
+          "dossier": {
+            "file": "evals/narrator/reports/record-evidence-reasoning-medium-dossier-9192b8fa-2026-09-07.json",
+            "sha256": "9ef9ed8115a28fc6e4b36bab0fb629f7b3e8b311afa23defa50217eb447d5d51",
+            "original_body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+            "proposed_body_sha256": "5037c4c4e040c6ce800d848217951374ef19489c18bd4857aaf5ca652e13cdaf",
+            "changed_payload_fields": [
+              "reasoning_effort"
+            ]
+          },
+          "baseline_dossier": {
+            "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+            "sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+            "body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209"
+          },
+          "support_resolution_policy": {
+            "method": "unique_exact_target_quote",
+            "quote_protocol": "record-evidence-target-quotes-v1",
+            "matching": "literal_unicode_code_points",
+            "ambiguous_quote": "reject",
+            "missing_quote": "reject",
+            "records_rewritten": false,
+            "offsets_purpose": "audit_only",
+            "coverage_validation": false,
+            "entailment_validation": false
+          },
+          "observation_policy": {
+            "max_error_body_bytes": 65536,
+            "raw_error_retained": false,
+            "raw_reasoning_retained": false
+          },
+          "manifest": {
+            "file": "groq_candidates_2026-09-05.json",
+            "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+          },
+          "corpus": {
+            "file": "corpus_v1.json",
+            "sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283"
+          },
+          "prompt": {
+            "variant": "record-evidence-claim-check-v1",
+            "file": "evals/narrator/prompts/record-evidence-claim-check-v1.md",
+            "sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839"
+          },
+          "response_schema_sha256": "225adcde7c70dbd5be868b06a8731fc59f00bf11de80cc9639a88d7573db15d8",
+          "provider_schema_sha256": "fe5e9738d12ca0b094643c04e45cdbf87aee17588b0889f75927ec8df663cff2",
+          "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+          "implementation": [
+            {
+              "file": "scripts/narrator_record_medium_observer.py",
+              "sha256": "94d73c898c65157273d8b71b3888c07607b408c3b492c3a9248486573ff87765"
+            },
+            {
+              "file": "scripts/narrator_record_budget_observer.py",
+              "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+            },
+            {
+              "file": "scripts/narrator_record_quote_evidence.py",
+              "sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58"
+            },
+            {
+              "file": "scripts/narrator_record_evidence.py",
+              "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+            },
+            {
+              "file": "scripts/narrator_record_derivation.py",
+              "sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12"
+            },
+            {
+              "file": "scripts/evaluate_narrator_models.py",
+              "sha256": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424"
+            },
+            {
+              "file": "scripts/narrator_actor_contract.py",
+              "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+            },
+            {
+              "file": "api/scene_director_service.py",
+              "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+            },
+            {
+              "file": "api/scene_service.py",
+              "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+            },
+            {
+              "file": "api/llm/adapters/groq.py",
+              "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+            },
+            {
+              "file": "api/llm/adapters/openai_compatible.py",
+              "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+            },
+            {
+              "file": "api/llm/contract.py",
+              "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+            }
+          ],
+          "cases": [
+            {
+              "case_id": "opening",
+              "episode_id": "opening",
+              "turn_id": "establish-scene",
+              "source": {
+                "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+                "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+                "line_number": 3,
+                "field": "proposal.narrative",
+                "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+                "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+                "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+                "episode_id": "opening",
+                "turn_id": "establish-scene",
+                "repetition": 1,
+                "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+                "corpus_file": "evals/narrator/corpus_v1.json",
+                "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+                "context_origin": "original_synthetic_corpus",
+                "protected_secrets_count": 0
+              },
+              "generation_context": {
+                "version": "record-evidence-v1",
+                "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+                "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+                "source_units": [
+                  {
+                    "id": "n0",
+                    "origin": "narrative",
+                    "path": "/fixed_narrative/text",
+                    "start": 0,
+                    "end": 197,
+                    "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+                  },
+                  {
+                    "id": "a0",
+                    "origin": "player_input",
+                    "path": "/player_input/text",
+                    "value": "Onde estou?"
+                  },
+                  {
+                    "id": "m0",
+                    "origin": "mechanics",
+                    "path": "/expected_outcome/value",
+                    "value": "unresolved"
+                  },
+                  {
+                    "id": "c0",
+                    "origin": "known_context",
+                    "path": "/context/known_context/text",
+                    "value": "A crônica é urbana, contemporânea e gótico-punk."
+                  }
+                ],
+                "narrative_reconstructed_exactly": true,
+                "source": {
+                  "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+                  "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+                  "line_number": 3,
+                  "field": "proposal.narrative",
+                  "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+                  "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+                  "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+                  "episode_id": "opening",
+                  "turn_id": "establish-scene",
+                  "repetition": 1,
+                  "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+                  "corpus_file": "evals/narrator/corpus_v1.json",
+                  "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+                  "context_origin": "original_synthetic_corpus",
+                  "protected_secrets_count": 0
+                },
+                "budget": {
+                  "scope": "user_packet_only",
+                  "method": "characters_divided_by_4",
+                  "limit": 2000,
+                  "estimated_tokens": 367,
+                  "omitted_background_details": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "body_sha256": "5037c4c4e040c6ce800d848217951374ef19489c18bd4857aaf5ca652e13cdaf",
+      "changed_body_fields": [
+        "reasoning_effort"
+      ],
+      "preserved_files": {
+        "scripts/evaluate_narrator_record_claim_check.py": "902027fbdc7e0d28201cd787af180a65edbb45fe4070ab646e9b74fd331491d7",
+        "scripts/run_groq_record_claim_check_probe.ps1": "3bcc9f8d973d86a0105dbdf303edb5d9246fde183df374f4ded0ad817fe3fcff",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "preserved_raw_artifacts": {
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+        "eval-results/20260907T143441Z-b6bb2a4f-595a-45d5-b92c-95b27b56e0e3/gpt-oss-120b-groq-free-synthetic-low.jsonl": "9ccc0f5ed02c7a8d993a29c018739fb2676472e68b7257423bb21f50addf3dea",
+        "eval-results/20260907T143441Z-b6bb2a4f-595a-45d5-b92c-95b27b56e0e3/summary.json": "39d5e287e83ca5594fec3e787b05d5bd547e6d78be07ef2e1bc8ba9745afe19d"
+      },
+      "shared_evaluator_delta": {
+        "added": 12,
+        "removed": 0,
+        "sha256": "417363e666922d2a1240983745f7bab859c85de171577b6a958545481cc82424"
+      },
+      "criteria_sha256": "b9863b8ada0aab78609e4f89bae390a1560ee95d8070136327994b1ff6ca1230"
+    },
+    "real_empty_key_integration": {
+      "verification": "real_wrapper_and_cli_empty_secure_string",
+      "record_type": "safe_record_of_previously_completed_verification",
+      "verification_repeated_for_persistence": false,
+      "exit_code": 3,
+      "stage": "credential validation",
+      "preflight_passed": true,
+      "key_present_in_child_environment": false,
+      "supplied_secure_string_empty": true,
+      "stderr_empty": true,
+      "new_artifact_paths": 0,
+      "removed_artifact_paths": 0,
+      "provider_calls": 0,
+      "executor": {
+        "file": "scripts/evaluate_narrator_record_medium.py",
+        "sha256": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c"
+      },
+      "wrapper": {
+        "file": "scripts/run_groq_record_medium_probe.ps1",
+        "sha256": "2bf1816056cf204af1920eca5040fdebd7b4a298bcecf29538177135a1e4a10a"
+      },
+      "executor_hash_unchanged_after_verification": true,
+      "raw_logs_retained": false,
+      "credentials_retained": false
+    }
+  },
+  "files": {
+    "scripts/evaluate_narrator_record_medium.py": "b308b7fe4492b38dfda9c68d9fa7758d4b4dad5a371d592eb25ee6d1b733624c",
+    "scripts/run_groq_record_medium_probe.ps1": "2bf1816056cf204af1920eca5040fdebd7b4a298bcecf29538177135a1e4a10a",
+    "scripts/narrator_record_medium_observer.py": "94d73c898c65157273d8b71b3888c07607b408c3b492c3a9248486573ff87765",
+    "tests/test_record_medium_execution.py": "d96cbf8685812cee86cb9dc4c2d4f8dffac2089b652bb17a157e1579c96170ab",
+    "tests/test_record_medium_runner.py": "954d1b860cf63f04d89c1cafc52d7da933f567095017fca1fcb353f2548120c6",
+    "tests/test_record_medium_observer.py": "40eaf1861986e2016ea9767910c2f798e7d5264716467d6b8f1bbb5079ac9116",
+    "tests/test_record_medium_replay_boundary.py": "9ec4627ad6310dd3e30db44364b95aaa1deefe3c13729a65b5b418f602aca7b7"
+  },
+  "interactive_launcher": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-medium-live-20260907\\launch-medium.ps1",
+    "sha256": "f1030cd0b6e981da67e7783f9677edf96382dc2276f496b581b733e9df6d6696",
+    "status": "finished",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-medium-live-20260907\\status.json",
+    "credential_retained": false,
+    "launch": {
+      "interactive_credential_prompt": true,
+      "purpose": "record_evidence_reasoning_medium_probe",
+      "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-medium-live-20260907\\launch-medium.ps1",
+      "process_id": 21268,
+      "launched_at_utc": "2026-09-07T15:48:23.9501113Z"
+    },
+    "latest_status": {
+      "at_utc": "2026-09-07T15:49:43.7707218Z",
+      "phase": "finished",
+      "process_id": 21268,
+      "exit_code": 1
+    }
+  },
+  "next_step": {
+    "action": "One authorized medium observation using protected credential prompt; inspect status before launching to prevent duplicate batch.",
+    "max_calls": 1,
+    "stop_after_observation": true,
+    "no_automatic_escalation": [
+      "high",
+      "output_ceiling",
+      "SYSTEM_instructions"
+    ],
+    "criteria": "evals/narrator/reports/record-evidence-semantic-criteria-9192b8fa-2026-09-07.md",
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "status_at_preparation": "offline_preparation_complete_authorized_awaiting_secure_credential",
+  "execution_followup": {
+    "batch_id": "84ea2c0c-4a90-4213-ac80-1c9bcacc2910",
+    "report": "evals/narrator/reports/record-evidence-reasoning-medium-observation-84ea2c0c-2026-09-07.md",
+    "rerun_authorized": false
+  }
+}

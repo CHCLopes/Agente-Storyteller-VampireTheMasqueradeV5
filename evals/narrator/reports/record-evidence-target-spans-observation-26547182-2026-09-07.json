@@ -1,0 +1,194 @@
+{
+  "document_kind": "record_target_spans_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T14:26:47.185067+00:00",
+  "batch_id": "26547182-1133-477d-92a7-fa9f5729c423",
+  "evaluation_invocation_id": "99b5d672-db46-4720-b302-961d7934fa42",
+  "status": "closed_explicit_length_no_semantic_sample",
+  "source": {
+    "summary": "eval-results/20260907T141851Z-99b5d672-db46-4720-b302-961d7934fa42/summary.json",
+    "summary_sha256": "378141dba4eadf0106f9e494f9ecd2c0bc1f607c660953367572e0270ab3b7f4",
+    "jsonl": "eval-results/20260907T141851Z-99b5d672-db46-4720-b302-961d7934fa42/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+    "jsonl_sha256": "f172259d1fb7edb004ef4c827d1971b4ed1bd98c36aaf8ca4ac80aabc8a41b54",
+    "jsonl_line": 1
+  },
+  "scope": {
+    "calls_in_completed_run": 1,
+    "retries": 0,
+    "fallback": false,
+    "raw_artifacts_modified": false,
+    "new_observations_authorized": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "operational": {
+    "started_at": "2026-09-07T14:18:51.505043+00:00",
+    "finished_at": "2026-09-07T14:19:56.358096+00:00",
+    "process_exit_code": 1,
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1y3tqjxe4hsv6x23pkmq1cg",
+      "provider_code": null,
+      "model": "openai/gpt-oss-120b",
+      "finish_reason": "length",
+      "usage": {
+        "input_tokens": 2484,
+        "output_tokens": 1536,
+        "total_tokens": 4020,
+        "reasoning_tokens": 1031
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "public_error": {
+      "category": "malformed_response",
+      "code": "generation_truncated",
+      "phase": "response",
+      "safe_message": "LLM generation stopped before producing a complete response.",
+      "partial_output": false,
+      "external_id": "req_01m1y3tqjxe4hsv6x23pkmq1cg",
+      "status_code": 200,
+      "retryable": null,
+      "retry_after_seconds": null,
+      "rate_limit": null
+    },
+    "route": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "adapter_usage": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      }
+    },
+    "cost": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "interactive_final_status": {
+      "exit_code": 1,
+      "phase": "finished",
+      "process_id": 21488,
+      "at_utc": "2026-09-07T14:19:56.8000499Z"
+    }
+  },
+  "verification": {
+    "batch_id": "26547182-1133-477d-92a7-fa9f5729c423",
+    "evaluation_invocation_id": "99b5d672-db46-4720-b302-961d7934fa42",
+    "preflight_reconstructed": true,
+    "summary_reconstructed": true,
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "f172259d1fb7edb004ef4c827d1971b4ed1bd98c36aaf8ca4ac80aabc8a41b54",
+      "summary.json": "378141dba4eadf0106f9e494f9ecd2c0bc1f607c660953367572e0270ab3b7f4"
+    },
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1y3tqjxe4hsv6x23pkmq1cg",
+      "provider_code": null,
+      "model": "openai/gpt-oss-120b",
+      "finish_reason": "length",
+      "usage": {
+        "input_tokens": 2484,
+        "output_tokens": 1536,
+        "total_tokens": 4020,
+        "reasoning_tokens": 1031
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "error": {
+      "category": "malformed_response",
+      "code": "generation_truncated",
+      "phase": "response",
+      "safe_message": "LLM generation stopped before producing a complete response.",
+      "partial_output": false,
+      "external_id": "req_01m1y3tqjxe4hsv6x23pkmq1cg",
+      "status_code": 200,
+      "retryable": null,
+      "retry_after_seconds": null,
+      "rate_limit": null
+    },
+    "initial_interval_seconds": 60.564946,
+    "provider_interval_seconds": 4.28412,
+    "no_candidate_envelope": true,
+    "current_body_sha256": "8138c098ec49cdc768e7c5d9fe19cc952001939f1c54af11bdb1241762526a09",
+    "next_body_sha256": "5e376cb4cdee903b0f1a5bbcd3a14fa181d966656102f4c4985d87b4eb9ea186"
+  },
+  "semantic_review": {
+    "status": "not_possible_no_candidate_envelope",
+    "approval": null,
+    "independent_read_only_review": "same conclusion",
+    "spans_hypothesis": "not_evaluated",
+    "narrative_memory_fidelity": "not_evaluated",
+    "previous_b129ceaa_question_finding": "historical_not_reobserved_here"
+  },
+  "interpretation": {
+    "explicit_length_applies_to_this_run": true,
+    "cause_of_prior_400_proved": false,
+    "system_change_caused_truncation_proved": false,
+    "semantic_regression_proved": false,
+    "schema_envelope_admission_flags": "stages_not_reached_no_candidate",
+    "partial_output_false": "No partial content exposed/persisted; not a claim that the provider generated no tokens.",
+    "usage_aggregate_unavailable": "Inherited adapter failed before reporting usage; sanitized provider_observation independently preserves explicit counters.",
+    "output_minus_reasoning": 505,
+    "output_minus_reasoning_note": "Arithmetic difference, not independent tokenization of the JSON."
+  },
+  "next_step": {
+    "experiment_version": "record-evidence-target-spans-3072-v1",
+    "authorization": "continuous_user_authority_no_new_confirmation",
+    "change": "max_completion_tokens1536to3072_only",
+    "max_calls": 1,
+    "preparation_status": "executed_closed",
+    "design": "evals/narrator/reports/record-evidence-target-budget-3072-design-26547182-2026-09-07.md",
+    "dossier": "evals/narrator/reports/record-evidence-target-budget-3072-dossier-26547182-2026-09-07.json",
+    "preparation_report": "evals/narrator/reports/record-evidence-target-budget-3072-v1-2026-09-07.md",
+    "result_report": "record-evidence-target-budget-observation-d4491c21-2026-09-07.md"
+  }
+}

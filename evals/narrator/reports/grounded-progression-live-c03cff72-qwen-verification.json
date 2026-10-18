@@ -1,0 +1,83 @@
+{
+  "protocol": "grounded-progression-contract-v1",
+  "target": {
+    "target_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "reasoning": "none"
+  },
+  "case_count": 8,
+  "passed_count": 2,
+  "failed_count": 6,
+  "qualified_in_protocol": false,
+  "runtime_default_eligible": false,
+  "human_admission_required": true,
+  "cases": [
+    {
+      "case_id": "wait-without-authorized-progression",
+      "word_count": 82,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    },
+    {
+      "case_id": "wait-with-authorized-event",
+      "word_count": 83,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "known-object-state",
+      "word_count": 81,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    },
+    {
+      "case_id": "unknown-object-state",
+      "word_count": 85,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    },
+    {
+      "case_id": "favorable-mechanical-result",
+      "word_count": 91,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "unfavorable-mechanical-result",
+      "word_count": 29,
+      "passed": false,
+      "reasons": [
+        "word_budget_failed"
+      ]
+    },
+    {
+      "case_id": "npc-protected-secret",
+      "word_count": 84,
+      "passed": false,
+      "reasons": [
+        "required_fact_grounding_failed",
+        "required_transition_failed",
+        "fatal_semantic_gate_failed",
+        "progression_review_failed"
+      ]
+    },
+    {
+      "case_id": "ambiguous-action-preserves-choice",
+      "word_count": 53,
+      "passed": true,
+      "reasons": []
+    }
+  ]
+}

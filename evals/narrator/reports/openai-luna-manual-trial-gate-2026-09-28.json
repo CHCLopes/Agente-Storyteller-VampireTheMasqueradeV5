@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-28",
+  "status": "completed_human_rejected_for_mvp_narrator",
+  "human_request": "antes de aceitar, quero fazer um teste manual",
+  "scope": "isolated_synthetic_source_player_ui_only",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "live_inference_authorized": false,
+  "paid_spend_authorized": false,
+  "completed_run_id": "413d4983-ea8a-488c-8687-e31f5c4ac13f",
+  "calls_completed": 3,
+  "manual_observation": "failed_to_demonstrate_progression_and_npc_responsiveness",
+  "human_classification": "technically_safe_but_narratively_ineligible_for_mvp",
+  "human_classification_accepted_on": "2026-09-28",
+  "constraints": {
+    "max_calls": 4,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 3072,
+    "minimum_inter_call_delay_seconds": 60,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "campaign_data_eligible": false,
+    "account_hard_spend_limit_usd": 0.05
+  },
+  "runtime_default_change_authorized": false,
+  "narrator_admission_authorized": false
+}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-27",
+  "status": "paid_provider_policy_temporarily_open_spend_ceiling_pending",
+  "human_request": "Enquanto não há nova janela diária gratuita, prepare a switch para o luna",
+  "switch_id": "NARRATOR-EVAL-SWITCH-OPENROUTER-L3-TO-LUNA-LOW-V1",
+  "scope": "evaluation_lane_only",
+  "from": {
+    "hypothesis_id": "HYP-005-OPENROUTER-FREE-L3-STRICT-OVERLOAD-RETRY",
+    "status": "prepared_waiting_new_free_daily_window"
+  },
+  "to": {
+    "hypothesis_id": "HYP-006-OPENAI-LUNA-LOW-L1",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "status": "prepared_paid_live_closed"
+  },
+  "provider_calls_at_gate_creation": 0,
+  "credential_status": "not_requested",
+  "live_inference_authorized": false,
+  "paid_spend_authorized": false,
+  "paid_provider_policy": {
+    "status": "temporarily_allowed_for_testing",
+    "human_decision": "Revogue temporariamente a decisão provedores pagos fora de questão para podermos realizar os testes. eu a trarei de volta quando necessário",
+    "does_not_authorize_unbounded_spend": true
+  },
+  "runtime_default_change_authorized": false,
+  "narrator_admission_authorized": false,
+  "constraints": {
+    "synthetic_only": true,
+    "max_calls": 8,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 6144,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "target_switch_inside_batch": false,
+    "aggregate_with_openrouter": false,
+    "best_of_selection": false,
+    "free_tier_supported": false,
+    "account_spend_limit_required_usd": 0.05
+  },
+  "activation_requires": [
+    "explicit_paid_live_authorization",
+    "explicit_paid_spend_authorization",
+    "account_spend_limit_usd_0_05_confirmed_by_human",
+    "temporary_credential_entry_in_masked_prompt"
+  ],
+  "official_sources_checked_2026_09_27": [
+    "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "https://developers.openai.com/api/docs/pricing"
+  ]
+}

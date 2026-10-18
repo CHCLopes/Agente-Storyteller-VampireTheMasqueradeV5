@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-26",
+  "status": "replication_authorized_offline_preparation",
+  "human_authorization": {
+    "date": "2026-09-26",
+    "response": "Antes de continuar, tente novamente os testes com Qwen e GPT-OSS. quero confirmar a incerteza dos dois modelos para buscar outras alternativas",
+    "option": "HYP-004-REPLICATION-L1"
+  },
+  "selected_option": "L2",
+  "replication": {
+    "hypothesis_id": "HYP-004-QWEN-GPT-OSS-REPLICATION-L1",
+    "purpose": "confirm_between_run_uncertainty_without_admission_aggregation",
+    "source_protocol": "HYP-002-L2",
+    "same_cases": true,
+    "same_targets": true,
+    "same_parameters": true,
+    "aggregate_for_admission": false,
+    "best_of_selection": false
+  },
+  "l2": {
+    "provider": "groq",
+    "targets": [
+      {"model": "qwen/qwen3.8-27b", "reasoning": "none"},
+      {"model": "openai/gpt-oss-120b", "reasoning": "low"}
+    ],
+    "temperature": 0.65,
+    "max_completion_tokens_per_call": 768,
+    "max_calls": 16,
+    "max_completion_tokens_total": 12288,
+    "deadline_seconds": 60,
+    "minimum_global_start_interval_seconds": 60,
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "paid_spend_authorized": false
+  },
+  "live_inference_authorized": true,
+  "credential_status": "pending",
+  "credential_provisioning": {
+    "method": "masked_interactive_terminal_input",
+    "credential_value_observed": false,
+    "persisted_to_file": false
+  },
+  "provider_calls_at_gate_creation": 0,
+  "technical_constraints": {
+    "synthetic_only": true,
+    "live_requires_explicit_cli_opt_in": true,
+    "automatic_retries": 0,
+    "narrative_retries": 0,
+    "artifact_causality_reconstructed": true,
+    "historical_runner_unchanged": true
+  },
+  "remaining_gate": "offline_verification_then_masked_credential_input"
+}

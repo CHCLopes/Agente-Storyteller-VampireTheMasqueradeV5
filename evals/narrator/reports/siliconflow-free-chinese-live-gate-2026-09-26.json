@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-26",
+  "status": "authorized_offline_preparation",
+  "human_authorization": "Avalie modelos chineses com api grátis.",
+  "hypothesis_id": "HYP-005-SILICONFLOW-FREE-CHINESE-L1",
+  "selected_option": "L1",
+  "live_inference_authorized": true,
+  "credential_status": "pending",
+  "provider_calls_at_gate_creation": 0,
+  "paid_spend_authorized": false,
+  "constraints": {
+    "synthetic_only": true,
+    "models": 3,
+    "cases_per_model": 8,
+    "max_calls": 24,
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "aggregate_with_prior_hypotheses": false,
+    "best_of_selection": false,
+    "admission_threshold_per_candidate": "8/8"
+  }
+}
+

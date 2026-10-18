@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-26",
+  "status": "gemini_free_selected_offline_ready_credential_pending",
+  "route": "NARRATOR-ROUTE-A",
+  "route_approved": true,
+  "hypothesis": "HYP-003",
+  "recommended_option": "HYP-003-GEMINI-FREE-L1",
+  "proposal_document": "narrator-route-a-hypothesis-003-proposal-2026-09-26.md",
+  "proposed_target": {
+    "provider": "google_gemini_direct_free_tier",
+    "model": "gemini-3.8-flash",
+    "generation_endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+    "thinking": "low",
+    "omitted_parameters": ["temperature", "top_p", "top_k", "seed"],
+    "max_output_tokens": 768,
+    "timeout_seconds": 60,
+    "minimum_start_interval_seconds": 60
+  },
+  "proposed_limits": {
+    "synthetic_cases": 8,
+    "generation_requests": 8,
+    "operational_budget_usd": 0.0,
+    "free_tier_project_confirmation_required": true,
+    "free_tier_content_may_improve_google_products": true,
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "credit_purchase_authorized": false
+  },
+  "eligibility": {
+    "required_passed_cases": 8,
+    "skips_allowed": false,
+    "semantic_review_required": true,
+    "human_result_acceptance_required": true,
+    "causal_model_only_comparison": false
+  },
+  "current_evidence": {
+    "official_documentation_reviewed": true,
+    "live_inference_calls": 0,
+    "credential_accessed": false,
+    "authentication_verified": false,
+    "native_adapter_implemented": true,
+    "executable_corpus_frozen": true,
+    "offline_tests_passed": 36,
+    "target_approved": true,
+    "provider_approved": true,
+    "spend_approved": false,
+    "zero_spend_required": true,
+    "narrator_admitted": false,
+    "runtime_default_changed": false,
+    "hybrid_campaign_may_start": false
+  }
+}

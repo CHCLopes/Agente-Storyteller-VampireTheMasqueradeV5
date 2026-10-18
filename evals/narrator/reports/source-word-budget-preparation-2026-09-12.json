@@ -1,0 +1,158 @@
+{
+  "date": "2026-09-12",
+  "status": "technical_preparation_completed_live_not_run",
+  "real_model_calls": 0,
+  "credential_provider_validated": false,
+  "checkpoint": "eval-results/checkpoints/source-word-budget-preparation-20260912/manifest.json",
+  "checkpoint_sha256": "efe70534e6453c27c3bca73cc41dd4dc5edfe71cf5ad7ef36e26dbf84c6674b3",
+  "checkpoint_copies_verified": 75,
+  "report_sha256": "ad959207ffca8ef505c2a32f51bea5de841b67e87c764bb341b6af3d6b9ab3bd",
+  "source_hashes": {
+    "scripts/evaluate_source_word_budget.py": "de475337d8b07f3f7a0800da126a2c88c11845a532ad6356d1bd59f99be41144",
+    "tests/test_source_word_budget.py": "584a42c7c6bb2a9350d8b6053a52f11e81dde122187f59e4a2c00a5b3a5c9944",
+    "evals/narrator/source_word_budget_v1.json": "d68fe07680844c76b88d8ff401311ef1f0c54a0441da945da55ca509463cc52e",
+    "evals/narrator/source_word_budget_protocol_v1.md": "96a2cad0260f718c1021c6771692b71fb8bc1352b9b7abaaa2663b5865035a33",
+    "evals/narrator/prompts/narrative-source-word-budget-v1.md": "18428fef897a31dda7b27ba472bbdaf4a5c988bf4bd0f836c4f4ce790e9d5067",
+    "scripts/run_groq_source_word_budget.ps1": "648a6c01e99068a5c6387996c8b751334325d3ea391b93921a590a4d8c975b4b",
+    "tests/test_source_word_budget_launcher.py": "9d9080b24095260af911d67a8d2c42d976794c81140f0848eafefe5d88303d40",
+    "scripts/evaluate_source_context.py": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f",
+    "scripts/evaluate_progressing_source.py": "8adc2bde0e7bc86063e2c516356279f7bec98fdc1c0bd9fc3be4ae3d4ca19f57",
+    "scripts/evaluate_narrator_source.py": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+    "scripts/evaluate_narrator_models.py": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+    "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+    "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+    "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+    "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+    "api/narrative_source_profile.py": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+    "api/narrative_source_turn.py": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+    "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+    "api/persistence.py": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8",
+    "api/scene_service.py": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+    "api/scene_director_service.py": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+    "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+    "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+    "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+    "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+    "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+    "api/narrative_source_action_producer.py": "00a9c5ca32a0226b992f0c7b09f5ccfb8a2a479ad456087b774c52cd7597eec5",
+    "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+    "evals/narrator/prompts/narrative-source-progress-v1.md": "87b9cbcd67a67b9d25b97c2b25276e83af56d48c09f53843a64b8e77303b1a0e"
+  },
+  "test_results": {
+    "evaluator": {
+      "distinct_latest_passed": 86,
+      "on_final_hash": 26,
+      "prior_green_not_repeated": 60,
+      "first_run": {
+        "passed": 68,
+        "failed": 1
+      },
+      "main_fix_passed": 82,
+      "final_focused_passed": 25,
+      "final_positive_control_passed": 1
+    },
+    "launcher": {
+      "distinct_latest_passed": 60,
+      "stages_passed": [
+        8,
+        53
+      ],
+      "duplicated_parsing_case": 1
+    },
+    "independent_recheck": {
+      "checks": 10,
+      "all_expected": true,
+      "mode": "pure_in_memory_no_adapter_http"
+    },
+    "single_full_final_suite_claimed": false
+  },
+  "preflight": {
+    "batch_id": "802f5b6e-2374-4eb2-aef3-0979817679f6",
+    "exit_code": 0,
+    "status": "preflight_only_completed",
+    "sha256": "d2ea0b8c76223453e3d6701e2a85e4ce657657eb5cbdd4ed13886672a45ca9bc",
+    "credential_argument_passed": false,
+    "stable_source_hashes": true,
+    "stderr_empty": true,
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "experiment": {
+    "candidate": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "target": {
+      "model": "qwen/qwen3.8-27b",
+      "profile": "source-word-budget-qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "provider": "Groq"
+    },
+    "slots": [
+      {
+        "arm_id": "A",
+        "context_id": "C1",
+        "slot_id": "slot-1"
+      },
+      {
+        "arm_id": "B",
+        "context_id": "C1",
+        "slot_id": "slot-2"
+      },
+      {
+        "arm_id": "B",
+        "context_id": "C2",
+        "slot_id": "slot-3"
+      },
+      {
+        "arm_id": "A",
+        "context_id": "C2",
+        "slot_id": "slot-4"
+      }
+    ],
+    "parameters": {
+      "deadline_seconds": 60,
+      "initial_quiet_seconds": 60,
+      "max_output_tokens": 768,
+      "max_total_output_tokens": 3072,
+      "minimum_inter_call_delay_seconds": 60,
+      "reasoning_effort": "none",
+      "temperature": 0.65
+    },
+    "length_policy": {
+      "counter": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "margin_n_max": 110,
+      "margin_n_min": 70,
+      "margin_q_max": 10,
+      "margin_total_max": 120,
+      "original_q_max": 15,
+      "original_total_max": 150,
+      "original_total_min": 30,
+      "request_budget_is_not_policy": true
+    },
+    "source_policy": {
+      "application_commit": false,
+      "canonical_truth_confirmed": false,
+      "contexts_independent": true,
+      "normalization": "collapse_unicode_whitespace",
+      "origin": "authored_synthetic_fixture",
+      "question_is_source": false,
+      "server_facts": []
+    }
+  },
+  "next_step": {
+    "action": "user_runs_launcher_once_in_existing_protected_powershell",
+    "launcher": "scripts/run_groq_source_word_budget.ps1",
+    "credential": "existing_SecureString_in_user_process_only",
+    "then": "audit_new_summary_jsonl_binding_timing_then_independent_narrative_review"
+  },
+  "closed_historical_batches_reopened": false,
+  "runtime_default_changed": false,
+  "model_approved": false,
+  "pilot_approved": false,
+  "cap_001_approved": false,
+  "limitations": [
+    "No live call or provider validation in this preparation.",
+    "Local hashes validate consistency, not remote authenticity.",
+    "Four planned observations cannot establish statistical causality or general reliability.",
+    "The 86 evaluator cases were green in stages; only 26 ran on the final hash."
+  ]
+}

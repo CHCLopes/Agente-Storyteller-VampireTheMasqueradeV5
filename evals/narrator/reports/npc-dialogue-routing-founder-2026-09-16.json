@@ -1,0 +1,40 @@
+{
+  "protocol": "npc-dialogue-routing-observation-v1",
+  "observed_at": "2026-09-16T10:35:06Z",
+  "historical_observation": {
+    "session_id": "local.b3bd7fcc-4d5a-417e-b875-9047e174c7e6",
+    "operation_id": "mara-founder-1e44c905-2a77-470e-a1f2-9e22f71d63c0",
+    "turn_id": "ee963706-d7fc-51f8-bdf6-7ccb3d098041",
+    "status": "completed",
+    "route_operation": "h4.answer_lore_query",
+    "scene_beat": null,
+    "facts": [],
+    "result_hash": "5c79bea14cbc16115810063b1ded9740c062f48d97e54b17e55e09432f721874",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "input_tokens": 272,
+    "output_tokens": 129,
+    "total_tokens": 401,
+    "semantic_result": "failed"
+  },
+  "prospective_fix": {
+    "present_npc_direct_question": "action_before_h0",
+    "absent_npc_name": "normal_triage",
+    "general_lore_question": "normal_triage",
+    "expected_catalog_option": "mara.founder",
+    "expected_effect": "mara.responds.without_founder_identity"
+  },
+  "verification": {
+    "tests_passed": 165,
+    "tests_failed": 0,
+    "warnings": 3,
+    "live_recheck": "pending_server_restart"
+  },
+  "approvals": {
+    "model_default": false,
+    "campaign": false,
+    "runtime": false,
+    "cap_001": false
+  }
+}
+

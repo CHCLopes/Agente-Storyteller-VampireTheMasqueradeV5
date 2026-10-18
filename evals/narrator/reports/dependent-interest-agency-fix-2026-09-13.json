@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "date": "2026-09-13",
+  "origin_batch": "095e7efd-081b-474f-b5ed-179658373ec2",
+  "historical_result_changed": false,
+  "scope": "terminal_dependent_interest_agency_false_positive",
+  "production_file": "api/scene_director_service.py",
+  "test_file": "tests/test_hypothetical_interest_regressions.py",
+  "core_before_sha256": "898c7e9134acee08c711196f2ee4230ddf968f767da87d30047a8e6f7aa93953",
+  "core_after_sha256": "30e7635f124698f7e44e52cb586b2470aebfb6415ee2d1f92372991a907e4aa4",
+  "tests_before_sha256": "849bc99e60cf9c3b14970693476aae402f11572ad1dfe3d3382fd05516f0a308",
+  "tests_after_sha256": "3a17882d04bfab5fc3857fd9fcbf4c605c1466a90a0cfdac0c40d647ccbd92cd",
+  "verification": {
+    "distinct_tests": 525,
+    "passed": 525,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 3,
+    "junit_sha256": "1db904a8f3c2eb607a60825dafd69261b183071c08f80a68b80650e2b44b65b8"
+  },
+  "provider_calls": 0,
+  "default_changed": false,
+  "cap_001_approved": false
+}

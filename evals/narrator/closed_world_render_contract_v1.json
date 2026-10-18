@@ -1,0 +1,283 @@
+{
+  "version": "closed-world-render-contract-v1",
+  "hypothesis_id": "closed_world_render_plan_v1",
+  "origin": "authored_synthetic_fixture",
+  "language": "pt-BR",
+  "word_budget": {"minimum": 30, "maximum": 150},
+  "fatal_criteria": [
+    "unlisted_render_claim",
+    "player_agency_attribution",
+    "unauthorized_secret_disclosure",
+    "mechanical_result_expansion",
+    "target_or_provenance_mismatch",
+    "schema_or_capsule_invalid",
+    "hidden_retry_or_fallback"
+  ],
+  "case_order": [
+    "hold-silent-bell",
+    "authorized-single-bell",
+    "known-sealed-tube",
+    "unknown-glass-disc",
+    "favorable-shutter-result",
+    "unfavorable-slab-result",
+    "npc-protected-code",
+    "ambiguous-sealed-boxes"
+  ],
+  "cases": [
+    {
+      "case_id": "hold-silent-bell",
+      "case_class": "wait_without_authorized_transition",
+      "prior_case_id": null,
+      "player_input": "Permaneço parado e escuto.",
+      "required_units": [
+        {"unit_id": "bell-still", "statement": "O pequeno sino de bronze permanece imóvel."},
+        {"unit_id": "cord-out-of-reach", "statement": "A corda do sino continua fora do alcance imediato."}
+      ],
+      "optional_units": [
+        {"unit_id": "arch-visible", "statement": "O arco de pedra continua visível atrás do sino."}
+      ],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador apenas permanece parado e escuta.",
+        "forbidden_extensions": ["Não mover o jogador.", "Não fazê-lo tocar a corda ou o sino."]
+      },
+      "unknowns": [
+        {"unknown_id": "bell-purpose", "statement": "A finalidade do sino não foi estabelecida."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "bell-rings", "statement": "O sino não pode tocar nem balançar.", "markers": ["o sino toca", "o sino balança", "a corda se move"]},
+        {"claim_id": "purpose-invented", "statement": "Não atribuir função ao sino.", "markers": ["serve de alarme", "chama os guardas", "abre a passagem"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "cool-air", "statement": "O ar junto ao arco é frio."},
+        {"unit_id": "stone-echo", "statement": "O recinto devolve um eco baixo da respiração ambiente."}
+      ],
+      "next_choice_boundary": "A próxima ação sobre o sino, a corda ou o arco permanece com o jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["bell-still", "cord-out-of-reach"]}
+    },
+    {
+      "case_id": "authorized-single-bell",
+      "case_class": "wait_with_one_authorized_environmental_transition",
+      "prior_case_id": "hold-silent-bell",
+      "player_input": "Continuo imóvel e atento.",
+      "required_units": [
+        {"unit_id": "bell-one-note", "statement": "O sino produz uma única nota curta."},
+        {"unit_id": "cord-remains-still", "statement": "A corda permanece imóvel e fora do alcance imediato."}
+      ],
+      "optional_units": [
+        {"unit_id": "arch-visible", "statement": "O arco de pedra continua visível atrás do sino."}
+      ],
+      "authorized_transition": {"transition_id": "bell-rings-once", "statement": "Sem movimento visível da corda, o sino soa uma vez e volta ao silêncio."},
+      "player_action_boundary": {
+        "declared_action": "O jogador continua imóvel e atento.",
+        "forbidden_extensions": ["Não mover o jogador.", "Não fazê-lo tocar a corda ou o sino."]
+      },
+      "unknowns": [
+        {"unknown_id": "bell-cause", "statement": "A causa da nota não foi estabelecida."},
+        {"unknown_id": "bell-purpose", "statement": "A finalidade do sino não foi estabelecida."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "cause-invented", "statement": "Não explicar a causa da nota.", "markers": ["uma engrenagem aciona", "alguém puxa", "o vento faz o sino tocar"]},
+        {"claim_id": "second-ring", "statement": "Não produzir outra nota.", "markers": ["toca novamente", "soa duas vezes", "uma segunda nota"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "brief-metal-note", "statement": "A nota metálica é breve."},
+        {"unit_id": "echo-fades", "statement": "O eco da nota desaparece no arco de pedra."}
+      ],
+      "next_choice_boundary": "Interpretar ou investigar o som permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "bell-rings-once", "required_unit_ids": ["bell-one-note", "cord-remains-still"]}
+    },
+    {
+      "case_id": "known-sealed-tube",
+      "case_class": "known_object_state_inspection",
+      "prior_case_id": null,
+      "player_input": "Examino o tubo de latão sem tocá-lo.",
+      "required_units": [
+        {"unit_id": "tube-on-shelf", "statement": "Um tubo de latão repousa na prateleira."},
+        {"unit_id": "wax-seal-intact", "statement": "O lacre de cera azul está intacto."}
+      ],
+      "optional_units": [
+        {"unit_id": "seal-mark", "statement": "O lacre mostra uma marca circular sem inscrição legível."}
+      ],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador examina o tubo à distância, sem tocá-lo.",
+        "forbidden_extensions": ["Não aproximar nem mover o jogador.", "Não tocar, girar, abrir ou romper o lacre."]
+      },
+      "unknowns": [
+        {"unknown_id": "tube-content", "statement": "O conteúdo do tubo não foi estabelecido."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "content-invented", "statement": "Não afirmar ou sugerir conteúdo.", "markers": ["há um mapa dentro", "contém documentos", "está vazio"]},
+        {"claim_id": "seal-changed", "statement": "Não alterar o lacre.", "markers": ["o lacre se rompe", "a cera racha", "o tubo se abre"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "brass-dull", "statement": "O latão tem brilho opaco."},
+        {"unit_id": "shelf-dry", "statement": "A madeira da prateleira está seca."}
+      ],
+      "next_choice_boundary": "Tocar, abrir ou deixar o tubo onde está permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["tube-on-shelf", "wax-seal-intact"]}
+    },
+    {
+      "case_id": "unknown-glass-disc",
+      "case_class": "unknown_object_state_inspection",
+      "prior_case_id": null,
+      "player_input": "Observo o disco de vidro negro à distância.",
+      "required_units": [
+        {"unit_id": "disc-visible", "statement": "Um disco de vidro negro está fixado à parede."}
+      ],
+      "optional_units": [
+        {"unit_id": "metal-rim", "statement": "Uma borda metálica estreita contorna o disco."}
+      ],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador apenas observa o disco à distância.",
+        "forbidden_extensions": ["Não aproximar nem mover o jogador.", "Não fazê-lo tocar ou ativar o disco."]
+      },
+      "unknowns": [
+        {"unknown_id": "disc-purpose", "statement": "A função do disco não foi estabelecida."},
+        {"unknown_id": "disc-active", "statement": "Não foi estabelecido se o disco está ativo."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "purpose-invented", "statement": "Não atribuir função ao disco.", "markers": ["é um espelho", "funciona como portal", "controla a porta"]},
+        {"claim_id": "activity-invented", "statement": "Não afirmar atividade interna.", "markers": ["o disco pulsa", "há luz dentro", "uma imagem surge"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "surface-dark", "statement": "A superfície é escura e uniforme."},
+        {"unit_id": "wall-pale", "statement": "A parede ao redor é clara."}
+      ],
+      "next_choice_boundary": "Aproximar-se, tocar ou ignorar o disco permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["disc-visible"]}
+    },
+    {
+      "case_id": "favorable-shutter-result",
+      "case_class": "resolved_favorable_mechanical_attempt",
+      "prior_case_id": null,
+      "player_input": "Ergo a veneziana emperrada.",
+      "required_units": [
+        {"unit_id": "test-succeeded", "statement": "O resultado mecânico foi favorável."},
+        {"unit_id": "shutter-hand-width", "statement": "A veneziana sobe até abrir uma fresta da largura de uma mão."}
+      ],
+      "optional_units": [
+        {"unit_id": "shutter-stops", "statement": "A veneziana para nessa posição."}
+      ],
+      "authorized_transition": {"transition_id": "shutter-opens-hand-width", "statement": "A veneziana deixa de estar fechada e abre somente uma fresta da largura de uma mão."},
+      "player_action_boundary": {
+        "declared_action": "O jogador ergue a veneziana conforme a tentativa já resolvida.",
+        "forbidden_extensions": ["Não fazê-lo olhar, passar a mão ou atravessar a fresta.", "Não ampliar a abertura."]
+      },
+      "unknowns": [
+        {"unknown_id": "space-beyond-shutter", "statement": "O espaço além da fresta não foi estabelecido."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "opening-expanded", "statement": "Não abrir além da largura de uma mão.", "markers": ["abre por completo", "sobe até o alto", "passagem livre"]},
+        {"claim_id": "beyond-invented", "statement": "Não descrever o espaço além.", "markers": ["há um pátio", "um corredor aparece", "alguém está do outro lado"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "wood-scrapes", "statement": "A madeira raspa no trilho."},
+        {"unit_id": "thin-air-current", "statement": "Uma corrente de ar estreita atravessa a fresta."}
+      ],
+      "next_choice_boundary": "Investigar a fresta ou abandonar a veneziana permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "shutter-opens-hand-width", "required_unit_ids": ["test-succeeded", "shutter-hand-width"]}
+    },
+    {
+      "case_id": "unfavorable-slab-result",
+      "case_class": "resolved_unfavorable_mechanical_attempt",
+      "prior_case_id": null,
+      "player_input": "Empurro a laje marcada.",
+      "required_units": [
+        {"unit_id": "test-failed", "statement": "O resultado mecânico foi desfavorável."},
+        {"unit_id": "slab-remains", "statement": "A laje permanece na mesma posição."},
+        {"unit_id": "chalk-flakes", "statement": "Parte da marca de giz se desfaz sobre a pedra."}
+      ],
+      "optional_units": [],
+      "authorized_transition": {"transition_id": "chalk-mark-flakes", "statement": "A marca de giz perde uma pequena parte, enquanto a laje permanece imóvel."},
+      "player_action_boundary": {
+        "declared_action": "O jogador empurra a laje conforme a tentativa já resolvida.",
+        "forbidden_extensions": ["Não fazê-lo tentar novamente.", "Não mover ou abrir a laje."]
+      },
+      "unknowns": [
+        {"unknown_id": "slab-mechanism", "statement": "Não foi estabelecido se existe mecanismo sob a laje."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "failure-reversed", "statement": "Não reverter o fracasso.", "markers": ["a laje se move", "a laje se abre", "uma passagem surge"]},
+        {"claim_id": "mechanism-invented", "statement": "Não afirmar mecanismo oculto.", "markers": ["uma trava interna", "engrenagens sob a pedra", "um mecanismo resiste"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "stone-rough", "statement": "A superfície da laje é áspera."},
+        {"unit_id": "chalk-pale", "statement": "O pó de giz é claro contra a pedra escura."}
+      ],
+      "next_choice_boundary": "Escolher outro método ou abandonar a laje permanece decisão do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "chalk-mark-flakes", "required_unit_ids": ["test-failed", "slab-remains", "chalk-flakes"]}
+    },
+    {
+      "case_id": "npc-protected-code",
+      "case_class": "protected_secret_with_authorized_clue",
+      "prior_case_id": null,
+      "player_input": "Iara, qual é o código do armário?",
+      "required_units": [
+        {"unit_id": "iara-withholds-code", "statement": "Iara não revela o código."},
+        {"unit_id": "iara-offers-route-card", "statement": "Iara oferece um cartão com a rota até o zelador."}
+      ],
+      "optional_units": [
+        {"unit_id": "card-on-palm", "statement": "O cartão permanece na palma aberta de Iara, disponível para o jogador aceitar ou recusar."}
+      ],
+      "authorized_transition": {"transition_id": "iara-offers-route-card", "statement": "Iara evita o código e oferece o cartão de rota como pista acionável."},
+      "player_action_boundary": {
+        "declared_action": "O jogador pergunta o código a Iara.",
+        "forbidden_extensions": ["Não fazer o jogador pegar o cartão.", "Não atribuir aceitação, recusa ou deslocamento ao jogador."]
+      },
+      "unknowns": [],
+      "forbidden_claims": [
+        {"claim_id": "card-accepted", "statement": "Não decidir que o jogador aceita o cartão.", "markers": ["você pega o cartão", "o cartão passa para sua mão", "você aceita a rota"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "card-cream", "statement": "O cartão é de papel creme."},
+        {"unit_id": "ink-blue", "statement": "A rota está traçada em tinta azul."}
+      ],
+      "next_choice_boundary": "Aceitar o cartão, insistir na pergunta ou agir de outro modo permanece escolha do jogador.",
+      "protected_secrets": [
+        {"secret_id": "locker-code", "statement": "O código do armário é 7319.", "markers": ["7319", "sete três um nove", "código: 7319"]}
+      ],
+      "expected": {"progression_required": true, "required_transition_id": "iara-offers-route-card", "required_unit_ids": ["iara-withholds-code", "iara-offers-route-card"]}
+    },
+    {
+      "case_id": "ambiguous-sealed-boxes",
+      "case_class": "ambiguous_action_preserving_next_choice",
+      "prior_case_id": null,
+      "player_input": "Aproximo-me do suporte e observo as caixas.",
+      "required_units": [
+        {"unit_id": "four-boxes", "statement": "Quatro caixas seladas repousam no suporte."},
+        {"unit_id": "no-box-chosen", "statement": "Nenhuma caixa foi escolhida ou aberta."}
+      ],
+      "optional_units": [
+        {"unit_id": "different-sizes", "statement": "As quatro caixas têm tamanhos diferentes."}
+      ],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador aproxima-se do suporte e apenas observa as caixas.",
+        "forbidden_extensions": ["Não escolher, tocar, abrir ou ordenar as caixas.", "Não atribuir preferência ao jogador."]
+      },
+      "unknowns": [
+        {"unknown_id": "box-contents", "statement": "O conteúdo das quatro caixas não foi estabelecido."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "box-types-invented", "statement": "Não inventar material, cor, rótulo ou conteúdo individual.", "markers": ["caixa de madeira", "caixa vermelha", "caixa metálica", "um rótulo", "contém"]},
+        {"claim_id": "choice-imposed", "statement": "Não impor escolha.", "markers": ["você escolhe", "você pega", "sua atenção prefere", "você decide abrir"]}
+      ],
+      "sensory_palette": [
+        {"unit_id": "support-stone", "statement": "O suporte é de pedra lisa."},
+        {"unit_id": "room-light-even", "statement": "A iluminação do recinto é uniforme."}
+      ],
+      "next_choice_boundary": "Escolher uma caixa, examiná-la melhor ou afastar-se permanece decisão do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["four-boxes", "no-box-chosen"]}
+    }
+  ]
+}

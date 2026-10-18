@@ -1,0 +1,264 @@
+{
+  "document_kind": "record_evidence_observation_review",
+  "date": "2026-09-07",
+  "batch_id": "2c1cafde-7508-43a6-b415-172f2c139aa0",
+  "evaluation_invocation_id": "6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa",
+  "status": "closed_operational_failure_no_semantic_sample",
+  "scope": {
+    "analysis_completed": true,
+    "live_inference_calls_by_agent": 0,
+    "new_live_run_prepared": false,
+    "raw_artifacts_modified": false,
+    "code_changed": false,
+    "tests_changed": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "automatic_repetition": false
+  },
+  "source": {
+    "summary": "eval-results/20260907T113910Z-6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa/summary.json",
+    "summary_sha256": "f8726f97ca49d7845ed59c8fd3c4fa7227e47b1c713a26fb2d291eb7137553cd",
+    "jsonl": "eval-results/20260907T113910Z-6c9951b4-2c5b-46bc-85ec-ba7cec8ea3fa/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+    "jsonl_sha256": "1ce49265ddfd8702691ca586360d0f27066dbd7d8dd2161251273b7e66e95eac",
+    "preparation": "evals/narrator/reports/record-evidence-v1-2026-09-07.json",
+    "preparation_sha256": "1c1b16039c273ca451e4b2c38b7e661b4ef1ed19b8fa0c2a720b0b3bb47d7198",
+    "request_dossier": "evals/narrator/reports/record-evidence-request-dossier-2c1cafde-2026-09-07.json",
+    "request_dossier_sha256": "a891c19c40be27c98d15f37e42a2f9f8a9706589403060d63c9cd41ced46c0fc"
+  },
+  "operational": {
+    "calls_made": 1,
+    "cases_skipped": 1,
+    "responses_available": 0,
+    "diagnostics": 0,
+    "retries": 0,
+    "provider_error": {
+      "category": "invalid_request",
+      "code": "groq_json_validate_failed",
+      "phase": "connect",
+      "safe_message": "LLM target rejected the request.",
+      "partial_output": false,
+      "external_id": "req_01m1xtmhhdeyjbew0n7ffxv9tg",
+      "status_code": 400,
+      "retryable": false,
+      "retry_after_seconds": null,
+      "rate_limit": null
+    },
+    "route": {
+      "status": "unavailable",
+      "calls_made": 1,
+      "verified_calls": 0,
+      "unavailable_calls": 1,
+      "mismatched_calls": 0,
+      "identity_consistent": null
+    },
+    "usage": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      }
+    },
+    "cost": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "process_exit_code": 1,
+    "evaluation_status": "completed",
+    "cases": [
+      {
+        "case_id": "opening",
+        "status": "provider_http_400",
+        "call_made": true
+      },
+      {
+        "case_id": "mara",
+        "status": "skipped",
+        "call_made": false,
+        "reason": "previous_operational_failure"
+      }
+    ],
+    "batch_duration_seconds": 3.72011,
+    "provider_evidence_seconds": 2.873578,
+    "local_latency_seconds": 2.881183,
+    "two_call_spacing_observable": false
+  },
+  "semantic_review": {
+    "status": "not_evaluable_no_response",
+    "hypothesis_result": "unobserved_due_to_operational_failure",
+    "semantic_samples": 0,
+    "fidelity_approval": null,
+    "support_coverage_approval": null,
+    "local_schema_or_admission_rejection_observed": false,
+    "zero_validation_counters_mean": "No response reached these validation stages; no semantic failure rate can be computed."
+  },
+  "comparison": {
+    "baseline_batch": "c9c01a48-a69d-43bd-9fa2-414ad0d6685b",
+    "baseline_calls": 2,
+    "baseline_admitted": 2,
+    "baseline_operational_exit": 0,
+    "baseline_semantic_result": "Opening still presupposed observation; two-input fidelity hypothesis not supported.",
+    "current_semantic_comparison_available": false,
+    "causal_comparison": false,
+    "system_user_experimental_schema_all_changed": true
+  },
+  "verification": {
+    "preflight_metadata_fields_reconstructed": 20,
+    "preparation_and_observed_metadata_match": true,
+    "summary_recomputed_exactly": true,
+    "source_narratives_and_units_preserved": true,
+    "preparation_file_hashes_rechecked": 29,
+    "implementation_hashes_rechecked": 9,
+    "request_body_reconstructed_not_captured": true,
+    "schema_audit": {
+      "provider_schema_matches_observed_sha256": true,
+      "provider_schema_sha256": "870dae95abab2212da69ebb6ba340f87eef450cd7c5bf060f3d6d8f1b667b407",
+      "default_alias_schema_equals_explicit_alias_schema": true,
+      "objects": [
+        {
+          "path": "$",
+          "all_properties_required": true,
+          "additional_properties_forbidden": true
+        },
+        {
+          "path": "$/$defs/FocusedSceneFact",
+          "all_properties_required": true,
+          "additional_properties_forbidden": true
+        },
+        {
+          "path": "$/$defs/RecordDerivationProposal",
+          "all_properties_required": true,
+          "additional_properties_forbidden": true
+        },
+        {
+          "path": "$/$defs/RecordSupport",
+          "all_properties_required": true,
+          "additional_properties_forbidden": true
+        },
+        {
+          "path": "$/$defs/SceneActor",
+          "all_properties_required": true,
+          "additional_properties_forbidden": true
+        }
+      ],
+      "local_schema_references_resolved": 5,
+      "all_of_present": false,
+      "defaults_present": false,
+      "independent_jsonschema_validator_run": false,
+      "independent_jsonschema_validator_limitation": "jsonschema was unavailable in the existing project and bundled Python runtimes; common Ajv entry points were unavailable in the bundled Node runtime. No dependency was installed.",
+      "authored_controls": [
+        {
+          "case_id": "opening",
+          "fixture_origin": "agent_authored_existing_contract_test_only",
+          "pydantic_schema_valid": true,
+          "support_references_and_ranges_valid": true,
+          "final_composition_schema_valid": true,
+          "fixed_narrative_preserved": true,
+          "support_count": 6,
+          "serialized_characters": 681,
+          "estimated_output_tokens_characters_divided_by_4": 171,
+          "provider_output_token_count": null,
+          "response_sample_sent_to_provider": false
+        },
+        {
+          "case_id": "mara",
+          "fixture_origin": "agent_authored_existing_contract_test_only",
+          "pydantic_schema_valid": true,
+          "support_references_and_ranges_valid": true,
+          "final_composition_schema_valid": true,
+          "fixed_narrative_preserved": true,
+          "support_count": 8,
+          "serialized_characters": 884,
+          "estimated_output_tokens_characters_divided_by_4": 221,
+          "provider_output_token_count": null,
+          "response_sample_sent_to_provider": false
+        }
+      ],
+      "authored_controls_are_model_observations": false,
+      "provider_schema_compilation_verified": false,
+      "semantic_fidelity_review": {
+        "status": "not_performed",
+        "approval": null
+      },
+      "support_coverage_review": {
+        "status": "not_performed",
+        "approval": null
+      }
+    },
+    "tests": {
+      "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider tests/llm/test_groq_structured_error_code.py::test_http_400_retains_only_exact_provider_code_without_reclassifying_or_retry tests/llm/test_groq_structured_error_code.py::test_http_200_local_structure_failure_is_not_recast_as_provider_http_400 tests/test_narrator_record_evidence_execution.py::test_all_provider_error_categories_abort_without_retry tests/test_narrator_record_evidence_execution.py::test_main_persists_progress_and_safe_summary",
+      "passed": 30,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 28.25,
+      "warning": "preexisting python_multipart PendingDeprecationWarning",
+      "external_network_blocked_by_conftest": true,
+      "env": {
+        "STORYTELLER_DISABLE_DOTENV": "1",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "historical_full_suite_not_repeated_or_added": true
+    },
+    "independent_reviews": 2,
+    "demonstrable_local_defect_found": false
+  },
+  "unknowns": [
+    "The failed generated content, if any, and the exact JSON field or constraint involved.",
+    "Whether truncation, internal schema handling, a refusal, or another provider-side condition caused this event.",
+    "Actual generated token count, reasoning-token consumption, and effective model identity.",
+    "Whether the provider compiled and enforced every submitted schema constraint.",
+    "Semantic fidelity, support correctness and coverage of an unavailable response."
+  ],
+  "next_step": {
+    "action": "Obtain additional provider-side details for req_01m1xtmhhdeyjbew0n7ffxv9tg if available; local reconstructed request dossier and unsent technical request draft are complete.",
+    "human_or_external_dependency": "provider_diagnostic_details_or_explicit_new_bounded_diagnostic_scope",
+    "provider_log_retention_known": false,
+    "provider_contact_sent": false,
+    "pending_call_waiting_only_for_key": false,
+    "new_execution_authorized_by_this_analysis": false,
+    "unused_second_call_is_new_experiment_credit": false,
+    "local_analysis_and_necessary_corrections_remain_authorized": true
+  },
+  "official_documentation": [
+    {
+      "url": "https://console.groq.com/docs/structured-outputs",
+      "checked_on": "2026-09-07",
+      "relevance": "Lists gpt-oss-120b for strict mode, requires all properties and closed objects, documents local definitions/references, and invites reports of 400 errors. Its general guarantee does not negate this observed failure."
+    },
+    {
+      "url": "https://console.groq.com/docs/api-reference",
+      "checked_on": "2026-09-07",
+      "relevance": "Documents json_schema, max_completion_tokens, low reasoning for GPT-OSS and include_reasoning; no unsupported transmitted parameter was established."
+    }
+  ],
+  "current_implementation_sha256": {
+    "scripts/evaluate_narrator_record_evidence.py": "25b500339fd0418714889d7b87b4a6b078e1f0dd4ee073346c7259424c629974",
+    "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+    "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+    "scripts/evaluate_narrator_models.py": "140c4cb0e602a7e84058980c7c6ec815e44c49829c7d177efd0b1eae373a5765",
+    "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+    "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+    "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+    "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+    "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+    "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+    "scripts/run_groq_record_evidence_probe.ps1": "b4305a01f8cd8647fb3ddc71badf89b389a772d10ff1247c4aa5ef3e531c42cc",
+    "skills/H6_vtm_narrator.md": "55fcd71a6367c42c3c5d1fa5e5589423d94af57b6a26af65cfdfab263d13eb70"
+  }
+}

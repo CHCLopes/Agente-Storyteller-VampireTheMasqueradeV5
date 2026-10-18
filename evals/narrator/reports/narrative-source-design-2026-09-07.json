@@ -1,0 +1,227 @@
+{
+  "schema": "storyteller.narrative-source-design.v1",
+  "created_at": "2026-09-07T23:07:17.3242458Z",
+  "status": "design_frozen_before_live_execution",
+  "direction": "B",
+  "direction_approved": true,
+  "authority": "User approved direction B and necessary bounded observations; secure credential remains a human dependency.",
+  "synthetic_only": true,
+  "live_calls_at_design": 0,
+  "runtime_promoted": false,
+  "cap_001_status": "not_evaluated",
+  "hypothesis": "An attributed complete narrative can support a second scene continuation without first generating an abstractive summary or atomic facts.",
+  "representation": {
+    "source": "complete normalized n",
+    "question": "q stored separately",
+    "identity": "source_only",
+    "semantic_truth": "not_assessed",
+    "free_canonical_derivation": "indeterminate",
+    "no_canonical_commit": true
+  },
+  "candidate": {
+    "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "reasoning_effort": "none",
+    "structured_mode": "native",
+    "campaign_data_eligible": false
+  },
+  "case": {
+    "schema": "storyteller.eval.narrative-source-case.v1",
+    "case_id": "greenhouse-observe-wait",
+    "synthetic_only": true,
+    "origin": "agent_authored_synthetic_case",
+    "scene": {
+      "location": "Estufa",
+      "npcs_present": []
+    },
+    "turns": [
+      {
+        "turn_id": "observe",
+        "player_input": "Observo a estufa do lugar onde estou, sem tocar em nada."
+      },
+      {
+        "turn_id": "wait",
+        "player_input": "Permaneço no mesmo lugar e espero, sem tocar em nada."
+      }
+    ]
+  },
+  "parameters": {
+    "max_calls": 2,
+    "max_output_tokens_per_call": 768,
+    "max_total_output_tokens": 1536,
+    "temperature": 0.65,
+    "initial_wait_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "per_call_deadline_seconds": 60,
+    "repetitions": 1,
+    "diagnostics": 0,
+    "retries": 0,
+    "fallbacks": 0,
+    "user_budget_estimated_tokens": 2000,
+    "budget_method": "characters_divided_by_4",
+    "overflow_policy": "reject_without_truncation"
+  },
+  "stopping_policy": "First operational, route, schema, profile or projection failure ends the chain and records a skip for the dependent turn. No replay or additional model call.",
+  "input_dependency": {
+    "first": "fixed SYSTEM plus canonical fixture and first player input",
+    "second": "same SYSTEM, fixed second player input and exact validated first SourceProjection",
+    "second_body_known_before_first_call": false,
+    "construction_code_frozen_before_dispatch": true,
+    "literal_user_and_body_hash_recorded_each_call": true,
+    "ab_comparison": false
+  },
+  "review_axes": [
+    "First n/q follows the declared passive action and fixed location/cast.",
+    "Second n preserves material participants, positions, negations and uncertainties from first n or narrates an explicit world transition.",
+    "World reaction does not invent player action or certify mechanics.",
+    "q leaves the next player action open and is not copied into attributed source.",
+    "Copy identity is reported separately from authored narrative continuity and quality."
+  ],
+  "acceptance": {
+    "operational": "both bounded calls pass exact route, schema, profile and source projection checks",
+    "authored_review": "required after observation; report supported, violated, ambiguous or not observed relationships with literal references",
+    "no_automatic_semantic_approval": true
+  },
+  "out_of_scope": [
+    "general semantic entailment classifier",
+    "LLM judge",
+    "canonical event or campaign commit",
+    "opening without a known scene",
+    "location or cast transitions",
+    "legacy save migration",
+    "automatic product profile selection",
+    "CAP-001 approval"
+  ],
+  "frozen_inputs": [
+    {
+      "file": "api/narrative_grounding.py",
+      "sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3"
+    },
+    {
+      "file": "tests/test_narrative_grounding.py",
+      "sha256": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+    },
+    {
+      "file": "scripts/narrator_source_profile.py",
+      "sha256": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112"
+    },
+    {
+      "file": "tests/test_narrator_source_profile.py",
+      "sha256": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+    },
+    {
+      "file": "evals/narrator/prompts/narrative-source-v1.md",
+      "sha256": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d"
+    },
+    {
+      "file": "evals/narrator/narrative_source_case_v1.json",
+      "sha256": "32f99638fed2c2acf7cdd59744d1217e3e2357401d5186e7a506ed939cacd1d8"
+    }
+  ],
+  "offline_foundation_evidence": {
+    "foundation": {
+      "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\after.json",
+      "source_sha256": "10356cb76a0e5becf877a99b6b22c715ba8c6771f0d2786ab3f0678b23ac5f28",
+      "record": {
+        "status": "passed",
+        "started_at": "2026-09-07T22:59:45.468898+00:00",
+        "finished_at": "2026-09-07T22:59:49.220819+00:00",
+        "elapsed_seconds": 3.7490587000502273,
+        "cwd": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_narrative_grounding.py"
+        ],
+        "process_exit_code": 0,
+        "distinct_test_cases": 24,
+        "cases_by_function": {
+          "test_whole_source_view_preserves_literal_n_and_attribution_without_truth_approval": 1,
+          "test_identical_text_does_not_establish_a_canonical_assertion": 1,
+          "test_changed_text_is_indeterminate_even_with_a_valid_reference": 6,
+          "test_binding_from_another_context_cannot_materialize_same_text": 4,
+          "test_old_binding_rejects_source_metadata_changes_even_when_text_hash_matches": 2,
+          "test_stale_or_forged_content_hashes_are_integrity_rejections": 3,
+          "test_forged_binding_instance_is_revalidated_before_deciding": 1,
+          "test_forged_source_only_assessment_cannot_materialize_an_unestablished_derivation": 2,
+          "test_existing_projection_instance_is_rechecked_after_text_and_binding_are_changed": 1,
+          "test_whole_source_projection_preserves_restricted_visibility": 2,
+          "test_non_utf8_source_metadata_is_rejected_with_a_closed_diagnostic": 1
+        },
+        "hashes_before": {
+          "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+          "tests/test_narrative_grounding.py": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+        },
+        "hashes_after": {
+          "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+          "tests/test_narrative_grounding.py": "8557f4901a5eb8ff1b9e8eb65c6d25b347f087e6ee9a5a8c2bf06e9e53c863a4"
+        },
+        "files_unchanged_during_test": true,
+        "pytest_runs": 1,
+        "legacy_test_files_executed": [],
+        "network_policy": "tests/conftest.py unchanged: external HTTPX and non-loopback sockets blocked",
+        "environment_policy": "allowlisted OS paths only; dotenv and pyc disabled; no credentials inherited",
+        "unicode_finding": "Static hypothesis was not reproduced; existing revalidation returns source_invalid. No module fix was needed.",
+        "stdout_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\pytest.stdout.txt",
+        "stderr_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-grounding-tests-b5adb9ac\\pytest.stderr.txt"
+      }
+    },
+    "profile": {
+      "source_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\final.json",
+      "source_sha256": "c3c5720313dae3559174c33024248661be6517088224598059c021364fc4b39c",
+      "record": {
+        "initial_run": {
+          "exit_code": 1,
+          "passed": 55,
+          "failed": 1,
+          "pytest_seconds": 1.44
+        },
+        "final_affected_run": {
+          "command": [
+            "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_narrator_source_profile.py",
+            "-k",
+            "test_question_cannot_delegate_npc_or_story_authority",
+            "-p",
+            "no:cacheprovider",
+            "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\question-family.xml",
+            "--basetemp=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-profile-jtedtd45\\question-temp"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.684768100036308,
+          "cases": 3
+        },
+        "distinct_final_cases": 57,
+        "all_final_cases_passed": true,
+        "files": {
+          "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+          "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016",
+          "api/narrative_grounding.py": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+          "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+          "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+          "api/turn_models.py": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7"
+        },
+        "unchanged_during_final_run": true,
+        "initial_implementation_preserved": true,
+        "live_calls": 0,
+        "test_scope": "only new test module; affected question family repeated after expectation correction"
+      }
+    }
+  },
+  "preparation_state": {
+    "foundation_cases": 24,
+    "profile_distinct_green_cases": 57,
+    "executor_and_wrapper": "in_progress_at_design_creation",
+    "provider_execution": "not_started"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-004-QWEN-GPT-OSS-REPLICATION-L1",
+  "status": "offline_ready_human_credential_pending",
+  "purpose": "confirm_between_run_uncertainty_without_admission_aggregation",
+  "source_hypothesis": "HYP-002-L2",
+  "same_cases": true,
+  "same_targets": true,
+  "same_parameters": true,
+  "max_calls": 16,
+  "calls_per_candidate": 8,
+  "automatic_retries": 0,
+  "narrative_retries": 0,
+  "repair": false,
+  "fallback": false,
+  "target_switch": false,
+  "best_of_selection": false,
+  "aggregate_for_admission": false,
+  "synthetic_only": true,
+  "paid_spend_authorized": false,
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "verification": {
+    "focused_tests_passed": 17,
+    "related_regression_tests_passed": 85,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_exit_code": 0,
+    "historical_hypothesis_002_reverification_exit_code": 0,
+    "missing_credential_stops_before_run": true
+  },
+  "candidates": [
+    {"model": "qwen/qwen3.8-27b", "reasoning": "none"},
+    {"model": "openai/gpt-oss-120b", "reasoning": "low"}
+  ],
+  "candidate_admitted": false,
+  "default_created": false
+}

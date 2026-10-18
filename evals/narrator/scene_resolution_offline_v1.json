@@ -1,0 +1,49 @@
+{
+  "version": "scene-resolution-offline-v1",
+  "origin": "authored_synthetic_fixture",
+  "gates": ["causality", "agency", "attribution", "progression", "non_contradiction"],
+  "cases": [
+    {
+      "case_id": "dialogue-admitted",
+      "expected": "admitted",
+      "player_input": "Mara, fale sobre este lugar.",
+      "npc_aliases": ["Mara"],
+      "protected_secrets": ["A fundadora foi Celina"],
+      "previous_scene": {"location": "Arquivo", "npcs_present": ["Mara"], "open_threads": ["Localizar o livro azul"], "last_turn": 4},
+      "beat": {"session_id": "offline", "operation_id": "dialogue-admitted", "turn_id": "turn-dialogue", "base_revision": 4, "selected_option_id": "mara-index", "beat_kind": "response", "outcome": "unresolved", "observable_change": "Mara indica o índice de entradas recentes.", "npc_move": {"npc_id": "mara", "action": "Mara responde e aponta o índice sobre a mesa.", "posture_after": "guarded"}, "open_threads": ["Descobrir por que uma entrada foi rasurada"], "pressure_before": "calm", "pressure_after": "watchful", "constraints": [{"kind": "must_show", "summary": "Mara responde neste turno e indica o índice."}, {"kind": "must_not_claim", "summary": "A fundadora foi Celina", "visibility": "storyteller"}], "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "resolution_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"},
+      "proposal": {"n": "Mara responde neste turno e indica o índice. Ela aponta a capa gasta sobre a mesa, onde as entradas recentes terminam numa linha rasurada. O papel amarelado conserva datas legíveis, mas a última anotação foi removida com cuidado e deixou fibras claras na margem.", "o": "unresolved", "l": "Arquivo", "s": "Mara mostrou o índice e uma linha rasurada passou a orientar a investigação.", "p": ["Mara"], "f": [{"k": "observation", "s": "Mara indica o índice de entradas recentes."}, {"k": "npc_action", "s": "Mara responde e aponta o índice sobre a mesa."}], "t": ["Descobrir por que uma entrada foi rasurada"], "r": [], "q": "O que você examina agora?"}
+    },
+    {
+      "case_id": "wait-admitted",
+      "expected": "admitted",
+      "player_input": "Aguardo.",
+      "npc_aliases": ["Mara"],
+      "protected_secrets": [],
+      "previous_scene": {"location": "Arquivo", "npcs_present": ["Mara"], "last_turn": 5},
+      "beat": {"session_id": "offline", "operation_id": "wait-admitted", "turn_id": "turn-wait", "base_revision": 5, "selected_option_id": "water-ledger", "beat_kind": "change", "outcome": "unresolved", "observable_change": "A água alcança a borda do livro-caixa.", "open_threads": ["Impedir que o livro-caixa seja molhado"], "pressure_before": "watchful", "pressure_after": "tense", "input_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "resolution_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"},
+      "proposal": {"n": "A água alcança a borda do livro-caixa. Uma gota escurece o couro enquanto Mara observa a aproximação da poça sem mover você. O gotejar continua regular, e a mancha se alarga devagar pela lombada, tornando visível que o volume sofrerá dano se permanecer ali.", "o": "unresolved", "l": "Arquivo", "s": "A poça chegou ao livro-caixa e tornou o risco imediato.", "p": ["Mara"], "f": [{"k": "complication", "s": "A água alcança a borda do livro-caixa."}], "t": ["Impedir que o livro-caixa seja molhado"], "r": [], "q": "Como você reage?"}
+    },
+    {
+      "case_id": "required-thread-omitted",
+      "expected": "rejected",
+      "expected_code": "scene_beat_open_thread_omitted",
+      "player_input": "Mara, fale sobre este lugar.",
+      "npc_aliases": ["Mara"],
+      "protected_secrets": [],
+      "previous_scene": {"location": "Arquivo", "npcs_present": ["Mara"], "last_turn": 4},
+      "beat": {"session_id": "offline", "operation_id": "required-thread-omitted", "turn_id": "turn-omission", "base_revision": 4, "selected_option_id": "mara-index", "beat_kind": "response", "outcome": "unresolved", "observable_change": "Mara indica o índice de entradas recentes.", "open_threads": ["Descobrir por que uma entrada foi rasurada"], "pressure_before": "calm", "pressure_after": "watchful", "input_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "resolution_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"},
+      "proposal": {"n": "Mara indica o índice de entradas recentes e deixa a capa gasta aberta sobre a mesa diante de você. As datas permanecem legíveis sob a poeira, enquanto uma linha raspada interrompe a sequência no fim da página e chama atenção imediata.", "o": "unresolved", "l": "Arquivo", "s": "Mara mostrou o índice de entradas recentes.", "p": ["Mara"], "f": [{"k": "observation", "s": "Mara indica o índice de entradas recentes."}], "t": [], "r": [], "q": "O que você examina?"}
+    },
+    {
+      "case_id": "player-agency-rejected",
+      "expected": "rejected",
+      "expected_code": "scene_player_agency_violation",
+      "player_input": "Aguardo.",
+      "npc_aliases": ["Mara"],
+      "protected_secrets": [],
+      "previous_scene": {"location": "Arquivo", "npcs_present": ["Mara"], "last_turn": 5},
+      "beat": {"session_id": "offline", "operation_id": "player-agency-rejected", "turn_id": "turn-agency", "base_revision": 5, "selected_option_id": "water-ledger", "beat_kind": "change", "outcome": "unresolved", "observable_change": "A água alcança a borda do livro-caixa.", "open_threads": ["Impedir que o livro-caixa seja molhado"], "pressure_before": "watchful", "pressure_after": "tense", "input_sha256": "1111111111111111111111111111111111111111111111111111111111111111", "resolution_sha256": "2222222222222222222222222222222222222222222222222222222222222222"},
+      "proposal": {"n": "A água alcança a borda do livro-caixa. Você corre até a mesa e ergue o volume antes que a próxima gota caia. Mara acompanha o movimento junto à estante, enquanto a poça continua crescendo e o couro úmido deixa uma marca escura sobre a madeira.", "o": "unresolved", "l": "Arquivo", "s": "A água chegou ao livro-caixa e você o retirou da mesa.", "p": ["Mara"], "f": [{"k": "complication", "s": "A água alcança a borda do livro-caixa."}], "t": ["Impedir que o livro-caixa seja molhado"], "r": [], "q": "O que você faz em seguida?"}
+    }
+  ]
+}

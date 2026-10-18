@@ -1,0 +1,180 @@
+{
+  "recorded_at": "2026-09-08T02:10:01.157270+00:00",
+  "scope": "Correções necessárias ao uso teste do jogo completo atual; direção B permanece fora do fluxo.",
+  "observation": {
+    "attempts": 10,
+    "completed_turns": 5,
+    "failed_attempts": 5,
+    "provider_invocations": 9,
+    "errors": {
+      "scene_player_prompt_not_actionable": 3,
+      "scene_thread_resolution_without_evidence": 1,
+      "preparation_ValueError_context_budget": 1
+    },
+    "call_limit_reached": false,
+    "rejected_raw_output_available": false,
+    "narrative_stagnation": "Cinco respostas visíveis repetem pressão/espera; NPC não responde à pergunta de identidade."
+  },
+  "changes": [
+    "Viewport limitado com rolagem própria na narrativa/HUD e controles visíveis; HUD móvel fechado não intercepta Ficha.",
+    "Aviso terminal em failed/cancelled/timeout, idempotente por operação, sem promover texto rejeitado.",
+    "Introdução determinística ao criar sessão, derivada apenas de local e presenças da semente; não gera história passada nem chamada LLM.",
+    "Pedido só de atributo pede perícia; orçamento insuficiente recebe diagnóstico específico sem descartar fatos.",
+    "Launcher do teste usa NARRATOR_CONTEXT_TOKEN_BUDGET=768; default global192 preservado.",
+    "Prompt runtime orienta falas/eventos concretos, respostas a perguntas relatadas, pergunta de ação simples e evidência explícita para resolver pendências.",
+    "Retomada explícita do mesmo SQLite/sessão com novo TestId e logs; consulta SQLite de preflight somente leitura, credencial nova protegida."
+  ],
+  "verification": {
+    "backend_distinct_passed": 99,
+    "backend_runs": [
+      88,
+      44
+    ],
+    "backend_overlap": 33,
+    "frontend_protocol_passed": 25,
+    "frontend_components_passed": 5,
+    "launcher_process_checks_passed": 7,
+    "visual_viewports": [
+      {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "document_height_before": 11753,
+        "document_height_after": 768,
+        "narrative_client_height": 572,
+        "checks": {
+          "document_matches_viewport": true,
+          "narrative_has_internal_scroll": true,
+          "narrative_has_no_horizontal_overflow": true,
+          "controls_inside_viewport": true,
+          "hud_accessible": true,
+          "no_game_actions": true
+        }
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document_height_before": 29383,
+        "document_height_after": 844,
+        "narrative_client_height": 552,
+        "checks": {
+          "document_matches_viewport": true,
+          "narrative_has_internal_scroll": true,
+          "narrative_has_no_horizontal_overflow": true,
+          "controls_inside_viewport": true,
+          "hud_accessible": true,
+          "no_game_actions": true
+        }
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "document_height_before": 36712,
+        "document_height_after": 568,
+        "narrative_client_height": 276,
+        "checks": {
+          "document_matches_viewport": true,
+          "narrative_has_internal_scroll": true,
+          "narrative_has_no_horizontal_overflow": true,
+          "controls_inside_viewport": true,
+          "hud_accessible": true,
+          "no_game_actions": true
+        }
+      },
+      {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "document_height_before": 13272,
+        "document_height_after": 390,
+        "narrative_client_height": 139,
+        "checks": {
+          "document_matches_viewport": true,
+          "narrative_has_internal_scroll": true,
+          "narrative_has_no_horizontal_overflow": true,
+          "controls_inside_viewport": true,
+          "hud_accessible": true,
+          "no_game_actions": true
+        }
+      }
+    ],
+    "build": {
+      "command": "npm run build",
+      "typescript": "passed",
+      "vite": "passed",
+      "served_equals_validated": true,
+      "artifacts": {
+        "favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+        "icons.svg": "7ca2d67c9c3aebf50cdc8709ee8aacf8cdb8cc7ea6325ea94939caef5da1c53d",
+        "index.html": "10d99535b5327066a94ce8d9f639bbeea18a1d9031d6bf1cb23bd6bcd1ac05bc",
+        "assets/index-D8i58MgF.js": "868742360de98865cedc74fe9d72867264fabfef93c1ee7990698ea674038e2d",
+        "assets/index-N-c-5thp.css": "ef57cc4ade7a62b9728c5f54f42853aad6b4c674c1848f2cfdbbc6e2003e4ccf"
+      }
+    },
+    "provider_calls_during_fixes": 0
+  },
+  "review": {
+    "independent_review": "completed",
+    "resume_log_reuse_issue": "fixed; stopped resume identity is refused before writing, offline preflight can become one launch",
+    "prompt_word_count_method": "395 words in runtime BODY by split(), matching existing test"
+  },
+  "preservation": {
+    "pending": 0,
+    "attempts": {
+      "completed": 5,
+      "failed": 5
+    },
+    "turns": 5,
+    "snapshot": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-playtest-feedback-20260908\\before-restart.sqlite3",
+    "source_modified": false
+  },
+  "restart": {
+    "new_launcher_pid": 13828,
+    "new_test_id": "588b8d22-a985-42aa-80cc-63974c875353",
+    "updated_at": "2026-09-08T02:06:18.5960257Z",
+    "stopped_owned_server_pid": 23336,
+    "original_launcher_pid": 26144,
+    "original_session_preserved": true
+  },
+  "lifecycle": {
+    "updated_at": "2026-09-08T02:06:23.4748695Z",
+    "code": "",
+    "test_id": "588b8d22-a985-42aa-80cc-63974c875353",
+    "status": "awaiting_secure_credential",
+    "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "resumed_from_test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "server_pid": null,
+    "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29"
+  },
+  "limitations": [
+    "Melhora da continuidade narrativa ainda não observada depois do ajuste; readiness não prova qualidade narrativa.",
+    "Saídas recusadas não estavam armazenadas; não alegar falso positivo nem reclassificar tentativas anteriores.",
+    "Reload recupera as narrativas comprometidas; entradas locais e falhas ausentes do payload backend não são reidratadas.",
+    "Introdução vale para novas sessões; a retomada conserva a cena existente.",
+    "Direção B, aprovação CAP-001 e mudança comercial/default não seguem deste teste."
+  ],
+  "files_sha256": {
+    "api/main.py": "2b0af1c7bd7e276f5047dfebba79f1eb3bc3a0fd362d14520c4bef1e6fd9b401",
+    "api/scene_service.py": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+    "api/orchestrator_service.py": "4752f6d4f4b9be65059cd1a9eb555962f87959d3ced8682d4779655f883c5a85",
+    "skills/H6_vtm_narrator.md": "afc71bbf83bc8f6197dfd1cca9b50a80938845dd70b118ec33dc47fd8f0428c1",
+    "client/src/App.tsx": "4bc607025fb01eaacb03e67bbc44b36d40f2d85f02f3cdb66f7888c65bcacd7d",
+    "client/src/index.css": "058c4ef01f162f76626cc5c77cc3d826fd61b77aab3c5b01887265ab0a49b206",
+    "client/src/components/NarrativeLog.tsx": "eb8cea10541f35b21c4195a1d729047f497c51895f86ef240c4b94b32b97f466",
+    "client/src/narrativeProtocol.ts": "5d314065cba0346a5a6c8774203fdc69c76db9ddd1996135fbbdd0b8e1358c5c",
+    "client/src/narrativeProtocol.test.ts": "5fa7c94d5f0bab53502165b39842a1188b1c77cb691231057d6cf0cb9f54dbdc",
+    "tests/test_scene_service.py": "0fb2aba3251adf747663ab1eb7e8db8f5260942bbe1029726d2730a387b0eb32",
+    "tests/test_websocket_transactional.py": "0970a3b7d67c145efca3cebe2a7d28131f186915aa4f57b84b95b55de69847dd",
+    "tests/test_manual_game_regressions.py": "d50973714d80a159f77342b2c5dbd2dca7195e44ee149a251244880b16cf3b63",
+    "scripts/run_storyteller_manual_test.ps1": "b154cc08764752340162041362f6fdf55399ba4caa2e229cda7aa5c29c82ead1",
+    "scripts/manual_game_preflight.py": "33cefc1159142bee42ec2749938cb918112d22d4885f384ccac0638cfda59d0b"
+  },
+  "next_step": "Usuário insere chave na janela protegida PID13828. Consultar status do novo run; após ready atualizar a mesma aba para carregar layout, sem enviar ações pelo usuário."
+}

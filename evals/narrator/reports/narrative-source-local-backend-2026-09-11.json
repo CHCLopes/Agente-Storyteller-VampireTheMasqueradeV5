@@ -1,0 +1,268 @@
+{
+  "date": "2026-09-11",
+  "closed_at_utc": "2026-09-12",
+  "status": "completed_inactive_backend",
+  "distinct_backend_cases": 280,
+  "latest_failures": 0,
+  "latest_errors": 0,
+  "latest_skips": 0,
+  "counts": {
+    "observation-initial": {
+      "failure": 44,
+      "error": 0,
+      "skipped": 0,
+      "tests": 89
+    },
+    "observation-corrected-fixture": {
+      "failure": 0,
+      "error": 0,
+      "skipped": 0,
+      "tests": 45
+    },
+    "app-initial": {
+      "failure": 1,
+      "error": 0,
+      "skipped": 0,
+      "tests": 25
+    },
+    "app-final": {
+      "failure": 0,
+      "error": 0,
+      "skipped": 0,
+      "tests": 25
+    },
+    "handler": {
+      "failure": 0,
+      "error": 0,
+      "skipped": 0,
+      "tests": 37
+    },
+    "regressions": {
+      "failure": 0,
+      "error": 0,
+      "skipped": 0,
+      "tests": 129
+    }
+  },
+  "observation_reconciled": {
+    "distinct": 89,
+    "passed": 89
+  },
+  "code_hashes": {
+    "tests/test_narrative_source_local_app.py": "17894392cf28a8d7e988c6efef55aef8b1595312ace66deb64f6820cd5c643d4",
+    "api/narrative_source_local_app.py": "26e565979dcbeed275c07ad790ede4f1926fc3c635781a285c136b5036d837ec",
+    "api/narrative_source_local_selection.py": "3dd9ce5d926fbd0ccc7e4d85cf22c8f045096b10fa3717b7ecb8f1a5dab14aa3",
+    "tests/test_narrative_source_local_handler.py": "8a354c88d14eafa596abb0ebe4075ae5ad193d7690b65271c592ce450ba9b4a1",
+    "api/narrative_source_local_handler.py": "cd74a88efc0bee1ad77c3bed8e4fe24c38f5902495ccea91ffb10480e5e0c6de",
+    "api/persistence.py": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8",
+    "api/narrative_source_observation.py": "02bafd4bb76ecc13f39f0914f53d546fd5d6a1f8d30976c20ac4d93204495ced",
+    "tests/test_narrative_source_setup_persistence.py": "4d167053b9c91333d38817ed8bd22c627f3b0ba9f64f2baef41b775e96ecd540",
+    "tests/test_narrative_source_status_persistence.py": "907e559e70ce1de1c0ed9dec7b44ee3e91647aaf7d0ff6ca3ccaed6a65ac836e",
+    "tests/test_narrative_source_input_persistence.py": "46268dd4e970191d0d75dcb28182230b77d18e9f6f9ce6f6d602036c957dcd43",
+    "tests/test_narrative_source_observation.py": "b34ee775066b8a11cbcb3e905a2772806e39331728d077074428097a41ab0db3",
+    "tests/test_narrative_source_observation_persistence.py": "98db1e3a7eb2027aded4ce1096082642403849fb05d50fcc89bfbc7998d20c40"
+  },
+  "copies": [
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round1\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-initial/result.json",
+      "sha256": "62b2df254750170dd698566cff5642ae705240bcd164702329c645f4acbcdcc8"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round1\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-initial/pytest.log",
+      "sha256": "5507aea6b1de00748b8b8f374ebe45051855c774ac05ddbd00b1fd999e968159"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round1\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-initial/results.xml",
+      "sha256": "dc5642d8ce0cee5d4fe6f33b2b9b1e1490475abe868ccfe08bb5f6759186c938"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round1\\hashes-before.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-initial/hashes-before.json",
+      "sha256": "edaae1c644c02d2f0ecc97284246e2bf9f9a470c756765eb89ec914da0093982"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round1\\hashes-after.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-initial/hashes-after.json",
+      "sha256": "edaae1c644c02d2f0ecc97284246e2bf9f9a470c756765eb89ec914da0093982"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round2\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-corrected-fixture/result.json",
+      "sha256": "f01cbd55814f001d71a387aef45555f6d02504e531c44149a56d1d0df6515094"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round2\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-corrected-fixture/pytest.log",
+      "sha256": "1ea2ababd9d07a07d7b4c4f7e28eac60e672057255b80aeafc9d72d0a66f2e05"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round2\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-corrected-fixture/results.xml",
+      "sha256": "9ffb48b936e0658a6cae24842f11e19f280928761fd2491d6b54ed9c2836ceb3"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round2\\hashes-before.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-corrected-fixture/hashes-before.json",
+      "sha256": "cf0b18f9e4ad236b561cca7096fb0e9c06fe5c3d2da729cd63f385954169c2e4"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-20260911-round2\\hashes-after.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-corrected-fixture/hashes-after.json",
+      "sha256": "cf0b18f9e4ad236b561cca7096fb0e9c06fe5c3d2da729cd63f385954169c2e4"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-c4be6b16-f40e-43f1-94f4-f763ea96b70b\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-initial/result.json",
+      "sha256": "51392b9fb102b6a2120eecf808140e4437f1b52170fdbbede9577b4192b3dc75"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-c4be6b16-f40e-43f1-94f4-f763ea96b70b\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-initial/pytest.log",
+      "sha256": "4f9b4b6dd0f77c4dc3220305fe9cb13fa08f454531a4ddc3c894630dd75c4190"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-c4be6b16-f40e-43f1-94f4-f763ea96b70b\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-initial/results.xml",
+      "sha256": "6f1b60455655bcd56f1ebf09e8115c2115d227c52ef75db98d7e7b24dcb92d41"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-38812a57-62dc-4e2f-b5a0-e4bcb4ce3b4e\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-final/result.json",
+      "sha256": "05fa2e9d7ca78026f2c40e8f2ec12d75a0549f9cd871df17b5faa2312818632b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-38812a57-62dc-4e2f-b5a0-e4bcb4ce3b4e\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-final/pytest.log",
+      "sha256": "f3ee1afc822a9529f0778a406b402335ac5d2a4ba21371c311a244ab3d4454bf"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-tests-38812a57-62dc-4e2f-b5a0-e4bcb4ce3b4e\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/app-final/results.xml",
+      "sha256": "5cf79a0e0f7f258fcfa2cf0cea93ca35f213dfc88bbb82602f2dc8d3896aa59a"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-handler-tests-b95c31f7-e9be-4a41-a43b-178aeb5596c7\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/handler/result.json",
+      "sha256": "9219cc76b4414a4ae63d667d118f226d648a17d6e904ebb5dc194e995e6b5b0b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-handler-tests-b95c31f7-e9be-4a41-a43b-178aeb5596c7\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/handler/pytest.log",
+      "sha256": "1554de2ddf1f84f79562dd78464036d1b433bf5f94e13d191494e50fc9f7eeac"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-handler-tests-b95c31f7-e9be-4a41-a43b-178aeb5596c7\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/handler/results.xml",
+      "sha256": "0034f0ff3bcadf06587bd8b23094e5a0ead767f504155bab91e9c60494ddd521"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-persistence-regressions-e5c5378a-135f-4caa-b64c-0f6013a1e953\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/regressions/result.json",
+      "sha256": "966cd0e14845f44e2d22c35a6c454c23df958aacb50d3d839fbf5e714d92157d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-persistence-regressions-e5c5378a-135f-4caa-b64c-0f6013a1e953\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/regressions/pytest.log",
+      "sha256": "e974fbc5de84152c0e499a0db1bd12731bb8e9a5cbcb823ce4b4e1ed9bd8099e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-persistence-regressions-e5c5378a-135f-4caa-b64c-0f6013a1e953\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/regressions/results.xml",
+      "sha256": "ce4d38102fc914842b0a3e4d955255c788f03496f91e13962c166dcec0c962c4"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-tests-reconciliation-20260911.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/tests/observation-reconciliation.json",
+      "sha256": "d1ecd3fbd97254c7a184308af945fd594bf336139b1967a5341fa4794f3e2e89"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-app-wal-diagnostic-m0pzubee\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/diagnostic/wal-checkpoint.json",
+      "sha256": "8b343b90518e3f35a6b37d5b59906b819e4ff4fc8ac116b581df863b87db89ea"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-persistence-reviewed-20260911.diff",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/review/persistence-additions.diff",
+      "sha256": "4afe81de55abe201bbffb7956f193c3c138ed4991eeea75b982735297809072f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-handler-reviews-5257fe46-cfcd-4379-a87a-1cbca8f5f141\\reader-review.md",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/review/reader-review.md",
+      "sha256": "6fe2ccbbf0fde6110465b28139ae87989f510b447ff22f84af26532e1aaf062e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-observation-handler-reviews-5257fe46-cfcd-4379-a87a-1cbca8f5f141\\handler-review.md",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/review/handler-review.md",
+      "sha256": "37515887a4ffd62c050bf9916a4a9a77d6f39f038250f19f7e7e39d83f132bc8"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_local_app.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_local_app.py",
+      "sha256": "17894392cf28a8d7e988c6efef55aef8b1595312ace66deb64f6820cd5c643d4"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_app.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/api/narrative_source_local_app.py",
+      "sha256": "26e565979dcbeed275c07ad790ede4f1926fc3c635781a285c136b5036d837ec"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_selection.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/api/narrative_source_local_selection.py",
+      "sha256": "3dd9ce5d926fbd0ccc7e4d85cf22c8f045096b10fa3717b7ecb8f1a5dab14aa3"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_local_handler.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_local_handler.py",
+      "sha256": "8a354c88d14eafa596abb0ebe4075ae5ad193d7690b65271c592ce450ba9b4a1"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_handler.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/api/narrative_source_local_handler.py",
+      "sha256": "cd74a88efc0bee1ad77c3bed8e4fe24c38f5902495ccea91ffb10480e5e0c6de"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\persistence.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/api/persistence.py",
+      "sha256": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_observation.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/api/narrative_source_observation.py",
+      "sha256": "02bafd4bb76ecc13f39f0914f53d546fd5d6a1f8d30976c20ac4d93204495ced"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_setup_persistence.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_setup_persistence.py",
+      "sha256": "4d167053b9c91333d38817ed8bd22c627f3b0ba9f64f2baef41b775e96ecd540"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_status_persistence.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_status_persistence.py",
+      "sha256": "907e559e70ce1de1c0ed9dec7b44ee3e91647aaf7d0ff6ca3ccaed6a65ac836e"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_input_persistence.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_input_persistence.py",
+      "sha256": "46268dd4e970191d0d75dcb28182230b77d18e9f6f9ce6f6d602036c957dcd43"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_observation.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_observation.py",
+      "sha256": "b34ee775066b8a11cbcb3e905a2772806e39331728d077074428097a41ab0db3"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_observation_persistence.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-backend-20260911/implementation/tests/test_narrative_source_observation_persistence.py",
+      "sha256": "98db1e3a7eb2027aded4ce1096082642403849fb05d50fcc89bfbc7998d20c40"
+    }
+  ],
+  "provider_calls": 0,
+  "default_runtime_activated": false,
+  "browser_verified": false,
+  "historical_raw_files_unchanged": 6,
+  "historical_checkpoint_copies_unchanged": 53,
+  "known_limit": "Loopback selection is not account authentication. Browser composition is a separate next step."
+}

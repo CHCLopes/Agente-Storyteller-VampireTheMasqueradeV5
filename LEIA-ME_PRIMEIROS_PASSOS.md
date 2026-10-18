@@ -1,82 +1,96 @@
-# 🦇 A Primeira Noite: Guia de Iniciação ao Agente Storyteller
+# 🦇 A Primeira Noite: primeiros passos
 
-Bem-vindo às sombras. Este é o seu **Agente Storyteller**, um Narrador de Inteligência Artificial totalmente offline e privado, construído para guiar suas crônicas de *Vampiro: A Máscara (5ª Edição)*.
+O Agente Storyteller é local-first: regras, estado da campanha, eventos e memória
+ficam sob controle da aplicação local. Isso não obriga que a inferência do LLM
+ocorra no mesmo computador. Você escolhe explicitamente um único alvo compatível
+com a API OpenAI; o sistema não seleciona provedor ou modelo e não faz fallback.
 
-Antes de rolarmos os dados, precisamos preparar o seu "Refúgio" (o ambiente onde o jogo irá rodar). Leia este guia com atenção para garantir que a sua experiência seja segura, rápida e imersiva.
+Para detalhes de arquitetura e desenvolvimento, consulte o [README](README.md).
 
----
+## 1. Prepare o projeto
 
-## 🛡️ Promessa de Segurança e Privacidade (Zero-Cloud)
+Requisitos:
 
-Este projeto foi desenhado com foco absoluto na sua privacidade.
-* **100% Offline:** O seu jogo, as suas escolhas e a sua ficha nunca saem do seu computador. Nenhuma informação é enviada para a nuvem.
-* **Isolamento (Sandbox):** O Agente opera estritamente dentro da pasta que você definir. Ele não tem acesso aos seus arquivos pessoais, fotos ou documentos do sistema operacional.
+- Python 3.11 ou superior;
+- Node.js `^20.19.0` ou `>=22.12.0`;
+- um alvo LLM OpenAI-compatible capaz de geração estruturada e streaming.
 
----
+Na raiz do projeto:
 
-## 📂 Passo 1: Escolha o seu Refúgio (Instalação)
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r api/requirements.txt
 
-Você tem duas opções para abrigar o seu Narrador. Escolha a que melhor se adapta à sua caçada:
+Set-Location client
+npm ci
+npm run build
+Set-Location ..
+```
 
-### Opção A: O Refúgio Portátil (Pendrive USB)
-Ideal se você quer jogar em diferentes computadores (no trabalho, na casa de amigos) sem instalar os modelos pesados na máquina hospedeira.
-1. Formate um Pendrive com pelo menos **32GB** (recomendado devido ao tamanho dos modelos).
-2. Crie uma pasta raiz chamada `VTM_Storyteller`.
-3. Extraia os arquivos deste projeto diretamente para dentro dessa pasta.
+## 2. Configure o alvo LLM
 
-### Opção B: O Santuário Local (Disco Rígido)
-Ideal para computadores pessoais, oferecendo tempos de carregamento ligeiramente mais rápidos.
-1. Crie uma pasta isolada no seu computador (Ex: `C:\Jogos\VTM_Storyteller`).
-2. **Aviso de Segurança:** Não coloque esta pasta dentro de diretórios críticos do sistema (como `System32` ou `Windows`).
-3. Extraia os arquivos deste projeto para a pasta criada.
+Copie o template para um arquivo local ignorado pelo Git:
 
----
+```powershell
+Copy-Item .env.example .env
+```
 
-## 🔒 Passo 2: O Despertar do Narrador (Configuração do Motor)
+Preencha `LLM_TARGET_ID`, `LLM_PROVIDER_LABEL`, `LLM_MODEL`, `LLM_BASE_URL`,
+`LLM_STRUCTURED_GENERATION` e `LLM_STREAMING`. `LLM_API_KEY` é opcional apenas
+no adaptador genérico e obrigatório para OpenRouter, Gemini e NVIDIA NIM.
+`LLM_REASONING_EFFORT` também é opcional e deve ser omitido quando o alvo não
+declarar suporte; para modelos locais compatíveis, `none` reduz latência em
+operações mecânicas e estruturadas.
 
-O Agente Storyteller utiliza o **LM Studio** como motor principal. Siga os passos abaixo para garantir o isolamento total (Sandbox):
+O servidor ou serviço escolhido precisa estar disponível antes de iniciar o jogo.
+O Agente Storyteller não o instala nem o inicia. Se o alvo for remoto, prompts e o
+contexto selecionado para narrar o turno serão enviados a esse serviço; avalie a
+política de privacidade correspondente. Se for local, mantenha a URL restrita à
+interface de loopback sempre que possível.
 
-### 2.1 Instalando o LM Studio
-1. Acesse o site oficial: [https://lmstudio.ai/download](https://lmstudio.ai/download)
-2. Baixe e instale o programa normalmente no seu Windows, Mac ou Linux. 
-3. **Dica de UX:** Você não precisa mover o programa para a pasta do jogo. O Windows gerenciará o executável, mas nós configuraremos ele para ler apenas a nossa pasta de jogo.
+Para Gemini direto, use o modelo estável fixo `gemini-3.7-flash`, nunca um alias
+`latest`. A modalidade gratuita pode usar prompts e respostas para melhorar
+produtos; por isso ela deve ficar restrita aos testes sintéticos documentados em
+`evals/narrator/README.md`, sem dados de campanha. O runtime principal exige
+também `LLM_CAMPAIGN_DATA_ALLOWED=true`; mantenha-o falso até confirmar que a
+política do projeto associado à chave permite o envio da campanha.
 
-### 2.2 Configurando o Sandbox (Vital!)
-Por questões de segurança e para que o projeto seja portátil e isolado, precisamos dizer ao LM Studio onde os "cérebros" (modelos) estão:
-1. Abra o LM Studio.
-2. No menu lateral esquerdo, clique no ícone de **Engrenagem (Settings)**.
-3. Procure por **"My Models Directory"** (Caminho dos Modelos).
-4. Clique em **"Change"** e aponte para a pasta `\models` que está dentro da sua pasta principal `VTM_Storyteller`. 
-   * *Isso garante que gigabytes de dados fiquem no seu pendrive/pasta e não "sujem" o seu computador.*
+Para NVIDIA NIM, fixe `LLM_ADAPTER_KIND=nvidia`, o provedor `NVIDIA NIM`, a URL
+`https://integrate.api.nvidia.com/v1` e o modelo
+`nvidia/nemotron-3-ultra-550b-a55b`. O runtime recebe a chave apenas por
+`LLM_API_KEY`; a variável `NVIDIA_API_KEY` é exclusiva do avaliador sintético.
+O trial gratuito não deve receber cenas, memórias ou segredos da campanha.
+Mantenha `LLM_CAMPAIGN_DATA_ALLOWED=false` e só habilite o runtime depois de
+confirmar uma política apropriada para dados reais.
 
-### 2.3 Baixando as Mentes da IA
-No LM Studio, vá na opção de pesquisa (botão **"Model Search"**, o ícone de lupa) e busque pelos modelos abaixo. 
-**Regra de Ouro:** Escolha sempre as versões que pesam entre **4GB e 5GB** e que possuam o maior número de downloads/corações.
+## 3. Inicie e valide
 
-Busque e baixe:
-* 🧠 **Agente Operador (`qwen2.5-1.5b-instruct`):** O Árbitro das regras.
-* 👁️ **Agente de Memória (`deepseek-r1-distill-qwen-7b`):** O Arquivista da história.
-* 🎭 **Agente Storyteller (`llama-3.2-3b-instruct`):** O Mestre da narrativa.
+```powershell
+python scripts\initialize_game.py
+```
 
----
+O inicializador abre um único processo do backend na porta 8000 e executa um teste
+sintético sem dados da campanha. O sistema só é declarado pronto quando a
+configuração, as capabilities e a resposta do alvo são válidas.
 
-## ⚙️ Passo 3: Iniciando a Sessão
+No Windows, `INICIAR_JOGO.bat` também prepara o ambiente, compila o frontend e
+chama esse inicializador. Revise o `.env` antes de usá-lo.
 
-Com o LM Studio configurado e os modelos baixados, é hora de começar:
+## 4. Comece a jogar
 
-1. **Abra o LM Studio** e vá na clique no segundo botão da barra lateral esquerda chamado **"Developer"**. Dentro dele procure por **"Local Server"**. Clique nele.
-2. Dentro de **"Local Server"**, procure o botão **Server Settings** e clique nele. Um novo menu se abrirá e, no primeiro item, **Server Port** , certifique-se de que o servidor está rodando na porta padrão (1234).
-3. Agora, vá na sua pasta `VTM_Storyteller` e dê um duplo clique no arquivo **`INICIAR_JOGO.bat`**.
-4. Este script fará a conexão automática entre a interface do jogo e o LM Studio.
-5. Aguarde a mensagem no terminal: `[Sistema] Coterie de Agentes Online e Aguardando.`
+Abra `http://localhost:8000` e descreva a ação do personagem. Ações narrativas
+podem ser escritas em linguagem natural; ações mecânicas reconhecidas são
+resolvidas pelos módulos determinísticos antes da narrativa.
 
----
+Os comandos “Inicie uma nova crônica” e “Continue minha jornada” são texto de
+jogador, não operações administrativas de criar, apagar ou trocar campanha. A
+campanha ativa é identificada pela sessão carregada na interface.
 
-## 🩸 Passo 4: Suas Primeiras Palavras
+## Dados e privacidade
 
-Abra o seu navegador no endereço fornecido pelo terminal e use um dos comandos:
-
-**Para Nova Campanha:** Digite **"Inicie uma nova crônica."**
-**Para Carregar Jogo:** Digite **"Continue minha jornada."**
-
-***Lembre-se: A Besta está sempre faminta. Jogue com sabedoria.***
+- O estado canônico é armazenado por padrão em
+  `data/saves/storyteller.sqlite3`.
+- JSON legados são importados de forma não destrutiva e permanecem como fonte.
+- O arquivo `.env` pode conter credenciais e nunca deve ser versionado ou enviado.
+- Use um único worker do backend no MVP; a coordenação de sessão é local ao processo.

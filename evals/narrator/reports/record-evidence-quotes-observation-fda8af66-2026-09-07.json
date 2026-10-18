@@ -1,0 +1,210 @@
+{
+  "document_kind": "record_target_quotes_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T15:04:28.648654+00:00",
+  "status": "closed_missing_quote_and_fidelity_findings",
+  "batch_id": "fda8af66-ac22-44d2-839f-c0e587abec70",
+  "evaluation_invocation_id": "f6f7d63d-b888-4d16-b201-46bbc8dee31e",
+  "source": {
+    "directory": "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+      "summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae"
+    }
+  },
+  "scope": {
+    "calls": 1,
+    "retries": 0,
+    "fallback": false,
+    "raw_artifacts_modified": false,
+    "new_observations_authorized": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "provider_observation": {
+    "schema": "storyteller.eval.record-budget-observation.v1",
+    "http_status": 200,
+    "request_id": "req_01m1y616n9ejta2ke2ata8thaz",
+    "provider_code": null,
+    "model": "openai/gpt-oss-120b",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 2482,
+      "output_tokens": 1128,
+      "total_tokens": 3610,
+      "reasoning_tokens": 725
+    },
+    "error_body": {
+      "status": "unavailable",
+      "complete": null,
+      "bytes": null,
+      "json_valid": null
+    },
+    "failed_generation": {
+      "status": "unavailable",
+      "present": null,
+      "characters": null,
+      "json_valid": null,
+      "error_position": null
+    }
+  },
+  "verification": {
+    "batch_id": "fda8af66-ac22-44d2-839f-c0e587abec70",
+    "evaluation_invocation_id": "f6f7d63d-b888-4d16-b201-46bbc8dee31e",
+    "preflight_reconstructed": true,
+    "summary_reconstructed": true,
+    "envelope_rejection_reproduced": true,
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+      "summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae"
+    },
+    "quotes": [
+      {
+        "path": "/o",
+        "quote": "unresolved",
+        "field_text": "unresolved",
+        "field_length": 10,
+        "occurrences": [
+          0
+        ],
+        "unique_exact": true,
+        "resolved_span": [
+          0,
+          10
+        ],
+        "modality": "established",
+        "source_ids": [
+          "m0"
+        ]
+      },
+      {
+        "path": "/l",
+        "quote": "corredor de pedra fria",
+        "field_text": "corredor de pedra fria",
+        "field_length": 22,
+        "occurrences": [
+          0
+        ],
+        "unique_exact": true,
+        "resolved_span": [
+          0,
+          22
+        ],
+        "modality": "established",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/s",
+        "quote": "corredor de pedra fria",
+        "field_text": "O personagem está em um corredor de pedra fria iluminado por néon, com fumaça, chuva e um sussurro distante.",
+        "field_length": 108,
+        "occurrences": [
+          24
+        ],
+        "unique_exact": true,
+        "resolved_span": [
+          24,
+          46
+        ],
+        "modality": "established",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/f/0/s",
+        "quote": "corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes",
+        "field_text": "corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes",
+        "field_length": 75,
+        "occurrences": [
+          0
+        ],
+        "unique_exact": true,
+        "resolved_span": [
+          0,
+          75
+        ],
+        "modality": "established",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/t/0",
+        "quote": "sussurro distante",
+        "field_text": "Quem ou o que está observando ao longe?",
+        "field_length": 39,
+        "occurrences": [],
+        "unique_exact": false,
+        "resolved_span": null,
+        "modality": "suggested",
+        "source_ids": [
+          "n0"
+        ]
+      }
+    ],
+    "initial_interval_seconds": 60.715854,
+    "provider_interval_seconds": 4.092787
+  },
+  "interactive_final_status": {
+    "process_id": 26320,
+    "exit_code": 1,
+    "phase": "finished",
+    "at_utc": "2026-09-07T14:58:25.5625900Z"
+  },
+  "stages": {
+    "schema": "passed",
+    "support_envelope": "rejected_record_quote_evidence_quote_missing",
+    "final_schema": "not_reached",
+    "admission": "not_reached"
+  },
+  "semantic_review": {
+    "status": "autonomous_analysis_not_human_product_acceptance",
+    "approval": false,
+    "findings": [
+      {
+        "field": "/t/0",
+        "finding": "Who or what is observing in the distance presupposes the observation merely suggested by the source; suggested metadata cannot repair wording."
+      },
+      {
+        "field": "/s",
+        "finding": "Summary with smoke and rain drops the sensory relation smell of smoke and rain. Its only quoted support covers the corridor, leaving remaining claims uncovered."
+      },
+      {
+        "field": "/q",
+        "finding": "First-person invitation O que faco agora? is viewpoint-ambiguous; separate qualification, not a claim about an admission gate that was not executed."
+      }
+    ],
+    "grounded_fields": [
+      "/o",
+      "/l",
+      "/f/0/s"
+    ],
+    "source_ids_exist": true
+  },
+  "interpretation": {
+    "exact_unique_quotes": 4,
+    "missing_quotes": 1,
+    "source_to_target_quote_confusion": "supported inference for t0, whose c is in n0 and other records but absent in the selected field",
+    "whole_envelope_rejected": true,
+    "valid_quotes_do_not_prove_coverage": true,
+    "local_defect_demonstrated": false,
+    "output_minus_reasoning": 403,
+    "output_minus_reasoning_note": "Arithmetic difference, not independent JSON tokenization.",
+    "causal_improvement_proved": false,
+    "cost": "unavailable"
+  },
+  "next_step": {
+    "experiment_version": "record-evidence-claim-check-v1",
+    "preparation_status": "complete_credential_required",
+    "authorization": "continuous_user_authority",
+    "change": "SYSTEM-only append of source/target quote, atomic claim, sensory relation, question presupposition and player invitation checks; same quote protocol, schema, USER and parameters.",
+    "max_calls": 1,
+    "max_output_tokens": 3072,
+    "human_dependency_after_preparation": "secure credential entry",
+    "preparation_report": "evals/narrator/reports/record-evidence-claim-check-v1-2026-09-07.md"
+  }
+}

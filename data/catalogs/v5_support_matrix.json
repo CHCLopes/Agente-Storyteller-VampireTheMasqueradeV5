@@ -1,0 +1,1344 @@
+{
+  "schema_version": "1.0",
+  "content_version": "2026-09-16.phase0",
+  "entries": [
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "0",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "1",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "V5 core PDF page 219 (printed 217): Blood Surge +1 and Mend Amount 1 are connected",
+          "Bane Severity 1 and the level-1 Discipline Rouse reroll remain catalogued but are not connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "2",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "3",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "4",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "5",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "6",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "7",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "8",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "9",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "blood_potency",
+        "entry_id": "10",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "bane severity and rouse reroll are not fully connected to runtime rules"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "brujah",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "partial",
+        "limitations": [
+          "Brujah compulsion applies its declared two-die penalty only from deterministic state",
+          "bane affects fury-frenzy resistance, but no frenzy-resistance engine exists in the MVP",
+          "favored disciplines are catalog guidance and progression input; clan ownership rules are not fully enforced",
+          "narrator behavioral penalty remains narrative and cannot mutate hunger"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "gangrel",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "malkavian",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "nosferatu",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "toreador",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "tremere",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "ventrue",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "lasombra",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "banu_haqim",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "tzimisce",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "ministry",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "ravnos",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "hecata",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "salubri",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "caitiff",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "clan",
+        "entry_id": "thin_blooded",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "favored disciplines and bane behavior are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "feral_weapons",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "supported",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "V5 core PDF page 272 (printed 270): level 2, one Rouse Check, +2 Brawl damage",
+          "superficial damage to vampires is not halved; mortals receive aggravated damage only narratively until mortal damage typing is expanded"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "soaring_leap",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "supported",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "V5 core PDF page 266 (printed 264): passive level 1 power with no roll",
+          "vertical and horizontal multipliers are catalogued; spatial distance enforcement awaits a scene geometry model"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "awe",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "supported",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "V5 core PDF page 269 (printed 267): level 1, free activation and scene duration",
+          "Presence rating is added only to supported Charisma actions; resistance and broader skill applicability await target intent and pool expansion"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "flesh_of_marble",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "family and level are represented; no prerequisite or amalgam was identified in the compilation"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "dementation",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "family and amalgam are represented; level and prerequisite powers were not identified in the compilation"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "fleshcrafting",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "family, level, prerequisite and amalgam are represented from the compilation; underlying manual page remains unidentified"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "shadow_cast",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "family is represented; level, prerequisites and amalgam were not identified in the compilation"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "discipline_power",
+        "entry_id": "scorpion_touch",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "family is represented; level, prerequisites and amalgam were not identified in the compilation"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "prince",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "threat level, supernatural target status and corruption index are mechanical",
+          "base dice pool is not consumed; True Faith is false; description, tactics and standing are narrative",
+          "archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "sheriff",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "threat level, supernatural target status and corruption index are mechanical",
+          "base dice pool is not consumed; True Faith is false; description, tactics and standing are narrative",
+          "archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "ghoul",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "inquisitor",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "clergy",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "politician",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "thug",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "civilian",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "npc_archetype",
+        "entry_id": "animal_predator",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "mechanical use is partial and archetypes do not encode individual NPC goals"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "predator_type",
+        "entry_id": "alleycat",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "Strength plus Brawl default pool is verified against V5 corebook PDF page 309 (printed page 307)",
+          "predator type is a default habit and does not prohibit another explicitly selected hunting approach",
+          "choleric resonance preference is a narrative targeting hint and grants no automatic dice or effect",
+          "feeding consequences and resonance acquisition remain separate mechanics"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "predator_type",
+        "entry_id": "siren",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "hunting pool and resonance preference are not resolved mechanically"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "predator_type",
+        "entry_id": "sandman",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "hunting pool and resonance preference are not resolved mechanically"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "predator_type",
+        "entry_id": "bagger",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "hunting pool and resonance preference are not resolved mechanically"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "predator_type",
+        "entry_id": "consensualist",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "hunting pool and resonance preference are not resolved mechanically"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "attribute",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "one-level purchases for attributes already present on the sheet are implemented; broader character-creation and respec flows remain outside this path"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "skill",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "one-level purchases for skills already present on the sheet are implemented; adding a new skill through progression is not supported"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "specialty",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "unsupported",
+        "narrative": "not_applicable",
+        "positive_tests": "unknown",
+        "negative_tests": "supported",
+        "limitations": [
+          "specialty cost is catalogued, but specialty mutation is explicitly rejected because the sheet has no implemented specialty progression path"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "clan_discipline",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "known discipline families or powers advance one level; validation does not yet prove that the chosen family belongs to the character's clan"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "out_of_clan_discipline",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "known discipline families or powers advance one level; out-of-clan classification is supplied by the caller rather than derived from clan ownership"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "caitiff_discipline",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "known discipline families or powers advance one level; Caitiff eligibility is supplied by the caller rather than derived from character state"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "progression_category",
+        "entry_id": "blood_potency",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "not_applicable",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "blood potency advances exactly one level within the catalogued 1-10 progression range; generation and diablerie changes remain outside this purchase path"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "unarmed",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "base_reachable",
+      "support": {
+        "catalogued": true,
+        "references_valid": "partial",
+        "mechanics": "supported",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "Strength + Brawl was verified on PDF page 303 (printed page 301)",
+          "unarmed damage equals the margin because its damage modifier is zero",
+          "concealability is catalogued but no runtime inventory concealment check exists"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "light_melee",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "supported",
+        "negative_tests": "supported",
+        "limitations": [
+          "Strength plus Brawl is verified against V5 corebook PDF page 303 (printed page 301)",
+          "damage equals attack margin with no weapon modifier",
+          "concealability is catalogued but inventory concealment has no dedicated runtime check"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "heavy_melee",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "light_firearm",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "heavy_firearm",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "incendiary",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "electrical",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "chemical",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "heavy_machinery",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    },
+    {
+      "identity": {
+        "domain": "weapon",
+        "entry_id": "holy_artifact",
+        "aliases": [],
+        "references": []
+      },
+      "mvp_scope": "deferred",
+      "support": {
+        "catalogued": true,
+        "references_valid": "unknown",
+        "mechanics": "partial",
+        "narrative": "partial",
+        "positive_tests": "unknown",
+        "negative_tests": "unknown",
+        "limitations": [
+          "weapon type and concealability are not fully enforced"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "storyteller.narrative-source-coordinator-review.v1",
+  "recorded_at": "2026-09-10T23:17:46.509841+00:00",
+  "status": "completed_internal_retained_preparation_coordinator",
+  "verification": {
+    "exit_code": 0,
+    "counts": {
+      "tests": 575,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "distinct_tests": 575,
+    "files_stable": true,
+    "files": {
+      "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+      "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+      "api/persistence.py": "fce4ad0580038661228baa34cbe5eaad1408ac9fa986a1eb0696fd847208f19a",
+      "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+      "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+      "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+      "tests/test_narrative_source_context.py": "47f459746002403f2324daa5115ba7c6b6008bf22e33c02e6b66086ccfac0e6e",
+      "tests/test_narrative_source_context_persistence.py": "3018e3c69837fe6f969dcd25ac87d952ab6b9172b8f2ffd1e578dfde9e142ad9",
+      "tests/test_narrative_source_bridge.py": "6c0fe243850f259389e5912cf7cc159a457a585a84c444fcf0ef9072e1426f1c",
+      "tests/test_narrative_source_turn.py": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+      "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+      "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30",
+      "tests/test_turn_execution_service.py": "31d0e08047cda9990690d788eb7251ca33607b35471788180e1cb2ef70485a50",
+      "tests/test_turn_pipeline_integration.py": "6d937c60e870c8289f4227f7d7a17defafab35d63571b8cc28c54f09c6253893",
+      "tests/test_memory_service.py": "2407825b5e1125e25c38c72a2fb70527e044c266a401cccd96e00784699af54d",
+      "tests/test_context_service.py": "c5b7c6178065f08c754f4a9a3d0fa119af24f5c282fbd12a848b41e1d847a099",
+      "tests/test_scene_service.py": "0fb2aba3251adf747663ab1eb7e8db8f5260942bbe1029726d2730a387b0eb32",
+      "tests/test_manual_game_regressions.py": "d50973714d80a159f77342b2c5dbd2dca7195e44ee149a251244880b16cf3b63",
+      "tests/test_narrative_source_preparation.py": "7dde1f35bb9a163e55603c234b5e49257efcd5ac3e5a1f06993f584866333352",
+      "tests/test_narrative_source_preparation_bridge.py": "ede98cb112a9b5b7416af651f1bfa63ec6eeddd3c5c39f25a705386eb5879675",
+      "tests/test_narrative_source_capsule.py": "cb0aeec1e3f4f95f6a2ce73a0ec6b0f3463504279473ce92d5c3cb7a19ce6999",
+      "tests/test_narrative_source_capsule_persistence.py": "101e7a529d6c5715d18779328e65117e19edde5fa5e4ceaf3bb572933957966c",
+      "tests/test_narrative_source_coordinator.py": "1b30ae4b6f590db8ca2007a51d0df90d2b63e6ed0eb4e6ced069394fd8c756e9"
+    },
+    "test_files": [
+      "tests/test_narrative_source_context.py",
+      "tests/test_narrative_source_context_persistence.py",
+      "tests/test_narrative_source_bridge.py",
+      "tests/test_narrative_source_turn.py",
+      "tests/test_narrative_source_persistence.py",
+      "tests/test_persistence.py",
+      "tests/test_turn_execution_service.py",
+      "tests/test_turn_pipeline_integration.py",
+      "tests/test_memory_service.py",
+      "tests/test_context_service.py",
+      "tests/test_scene_service.py",
+      "tests/test_manual_game_regressions.py",
+      "tests/test_narrative_source_preparation.py",
+      "tests/test_narrative_source_preparation_bridge.py",
+      "tests/test_narrative_source_capsule.py",
+      "tests/test_narrative_source_capsule_persistence.py",
+      "tests/test_narrative_source_coordinator.py"
+    ],
+    "external_provider_calls": 0,
+    "dotenv_disabled": true,
+    "seconds": 34.797,
+    "evidence": {
+      "integration-final.xml": "b4296645e62c220ba9f76d8b43cdfc6398d3a18c77555c6b16001987b6e0f944",
+      "integration-final.txt": "69029df3c5a4f43ce5658430532dda01a8afc11111023199bf9d2e9aa89ecad9"
+    }
+  },
+  "new_distinct_cases": 84,
+  "new_cases": {
+    "capsule": 38,
+    "capsule_persistence": 30,
+    "coordinator": 16
+  },
+  "previous_distinct_cases_in_regression": 491,
+  "review": {
+    "independent_review": "two_findings_resolved_and_verified",
+    "findings": [
+      "repeated cancellation now waits for retention",
+      "capsule and persistence session identity aligned"
+    ],
+    "test_fixture_fix": "recovery test supplies required started_before cutoff",
+    "unresolved_material_findings": 0
+  },
+  "protocols": {
+    "capsule": "narrative-source-capsule-v1",
+    "control_identity": "narrative-source-preparation-control-v1",
+    "turn": "narrative-source-turn-v1"
+  },
+  "persistence": {
+    "schema_changed": false,
+    "new_table": false,
+    "existing_functions_changed": false,
+    "capsule_storage": "separate completed control attempt; committed_turn_id null",
+    "campaign_state_changed_by_retention": false
+  },
+  "defaults_changed": false,
+  "real_campaign_accessed": false,
+  "save_migration": false,
+  "cap_001_approved": false,
+  "new_provider_calls": 0,
+  "limits": [
+    "already resolved trusted server receipt required",
+    "no guarantee before external RNG or exactly-once recovery after crash",
+    "pending is uncertain; no takeover or automatic resend",
+    "terminal failures remain terminal; different operation ids retain existing CAS semantics",
+    "known scene, fixed roster; public/synthetic content; protected_secrets must be empty",
+    "source_only and not_assessed; two full sources and existing USER budget",
+    "no public route, model approval, general campaign progression or pause policy"
+  ],
+  "evidence_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-coordinator-20260910"
+}

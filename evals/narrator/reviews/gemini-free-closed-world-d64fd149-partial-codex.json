@@ -1,0 +1,75 @@
+{
+  "version": "closed-world-render-partial-responses-v1",
+  "protocol": "gemini-free-closed-world-live-v2",
+  "review_metadata": {
+    "batch_id": "d64fd149-7f9e-499d-8566-e72207833114",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-26",
+    "human_admission_required": true,
+    "source_summary_sha256": "c05115087bc0f936be705fa63fd5ce05143285560b8a56fa9d1c465ff0544f9f",
+    "source_records_sha256": "b3e120f0869c49ccc97ec13a86c1495b7bb5b560154a1008a7b49ee9eab0dee6",
+    "completed_cases": 2,
+    "scheduled_cases": 8
+  },
+  "target": {
+    "requested_provider": "Google Gemini",
+    "requested_model": "gemini-3.8-flash",
+    "reported_provider": "Google Gemini",
+    "reported_model": "gemini-3.8-flash",
+    "reasoning": "low"
+  },
+  "invocation": {"calls_made": 3, "retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "map-cylinder-hold",
+      "narrative": "Você permanece imóvel junto à bancada baixa, que continua visível diante de você sob a constante iluminação branca. Sobre a superfície, o cilindro de mapas segue lacrado, enquanto o odor seco de papel preenche o ar do depósito.",
+      "question": "O que você faz agora?",
+      "rendered_unit_ids": ["cylinder-sealed", "white-light-steady", "bench-visible", "paper-dry-scent"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "As duas unidades obrigatórias, a unidade opcional e a paleta sensorial são renderizadas sem transição, contato ou presença inventada; a pergunta aberta preserva as escolhas do jogador."
+      },
+      "case_passed": true
+    },
+    {
+      "case_id": "map-lamp-transition",
+      "narrative": "Você permanece imóvel ao lado da bancada. De repente, a lâmpada branca se apaga, deixando o depósito menos iluminado. Na luz residual, o contorno da bancada permanece distinguível, e sobre ela o cilindro de mapas continua lacrado e imóvel.",
+      "question": "O que você faz agora?",
+      "rendered_unit_ids": ["white-light-off", "cylinder-still-sealed", "dim-room", "dark-outline"],
+      "transition_id": "white-lamp-turns-off",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A única transição autorizada ocorre, o cilindro permanece no estado requerido e a luz residual usa a paleta fornecida; nenhuma causa ou chegada é inventada e a próxima ação continua aberta."
+      },
+      "case_passed": true
+    }
+  ],
+  "partial_result": {
+    "completed_passed": 2,
+    "completed_failed": 0,
+    "unreviewable_due_provider_failure": 6,
+    "candidate_eligible": false,
+    "reason": "O gate exige evidência dos oito casos; a indisponibilidade HTTP 503 no terceiro dispatch encerrou o lote e deixou seis casos sem resposta."
+  }
+}

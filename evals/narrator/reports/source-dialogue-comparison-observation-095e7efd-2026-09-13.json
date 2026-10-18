@@ -1,0 +1,76 @@
+{
+  "batch_id": "095e7efd-081b-474f-b5ed-179658373ec2",
+  "status": "closed_no_candidate_qualified",
+  "process_exit_code": 1,
+  "calls_made": 8,
+  "http_200_stop": 8,
+  "schema_valid": 8,
+  "route_verified": 8,
+  "turns_committed": 6,
+  "turns_skipped": 4,
+  "attempts_persisted": 24,
+  "events_persisted": 6,
+  "global_stop_reason": null,
+  "usage": {
+    "input_tokens": 15768,
+    "output_tokens": 1457,
+    "total_tokens": 17225,
+    "gpt_oss_reasoning_tokens": 137,
+    "qwen_reasoning_tokens": null
+  },
+  "timing_seconds": {
+    "elapsed": 492.977782,
+    "initial_wait": 60.322244,
+    "minimum_http_gap": 61.130258,
+    "maximum_http_gap": 62.259458,
+    "minimum_deadline_margin": 57.622431
+  },
+  "blocks": {
+    "qwen_workshop": {"calls": 3, "commits": 3, "skips": 0},
+    "gpt_oss_workshop": {
+      "calls": 1,
+      "commits": 0,
+      "skips": 2,
+      "failure": "scene_player_agency_violation",
+      "semantic_diagnosis": "bounded_false_positive"
+    },
+    "gpt_oss_archive": {"calls": 3, "commits": 3, "skips": 0},
+    "qwen_archive": {
+      "calls": 1,
+      "commits": 0,
+      "skips": 2,
+      "failure": "scene_narrative_too_long",
+      "word_count": 167
+    }
+  },
+  "principal_scores": [
+    {"candidate": "qwen", "scene": "workshop", "turn": "dialogue", "status": "committed", "utility": 2, "advance": 2, "clarity": 2},
+    {"candidate": "qwen", "scene": "workshop", "turn": "wait", "status": "committed", "utility": 2, "advance": 1, "clarity": 2},
+    {"candidate": "qwen", "scene": "workshop", "turn": "continuity", "status": "committed", "utility": 2, "advance": 2, "clarity": 2},
+    {"candidate": "gpt_oss", "scene": "workshop", "turn": "dialogue", "status": "rejected_proposal", "utility": 2, "advance": 2, "clarity": 1},
+    {"candidate": "gpt_oss", "scene": "archive", "turn": "dialogue", "status": "committed", "utility": 2, "advance": 2, "clarity": 2},
+    {"candidate": "gpt_oss", "scene": "archive", "turn": "wait", "status": "committed", "utility": 2, "advance": 2, "clarity": 2},
+    {"candidate": "gpt_oss", "scene": "archive", "turn": "continuity", "status": "committed", "utility": 2, "advance": 0, "clarity": 2},
+    {"candidate": "qwen", "scene": "archive", "turn": "dialogue", "status": "rejected_proposal", "utility": 2, "advance": 2, "clarity": 1}
+  ],
+  "independent_semantic_review": {
+    "status": "completed_with_context_limit",
+    "classification": "secondary_review_by_different_model",
+    "independent_from_generators": true,
+    "blind": false,
+    "organizationally_independent": false,
+    "agreement_with_principal_score_vectors": "8_of_8",
+    "agreement_with_principal_semantic_gates": "8_of_8"
+  },
+  "pilot_recommendation": "no_candidate_qualified",
+  "runtime_default_eligible": false,
+  "campaign_data_eligible": false,
+  "cap_001_approved": false,
+  "artifacts": {
+    "summary_sha256": "4af734e8cc9def6d75a6a35526e4762e76fed314ca02cec8f308af323006f230",
+    "records_sha256": "e802ad2cea4e3437bf84dfdb6412ce62f1048175a284022b13cd1ef87e6e8f17",
+    "preflight_sha256": "65b51c6042f39b396945f01c97b9947c3ae701aed38e4f84f1abfebdf0375096",
+    "root_verifier_sha256": "9ed7affb9fea89f1539af914b45780a92ed275582b01e06de0aa66a1a73ffdd1",
+    "secondary_review": "evals/narrator/reviews/source-dialogue-comparison-secondary-review-095e7efd-2026-09-14.json"
+  }
+}

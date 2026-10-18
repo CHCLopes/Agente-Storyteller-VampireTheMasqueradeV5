@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-11",
+  "status": "preparation_completed",
+  "live_status": "not_started_credential_not_in_executor_process",
+  "live_calls": 0,
+  "distinct_test_cases_passed": 50,
+  "probe_tests": {
+    "passed": 43,
+    "rounds": 1,
+    "seconds": 178.6
+  },
+  "launcher_tests": {
+    "passed_distinct": 7,
+    "round1": {
+      "passed": 5,
+      "failed": 2,
+      "seconds": 34.49
+    },
+    "round2": {
+      "passed": 2,
+      "seconds": 11.68
+    },
+    "fixes": "Synthetic stub parent directory and PowerShell counter scope only; production launcher unchanged"
+  },
+  "preflight": {
+    "batch_id": "70034cd6-b60c-4565-a8de-2fce835315da",
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-70034cd6-b60c-4565-a8de-2fce835315da\\preflight.json",
+    "sha256": "587d44eb4459a09d64e2bf6a5670bb94bd279ee1a68ef27f21ba5549b32db62c",
+    "status": "preflight_only_completed",
+    "exit_code": 0,
+    "implementation_files": 28
+  },
+  "hashes": {
+    "scripts/evaluate_source_player.py": "7b67261cd21aed3c90cca579bc648c1a4b952652c27b90bc6d3a5b56b35a0d1e",
+    "scripts/run_groq_source_player_probe.ps1": "4ebcbf7325966b9110e318d0de8f0d5c79cbbdd05bc93a0c2f2d9b575e63051d",
+    "tests/test_source_player_probe.py": "9dcd54097d264c36c2190e28c582328909b45fd123eedf94113595119ca5f348",
+    "tests/test_source_player_launcher.py": "22649f149193e5113a0feebdaf8d3f83b2dc2656148a8b24f460d18ee96e6b25"
+  },
+  "evidence": [
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-tests-20260911\\round-1\\source-player.xml",
+      "sha256": "4a57d1da9d45cbe7e0eb46795f4a780f28115015d9ce51afb2fcf8358abd47da"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-tests-20260911\\round-1\\source-player.log",
+      "sha256": "626bf36314f28bd6caa6e22b79b0fd3dc35f36efa25fea94103c20aca0a6aa3d"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-launcher-20260911\\run1.xml",
+      "sha256": "50c7e96e0d7ff58cfa9b7d57a891fd3765461409f89621d3e1f08a294912a4e6"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-launcher-20260911\\run1.log",
+      "sha256": "d92b43c59b382cc6a7644eb66864e5e5b931906870178c2ff2a2fa3c402419b4"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-launcher-20260911\\run2.xml",
+      "sha256": "8b28dbc2cdead5b7445983ce1417e4db9576affc8c6cdd74169e802be211fbf3"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-launcher-20260911\\run2.log",
+      "sha256": "3c16d18e19bfc8288d6b0a1189fbe49bda0a1e7d2b4fddd4e7b7a57c23ce0855"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-70034cd6-b60c-4565-a8de-2fce835315da\\preflight.json",
+      "sha256": "587d44eb4459a09d64e2bf6a5670bb94bd279ee1a68ef27f21ba5549b32db62c"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-player-window-70034cd6-b60c-4565-a8de-2fce835315da\\lifecycle.json",
+      "sha256": "f05934458281c18bba320e7a24f64458ed797ec8bb92b0a68a17de0f5548afdd"
+    }
+  ],
+  "review": "independent, closed before frozen tests",
+  "limits": {
+    "deadline_seconds": 60,
+    "initial_quiet_seconds": 60,
+    "max_output_tokens": 768,
+    "max_total_output_tokens": 1536,
+    "minimum_inter_call_delay_seconds": 60,
+    "reasoning_effort": "none",
+    "temperature": 0.65
+  },
+  "candidate": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+  "capabilities_verified": [
+    "setup plus real producer and retained H6",
+    "P/K/H matching, declared receipt for fixed actions",
+    "known NPC alias binding",
+    "cancelled after producer settlement without reproduction",
+    "two HTTP calls maximum and pacer hook",
+    "first failure stops chain",
+    "closed diagnostics and key-echo filtering",
+    "verification on disposable database copy",
+    "preflight without credentials or network"
+  ],
+  "limitations": [
+    "No live narrative result",
+    "No runtime/UI/default or CAP-001 approval",
+    "Timestamps are recorded; verifier checks awareness, cadence itself is enforced by pacer/hook and should be reviewed from live chronology",
+    "No generic recovery or takeover of pending operations",
+    "PowerShell wrapper behavioral tests run under PowerShell 7"
+  ]
+}

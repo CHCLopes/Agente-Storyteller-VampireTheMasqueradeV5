@@ -1,0 +1,181 @@
+{
+  "schema": "storyteller.narrative-source-preparation-review.v1",
+  "recorded_at": "2026-09-10T22:52:13.255103+00:00",
+  "status": "completed_internal_ordinary_preparation",
+  "files": {
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "tests/test_narrative_source_preparation.py": "7dde1f35bb9a163e55603c234b5e49257efcd5ac3e5a1f06993f584866333352",
+    "tests/test_narrative_source_preparation_bridge.py": "ede98cb112a9b5b7416af651f1bfa63ec6eeddd3c5c39f25a705386eb5879675"
+  },
+  "verification": {
+    "pure_cases": 40,
+    "integration_distinct_passed": 7,
+    "new_distinct_cases": 47,
+    "previous_stage_distinct_cases": 444,
+    "total_distinct_this_resume": 491,
+    "single_full_suite_claim": false,
+    "shared_modules_unchanged": true,
+    "independent_review": "closed_without_material_findings"
+  },
+  "evidence": [
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-preparation-20260910\\final.json",
+      "sha256": "5e9af4f492c4be830d8ca3ecbca95bd5c9ffea92c0ff840d06cbe44e141b0934"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-preparation-bridge-20260910\\final.json",
+      "sha256": "ef09ea22ee890622830deea5b14e73df9cab7382535cf272f0f57238a3d24732"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-preparation-bridge-20260910\\focused.xml",
+      "sha256": "60e6f6d9baf498fdc591fcc7cd6a9ee6225e50b7b93282dfa83d8c31a7c01c3a"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-preparation-bridge-20260910\\delta.xml",
+      "sha256": "09fb4384265af0595a946a205d2b119d887aa4699101ab686ed911eae9ddcc2d"
+    }
+  ],
+  "unit_record": {
+    "status": "passed",
+    "scope": [
+      "api/narrative_source_preparation.py",
+      "tests/test_narrative_source_preparation.py"
+    ],
+    "tests": {
+      "file": "tests/test_narrative_source_preparation.py",
+      "seconds": 1.04,
+      "real_provider_calls": 0,
+      "passed": 40
+    },
+    "files": [
+      {
+        "file": "api/narrative_source_preparation.py",
+        "sha256": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+        "whitespace_check_exit": 1,
+        "whitespace_check_output": [],
+        "whitespace_clean": true,
+        "lines": 236
+      },
+      {
+        "file": "tests/test_narrative_source_preparation.py",
+        "sha256": "7dde1f35bb9a163e55603c234b5e49257efcd5ac3e5a1f06993f584866333352",
+        "whitespace_check_exit": 1,
+        "whitespace_check_output": [],
+        "whitespace_clean": true,
+        "lines": 238
+      }
+    ],
+    "references": [
+      {
+        "file": "api/rules_service.py",
+        "sha256": "979059639aac0356f7280d0fa92a2db9c34542e1fc9c32185634b7a4002e78eb",
+        "unchanged": true
+      },
+      {
+        "file": "api/turn_models.py",
+        "sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+        "unchanged": true
+      },
+      {
+        "file": "api/narrative_source_context.py",
+        "sha256": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+        "unchanged": true
+      },
+      {
+        "file": "api/narrative_source_turn.py",
+        "sha256": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+        "unchanged": true
+      }
+    ],
+    "diff_note": "no-index check reports exit1 for new files; both outputs empty; no whitespace diagnostics",
+    "limitations": [
+      "Pure consistency does not authenticate the caller or stored snapshot freshness",
+      "No dice arithmetic recomputation; server receipt is a trust premise",
+      "Integration owned and executed separately by parent team"
+    ]
+  },
+  "integration_record": {
+    "created_at": "2026-09-10T22:49:29.620371+00:00",
+    "status": "frozen",
+    "test_file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_preparation_bridge.py",
+    "test_sha256": "ede98cb112a9b5b7416af651f1bfa63ec6eeddd3c5c39f25a705386eb5879675",
+    "module_sha256": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "provider_calls": 0,
+    "baseline_files_unchanged": true,
+    "ast_and_whitespace_passed": true,
+    "verification": {
+      "distinct_passed": 7,
+      "initial_group": {
+        "passed": 3,
+        "failed_expectations": 2,
+        "duration_seconds": 2.74,
+        "codes": [
+          "scene_success_not_honored",
+          "scene_failure_not_honored"
+        ]
+      },
+      "final_delta": {
+        "passed": 4,
+        "deselected": 3,
+        "duration_seconds": 3.08
+      },
+      "cases": [
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_declared_preparation_commits_without_rng_or_mechanical_resolution[asyncio]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_narrative_rejection_and_terminal_replay_do_not_reroll_or_commit_receipt[asyncio]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_preparation_after_restart_keeps_previous_source_whole_and_server_receipt[asyncio]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_neutral_narrative_cannot_claim_real_ordinary_resolution[asyncio-True]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_neutral_narrative_cannot_claim_real_ordinary_resolution[asyncio-False]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_authored_investigation_honors_ordinary_resolution_and_replays[asyncio-True]",
+          "passed": true
+        },
+        {
+          "nodeid": "tests/test_narrative_source_preparation_bridge.py::test_authored_investigation_honors_ordinary_resolution_and_replays[asyncio-False]",
+          "passed": true
+        }
+      ],
+      "warning": "preexisting python_multipart PendingDeprecationWarning"
+    },
+    "scope": [
+      "calculate_resolution real with five deterministic dice; RNG forbidden after receipt",
+      "declaration, ordinary success/failure, canonical receipt literal in draft/USER/SQLite",
+      "whole source and selection receipt preserved across restart",
+      "rejected narrative and terminal/completed replay do not reroll or regenerate",
+      "no legacy memory readers or H0/H1/H4 path"
+    ],
+    "limitations": [
+      "The neutral FIRST fixture was preserved; its initial rejection is an expected mechanical gate observation, not a preparation defect.",
+      "Separate authored success/failure fixtures prove bounded integration and gate acceptance, not provider quality or general narrative fidelity.",
+      "Caller-supplied server origin is a trust boundary; this test proves its own real rules call only."
+    ],
+    "evidence_files": {
+      "before.json": "13d35f6cddf6435023c7d9ab7b57e964cb97daffc94d89231eb18bc482f62382",
+      "after.json": "2814b9f5d2116c791ba95a313a09901f4f8584d032e7ed011b876890bf01f135",
+      "focused.xml": "60e6f6d9baf498fdc591fcc7cd6a9ee6225e50b7b93282dfa83d8c31a7c01c3a",
+      "focused.txt": "182bab4bc7f245dbc2dfa10cb1448bb21e723aa1115070e3358bab127adc270e",
+      "delta.json": "716537ef88b627e44431535dd9e782e17320fc160aff3b2752c51e6bb0c28407",
+      "delta.xml": "09fb4384265af0595a946a205d2b119d887aa4699101ab686ed911eae9ddcc2d",
+      "delta.txt": "6e69d04e4172ff4dfb65394be63acd4ed6eb34be68ab1bba1871dadd7be3b5ed",
+      "test-change.diff": "d5710b8cf80aff5b6968a5d726cb31b0488316aeb3f7cd75c0f3a0a08b2403bc"
+    }
+  },
+  "live_provider_calls": 0,
+  "runtime_default_changed": false,
+  "real_save_accessed": false,
+  "cap_001_approval": false
+}

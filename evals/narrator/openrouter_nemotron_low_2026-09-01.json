@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-01",
+  "catalog_source": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b:free/endpoints",
+  "candidates": [
+    {
+      "candidate_id": "nemotron-3-super-free-native-control-reasoning-low",
+      "adapter_kind": "openrouter",
+      "provider_label": "OpenRouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "effective_provider": "nvidia",
+      "upstream_provider": "nvidia",
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low",
+      "notes": "Variante sintética controlada com raciocínio baixo; preserva o baseline sem esforço explícito no manifesto de 2026-08-27."
+    }
+  ]
+}

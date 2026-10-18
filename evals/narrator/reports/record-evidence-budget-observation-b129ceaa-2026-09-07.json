@@ -1,0 +1,271 @@
+{
+  "document_kind": "record_budget_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T13:31:06.312386+00:00",
+  "batch_id": "b129ceaa-599c-4448-b095-d37c0f0411c1",
+  "evaluation_invocation_id": "a1b6496d-fa4b-4ce8-9a03-2ebc04c6af27",
+  "status": "closed_invalid_support_spans_semantic_review_completed",
+  "scope": {
+    "authorized_live_calls_completed": 1,
+    "new_calls_after_result": 0,
+    "automatic_retries": 0,
+    "raw_artifacts_modified": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "code_changed_after_result": false,
+    "tests_changed_after_result": false
+  },
+  "source": {
+    "summary": "eval-results/20260907T132254Z-a1b6496d-fa4b-4ce8-9a03-2ebc04c6af27/summary.json",
+    "summary_sha256": "2a76932c6762285dd516f9da9660d02176131f35f3c3370773d39d8a55a79c57",
+    "jsonl": "eval-results/20260907T132254Z-a1b6496d-fa4b-4ce8-9a03-2ebc04c6af27/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+    "jsonl_sha256": "0a0506be6e039fb94a7ecfd6dc2eff1f4427eb948f229458c33338d5683f7711",
+    "jsonl_line": 1
+  },
+  "operational": {
+    "started_at": "2026-09-07T13:22:54.624911+00:00",
+    "finished_at": "2026-09-07T13:23:59.359346+00:00",
+    "process_exit_code": 1,
+    "calls_made": 1,
+    "schema_valid": true,
+    "envelope_valid": false,
+    "final_schema_stage": "not_reached",
+    "admission_stage": "not_reached",
+    "envelope_error": {
+      "code": "record_evidence_span_invalid"
+    },
+    "route": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1y0m9wxe74thmy54k38rmdp",
+      "provider_code": null,
+      "model": "openai/gpt-oss-120b",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2320,
+        "output_tokens": 1112,
+        "total_tokens": 3432,
+        "reasoning_tokens": 658
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "cost": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "interactive_launch": {
+      "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-budget-live-20260907\\status.json",
+      "process_id": 25724,
+      "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-budget-live-20260907\\launch-1536.ps1",
+      "launcher_sha256": "4e4589958308d966465e3f1b446cd5cddd50a8f8edb62b9d670736799149318c",
+      "launched_at_utc": "2026-09-07T13:22:17.0963799Z",
+      "scope": "one authorized opening at 1536 tokens; secure user credential required",
+      "final_status": {
+        "process_id": 25724,
+        "phase": "finished",
+        "at_utc": "2026-09-07T13:24:00.1501783Z",
+        "exit_code": 1
+      }
+    }
+  },
+  "local_audit": {
+    "batch_id": "b129ceaa-599c-4448-b095-d37c0f0411c1",
+    "evaluation_invocation_id": "a1b6496d-fa4b-4ce8-9a03-2ebc04c6af27",
+    "artifacts": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "0a0506be6e039fb94a7ecfd6dc2eff1f4427eb948f229458c33338d5683f7711",
+      "summary.json": "2a76932c6762285dd516f9da9660d02176131f35f3c3370773d39d8a55a79c57"
+    },
+    "preflight_reconstructed": true,
+    "summary_reconstructed": true,
+    "schema_revalidated": true,
+    "support_rejection_reproduced": "record_evidence_span_invalid",
+    "original_artifacts_preserved": true,
+    "implementation_hashes_preserved": true,
+    "spans": [
+      {
+        "index": 0,
+        "path": "/o",
+        "start": 0,
+        "end": 10,
+        "field_length": 10,
+        "in_bounds": true,
+        "text": "unresolved",
+        "source_ids": [
+          "m0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 1,
+        "path": "/l",
+        "start": 3,
+        "end": 25,
+        "field_length": 22,
+        "in_bounds": false,
+        "text": "corredor de pedra fria",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 2,
+        "path": "/s",
+        "start": 0,
+        "end": 197,
+        "field_length": 115,
+        "in_bounds": false,
+        "text": "Personagem percebe corredor de pedra fria iluminado por néon, cheiro de fumaça e chuva, sussurro sugere observação.",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 3,
+        "path": "/f/0/s",
+        "start": 0,
+        "end": 197,
+        "field_length": 63,
+        "in_bounds": false,
+        "text": "Corredor de pedra fria iluminado por lâmpadas de néon piscantes",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 4,
+        "path": "/t/0",
+        "start": 0,
+        "end": 197,
+        "field_length": 30,
+        "in_bounds": false,
+        "text": "Quem ou o que está observando?",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "suggested"
+      },
+      {
+        "index": 5,
+        "path": "/t/1",
+        "start": 0,
+        "end": 197,
+        "field_length": 28,
+        "in_bounds": false,
+        "text": "Qual é a origem do sussurro?",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "suggested"
+      }
+    ],
+    "valid_spans": 1,
+    "invalid_spans": 5,
+    "source_narrative_length": 197,
+    "initial_interval_seconds": 60.708962,
+    "provider_interval_seconds": 4.017942,
+    "usage": {
+      "input_tokens": 2320,
+      "output_tokens": 1112,
+      "total_tokens": 3432,
+      "reasoning_tokens": 658
+    },
+    "derived_output_minus_reasoning": 454,
+    "derived_output_above_prior_ceiling": 344,
+    "finish_reason": "stop",
+    "http_status": 200,
+    "request_id": "req_01m1y0m9wxe74thmy54k38rmdp"
+  },
+  "semantic_review": {
+    "performed_by": "agent with independent read-only review",
+    "status": "issues_found",
+    "product_approval": false,
+    "findings": [
+      {
+        "field": "/t/0",
+        "classification": "certainty_amplification",
+        "observation": "Quem ou o que está observando?",
+        "reason": "Question presupposes ongoing observation; source only suggests that something or someone observes. Support modality suggested does not repair the wording."
+      },
+      {
+        "field": "/s",
+        "classification": "wording_preserves_suggestion_support_does_not_segment_mixed_claims",
+        "reason": "Text retains sussurro sugere observacao, but one established support groups established surroundings and suggested observation. Invalid range prevents structural coverage."
+      },
+      {
+        "field": "/t/1",
+        "classification": "grounded_open_question_modality_unresolved",
+        "reason": "The whisper is established; its origin remains unknown. Asking its origin does not establish a watcher. Suggested support fails to distinguish established sound from unresolved cause."
+      },
+      {
+        "field": "/s",
+        "classification": "attribution_caveat",
+        "reason": "Personagem percebe adds an explicit experiencer to an implicit sensory presentation. This alone does not demonstrate imposed action or a hard agency violation."
+      }
+    ],
+    "grounded_fields": [
+      "/o",
+      "/l",
+      "/f/0/s",
+      "/p (empty)",
+      "/f/0/a (empty)",
+      "/r (empty)",
+      "/q"
+    ],
+    "coverage": "not_demonstrated_five_of_six_ranges_invalid",
+    "empty_q_support_allowed": true,
+    "generalization": "one fixed opening only"
+  },
+  "interpretation": {
+    "observed": "HTTP 200 and stop with 1112 reported completion tokens; JSON accepted by initial schema; envelope invalid.",
+    "prior_768_causal_explanation": "not_demonstrated",
+    "pre_registered_valid_envelope_condition_met": false,
+    "offset_hypothesis": "Compatible with source offsets substituted for record offsets. Inference only; no internal model process observed.",
+    "local_defect_demonstrated": false,
+    "budget_text_limitation": "SYSTEM still says 768 by the deliberate SYSTEM freeze; only API max_completion_tokens changed.",
+    "output_minus_reasoning_note": "454 is arithmetic difference of reported counters, not independently measured JSON tokenization."
+  },
+  "next_step": {
+    "kind": "new_system_only_design_for_decision",
+    "file": "evals/narrator/reports/record-evidence-target-spans-hypothesis-b129ceaa-2026-09-07.md",
+    "new_live_run_authorized": false,
+    "new_runner_implemented": false,
+    "original_batch_closed": true
+  },
+  "independent_reviews": {
+    "semantic_review": "completed_with_findings_recorded",
+    "operational_interpretation": "completed_no_local_false_positive_found",
+    "final_document_and_draft_review": "completed_no_material_findings",
+    "read_only": true,
+    "new_provider_calls": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "catalog_checked_at": "2026-08-30",
+  "catalog_source": "https://build.nvidia.com/nvidia/nemotron-3-ultra-550b-a55b?nim=hosted",
+  "data_policy_source": "https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf",
+  "candidates": [
+    {
+      "candidate_id": "nemotron-3-ultra-550b-a55b-nvidia-trial-synthetic",
+      "adapter_kind": "nvidia",
+      "provider_label": "NVIDIA NIM",
+      "effective_provider": "NVIDIA NIM",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "structured_mode": "emulated",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "notes": "NVIDIA API trial avaliado apenas com o corpus sintético; JSON é validado localmente e nenhuma elegibilidade para dados reais de campanha é presumida."
+    }
+  ]
+}

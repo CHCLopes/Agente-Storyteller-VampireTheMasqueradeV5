@@ -1,6 +1,7 @@
 from pydantic import BaseModel
-import os
-import json
+
+from .catalog_models import CatalogDomain
+from .catalog_service import get_catalog_registry
 
 class ClanEngineData(BaseModel):
     bane_severity_multiplier: int
@@ -19,24 +20,18 @@ class ClanModel(BaseModel):
     engine_data: ClanEngineData
     narrative_data: ClanNarrativeData
 
-_CLANS_CACHE: dict[str, ClanModel] = {}
-
 def load_clans_catalog():
-    global _CLANS_CACHE
-    if _CLANS_CACHE: return
-    
-    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogs", "clans.json")
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        for key, val in data.items():
-            _CLANS_CACHE[key] = ClanModel(**val)
+    get_catalog_registry()
+
+
+def _get_clan(clan_id: str) -> ClanModel | None:
+    record = get_catalog_registry().get(CatalogDomain.CLAN, clan_id)
+    return ClanModel.model_validate(record.payload) if record else None
 
 def get_clan_engine(clan_id: str) -> ClanEngineData | None:
-    load_clans_catalog()
-    model = _CLANS_CACHE.get(clan_id.lower())
+    model = _get_clan(clan_id)
     return model.engine_data if model else None
 
 def get_clan_narrative(clan_id: str) -> ClanNarrativeData | None:
-    load_clans_catalog()
-    model = _CLANS_CACHE.get(clan_id.lower())
+    model = _get_clan(clan_id)
     return model.narrative_data if model else None

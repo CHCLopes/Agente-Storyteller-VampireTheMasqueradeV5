@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-22",
+  "status": "runner_offline_verified_credential_available_no_calls",
+  "hypothesis_id": "grounded_progression_contract_v1",
+  "option": "L1",
+  "authorization": {
+    "live_inference": true,
+    "synthetic_only": true,
+    "paid_spend": false,
+    "runtime_default_eligible": false
+  },
+  "execution": {
+    "provider_calls": 0,
+    "credential_status": "available_protected",
+    "credential_inspected": false,
+    "max_calls": 16,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 12288,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "live_cli_opt_in_required": true,
+    "credential_launcher_versioned": false
+  },
+  "hashes": {
+    "preflight_metadata_canonical": "084ebd791527b0428d4eafaf113ed550a0142907cad98e8283bdc8cc1abd33f9",
+    "live_runner": "8904bde2e58cb0a8d5340a8d5f32a04f2bf9705eaa77c23ec33da31cddef5ebd",
+    "live_tests": "a738358f48ba358f9ea9442ce184ca51703da7b011585c36f0a76e1d33ea8e7e",
+    "offline_preparer": "38d2f3ce74ebd292846176463471b8620b3dffdb08fa6e67cad18ad8db04e81a",
+    "offline_tests": "25962f83da3dbb2e76263f0a69b335a941f2694394637834868cc811a41ecc98",
+    "live_gate_json": "f905e1d570c23979641c442a47511b7ae5ff8c85b96d522a256d2d87f91944dc",
+    "live_gate_markdown": "5a554c48f05af435ce21f6776c0f08d15e3cd2ff4b55bf0030b963b925a9d436"
+  },
+  "verification": {
+    "offline_contract_tests_passed": 18,
+    "live_runner_tests_passed": 12,
+    "focused_tests_passed": 30,
+    "related_tests_passed": 421,
+    "failed": 0,
+    "keyless_preflight_verified": true,
+    "artifact_causality_reconstructed": true,
+    "secret_echo_guard_tested": true,
+    "pre_dispatch_cancellation_tested": true,
+    "transport_failure_without_retry_tested": true
+  },
+  "remaining_gate": "run_frozen_preflight_then_start_single_authorized_batch",
+  "post_run_human_gate": "case_by_case_semantic_review_required_before_candidate_admission"
+}

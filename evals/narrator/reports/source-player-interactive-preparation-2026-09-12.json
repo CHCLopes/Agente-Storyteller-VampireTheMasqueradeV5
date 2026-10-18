@@ -1,0 +1,64 @@
+{
+  "scope": "offline preparation completed; player activation pending",
+  "date": "2026-09-12",
+  "provider_calls": 0,
+  "real_credential_used": false,
+  "real_backend_started": false,
+  "verification": {
+    "handler_single_final_suite_passed": 47,
+    "runner_distinct_cases_across_stages": 66,
+    "runner_last_affected_selection_passed": 9,
+    "launcher_single_final_suite_passed": 55,
+    "ui_distinct_cases_across_stages": 81,
+    "ui_last_affected_selection_passed": 3,
+    "lint_typecheck_build_passed": true,
+    "preflight_inputs_verified": 45,
+    "vite_real_stop_exit_code": 0,
+    "vite_forced": false,
+    "browser_accessibility_state_checked": true
+  },
+  "preflight": {
+    "run_id": "fac261ca-09ce-4102-b639-7584de5b0cfb",
+    "evidence_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-trial-window-fac261ca-09ce-4102-b639-7584de5b0cfb",
+    "preflight_sha256": "398bbddbd71f5f147167325c8a33c9621aa0e7a8dd233c63494026461de4f5c1",
+    "status": "preflight_only_completed",
+    "exit_code": 0,
+    "frozen_inputs_verified": 45,
+    "run_directory_absent": true,
+    "status_directory_absent": true,
+    "provider_calls": 0,
+    "credential_requested": false,
+    "database_created": false,
+    "listeners_started": false,
+    "source_runner_sha256": "97360f6b903d50242406159091a4e465d4135fb5c831695fd1ef3ee66691c0ef",
+    "launcher_sha256": "d67fefe7dc4ea3af5e7f2f83bb0149a4d605d6d6535b369b4c39c636267fa57b"
+  },
+  "checkpoint": "eval-results\\checkpoints\\source-player-interactive-preparation-20260912\\manifest.json",
+  "checkpoint_sha256": "a79b073a95833a8bf996f0d60c922d1b95abcb71b398c15afe7ad66fcb71273d",
+  "checkpoint_copies": 152,
+  "historical_anchors": [
+    {
+      "file": "eval-results\\checkpoints\\source-word-budget-observation-291b3960-20260912\\manifest.json",
+      "sha256": "520fb3c29474a4142cebd7a3b1092337f5c8072074245cf2b0785b012d9184b7",
+      "verified_copies": 41
+    },
+    {
+      "file": "eval-results\\checkpoints\\source-word-budget-agency-diagnosis-291b3960-20260912\\manifest.json",
+      "sha256": "b9636e973a7be4b806c99350e8f3e0b2fc5ead6fd2a4f0133d419802c1fa127f",
+      "verified_copies": 10
+    }
+  ],
+  "runtime_default_approved": false,
+  "cap_001_approved": false,
+  "scope_acceptance_pending": true,
+  "live_interactive_execution_pending": true,
+  "next_step": "User participation in the described one-scene trial through protected PowerShell launcher.",
+  "limits": [
+    "No real interactive Groq inference in this preparation.",
+    "Native Ctrl+C with real backend was not exercised; simulated cleanup and real Vite stdin stop were verified.",
+    "Status is a lifecycle snapshot, not a live account usage meter. stopped/exit0 certifies cleanup only.",
+    "Cancellation without terminal delivery closes eligibility but can need launcher/operator stop.",
+    "Browser verification used accessible rendered state, not pixel/viewport assertions.",
+    "A new launch creates a new session; it never resumes or retries this one."
+  ]
+}
