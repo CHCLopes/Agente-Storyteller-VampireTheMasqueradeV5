@@ -43,16 +43,17 @@ históricos não foram recalculados nem reescritos para fazê-los passar.
 
 ## Verificação e estado
 
+- Núcleo crítico backend: 252 testes passaram novamente em 18/10/2026,
+  cobrindo segurança, HTTP/WS, transações, retomada, memória e ensaio offline.
 - Frontend: 13 arquivos e 258 testes passaram.
 - TypeScript: verificação de tipos passou.
 - Build de produção Vite: passou.
 - Lint dos fontes (`eslint src`): três erros e um aviso, em
   `useCharacterState.ts` e `useInitializationLog.ts`. Os trechos apontados não
   foram introduzidos por esta promoção. Não foram corrigidos fora do escopo.
-- Backend integral canônico: em execução (9.399 testes coletados). O resultado
-  será reconciliado antes do merge; o snapshot pode ser publicado em PR draft
-  enquanto a verificação termina. A execução anterior foi interrompida, não
-  conta como aprovação.
+- Backend integral canônico: 9.399 casos; 8.719 aprovados, 333 ignorados,
+  286 falhas e 61 erros; oito avisos. Duração CLI: 1h41min19s. A suíte integral
+  não está verde. A execução anterior interrompida não conta como aprovação.
 - Reprodução focada de L4/L5: quatro falhas e dois testes aprovados. Os quatro
   testes falham em `campaign_luna_implementation_drifted`, pois consultam
   manifestos anteriores à correção de segurança. Não houve chamada de provedor;
@@ -72,6 +73,46 @@ pela correção de segurança anterior. Gates devem continuar falhando fechados;
 ao retomar avaliação paga, preparar novo preflight e congelamento prospectivo.
 Não alterar a evidência histórica para obter verde artificial.
 
-Neste checkpoint, login e permissões GitHub foram verificados; publicação,
-PR, merge e troca de default ainda não foram concluídos. Confirmar o estado
-remoto e o PR em vez de inferir conclusão deste documento.
+O conflito `Final actor schema differs` e os problemas de lint já constavam em
+`evals/narrator/reports/narrator-pause-resume-technical-audit-2026-09-22.md`.
+O problema de sidecars Windows e o schema congelado também estão registrados
+em `evals/narrator/reports/hybrid-campaign-source-offline-2026-09-29.md`.
+Não interpretar reprodução de dívida histórica como autorização para reescrever
+os experimentos ou como certificação de release.
+
+### Reconciliação das falhas e erros
+
+| Causa | Falhas | Erros | Evidência e limite |
+| --- | ---: | ---: | --- |
+| Schema congelado dos experimentos históricos | 281 | 61 | 314 ocorrências exibem `Final actor schema differs`; 28 são cascatas de preflight com retorno 3, artefato não criado ou mensagem diferente da esperada. Os nove preparadores foram reproduzidos separadamente, sem live ou credenciais, e todos param nesse mesmo schema. |
+| Manifestos anteriores à correção de segurança | 4 | 0 | Dois testes L4 e dois L5 param em `campaign_luna_implementation_drifted`. Gates e manifestos não foram reescritos; a proteção permanece fechada. |
+| Sidecars SQLite Windows | 1 | 0 | `test_unavailable_or_incompatible_store_stays_unchanged[asyncio-wrong_session]` em `test_narrative_source_observation_persistence.py`; divergência de arquivos `-wal`/`-shm`, já registrada anteriormente. |
+
+Total: 347 ocorrências classificadas, nenhuma sem categoria. Os 333 skips são
+38 casos com política/módulo impedindo execução e 295 em que o host não carrega
+o módulo de execution policy. Nenhuma política foi contornada ou novo skip
+adicionado. A coleção confirmou não haver teste Python versionado fora de
+`tests/`; a configuração de descoberta não elimina testes canônicos.
+
+Essas pendências ficam preservadas e explícitas: não impedem reproduzir/publicar
+o snapshot de desenvolvimento solicitado, mas impedem alegar suíte integral
+verde ou release aprovado. Não foi identificada causa nova introduzida pela
+publicação Git. Os bytes da aplicação não mudaram durante a verificação.
+
+Resultados locais, ignorados pelo Git: `eval-results/repository-promotion-backend.xml`,
+`eval-results/repository-promotion-critical.xml` e
+`eval-results/repository-promotion-frontend.json`. As contagens dos grupos
+focados se sobrepõem à suíte ampla, não são testes únicos adicionais.
+
+Reprodução da suíte canônica, na raiz do projeto:
+
+```powershell
+$env:STORYTELLER_DISABLE_DOTENV = '1'
+& .\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --tb=short
+```
+
+Snapshot publicado: `e31f679`. [PR #1](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/pull/1)
+aberto como draft, com base `main` criada da `master` preservada. Neste
+checkpoint, verificações foram reconciliadas; merge e troca de default são o
+próximo passo autorizado. Confirmar o estado remoto e o PR em vez de inferir
+conclusão deste documento.

@@ -11,7 +11,14 @@ repositório `CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5`. Preservar
 publicação da branch de implementação, criação de `main` a partir da `master`
 remota, integração por PR e mudança de default apenas após merge verificado.
 Sem force-push, exclusão de branches, leitura de `.env*` ou novo gasto de LLM.
-Login GitHub verificado; commit/push/PR/merge ainda pendentes neste checkpoint.
+Login GitHub verificado. Snapshot publicado em `e31f679` e PR #1 aberto como
+draft, com base `main`; a nova `main` foi criada da `master` preservada. A suíte
+ampla terminou: 8.719 aprovados, 333 skips, 286 falhas e 61 erros em 1h41min19s.
+Todas as 347 ocorrências foram classificadas: 342 por schema histórico e suas
+cascatas, quatro por manifestos L4/L5 e uma por sidecars SQLite Windows.
+Passaram novamente 252 testes críticos e 258 frontend, além de tipos e build.
+Merge e troca de default são o próximo passo Git autorizado. A suíte integral
+e o lint não estão verdes; isto é consolidação de desenvolvimento, não release.
 Plano, evidências e limitações: `docs/repository-promotion.md`. Consultar também
 o estado remoto ao retomar: este registro não afirma que a promoção terminou.
 O MVP continua aberto; nenhum narrador/default está admitido. A autorização
