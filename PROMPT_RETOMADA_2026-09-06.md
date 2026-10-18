@@ -3,7 +3,7 @@
 Continue o trabalho existente neste projeto. Confirme os fatos nos arquivos antes
 de agir e carregue apenas o contexto necessário ao próximo passo.
 
-## Checkpoint vigente — promoção GitHub autorizada em 18/10/2026
+## Checkpoint vigente — promoção GitHub concluída em 18/10/2026
 
 O usuário autorizou consolidar a evolução do worktree na branch principal do
 repositório `CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5`. Preservar
@@ -11,18 +11,27 @@ repositório `CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5`. Preservar
 publicação da branch de implementação, criação de `main` a partir da `master`
 remota, integração por PR e mudança de default apenas após merge verificado.
 Sem force-push, exclusão de branches, leitura de `.env*` ou novo gasto de LLM.
-Login GitHub verificado. Snapshot publicado em `e31f679` e PR #1 aberto como
-draft, com base `main`; a nova `main` foi criada da `master` preservada. A suíte
+Login GitHub verificado. Snapshot publicado em `e31f679`; PR #1 integrado em
+`main`, merge `73f1f2a1c4bf22195a8ce84f49a857c74267bab0`. A API GitHub e o HEAD
+remoto confirmaram `main` como default. `master` permanece em `5e56382`, e o
+checkout original não foi modificado. Sem force-push, exclusão de branches ou
+contorno de proteções. A suíte
 ampla terminou: 8.719 aprovados, 333 skips, 286 falhas e 61 erros em 1h41min19s.
 Todas as 347 ocorrências foram classificadas: 342 por schema histórico e suas
 cascatas, quatro por manifestos L4/L5 e uma por sidecars SQLite Windows.
 Passaram novamente 252 testes críticos e 258 frontend, além de tipos e build.
-Merge e troca de default são o próximo passo Git autorizado. A suíte integral
-e o lint não estão verdes; isto é consolidação de desenvolvimento, não release.
-Plano, evidências e limitações: `docs/repository-promotion.md`. Consultar também
-o estado remoto ao retomar: este registro não afirma que a promoção terminou.
+Git concluído; a suíte integral e o lint não estão verdes. Isto é consolidação
+de desenvolvimento, não release. As duas modificações locais em `.env.example`
+permanecem preservadas e fora dos commits. Fontes e evidências anteriores não
+foram reescritas. Nenhuma inferência de provedor foi executada nesta promoção.
+Comprovante, evidências e limitações: `docs/repository-promotion.md`. O worktree
+de implementação continua na branch `codex/planejamento-agente-storyteller-v5`,
+alinhada à nova `main`; não trocar ou atualizar o checkout original por arrasto.
 O MVP continua aberto; nenhum narrador/default está admitido. A autorização
-Git não aceita L4, não libera L5 e não modifica o backlog de produto.
+Git não aceita L4, não libera L5 e não modifica o backlog de produto. O próximo
+checkpoint de produto continua sendo o aceite narrativo L4; antes de qualquer
+avaliação posterior, renovar preflight/congelamento prospectivo com a segurança
+corrigida e obter a autorização de gasto aplicável, sem pedir chave por arrasto.
 
 ## Checkpoint anterior — auditoria de segurança em 16/10/2026
 

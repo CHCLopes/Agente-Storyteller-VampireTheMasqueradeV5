@@ -111,8 +111,22 @@ $env:STORYTELLER_DISABLE_DOTENV = '1'
 & .\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --tb=short
 ```
 
-Snapshot publicado: `e31f679`. [PR #1](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/pull/1)
-aberto como draft, com base `main` criada da `master` preservada. Neste
-checkpoint, verificações foram reconciliadas; merge e troca de default são o
-próximo passo autorizado. Confirmar o estado remoto e o PR em vez de inferir
-conclusão deste documento.
+## Conclusão verificada
+
+- Snapshot: `e31f679`; reconciliação antes do merge: `2a02d6f`.
+- [PR #1](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/pull/1)
+  integrado em 18/10/2026, às 10:37:14 no fuso America/Fortaleza.
+- Merge de integração: `73f1f2a1c4bf22195a8ce84f49a857c74267bab0`.
+- API GitHub confirmou `default_branch: main`; `ls-remote --symref` confirmou
+  `HEAD -> refs/heads/main` com o commit de integração antes deste registro.
+- `master` preservada em `5e563824fcba4c53cc37b5084a8ce65f3fa30356`, sem
+  force-push, exclusão ou alteração do checkout original.
+- Branch do worktree de implementação preservada e alinhada por fast-forward.
+  Os dois exemplos de ambiente modificados localmente continuam fora dos commits.
+- Este registro final altera somente documentação; os bytes da aplicação e os
+  artefatos da auditoria permanecem os mesmos verificados nos testes.
+
+A versão atual passa a ser a principal no GitHub, mas não é release nem aceite
+do MVP. O próximo checkpoint narrativo permanece L4; L5 continua sem autorização
+de gasto e exige preparação prospectiva atualizada antes de qualquer execução.
+Nenhuma inferência real de provedor foi executada nesta promoção.
