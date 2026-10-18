@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-26",
+  "hypothesis": "HYP-004-QWEN-GPT-OSS-REPLICATION-L1",
+  "batch_id": "dfd7febc-9e64-4ff6-b81c-c6c40cfd2aa0",
+  "status": "technical_review_complete_human_acceptance_pending",
+  "integrity": {
+    "live_exit": 0,
+    "artifact_verifier_exit": 0,
+    "calls_made": 16,
+    "completed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "retry_count": 0,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "preflight_sha256": "9a741a91c78baa51c22eaa0e67f26cc712b291fab79da435f5afe785db73ab87",
+    "summary_sha256": "c4d4d0c802abce43be81db5d83a4bfdd832d7e3dbe975f8fd7c05d2d7024e980",
+    "records_sha256": "250eb298cce055e1452c53bf4cc9f2317a4e3281cb83d2effd699f101a832d24",
+    "credential_removed_after_run": true
+  },
+  "admission": {
+    "threshold_per_independent_run": "8/8",
+    "aggregate_between_runs": false,
+    "best_of_selection": false,
+    "eligible_candidates": [],
+    "narrator_admitted": false,
+    "runtime_default_created": false
+  },
+  "comparison": [
+    {
+      "model": "qwen/qwen3.8-27b",
+      "reasoning": "none",
+      "hyp_002_passed": 0,
+      "hyp_004_passed": 2,
+      "hyp_004_failed": 6,
+      "classification": "variable_and_ineligible"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "reasoning": "low",
+      "hyp_002_passed": 0,
+      "hyp_004_passed": 0,
+      "hyp_004_failed": 8,
+      "classification": "consistently_ineligible_in_observed_runs"
+    }
+  ],
+  "review_artifacts": {
+    "qwen": {
+      "file": "evals/narrator/reviews/closed-world-render-replication-dfd7febc-qwen-codex.json",
+      "sha256": "7f9d6f363e4941cc85d94daf6433beb64c73b02f4f3fe93ee2bbef7af645a905"
+    },
+    "gpt_oss": {
+      "file": "evals/narrator/reviews/closed-world-render-replication-dfd7febc-gpt-oss-codex.json",
+      "sha256": "c0e9feee2c4323deb427c631582249415fe2eb6b2d622bbc63a9c373fa1b359e"
+    }
+  },
+  "human_acceptance": {
+    "accepted": false,
+    "proposed_text": "Aceito HYP-004: Qwen variável e inelegível; GPT-OSS consistentemente inelegível; nenhum narrador admitido."
+  }
+}
+

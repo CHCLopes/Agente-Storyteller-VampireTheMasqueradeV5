@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-11",
+  "scope": "Internal source-local-ordinary-v1 producer: model, transactional P/K persistence, bounded rules adapter and service",
+  "status": "completed",
+  "branch": "codex/planejamento-agente-storyteller-v5",
+  "worktree": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+  "verification_runs": [
+    {
+      "stage": "entry",
+      "passed": 161,
+      "seconds_from_pytest_log": 2.91,
+      "failures": 0,
+      "skips": 0,
+      "warnings": 1,
+      "evidence": {
+        ".log": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\entry-context.log",
+          "sha256": "6c9857b5331dc66a99121d9c0c38781f8155dfb5643368be69392f91a0ab20b8"
+        },
+        ".xml": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\entry-context.xml",
+          "sha256": "a92ae1903acf3d52b63298b46087c9083072bcd24d210b318e9ed23aec50fb5f"
+        },
+        "result": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\result.json",
+          "sha256": "be03cca3e26f80bf7ee61ad3a2d37d14392b4558c55255dffd9a22d369982ae3"
+        }
+      }
+    },
+    {
+      "stage": "models",
+      "passed": 167,
+      "seconds_from_pytest_log": 4.14,
+      "failures": 0,
+      "skips": 0,
+      "warnings": 1,
+      "evidence": {
+        ".log": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\input-capsule-entry.log",
+          "sha256": "04418ede5dc7c6445130556f0a18473c046d8ffcff6eea87397db149e52245a7"
+        },
+        ".xml": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\input-capsule-entry.xml",
+          "sha256": "ced3195cb509bf536ac5ff03191455d0f906d8f03dc54c1d5f897e203aaac15a"
+        },
+        "result": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\result.json",
+          "sha256": "a3955c73567fa344fef768348144a9e04144fe57129427b3fa857b9bae2e7318"
+        }
+      }
+    },
+    {
+      "stage": "persistence",
+      "passed": 272,
+      "seconds_from_pytest_log": 46.23,
+      "failures": 0,
+      "skips": 0,
+      "warnings": 1,
+      "evidence": {
+        ".log": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-persistence-20260911\\run1.log",
+          "sha256": "a0996abb5d14e4f577e74c6d1370c16bb69a3c0349610209a22eb7610f231775"
+        },
+        ".xml": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-persistence-20260911\\run1.xml",
+          "sha256": "a4c31142251315da66e69de652482bccc3c562a4fb90057fc901cf312bcc1942"
+        }
+      }
+    },
+    {
+      "stage": "adapter",
+      "passed": 137,
+      "seconds_from_pytest_log": 3.49,
+      "failures": 0,
+      "skips": 0,
+      "warnings": 1,
+      "evidence": {
+        ".log": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-action-tests-20260911\\action-preparation.log",
+          "sha256": "d22a45102335472487184900422348c749009c0c2772ff7830badbf5dc56ccf2"
+        },
+        ".xml": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-action-tests-20260911\\action-preparation.xml",
+          "sha256": "0ecf4dae93dad329355ad2f1a818c21d3cc241e77b3602c2d86d309134824e4d"
+        },
+        "result": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-action-tests-20260911\\result.json",
+          "sha256": "58718cd056a77b4e995ac1b489d5f933c14c0fa7ad9edc55b9a687e4fec8433a"
+        }
+      }
+    },
+    {
+      "stage": "service",
+      "passed": 18,
+      "seconds_from_pytest_log": 8.84,
+      "failures": 0,
+      "skips": 0,
+      "warnings": 1,
+      "evidence": {
+        ".log": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-service-tests-20260911\\service.log",
+          "sha256": "600f2ba587543bf6ddbb3445085958b29d3a3f68889a98c87c4bb3aaf96bf2ed"
+        },
+        ".xml": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-service-tests-20260911\\service.xml",
+          "sha256": "1fa46274f67110dfc54ecfc383ab01d5e668623beafbe1efcad87ed9aacfc800"
+        },
+        "result": {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-service-tests-20260911\\result.json",
+          "sha256": "597b04bbc7bfdd50c23f4fe9afa76d8e48368773b0b57b8c86e9062838d62115"
+        }
+      }
+    }
+  ],
+  "distinct_cases_producer_increment": 594,
+  "distinct_cases_including_entry": 683,
+  "new_producer_cases": 216,
+  "new_cases_including_entry": 288,
+  "verification_note": "One frozen run per component. Aggregates are unions of JUnit class/name pairs; repeated entry cases counted once.",
+  "files_sha256": {
+    "api/narrative_source_entry.py": "7e1941fda8792785fa61eb7a393745706df7792f01038ad40b4be7ef334b2757",
+    "tests/test_narrative_source_entry.py": "bb254cd4b710d546a1d7203906d9084f561f5815d0a76219b1149ff29662fefa",
+    "api/narrative_source_input.py": "9369f04ec863f68097379aa234f44c909f84e15cc528ba9dca631d82d3bd4fe0",
+    "tests/test_narrative_source_input.py": "82d21a7f8f78ff7663af3d092e2a9222b2f22f8fe2d77fb5de29f6dd6bf658e2",
+    "api/persistence.py": "06f176a0f226d7c0e0d1a6a8b8e5fb952b6fe2bb97acbbfbf578f3903f01e83c",
+    "tests/test_narrative_source_input_persistence.py": "46268dd4e970191d0d75dcb28182230b77d18e9f6f9ce6f6d602036c957dcd43",
+    "api/narrative_source_action_producer.py": "00a9c5ca32a0226b992f0c7b09f5ccfb8a2a479ad456087b774c52cd7597eec5",
+    "tests/test_narrative_source_action_producer.py": "104442136d9263838653f95b7e676fadd67ad1e11ca790ede714c2f5a1696da3",
+    "api/narrative_source_input_service.py": "68a2a3a96601e3f63d30963798644234ec048b73e5655986b67c940e6dcd5b28",
+    "tests/test_narrative_source_input_service.py": "34f78b875d55ee28207523fb03e7365d7df8f09e7b05d9ab86e830ac00de2d8d"
+  },
+  "preserved_sha256": {
+    "api/main.py": "97966517e68f46abd21fb6ec86c8899461cebc2e388a530453bea389502d4d40",
+    "api/orchestrator_service.py": "4752f6d4f4b9be65059cd1a9eb555962f87959d3ced8682d4779655f883c5a85",
+    "api/state_service.py": "ac569de70e57b369c3f7bb0d878000e4194821a3ae2d895b2750981e7b43cf17",
+    "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+    "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+    "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+    "api/narrative_source_status.py": "446331f5f5ed15fa14446187ec948d45c012075b23a2afcf71339d53047a8318",
+    "tests/conftest.py": "d779c64e08bd1f7ea4fac9db97ad1287478281c7cbf2a88c60fb0e06824688ed",
+    "api/narrative_source_input.py": "9369f04ec863f68097379aa234f44c909f84e15cc528ba9dca631d82d3bd4fe0",
+    "api/narrative_source_entry.py": "7e1941fda8792785fa61eb7a393745706df7792f01038ad40b4be7ef334b2757",
+    "api/rules_service.py": "979059639aac0356f7280d0fa92a2db9c34542e1fc9c32185634b7a4002e78eb",
+    "api/h0_controller_service.py": "9a32113e4516f8f5201bdc0218720501de429787c4f9ccb5bf523f6af502b5b4",
+    "api/parser_service.py": "3ea8a21902ef42f7a41c2f4f2d3ff08983c5ac64b29714a24e44110162e9dbbf"
+  },
+  "persistence_audit": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-persistence-20260911\\audit.json",
+    "sha256": "4b316a18dc9a37453ead96c6579904b6c7e0408e1bdbd6f5ae4e7982d7a3cee6",
+    "prior_functions_text_preserved": 96,
+    "schema_constants_ast_unchanged": true
+  },
+  "independent_review": "closed without blockers across model, persistence, adapter and service",
+  "external_calls": 0,
+  "dotenv_disabled_in_tests": true,
+  "real_saves_accessed": false,
+  "public_transport_enabled": false,
+  "runtime_default_changed": false,
+  "cap_001_approved": false,
+  "limits": [
+    "Known scene and fixed roster; bounded local grammar, no general semantic parser.",
+    "Hunger-zero synthetic profile; Wits1..5 + Investigation0..5, difficulty3; no generic state or relationship effects.",
+    "Normalized NPC name collisions refuse the profile; unsupported commands and known special conditions are refused before RNG.",
+    "A crash after RNG but before durable K can lose the in-memory result; same P never grants reexecution.",
+    "FakeLLM and authored corpus demonstrate integration, not live narrative quality or full campaign capability."
+  ],
+  "next_plan": "plan/feature-narrative-source-setup-1.md",
+  "next_plan_status": "Planned",
+  "preexisting_documentation_findings": [
+    {
+      "file": "README.md:8",
+      "target": "LICENSE",
+      "status": "target missing before this increment",
+      "blocks_producer": false,
+      "action": "reported without changing license or link"
+    }
+  ]
+}

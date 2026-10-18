@@ -1,0 +1,70 @@
+{
+  "version": "source-word-budget-v1",
+  "source_origin": "authored_synthetic_fixture",
+  "contexts_independent": true,
+  "generation_parameters": {
+    "temperature": 0.65,
+    "max_output_tokens": 768,
+    "max_total_output_tokens": 3072,
+    "reasoning_effort": "none",
+    "initial_quiet_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "deadline_seconds": 60
+  },
+  "slots": [
+    {
+      "slot_id": "slot-1",
+      "context_id": "C1",
+      "arm_id": "A"
+    },
+    {
+      "slot_id": "slot-2",
+      "context_id": "C1",
+      "arm_id": "B"
+    },
+    {
+      "slot_id": "slot-3",
+      "context_id": "C2",
+      "arm_id": "B"
+    },
+    {
+      "slot_id": "slot-4",
+      "context_id": "C2",
+      "arm_id": "A"
+    }
+  ],
+  "contexts": {
+    "C1": {
+      "scene": {
+        "location": "Relojoaria",
+        "npcs_present": [
+          "Bela"
+        ]
+      },
+      "declared_objective": "entender o que observar antes de a relojoaria fechar, sem mexer nas peças",
+      "player_input": "Pergunto a Bela: \"O que merece atenção nesta relojoaria antes de fechar, e por quê?\"",
+      "source_text": null
+    },
+    "C2": {
+      "scene": {
+        "location": "Pavilhão",
+        "npcs_present": [
+          "Caio"
+        ]
+      },
+      "declared_objective": "acompanhar o que ocorre junto à mesa sem tocar nos objetos",
+      "player_input": "Aguardo a reação de Caio.",
+      "source_text": "Caio está ao lado de uma mesa baixa no pavilhão. Uma bandeja vazia repousa perto da borda, sobre um pano cinzento. Na janela aberta, a cortina se move com o vento. Cada rajada levanta um pouco a ponta do pano e deixa a bandeja ligeiramente mais próxima da borda. Caio olha na direção da janela, mas mantém as mãos afastadas da mesa. A passagem entre a mesa e a porta permanece livre. Não há indicação visível de quem abriu a janela."
+    }
+  },
+  "catalog_checked_at": "2026-09-12",
+  "catalog_sources": [
+    "https://console.groq.com/docs/models",
+    "https://console.groq.com/docs/structured-outputs",
+    "https://console.groq.com/docs/reasoning"
+  ],
+  "catalog_observation": "Root verified Qwen3.8 preview listing, strict structured output and reasoning_effort none. This does not establish account quota, availability or payment eligibility.",
+  "semantic_approval": null,
+  "runtime_default_eligible": false,
+  "cap_001_approved": false
+}

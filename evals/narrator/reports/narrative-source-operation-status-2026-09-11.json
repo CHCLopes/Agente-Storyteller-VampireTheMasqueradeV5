@@ -1,0 +1,147 @@
+{
+  "schema": "source-operation-status-verification-v1",
+  "recorded_date": "2026-09-11",
+  "status": "completed",
+  "distinct_tests_verified": 673,
+  "new_distinct_tests": 98,
+  "model": {
+    "passed": 59,
+    "seconds": 2.48,
+    "exit_code": 0,
+    "rounds": 1,
+    "evidence_type": "tool_output",
+    "session_id": 41882,
+    "chunk_id": "11e260",
+    "log_or_xml_file": null,
+    "command": ".venv/Scripts/python.exe -m pytest -q tests/test_narrative_source_status.py -p no:cacheprovider"
+  },
+  "integration": {
+    "distinct": 39,
+    "latest_outcomes_all_pass": true,
+    "rounds": [
+      {
+        "round": 1,
+        "counts": {
+          "tests": 38,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "xml_sha256": "25552bc3da134c258f6b4154485d0bb2487718723dd09fa2898d101032bd0e1c",
+        "log_sha256": "f68eacf827d2ef32bbaa59639c8ecac5307b736ee03b0a5632ead1fbcaf8c709"
+      },
+      {
+        "round": 2,
+        "counts": {
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "xml_sha256": "acec216dcd222b5fc334364cdcab198f7eb7ebe8994f4467731c7d115c65eaf6",
+        "log_sha256": "219c6acf00b614a7ee2d3d64eb034b04b7f3e58d4116f1c63054f206c97b4e17"
+      },
+      {
+        "round": 3,
+        "counts": {
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "xml_sha256": "1af593bd0df9faa85fa8656166448a05ab1a68069be80090065a5bfc7b44f0ef",
+        "log_sha256": "0266aa087d4a65ffd361a6a7605bee76c35ce986f1df554c5d1fefdcd428743b"
+      }
+    ],
+    "evidence_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-status-persistence-20260911"
+  },
+  "regression": {
+    "exit_code": 0,
+    "counts": {
+      "tests": 575,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "files_stable": true,
+    "files": {
+      "api/persistence.py": "b64d4e7c37e007ee0b5daa9da00af9b7e07e45e29bb237f0c745864d26e1bc86",
+      "api/narrative_source_status.py": "446331f5f5ed15fa14446187ec948d45c012075b23a2afcf71339d53047a8318",
+      "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+      "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+      "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+      "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+      "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+      "tests/test_narrative_source_context.py": "47f459746002403f2324daa5115ba7c6b6008bf22e33c02e6b66086ccfac0e6e",
+      "tests/test_narrative_source_context_persistence.py": "3018e3c69837fe6f969dcd25ac87d952ab6b9172b8f2ffd1e578dfde9e142ad9",
+      "tests/test_narrative_source_bridge.py": "6c0fe243850f259389e5912cf7cc159a457a585a84c444fcf0ef9072e1426f1c",
+      "tests/test_narrative_source_turn.py": "bfe9c615f91e92f54f73bd8c7e34747a2fe8bb922448231061abfe5944433517",
+      "tests/test_narrative_source_persistence.py": "878b90e93f050d514cfc81d81612bbaad38ec6b232f9298a1604dee028647821",
+      "tests/test_persistence.py": "1570a335314ac453d6d29700b7de63aa92728c77d5bc112b18f7a1e735782b30",
+      "tests/test_turn_execution_service.py": "31d0e08047cda9990690d788eb7251ca33607b35471788180e1cb2ef70485a50",
+      "tests/test_turn_pipeline_integration.py": "6d937c60e870c8289f4227f7d7a17defafab35d63571b8cc28c54f09c6253893",
+      "tests/test_memory_service.py": "2407825b5e1125e25c38c72a2fb70527e044c266a401cccd96e00784699af54d",
+      "tests/test_context_service.py": "c5b7c6178065f08c754f4a9a3d0fa119af24f5c282fbd12a848b41e1d847a099",
+      "tests/test_scene_service.py": "0fb2aba3251adf747663ab1eb7e8db8f5260942bbe1029726d2730a387b0eb32",
+      "tests/test_manual_game_regressions.py": "d50973714d80a159f77342b2c5dbd2dca7195e44ee149a251244880b16cf3b63",
+      "tests/test_narrative_source_preparation.py": "7dde1f35bb9a163e55603c234b5e49257efcd5ac3e5a1f06993f584866333352",
+      "tests/test_narrative_source_preparation_bridge.py": "ede98cb112a9b5b7416af651f1bfa63ec6eeddd3c5c39f25a705386eb5879675",
+      "tests/test_narrative_source_capsule.py": "cb0aeec1e3f4f95f6a2ce73a0ec6b0f3463504279473ce92d5c3cb7a19ce6999",
+      "tests/test_narrative_source_capsule_persistence.py": "101e7a529d6c5715d18779328e65117e19edde5fa5e4ceaf3bb572933957966c",
+      "tests/test_narrative_source_coordinator.py": "1b30ae4b6f590db8ca2007a51d0df90d2b63e6ed0eb4e6ced069394fd8c756e9"
+    },
+    "test_files": [
+      "tests/test_narrative_source_context.py",
+      "tests/test_narrative_source_context_persistence.py",
+      "tests/test_narrative_source_bridge.py",
+      "tests/test_narrative_source_turn.py",
+      "tests/test_narrative_source_persistence.py",
+      "tests/test_persistence.py",
+      "tests/test_turn_execution_service.py",
+      "tests/test_turn_pipeline_integration.py",
+      "tests/test_memory_service.py",
+      "tests/test_context_service.py",
+      "tests/test_scene_service.py",
+      "tests/test_manual_game_regressions.py",
+      "tests/test_narrative_source_preparation.py",
+      "tests/test_narrative_source_preparation_bridge.py",
+      "tests/test_narrative_source_capsule.py",
+      "tests/test_narrative_source_capsule_persistence.py",
+      "tests/test_narrative_source_coordinator.py"
+    ],
+    "dotenv_disabled": true,
+    "external_provider_calls": 0,
+    "evidence_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-status-root-20260911"
+  },
+  "post_regression_delta": {
+    "change": "Add RecursionError to new read boundary exception tuple only",
+    "reverse_change_matches_regression_sha256": true,
+    "verified_by": "run3 deep JSON case; concurrent read/close strengthened case",
+    "broad_regression_repeated": false
+  },
+  "files": {
+    "api/narrative_source_status.py": "446331f5f5ed15fa14446187ec948d45c012075b23a2afcf71339d53047a8318",
+    "api/persistence.py": "df29d5b0c6886adf9230c3c667e4dd8f3ce228096cc2e92ab152fcda4bee3d2d",
+    "tests/test_narrative_source_status.py": "c4b7812dd0bf4e313a13eb7725e90aa07110b31b80de255a0698ca72e086b867",
+    "tests/test_narrative_source_status_persistence.py": "907e559e70ce1de1c0ed9dec7b44ee3e91647aaf7d0ff6ca3ccaed6a65ac836e"
+  },
+  "baseline_persistence_sha256": "fce4ad0580038661228baa34cbe5eaad1408ac9fa986a1eb0696fd847208f19a",
+  "existing_93_functions_exact_text_preserved": true,
+  "other_baseline_core_preserved": true,
+  "review": {
+    "independent": true,
+    "remaining_blocking_findings": 0,
+    "resolved_findings": [
+      "fingerprint fixture field",
+      "unambiguous connection close proof",
+      "deep malformed JSON closed error"
+    ]
+  },
+  "external_provider_calls": 0,
+  "dotenv_disabled": true,
+  "production_save_accessed": false,
+  "default_changed": false,
+  "cap_001_approved": false,
+  "known_warning": "Pre-existing python_multipart PendingDeprecationWarning",
+  "next_step": "Design first opt-in B entry, with producer boundary and experience acceptance matrix; no route activation"
+}

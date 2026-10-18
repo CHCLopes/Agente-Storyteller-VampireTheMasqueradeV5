@@ -1,0 +1,17 @@
+{
+  "schema": "storyteller.eval.inline-evidence-input.v1",
+  "case_id": "station-clock",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "narrative": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa.",
+  "source_units": [
+    {
+      "id": "n0",
+      "text": "Na estação vazia, um relógio parado marca seis horas. "
+    },
+    {
+      "id": "n1",
+      "text": "Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-11",
+  "scope": "TASK-001/002 pure producer data models and hash compatibility",
+  "implementation_completed": true,
+  "persistence_claim_implemented_by_this_increment": false,
+  "mechanical_producer_implemented_by_this_increment": false,
+  "verification": {
+    "passed": 167,
+    "new_input": 57,
+    "capsule_regressions": 38,
+    "entry_regressions": 72,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "seconds": 4.14,
+    "exit_code": 0,
+    "dotenv_disabled": true,
+    "external_calls": 0,
+    "review": "closed without blockers"
+  },
+  "files_sha256": {
+    "api/narrative_source_input.py": "9369f04ec863f68097379aa234f44c909f84e15cc528ba9dca631d82d3bd4fe0",
+    "tests/test_narrative_source_input.py": "82d21a7f8f78ff7663af3d092e2a9222b2f22f8fe2d77fb5de29f6dd6bf658e2"
+  },
+  "preserved_sha256_at_freeze": {
+    "api/persistence.py": "df29d5b0c6886adf9230c3c667e4dd8f3ce228096cc2e92ab152fcda4bee3d2d",
+    "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+    "api/narrative_source_entry.py": "7e1941fda8792785fa61eb7a393745706df7792f01038ad40b4be7ef334b2757",
+    "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+    "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+    "tests/test_narrative_source_capsule.py": "cb0aeec1e3f4f95f6a2ce73a0ec6b0f3463504279473ce92d5c3cb7a19ce6999",
+    "tests/test_narrative_source_entry.py": "bb254cd4b710d546a1d7203906d9084f561f5815d0a76219b1149ff29662fefa"
+  },
+  "evidence": {
+    "input-capsule-entry.log": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\input-capsule-entry.log",
+      "sha256": "04418ede5dc7c6445130556f0a18473c046d8ffcff6eea87397db149e52245a7"
+    },
+    "input-capsule-entry.xml": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\input-capsule-entry.xml",
+      "sha256": "ced3195cb509bf536ac5ff03191455d0f906d8f03dc54c1d5f897e203aaac15a"
+    },
+    "result.json": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-input-tests-20260911\\result.json",
+      "sha256": "a3955c73567fa344fef768348144a9e04144fe57129427b3fa857b9bae2e7318"
+    }
+  },
+  "distinct_cases_with_entry_increment": 256,
+  "limits": [
+    "Models do not prove a database claim, invoke rules or grant production authority.",
+    "SQLite fixtures verify existing hash formats, not new P/K atomicity.",
+    "No route, real save, default, live model or CAP-001 activation."
+  ]
+}

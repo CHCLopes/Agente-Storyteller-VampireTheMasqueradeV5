@@ -1,8 +1,9 @@
 from pydantic import BaseModel
 import math
-import os
-import json
 from enum import Enum
+
+from .catalog_models import CatalogDomain
+from .catalog_service import get_catalog_registry
 
 class WeaponTypeEnum(str, Enum):
     BRAWL = "BRAWL"
@@ -33,25 +34,19 @@ class DamageResult(BaseModel):
     total_damage: int
     damage_type: str
 
-_WEAPONS_CACHE: dict[str, WeaponModel] = {}
-
 def load_weapons_catalog():
-    global _WEAPONS_CACHE
-    if _WEAPONS_CACHE: return
-    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogs", "weapons.json")
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        for key, val in data.items():
-            _WEAPONS_CACHE[key] = WeaponModel(**val)
+    get_catalog_registry()
 
 def get_weapon_model(category: str) -> WeaponModel | None:
-    load_weapons_catalog()
-    return _WEAPONS_CACHE.get(category.lower())
+    record = get_catalog_registry().get(CatalogDomain.WEAPON, category)
+    return WeaponModel.model_validate(record.payload) if record else None
 
-def calculate_damage(margin: int, weapon_category: str, is_bane: bool, is_supernatural_target: bool, weapon_damage_bonus: int = 0, is_true_faith_active: bool = False) -> DamageResult:
+def calculate_damage(margin: int, weapon_category: str, is_bane: bool, is_supernatural_target: bool, weapon_damage_bonus: int = 0, is_true_faith_active: bool = False, unhalved_superficial_to_vampires: bool = False) -> DamageResult:
     weapon = get_weapon_model(weapon_category)
-    weapon_val = weapon.engine_data.damage_modifier if weapon else 0
-    is_aggravated_to_vampires = weapon.engine_data.is_aggravated_to_vampires if weapon else False
+    if weapon is None:
+        raise ValueError(f"unknown weapon catalog entry: {weapon_category}")
+    weapon_val = weapon.engine_data.damage_modifier
+    is_aggravated_to_vampires = weapon.engine_data.is_aggravated_to_vampires
     
     if weapon_category.lower() == "holy_artifact" and is_true_faith_active:
         is_aggravated_to_vampires = True
@@ -62,9 +57,11 @@ def calculate_damage(margin: int, weapon_category: str, is_bane: bool, is_supern
     if is_supernatural_target:
         if is_bane or is_aggravated_to_vampires:
             return DamageResult(total_damage=total_base_damage, damage_type="aggravated")
-        else:
+        elif not unhalved_superficial_to_vampires:
             reduced = math.ceil(total_base_damage / 2)
             return DamageResult(total_damage=reduced, damage_type="superficial")
+        else:
+            return DamageResult(total_damage=total_base_damage, damage_type="superficial")
     else:
         return DamageResult(total_damage=total_base_damage, damage_type="superficial")
 

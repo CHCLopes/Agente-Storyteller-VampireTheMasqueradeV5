@@ -1,0 +1,64 @@
+{
+  "protocol": "scene-direction-live-observation-v1",
+  "observed_at": "2026-09-16T10:24:33Z",
+  "scope": {
+    "provider_calls": 1,
+    "session_isolated": true,
+    "retries": 0,
+    "fallbacks": 0,
+    "cap_001_approved": false,
+    "runtime_default_eligible": false
+  },
+  "input": {
+    "location": "Galeria",
+    "npcs_present": ["Mara"],
+    "player_action": "Mara, me fale sobre este lugar."
+  },
+  "resolution": {
+    "selected_option_id": "mara.place_history",
+    "effect_keys": ["mara.answers.place_context"],
+    "guidance_keys": [
+      "npc.mara.core.protective_archive",
+      "npc.mara.core.observant",
+      "npc.mara.core.reserved",
+      "npc.mara.objective.evaluate_visitor",
+      "npc.mara.objective.protect_index",
+      "npc.mara.reaction.guarded_answer",
+      "npc.mara.reaction.partial_clue",
+      "npc.mara.reaction.conditional_help",
+      "story.advance.help"
+    ],
+    "outcome": "unresolved",
+    "pressure_before": "calm",
+    "pressure_after": "watchful"
+  },
+  "result": {
+    "operation_id": "mara-live-45423af4-892f-4962-b75d-840d720c71f3",
+    "turn_id": "d60e9130-fd52-5200-bbad-ebac2c41156f",
+    "turn_number": 1,
+    "status": "completed",
+    "narrative_complete": true,
+    "result_hash": "e453bc64a4bd20876d0b0301e64f10403298a9943634714f1250d3e59e52a42e",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "input_tokens": 1602,
+    "output_tokens": 278,
+    "total_tokens": 1880,
+    "mechanical_receipt": null
+  },
+  "review": {
+    "catalog_effect_realized": true,
+    "player_agency_preserved": true,
+    "npc_and_location_continuity_preserved": true,
+    "protected_founder_identity_disclosed": false,
+    "authored_environmental_detail": "gunpowder scent was not grounded in the initial scene",
+    "conclusion": "bounded_pilot_success"
+  },
+  "verification": {
+    "scene_validation_diagnostic_tests_passed": 53,
+    "transactional_and_websocket_tests_passed": 213,
+    "failed": 0,
+    "warnings": 3
+  }
+}
+

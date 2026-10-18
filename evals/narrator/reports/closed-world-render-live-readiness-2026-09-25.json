@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-25",
+  "status": "offline_verified_live_authorized_not_started",
+  "hypothesis_id": "closed_world_render_plan_v1",
+  "option": "L2",
+  "authorization": {
+    "response": "Aprovo HYP-002-L2",
+    "live_inference": true,
+    "synthetic_only": true,
+    "paid_spend": false,
+    "runtime_default_eligible": false
+  },
+  "execution_contract": {
+    "provider": "Groq",
+    "targets": [
+      {"model": "qwen/qwen3.8-27b", "reasoning": "none"},
+      {"model": "openai/gpt-oss-120b", "reasoning": "low"}
+    ],
+    "cases_per_target": 8,
+    "max_calls": 16,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 12288,
+    "temperature": 0.65,
+    "deadline_seconds": 60,
+    "minimum_global_start_interval_seconds": 60,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "live_cli_opt_in_required": true
+  },
+  "verification": {
+    "contract_tests_passed": 20,
+    "runner_and_launcher_tests_passed": 14,
+    "combined_hypothesis_001_002_tests_passed": 66,
+    "failed": 0,
+    "keyless_preflight_verified": true,
+    "preflight_provider_calls": 0,
+    "preflight_credential_inspected": false,
+    "preflight_slots": 16,
+    "artifact_causality_reconstructed": true,
+    "secret_echo_guard_tested": true,
+    "pre_dispatch_cancellation_tested": true,
+    "transport_failure_without_retry_tested": true,
+    "powershell_parse_errors": 0,
+    "launcher_without_credential_exit_code": 3
+  },
+  "hashes": {
+    "canonical_preflight_metadata": "dd11ec02df78d5bc01b2c7a57df0fdaeade2f51a48aa95875a03eb6bc3a9a8db",
+    "corpus": "1b620a84bc9a61d63f1abd51e9e08dfbd856fbb804dd0c806bd7588daf42b72b",
+    "protocol": "0ab8cec17e225bfd98cee1957c2338f9341138fda60440e8440f9d1a4c0a21fb",
+    "verifier_fixtures": "22ce6d263f7f92b5a21b9055f62df20c84d2cf17c3507152e683abda8f5b9043",
+    "prompt_extension": "22a75a5808fad849f8b1cec1fd59fd5cf4c58be52913604d6e84b35a0ec83ce3",
+    "offline_preparer": "a311d5df9e736eb3f0846a7e24c1a4e348587c82c08a62d9de8939ed98a167f8",
+    "live_runner": "71e3a70fb62c044694016da28810bbe7e7d921e0801a428669535c285dfe9800",
+    "launcher": "f76d59325656d4222eabb0c9971725bf5e45dda2eed800155580630c95636f9d",
+    "contract_tests": "2c6fc7612f737f3bb5088c741dcdbf229907401c63a1e892c1df0d8db9919811",
+    "live_tests": "20d8d32458768c293293492485f5dd86b24b5bbefd5528fa3b879488e4a352d3",
+    "launcher_tests": "460592e0039b0f1d0d27a6ee81c57b1abe62e2010c54889ab17e145f929fc413",
+    "live_gate_json": "16e5e92011efe3474dc23141ca41c1075d23990edf236a759f0ba934d4f7f5d6",
+    "live_gate_markdown": "3869a2f52e8df50127b09587ead5df46a5fa688cabf531db4caa95b15bd0df17"
+  },
+  "remaining_gate": "run_launcher_in_protected_terminal_session",
+  "post_run_gate": "independent_case_by_case_semantic_review_then_human_result_acceptance"
+}

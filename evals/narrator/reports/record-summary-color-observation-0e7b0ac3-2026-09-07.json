@@ -1,0 +1,616 @@
+{
+  "document_kind": "summary_color_observation_analysis",
+  "recorded_at_utc": "2026-09-07T21:26:54.746394+00:00",
+  "status": "closed_operational_success_target_relation_ambiguous",
+  "batch_id": "0e7b0ac3-b88a-4962-b383-cc6f813c9d4a",
+  "run_dir": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0",
+  "case_ids": [
+    "reading-room-a",
+    "reading-room-b"
+  ],
+  "purpose": "summary_color_qwen_probe",
+  "experiment_version": "record-summary-color-qwen-observation-v1",
+  "protocol": "record-summary-only-v1",
+  "synthetic_only": true,
+  "full_record_derivation": false,
+  "actor_admission": "not_applied",
+  "launcher": {
+    "process_id": 25276,
+    "phase": "finished",
+    "finished_at_utc": "2026-09-07T21:17:39.7995660Z",
+    "exit_code": 0,
+    "credential_retained": false
+  },
+  "raw_artifacts": {
+    "summary.json": {
+      "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json",
+      "sha256": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e"
+    },
+    "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": {
+      "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480"
+    }
+  },
+  "preparation_at_execution": {
+    "file": "evals/narrator/reports/record-summary-color-v1-2026-09-07.json",
+    "snapshot_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-color-close-0e7b0ac3-vcmhqm7p\\evals\\narrator\\reports\\record-summary-color-v1-2026-09-07.json",
+    "snapshot_sha256": "e8eca08562ab19a0fcaab6fcfad0a5712850f142dc9a3664198389ddd6574749",
+    "protected_preparation_fields_preserved": [
+      "prepared_metadata",
+      "files",
+      "verification",
+      "scope",
+      "evidence_files"
+    ],
+    "preparation_tests": 68,
+    "tests_reexecuted_for_this_analysis": 0
+  },
+  "frozen_inputs": {
+    "dossier": {
+      "file": "evals/narrator/reports/record-summary-color-dossier-95dd9fd2-2026-09-07.json",
+      "sha256": "d998a881504ac935a7a4a5ca248afa33b2a78c966668af3e52a0fcacd1a44915",
+      "requests": [
+        {
+          "case_id": "reading-room-a",
+          "body_sha256": "25be06f95bc681bf84a9cf7c4fd62fedd726c150c508a4a3cd28b7307e339065",
+          "user_packet_sha256": "149c1ffdd529220e034dad6c372da216e51db67637c81484176d22a237068f3d"
+        },
+        {
+          "case_id": "reading-room-b",
+          "body_sha256": "032ce8babd9e14b2c55515c7e502c05c1ca2126ce41c2f49c50ba3edd47a5d3a",
+          "user_packet_sha256": "ef2b18269066b38df7ef546ae7b292cb8fbb1fd90908b4330ced21759d396eb8"
+        }
+      ]
+    },
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "corpus": {
+      "file": "record_summary_color_cases_v1.json",
+      "sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a"
+    },
+    "prompt": {
+      "variant": "record-summary-budget-v1",
+      "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+      "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+      "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+    },
+    "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "measurement_policy": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "max_words": 25,
+      "changes_exit_code": false,
+      "semantic_validation": false
+    },
+    "observation_policy": {
+      "max_error_body_bytes": 65536,
+      "raw_error_retained": false,
+      "raw_reasoning_retained": false
+    },
+    "stopping_policy": {
+      "order": [
+        "reading-room-a",
+        "reading-room-b"
+      ],
+      "stop_on_first_operational_failure": true,
+      "operational_failures_include": [
+        "transport_or_provider_error",
+        "deadline",
+        "route_unverified_or_mismatched",
+        "schema_invalid",
+        "local_error",
+        "cancellation"
+      ],
+      "persist_remaining_skips": true,
+      "word_limit_failure_stops_next_case": false,
+      "semantic_review_stops_next_case": false,
+      "replacement_case": false,
+      "repeat_after_result": false
+    },
+    "implementation": [
+      {
+        "file": "scripts/narrator_summary_only.py",
+        "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "8b9fb32cb1e15e06edbc419fdd6f8da306169f1b9df5470d1d1f10829da45eb9"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "reading-room-a",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "corpus_file": "evals/narrator/record_summary_color_cases_v1.json",
+          "corpus_sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a",
+          "case_id": "reading-room-a",
+          "case_index": 0,
+          "field": "narrative",
+          "narrative_sha256": "aa1def53c01ab1ff078e85634aaafe53d29f4531acd85fd537161356ff6b669b"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "149c1ffdd529220e034dad6c372da216e51db67637c81484176d22a237068f3d",
+          "source_units_sha256": "7045a45a0cc35c0780f4eed0e0f66fe259dbfa8fd08f5ae2a0180600c0e15ced",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. "
+            },
+            {
+              "id": "n1",
+              "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 172
+          }
+        }
+      },
+      {
+        "case_id": "reading-room-b",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "corpus_file": "evals/narrator/record_summary_color_cases_v1.json",
+          "corpus_sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a",
+          "case_id": "reading-room-b",
+          "case_index": 1,
+          "field": "narrative",
+          "narrative_sha256": "890dc5a5bed0be1a2e855a73fb424d04aa846a99206d6c94c66248b0dfc99d23"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "ef2b18269066b38df7ef546ae7b292cb8fbb1fd90908b4330ced21759d396eb8",
+          "source_units_sha256": "722e7eaf506e43050f94834beb6c32eb90ca1cf221fb0ab4fd6a81ef4575800b",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. "
+            },
+            {
+              "id": "n1",
+              "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 172
+          }
+        }
+      }
+    ]
+  },
+  "evaluator_at_execution": {
+    "file": "scripts/evaluate_narrator_summary_color.py",
+    "sha256": "2caf4e3f673876477e1da7d52c771a092d3ae8de7933b62e4e44523fe25f6f26",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "operational_result": {
+    "purpose": "summary_color_qwen_probe",
+    "probe_kind": "summary_color_qwen_probe",
+    "experiment_version": "record-summary-color-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluation_stage": "summary_color_qwen_probe",
+    "calls_made": 2,
+    "cases_skipped": 0,
+    "schema_valid": 2,
+    "case_measurements": [
+      {
+        "case_id": "reading-room-a",
+        "instruction_measurements": {
+          "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+          "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+          "word_count": 20,
+          "max_words": 25,
+          "within_word_limit": true,
+          "semantic_fidelity_evaluated": false
+        }
+      },
+      {
+        "case_id": "reading-room-b",
+        "instruction_measurements": {
+          "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+          "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+          "word_count": 20,
+          "max_words": 25,
+          "within_word_limit": true,
+          "semantic_fidelity_evaluated": false
+        }
+      }
+    ],
+    "transport_and_schema_passed": true,
+    "operational_probe_passed": true,
+    "availability_failure": false,
+    "provider_observation": null,
+    "provider_observations": [
+      {
+        "case_id": "reading-room-a",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 200,
+          "request_id": "req_01m1yvnv0ser1rexdcg21eg0a1",
+          "provider_code": null,
+          "model": "qwen/qwen3.8-27b",
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 482,
+            "output_tokens": 39,
+            "total_tokens": 521,
+            "reasoning_tokens": null
+          },
+          "error_body": {
+            "status": "unavailable",
+            "complete": null,
+            "bytes": null,
+            "json_valid": null
+          },
+          "failed_generation": {
+            "status": "unavailable",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      },
+      {
+        "case_id": "reading-room-b",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 200,
+          "request_id": "req_01m1yvqns0e1fs2fsatxndr7t1",
+          "provider_code": null,
+          "model": "qwen/qwen3.8-27b",
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 482,
+            "output_tokens": 39,
+            "total_tokens": 521,
+            "reasoning_tokens": null
+          },
+          "error_body": {
+            "status": "unavailable",
+            "complete": null,
+            "bytes": null,
+            "json_valid": null
+          },
+          "failed_generation": {
+            "status": "unavailable",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      }
+    ],
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 2,
+      "verified_calls": 2,
+      "mismatched_calls": 0,
+      "unavailable_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "reported",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 2,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 964,
+        "output_tokens": 78,
+        "total_tokens": 1042
+      },
+      "reported_subtotals": {
+        "input_tokens": 964,
+        "output_tokens": 78,
+        "total_tokens": 1042
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 0,
+      "unavailable_calls": 2,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "process_exit_code": 0
+  },
+  "agent_semantic_review": {
+    "reviewer": "independent_agent_review",
+    "status": "completed_target_relation_unresolved_by_ambiguity",
+    "raw_automated_review_unchanged": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "criteria_source": "evals/narrator/reports/record-summary-color-design-95dd9fd2-2026-09-07.md",
+    "criteria_sha256": "e0e353ba04bb62a18e5868ced31d881365e222fb82de01496e71b20db0fbc2a6",
+    "criteria_changed": false,
+    "case_reviews": [
+      {
+        "case_id": "reading-room-a",
+        "target_source_quote": "uma luminária de base azul ilumina um mapa dobrado",
+        "target_response_quote": "luminária azul",
+        "target_classification": "ambiguous",
+        "target_preservation_demonstrated": false,
+        "explicit_unequivocal_color_transfer_identified": false,
+        "target_explanation": "Pelo critério prévio, luminária azul não resolve se o azul qualifica a base, o objeto genericamente ou a emissão. Não forçar preservação nem transferência.",
+        "supported_retained_content": [
+          "Sala de leitura vazia.",
+          "Mapa iluminado, ao menos; o alcance sobre outros objetos permanece ambíguo.",
+          "Estojo fechado e marcador presentes.",
+          "Poltrona afastada da estante."
+        ],
+        "peripheral_ambiguities": [
+          {
+            "response_quote": "iluminando mapa, estojo fechado, marcador e poltrona",
+            "assessment": "Pode ampliar iluminação à lista inteira, embora a fonte só explicite o mapa; também permite inventário de objetos sob com. Registrar ambiguidade, sem impor ampliação como falha categórica."
+          },
+          {
+            "response_quote": "poltrona afastada da estante perto da porta",
+            "assessment": "Afastamento preservado; perto da porta pode qualificar a poltrona ou a estante. A fonte situa a poltrona perto da porta."
+          }
+        ],
+        "omitted_dimensions_not_informative": [
+          "Estado dobrado do mapa.",
+          "Localização na mesa.",
+          "Relação de proximidade entre estojo e marcador.",
+          "Especificação marcador de páginas, comprimida para marcador."
+        ],
+        "literal_source": {
+          "narrative": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. "
+            },
+            {
+              "id": "n1",
+              "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+            }
+          ]
+        },
+        "literal_response": {
+          "response_structure": {
+            "summary": "Sala de leitura vazia com luminária azul iluminando mapa, estojo fechado, marcador e poltrona afastada da estante perto da porta."
+          },
+          "summary_text": "Sala de leitura vazia com luminária azul iluminando mapa, estojo fechado, marcador e poltrona afastada da estante perto da porta.",
+          "characters": 129,
+          "instruction_measurements": {
+            "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+            "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+            "word_count": 20,
+            "max_words": 25,
+            "within_word_limit": true,
+            "semantic_fidelity_evaluated": false
+          }
+        }
+      },
+      {
+        "case_id": "reading-room-b",
+        "target_source_quote": "uma luminária emite luz azul sobre um mapa dobrado",
+        "target_response_quote": "luminária azul",
+        "target_classification": "ambiguous",
+        "target_preservation_demonstrated": false,
+        "explicit_unequivocal_color_transfer_identified": false,
+        "target_explanation": "A fonte atribui azul à luz emitida. A compressão luminária azul não distingue essa relação da cor do objeto; o critério prévio exige classificar como ambíguo, sem converter em aprovação ou falha inequívoca de transferência.",
+        "supported_retained_content": [
+          "Sala de leitura vazia e presença dos objetos.",
+          "Estojo e marcador na mesa são compatíveis com a formulação da fonte.",
+          "Poltrona afastada da estante."
+        ],
+        "peripheral_ambiguities": [
+          {
+            "response_quote": "luminária azul sobre mapa",
+            "assessment": "Perde a distinção entre luz projetada sobre o mapa e posição da própria luminária. A leitura posicional acrescentaria relação não estabelecida, mas a formulação comprimida não permite impor uma única interpretação."
+          },
+          {
+            "response_quote": "poltrona afastada da estante perto da porta",
+            "assessment": "Afastamento preservado; o adjunto perto da porta ficou menos claro quanto ao objeto qualificado."
+          }
+        ],
+        "omitted_dimensions_not_informative": [
+          "Estado fechado do estojo.",
+          "Estado dobrado do mapa.",
+          "Relação de proximidade entre estojo e marcador.",
+          "Especificação marcador de páginas, comprimida para marcador."
+        ],
+        "literal_source": {
+          "narrative": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. "
+            },
+            {
+              "id": "n1",
+              "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+            }
+          ]
+        },
+        "literal_response": {
+          "response_structure": {
+            "summary": "Sala de leitura vazia: luminária azul sobre mapa, estojo e marcador na mesa; poltrona afastada da estante perto da porta."
+          },
+          "summary_text": "Sala de leitura vazia: luminária azul sobre mapa, estojo e marcador na mesa; poltrona afastada da estante perto da porta.",
+          "characters": 121,
+          "instruction_measurements": {
+            "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+            "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+            "word_count": 20,
+            "max_words": 25,
+            "within_word_limit": true,
+            "semantic_fidelity_evaluated": false
+          }
+        }
+      }
+    ],
+    "conclusion": "Ambiguidade nos dois alvos; nenhuma demonstração positiva de preservação nem transferência explícita inequívoca da cor. Não há aprovação de fidelidade integral; relações periféricas também ficaram menos claras.",
+    "agency": "Nenhuma ação, emoção ou escolha de jogador/NPC adicionada.",
+    "local_defect_demonstrated": false,
+    "semantic_product_approval": null
+  },
+  "operational_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\artifact-audit.json",
+    "sha256": "db18f75aaaee3951586a236c0af78e25474ce0fd52f39152386340dbb7824412",
+    "recorded_at_utc": "2026-09-07T21:20:49.626699+00:00",
+    "exact_reconstruction": {
+      "current_preflight_equals_prepared_metadata": true,
+      "current_preflight_equals_final_preflight_audit": true,
+      "current_preflight_equals_initial_preflight": true,
+      "current_preflight_equals_raw_summary_metadata": true,
+      "current_preflight_equals_every_raw_jsonl_metadata": true,
+      "preparation_files_equals_final_audit_files": true,
+      "reconstructed_summary_equals_raw_summary": true,
+      "status_and_exit_consistent": true
+    },
+    "integrity_counts": {
+      "preparation_files": 9,
+      "historical_files": 71,
+      "historical_raw_artifacts": 18,
+      "all_unchanged": true
+    },
+    "reconstructed_requests": [
+      {
+        "case_id": "reading-room-a",
+        "body_sha256": "25be06f95bc681bf84a9cf7c4fd62fedd726c150c508a4a3cd28b7307e339065",
+        "dossier_body_exact": true,
+        "root_independent_wire_body_matches": true,
+        "operation": "summary-color.reading-room-a",
+        "user_packet_sha256": "149c1ffdd529220e034dad6c372da216e51db67637c81484176d22a237068f3d"
+      },
+      {
+        "case_id": "reading-room-b",
+        "body_sha256": "032ce8babd9e14b2c55515c7e502c05c1ca2126ce41c2f49c50ba3edd47a5d3a",
+        "dossier_body_exact": true,
+        "root_independent_wire_body_matches": true,
+        "operation": "summary-color.reading-room-b",
+        "user_packet_sha256": "ef2b18269066b38df7ef546ae7b292cb8fbb1fd90908b4330ced21759d396eb8"
+      }
+    ],
+    "timing": {
+      "raw_run_started_at": "2026-09-07T21:15:37.341648+00:00",
+      "raw_run_finished_at": "2026-09-07T21:17:39.164802+00:00",
+      "launcher_finished_at_utc": "2026-09-07T21:17:39.7995660Z",
+      "launcher_pid": 25276,
+      "run_start_to_first_adapter_start_wall_seconds": 60.477648,
+      "inter_adapter_start_wall_seconds": 60.244213,
+      "first_finish_to_second_start_wall_seconds": 59.09287,
+      "run_wall_seconds": 121.823154,
+      "cases": [
+        {
+          "case_id": "reading-room-a",
+          "raw_adapter_started_at": "2026-09-07T21:16:37.819296+00:00",
+          "raw_adapter_finished_at": "2026-09-07T21:16:38.970639+00:00",
+          "adapter_wall_seconds": 1.151343,
+          "row_perf_latency_seconds": 1.152241
+        },
+        {
+          "case_id": "reading-room-b",
+          "raw_adapter_started_at": "2026-09-07T21:17:38.063509+00:00",
+          "raw_adapter_finished_at": "2026-09-07T21:17:39.132790+00:00",
+          "adapter_wall_seconds": 1.069281,
+          "row_perf_latency_seconds": 1.071545
+        }
+      ]
+    },
+    "interpretation_limits": [
+      "Operational transport, verified routes and schema success do not approve semantic fidelity, narrative quality, runtime or CAP-001.",
+      "Both reasoning token counts are null, not zero; no reasoning content was read or retained.",
+      "Cost is unreported, not established as zero.",
+      "Two bounded outputs do not establish a general reliability rate, a causal A/B result or the mechanism of previous failures.",
+      "UTC timestamps retain their explicit +00:00 offsets. Observed start intervals include local work; exact monotonic sleeps and absolute request deadlines are not persisted.",
+      "Local adapter start timestamps do not prove remote network arrival spacing.",
+      "Both requests were reconstructed exactly against frozen code and dossier; these artifacts contain no raw outbound HTTP wire capture."
+    ],
+    "contradictions": [],
+    "integrity_scope": "Fingerprints confirmed during this audit; subsequent shared CAP additions do not rewrite these historical fingerprints."
+  },
+  "comparison_limits": {
+    "causal_comparison": false,
+    "reliability_rate_estimated": false,
+    "historical_failures_reclassified": false,
+    "explanation": "Duas saídas de uma rodada não demonstram taxa, mecanismo causal, efeito do teto ou capacidade geral. O critério de ambiguidade foi registrado antes e não foi flexibilizado após o resultado."
+  },
+  "next_step": {
+    "status": "design_in_progress_not_declared_ready",
+    "authorization": "continuous_user_authority",
+    "new_generic_approval_required": false,
+    "description": "Preparar a observação experimental de compressão relacional: dois braços, controle budget e variante de orientação para selecionar poucas afirmações completas em vez de inventário, sobre UMA mesma fonte sintética NOVA, com USER idêntico nos dois. Manter Qwen/Groq gratuito, SummaryOnlyProposal, reasoning_effort=none, temperatura 0,65 e teto de 768 por chamada (1.536 total). Ordem controle→variante, uma chamada por braço, espera inicial e intervalo entre inícios de pelo menos 60 segundos, deadline de 60 segundos após a espera e parada no primeiro erro operacional. O desenho está em curso, ainda não declarado pronto; nenhum novo envio consta deste fechamento. Uma amostra por braço permite apenas comparação descritiva, sem conclusão causal. Encerrar a investigação após os dois braços ou primeiro erro, sem sequência de reformulações para elevar taxa. Não repetir fontes ou casos encerrados; não recuperar credenciais antigas. A autorização contínua dispensa nova confirmação genérica; concluir trabalho local antes de uma dependência real de credencial.",
+    "max_calls": 2,
+    "new_source_count": 1,
+    "same_user_both_arms": true,
+    "arm_order": [
+      "control_budget",
+      "relational_variant"
+    ],
+    "per_arm_observations": 1,
+    "max_output_tokens_per_call": 768,
+    "max_total_output_tokens": 1536,
+    "new_provider_call_made_by_this_closure": false
+  },
+  "limits": {
+    "raw_semantic_review_rewritten": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "new_tests_run": 0,
+    "new_provider_calls": 0,
+    "credentials_read": false,
+    "raw_artifacts_modified": false
+  }
+}

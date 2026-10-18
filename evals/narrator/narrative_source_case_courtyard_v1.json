@@ -1,0 +1,20 @@
+{
+  "schema": "storyteller.eval.narrative-source-case.v1",
+  "case_id": "courtyard-observe-wait",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "scene": {
+    "location": "Pátio coberto",
+    "npcs_present": []
+  },
+  "turns": [
+    {
+      "turn_id": "observe",
+      "player_input": "Observo o pátio coberto do lugar onde estou, sem tocar em nada."
+    },
+    {
+      "turn_id": "wait",
+      "player_input": "Continuo no mesmo lugar e aguardo, sem tocar em nada."
+    }
+  ]
+}

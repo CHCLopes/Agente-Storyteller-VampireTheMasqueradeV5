@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-11",
+  "scope": "pure B public intent contract and session-bound snapshot consistency guard; producer design",
+  "implementation_completed": true,
+  "producer_runtime_implemented": false,
+  "public_transport_enabled": false,
+  "branch": "codex/planejamento-agente-storyteller-v5",
+  "worktree": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+  "verification": {
+    "passed": 161,
+    "new_entry": 72,
+    "context_regression": 89,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "seconds": 2.91,
+    "exit_code": 0,
+    "dotenv_disabled": true,
+    "external_calls": 0,
+    "independent_review": "closed without blockers"
+  },
+  "files_sha256": {
+    "api/narrative_source_entry.py": "7e1941fda8792785fa61eb7a393745706df7792f01038ad40b4be7ef334b2757",
+    "tests/test_narrative_source_entry.py": "bb254cd4b710d546a1d7203906d9084f561f5815d0a76219b1149ff29662fefa"
+  },
+  "preserved_sha256": {
+    "api/persistence.py": "df29d5b0c6886adf9230c3c667e4dd8f3ce228096cc2e92ab152fcda4bee3d2d",
+    "api/main.py": "97966517e68f46abd21fb6ec86c8899461cebc2e388a530453bea389502d4d40",
+    "api/orchestrator_service.py": "4752f6d4f4b9be65059cd1a9eb555962f87959d3ced8682d4779655f883c5a85",
+    "api/state_service.py": "ac569de70e57b369c3f7bb0d878000e4194821a3ae2d895b2750981e7b43cf17",
+    "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+    "api/narrative_source_capsule.py": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+    "api/narrative_source_preparation.py": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+    "api/narrative_source_coordinator.py": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+    "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+    "api/narrative_source_status.py": "446331f5f5ed15fa14446187ec948d45c012075b23a2afcf71339d53047a8318",
+    "tests/conftest.py": "d779c64e08bd1f7ea4fac9db97ad1287478281c7cbf2a88c60fb0e06824688ed"
+  },
+  "evidence": {
+    "entry-context.log": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\entry-context.log",
+      "sha256": "6c9857b5331dc66a99121d9c0c38781f8155dfb5643368be69392f91a0ab20b8"
+    },
+    "entry-context.xml": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\entry-context.xml",
+      "sha256": "a92ae1903acf3d52b63298b46087c9083072bcd24d210b318e9ed23aec50fb5f"
+    },
+    "result.json": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-entry-tests-20260911\\result.json",
+      "sha256": "be03cca3e26f80bf7ee61ad3a2d37d14392b4558c55255dffd9a22d369982ae3"
+    }
+  },
+  "producer_design": "plan/feature-narrative-source-input-producer-1.md",
+  "limits": [
+    "No action classification, RNG, reservation, storage, authentication, readiness or retry granted by entry validation.",
+    "Producer code is a separate increment; design is not executed verification.",
+    "No UI/default/CAP-001 approval or real save access."
+  ],
+  "historical_handoff_tail_preserved": true
+}

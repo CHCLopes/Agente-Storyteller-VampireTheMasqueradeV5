@@ -1,0 +1,36 @@
+{
+  "protocol": "mara-founder-live-recheck-v1",
+  "observed_at": "2026-09-16T22:35:41Z",
+  "session_id": "local.6b1e2940-08c5-4aa8-bc62-dff0bf173916",
+  "operation_id": "mara-founder-929e1015-50b8-4e50-976c-8402d0d9c1fb",
+  "turn_id": "057f5315-aaf2-59e9-aa0a-fd162ed19ada",
+  "turn_number": 2,
+  "route_operation": "H6.direct_scene",
+  "selected_option_id": "mara.founder",
+  "effect_keys": ["mara.responds.without_founder_identity"],
+  "provider": "Groq",
+  "model": "qwen/qwen3.8-27b",
+  "input_tokens": 1639,
+  "output_tokens": 284,
+  "total_tokens": 1923,
+  "status": "completed",
+  "result_hash": "e47058814d828082a7eec70eabcfff75a46e6d1271ac1cd10f25a7adf6b680cf",
+  "payload_hash": "e47058814d828082a7eec70eabcfff75a46e6d1271ac1cd10f25a7adf6b680cf",
+  "semantic_checks": {
+    "founder_identity_withheld": true,
+    "player_agency_preserved": true,
+    "scene_grounded": true,
+    "actionable_lead_offered": true
+  },
+  "invalid_attempt_excluded": {
+    "operation_id": "mara-founder-e31cd05e-9a56-4715-84ba-a3c77e8ded6a",
+    "reason": "scene initialization failed and snapshot remained Elysium without Mara"
+  },
+  "task_025": "passed",
+  "approvals": {
+    "model_default": false,
+    "campaign": false,
+    "runtime": false,
+    "cap_001": false
+  }
+}

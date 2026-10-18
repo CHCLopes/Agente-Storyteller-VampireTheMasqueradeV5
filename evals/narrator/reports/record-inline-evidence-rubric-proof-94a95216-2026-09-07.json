@@ -1,0 +1,565 @@
+{
+  "document_kind": "offline_inline_evidence_rubric_proof",
+  "basis_batch": "94a95216-9d0b-479e-85d3-e6c577ce4fa3",
+  "date": "2026-09-07",
+  "status": "offline_proof_completed",
+  "scope": "summary_and_open_questions_only",
+  "live_provider_calls": 0,
+  "new_test_files": 0,
+  "runtime_changes": false,
+  "historical_criteria_changed": false,
+  "semantic_evaluation_method": "explicit_authored_review_labels_not_an_automatic_classifier",
+  "word_count_method": {
+    "kind": "unicode_letter_or_number_sequences_with_internal_apostrophe_or_hyphen",
+    "regex": "[^\\W_]+(?:['’\\-][^\\W_]+)*"
+  },
+  "protected_files_unchanged": {
+    "evals/narrator/record_inline_case_v1.json": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+    "scripts/narrator_inline_evidence.py": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+    "evals/narrator/prompts/record-inline-evidence-v1.md": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+    "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/gpt-oss-120b-groq-free-synthetic-low.jsonl": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624",
+    "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a"
+  },
+  "authored_case_count": 9,
+  "observed_reference_count": 2,
+  "authored_cases": [
+    {
+      "id": "V1",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Uma lanterna vermelha ilumina a mesa coberta de pastas. ",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Há vibração perto da porta fechada. ",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "satisfactory_reference",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty": "preserved",
+        "modality_separation": "preserved",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Três segmentos com afirmações separadas; n1 pode sustentar mais de um segmento sem modificar a fonte.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Uma lanterna vermelha ilumina a mesa coberta de pastas. Há vibração perto da porta fechada. Talvez exista um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 23,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "V2",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Perto da porta fechada há uma vibração leve. ",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Pode existir um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "satisfactory_reference",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty": "preserved",
+        "modality_separation": "preserved",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Paráfrase diferente; omite legitimamente n0 e conserva observação e hipótese, sem uma resposta textual única.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Perto da porta fechada há uma vibração leve. Pode existir um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 16,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "O1",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Uma lanterna vermelha ilumina a mesa coberta de pastas.",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "legitimate_omission",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty": "not_informative",
+        "modality_separation": "not_informative",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Resumo fundamentado, mas não demonstra competência na dimensão omitida.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Uma lanterna vermelha ilumina a mesa coberta de pastas.",
+        "open_questions": [],
+        "summary_words": 9,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "N1",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Uma lanterna vermelha ilumina a mesa coberta de pastas. ",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Há vibração perto da porta fechada. ",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Existe um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "semantic_counterexample",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty": "promoted_to_fact",
+        "modality_separation": "not_sufficient",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "A possibilidade de existência do motor vira uma existência afirmada; IDs válidos não corrigem a promoção.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Uma lanterna vermelha ilumina a mesa coberta de pastas. Há vibração perto da porta fechada. Existe um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 22,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "N2",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Uma lanterna vermelha ilumina a mesa coberta de pastas. ",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Há vibração perto da porta fechada. ",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "annotation_counterexample",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty_in_text": "preserved",
+        "modality_label": "incompatible_with_hypothesis",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "A redação continua modalizada; a contraprova altera somente a anotação. Não classificar isso como confirmação textual do motor.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Uma lanterna vermelha ilumina a mesa coberta de pastas. Há vibração perto da porta fechada. Talvez exista um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 23,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "N3",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Há vibração perto da porta fechada. Talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "segmentation_counterexample",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty_in_text": "preserved",
+        "modality_separation": "mixed_independent_claims",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Duas frases independentes, fato e hipótese, agrupadas sob um rótulo; contraria a separação expressa no protocolo.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Há vibração perto da porta fechada. Talvez exista um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 14,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "N4",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "Uma lanterna vermelha ilumina a mesa coberta de pastas. ",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Há vibração perto da porta fechada. ",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": [
+          [
+            {
+              "text": "O motor do outro lado está realmente em funcionamento?",
+              "sources": [
+                "n1"
+              ],
+              "modality": "unresolved"
+            }
+          ]
+        ]
+      },
+      "authored_semantic_classification": "question_presupposition_counterexample",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty_in_summary": "preserved",
+        "modality_separation": "preserved",
+        "question_presupposition": "existence_promoted"
+      },
+      "reason": "A pergunta preserva dúvida sobre funcionamento, mas pressupõe um motor definido. O resumo válido não absolve a questão.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "Uma lanterna vermelha ilumina a mesa coberta de pastas. Há vibração perto da porta fechada. Talvez exista um motor funcionando do outro lado.",
+        "open_questions": [
+          "O motor do outro lado está realmente em funcionamento?"
+        ],
+        "summary_words": 23,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "B1",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "A vibração sugere a possibilidade de um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "established"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "borderline_indication_report",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty_in_text": "preserved",
+        "modality_label": "requires_explicit_scope_convention",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Relato da relação indiciária com hipótese embutida; não usar para reinterpretar os lotes. Antes de pontuar novas variantes, definir se o rótulo qualifica o relato estabelecido ou a causa apenas sugerida.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "A vibração sugere a possibilidade de um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 12,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "id": "B2",
+      "origin": "authored_offline_counterproof",
+      "proposal": {
+        "summary": [
+          {
+            "text": "A vibração sugere a possibilidade de um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": []
+      },
+      "authored_semantic_classification": "borderline_indication_report",
+      "dimension_review": {
+        "compression": "informative",
+        "uncertainty_in_text": "preserved",
+        "modality_label": "requires_explicit_scope_convention",
+        "question_presupposition": "not_informative"
+      },
+      "reason": "Relato da relação indiciária com hipótese embutida; não usar para reinterpretar os lotes. Antes de pontuar novas variantes, definir se o rótulo qualifica o relato estabelecido ou a causa apenas sugerida.",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "A vibração sugere a possibilidade de um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 12,
+        "summary_within_25_words": true,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    }
+  ],
+  "observed_references": [
+    {
+      "batch_id": "6876955e-73f6-4bd3-be22-1d156a065449",
+      "source_file": "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+      "source_sha256": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624",
+      "proposal": {
+        "summary": [
+          {
+            "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas.",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": [
+          [
+            {
+              "text": "O motor do outro lado está realmente em funcionamento?",
+              "sources": [
+                "n1"
+              ],
+              "modality": "unresolved"
+            }
+          ]
+        ]
+      },
+      "original_projection": {
+        "summary": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas.Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+        "open_questions": [
+          "O motor do outro lado está realmente em funcionamento?"
+        ]
+      },
+      "origin": "unaltered_observed_output_reference",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas.Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+        "open_questions": [
+          "O motor do outro lado está realmente em funcionamento?"
+        ],
+        "summary_words": 32,
+        "summary_within_25_words": false,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    },
+    {
+      "batch_id": "94a95216-9d0b-479e-85d3-e6c577ce4fa3",
+      "source_file": "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "source_sha256": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a",
+      "proposal": {
+        "summary": [
+          {
+            "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. ",
+            "sources": [
+              "n0"
+            ],
+            "modality": "established"
+          },
+          {
+            "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+            "sources": [
+              "n1"
+            ],
+            "modality": "suggested"
+          }
+        ],
+        "open_questions": []
+      },
+      "original_projection": {
+        "summary": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+        "open_questions": []
+      },
+      "origin": "unaltered_observed_output_reference",
+      "offline_structural_result": {
+        "schema_valid": true,
+        "projection_valid": true,
+        "summary": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+        "open_questions": [],
+        "summary_words": 32,
+        "summary_within_25_words": false,
+        "semantic_not_evaluated": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated"
+      }
+    }
+  ],
+  "conclusion": {
+    "structural_representation_is_feasible": true,
+    "unique_exact_answer_required": false,
+    "automatic_semantic_judgment_added": false,
+    "source_units_must_equal_output_segments": false,
+    "source_copy_causation_proven": false,
+    "historical_outputs_reclassified_as_satisfactory": false
+  },
+  "next_proposal": {
+    "status": "preparation_authorized_no_live_call_in_this_proof",
+    "question": "Can the same fixed Qwen profile produce a grounded summary of at most 25 words when output-source annotations, modality labels and questions are removed?",
+    "treatment": "A new experimental summary-only output task; preserve the complete original USER including source_units, narrative and profile. Remove only output tasks that no longer exist from SYSTEM and use a single-summary-string schema.",
+    "budget": {
+      "max_calls": 1,
+      "max_output_tokens": 3072,
+      "temperature": 0.65,
+      "reasoning_effort": "none",
+      "minimum_wait_seconds": 60,
+      "deadline_seconds": 60,
+      "retries": 0,
+      "fallback": false,
+      "llm_judge": false
+    },
+    "interpretation": "Compression and every expressed claim are assessed separately. Omitted uncertainty remains uninformative. A pass would establish only this simpler task is feasible in this observation, not annotation causation, a success rate or CAP/runtime readiness.",
+    "stop": "End after the single result, including operational failure or target-dimension omission. No retry, profile/prompt/ceiling follow-up ladder is approved by this proposal.",
+    "alternative_not_selected": "Changing source granularity would alter input as well as provision a semantic decomposition; it is a less clean test of the output annotation workload.",
+    "output_contract": {
+      "fields": [
+        "summary"
+      ],
+      "summary_type": "strict_string",
+      "minimum_characters": 8,
+      "maximum_characters": 600,
+      "additional_properties": false,
+      "word_limit_instruction": 25,
+      "questions_in_output": false,
+      "sources_in_output": false,
+      "modality_in_output": false
+    },
+    "request_changes": [
+      "SYSTEM: only the summary task, retaining fidelity and 25-word instruction; remove questions, inline references and modality-label instructions.",
+      "response_format: strict object with only summary string, 8..600 characters, no additional fields."
+    ],
+    "request_preserved": [
+      "complete existing USER including narrative and source_units",
+      "Qwen model and reasoning_effort none profile",
+      "temperature 0.65",
+      "max_completion_tokens 3072",
+      "official Groq native structured route"
+    ],
+    "scope_note": "Root authorized preparation after the offline proof. No executor, prompt, schema artifact or provider call was created by this proof. Experimental identity and request hashes must be frozen separately before any observation."
+  }
+}

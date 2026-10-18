@@ -1,0 +1,135 @@
+{
+  "date": "2026-09-25",
+  "status": "closed_human_accepted_no_candidate_eligible",
+  "hypothesis_id": "closed_world_render_plan_v1",
+  "question": "Can a server-authored closed-world render plan let the exact GPT-OSS low target realize only authorized propositions while preserving grounded progression, coherent holds, player agency and protected secrets?",
+  "evidence_basis": {
+    "hypothesis_001_result": "no_candidate_eligible_human_accepted",
+    "gpt_oss_hypothesis_001_score": "5/8",
+    "qwen_hypothesis_001_score": "2/8",
+    "authentication_observation": "evals/narrator/reports/groq-authentication-check-2026-09-25.json",
+    "authentication_functional_at_observation_time": true
+  },
+  "distinct_variable": "server_authored_closed_world_render_plan",
+  "intervention": {
+    "required_fields": [
+      "required_units",
+      "optional_units",
+      "authorized_transition",
+      "player_action_boundary",
+      "unknowns",
+      "forbidden_claims",
+      "sensory_palette",
+      "next_choice_boundary"
+    ],
+    "unlisted_factual_or_sensory_claims_allowed": false,
+    "canonical_authority_changed": false,
+    "rng_authority_changed": false,
+    "player_agency_authority_changed": false
+  },
+  "recommended_option": "HYP-002-L1",
+  "options": {
+    "HYP-002-L1": {
+      "recommended": true,
+      "targets": [
+        {
+          "provider": "Groq",
+          "model": "openai/gpt-oss-120b",
+          "reasoning": "low"
+        }
+      ],
+      "temperature": 0.65,
+      "max_output_tokens_per_call": 768,
+      "deadline_seconds_per_call": 60,
+      "minimum_interval_seconds": 60,
+      "new_isomorphic_cases": 8,
+      "maximum_calls": 8,
+      "retry": false,
+      "repair": false,
+      "fallback": false,
+      "target_switch": false
+    },
+    "HYP-002-L2": {
+      "recommended": false,
+      "targets": [
+        {
+          "provider": "Groq",
+          "model": "openai/gpt-oss-120b",
+          "reasoning": "low"
+        },
+        {
+          "provider": "Groq",
+          "model": "qwen/qwen3.8-27b",
+          "reasoning": "none"
+        }
+      ],
+      "new_isomorphic_cases_per_target": 8,
+      "maximum_calls": 16,
+      "reason_not_recommended": "double_cost_and_retests_a_target_that_failed_six_of_eight_hypothesis_001_cases"
+    }
+  },
+  "case_classes": [
+    "wait_without_authorized_transition",
+    "wait_with_one_authorized_environmental_transition",
+    "known_object_state_inspection",
+    "unknown_object_state_inspection",
+    "resolved_favorable_mechanical_attempt",
+    "resolved_unfavorable_mechanical_attempt",
+    "protected_secret_with_authorized_clue",
+    "ambiguous_action_preserving_next_choice"
+  ],
+  "admission_threshold": "8/8",
+  "fatal_criteria": [
+    "no_unlisted_fact_sensory_state_or_transition",
+    "no_new_player_action_speech_decision_voluntary_perception_or_emotion",
+    "no_secret_disclosure_or_actor_identity_violation",
+    "all_required_units_and_no_forbidden_units",
+    "no_mechanical_result_reversal_or_expansion",
+    "valid_schema_capsule_target_and_provenance",
+    "no_retry_repair_fallback_target_switch_or_hidden_repetition"
+  ],
+  "stop_rules": [
+    "offline_freeze_or_preflight_failure_stops_before_network",
+    "authentication_route_target_transport_schema_or_integrity_failure_stops_remaining_slots",
+    "absolute_call_limit_stops_batch",
+    "no_slot_repetition_or_failed_output_repair",
+    "no_eligible_candidate_is_valid_result",
+    "human_result_acceptance_required_before_admission_or_default"
+  ],
+  "authorization": {
+    "decision_date": "2026-09-25",
+    "human_response": "Aprovo HYP-002-L2",
+    "selected_option": "HYP-002-L2",
+    "live_calls_authorized": true,
+    "offline_preparation_authorized": true,
+    "required_human_response_for_recommended_option": "Aprovo HYP-002-L1",
+    "if_approved": "prepare_offline_then_execute_only_if_every_frozen_detail_matches_this_proposal",
+    "does_not_authorize": [
+      "new_provider_or_paid_cost",
+      "aliases_or_other_models",
+      "reasoning_medium_or_high",
+      "retry_repair_fallback_or_gate_relaxation",
+      "narrator_default",
+      "hybrid_campaign",
+      "production_configuration"
+    ]
+  },
+  "observed_result": {
+    "batch_id": "4f13b856-6bf8-4eab-8639-188fc32b05b3",
+    "calls_completed": 16,
+    "calls_failed": 0,
+    "calls_skipped": 0,
+    "qwen_passed": 0,
+    "gpt_oss_passed": 0,
+    "admission_threshold": "8/8",
+    "eligible_candidates": [],
+    "narrator_admitted": false,
+    "runtime_default_created": false,
+    "human_acceptance_pending": false,
+    "human_acceptance": {
+      "date": "2026-09-25",
+      "text": "Aceito HYP-002-L2: nenhum candidato elegível; nenhum narrador admitido."
+    },
+    "evidence": "evals/narrator/reports/closed-world-render-live-observation-4f13b856-2026-09-25.json"
+  }
+}

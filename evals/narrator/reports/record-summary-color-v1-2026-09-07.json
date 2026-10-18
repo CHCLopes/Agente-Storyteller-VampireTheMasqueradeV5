@@ -1,0 +1,371 @@
+{
+  "document_kind": "summary_color_observation_preparation",
+  "recorded_at_utc": "2026-09-07T21:08:00.240863+00:00",
+  "status": "observed_closed_operational_success_semantic_target_ambiguous",
+  "authorization": {
+    "source": "continuous_user_authority",
+    "new_observation_approval_required": false,
+    "human_dependency": null
+  },
+  "basis_batch": "95dd9fd2-f78f-4467-858f-b3948479aa10",
+  "basis_batch_closed": true,
+  "prepared_metadata": {
+    "purpose": "summary_color_qwen_probe",
+    "probe_kind": "summary_color_qwen_probe",
+    "experiment_version": "record-summary-color-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_summary_color.py",
+      "sha256": "2caf4e3f673876477e1da7d52c771a092d3ae8de7933b62e4e44523fe25f6f26",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "none"
+    },
+    "summary_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 768
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "max_total_output_tokens": 1536,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-summary-color-dossier-95dd9fd2-2026-09-07.json",
+        "sha256": "d998a881504ac935a7a4a5ca248afa33b2a78c966668af3e52a0fcacd1a44915",
+        "requests": [
+          {
+            "case_id": "reading-room-a",
+            "body_sha256": "25be06f95bc681bf84a9cf7c4fd62fedd726c150c508a4a3cd28b7307e339065",
+            "user_packet_sha256": "149c1ffdd529220e034dad6c372da216e51db67637c81484176d22a237068f3d"
+          },
+          {
+            "case_id": "reading-room-b",
+            "body_sha256": "032ce8babd9e14b2c55515c7e502c05c1ca2126ce41c2f49c50ba3edd47a5d3a",
+            "user_packet_sha256": "ef2b18269066b38df7ef546ae7b292cb8fbb1fd90908b4330ced21759d396eb8"
+          }
+        ]
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "corpus": {
+        "file": "record_summary_color_cases_v1.json",
+        "sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a"
+      },
+      "prompt": {
+        "variant": "record-summary-budget-v1",
+        "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+        "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+        "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+      },
+      "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+      "measurement_policy": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "max_words": 25,
+        "changes_exit_code": false,
+        "semantic_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "stopping_policy": {
+        "order": [
+          "reading-room-a",
+          "reading-room-b"
+        ],
+        "stop_on_first_operational_failure": true,
+        "operational_failures_include": [
+          "transport_or_provider_error",
+          "deadline",
+          "route_unverified_or_mismatched",
+          "schema_invalid",
+          "local_error",
+          "cancellation"
+        ],
+        "persist_remaining_skips": true,
+        "word_limit_failure_stops_next_case": false,
+        "semantic_review_stops_next_case": false,
+        "replacement_case": false,
+        "repeat_after_result": false
+      },
+      "implementation": [
+        {
+          "file": "scripts/narrator_summary_only.py",
+          "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "8b9fb32cb1e15e06edbc419fdd6f8da306169f1b9df5470d1d1f10829da45eb9"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "reading-room-a",
+          "source": {
+            "origin": "agent_authored_synthetic_case",
+            "synthetic_only": true,
+            "corpus_file": "evals/narrator/record_summary_color_cases_v1.json",
+            "corpus_sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a",
+            "case_id": "reading-room-a",
+            "case_index": 0,
+            "field": "narrative",
+            "narrative_sha256": "aa1def53c01ab1ff078e85634aaafe53d29f4531acd85fd537161356ff6b669b"
+          },
+          "generation_context": {
+            "version": "record-inline-evidence-v1",
+            "user_packet_sha256": "149c1ffdd529220e034dad6c372da216e51db67637c81484176d22a237068f3d",
+            "source_units_sha256": "7045a45a0cc35c0780f4eed0e0f66fe259dbfa8fd08f5ae2a0180600c0e15ced",
+            "source_units": [
+              {
+                "id": "n0",
+                "text": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. "
+              },
+              {
+                "id": "n1",
+                "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+              }
+            ],
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 172
+            }
+          }
+        },
+        {
+          "case_id": "reading-room-b",
+          "source": {
+            "origin": "agent_authored_synthetic_case",
+            "synthetic_only": true,
+            "corpus_file": "evals/narrator/record_summary_color_cases_v1.json",
+            "corpus_sha256": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a",
+            "case_id": "reading-room-b",
+            "case_index": 1,
+            "field": "narrative",
+            "narrative_sha256": "890dc5a5bed0be1a2e855a73fb424d04aa846a99206d6c94c66248b0dfc99d23"
+          },
+          "generation_context": {
+            "version": "record-inline-evidence-v1",
+            "user_packet_sha256": "ef2b18269066b38df7ef546ae7b292cb8fbb1fd90908b4330ced21759d396eb8",
+            "source_units_sha256": "722e7eaf506e43050f94834beb6c32eb90ca1cf221fb0ab4fd6a81ef4575800b",
+            "source_units": [
+              {
+                "id": "n0",
+                "text": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. "
+              },
+              {
+                "id": "n1",
+                "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+              }
+            ],
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 172
+            }
+          }
+        }
+      ]
+    }
+  },
+  "files": {
+    "scripts/evaluate_narrator_summary_color.py": "2caf4e3f673876477e1da7d52c771a092d3ae8de7933b62e4e44523fe25f6f26",
+    "scripts/run_groq_summary_color_probe.ps1": "24ba566dba9ae99cefda863aa012db6167d0a04149bff6ca7bff46130c07bba8",
+    "scripts/evaluate_narrator_models.py": "8b9fb32cb1e15e06edbc419fdd6f8da306169f1b9df5470d1d1f10829da45eb9",
+    "tests/test_summary_color_execution.py": "73f16c979f3e1ded0409be3b91ead862dc7ef835a80cf0e6f5c2c5d224ba7eda",
+    "tests/test_summary_color_runner.py": "f6ef2cf4f862773cbdf6fa5f2ee0eec8b9e4ffe168599649c1acc4ca5ffb318f",
+    "tests/test_summary_color_replay_boundary.py": "2a13a47dede1df47340c0c63951b6c02387329898c6bbe255d936a908f23c699",
+    "evals/narrator/record_summary_color_cases_v1.json": "2795503b86b084b24c7864f5368f12a5acc9889601a57b24e6e557d977cf710a",
+    "evals/narrator/reports/record-summary-color-design-95dd9fd2-2026-09-07.md": "e0e353ba04bb62a18e5868ced31d881365e222fb82de01496e71b20db0fbc2a6",
+    "evals/narrator/reports/record-summary-color-dossier-95dd9fd2-2026-09-07.json": "d998a881504ac935a7a4a5ca248afa33b2a78c966668af3e52a0fcacd1a44915"
+  },
+  "verification": {
+    "focused_tests": {
+      "distinct_passed": 68,
+      "new_passed": 68,
+      "existing_passed": 0,
+      "remaining_failures": 0,
+      "groups": [
+        {
+          "file": "tests/test_summary_color_execution.py",
+          "passed": 22,
+          "seconds": 19.56
+        },
+        {
+          "file": "tests/test_summary_color_runner.py",
+          "passed": 35,
+          "seconds": 79.95
+        },
+        {
+          "file": "tests/test_summary_color_replay_boundary.py",
+          "passed": 11,
+          "seconds": 0.42
+        }
+      ]
+    },
+    "independent_static_review": {
+      "reviewer": "Socrates",
+      "findings": [],
+      "executor_sha256": "2caf4e3f673876477e1da7d52c771a092d3ae8de7933b62e4e44523fe25f6f26",
+      "wrapper_sha256": "24ba566dba9ae99cefda863aa012db6167d0a04149bff6ca7bff46130c07bba8",
+      "scope": "finite derivation; two exclusive bodies; wait/deadline; credentials; literal retention; stopping/status and CAP boundaries; frozen semantic criteria"
+    },
+    "independent_wire_reconstruction": true,
+    "cli_preflight_matches_imported": true,
+    "real_empty_key_integration": {
+      "passed": true,
+      "expected_exit": 3,
+      "failure_stage": "credential validation",
+      "provider_calls": 0,
+      "new_artifacts": 0
+    },
+    "historical_files_preserved": 71,
+    "historical_raw_artifacts_preserved": 18,
+    "shared_change": {
+      "added_lines": 12,
+      "removed_lines": 0,
+      "scope": "new exact identities refused at both CAP replay entries"
+    },
+    "runtime_and_provider_adapters_changed": false,
+    "warning": "Pre-existing Starlette multipart PendingDeprecationWarning; outside this change."
+  },
+  "scope": {
+    "new_cases": [
+      "reading-room-a",
+      "reading-room-b"
+    ],
+    "max_calls": 2,
+    "max_output_tokens_per_call": 768,
+    "max_total_output_tokens": 1536,
+    "initial_wait_seconds": 60,
+    "minimum_start_interval_seconds": 60,
+    "deadline_after_wait_seconds": 60,
+    "stop_on_first_operational_failure": true,
+    "persist_remaining_skips": true,
+    "word_limit_and_semantics_stop_next_case": false,
+    "retries": 0,
+    "fallback": false,
+    "synthetic_only": true,
+    "semantic_approval": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "evidence_files": {
+    "executor_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-execution-cde7ne6a\\after.json",
+      "sha256": "27ed88b4a8a2476592154c6537c350cc9d274882d0e3b3cd4e2a2a6712f6796c"
+    },
+    "wrapper_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-preparation-sn59q9ij\\after-tests.json",
+      "sha256": "de4e675463ecc233889d0ce775830af2d3802330fdeedd7b0961197f5418dc7c"
+    },
+    "replay_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\replay-boundary-verification.json",
+      "sha256": "36d2b9cecdb8accdd2032cedfafae7458b4bec3b6248efbd57e8247ec51deb53"
+    },
+    "independent_wire": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\independent-wire-audit.json",
+      "sha256": "f2e737b52cde003082161136c7b1d6b9778645620ef315e39d9596ab2258732e"
+    },
+    "real_empty_key": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\real-empty-key-integration.json",
+      "sha256": "2f9b22112a951f48c6439820ba7bbccacf1b485a3f4402a88024a66ce17b46e4"
+    },
+    "final_preflight": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\final-preflight-audit.json",
+      "sha256": "4ba9bf4e1ba548a05049894c8d8a5823a862ba37d77a1c75a74c079a59cfd95e"
+    }
+  },
+  "live_execution": {
+    "state": "finished",
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\launch-summary-color.ps1",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\status.json",
+    "process_id": 25276,
+    "started_at_utc": "2026-09-07T21:09:51.5212485Z",
+    "status_snapshot": {
+      "at_utc": "2026-09-07T21:17:39.7995660Z",
+      "phase": "finished",
+      "exit_code": 0,
+      "process_id": 25276
+    },
+    "window_title": "Agente Storyteller - Qwen cor - chave protegida",
+    "launcher_sha256": "6657ff48958f1c9cb4953d7aa262c20f76b9e46e42167bd1b59955a255bb7a12",
+    "launch_record": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-color-live-20260907\\launch-record.json",
+    "launch_record_sha256": "b08779a65d299c4b28148c50ae865123b414ba5400459ca86c67b0692dbceacb",
+    "preparation_sha256_before_launch": "9cdb473164ec6723d72eca14436e0b2de2eccb5c8a8dfd3d018418b86e80cf09",
+    "automatic_relaunch": false,
+    "batch_id": "0e7b0ac3-b88a-4962-b383-cc6f813c9d4a",
+    "run_dir": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0",
+    "finished_at_utc": "2026-09-07T21:17:39.7995660Z",
+    "exit_code": 0,
+    "credential_retained": false,
+    "observation_report": "evals/narrator/reports/record-summary-color-observation-0e7b0ac3-2026-09-07.md",
+    "observation_analysis": "evals/narrator/reports/record-summary-color-observation-0e7b0ac3-2026-09-07.json",
+    "operational_probe_passed": true,
+    "closed": true
+  }
+}

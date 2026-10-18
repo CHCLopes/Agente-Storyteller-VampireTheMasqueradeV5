@@ -1,0 +1,55 @@
+{
+  "scope": "closed zero-call observation and prospective dialogue input correction",
+  "observed_run_id": "6486b938-4667-418d-8bc0-57b913c104b7",
+  "original_status": "stopped",
+  "original_exit_code": 0,
+  "original_forced_shutdown": false,
+  "original_terminal_reason": "admission_unavailable",
+  "original_calls_started": 0,
+  "original_counts": {
+    "P": 0,
+    "K": 0,
+    "H": 0,
+    "attempts_total": 0,
+    "turns": 0,
+    "events": 0
+  },
+  "original_records_jsonl_exists": false,
+  "input_reported_after_run": "Mara, me fale sobre este lugar",
+  "input_recovered_from_database": false,
+  "causal_limit": "Reported phrase reproduces a sufficient grammar refusal. The original status did not retain the exact admission subtype or input.",
+  "change": "Explicit talk/wait controls preserve the speech and compose the already accepted envelope before ID allocation.",
+  "verification": {
+    "ui_distinct_cases_reconciled": 51,
+    "ui_first_functional_passed": 50,
+    "ui_final_affected_selection_passed": 25,
+    "ui_lint_typecheck_build_passed": true,
+    "backend_mock_cases_passed": 2,
+    "preflight_inputs_verified": 45,
+    "preflight_run_id": "a8d9edb2-9ab1-4e68-981d-34ddd3c0aae2",
+    "preflight_exit_code": 0,
+    "independent_review": "no remaining material finding"
+  },
+  "checkpoint": "eval-results/checkpoints/source-player-dialogue-correction-20260912/manifest.json",
+  "checkpoint_sha256": "5e289f429062c8039dcc6cbb12aaafd6556cf475898bc1a11b313431d15ac10c",
+  "checkpoint_copies": 108,
+  "historical_anchors": [
+    {
+      "file": "eval-results/checkpoints/source-player-interactive-preparation-20260912/manifest.json",
+      "sha256": "a79b073a95833a8bf996f0d60c922d1b95abcb71b398c15afe7ad66fcb71273d",
+      "verified_copies": 152
+    },
+    {
+      "file": "eval-results/checkpoints/source-player-interactive-observation-6486b938-20260912/manifest.json",
+      "sha256": "b47100dc1cd2e09a7690f34650b1c1c60ae6c5211869faa1fb52f66fd76f0d37",
+      "verified_copies": 58
+    }
+  ],
+  "new_provider_calls": 0,
+  "credential_used": false,
+  "live_corrected_trial_executed": false,
+  "scope_acceptance": "The user exercised the previously described limited trial. No new scope approval is requested for this correction.",
+  "runtime_default_approved": false,
+  "cap_001_approved": false,
+  "next_step": "Start a new limited session from the protected key-owning PowerShell and use the corrected conversation field."
+}

@@ -1,0 +1,106 @@
+{
+  "protocol": "scene-resolution-offline-v1",
+  "synthetic_only": true,
+  "provider_calls": 0,
+  "inputs": {
+    "corpus_sha256": "90663e318294cdb4fa733f413069600e8f74dda6055c3e773fde8de9d0d22f64",
+    "protocol_sha256": "c6ee8b9406c38a0e71a1eb442ab2f34bf942fa661511f273c71008c6ed448c3f"
+  },
+  "case_count": 4,
+  "passed_count": 4,
+  "failed_count": 0,
+  "all_gates_passed": true,
+  "model_selected": false,
+  "runtime_default_eligible": false,
+  "cap_001_approved": false,
+  "cases": [
+    {
+      "case_id": "dialogue-admitted",
+      "expected": "admitted",
+      "actual": "admitted",
+      "code": null,
+      "gates": {
+        "causality": true,
+        "agency": true,
+        "attribution": true,
+        "progression": true,
+        "non_contradiction": true
+      },
+      "passed": true,
+      "projected_state": {
+        "location": "Arquivo",
+        "summary": "Mara mostrou o índice e uma linha rasurada passou a orientar a investigação.",
+        "npcs_present": [
+          "Mara"
+        ],
+        "details": [
+          "Mara indica o índice de entradas recentes.",
+          "Mara responde e aponta o índice sobre a mesa."
+        ],
+        "open_threads": [
+          "Localizar o livro azul",
+          "Descobrir por que uma entrada foi rasurada"
+        ],
+        "last_turn": 5
+      }
+    },
+    {
+      "case_id": "wait-admitted",
+      "expected": "admitted",
+      "actual": "admitted",
+      "code": null,
+      "gates": {
+        "causality": true,
+        "agency": true,
+        "attribution": true,
+        "progression": true,
+        "non_contradiction": true
+      },
+      "passed": true,
+      "projected_state": {
+        "location": "Arquivo",
+        "summary": "A poça chegou ao livro-caixa e tornou o risco imediato.",
+        "npcs_present": [
+          "Mara"
+        ],
+        "details": [
+          "A água alcança a borda do livro-caixa."
+        ],
+        "open_threads": [
+          "Impedir que o livro-caixa seja molhado"
+        ],
+        "last_turn": 6
+      }
+    },
+    {
+      "case_id": "required-thread-omitted",
+      "expected": "rejected",
+      "actual": "rejected",
+      "code": "scene_beat_open_thread_omitted",
+      "gates": {
+        "causality": true,
+        "agency": true,
+        "attribution": true,
+        "progression": true,
+        "non_contradiction": true
+      },
+      "passed": true,
+      "projected_state": null
+    },
+    {
+      "case_id": "player-agency-rejected",
+      "expected": "rejected",
+      "actual": "rejected",
+      "code": "scene_player_agency_violation",
+      "gates": {
+        "causality": true,
+        "agency": true,
+        "attribution": true,
+        "progression": true,
+        "non_contradiction": true
+      },
+      "passed": true,
+      "projected_state": null
+    }
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "document_kind": "summary_relational_observation_closure",
+  "recorded_at_utc": "2026-09-07T21:59:11.504352+00:00",
+  "status": "closed_and_analyzed",
+  "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+  "run_directory": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2",
+  "case_id": "gallery-reflection",
+  "arm_ids": [
+    "control",
+    "relational"
+  ],
+  "purpose": "summary_relational_qwen_probe",
+  "experiment_version": "record-summary-relational-qwen-observation-v1",
+  "protocol": "record-summary-only-v1",
+  "synthetic_only": true,
+  "launcher": {
+    "state": "finished",
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\launch-summary-relational.ps1",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\status.json",
+    "process_id": 1096,
+    "started_at_utc": "2026-09-07T21:43:54.8938495Z",
+    "status_snapshot": {
+      "phase": "finished",
+      "process_id": 1096,
+      "at_utc": "2026-09-07T21:47:25.3117077Z",
+      "exit_code": 0
+    },
+    "window_title": "Agente Storyteller - Qwen relacoes - chave protegida",
+    "launcher_sha256": "b25383cf4c2058409fe6309dabf674a3f5be5b6db34d98e31bc5fcfe34bf32ec",
+    "launch_record": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\launch-record.json",
+    "launch_record_sha256": "d39df35b59ae19b75303a7583b0a9028e82715f3095a54195feccb525a363527",
+    "preparation_sha256_before_launch": "49a21c54072f59efdc38a4c254895edad0ff2edbc5fd55f447aa0787a0898ee4",
+    "automatic_relaunch": false,
+    "finished_at_utc": "2026-09-07T21:47:25.3117077Z",
+    "process_exit_code": 0,
+    "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+    "run_directory": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2",
+    "closure_report": "evals/narrator/reports/record-summary-relational-observation-faad6837-2026-09-07.md",
+    "closure_report_json": "evals/narrator/reports/record-summary-relational-observation-faad6837-2026-09-07.json",
+    "credential_discarded": true,
+    "analysis_status": "closed_shared_target_attachment_ambiguous",
+    "next_step": {
+      "status": "authorized_offline_consolidation",
+      "action": "Consolidar as evidências summary-only, budget, color e relational; separar resultados informativos, ambiguidades, omissões e lacunas para definir a próxima direção.",
+      "scheduled_provider_calls": 0,
+      "credential_dependency": null,
+      "new_prompt_or_batch_prepared": false,
+      "generic_human_approval_required": false,
+      "constraints": [
+        "Hipótese relacional encerrada após os dois braços.",
+        "Não preparar novo SYSTEM ou repetir esta hipótese em sequência.",
+        "Não repetir fontes/lotes encerrados ou preencher skips.",
+        "Não converter a consolidação em aprovação de runtime ou CAP-001."
+      ]
+    }
+  },
+  "raw_artifacts": [
+    {
+      "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json",
+      "sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178"
+    },
+    {
+      "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c"
+    }
+  ],
+  "preparation_at_execution": {
+    "file": "evals/narrator/reports/record-summary-relational-v1-2026-09-07.json",
+    "snapshot_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-relational-close-faad6837-8auc27jh\\evals\\narrator\\reports\\record-summary-relational-v1-2026-09-07.json",
+    "sha256_before_closure": "93ea2ad7f556c7f803f519b31f0e73fa8f5fc3ab392f1172f5d40c156b7b0fb5",
+    "literal_protected_fields": [
+      "prepared_metadata",
+      "files",
+      "verification",
+      "scope",
+      "evidence_files"
+    ],
+    "tests_passed_during_preparation": 86,
+    "tests_repeated_for_this_analysis": 0
+  },
+  "frozen_inputs": {
+    "dossier": {
+      "file": "evals/narrator/reports/record-summary-relational-dossier-0e7b0ac3-2026-09-07.json",
+      "sha256": "6c970ba2a5dbc8f3fe0d57914b668fa8efecaa6a1b99ec5b96fa15b9c7b338d9",
+      "requests": [
+        {
+          "arm_id": "control",
+          "case_id": "gallery-reflection",
+          "body_sha256": "cdd9507caa318b6d74e92863e84e483571bdddce0fbbf618e730121e8177a5c9",
+          "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680"
+        },
+        {
+          "arm_id": "relational",
+          "case_id": "gallery-reflection",
+          "body_sha256": "7599cb88ff1f4085ada54469c7749d6ef7aaebbd2287ad207be47e29dd3043ec",
+          "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680"
+        }
+      ]
+    },
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "case": {
+      "file": "evals/narrator/record_summary_relational_case_v1.json",
+      "sha256": "8a42c7ccb56c8002d1a50ae5294bf5dce55babd8ab07cd7774a9e95bb54d3148",
+      "case_id": "gallery-reflection",
+      "source": {
+        "origin": "agent_authored_synthetic_case",
+        "synthetic_only": true,
+        "case_file": "evals/narrator/record_summary_relational_case_v1.json",
+        "case_sha256": "8a42c7ccb56c8002d1a50ae5294bf5dce55babd8ab07cd7774a9e95bb54d3148",
+        "field": "narrative",
+        "narrative_sha256": "d4c35498866e4113f2d0506f56b545896a2efae825756ccc4ba582aadacff326"
+      },
+      "generation_context": {
+        "version": "record-inline-evidence-v1",
+        "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680",
+        "source_units_sha256": "f253397c5dd107bb563710933353709cca4a9fcd85e0a1fe91d0fc4a8248dd33",
+        "source_units": [
+          {
+            "id": "n0",
+            "text": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. "
+          },
+          {
+            "id": "n1",
+            "text": "Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede."
+          }
+        ],
+        "budget": {
+          "scope": "user_packet_only",
+          "method": "characters_divided_by_4",
+          "limit": 2000,
+          "estimated_tokens": 174
+        }
+      }
+    },
+    "arms": [
+      {
+        "arm_id": "control",
+        "arm_index": 0,
+        "case_id": "gallery-reflection",
+        "prompt": {
+          "variant": "record-summary-budget-v1",
+          "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+          "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+          "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+        },
+        "request": {
+          "operation": "summary-relational.control",
+          "body_sha256": "cdd9507caa318b6d74e92863e84e483571bdddce0fbbf618e730121e8177a5c9"
+        }
+      },
+      {
+        "arm_id": "relational",
+        "arm_index": 1,
+        "case_id": "gallery-reflection",
+        "prompt": {
+          "variant": "record-summary-relational-v1",
+          "file": "evals/narrator/prompts/record-summary-relational-v1.md",
+          "file_sha256": "b93760ae4e578871729b203091183fca8f8e47f348f7768972e9e14ad5253101",
+          "sha256": "afa04554805097ded8a1bbb45caa43c02a6743d4b6f63b79ad6e0cf1df179c11"
+        },
+        "request": {
+          "operation": "summary-relational.relational",
+          "body_sha256": "7599cb88ff1f4085ada54469c7749d6ef7aaebbd2287ad207be47e29dd3043ec"
+        }
+      }
+    ],
+    "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "measurement_policy": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "max_words": 25,
+      "changes_exit_code": false,
+      "semantic_validation": false
+    },
+    "observation_policy": {
+      "max_error_body_bytes": 65536,
+      "raw_error_retained": false,
+      "raw_reasoning_retained": false
+    },
+    "stopping_policy": {
+      "order": [
+        "control",
+        "relational"
+      ],
+      "stop_on_first_operational_failure": true,
+      "operational_failures_include": [
+        "transport_or_provider_error",
+        "deadline",
+        "route_unverified_or_mismatched",
+        "schema_invalid",
+        "local_error",
+        "cancellation"
+      ],
+      "persist_remaining_skips": true,
+      "repeat_after_result": false,
+      "word_limit_failure_stops_next_arm": false,
+      "semantic_review_stops_next_arm": false,
+      "replacement_arm": false
+    },
+    "implementation": [
+      {
+        "file": "scripts/narrator_summary_only.py",
+        "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "16074216b0dbb40bbeac1813ce2435a5344f7fde8c2be236051992f5bf8393dc"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ]
+  },
+  "evaluator_at_execution": {
+    "file": "scripts/evaluate_narrator_summary_relational.py",
+    "sha256": "98af671d8fefc1ca5a75051cb16657321558960bca4dab7ac0530b207fa8535e",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "operational_result": {
+    "purpose": "summary_relational_qwen_probe",
+    "probe_kind": "summary_relational_qwen_probe",
+    "experiment_version": "record-summary-relational-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluation_stage": "summary_relational_qwen_probe",
+    "calls_made": 2,
+    "arms_skipped": 0,
+    "schema_valid": 2,
+    "arm_measurements": [
+      {
+        "arm_id": "control",
+        "case_id": "gallery-reflection",
+        "instruction_measurements": {
+          "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+          "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+          "word_count": 19,
+          "max_words": 25,
+          "within_word_limit": true,
+          "semantic_fidelity_evaluated": false
+        }
+      },
+      {
+        "arm_id": "relational",
+        "case_id": "gallery-reflection",
+        "instruction_measurements": {
+          "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+          "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+          "word_count": 23,
+          "max_words": 25,
+          "within_word_limit": true,
+          "semantic_fidelity_evaluated": false
+        }
+      }
+    ],
+    "transport_and_schema_passed": true,
+    "operational_probe_passed": true,
+    "availability_failure": false,
+    "provider_observation": null,
+    "provider_observations": [
+      {
+        "arm_id": "control",
+        "case_id": "gallery-reflection",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 200,
+          "request_id": "req_01m1yxcatsea9s0dr76yeqeepx",
+          "provider_code": null,
+          "model": "qwen/qwen3.8-27b",
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 40,
+            "total_tokens": 516,
+            "reasoning_tokens": null
+          },
+          "error_body": {
+            "status": "unavailable",
+            "complete": null,
+            "bytes": null,
+            "json_valid": null
+          },
+          "failed_generation": {
+            "status": "unavailable",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      },
+      {
+        "arm_id": "relational",
+        "case_id": "gallery-reflection",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 200,
+          "request_id": "req_01m1yxe5grezabhpecsqkvpyf5",
+          "provider_code": null,
+          "model": "qwen/qwen3.8-27b",
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 520,
+            "output_tokens": 46,
+            "total_tokens": 566,
+            "reasoning_tokens": null
+          },
+          "error_body": {
+            "status": "unavailable",
+            "complete": null,
+            "bytes": null,
+            "json_valid": null
+          },
+          "failed_generation": {
+            "status": "unavailable",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      }
+    ],
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 2,
+      "verified_calls": 2,
+      "mismatched_calls": 0,
+      "unavailable_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "reported",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 2,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 996,
+        "output_tokens": 86,
+        "total_tokens": 1082
+      },
+      "reported_subtotals": {
+        "input_tokens": 996,
+        "output_tokens": 86,
+        "total_tokens": 1082
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 2,
+      "reported_calls": 0,
+      "unavailable_calls": 2,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "process_exit_code": 0
+  },
+  "agent_semantic_review": {
+    "authorship": "independent_agent_review",
+    "status": "completed_shared_target_attachment_ambiguous",
+    "criteria": {
+      "file": "evals/narrator/reports/record-summary-relational-design-0e7b0ac3-2026-09-07.md",
+      "sha256": "963c2a9eb5304b2607c2b694bf4e1b8f7af8fb08d581c8d2a7f20878ab840922"
+    },
+    "evaluated_each_arm_before_comparison": true,
+    "source": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede.",
+    "arms": [
+      {
+        "arm_id": "control",
+        "case_id": "gallery-reflection",
+        "literal_summary": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada; catálogo no banco; duas molduras vazias à direita da entrada.",
+        "word_count": 19,
+        "characters": 128,
+        "within_instruction_word_limit": true
+      },
+      {
+        "arm_id": "relational",
+        "case_id": "gallery-reflection",
+        "literal_summary": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada. Catálogo sobre banco; duas molduras vazias apoiadas contra a parede à direita da entrada.",
+        "word_count": 23,
+        "characters": 156,
+        "within_instruction_word_limit": true
+      }
+    ],
+    "relation_matrix": [
+      {
+        "source_claim": "A galeria está vazia.",
+        "control": {
+          "text": "Galeria vazia",
+          "status": "faithful_retention"
+        },
+        "relational": {
+          "text": "Galeria vazia",
+          "status": "faithful_retention"
+        }
+      },
+      {
+        "source_claim": "O espelho reflete a tapeçaria.",
+        "control": {
+          "text": "espelho reflete tapeçaria",
+          "status": "faithful_retention"
+        },
+        "relational": {
+          "text": "espelho reflete tapeçaria",
+          "status": "faithful_retention"
+        }
+      },
+      {
+        "source_claim": "A tapeçaria está pendurada.",
+        "control": {
+          "text": null,
+          "status": "omitted_noninformative"
+        },
+        "relational": {
+          "text": null,
+          "status": "omitted_noninformative"
+        }
+      },
+      {
+        "source_claim": "A tapeçaria está diante da janela fechada; essa posição não foi atribuída ao espelho.",
+        "control": {
+          "text": "espelho reflete tapeçaria diante de janela fechada",
+          "status": "ambiguous_attachment"
+        },
+        "relational": {
+          "text": "espelho reflete tapeçaria diante de janela fechada",
+          "status": "ambiguous_attachment"
+        },
+        "note": "A janela fechada é compatível com a fonte, mas o vínculo espacial ficou menos explícito sem pendurada. Não afirmar transferência inequívoca ao espelho nem escolher uma leitura favorável para aprovar."
+      },
+      {
+        "source_claim": "O catálogo permanece sobre o banco.",
+        "control": {
+          "text": "catálogo no banco",
+          "status": "faithful_compatible_less_precise"
+        },
+        "relational": {
+          "text": "Catálogo sobre banco",
+          "status": "faithful_retention"
+        }
+      },
+      {
+        "source_claim": "Duas molduras vazias estão à direita da entrada.",
+        "control": {
+          "text": "duas molduras vazias à direita da entrada",
+          "status": "faithful_retention"
+        },
+        "relational": {
+          "text": "duas molduras vazias apoiadas contra a parede à direita da entrada",
+          "status": "faithful_compatible_retention"
+        },
+        "note": "A formulação relational é compatível com a localização das molduras; não inferir uma posição independente da parede."
+      },
+      {
+        "source_claim": "As molduras estão apoiadas contra a parede.",
+        "control": {
+          "text": null,
+          "status": "omitted_noninformative"
+        },
+        "relational": {
+          "text": "duas molduras vazias apoiadas contra a parede",
+          "status": "faithful_retention"
+        }
+      }
+    ],
+    "demonstrated_explicit_false_claims": [],
+    "omission_policy": "Permitida e não informativa na dimensão omitida.",
+    "comparison": "Mesmo trecho espacial ambíguo nos dois. Relational retém apoio das molduras contra a parede e explicita sobre banco; não resolve o trecho compartilhado nem demonstra superioridade geral.",
+    "modality_and_agency_limit": "A fonte não apresenta hipótese modal ou ação de jogador/NPC. Nenhuma ação nova é atribuída nas respostas, sem prova geral dessas capacidades.",
+    "local_retention_or_measurement_defect_demonstrated": false,
+    "causal_comparison": false,
+    "winner_declared": false,
+    "runtime_or_cap_approval": false,
+    "raw_review_unchanged": {
+      "status": "not_performed",
+      "approval": null
+    }
+  },
+  "operational_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\artifact-audit.json",
+    "sha256": "961b6ea6c6e3c6e8ed739aee0d7f0a901fdc3e8660bff763126cee9a8c049fba",
+    "audit_document": {
+      "document_kind": "summary_relational_artifact_audit",
+      "recorded_at_utc": "2026-09-07T21:51:12.006364+00:00",
+      "workdir": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller",
+      "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+      "evaluation_invocation_id": "c8bd771b-741e-4c06-97ff-085c9882bdf2",
+      "run_directory": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2",
+      "audit_scope": "read-only reconstruction and integrity of a completed synthetic two-arm probe",
+      "provider_calls_by_auditor": 0,
+      "tests_run_by_auditor": 0,
+      "credential_read_by_auditor": false,
+      "repository_writes_by_auditor": false,
+      "preparation_evidence": {
+        "preparation_file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\reports\\record-summary-relational-v1-2026-09-07.json",
+        "preparation_sha256_at_audit": "93ea2ad7f556c7f803f519b31f0e73fa8f5fc3ab392f1172f5d40c156b7b0fb5",
+        "final_preflight_audit_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\final-preflight-audit.json",
+        "final_preflight_audit_sha256": "08ca01cbc4b08bf0ba751f53b16315205e5df917b336d301dbda83768cf4f635",
+        "initial_prelaunch_metadata_source": "prepared_metadata in the frozen final preflight audit; initial preparation identity independently registered before launch",
+        "initial_preparation_sha256": "49a21c54072f59efdc38a4c254895edad0ff2edbc5fd55f447aa0787a0898ee4",
+        "launch_documentation_verification_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-relational-live-20260907\\launch-documentation-verification.json",
+        "launch_documentation_verification_sha256": "c9e2a796e21e3d12b9759f5cdc4e2250c9d0f3427ddeb678d8a97e5b98e66e0c"
+      },
+      "exact_reconstruction": {
+        "current_preflight_equals_frozen_prelaunch_metadata": true,
+        "current_preflight_equals_current_preparation": true,
+        "current_preflight_equals_raw_metadata_all_rows_and_document": true,
+        "summary_reconstructed_exactly": true,
+        "native_summary_schema_revalidated": true,
+        "summary_text_preserved_literally": true,
+        "instruction_measurements_reconstructed_exactly": true,
+        "row_generation_prompt_matches_arm": true,
+        "both_requests_reconstructed_equal_frozen_dossier": true,
+        "one_source_shared_by_two_distinct_arms": true,
+        "full_user_bytes_identical_between_arms": true,
+        "only_changed_http_field_between_arms": "messages[0].content",
+        "actual_outbound_wire_capture_available": false
+      },
+      "prepared_metadata_canonical_sha256": "39267a21eef1ff2a3331f460b0c7b24d5e664c071ab1dc1dfa9a66ee154dcb97",
+      "reconstructed_summary_canonical_sha256": "a5fd196694d1fcd5a47f8048e2b7fa78aaff0a1426ff6ae202ad83310db9c26a",
+      "raw_artifacts": [
+        {
+          "file": "summary.json",
+          "before_sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+          "after_sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+          "unchanged": true
+        },
+        {
+          "file": "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "before_sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+          "after_sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+          "unchanged": true
+        }
+      ],
+      "integrity_counts": {
+        "preparation_files": 10,
+        "historical_files": 81,
+        "historical_raw_artifacts": 20,
+        "new_raw_artifacts": 2
+      },
+      "integrity": [
+        {
+          "inventory": "files",
+          "checked": 10,
+          "preserved": true
+        },
+        {
+          "inventory": "historical_files_preserved",
+          "checked": 81,
+          "preserved": true
+        },
+        {
+          "inventory": "historical_raw_artifacts_preserved",
+          "checked": 20,
+          "preserved": true
+        }
+      ],
+      "reconstructed_requests": [
+        {
+          "arm_id": "control",
+          "case_id": "gallery-reflection",
+          "operation": "summary-relational.control",
+          "body_sha256": "cdd9507caa318b6d74e92863e84e483571bdddce0fbbf618e730121e8177a5c9",
+          "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680",
+          "system_sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce",
+          "native_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+          "dossier_match": true,
+          "row_prompt_matches_arm": true,
+          "source_matches_unique_case": true
+        },
+        {
+          "arm_id": "relational",
+          "case_id": "gallery-reflection",
+          "operation": "summary-relational.relational",
+          "body_sha256": "7599cb88ff1f4085ada54469c7749d6ef7aaebbd2287ad207be47e29dd3043ec",
+          "user_packet_sha256": "e0c47bc34c964bb556e7688a2c40cd0369759e09d40326eb73e33aaffc9f2680",
+          "system_sha256": "afa04554805097ded8a1bbb45caa43c02a6743d4b6f63b79ad6e0cf1df179c11",
+          "native_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+          "dossier_match": true,
+          "row_prompt_matches_arm": true,
+          "source_matches_unique_case": true
+        }
+      ],
+      "observed_outcome": {
+        "evaluation_status": "completed",
+        "process_exit_code": 0,
+        "calls_made": 2,
+        "arms_skipped": 0,
+        "schema_valid": 2,
+        "route_verified_calls": 2,
+        "order": [
+          "control",
+          "relational"
+        ],
+        "provider_http_statuses": [
+          200,
+          200
+        ],
+        "finish_reasons": [
+          "stop",
+          "stop"
+        ],
+        "arm_results": [
+          {
+            "arm_id": "control",
+            "case_id": "gallery-reflection",
+            "http_status": 200,
+            "finish_reason": "stop",
+            "request_id": "req_01m1yxcatsea9s0dr76yeqeepx",
+            "invocation_id": "f61ab7af-82bd-48f8-b650-2bf01f655346",
+            "route_status": "verified",
+            "model": "qwen/qwen3.8-27b",
+            "schema_valid": true,
+            "response_structure": {
+              "summary": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada; catálogo no banco; duas molduras vazias à direita da entrada."
+            },
+            "summary_text": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada; catálogo no banco; duas molduras vazias à direita da entrada.",
+            "summary_characters": 128,
+            "instruction_measurements": {
+              "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+              "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+              "word_count": 19,
+              "max_words": 25,
+              "within_word_limit": true,
+              "semantic_fidelity_evaluated": false
+            },
+            "provider_usage": {
+              "input_tokens": 476,
+              "output_tokens": 40,
+              "total_tokens": 516,
+              "reasoning_tokens": null
+            },
+            "normalized_usage": {
+              "status": "reported",
+              "input_tokens": 476,
+              "output_tokens": 40,
+              "total_tokens": 516,
+              "source": "openai-compatible response.usage"
+            },
+            "cost": {
+              "status": "unavailable",
+              "amount": null,
+              "currency": null,
+              "source": null
+            }
+          },
+          {
+            "arm_id": "relational",
+            "case_id": "gallery-reflection",
+            "http_status": 200,
+            "finish_reason": "stop",
+            "request_id": "req_01m1yxe5grezabhpecsqkvpyf5",
+            "invocation_id": "30ac20bd-65d2-4848-89c7-9ad5a20ccb7f",
+            "route_status": "verified",
+            "model": "qwen/qwen3.8-27b",
+            "schema_valid": true,
+            "response_structure": {
+              "summary": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada. Catálogo sobre banco; duas molduras vazias apoiadas contra a parede à direita da entrada."
+            },
+            "summary_text": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada. Catálogo sobre banco; duas molduras vazias apoiadas contra a parede à direita da entrada.",
+            "summary_characters": 156,
+            "instruction_measurements": {
+              "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+              "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+              "word_count": 23,
+              "max_words": 25,
+              "within_word_limit": true,
+              "semantic_fidelity_evaluated": false
+            },
+            "provider_usage": {
+              "input_tokens": 520,
+              "output_tokens": 46,
+              "total_tokens": 566,
+              "reasoning_tokens": null
+            },
+            "normalized_usage": {
+              "status": "reported",
+              "input_tokens": 520,
+              "output_tokens": 46,
+              "total_tokens": 566,
+              "source": "openai-compatible response.usage"
+            },
+            "cost": {
+              "status": "unavailable",
+              "amount": null,
+              "currency": null,
+              "source": null
+            }
+          }
+        ]
+      },
+      "usage_aggregate": {
+        "status": "reported",
+        "expected_calls": 2,
+        "calls_made": 2,
+        "reported_calls": 2,
+        "unavailable_calls": 0,
+        "totals": {
+          "input_tokens": 996,
+          "output_tokens": 86,
+          "total_tokens": 1082
+        },
+        "reported_subtotals": {
+          "input_tokens": 996,
+          "output_tokens": 86,
+          "total_tokens": 1082
+        }
+      },
+      "cost_aggregate": {
+        "status": "unavailable",
+        "expected_calls": 2,
+        "calls_made": 2,
+        "reported_calls": 0,
+        "unavailable_calls": 2,
+        "total_amount": null,
+        "reported_amount_subtotal": null,
+        "currency": null
+      },
+      "limits": {
+        "max_calls": 2,
+        "distinct_cases": 1,
+        "calls_per_arm": 1,
+        "output_tokens_per_call": 768,
+        "max_total_output_tokens": 1536,
+        "temperature": 0.65,
+        "reasoning_effort": "none",
+        "initial_local_quiet_seconds": 60,
+        "minimum_local_start_spacing_seconds": 60,
+        "deadline_seconds_after_wait_and_checks": 60,
+        "retries": 0,
+        "fallback": false,
+        "diagnostics": 0,
+        "word_limit_changes_operational_exit": false,
+        "semantic_review_blocks_second_arm": false
+      },
+      "timing": {
+        "raw_run_started_at": "2026-09-07T21:45:23.065101+00:00",
+        "raw_run_finished_at": "2026-09-07T21:47:24.739210+00:00",
+        "launcher_finished_at_utc": "2026-09-07T21:47:25.3117077Z",
+        "launcher_pid": 1096,
+        "run_start_to_first_adapter_start_wall_seconds": 60.500035,
+        "inter_adapter_start_wall_seconds": 60.254024,
+        "first_finish_to_second_start_wall_seconds": 59.206199,
+        "run_wall_seconds": 121.674109,
+        "arms": [
+          {
+            "arm_id": "control",
+            "case_id": "gallery-reflection",
+            "raw_adapter_started_at": "2026-09-07T21:46:23.565136+00:00",
+            "raw_adapter_finished_at": "2026-09-07T21:46:24.612961+00:00",
+            "adapter_wall_seconds": 1.047825,
+            "recorded_latency_seconds": 1.048871
+          },
+          {
+            "arm_id": "relational",
+            "case_id": "gallery-reflection",
+            "raw_adapter_started_at": "2026-09-07T21:47:23.819160+00:00",
+            "raw_adapter_finished_at": "2026-09-07T21:47:24.736208+00:00",
+            "adapter_wall_seconds": 0.917048,
+            "recorded_latency_seconds": 0.919535
+          }
+        ]
+      },
+      "interpretation_limits": [
+        "Request bodies were reconstructed offline from the frozen preparation; no raw provider wire capture was collected.",
+        "UTC timestamps describe local adapter/run observations. They do not measure remote request arrivals or independently reconstruct the monotonic pacer clock.",
+        "The 60-second post-wait deadline is a verified code/configuration limit; its absolute dispatch value is not separately persisted in the raw artifact.",
+        "Reasoning token counts are unavailable/null, not reported zero. Cost is unavailable, not a zero-cost assertion.",
+        "One completed observation per arm in fixed order is descriptive, not causal comparison or reliability evidence.",
+        "Schema and route success and word counts do not establish semantic fidelity. Authored semantic review belongs in a separate report."
+      ],
+      "approval": {
+        "semantic_fidelity_review": {
+          "status": "not_performed",
+          "approval": null
+        },
+        "runtime_promoted": false,
+        "automated_gates_passed": false,
+        "cap_001_status": "not_evaluated"
+      },
+      "contradictions": []
+    },
+    "integrity_scope": "Fingerprints verificados durante a auditoria final deste lote. Mudanças posteriores pertencem a outra etapa e não reescrevem os metadados históricos.",
+    "verification_sets_may_overlap": true
+  },
+  "comparison_limits": [
+    "Uma observação por braço sobre fonte sintética única, ordem fixa, sem controle da variação estocástica ou do serviço.",
+    "Somente SYSTEM/FORMATO difere; este par não demonstra causalidade ou taxa.",
+    "Retenção adicional, comprimento ou número de objetos não aprovam fidelidade geral."
+  ],
+  "next_step": {
+    "status": "authorized_offline_consolidation",
+    "action": "Consolidar as evidências summary-only, budget, color e relational; separar resultados informativos, ambiguidades, omissões e lacunas para definir a próxima direção.",
+    "scheduled_provider_calls": 0,
+    "credential_dependency": null,
+    "new_prompt_or_batch_prepared": false,
+    "generic_human_approval_required": false,
+    "constraints": [
+      "Hipótese relacional encerrada após os dois braços.",
+      "Não preparar novo SYSTEM ou repetir esta hipótese em sequência.",
+      "Não repetir fontes/lotes encerrados ou preencher skips.",
+      "Não converter a consolidação em aprovação de runtime ou CAP-001."
+    ]
+  },
+  "limits": {
+    "additional_provider_calls_for_closure": 0,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "raw_artifacts_modified": false,
+    "code_or_prompt_modified": false
+  }
+}

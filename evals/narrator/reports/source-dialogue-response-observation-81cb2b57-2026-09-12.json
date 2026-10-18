@@ -1,0 +1,931 @@
+{
+  "date": "2026-09-12",
+  "batch_id": "81cb2b57-adbe-4b21-a0dd-e16da56f6df1",
+  "status": "closed",
+  "technical_audit": {
+    "kind": "source_dialogue_response_technical_audit",
+    "batch_id": "81cb2b57-adbe-4b21-a0dd-e16da56f6df1",
+    "verdict": "passed",
+    "checks": [
+      {
+        "name": "only_expected_run_files",
+        "passed": true
+      },
+      {
+        "name": "only_expected_window_files",
+        "passed": true
+      },
+      {
+        "name": "preparation_manifest_anchor",
+        "passed": true
+      },
+      {
+        "name": "preparation_manifest_127_copies",
+        "passed": true
+      },
+      {
+        "name": "finished_lifecycle_and_summary",
+        "passed": true
+      },
+      {
+        "name": "batch_consistent",
+        "passed": true
+      },
+      {
+        "name": "metadata_exactly_preflight",
+        "passed": true
+      },
+      {
+        "name": "raw_records_hash",
+        "passed": true
+      },
+      {
+        "name": "binding_preflight_sha",
+        "passed": true
+      },
+      {
+        "name": "binding_evaluator_sha",
+        "passed": true
+      },
+      {
+        "name": "explicit_target",
+        "passed": true
+      },
+      {
+        "name": "fixed_parameters",
+        "passed": true
+      },
+      {
+        "name": "scope_unapproved",
+        "passed": true
+      },
+      {
+        "name": "authored_source_policy",
+        "passed": true
+      },
+      {
+        "name": "25_unique_preflight_inputs",
+        "passed": true
+      },
+      {
+        "name": "25_inputs_and_launcher_match_frozen_copies",
+        "passed": true
+      },
+      {
+        "name": "system_text_sha",
+        "passed": true
+      },
+      {
+        "name": "exact_three_slots",
+        "passed": true
+      },
+      {
+        "name": "slot-1/accepted_no_errors",
+        "passed": true
+      },
+      {
+        "name": "slot-1/request_matches_frozen",
+        "passed": true
+      },
+      {
+        "name": "slot-1/roles_system_user",
+        "passed": true
+      },
+      {
+        "name": "slot-1/strict_schema",
+        "passed": true
+      },
+      {
+        "name": "slot-1/fixed_request_parameters",
+        "passed": true
+      },
+      {
+        "name": "slot-1/authored_source_exact",
+        "passed": true
+      },
+      {
+        "name": "slot-1/invocation_binding",
+        "passed": true
+      },
+      {
+        "name": "slot-1/http_route_finish",
+        "passed": true
+      },
+      {
+        "name": "slot-1/empty_error_snapshots",
+        "passed": true
+      },
+      {
+        "name": "slot-1/usage_consistent",
+        "passed": true
+      },
+      {
+        "name": "slot-1/nq_shape",
+        "passed": true
+      },
+      {
+        "name": "slot-1/measurement_recomputed",
+        "passed": true
+      },
+      {
+        "name": "slot-1/call_times",
+        "passed": true
+      },
+      {
+        "name": "slot-2/accepted_no_errors",
+        "passed": true
+      },
+      {
+        "name": "slot-2/request_matches_frozen",
+        "passed": true
+      },
+      {
+        "name": "slot-2/roles_system_user",
+        "passed": true
+      },
+      {
+        "name": "slot-2/strict_schema",
+        "passed": true
+      },
+      {
+        "name": "slot-2/fixed_request_parameters",
+        "passed": true
+      },
+      {
+        "name": "slot-2/authored_source_exact",
+        "passed": true
+      },
+      {
+        "name": "slot-2/invocation_binding",
+        "passed": true
+      },
+      {
+        "name": "slot-2/http_route_finish",
+        "passed": true
+      },
+      {
+        "name": "slot-2/empty_error_snapshots",
+        "passed": true
+      },
+      {
+        "name": "slot-2/usage_consistent",
+        "passed": true
+      },
+      {
+        "name": "slot-2/nq_shape",
+        "passed": true
+      },
+      {
+        "name": "slot-2/measurement_recomputed",
+        "passed": true
+      },
+      {
+        "name": "slot-2/call_times",
+        "passed": true
+      },
+      {
+        "name": "slot-3/accepted_no_errors",
+        "passed": true
+      },
+      {
+        "name": "slot-3/request_matches_frozen",
+        "passed": true
+      },
+      {
+        "name": "slot-3/roles_system_user",
+        "passed": true
+      },
+      {
+        "name": "slot-3/strict_schema",
+        "passed": true
+      },
+      {
+        "name": "slot-3/fixed_request_parameters",
+        "passed": true
+      },
+      {
+        "name": "slot-3/authored_source_exact",
+        "passed": true
+      },
+      {
+        "name": "slot-3/invocation_binding",
+        "passed": true
+      },
+      {
+        "name": "slot-3/http_route_finish",
+        "passed": true
+      },
+      {
+        "name": "slot-3/empty_error_snapshots",
+        "passed": true
+      },
+      {
+        "name": "slot-3/usage_consistent",
+        "passed": true
+      },
+      {
+        "name": "slot-3/nq_shape",
+        "passed": true
+      },
+      {
+        "name": "slot-3/measurement_recomputed",
+        "passed": true
+      },
+      {
+        "name": "slot-3/call_times",
+        "passed": true
+      },
+      {
+        "name": "unique_provider_request_ids",
+        "passed": true
+      },
+      {
+        "name": "initial_quiet_and_pacing",
+        "passed": true
+      },
+      {
+        "name": "finalization_after_last_call",
+        "passed": true
+      },
+      {
+        "name": "total_output_budget",
+        "passed": true
+      },
+      {
+        "name": "summary_counts_recomputed",
+        "passed": true
+      },
+      {
+        "name": "summary_has_no_product_approval",
+        "passed": true
+      },
+      {
+        "name": "original_artifacts_unchanged",
+        "passed": true
+      },
+      {
+        "name": "anchor_unchanged",
+        "passed": true
+      }
+    ],
+    "check_count": 65,
+    "passed_count": 65,
+    "artifacts_before": [
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\summary.json",
+        "bytes": 39370,
+        "sha256": "96e4490aafdb1af117c425c12fb580e3a580df3b6a37a18c07da14c394152da6"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\records.jsonl",
+        "bytes": 152974,
+        "sha256": "a28fa7df420c7bd484f20f39bb9ee9c6e78a1dd12b1477f2b68e1bc996cb9ed0"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\preflight.json",
+        "bytes": 37860,
+        "sha256": "28393e5906af7a1358f409937c8530ca0af137a278898f9c933e71e2606fe26a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\binding.json",
+        "bytes": 331,
+        "sha256": "0335a0e54229f2c6cc1c30ef0d6f9c895184559b40a64997d76330973ea1c353"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\lifecycle.json",
+        "bytes": 152,
+        "sha256": "3c772d00d4d57289093e1cead5f87992ed73e280a651d03e37d05297ae0accd4"
+      }
+    ],
+    "artifacts_after": [
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\summary.json",
+        "bytes": 39370,
+        "sha256": "96e4490aafdb1af117c425c12fb580e3a580df3b6a37a18c07da14c394152da6"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\records.jsonl",
+        "bytes": 152974,
+        "sha256": "a28fa7df420c7bd484f20f39bb9ee9c6e78a1dd12b1477f2b68e1bc996cb9ed0"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\preflight.json",
+        "bytes": 37860,
+        "sha256": "28393e5906af7a1358f409937c8530ca0af137a278898f9c933e71e2606fe26a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\binding.json",
+        "bytes": 331,
+        "sha256": "0335a0e54229f2c6cc1c30ef0d6f9c895184559b40a64997d76330973ea1c353"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\lifecycle.json",
+        "bytes": 152,
+        "sha256": "3c772d00d4d57289093e1cead5f87992ed73e280a651d03e37d05297ae0accd4"
+      }
+    ],
+    "preparation_anchor": {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\manifest.json",
+      "bytes": 53203,
+      "sha256": "ed8b26daba0ae1805ab62c21f8cf40aa6bf0aa55b98167b3a19e687ceeb1f962"
+    },
+    "source_proofs": [
+      {
+        "file": "scripts/evaluate_source_dialogue_response.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_source_dialogue_response.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\evaluate_source_dialogue_response.py",
+        "expected_sha256": "46db2bb31691a120897568dafbb5ca18ade7420eda06cf5ebcaf6af94513625a",
+        "source_sha256": "46db2bb31691a120897568dafbb5ca18ade7420eda06cf5ebcaf6af94513625a",
+        "copy_sha256": "46db2bb31691a120897568dafbb5ca18ade7420eda06cf5ebcaf6af94513625a",
+        "bytes": 37501,
+        "copy_bytes": 37501,
+        "matches": true
+      },
+      {
+        "file": "scripts/evaluate_source_context.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_source_context.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\evaluate_source_context.py",
+        "expected_sha256": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f",
+        "source_sha256": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f",
+        "copy_sha256": "a76c0fa9c5fd2384e892b8e6b248c9f8bea48f4cb9a7241af4e8df3a496f880f",
+        "bytes": 31061,
+        "copy_bytes": 31061,
+        "matches": true
+      },
+      {
+        "file": "scripts/evaluate_progressing_source.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_progressing_source.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\evaluate_progressing_source.py",
+        "expected_sha256": "8adc2bde0e7bc86063e2c516356279f7bec98fdc1c0bd9fc3be4ae3d4ca19f57",
+        "source_sha256": "8adc2bde0e7bc86063e2c516356279f7bec98fdc1c0bd9fc3be4ae3d4ca19f57",
+        "copy_sha256": "8adc2bde0e7bc86063e2c516356279f7bec98fdc1c0bd9fc3be4ae3d4ca19f57",
+        "bytes": 42293,
+        "copy_bytes": 42293,
+        "matches": true
+      },
+      {
+        "file": "scripts/evaluate_narrator_source.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_narrator_source.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\evaluate_narrator_source.py",
+        "expected_sha256": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+        "source_sha256": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+        "copy_sha256": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+        "bytes": 43695,
+        "copy_bytes": 43695,
+        "matches": true
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_narrator_models.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\evaluate_narrator_models.py",
+        "expected_sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+        "source_sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+        "copy_sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59",
+        "bytes": 139332,
+        "copy_bytes": 139332,
+        "matches": true
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\narrator_record_budget_observer.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\narrator_record_budget_observer.py",
+        "expected_sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "source_sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "copy_sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "bytes": 10082,
+        "copy_bytes": 10082,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_coordinator.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_coordinator.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_coordinator.py",
+        "expected_sha256": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+        "source_sha256": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+        "copy_sha256": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d",
+        "bytes": 5292,
+        "copy_bytes": 5292,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_capsule.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_capsule.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_capsule.py",
+        "expected_sha256": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+        "source_sha256": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+        "copy_sha256": "020371e8ad366126602b1a6b9ac3da35ea498adcad4f77949b6c058281322e69",
+        "bytes": 12021,
+        "copy_bytes": 12021,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_preparation.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_preparation.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_preparation.py",
+        "expected_sha256": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+        "source_sha256": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+        "copy_sha256": "66ab7760cb572876cd40783a3d94186541edbcc67de60adf5c5a63844437dffa",
+        "bytes": 10370,
+        "copy_bytes": 10370,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_execution_service.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_execution_service.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_execution_service.py",
+        "expected_sha256": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+        "source_sha256": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+        "copy_sha256": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+        "bytes": 25362,
+        "copy_bytes": 25362,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_context.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_context.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_context.py",
+        "expected_sha256": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+        "source_sha256": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+        "copy_sha256": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+        "bytes": 14145,
+        "copy_bytes": 14145,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_profile.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_profile.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_profile.py",
+        "expected_sha256": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+        "source_sha256": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+        "copy_sha256": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413",
+        "bytes": 11434,
+        "copy_bytes": 11434,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_source_turn.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_turn.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_source_turn.py",
+        "expected_sha256": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+        "source_sha256": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+        "copy_sha256": "c0e3d2676b59869b4c80be307b1cd9fda15413b09a590e8e1760934cb50d3386",
+        "bytes": 15004,
+        "copy_bytes": 15004,
+        "matches": true
+      },
+      {
+        "file": "api/narrative_grounding.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_grounding.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\narrative_grounding.py",
+        "expected_sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+        "source_sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+        "copy_sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3",
+        "bytes": 11537,
+        "copy_bytes": 11537,
+        "matches": true
+      },
+      {
+        "file": "api/persistence.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\persistence.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\persistence.py",
+        "expected_sha256": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8",
+        "source_sha256": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8",
+        "copy_sha256": "bdc5e33102f472d4ce885109a7688ec83d983abe82d578382ee2580969bf16e8",
+        "bytes": 230079,
+        "copy_bytes": 230079,
+        "matches": true
+      },
+      {
+        "file": "api/scene_service.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_service.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\scene_service.py",
+        "expected_sha256": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+        "source_sha256": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+        "copy_sha256": "142794475459dccd793cd62447c95522642511a840e8b7c944568aa0d70b012f",
+        "bytes": 7433,
+        "copy_bytes": 7433,
+        "matches": true
+      },
+      {
+        "file": "api/scene_director_service.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_director_service.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\scene_director_service.py",
+        "expected_sha256": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+        "source_sha256": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+        "copy_sha256": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+        "bytes": 127243,
+        "copy_bytes": 127243,
+        "matches": true
+      },
+      {
+        "file": "api/turn_models.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\turn_models.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\turn_models.py",
+        "expected_sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+        "source_sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+        "copy_sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7",
+        "bytes": 9288,
+        "copy_bytes": 9288,
+        "matches": true
+      },
+      {
+        "file": "api/llm/contract.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\llm\\contract.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\llm\\contract.py",
+        "expected_sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "source_sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "copy_sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "bytes": 28410,
+        "copy_bytes": 28410,
+        "matches": true
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\llm\\adapters\\groq.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\llm\\adapters\\groq.py",
+        "expected_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "source_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "copy_sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "bytes": 14904,
+        "copy_bytes": 14904,
+        "matches": true
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\llm\\adapters\\openai_compatible.py",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\api\\llm\\adapters\\openai_compatible.py",
+        "expected_sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "source_sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "copy_sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "bytes": 47937,
+        "copy_bytes": 47937,
+        "matches": true
+      },
+      {
+        "file": "evals/narrator/source_dialogue_response_v1.json",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_response_v1.json",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\evals\\narrator\\source_dialogue_response_v1.json",
+        "expected_sha256": "b709e901c917652686ab5afbcb1d558490892e5c63dc228fa683db635169c517",
+        "source_sha256": "b709e901c917652686ab5afbcb1d558490892e5c63dc228fa683db635169c517",
+        "copy_sha256": "b709e901c917652686ab5afbcb1d558490892e5c63dc228fa683db635169c517",
+        "bytes": 2914,
+        "copy_bytes": 2914,
+        "matches": true
+      },
+      {
+        "file": "evals/narrator/source_dialogue_response_protocol_v1.md",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_response_protocol_v1.md",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\evals\\narrator\\source_dialogue_response_protocol_v1.md",
+        "expected_sha256": "be7940c6e466b87cd5a9792e8e942fae197d86964804b755a068e1fe73b5e662",
+        "source_sha256": "be7940c6e466b87cd5a9792e8e942fae197d86964804b755a068e1fe73b5e662",
+        "copy_sha256": "be7940c6e466b87cd5a9792e8e942fae197d86964804b755a068e1fe73b5e662",
+        "bytes": 5116,
+        "copy_bytes": 5116,
+        "matches": true
+      },
+      {
+        "file": "evals/narrator/groq_candidates_2026-09-05.json",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\groq_candidates_2026-09-05.json",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\evals\\narrator\\groq_candidates_2026-09-05.json",
+        "expected_sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "source_sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "copy_sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "bytes": 1627,
+        "copy_bytes": 1627,
+        "matches": true
+      },
+      {
+        "file": "evals/narrator/prompts/narrative-source-dialogue-v1.md",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\prompts\\narrative-source-dialogue-v1.md",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\evals\\narrator\\prompts\\narrative-source-dialogue-v1.md",
+        "expected_sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d",
+        "source_sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d",
+        "copy_sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d",
+        "bytes": 4007,
+        "copy_bytes": 4007,
+        "matches": true
+      },
+      {
+        "file": "scripts/run_groq_source_dialogue_response.ps1",
+        "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\run_groq_source_dialogue_response.ps1",
+        "copy": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-response-preparation-20260912\\source\\scripts\\run_groq_source_dialogue_response.ps1",
+        "expected_sha256": "65d0dfa129bce7248a7f9935cbdb1c55ac76b3d5c84c3122edf172ba959bb829",
+        "source_sha256": "65d0dfa129bce7248a7f9935cbdb1c55ac76b3d5c84c3122edf172ba959bb829",
+        "copy_sha256": "65d0dfa129bce7248a7f9935cbdb1c55ac76b3d5c84c3122edf172ba959bb829",
+        "bytes": 18621,
+        "copy_bytes": 18621,
+        "matches": true
+      }
+    ],
+    "source_count": 25,
+    "additional_binding_source_count": 1,
+    "slots": [
+      {
+        "slot_id": "slot-1",
+        "case_id": "direct-question",
+        "invocation_id": "0029c7ea-2b75-5fdd-b087-131dbbb05331",
+        "provider_request_id": "req_01m2bga22de2hakrre906fyyfw",
+        "request_created_at": "2026-09-12T19:08:03.434479+00:00",
+        "http_started_at": "2026-09-12T19:08:03.987240+00:00",
+        "evidence_started_at": "2026-09-12T19:08:03.437476+00:00",
+        "finished_at": "2026-09-12T19:08:04.879086+00:00",
+        "deadline": "2026-09-12T19:09:03.434479+00:00",
+        "deadline_margin_seconds": 58.555393,
+        "http_duration_seconds": 0.891846,
+        "usage": {
+          "input_tokens": 1032,
+          "output_tokens": 187,
+          "total_tokens": 1219
+        },
+        "measurements": {
+          "n_characters": 713,
+          "q_characters": 15,
+          "n_words": 122,
+          "q_words": 4,
+          "total_words": 126,
+          "length_passed": true
+        },
+        "request_body_sha256": "045e95d8fe49fff4e2b8f3d7998ead39ed0820e89b5269d0ee64b0e4505e6685",
+        "response_structure_sha256": "63a9ce9147dcb9c54cb40cad8934d9545c60258e21f1c6ab075517b069b4ab4f",
+        "authored_source_sha256": "eb910cb940086525c10497ee20cf77760cfeadb3dcd003dd21c90cb03d75d5e8"
+      },
+      {
+        "slot_id": "slot-2",
+        "case_id": "after-silence",
+        "invocation_id": "4d8fdb1f-c645-5f5c-a050-d8965f1506a2",
+        "provider_request_id": "req_01m2bgbxdde20bmrvfdf098sdm",
+        "request_created_at": "2026-09-12T19:09:04.294224+00:00",
+        "http_started_at": "2026-09-12T19:09:04.818901+00:00",
+        "evidence_started_at": "2026-09-12T19:09:04.300426+00:00",
+        "finished_at": "2026-09-12T19:09:05.836192+00:00",
+        "deadline": "2026-09-12T19:10:04.294224+00:00",
+        "deadline_margin_seconds": 58.458032,
+        "http_duration_seconds": 1.017291,
+        "usage": {
+          "input_tokens": 1873,
+          "output_tokens": 153,
+          "total_tokens": 2026
+        },
+        "measurements": {
+          "n_characters": 536,
+          "q_characters": 15,
+          "n_words": 96,
+          "q_words": 4,
+          "total_words": 100,
+          "length_passed": true
+        },
+        "request_body_sha256": "b5523bc01ec87f2678ab7fb1944e73489d4dad1ac4e048bb84198f5f4c62af07",
+        "response_structure_sha256": "f7d1047019aa8e1e2c7f9c0cd4dc3522fe0c48d877ed212dedb506a69daef96a",
+        "authored_source_sha256": "bd4544a52aa4f84a477425b1ab8430edd4a749e08b168e8ac363de02666827d0"
+      },
+      {
+        "slot_id": "slot-3",
+        "case_id": "wait-control",
+        "invocation_id": "c3381429-12eb-51b9-b593-3e6e0b07321a",
+        "provider_request_id": "req_01m2bgds20e2zb56e9defr24rz",
+        "request_created_at": "2026-09-12T19:10:05.272438+00:00",
+        "http_started_at": "2026-09-12T19:10:05.896722+00:00",
+        "evidence_started_at": "2026-09-12T19:10:05.281430+00:00",
+        "finished_at": "2026-09-12T19:10:06.749951+00:00",
+        "deadline": "2026-09-12T19:11:05.272438+00:00",
+        "deadline_margin_seconds": 58.522487,
+        "http_duration_seconds": 0.853229,
+        "usage": {
+          "input_tokens": 1824,
+          "output_tokens": 141,
+          "total_tokens": 1965
+        },
+        "measurements": {
+          "n_characters": 486,
+          "q_characters": 15,
+          "n_words": 82,
+          "q_words": 4,
+          "total_words": 86,
+          "length_passed": true
+        },
+        "request_body_sha256": "55433f8ad0be0f386747d1c4cb89964443c1d923b2f2ba6275d596b955473b94",
+        "response_structure_sha256": "7a36b8488636070e7c573734f0f8d3e1b5f8a78e4faef53293628b48ea42b51d",
+        "authored_source_sha256": "d34da94bf1c98da91daab9a739b2196d4b8a669e19cf4b16596f5150924c6967"
+      }
+    ],
+    "timing": {
+      "summary_started_at": "2026-09-12T19:07:03.105733+00:00",
+      "summary_finished_at": "2026-09-12T19:10:06.758949+00:00",
+      "lifecycle_finished_at": "2026-09-12T19:10:09.9029181Z",
+      "initial_quiet_to_request_seconds": 60.328746,
+      "initial_quiet_to_http_seconds": 60.881507,
+      "inter_http_gaps_seconds": [
+        60.831661,
+        61.077821
+      ],
+      "between_previous_finish_and_next_request_seconds": [
+        59.415138,
+        59.436246
+      ],
+      "wall_seconds": 183.653216,
+      "clock": "recorded local UTC offsets",
+      "remote_arrival_measured": false
+    },
+    "usage_totals": {
+      "input_tokens": 4729,
+      "output_tokens": 481,
+      "total_tokens": 5210
+    },
+    "lifecycle": {
+      "updated_at": "2026-09-12T19:10:09.9029181Z",
+      "batch_id": "81cb2b57-adbe-4b21-a0dd-e16da56f6df1",
+      "exit_code": 0,
+      "status": "finished"
+    },
+    "reviewer_actions": {
+      "provider_calls": 0,
+      "cli_verifier_executions": 0,
+      "sqlite_opened": false,
+      "credentials_accessed": false,
+      "source_or_raw_edits": false,
+      "narrative_evaluated": false
+    },
+    "limitations": [
+      "Policy and route flags are corroborated against frozen request/observer/evidence; full policy replay is the separate root CLI verification.",
+      "No external authenticity, remote arrival or provider billing verification; cost is unavailable, not zero.",
+      "Authored contexts are independent synthetic fixtures, not generated or committed history.",
+      "This audit does not evaluate narrative quality, campaign runtime, model choice or CAP-001.",
+      "No SQLite is part of this diagnostic; no database was opened."
+    ]
+  },
+  "narrative_review": {
+    "review_kind": "independent_descriptive_narrative_review",
+    "batch_id": "81cb2b57-adbe-4b21-a0dd-e16da56f6df1",
+    "date": "2026-09-12",
+    "completed_batch_observed": true,
+    "sources": [
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\records.jsonl",
+        "sha256": "a28fa7df420c7bd484f20f39bb9ee9c6e78a1dd12b1477f2b68e1bc996cb9ed0"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\summary.json",
+        "sha256": "96e4490aafdb1af117c425c12fb580e3a580df3b6a37a18c07da14c394152da6"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_response_v1.json",
+        "sha256": "b709e901c917652686ab5afbcb1d558490892e5c63dc228fa683db635169c517"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\source_dialogue_response_protocol_v1.md",
+        "sha256": "be7940c6e466b87cd5a9792e8e942fae197d86964804b755a068e1fe73b5e662"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\evals\\narrator\\prompts\\narrative-source-dialogue-v1.md",
+        "sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-local-groq-trial-49fffca2-3d4e-4e6c-9dba-ed813c86d985\\records.jsonl",
+        "sha256": "fb1dd816f9ba20c5ff9e6e7022d34a2fa834714b2d544ab407d67899a2bfe3d7"
+      }
+    ],
+    "prompt_text_sha256": "393f522ec10fad6ab096df3e13de06f6b83314ce2c44352c3f120b6241247608",
+    "all_three_requests_and_responses_read": true,
+    "technical_summary_observed": {
+      "process_exit_code": 0,
+      "operational_probe_passed": true,
+      "semantic_not_evaluated": true
+    },
+    "cases": [
+      {
+        "slot_id": "slot-1",
+        "case_id": "direct-question",
+        "player_input": "Digo a Mara: \"Mara, o que é este lugar?\"",
+        "authored_source": null,
+        "response_sha256": "63a9ce9147dcb9c54cb40cad8934d9545c60258e21f1c6ab075517b069b4ab4f",
+        "criteria": [
+          {
+            "original_criterion": "NPC addresses the question in this turn, with relevant information or an explicit intelligible limit.",
+            "descriptive_judgment": "atendido_no_minimo",
+            "reason": "Há resposta atribuída e pertinente: 'É um acervo'. A categoria informa algo sobre o lugar, mas não esclarece função, conteúdo ou relevância; o próprio texto a qualifica como vaga."
+          },
+          {
+            "original_criterion": "Atmosphere does not substitute for the response.",
+            "descriptive_judgment": "atendido_com_ressalva",
+            "reason": "A atmosfera não substitui integralmente a resposta, que de fato ocorre neste turno. Ainda domina quase toda a narrativa e limita a utilidade conversacional."
+          },
+          {
+            "original_criterion": "q refers only to events actually shown in n.",
+            "descriptive_judgment": "atendido",
+            "reason": "'O que você faz?' mantém a iniciativa aberta e não pressupõe revelação ou ação inexistente."
+          }
+        ],
+        "agency": "preservada nesta amostra",
+        "n_q_coherence": "preservada nesta amostra"
+      },
+      {
+        "slot_id": "slot-2",
+        "case_id": "after-silence",
+        "player_input": "Digo a Mara: \"Vamos andando. Você pode me falar no caminho. O que é este lugar?\"",
+        "authored_source": "A luz das tochas alcança o banco de pedra da Galeria. Mara permanece ao lado dele, segurando a alça de sua bolsa. Ela ouviu a pergunta sobre o lugar, mas ainda não respondeu. Por alguns instantes, apenas o ruído da água ao fundo ocupa a pausa. Sua hesitação continua visível, sem que uma explicação tenha sido oferecida.",
+        "response_sha256": "f7d1047019aa8e1e2c7f9c0cd4dc3522fe0c48d877ed212dedb506a69daef96a",
+        "criteria": [
+          {
+            "original_criterion": "The prior silence develops into a pertinent response or concrete intelligible refusal; it does not merely intensify.",
+            "descriptive_judgment": "parcial",
+            "reason": "'Aqui não é um lugar para perguntas' é uma recusa reconhecível e supera o mutismo. Porém o limite permanece genérico, sem condição ou posição mais concreta; a conclusão volta à espera de revogar a ordem ou de mudança do ar. Não classifico como ausência total de resposta, nem exijo obediência ou revelação."
+          },
+          {
+            "original_criterion": "The invitation inside speech does not make the player walk or change location.",
+            "descriptive_judgment": "atendido",
+            "reason": "Apenas Mara dá um passo. O convite falado não faz o jogador caminhar nem muda seu local; a continuidade física permanece no NPC."
+          },
+          {
+            "original_criterion": "q does not presuppose an absent answer or player movement.",
+            "descriptive_judgment": "atendido",
+            "reason": "A pergunta final aberta não pressupõe resposta substantiva nem movimento do jogador."
+          }
+        ],
+        "agency": "preservada nesta amostra",
+        "n_q_coherence": "preservada nesta amostra"
+      },
+      {
+        "slot_id": "slot-3",
+        "case_id": "wait-control",
+        "player_input": "Aguardo.",
+        "authored_source": "Junto ao banco de pedra da Galeria, Mara observa uma folha caída no chão. A água pinga da parede em intervalos regulares, formando uma poça estreita. A borda da poça se aproxima do papel ainda seco. Mara mantém as mãos junto ao corpo; não recolheu a folha nem revelou o que há escrito nela.",
+        "response_sha256": "7a36b8488636070e7c573734f0f8d3e1b5f8a78e4faef53293628b48ea42b51d",
+        "criteria": [
+          {
+            "original_criterion": "An observable development follows the source without making the player act.",
+            "descriptive_judgment": "atendido",
+            "reason": "A fonte deixa a folha seca, com a poça se aproximando. A narrativa mostra uma gota atingir a ponta, umidade absorvida e mancha crescente: há mudança observável causada pelo ambiente, sem ação do jogador."
+          },
+          {
+            "original_criterion": "No new NPC, location or mechanical outcome is imposed.",
+            "descriptive_judgment": "atendido",
+            "reason": "Permanece Galeria/Mara, sem novo NPC em prosa, transferência de local ou resultado mecânico. O conteúdo escrito continua sem ser revelado."
+          },
+          {
+            "original_criterion": "A forced dialogue requirement does not replace the declared wait.",
+            "descriptive_judgment": "atendido",
+            "reason": "Não há fala imposta a Mara para satisfazer o novo pedido de diálogo; o turno respeita a espera declarada e desenvolve a água/papel."
+          }
+        ],
+        "agency": "preservada nesta amostra",
+        "n_q_coherence": "preservada nesta amostra"
+      }
+    ],
+    "overall": "Falas efetivas e perguntas coerentes observadas; utilidade do primeiro diálogo mínima e recuperação após silêncio parcial. A espera oferece progressão concreta. Isso não resolve a qualidade narrativa global.",
+    "comparison_with_49": "Descritiva apenas: 49 manteve Mara sem fala em quatro turnos, teve q1/q2 pressupostas e deslocamento conjunto no terceiro; esta amostra independente contém duas falas, q abertas e nenhum deslocamento do jogador. Não é replay sequencial da sessão 49 ou comparação causal/A-B.",
+    "interpretation_limits": [
+      "Três contextos independentes, uma resposta por contexto; não demonstram recuperação sustentada numa conversa longa.",
+      "Holofotes, obras, vidro e verniz no caso sem fonte anterior são improvisação permitida. Não comparar sua iluminação com a fonte de tochas de outro caso independente.",
+      "É um acervo é fala atribuída de Mara, sem promoção a fato canônico; o diagnóstico não faz commit.",
+      "Avaliar responsividade não exige que o NPC obedeça, saiba a verdade ou revele segredos. A ressalva sobre a recusa é sua baixa especificidade e retorno à suspensão da interação.",
+      "O resultado técnico não foi transformado em avaliação semântica automática. Nenhuma fonte, gate, UI ou prompt foi alterado; nenhuma inferência adicional."
+    ],
+    "approvals": {
+      "model": false,
+      "runtime_default": false,
+      "campaign": false,
+      "cap_001": false
+    }
+  },
+  "root_cli_verifier": {
+    "date_utc": "2026-09-12T19:12:25.382793+00:00",
+    "batch_id": "81cb2b57-adbe-4b21-a0dd-e16da56f6df1",
+    "mode": "verify-artifacts",
+    "exit_code": 0,
+    "stdout": "{\"batch_id\":\"81cb2b57-adbe-4b21-a0dd-e16da56f6df1\",\"process_exit_code\":0,\"summary_path\":\"C:\\\\Users\\\\skate\\\\.codex\\\\worktrees\\\\b008\\\\AgenteStoryteller\\\\eval-results\\\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\\\summary.json\",\"verified\":true}\n",
+    "stderr": "",
+    "before": {
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\preflight.json": "28393e5906af7a1358f409937c8530ca0af137a278898f9c933e71e2606fe26a",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\binding.json": "0335a0e54229f2c6cc1c30ef0d6f9c895184559b40a64997d76330973ea1c353",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\lifecycle.json": "3c772d00d4d57289093e1cead5f87992ed73e280a651d03e37d05297ae0accd4",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\summary.json": "96e4490aafdb1af117c425c12fb580e3a580df3b6a37a18c07da14c394152da6",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\records.jsonl": "a28fa7df420c7bd484f20f39bb9ee9c6e78a1dd12b1477f2b68e1bc996cb9ed0"
+    },
+    "after": {
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\preflight.json": "28393e5906af7a1358f409937c8530ca0af137a278898f9c933e71e2606fe26a",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\binding.json": "0335a0e54229f2c6cc1c30ef0d6f9c895184559b40a64997d76330973ea1c353",
+      "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-response-window-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\lifecycle.json": "3c772d00d4d57289093e1cead5f87992ed73e280a651d03e37d05297ae0accd4",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\summary.json": "96e4490aafdb1af117c425c12fb580e3a580df3b6a37a18c07da14c394152da6",
+      "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-response-81cb2b57-adbe-4b21-a0dd-e16da56f6df1\\records.jsonl": "a28fa7df420c7bd484f20f39bb9ee9c6e78a1dd12b1477f2b68e1bc996cb9ed0"
+    },
+    "original_artifacts_unchanged": true,
+    "real_http_calls": 0,
+    "credential_given": false
+  },
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-response-observation-81cb2b57-20260912/manifest.json",
+    "sha256": "5827173504c4538ffd5d644c6605b66707712cf2fcf5cb9bd8bd95d0efdfd4e9",
+    "copies": 41
+  },
+  "next_step": {
+    "status": "offline_preparation_in_progress",
+    "plan": "plan/verify-source-dialogue-continuity-1.md",
+    "new_live_calls": 0
+  },
+  "approvals": {
+    "model_selection": false,
+    "runtime_default": false,
+    "campaign": false,
+    "CAP-001": false
+  }
+}

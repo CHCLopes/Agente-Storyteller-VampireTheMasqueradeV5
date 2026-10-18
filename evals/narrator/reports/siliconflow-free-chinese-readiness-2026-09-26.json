@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-005-SILICONFLOW-FREE-CHINESE-L1",
+  "status": "offline_ready_human_credential_and_free_status_pending",
+  "provider": "SiliconFlow",
+  "endpoint": "https://api.siliconflow.cn/v1",
+  "models": [
+    "XingChenAGI/Xing4.0-29B",
+    "Qwen/Qwen3.5-4B",
+    "THUDM/GLM-4-9B-0414"
+  ],
+  "call_budget": 24,
+  "cases_per_model": 8,
+  "admission_threshold": "8/8 per candidate",
+  "paid_spend_authorized": false,
+  "retry": false,
+  "repair": false,
+  "fallback": false,
+  "aggregate_prior_runs": false,
+  "best_of_selection": false,
+  "offline_verification": {
+    "focused_tests_passed": 44,
+    "powershell_parse_errors": 0,
+    "preflight_provider_calls": 0,
+    "preflight_credential_inspected": false,
+    "missing_key_stops_before_run_creation": true
+  },
+  "human_dependency": {
+    "account_or_key": "SiliconFlow API key",
+    "identity_verification_may_be_required": true,
+    "confirm_models_remain_free_before_run": true
+  },
+  "frozen_integrity": {
+    "preflight_sha256": "7bfbfb1708570eacb51bc75f09946b7c7178441c10e5531b9288bcba9d93f567",
+    "candidate_manifest_sha256": "f62697275d3b9e20b68e6d53e61c19f479c2728a53f56dc284fc6b72958c68a9",
+    "live_gate_sha256": "21293d4651aab0bdce6b7a73aea93fbfacf8cd8d24b17930c0c349787f300a94",
+    "runner_sha256": "ee5ffa9cdbfbeeb2e0ba258ecf94d1ad5853c64af9496c91b503290d94d5845a",
+    "launcher_sha256": "81df7f3f78e2d2e2a090985c6f54447ee3369735c5706d696ac16b102b9dd5f7",
+    "test_sha256": "6aaef4762456cf998f2f680270c827614b5c0b977ae4135149266222ca6a7940"
+  }
+}

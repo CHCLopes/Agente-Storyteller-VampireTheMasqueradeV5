@@ -1,0 +1,145 @@
+{
+  "date": "2026-09-12",
+  "batch_id": "291b3960-55a5-4fdc-a9f4-31d9cfa695f7",
+  "status": "observation_and_offline_diagnosis_closed",
+  "original_process_exit_code": 1,
+  "lifecycle": "finished",
+  "original_summary": {
+    "calls_made": 4,
+    "campaign_data_eligible": false,
+    "cap_001_approved": false,
+    "experiment_version": "source-word-budget-v1",
+    "length_measurements": [
+      {
+        "arm_id": "A",
+        "measurements": {
+          "margin_budget_met": true,
+          "n_characters": 427,
+          "n_words": 74,
+          "original_length_passed": true,
+          "q_characters": 10,
+          "q_words": 3,
+          "total_words": 77
+        },
+        "slot_id": "slot-1"
+      },
+      {
+        "arm_id": "B",
+        "measurements": {
+          "margin_budget_met": true,
+          "n_characters": 405,
+          "n_words": 74,
+          "original_length_passed": true,
+          "q_characters": 15,
+          "q_words": 4,
+          "total_words": 78
+        },
+        "slot_id": "slot-2"
+      },
+      {
+        "arm_id": "B",
+        "measurements": {
+          "margin_budget_met": true,
+          "n_characters": 561,
+          "n_words": 99,
+          "original_length_passed": true,
+          "q_characters": 21,
+          "q_words": 5,
+          "total_words": 104
+        },
+        "slot_id": "slot-3"
+      },
+      {
+        "arm_id": "A",
+        "measurements": {
+          "margin_budget_met": false,
+          "n_characters": 701,
+          "n_words": 118,
+          "original_length_passed": true,
+          "q_characters": 15,
+          "q_words": 4,
+          "total_words": 122
+        },
+        "slot_id": "slot-4"
+      }
+    ],
+    "max_calls": 4,
+    "operational_probe_passed": false,
+    "policy_valid": 2,
+    "probe_kind": "source_word_budget_probe",
+    "process_exit_code": 1,
+    "protocol": "narrative-source-application-v1",
+    "purpose": "source_word_budget_probe",
+    "route_verified": 4,
+    "runtime_default_eligible": false,
+    "schema_valid": 4,
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "semantic_fidelity_review": {
+      "approval": null,
+      "status": "not_performed"
+    },
+    "semantic_not_evaluated": true,
+    "slots_processed": 4,
+    "slots_skipped": 0,
+    "synthetic_only": true
+  },
+  "audit_passed": true,
+  "launcher_artifact_verifier_repeated": false,
+  "raw_hashes": {
+    "summary.json": "265c85a6259ca95d88865e795eae081f03a08d9ed42d3c7a77280c4986fce1e5",
+    "records.jsonl": "76f44a05b9b1720612970787731060b3e8406088499671e19e956f5d9af02dba"
+  },
+  "http_start_gaps_seconds": [
+    60.96394,
+    60.869374,
+    60.846559
+  ],
+  "initial_wait_until_request_creation_seconds": 60.490008,
+  "local_duration_seconds": 244.93045,
+  "reported_usage": {
+    "input_tokens": 4962,
+    "output_tokens": 598,
+    "total_tokens": 5560,
+    "reasoning_tokens": null,
+    "cost": null
+  },
+  "budget_interpretation": "both_original_arms_within_gate_no_discriminating_evidence_for_margin",
+  "narrative_review": {
+    "independent": true,
+    "blinded": false,
+    "both_c2_door_continuity_unsupported": true,
+    "c2_progression": "modest",
+    "c1b_answer": "more_explicit_but_underdeveloped",
+    "model_qualified": false
+  },
+  "agency_diagnosis": {
+    "cause": "omitted_explicit_npc_aliases_in_closed_harness",
+    "same_texts_accepted_with_trusted_alias_context": true,
+    "original_outcomes_reclassified": false,
+    "exploratory_counterproofs_passed": 22,
+    "new_pytest_suite": false,
+    "runtime_callers": "explicit_alias_propagation_confirmed_by_static_inspection_only",
+    "source_code_changed": false,
+    "provider_calls": 0
+  },
+  "checkpoints": [
+    {
+      "file": "eval-results/checkpoints/source-word-budget-observation-291b3960-20260912/manifest.json",
+      "sha256": "520fb3c29474a4142cebd7a3b1092337f5c8072074245cf2b0785b012d9184b7",
+      "copies_verified": 41
+    },
+    {
+      "file": "eval-results/checkpoints/source-word-budget-agency-diagnosis-291b3960-20260912/manifest.json",
+      "sha256": "b9636e973a7be4b806c99350e8f3e0b2fc5ead6fd2a4f0133d419802c1fa127f",
+      "copies_verified": 10
+    }
+  ],
+  "report_sha256": "407aaf70fd7ceba22c99bbda3237b2bff6487498d4908ac24452fa10d68a0a33",
+  "evidence_matrix_sha256": "0bd41bae9659fd50abd522465f7f73bec5c553e8a4de7b90e72b5e7787b5377e",
+  "scope_proposal_sha256": "8662216a338355d2339dc02d7b67cde04a8ee8745458ed4c906451afea07798e",
+  "next_step": "prepare_interactive_local_groq_link_offline_before_scope_acceptance_and_activation",
+  "next_live_run_prepared": false,
+  "new_model_calls": 0,
+  "default_changed": false,
+  "cap_001_approved": false
+}

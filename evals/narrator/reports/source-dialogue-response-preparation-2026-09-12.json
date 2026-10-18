@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-12",
+  "status": "offline_preparation_completed_live_pending",
+  "real_http_calls": 0,
+  "live_credentials_used": false,
+  "test_results": {
+    "consumer": {
+      "distinct": 78,
+      "passed": 78,
+      "stages": {
+        "distinct": 78,
+        "passed": 78,
+        "r1": "75 passed, 1 test attribute failure",
+        "r2": "1 affected case passed",
+        "env-red": "2 causal failures before source fix",
+        "env-green": "13 passed, 65 deselected; 2 new cases and 11 revalidated cases"
+      }
+    },
+    "launcher": {
+      "distinct": 73,
+      "passed": 73,
+      "counting": "union of initial8 + remaining64 + final6; not a single final full suite"
+    },
+    "distinct_total": 151
+  },
+  "preflight": {
+    "batch_id": "3abaa31f-d8f9-45f0-ad86-ddc1adf6d9c5",
+    "status": "preflight_only_completed",
+    "exit_code": 0,
+    "sha256": "28393e5906af7a1358f409937c8530ca0af137a278898f9c933e71e2606fe26a",
+    "inputs": 25,
+    "frozen_requests": 3
+  },
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-response-preparation-20260912/manifest.json",
+    "sha256": "ed8b26daba0ae1805ab62c21f8cf40aa6bf0aa55b98167b3a19e687ceeb1f962",
+    "copies": 127
+  },
+  "independent_review": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-response-independent-review-20260912.json",
+    "sha256": "626535a3a9087d02957ec5eb95892ad69b18e9dd89d22adb71ff8f668f7e707e",
+    "verdict": "prepared_offline_with_explicit_limits"
+  },
+  "limitations": [
+    "Artifacts are written only at normal finalization, including caught cancellation; abrupt process termination can prevent final artifacts.",
+    "Passing schema and policy is not semantic approval: NPC response pertinence, n/q coherence and authored scene respect require narrative review.",
+    "Existing gate does not guarantee detection of a new NPC in free prose: offline Caio counterexample accepted and preserved as limitation.",
+    "Existing lexical action authorizations can consider words inside player dialogue; this separate agency issue remains unchanged.",
+    "Authored prior narratives are synthetic fixtures, not prior provider outputs, application commits or canonical facts.",
+    "Pure diagnostic does not validate action production, store/commits, UI, reconnect or campaign runtime.",
+    "Initial/inter-call timing is local; no remote provider arrival measurement or live model quality conclusion.",
+    "No baseline/model comparison, retries, fallback, default/CAP-001 approval or historical artifact modification.",
+    "No model, provider availability or narrative-quality approval.",
+    "Historical old-control also passed the real venv stub/evaluator observation; no causal red in that narrow path.",
+    "Artificial extra subtree and taskkill experiments are explicitly limited/inconclusive for the real path; no generic process-tree or abrupt-host-death guarantee.",
+    "Actual evaluator preflight integration is separate root evidence; complete body/schema canonical integrity is enforced in the evaluator."
+  ],
+  "next_step": "Single protected PowerShell launch, then artifact audit and narrative review; no automatic rerun.",
+  "approvals": {
+    "narrative_quality": false,
+    "model_selection": false,
+    "runtime_default": false,
+    "CAP-001": false
+  }
+}

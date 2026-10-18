@@ -1,0 +1,515 @@
+{
+  "status": "paused_by_user",
+  "date_local": "2026-09-11",
+  "timestamp_utc": "2026-09-12T01:03:23Z",
+  "fixture_run": "03be3183-3d49-4bc1-a042-6f94059e1336",
+  "fixture_snapshot": {
+    "captured_at_utc": "2026-09-12T01:03:23.322880+00:00",
+    "comparison": {
+      "against_label": "baseline",
+      "changed_components": [
+        "logical_sql_sha256",
+        "table_counts",
+        "attempt_families",
+        "campaign"
+      ],
+      "equal": false
+    },
+    "database": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-local-fixture-03be3183-3d49-4bc1-a042-6f94059e1336\\storyteller.sqlite3",
+    "label": "pause_after_shutdown",
+    "physical_database_hash_used": false,
+    "raw_content_emitted": false,
+    "readonly_transaction": true,
+    "run_id": "03be3183-3d49-4bc1-a042-6f94059e1336",
+    "session_id": "source-fixture.03be3183-3d49-4bc1-a042-6f94059e1336",
+    "snapshot": {
+      "attempt_families": {
+        "H": {
+          "by_status": {
+            "cancelled": 0,
+            "completed": 1,
+            "failed": 0,
+            "pending": 0,
+            "timeout": 0
+          },
+          "total": 1
+        },
+        "K": {
+          "by_status": {
+            "cancelled": 0,
+            "completed": 1,
+            "failed": 0,
+            "pending": 0,
+            "timeout": 0
+          },
+          "total": 1
+        },
+        "P": {
+          "by_status": {
+            "cancelled": 0,
+            "completed": 1,
+            "failed": 0,
+            "pending": 0,
+            "timeout": 0
+          },
+          "total": 1
+        }
+      },
+      "attempt_family_method": "P/K use existing operation-id prefixes; remaining attempts in this single synthetic session are H.",
+      "campaign": {
+        "current_turn": 1,
+        "state_revision": 1
+      },
+      "logical_sql_sha256": "17699ad578367f83b036594964470d376aecd535c78201affc1695865fb2a593",
+      "request_count": null,
+      "request_count_reason": "FakeLLM.requests is server memory only; H rows are not a provider-call count.",
+      "schema_sql_sha256": "cc1f61f0e6ab7403444daedcff19fe13255782e49e95e4003aa692e62636d5e1",
+      "table_counts": {
+        "attempts": 3,
+        "campaigns": 1,
+        "consolidations": 0,
+        "episodic_memories": 0,
+        "events": 1,
+        "legacy_imports": 0,
+        "memory_candidates": 0,
+        "schema_meta": 1,
+        "sqlite_sequence": 3,
+        "turns": 1
+      }
+    }
+  },
+  "fixture_launcher_status": "failed",
+  "fixture_exit_code": 1,
+  "vite_exit_code": 0,
+  "provider_calls_after_comparison": 0,
+  "default_activated": false,
+  "tests_started_after_pause": false,
+  "previous_view_protocol_distinct_cases": 96,
+  "hook_distinct_cases": 52,
+  "fixture_cases": 25,
+  "backend_cases": 280,
+  "current_view_delta_tested": false,
+  "current_view_delta_review_complete": false,
+  "source_hashes": {
+    "client/src/sourceNarrativeProtocol.ts": "7b0247d9d481e60ba40a1ba2f3d28a5e1672c989bf5f5ddaa8c320514750b39c",
+    "client/src/sourceNarrativeProtocol.test.ts": "faa9ca99392174e9e49216ea92456a52c382dc3f958fabf5ce67045cade19eb5",
+    "client/src/components/SourceTrialView.tsx": "7bc9c4b532591447d32ffae680d82429ac8c166ea2169740a064d515725c1c4a",
+    "client/src/components/SourceTrialView.test.tsx": "29553e9f33989735ccda1a2c4f20464b2436437c564cbd24013b5b4cdcc2276f",
+    "client/src/hooks/useSourceTrialConnection.ts": "0ecc3358c7680f0ec43383fe931cb9dbd4cb0c9a43270b323ec47abcc1f588e8",
+    "client/src/hooks/useSourceTrialConnection.test.tsx": "b402499c22019568dcf662e47e81091d85fb0a836782fe402e7136a50a556c8c",
+    "client/src/sourceTrialMain.tsx": "b0f8da16bb9227a7a75f3e0fa9115a8c8d7fd0e794386df8edb3995fde661986",
+    "client/source-trial.html": "a1f16814e6b91a80528599f5f7b79dfd81b56b2e0395d3d495b1a9692f200e1e",
+    "client/vite.source-trial.config.ts": "08caa67e52237098ad5afbfcb595c27c5870140bf63e5d4f984c80f73c805891",
+    "scripts/run_source_local_fixture.py": "5986b340a4d5ac56069859f38eeb56394d16a93cfe8a275bb6780673a66e171e",
+    "tests/test_source_local_fixture.py": "d9a07c79a15f619ad71b9e8c328ed604aef3ae4178a77c6e05e6a3cd55ef8532",
+    "api/narrative_source_local_app.py": "26e565979dcbeed275c07ad790ede4f1926fc3c635781a285c136b5036d837ec",
+    "api/narrative_source_local_handler.py": "cd74a88efc0bee1ad77c3bed8e4fe24c38f5902495ccea91ffb10480e5e0c6de"
+  },
+  "copies": [
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\build.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/build.log",
+      "sha256": "63043821a8badfa7be9452864e6e363d897356dfe683fa886fef06e92cdfca20"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/checks.json",
+      "sha256": "673977e848bae82b0b757c9825845c2b9aabbf1982ed7e5cc2b9db183c0327ab"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\eslint.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/eslint.json",
+      "sha256": "16af2e83f6711267b6c37bb783fa1c55569ede8ce56245e22014484fcfce09d4"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\junit.xml",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/junit.xml",
+      "sha256": "e042dac443345942618f1ea39480fd10dedde7c7f860194bd35d0e08622d1862"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\lint.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\source-snapshot\\sourceNarrativeProtocol.test.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/source-snapshot/sourceNarrativeProtocol.test.ts",
+      "sha256": "fc9ec67adf0787ef1755eac51122897454419f7b7b3a0061bb91ea66bfb99883"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\source-snapshot\\sourceNarrativeProtocol.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/source-snapshot/sourceNarrativeProtocol.ts",
+      "sha256": "485bf30da0d306f6e9ab2baf879d0603d2043d818827cc2e44d417576717e97f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\source-snapshot\\SourceTrialView.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/source-snapshot/SourceTrialView.test.tsx",
+      "sha256": "ceafb32e196083b4e10c28551dcff035eaf80784a96b7cdb484b7b8bda74e366"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\source-snapshot\\SourceTrialView.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/source-snapshot/SourceTrialView.tsx",
+      "sha256": "6a424c13e65d534097694eacdf7f0c98d2b466f9059a50bef8577bf9b225405f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\tests.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/tests.log",
+      "sha256": "1a7cd7c93b774b2934a579e16ed355a766d11f0b124a396dc7748ddd961004b4"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-first-20260912\\typecheck.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-first-20260912/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/checks.json",
+      "sha256": "5dd6c76a8e0ab62ef79dc85385955d329189c7e3e69d0f7881660ccb00d41685"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\eslint.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/eslint.json",
+      "sha256": "0758727e85320775dd6f04ce0e4262e0f259e256a654f5781b4fb7b0e39e3f7d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\junit.xml",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/junit.xml",
+      "sha256": "5b8045339211bea23fba1e6986ef65bdcd960b985e75c4717ab62c6da6d75a6f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\lint.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\source-snapshot\\sourceNarrativeProtocol.test.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/source-snapshot/sourceNarrativeProtocol.test.ts",
+      "sha256": "faa9ca99392174e9e49216ea92456a52c382dc3f958fabf5ce67045cade19eb5"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\source-snapshot\\sourceNarrativeProtocol.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/source-snapshot/sourceNarrativeProtocol.ts",
+      "sha256": "7b0247d9d481e60ba40a1ba2f3d28a5e1672c989bf5f5ddaa8c320514750b39c"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\source-snapshot\\SourceTrialView.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/source-snapshot/SourceTrialView.test.tsx",
+      "sha256": "ceafb32e196083b4e10c28551dcff035eaf80784a96b7cdb484b7b8bda74e366"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\source-snapshot\\SourceTrialView.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/source-snapshot/SourceTrialView.tsx",
+      "sha256": "6a424c13e65d534097694eacdf7f0c98d2b466f9059a50bef8577bf9b225405f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-protocol-error-20260912\\test.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-protocol-error-20260912/test.log",
+      "sha256": "b61713dbf9f0f52ca347acb9b3e5a71065d7863ab540154da123aacac6609f17"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-scroll-20260912\\before-SourceTrialView.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-scroll-20260912/before-SourceTrialView.test.tsx",
+      "sha256": "ceafb32e196083b4e10c28551dcff035eaf80784a96b7cdb484b7b8bda74e366"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-scroll-20260912\\before-SourceTrialView.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-scroll-20260912/before-SourceTrialView.tsx",
+      "sha256": "6a424c13e65d534097694eacdf7f0c98d2b466f9059a50bef8577bf9b225405f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-scroll-20260912\\review-before-layout.md",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-scroll-20260912/review-before-layout.md",
+      "sha256": "c771e39093df1369d42ebcab6888096ffa3367933290ae38da1add36fde24a3e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-scroll-20260912\\SourceTrialView.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-scroll-20260912/SourceTrialView.test.tsx",
+      "sha256": "29553e9f33989735ccda1a2c4f20464b2436437c564cbd24013b5b4cdcc2276f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-view-scroll-20260912\\SourceTrialView.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-view-scroll-20260912/SourceTrialView.tsx",
+      "sha256": "7bc9c4b532591447d32ffae680d82429ac8c166ea2169740a064d515725c1c4a"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-frontend-review-20260912\\report.md",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-frontend-review-20260912/report.md",
+      "sha256": "c771e39093df1369d42ebcab6888096ffa3367933290ae38da1add36fde24a3e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/checks.json",
+      "sha256": "867d59bcb672f6f144ba0a4f8b95d14709aea36788d6f31ac7a3dc89b8226752"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\eslint.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/eslint.json",
+      "sha256": "b80c81d6702be7eb9085014fe6be6f75cf9ee1334103859626e1364e50961c6b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\hashes-after.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/hashes-after.json",
+      "sha256": "b41064cacb3a9e148703f933e05fe799c6cea2c5062a071a5d160f1a57f3c06d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\hashes-before.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/hashes-before.json",
+      "sha256": "b41064cacb3a9e148703f933e05fe799c6cea2c5062a071a5d160f1a57f3c06d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\junit.xml",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/junit.xml",
+      "sha256": "d11917774249f4c12273ea8425e9e665358e3a13e512815932237549a72fd142"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\lint.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round1-20260912\\tests.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round1-20260912/tests.log",
+      "sha256": "12bcd95123da82586df1281fafeb3a1437ebc705d69eb3b7fcc8de349afcd399"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/checks.json",
+      "sha256": "06df16b2eec28c8e8c14d12c08da3af7564f3ccc70a3c9828dc4dd28414de74b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\eslint.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/eslint.json",
+      "sha256": "91fb2dd96a44402651778361bae536a7db4a8b0db12493e3590fcee103943576"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\hashes-after.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/hashes-after.json",
+      "sha256": "9063e3b9043de5eda8b60cee4ccfdd912345389e3e4924c53f1e3a5462a6688e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\hashes-before.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/hashes-before.json",
+      "sha256": "9063e3b9043de5eda8b60cee4ccfdd912345389e3e4924c53f1e3a5462a6688e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\junit.xml",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/junit.xml",
+      "sha256": "31221e171ed2895b047648d76359a16127837657ea8750d876d2ce162da7ebe9"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\lint.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\tests.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/tests.log",
+      "sha256": "22a9a7c4ebe0f39a6c612854c188e729bd67da14c8aa4b083dd7e0c64f97c74f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round2-20260912\\typecheck.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round2-20260912/typecheck.log",
+      "sha256": "ab3a20a8614aa86ac0a3044a2786ec9c351173572d8a8afac8fc925f40182534"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/checks.json",
+      "sha256": "a6a291986b2168ae7439c8a799ca41833d0a2763752e302ca7825d0b2b735743"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\config-typecheck.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/config-typecheck.log",
+      "sha256": "2aca6e97df20568a3ecdd4c85c18ef3022dd6ad833c64efce5d723ea24846276"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\eslint.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/eslint.json",
+      "sha256": "6b3972915a2be54d66fd829f20c53e1ccab4e19ec746cf2f373e7c60a0cb6f12"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\hashes-after.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/hashes-after.json",
+      "sha256": "4c761d721c9d8f4ff73e6052a7970c54951efeb68530b6cb3bf55e0e2baa2590"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\hashes-before.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/hashes-before.json",
+      "sha256": "4c761d721c9d8f4ff73e6052a7970c54951efeb68530b6cb3bf55e0e2baa2590"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\lint-test-type.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/lint-test-type.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round3-20260912\\typecheck.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round3-20260912/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round4-20260912\\build.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round4-20260912/build.log",
+      "sha256": "36471d361ee8429685f8324ee5a43762c846d66dbdd853b95dd18bb4db9f1e03"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round4-20260912\\checks.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round4-20260912/checks.json",
+      "sha256": "68226af4ef46627d99d445d926adc1d2a16a8b9e8ec4e1cc00ba6a296220ad88"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round4-20260912\\config-typecheck.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round4-20260912/config-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round4-20260912\\hashes-after.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round4-20260912/hashes-after.json",
+      "sha256": "4c761d721c9d8f4ff73e6052a7970c54951efeb68530b6cb3bf55e0e2baa2590"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-source-hook-round4-20260912\\hashes-before.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/st-source-hook-round4-20260912/hashes-before.json",
+      "sha256": "4c761d721c9d8f4ff73e6052a7970c54951efeb68530b6cb3bf55e0e2baa2590"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d\\pytest.log",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d/pytest.log",
+      "sha256": "6b70cb86d46cd37e536ff80faec2b3abb374c51ec274ec58e304a016769c1f17"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d\\result.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d/result.json",
+      "sha256": "ce14f8cdcafc30f104c2ba59e1adbbf756c03434ad01d47f3716222b0bb2e609"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d\\results.xml",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-tests-9dc3e3ee-d654-412d-89b3-93f67c93261d/results.xml",
+      "sha256": "a8906b542b2d03830044a25326a1e79843a35223806a6506ad15a474bc2c6eb0"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-snapshots-03be3183-3d49-4bc1-a042-6f94059e1336\\baseline.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-snapshots-03be3183-3d49-4bc1-a042-6f94059e1336/baseline.json",
+      "sha256": "c505a5e66434895a1173aec3e1e2225233e9d8192e0619a6d1f83bd604b71083"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-snapshots-03be3183-3d49-4bc1-a042-6f94059e1336\\pause_after_shutdown.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-snapshots-03be3183-3d49-4bc1-a042-6f94059e1336/pause_after_shutdown.json",
+      "sha256": "1dd7dd94eab49437b645d99db13c3909c2ce86596ce37e0bf4c4191b4c04b310"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-hook-verification-20260912.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-hook-verification-20260912.json",
+      "sha256": "0ee36038aa39261b22339da8d3c06568b85bef96334848dd20831b951f360de0"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-review-71c904.md",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-review-71c904.md",
+      "sha256": "6c0ebe4b15e5f0a4c5020fe323800d01f5628a2de6fd899006a5302459e63bea"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-snapshot-03be3183.py",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/evidence/storyteller-source-local-fixture-snapshot-03be3183.py",
+      "sha256": "2447fe57a2769e98c9a9172a6f72c36880c741057480e1d77f4f4a30871b1331"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-local-fixture-03be3183-3d49-4bc1-a042-6f94059e1336\\status.json",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/fixture/status-after-shutdown.json",
+      "sha256": "34eb1776c61b27abe7722f824df6d3306312612895b669963714586f479235d6"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\sourceNarrativeProtocol.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/sourceNarrativeProtocol.ts",
+      "sha256": "7b0247d9d481e60ba40a1ba2f3d28a5e1672c989bf5f5ddaa8c320514750b39c"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\sourceNarrativeProtocol.test.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/sourceNarrativeProtocol.test.ts",
+      "sha256": "faa9ca99392174e9e49216ea92456a52c382dc3f958fabf5ce67045cade19eb5"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\components\\SourceTrialView.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/components/SourceTrialView.tsx",
+      "sha256": "7bc9c4b532591447d32ffae680d82429ac8c166ea2169740a064d515725c1c4a"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\components\\SourceTrialView.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/components/SourceTrialView.test.tsx",
+      "sha256": "29553e9f33989735ccda1a2c4f20464b2436437c564cbd24013b5b4cdcc2276f"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\hooks\\useSourceTrialConnection.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/hooks/useSourceTrialConnection.ts",
+      "sha256": "0ecc3358c7680f0ec43383fe931cb9dbd4cb0c9a43270b323ec47abcc1f588e8"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\hooks\\useSourceTrialConnection.test.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/hooks/useSourceTrialConnection.test.tsx",
+      "sha256": "b402499c22019568dcf662e47e81091d85fb0a836782fe402e7136a50a556c8c"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\src\\sourceTrialMain.tsx",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/src/sourceTrialMain.tsx",
+      "sha256": "b0f8da16bb9227a7a75f3e0fa9115a8c8d7fd0e794386df8edb3995fde661986"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\source-trial.html",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/source-trial.html",
+      "sha256": "a1f16814e6b91a80528599f5f7b79dfd81b56b2e0395d3d495b1a9692f200e1e"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\client\\vite.source-trial.config.ts",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/client/vite.source-trial.config.ts",
+      "sha256": "08caa67e52237098ad5afbfcb595c27c5870140bf63e5d4f984c80f73c805891"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\run_source_local_fixture.py",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/scripts/run_source_local_fixture.py",
+      "sha256": "5986b340a4d5ac56069859f38eeb56394d16a93cfe8a275bb6780673a66e171e"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_source_local_fixture.py",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/tests/test_source_local_fixture.py",
+      "sha256": "d9a07c79a15f619ad71b9e8c328ed604aef3ae4178a77c6e05e6a3cd55ef8532"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_app.py",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/api/narrative_source_local_app.py",
+      "sha256": "26e565979dcbeed275c07ad790ede4f1926fc3c635781a285c136b5036d837ec"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_handler.py",
+      "copy": "eval-results/checkpoints/source-local-pause-20260911/current-source/api/narrative_source_local_handler.py",
+      "sha256": "cd74a88efc0bee1ad77c3bed8e4fe24c38f5902495ccea91ffb10480e5e0c6de"
+    }
+  ],
+  "browser_before_fix": {
+    "viewport": {
+      "width": 475,
+      "height": 648
+    },
+    "document_height": 648,
+    "log": {
+      "top": 345.09375,
+      "bottom": 496.546875,
+      "clientHeight": 151,
+      "scrollHeight": 657,
+      "scrollTop": 506
+    },
+    "aside": {
+      "top": 182,
+      "bottom": 345.09375
+    },
+    "action_status": {
+      "top": 486,
+      "bottom": 506
+    }
+  },
+  "observed_shutdown_error": {
+    "type": "RuntimeError",
+    "message": "Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.",
+    "frame": "api/narrative_source_local_app.py:55",
+    "reproduced_in_test": false,
+    "fixed": false
+  },
+  "next_step": "Reproduce and correct the duplicate websocket.close observed with the real local ASGI server; then finish review/focused checks of the paused view delta and repeat browser composition in a new synthetic fixture."
+}

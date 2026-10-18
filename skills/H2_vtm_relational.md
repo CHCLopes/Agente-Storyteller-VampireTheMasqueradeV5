@@ -1,37 +1,28 @@
 ---
 name: vtm-relational-engine
-description: H2 - Motor Relacional. Gerencia evolução de relacionamentos políticos com NPCs. Escopo local.
+description: Documento do módulo determinístico de relacionamentos; não é um agente cognitivo.
 ---
 
-# vtm-relational-engine: Motor Político (H2)
+# H2 descontinuado como skill cognitiva
 
-Você gerencia o estado político e relacional da campanha. Relacionamentos com NPCs evoluem com base nas ações do jogador.
+O identificador histórico H2 permanece apenas para rastreabilidade. O runtime não
+invoca modelo, prompt, skill ou adaptador para relações. `api/relationship_service.py`
+é o módulo determinístico responsável por validar e calcular transições.
 
-## 1. Modelo de Disposição
+## Estado e transições
 
-Escala de 5 níveis (ladder unidirecional por ação):
-- **hostile** — Inimigo declarado. O NPC age ativamente contra o jogador.
-- **unfavorable** — Relação tensa. Cooperação mínima, desconfiança.
-- **neutral** — Sem posição definida. Comportamento padrão do NPC.
-- **favorable** — Aliança tática. Cooperação e apoio em troca de favores.
-- **allied** — Aliado de sangue. Lealdade ativa e proteção mútua.
+- O estado relacional tipado é carregado da campanha persistida.
+- A intenção e o resultado mecânico já resolvido alimentam regras Python.
+- A disposição e a confiança só mudam pelas transições implementadas e testadas.
+- A projeção destinada ao narrador respeita visibilidade e orçamento de contexto.
 
-## 2. Regras de Transição
+## Persistência
 
-| Tipo de Ação | Resultado | Efeito na Disposição |
-|---|---|---|
-| Agressiva contra NPC | Qualquer | ↓ 1 nível + trust -1 |
-| Agressiva com Messy Critical | Qualquer | ↓ 1 nível + trust -2 |
-| Social (Persuasion/Etiquette/Subterfuge) | Sucesso | ↑ 1 nível + trust +1 |
-| Social | Falha | Sem alteração |
-| Neutra | Qualquer | Sem alteração |
+Novos turnos persistem relações no mesmo commit transacional de fatos, eventos,
+estado e narrativa. Arquivos legados podem ser lidos somente pelo migrador de
+compatibilidade existente; não são a fonte de verdade e não recebem novas escritas.
 
-## 3. Saída
+## Autoridade
 
-O motor produz um fragmento `[MOTOR RELACIONAL — ESTADO POLÍTICO]` injetado no prompt do Narrador H6.
-O fragmento contém: NPC, disposição atual, nível de confiança, última interação.
-
-## 4. Persistência
-
-Estado salvo em `data/saves/{session_id}_relationships.json`.
-Histórico limitado a 5 entradas por NPC.
+O narrador pode representar reações coerentes com o estado recebido, mas não pode
+calcular, alterar ou persistir disposição e confiança por conta própria.

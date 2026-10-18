@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-11",
+  "status": "completed_inactive_contract",
+  "tests": 73,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "code_hashes": {
+    "api/narrative_source_local_selection.py": "3dd9ce5d926fbd0ccc7e4d85cf22c8f045096b10fa3717b7ecb8f1a5dab14aa3",
+    "tests/test_narrative_source_local_selection.py": "2f66b80131327bae548095789d2260f4fb44a5167c927925e2adb6071ab2c628"
+  },
+  "test_process": {
+    "success": true,
+    "exit_code": 0,
+    "suite": "tests/test_narrative_source_local_selection.py",
+    "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-tests-20260911-round1\\pytest.log",
+    "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-tests-20260911-round1\\results.xml"
+  },
+  "independent_review": "Closed without remaining blockers after bounded sqlite3.Error handling and counterexamples.",
+  "checkpoint": "eval-results/checkpoints/narrative-source-local-selection-20260911",
+  "copies": [
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-tests-20260911-round1\\result.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/tests/result.json",
+      "sha256": "527d16f103fedf91a8e8365e08a39dbbf23b2b26c10df710a88591a126a518ac"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-tests-20260911-round1\\pytest.log",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/tests/pytest.log",
+      "sha256": "79f035e8f6e80da6ddd8bd384f110beb28452f2f0e9bd90fd68830b741595f3d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-tests-20260911-round1\\results.xml",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/tests/results.xml",
+      "sha256": "6248c997bf471412d697737f6572ed02ee1301477700c89b3165ff72f39b8a79"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-hashes-before-20260911.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/tests/hashes-before.json",
+      "sha256": "3d371c9d7b133875224e92cff09ec99feae8149c5a1df0ea8a69adbc3da57930"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-hashes-after-20260911.json",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/tests/hashes-after.json",
+      "sha256": "3d371c9d7b133875224e92cff09ec99feae8149c5a1df0ea8a69adbc3da57930"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-local-selection-review-7f4cf885-c002-494f-a93b-7e67998a1a49.md",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/review/storyteller-local-selection-review-7f4cf885-c002-494f-a93b-7e67998a1a49.md",
+      "sha256": "fcd8456adf90fe9cd6f51f78bf3ff129ce24b6df7513e7fcd00e36d42d98fe83"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\narrative_source_local_selection.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/implementation/api/narrative_source_local_selection.py",
+      "sha256": "3dd9ce5d926fbd0ccc7e4d85cf22c8f045096b10fa3717b7ecb8f1a5dab14aa3"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_narrative_source_local_selection.py",
+      "copy": "eval-results/checkpoints/narrative-source-local-selection-20260911/implementation/tests/test_narrative_source_local_selection.py",
+      "sha256": "2f66b80131327bae548095789d2260f4fb44a5167c927925e2adb6071ab2c628"
+    }
+  ],
+  "provider_calls": 0,
+  "route_integrated": false,
+  "endpoint_order_verified": false,
+  "runtime_activated": false,
+  "authentication_implemented": false,
+  "historical_comparison_preserved": true,
+  "historical_files_checked": 6,
+  "next_dependency": "Transport integration and activation remain separate from this inactive selector; preserve experience/product acceptance constraints."
+}

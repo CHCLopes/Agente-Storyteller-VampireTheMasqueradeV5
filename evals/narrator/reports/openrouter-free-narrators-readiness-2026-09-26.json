@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L1",
+  "status": "offline_ready_credential_pending",
+  "supersedes": "HYP-005-SILICONFLOW-FREE-CHINESE-L1",
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "paid_spend_authorized": false,
+  "synthetic_only": true,
+  "candidates": [
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "liquid/lfm-2.5-2.6b:free",
+    "deepseek/deepseek-v4-flash-0731:free"
+  ],
+  "limits": {
+    "cases_per_candidate": 8,
+    "max_calls": 24,
+    "max_output_tokens_per_call": 768,
+    "deadline_seconds": 90,
+    "minimum_global_start_interval_seconds": 4,
+    "automatic_retries": 0,
+    "repair": false,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "reported_cost_must_equal_zero_openrouter_credits": true
+  },
+  "verification": {
+    "focused_tests_passed": 80,
+    "focused_tests_failed": 0,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_passed": true,
+    "missing_key_fail_closed_passed": true
+  },
+  "next_gate": "secure_openrouter_key_entry_in_observable_terminal"
+}

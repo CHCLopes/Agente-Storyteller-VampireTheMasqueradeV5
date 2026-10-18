@@ -1,26 +1,30 @@
 {
   "feral_weapons": {
-    "engine_data": { "rouse_cost": 1, "scaling_stat": null, "dice_bonus_stat": "brawl", "is_aggravated": true, "amalgam_req": [] },
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "feral_weapons", "aliases": ["armas_ferais"], "discipline_family_id": "protean", "level": 2, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "v5" },
+    "engine_data": { "rouse_cost": 1, "scaling_stat": null, "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": [], "action_roll_policy": "standard_action", "weapon_damage_bonus": 2, "unhalved_superficial_to_vampires": true, "duration": "scene" },
     "narrative_data": {
       "visual_manifestation": "O vampiro distorce suas mãos em garras ósseas ou unhas negras e animalescas que rasgam aço e carne.",
       "masquerade_threat": "Extrema. Transfiguração física óbvia. Quebra da Máscara imediata se visto por mortais."
     }
   },
   "soaring_leap": {
-    "engine_data": { "rouse_cost": 0, "scaling_stat": null, "dice_bonus_stat": "athletics", "is_aggravated": false, "amalgam_req": [] },
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "soaring_leap", "aliases": ["salto_elevado"], "discipline_family_id": "potence", "level": 1, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "v5" },
+    "engine_data": { "rouse_cost": 0, "scaling_stat": null, "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": [], "action_roll_policy": "no_roll", "vertical_leap_multiplier": 3, "horizontal_leap_multiplier": 5, "duration": "passive" },
     "narrative_data": {
       "visual_manifestation": "Impulsionado por Força preternatural (Potência), o vampiro salta distâncias impossíveis para a biomecânica humana.",
       "masquerade_threat": "Alta. Um salto que desafia a gravidade chama a atenção de qualquer observador."
     }
   },
   "awe": {
-    "engine_data": { "rouse_cost": 0, "scaling_stat": "presence", "dice_bonus_stat": "persuasion", "is_aggravated": false, "amalgam_req": [] },
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "awe", "aliases": ["fascinio"], "discipline_family_id": "presence", "level": 1, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "v5" },
+    "engine_data": { "rouse_cost": 0, "scaling_stat": "presence", "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": [], "action_roll_policy": "contextual", "dice_bonus_discipline_family": "presence", "dice_bonus_attribute": "Charisma", "duration": "scene" },
     "narrative_data": {
       "visual_manifestation": "A postura do vampiro irradia um magnetismo preternatural, capturando as emoções e a adoração de todos ao redor.",
       "masquerade_threat": "Nenhuma. Manifestação invisível e psicológica."
     }
   },
   "flesh_of_marble": {
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "flesh_of_marble", "aliases": ["carne_de_marmore"], "discipline_family_id": "fortitude", "level": 5, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "v5" },
     "engine_data": { "rouse_cost": 1, "scaling_stat": "fortitude", "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": [] },
     "narrative_data": {
       "visual_manifestation": "A carne adquire a resistência de chumbo sob impacto. Balas achatam-se, lâminas resvalam sem penetrar a pele.",
@@ -28,6 +32,7 @@
     }
   },
   "dementation": {
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "dementation", "aliases": ["demencia"], "discipline_family_id": "dominate", "level": null, "prerequisite_power_ids": [], "amalgam_requirements": [{"discipline_family_id": "obfuscate", "level": 2}], "rules_origin": "v5_with_legacy_adaptation" },
     "engine_data": { "rouse_cost": 1, "scaling_stat": "dominate", "dice_bonus_stat": null, "is_aggravated": false, "amalgam_req": ["obfuscate"] },
     "narrative_data": {
       "visual_manifestation": "Usando os ecos da própria loucura (Amálgama Malkaviano), o vampiro sussurra fragmentos de verdades fraturadas que quebram a sanidade do alvo.",
@@ -35,6 +40,7 @@
     }
   },
   "fleshcrafting": {
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "fleshcrafting", "aliases": ["moldar_a_carne"], "discipline_family_id": "protean", "level": 3, "prerequisite_power_ids": [], "amalgam_requirements": [{"discipline_family_id": "dominate", "level": 2}], "rules_origin": "v5_with_legacy_adaptation" },
     "engine_data": { "rouse_cost": 1, "scaling_stat": "protean", "dice_bonus_stat": null, "is_aggravated": true, "amalgam_req": ["dominate"] },
     "narrative_data": {
       "visual_manifestation": "A antiga arte da Vicissitude (Amálgama Tzimisce). O vampiro molda osso, carne e cartilagem do alvo como se fosse argila molhada.",
@@ -42,6 +48,7 @@
     }
   },
   "shadow_cast": {
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "shadow_cast", "aliases": ["projetar_sombra"], "discipline_family_id": "oblivion", "level": null, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "partially_identified" },
     "engine_data": { "rouse_cost": 1, "scaling_stat": "oblivion", "dice_bonus_stat": "stealth", "is_aggravated": false, "amalgam_req": [] },
     "narrative_data": {
       "visual_manifestation": "As sombras na sala começam a se esticar, distorcer e rastejar independentes das fontes de luz, atendendo à vontade do Lasombra.",
@@ -49,6 +56,7 @@
     }
   },
   "scorpion_touch": {
+    "catalog_metadata": { "schema_version": "1.0", "power_id": "scorpion_touch", "aliases": ["toque_do_escorpiao"], "discipline_family_id": "blood_sorcery", "level": null, "prerequisite_power_ids": [], "amalgam_requirements": [], "rules_origin": "partially_identified" },
     "engine_data": { "rouse_cost": 1, "scaling_stat": "blood_sorcery", "dice_bonus_stat": null, "is_aggravated": true, "amalgam_req": [] },
     "narrative_data": {
       "visual_manifestation": "A vitae do vampiro transmuta-se num veneno letal. O contato causa falência nos órgãos em mortais e necrose em Membros.",

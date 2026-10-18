@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Pirata+One&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
 @theme {
   --color-v5-charcoal: #121214;
   --color-v5-parchment: #e2e0d9;
@@ -13,7 +16,7 @@
   --color-v5light-card: #faf8f5;
   --color-v5light-charcoal: #3d3d3d;
   --color-v5light-earth: #8B4513;
-  --color-v5light-border: #c9b8a8;
+  --color-v5light-border: #9a806c;
   --color-v5light-highlight: #d4a574;
   --color-v5light-hunger: #a52a2a;
   --color-v5light-damage: #6b2c2c;
@@ -61,6 +64,7 @@
 
 /* Custom CSS variables for dynamic mode selection */
 :root {
+  color-scheme: dark;
   --bg-primary: #121214;
   --bg-secondary: #18181b;
   --text-primary: #e2e0d9;
@@ -73,12 +77,13 @@
 }
 
 :root.light {
+  color-scheme: light;
   --bg-primary: #f5f0e8;
   --bg-secondary: #faf8f5;
   --text-primary: #3d3d3d;
   --text-secondary: #6b6b6b;
   --accent: #8B4513;
-  --border: #c9b8a8;
+  --border: #9a806c;
   --hunger-color: #a52a2a;
   --damage-color: #6b2c2c;
   --button-hover: #5c2d0c;
@@ -91,6 +96,12 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
 }
 
 /* Scrollbar styling */
@@ -111,4 +122,28 @@ body {
 /* Noise overlay effect */
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Keep the game inside the viewport; narrative and HUD scroll independently. */
+.game-shell {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.game-shell #narrative-log {
+  overflow-wrap: anywhere;
+  scrollbar-gutter: stable;
+}
+
+.game-shell #action-panel-container {
+  flex-shrink: 0;
+  min-width: 0;
+  max-height: 50%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.game-shell #action-panel-container textarea,
+.game-shell #action-panel-container select {
+  min-width: 0;
 }

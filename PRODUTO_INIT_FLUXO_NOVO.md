@@ -1,5 +1,8 @@
 # PRODUTO.md — Agente Storyteller V5 — Phase 2.5 (Novo Fluxo de Inicialização)
 
+> [!IMPORTANT]
+> Especificação histórica substituída pelo fluxo neutro de provedor descrito em `README.md` e `LEIA-ME_PRIMEIROS_PASSOS.md`.
+
 ## Visão
 
 Phase 2 foi completada (26/26 AC). Porém, testes end-to-end revelaram UX problem crítico:

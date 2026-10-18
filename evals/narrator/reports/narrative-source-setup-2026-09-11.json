@@ -1,0 +1,120 @@
+{
+  "date": "2026-09-11",
+  "scope": "offline authored B setup and real producer composition",
+  "status": "completed",
+  "live_calls": 0,
+  "distinct_passed": 488,
+  "new_tests": 184,
+  "stages": [
+    {
+      "stage": "models",
+      "passed": 210,
+      "new": 121,
+      "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-tests-20260911\\setup-context.xml",
+      "junit_sha256": "a70c8f1d170c9d41f2e842240b464b5bcd5e078033bc5b0a01df1dd1b44e68ec",
+      "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-tests-20260911\\setup-context.log",
+      "log_sha256": "d8da4d8f9a95b2f1ddd3e71d421f8903d2fdd3b3eb6d6ef8f41b2385e6f1d603"
+    },
+    {
+      "stage": "persistence",
+      "passed": 270,
+      "new": 55,
+      "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-persistence-20260911\\run1.xml",
+      "junit_sha256": "a3c024364faa86bb2063dcf668bb3147dedef2dfd7b145e78e478e45b236eed5",
+      "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-persistence-20260911\\run1.log",
+      "log_sha256": "970f190a16bf5cb526f2e7661315de24720e181d150d106a0edf22e72bb54079"
+    },
+    {
+      "stage": "composition",
+      "passed": 8,
+      "new": 8,
+      "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-flow-tests-20260911-run2\\flow.xml",
+      "junit_sha256": "c8aa7ff3f9f160c6e833fff3aedef2f86fe3df3d85243210d3127c6fb66e0bd2",
+      "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-flow-tests-20260911-run2\\flow.log",
+      "log_sha256": "6698430c3e29c34fcead36ad679b2cd7a9f0741aca107172156e0680c502538b"
+    }
+  ],
+  "initial_composition": {
+    "failed": 4,
+    "passed": 3,
+    "log": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-setup-flow-tests-20260911\\flow.log",
+    "cause": "Synthetic caller omitted known NPC alias. Existing policy treated pronoun as ambiguous.",
+    "correction": "Synthetic config npc_aliases=('Mara',); fixture text and policy unchanged.",
+    "evidence_preserved": true
+  },
+  "persistence_audit": {
+    "baseline_sha256": "06f176a0f226d7c0e0d1a6a8b8e5fb952b6fe2bb97acbbfbf578f3903f01e83c",
+    "old_functions_preserved": 110,
+    "schema_preserved": true,
+    "new_functions": [
+      "SQLitePersistence._create_source_setup_campaign_sync",
+      "SQLitePersistence._create_source_setup_campaign_sync.create",
+      "SQLitePersistence._source_setup_manifest_in_connection",
+      "SQLitePersistence._source_setup_transaction",
+      "SQLitePersistence.create_source_setup_campaign",
+      "SQLitePersistence.read_source_setup_manifest",
+      "SourceSetupPersistenceError.__init__"
+    ],
+    "hashes_before": {
+      "api/persistence.py": "50d4b069a5fe80ab1a86e23211763a90936895e86381e0bd763efe267ca58b3e",
+      "api/narrative_source_setup_service.py": "806d40407c790dc4a077a61e1e5f6bf57ecdd60b6f9a585bf979dec5081b01c7",
+      "tests/test_narrative_source_setup_persistence.py": "4d167053b9c91333d38817ed8bd22c627f3b0ba9f64f2baef41b775e96ecd540",
+      "tests/test_narrative_source_setup_service.py": "1a6aa6993cdbd6bbcce4f0443a4a78de270ccbca3074d5853cc7132762f7d966",
+      "api/narrative_source_setup.py": "32956acf98f92ab3b48e7e410b35c7ccb863042da99f1ce26031fbe93c07a60e"
+    },
+    "exit_code": 0,
+    "hashes_after": {
+      "api/persistence.py": "50d4b069a5fe80ab1a86e23211763a90936895e86381e0bd763efe267ca58b3e",
+      "api/narrative_source_setup_service.py": "806d40407c790dc4a077a61e1e5f6bf57ecdd60b6f9a585bf979dec5081b01c7",
+      "tests/test_narrative_source_setup_persistence.py": "4d167053b9c91333d38817ed8bd22c627f3b0ba9f64f2baef41b775e96ecd540",
+      "tests/test_narrative_source_setup_service.py": "1a6aa6993cdbd6bbcce4f0443a4a78de270ccbca3074d5853cc7132762f7d966",
+      "api/narrative_source_setup.py": "32956acf98f92ab3b48e7e410b35c7ccb863042da99f1ce26031fbe93c07a60e"
+    },
+    "hashes_stable": true
+  },
+  "hashes": {
+    "api/narrative_source_setup.py": "32956acf98f92ab3b48e7e410b35c7ccb863042da99f1ce26031fbe93c07a60e",
+    "api/narrative_source_setup_service.py": "806d40407c790dc4a077a61e1e5f6bf57ecdd60b6f9a585bf979dec5081b01c7",
+    "api/persistence.py": "50d4b069a5fe80ab1a86e23211763a90936895e86381e0bd763efe267ca58b3e",
+    "tests/test_narrative_source_setup.py": "f3e057efe2c9ed4b2428bcecf1e120c7bdcc7c144e063a24c5623064d579c5aa",
+    "tests/test_narrative_source_setup_persistence.py": "4d167053b9c91333d38817ed8bd22c627f3b0ba9f64f2baef41b775e96ecd540",
+    "tests/test_narrative_source_setup_service.py": "1a6aa6993cdbd6bbcce4f0443a4a78de270ccbca3074d5853cc7132762f7d966",
+    "tests/test_narrative_source_setup_flow.py": "6b3f3b496b9e6c201f72a150f8b9e1f5ee66593602ac1209c16f1ec928c090dd"
+  },
+  "protected_files": [
+    {
+      "path": "api/main.py",
+      "sha256": "97966517e68f46abd21fb6ec86c8899461cebc2e388a530453bea389502d4d40"
+    },
+    {
+      "path": "api/narrative_source_context.py",
+      "sha256": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386"
+    },
+    {
+      "path": "api/narrative_source_profile.py",
+      "sha256": "4cea79092dcc9eb0adc7775b4421bc487f3210c489b2533faf16d268e0b7a413"
+    },
+    {
+      "path": "api/narrative_source_input_service.py",
+      "sha256": "68a2a3a96601e3f63d30963798644234ec048b73e5655986b67c940e6dcd5b28"
+    },
+    {
+      "path": "api/narrative_source_coordinator.py",
+      "sha256": "bb94a23547e47d3425c71c7a1da37a1f395232c8acd1f637e1bff8e802bd453d"
+    },
+    {
+      "path": "api/rules_service.py",
+      "sha256": "979059639aac0356f7280d0fa92a2db9c34542e1fc9c32185634b7a4002e78eb"
+    }
+  ],
+  "independent_review": "closed, no blockers",
+  "limitations": [
+    "No route/UI/default activated",
+    "No live narrative quality or CAP-001 approval",
+    "Database bootstrap must be explicit",
+    "Manifest fingerprint proves consistency, not authorship or authorization",
+    "Generic metadata writers are outside immutable setup guarantee",
+    "NPC policy aliases are supplied separately by trusted caller",
+    "Fixed known scene and local ordinary grammar only"
+  ]
+}

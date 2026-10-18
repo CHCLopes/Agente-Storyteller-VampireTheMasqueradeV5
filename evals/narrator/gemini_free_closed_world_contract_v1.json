@@ -1,0 +1,226 @@
+{
+  "version": "closed-world-render-contract-v1",
+  "hypothesis_id": "gemini_free_closed_world_v1",
+  "origin": "authored_synthetic_fixture",
+  "language": "pt-BR",
+  "word_budget": {"minimum": 30, "maximum": 150},
+  "fatal_criteria": [
+    "unlisted_render_claim",
+    "player_agency_attribution",
+    "unauthorized_secret_disclosure",
+    "mechanical_result_expansion",
+    "target_or_provenance_mismatch",
+    "schema_or_capsule_invalid",
+    "hidden_retry_or_fallback"
+  ],
+  "case_order": [
+    "map-cylinder-hold",
+    "map-lamp-transition",
+    "known-amber-seal",
+    "unknown-opaque-case",
+    "favorable-grate-result",
+    "unfavorable-counterweight-result",
+    "iara-protected-label",
+    "ambiguous-disc-and-linen"
+  ],
+  "cases": [
+    {
+      "case_id": "map-cylinder-hold",
+      "case_class": "wait_without_authorized_transition",
+      "prior_case_id": null,
+      "player_input": "Permaneço junto à bancada e aguardo.",
+      "required_units": [
+        {"unit_id": "cylinder-sealed", "statement": "O cilindro de mapas permanece lacrado sobre a bancada."},
+        {"unit_id": "white-light-steady", "statement": "A iluminação branca permanece constante."}
+      ],
+      "optional_units": [{"unit_id": "bench-visible", "statement": "A bancada baixa continua visível diante do jogador."}],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador permanece junto à bancada e aguarda.",
+        "forbidden_extensions": ["Não mover o jogador.", "Não fazê-lo tocar ou abrir o cilindro."]
+      },
+      "unknowns": [{"unknown_id": "cylinder-content", "statement": "O conteúdo do cilindro não foi estabelecido."}],
+      "forbidden_claims": [
+        {"claim_id": "cylinder-changed", "statement": "Não mover nem abrir o cilindro.", "markers": ["o cilindro se abre", "o lacre se rompe", "o cilindro rola"]},
+        {"claim_id": "presence-invented", "statement": "Não introduzir presença ou som.", "markers": ["passos se aproximam", "uma voz", "alguém entra"]}
+      ],
+      "sensory_palette": [{"unit_id": "paper-dry-scent", "statement": "Há um odor seco de papel no depósito."}],
+      "next_choice_boundary": "Tocar no cilindro, examinar o depósito ou continuar aguardando permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["cylinder-sealed", "white-light-steady"]}
+    },
+    {
+      "case_id": "map-lamp-transition",
+      "case_class": "wait_with_one_authorized_environmental_transition",
+      "prior_case_id": "map-cylinder-hold",
+      "player_input": "Continuo imóvel ao lado da bancada.",
+      "required_units": [
+        {"unit_id": "white-light-off", "statement": "A lâmpada branca se apaga."},
+        {"unit_id": "cylinder-still-sealed", "statement": "O cilindro continua lacrado e imóvel sobre a bancada."}
+      ],
+      "optional_units": [{"unit_id": "dim-room", "statement": "O depósito fica menos iluminado."}],
+      "authorized_transition": {"transition_id": "white-lamp-turns-off", "statement": "A única mudança autorizada é a lâmpada branca apagar."},
+      "player_action_boundary": {
+        "declared_action": "O jogador continua imóvel ao lado da bancada.",
+        "forbidden_extensions": ["Não mover o jogador.", "Não fazê-lo tocar ou abrir o cilindro."]
+      },
+      "unknowns": [{"unknown_id": "lamp-cause", "statement": "A causa da lâmpada apagar não foi estabelecida."}],
+      "forbidden_claims": [
+        {"claim_id": "cause-invented", "statement": "Não explicar por que a lâmpada apagou.", "markers": ["acabou a energia", "alguém desligou", "um fusível queimou"]},
+        {"claim_id": "arrival-invented", "statement": "Não introduzir pessoa ou criatura.", "markers": ["alguém entra", "uma figura surge", "passos chegam"]}
+      ],
+      "sensory_palette": [{"unit_id": "dark-outline", "statement": "O contorno da bancada permanece distinguível na luz residual."}],
+      "next_choice_boundary": "Investigar a iluminação, tocar no cilindro ou permanecer imóvel continua decisão do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "white-lamp-turns-off", "required_unit_ids": ["white-light-off", "cylinder-still-sealed"]}
+    },
+    {
+      "case_id": "known-amber-seal",
+      "case_class": "known_object_state_inspection",
+      "prior_case_id": null,
+      "player_input": "Examino o selo sem tocá-lo.",
+      "required_units": [
+        {"unit_id": "seal-on-counter", "statement": "Um selo hexagonal de resina âmbar está sobre o balcão."},
+        {"unit_id": "three-marks-visible", "statement": "Três traços paralelos são visíveis na face do selo."}
+      ],
+      "optional_units": [{"unit_id": "resin-translucent", "statement": "A resina é parcialmente translúcida."}],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador examina o selo sem tocá-lo.",
+        "forbidden_extensions": ["Não aproximar nem mover o jogador.", "Não fazê-lo pegar, virar ou usar o selo."]
+      },
+      "unknowns": [{"unknown_id": "seal-origin", "statement": "A origem e a função do selo não foram estabelecidas."}],
+      "forbidden_claims": [
+        {"claim_id": "origin-invented", "statement": "Não atribuir origem ou função ao selo.", "markers": ["pertence ao arquivo", "é uma chave", "serve para autenticar"]},
+        {"claim_id": "contact-invented", "statement": "Não atribuir contato ao jogador.", "markers": ["você pega", "entre seus dedos", "você vira o selo"]}
+      ],
+      "sensory_palette": [{"unit_id": "counter-matte", "statement": "A superfície do balcão é fosca."}],
+      "next_choice_boundary": "Tocar, investigar de outro ângulo ou deixar o selo permanece decisão do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["seal-on-counter", "three-marks-visible"]}
+    },
+    {
+      "case_id": "unknown-opaque-case",
+      "case_class": "unknown_object_state_inspection",
+      "prior_case_id": null,
+      "player_input": "Observo o estojo fechado à distância.",
+      "required_units": [{"unit_id": "opaque-case-closed", "statement": "Um estojo opaco e sem inscrição está fechado sobre a mesa."}],
+      "optional_units": [{"unit_id": "case-rectangular", "statement": "O estojo tem formato retangular."}],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador apenas observa o estojo à distância.",
+        "forbidden_extensions": ["Não aproximar nem mover o jogador.", "Não fazê-lo tocar, abrir ou testar o estojo."]
+      },
+      "unknowns": [
+        {"unknown_id": "case-content", "statement": "O conteúdo do estojo não foi estabelecido."},
+        {"unknown_id": "case-latch", "statement": "O mecanismo de fechamento não foi estabelecido."}
+      ],
+      "forbidden_claims": [
+        {"claim_id": "content-invented", "statement": "Não sugerir conteúdo.", "markers": ["contém uma arma", "há uma carta", "está vazio"]},
+        {"claim_id": "latch-invented", "statement": "Não inventar mecanismo de fechamento.", "markers": ["uma fechadura", "um botão lateral", "dobradiças"]}
+      ],
+      "sensory_palette": [{"unit_id": "surface-even", "statement": "A superfície externa é uniforme."}],
+      "next_choice_boundary": "Aproximar-se, tocar ou ignorar o estojo permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["opaque-case-closed"]}
+    },
+    {
+      "case_id": "favorable-grate-result",
+      "case_class": "resolved_favorable_mechanical_attempt",
+      "prior_case_id": null,
+      "player_input": "Tento destravar a grade com a haste.",
+      "required_units": [
+        {"unit_id": "grate-test-succeeded", "statement": "O resultado mecânico foi favorável."},
+        {"unit_id": "grate-unlocked-closed", "statement": "A grade fica destravada, mas permanece fechada."}
+      ],
+      "optional_units": [{"unit_id": "latch-click", "statement": "O trinco produz um clique breve."}],
+      "authorized_transition": {"transition_id": "grate-unlocks", "statement": "A grade muda de travada para destravada e permanece fechada."},
+      "player_action_boundary": {
+        "declared_action": "O jogador usa a haste na tentativa já resolvida de destravar a grade.",
+        "forbidden_extensions": ["Não abrir nem atravessar a grade.", "Não revelar o espaço além dela."]
+      },
+      "unknowns": [{"unknown_id": "beyond-grate", "statement": "O espaço além da grade não foi estabelecido."}],
+      "forbidden_claims": [
+        {"claim_id": "grate-opened", "statement": "Não abrir a grade.", "markers": ["a grade se abre", "passagem livre", "você atravessa"]},
+        {"claim_id": "beyond-invented", "statement": "Não descrever o outro lado.", "markers": ["há um corredor", "uma sala aparece", "alguém espera"]}
+      ],
+      "sensory_palette": [{"unit_id": "metal-dry-sound", "statement": "O metal produz um som seco."}],
+      "next_choice_boundary": "Abrir a grade, examinar o trinco ou recuar permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "grate-unlocks", "required_unit_ids": ["grate-test-succeeded", "grate-unlocked-closed"]}
+    },
+    {
+      "case_id": "unfavorable-counterweight-result",
+      "case_class": "resolved_unfavorable_mechanical_attempt",
+      "prior_case_id": null,
+      "player_input": "Puxo o cabo para erguer o contrapeso.",
+      "required_units": [
+        {"unit_id": "counterweight-test-failed", "statement": "O resultado mecânico foi desfavorável."},
+        {"unit_id": "counterweight-still", "statement": "O contrapeso permanece na mesma posição."},
+        {"unit_id": "dust-falls", "statement": "Uma pequena quantidade de poeira cai da roldana."}
+      ],
+      "optional_units": [],
+      "authorized_transition": {"transition_id": "pulley-dust-falls", "statement": "Apenas uma pequena quantidade de poeira cai da roldana; o contrapeso e o cabo não mudam de estado."},
+      "player_action_boundary": {
+        "declared_action": "O jogador puxa o cabo conforme a tentativa já resolvida.",
+        "forbidden_extensions": ["Não repetir a tentativa.", "Não ferir o jogador nem romper o cabo."]
+      },
+      "unknowns": [{"unknown_id": "counterweight-block", "statement": "A causa de o contrapeso não se mover não foi estabelecida."}],
+      "forbidden_claims": [
+        {"claim_id": "failure-reversed", "statement": "Não mover o contrapeso.", "markers": ["o contrapeso sobe", "o peso se move", "o mecanismo cede"]},
+        {"claim_id": "injury-or-break", "statement": "Não causar ferimento ou ruptura.", "markers": ["o cabo arrebenta", "suas mãos sangram", "você cai"]}
+      ],
+      "sensory_palette": [{"unit_id": "rope-rough", "statement": "A superfície do cabo é áspera."}],
+      "next_choice_boundary": "Tentar outro método, examinar a roldana ou abandonar o mecanismo permanece escolha do jogador.",
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "pulley-dust-falls", "required_unit_ids": ["counterweight-test-failed", "counterweight-still", "dust-falls"]}
+    },
+    {
+      "case_id": "iara-protected-label",
+      "case_class": "protected_secret_with_authorized_clue",
+      "prior_case_id": null,
+      "player_input": "Iara, a quem pertence esta etiqueta?",
+      "required_units": [
+        {"unit_id": "iara-withholds-owner", "statement": "Iara não revela a quem pertence a etiqueta."},
+        {"unit_id": "iara-points-shelf-six", "statement": "Iara informa apenas que a etiqueta aponta para a estante seis."}
+      ],
+      "optional_units": [{"unit_id": "label-on-table", "statement": "A etiqueta permanece sobre a mesa."}],
+      "authorized_transition": {"transition_id": "iara-offers-shelf-clue", "statement": "Iara retém a identidade e oferece somente a pista da estante seis."},
+      "player_action_boundary": {
+        "declared_action": "O jogador pergunta a Iara a quem pertence a etiqueta.",
+        "forbidden_extensions": ["Não mover o jogador até a estante.", "Não fazê-lo pegar ou entregar a etiqueta."]
+      },
+      "unknowns": [{"unknown_id": "shelf-six-content", "statement": "O conteúdo da estante seis não foi estabelecido."}],
+      "forbidden_claims": [{"claim_id": "shelf-content-invented", "statement": "Não revelar conteúdo da estante.", "markers": ["há livros proibidos", "guarda documentos", "contém um mapa"]}],
+      "sensory_palette": [{"unit_id": "label-gray", "statement": "A etiqueta é de papel cinza."}],
+      "next_choice_boundary": "Perguntar mais, ir até a estante ou deixar a etiqueta permanece escolha do jogador.",
+      "protected_secrets": [{"secret_id": "label-owner", "statement": "A etiqueta pertence a Otávio.", "markers": ["otávio", "pertence a otávio", "é de otávio"]}],
+      "expected": {"progression_required": true, "required_transition_id": "iara-offers-shelf-clue", "required_unit_ids": ["iara-withholds-owner", "iara-points-shelf-six"]}
+    },
+    {
+      "case_id": "ambiguous-disc-and-linen",
+      "case_class": "ambiguous_action_preserving_next_choice",
+      "prior_case_id": null,
+      "player_input": "Vou lidar com o disco e a tira de linho.",
+      "required_units": [
+        {"unit_id": "disc-and-linen-available", "statement": "Um disco de cerâmica e uma tira de linho estão disponíveis sobre a mesa."},
+        {"unit_id": "method-not-chosen", "statement": "Nenhum método de manipulação foi escolhido ou executado."}
+      ],
+      "optional_units": [{"unit_id": "items-separated", "statement": "Os dois objetos permanecem separados sobre a mesa."}],
+      "authorized_transition": null,
+      "player_action_boundary": {
+        "declared_action": "O jogador expressa intenção ambígua de lidar com os dois objetos.",
+        "forbidden_extensions": ["Não tocar, unir, enrolar, quebrar ou mover os objetos.", "Não escolher método pelo jogador."]
+      },
+      "unknowns": [{"unknown_id": "intended-method", "statement": "O método pretendido pelo jogador não foi estabelecido."}],
+      "forbidden_claims": [
+        {"claim_id": "method-invented", "statement": "Não executar um método.", "markers": ["você envolve o disco", "você quebra o disco", "você amarra o linho"]},
+        {"claim_id": "properties-invented", "statement": "Não inventar propriedades dos objetos.", "markers": ["o disco é mágico", "o linho está úmido", "símbolos gravados"]}
+      ],
+      "sensory_palette": [{"unit_id": "table-smooth", "statement": "A superfície da mesa é lisa."}],
+      "next_choice_boundary": "O narrador deve perguntar como o jogador pretende usar o disco e a tira de linho.",
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_unit_ids": ["disc-and-linen-available", "method-not-chosen"]}
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "version": "closed-world-render-responses-v1",
+  "protocol": "closed-world-render-contract-v1",
+  "review_metadata": {
+    "batch_id": "4f13b856-6bf8-4eab-8639-188fc32b05b3",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-25",
+    "human_admission_required": true,
+    "source_summary_sha256": "cbe2715a43fdad5c917fab0a3875c230689dca378835bdd54871a689d508ac77",
+    "source_records_sha256": "6ce0be7896e76e3e01f398fa829526cbc9f70da30a1d5e779cac5de08e2e6391"
+  },
+  "input_hashes": {
+    "corpus_sha256": "1b620a84bc9a61d63f1abd51e9e08dfbd856fbb804dd0c806bd7588daf42b72b",
+    "protocol_sha256": "0ab8cec17e225bfd98cee1957c2338f9341138fda60440e8440f9d1a4c0a21fb"
+  },
+  "target": {
+    "requested": {"target_id": "gpt-oss-120b-groq-free-synthetic-low", "provider": "Groq", "model": "openai/gpt-oss-120b", "reasoning": "low"},
+    "reported": {"target_id": "gpt-oss-120b-groq-free-synthetic-low", "provider": "Groq", "model": "openai/gpt-oss-120b", "reasoning": "low"}
+  },
+  "invocation": {"retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "hold-silent-bell",
+      "narrative": "O pequeno sino de bronze está imóvel, seu metal reluzente sob a luz tênue que filtra pelas fissuras da caverna. Atrás dele, o arco de pedra permanece visível, suas superfícies ásperas projetando sombras que se alongam no chão de pedra. O ar próximo ao arco sente-se frio, fazendo a pele arrepiar levemente, enquanto um eco baixo da respiração ambiente reverbera nas paredes, criando uma sensação de vastidão silenciosa. A corda do sino, pendurada fora do alcance imediato, balança apenas com o leve tremor do vento que atravessa a abertura. Você permanece parado, ouvindo o silêncio que parece pulsar ao redor.",
+      "rendered_unit_ids": ["bell-still", "cord-out-of-reach", "arch-visible", "cool-air", "stone-echo"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "Além de luz, fissuras, sombras, chão, vento e outras imagens não listadas, a corda balança apesar da proibição explícita de movimento; a espera não permanece coerente."
+      }
+    },
+    {
+      "case_id": "authorized-single-bell",
+      "narrative": "Um som metálico breve corta o silêncio da caverna: o sino de bronze vibra e emite uma única nota curta que reverbera por um instante, antes de se dissipar no eco que se desfaz contra o arco de pedra atrás dele. A corda permanece imóvel, fora de alcance, e o arco de pedra continua visível, projetando sombras estáticas no chão. O ar frio ao redor do arco ainda faz a pele arrepiar, mas nada mais se move enquanto o som desaparece.",
+      "rendered_unit_ids": ["bell-one-note", "cord-remains-still", "arch-visible", "brief-metal-note", "echo-fades"],
+      "transition_id": "bell-rings-once",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": true,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A transição autorizada é respeitada, mas caverna, vibração, sombras, chão e ar frio não pertencem ao plano deste caso e parte do material sensorial é repetida do turno anterior."
+      }
+    },
+    {
+      "case_id": "known-sealed-tube",
+      "narrative": "Você fixa o olhar no tubo de latão que repousa sobre a prateleira de madeira seca. O metal reflete a luz de forma opaca, revelando apenas seu contorno pesado. Sobre a boca do tubo, o lacre de cera azul permanece intacto, como se ninguém o tivesse tocado. Uma marca circular, sem qualquer inscrição legível, está gravada na superfície da cera, destacando‑se sutilmente contra o brilho apagado. Não há som, nem cheiro que indique o que pode estar dentro; o conteúdo permanece desconhecido.",
+      "rendered_unit_ids": ["tube-on-shelf", "wax-seal-intact", "seal-mark", "brass-dull", "shelf-dry"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "O conteúdo continua desconhecido, mas contorno pesado, ausência de toque anterior, gravação na cera e ausência de som ou cheiro são afirmações não autorizadas."
+      }
+    },
+    {
+      "case_id": "unknown-glass-disc",
+      "narrative": "O disco de vidro negro permanece fixado à parede, sua superfície escura e uniforme absorve a luz fraca da sala. Uma borda metálica estreita circunda delicadamente o perímetro do disco, contrastando com o brilho opaco do vidro. Ao seu redor, a parede clara destaca ainda mais o objeto, criando um foco silencioso no espaço vazio. Nada parece se mover ou emitir som; o disco simplesmente está ali, imóvel e enigmático.",
+      "rendered_unit_ids": ["disc-visible", "metal-rim", "surface-dark", "wall-pale"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true,
+        "rationale": "As unidades centrais são renderizadas, porém absorção de luz, brilho opaco, espaço vazio, ausência de som, imobilidade e caráter enigmático estão fora do conjunto autorizado."
+      }
+    },
+    {
+      "case_id": "favorable-shutter-result",
+      "narrative": "A madeira da veneziana rangue contra o trilho enquanto o mecanismo cede, subindo até parar na posição descrita. Uma estreita fresta, tão larga quanto a mão do próprio jogador, se abre, revelando um fio de ar frio que serpenteia silencioso pelo vão. O som do atrito ecoa levemente na sala, e o toque da brisa traz consigo um leve cheiro de terra úmida, mas o que há além da fresta permanece oculto, sem forma ainda discernível.",
+      "rendered_unit_ids": ["test-succeeded", "shutter-hand-width", "shutter-stops", "wood-scrapes", "thin-air-current"],
+      "transition_id": "shutter-opens-hand-width",
+      "asserted_unknown_ids": ["space-beyond-shutter"],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A abertura permanece no limite mecânico, mas mecanismo, ar frio serpenteando, eco, brisa e cheiro de terra úmida são invenções e qualificam o espaço desconhecido além da fresta."
+      }
+    },
+    {
+      "case_id": "unfavorable-slab-result",
+      "narrative": "Ao empurrar a laje marcada, você sente a superfície áspera da pedra sob a mão, mas ela não cede. A marca de giz, antes inteira, se desfaz em pequenos flocos que se desprendem e caem sobre a pedra escura, o pó pálido contrastando com o tom sombrio da laje. O teste mecânico permanece desfavorável, e a laje continua imóvel, sem nenhum som de movimento ou ruptura. Ainda não se sabe se há algum mecanismo oculto sob ela.",
+      "rendered_unit_ids": ["test-failed", "slab-remains", "chalk-flakes", "stone-rough", "chalk-pale"],
+      "transition_id": "chalk-mark-flakes",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "O resultado desfavorável e a perda de giz estão corretos, mas sentir a pedra sob a mão, a marca antes inteira, o tom sombrio e a ausência de som ou ruptura não são unidades fornecidas."
+      }
+    },
+    {
+      "case_id": "npc-protected-code",
+      "narrative": "Iara cruza os braços, o olhar firme, e balança levemente a cabeça. Ela não menciona o número do armário. Em vez disso, abre a mão esquerda, revelando um pequeno cartão de papel creme. Sobre ele, uma rota está traçada em tinta azul, indicando o caminho até o zelador. O cartão repousa aberta na palma de Iara, pronto para ser tomado ou deixado onde está.",
+      "rendered_unit_ids": ["iara-withholds-code", "iara-offers-route-card", "card-on-palm", "card-cream", "ink-blue"],
+      "transition_id": "iara-offers-route-card",
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "O segredo e a escolha do cartão são preservados, mas braços cruzados, olhar firme, balanço de cabeça e mão esquerda são gestos não previstos no plano fechado."
+      }
+    },
+    {
+      "case_id": "ambiguous-sealed-boxes",
+      "narrative": "O suporte de pedra lisa sustenta quatro caixas seladas, cada uma de tamanho distinto, sob a iluminação uniforme do recinto. À medida que você se aproxima, percebe que o ar ao redor delas permanece imóvel, mas um leve rangido ecoa quando seu peso pressiona o suporte, como se a pedra respondesse ao seu movimento. As superfícies das caixas permanecem inalteradas, sem marcas ou aberturas que revelem seu conteúdo, mantendo o mistério sobre o que guardam.",
+      "rendered_unit_ids": ["four-boxes", "different-sizes", "support-stone", "room-light-even"],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "unlisted_render_claim": true,
+        "player_agency_attribution": true,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true,
+        "rationale": "A resposta omite que nenhuma caixa foi escolhida ou aberta e inventa ar imóvel, rangido, pressão do peso do jogador, resposta da pedra, superfícies e ausência de marcas; o contato com o suporte estende a ação declarada."
+      }
+    }
+  ]
+}

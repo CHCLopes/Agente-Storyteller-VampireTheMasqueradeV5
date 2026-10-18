@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
+const INITIALIZATION_COMPLETE_PHASE = 3;
+
 export interface LogEntry {
   status: "pending" | "success" | "error" | "warning";
   message: string;
@@ -71,7 +73,10 @@ export function useInitializationLog(onComplete?: (success: boolean) => void) {
           setIsInitializing(false);
           setError(data.message || "Erro durante a inicialização");
           if (onComplete) onComplete(false);
-        } else if (data.phase === 5 && data.status === "success") {
+        } else if (
+          data.phase === INITIALIZATION_COMPLETE_PHASE &&
+          data.status === "success"
+        ) {
           setIsInitializing(false);
           // Pequeno delay para o usuário ver o sucesso antes de completar
           setTimeout(() => {

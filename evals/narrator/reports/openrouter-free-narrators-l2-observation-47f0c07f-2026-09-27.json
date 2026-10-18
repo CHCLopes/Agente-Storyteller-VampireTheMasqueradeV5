@@ -1,0 +1,55 @@
+{
+  "version": "openrouter-free-narrators-l2-observation-v1",
+  "date": "2026-09-27",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "batch_id": "47f0c07f-ed8a-49b1-a9a6-4b760e7c4ffd",
+  "source_hashes": {
+    "preflight_sha256": "bdb6969a598932d1f4bf9c4acbb744a97130b5bc3d0c03e4de4437c07c5f35fc",
+    "summary_sha256": "5e21e0eea47073273e7741127215bfbcc18c938444d2f0fa4b31091235f4b0fa",
+    "records_sha256": "61ca88fa5046b0e875e631ba30fff4d159ccb0e65c9ee163ed5e8336190cf111",
+    "partial_review_sha256": "70a6299593ab9e98e392d6e78d8f0bcbecd1ab1a5e85fa3410934385232afedf"
+  },
+  "execution": {
+    "scheduled": 24,
+    "calls_made": 2,
+    "completed": 1,
+    "failed": 1,
+    "skipped": 22,
+    "retry_count": 0,
+    "repair_count": 0,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "positive_cost_observed": false,
+    "artifact_verification_passed": true,
+    "process_exit_code": 2
+  },
+  "experimental_observation": {
+    "l1_same_case_status": "generation_truncated",
+    "l2_same_case_status": "completed",
+    "supports_output_cap_as_l1_observation_barrier_for_this_case": true,
+    "proves_semantic_quality": false,
+    "generalizes_to_other_cases": false
+  },
+  "global_stop": {
+    "slot": 1,
+    "category": "provider_unavailable",
+    "code": "openrouter_provider_overloaded",
+    "causal_skips": 22
+  },
+  "semantic_review": {
+    "candidate_id": "nemotron-3-super-openrouter-free-synthetic",
+    "case_id": "hold-silent-bell",
+    "fatal_semantic_gate_passed": false,
+    "fatal_reason": "unlisted_render_claim"
+  },
+  "classification": {
+    "nemotron": "ineligible",
+    "liquid": "inconclusive_inelegible_in_batch",
+    "deepseek": "inconclusive_inelegible_in_batch",
+    "qualified_candidates": [],
+    "narrator_admitted": false,
+    "runtime_default_changed": false,
+    "human_acceptance_required": true
+  }
+}
+

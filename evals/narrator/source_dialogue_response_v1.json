@@ -1,0 +1,75 @@
+{
+  "version": "source-dialogue-response-v1",
+  "source_origin": "authored_synthetic_fixture",
+  "contexts_independent": true,
+  "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+  "parameters": {
+    "temperature": 0.65,
+    "max_output_tokens": 768,
+    "reasoning_effort": "none",
+    "max_calls": 3,
+    "max_total_output_tokens": 2304,
+    "initial_quiet_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "deadline_seconds": 60
+  },
+  "cases": [
+    {
+      "case_id": "direct-question",
+      "scene": {
+        "location": "Galeria",
+        "npcs_present": [
+          "Mara"
+        ]
+      },
+      "npc_aliases": [
+        "Mara"
+      ],
+      "source_text": null,
+      "player_input": "Digo a Mara: \"Mara, o que é este lugar?\"",
+      "criteria": [
+        "NPC addresses the question in this turn, with relevant information or an explicit intelligible limit.",
+        "Atmosphere does not substitute for the response.",
+        "q refers only to events actually shown in n."
+      ]
+    },
+    {
+      "case_id": "after-silence",
+      "scene": {
+        "location": "Galeria",
+        "npcs_present": [
+          "Mara"
+        ]
+      },
+      "npc_aliases": [
+        "Mara"
+      ],
+      "source_text": "A luz das tochas alcança o banco de pedra da Galeria. Mara permanece ao lado dele, segurando a alça de sua bolsa. Ela ouviu a pergunta sobre o lugar, mas ainda não respondeu. Por alguns instantes, apenas o ruído da água ao fundo ocupa a pausa. Sua hesitação continua visível, sem que uma explicação tenha sido oferecida.",
+      "player_input": "Digo a Mara: \"Vamos andando. Você pode me falar no caminho. O que é este lugar?\"",
+      "criteria": [
+        "The prior silence develops into a pertinent response or concrete intelligible refusal; it does not merely intensify.",
+        "The invitation inside speech does not make the player walk or change location.",
+        "q does not presuppose an absent answer or player movement."
+      ]
+    },
+    {
+      "case_id": "wait-control",
+      "scene": {
+        "location": "Galeria",
+        "npcs_present": [
+          "Mara"
+        ]
+      },
+      "npc_aliases": [
+        "Mara"
+      ],
+      "source_text": "Junto ao banco de pedra da Galeria, Mara observa uma folha caída no chão. A água pinga da parede em intervalos regulares, formando uma poça estreita. A borda da poça se aproxima do papel ainda seco. Mara mantém as mãos junto ao corpo; não recolheu a folha nem revelou o que há escrito nela.",
+      "player_input": "Aguardo.",
+      "criteria": [
+        "An observable development follows the source without making the player act.",
+        "No new NPC, location or mechanical outcome is imposed.",
+        "A forced dialogue requirement does not replace the declared wait."
+      ]
+    }
+  ]
+}

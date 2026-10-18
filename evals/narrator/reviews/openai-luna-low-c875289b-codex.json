@@ -1,0 +1,273 @@
+{
+  "version": "openai-luna-low-semantic-review-v1",
+  "hypothesis_id": "HYP-006-OPENAI-LUNA-LOW-L1",
+  "batch_id": "c875289b-e3f0-4907-8301-2408781a96ce",
+  "reviewer": "codex-independent-semantic-review",
+  "review_date": "2026-09-28",
+  "source": {
+    "summary_sha256": "a593d4eecdd50c567a4bff7e383b43e6dd39a0dda4e0ed84a95c43caedfd21dc",
+    "records_sha256": "f84679cd4696206c75fd1f7e5991df629f0e8cc3ac8fbf9e8cfa351a9ba5f01b"
+  },
+  "scope": {
+    "records_total": 8,
+    "records_completed": 8,
+    "records_semantically_reviewed": 8,
+    "records_failed_operationally": 0,
+    "records_skipped_causally": 0,
+    "candidate_qualification_permitted": true
+  },
+  "reviews": [
+    {
+      "slot": 0,
+      "case_id": "hold-silent-bell",
+      "narrative": "O pequeno sino de bronze permanece imóvel. A corda continua fora do alcance imediato, enquanto o ar junto ao arco de pedra se mantém frio. O recinto devolve um eco baixo da respiração ambiente, sem fazer o sino tocar ou balançar.",
+      "question": "O que você faz a seguir diante do sino e da corda?",
+      "response_sha256": "e25655bfd46b96666d5bee60fb1f9dab4370798c58aa8abbb43a76e0a933cd81",
+      "rendered_unit_ids": [
+        "bell-still",
+        "cord-out-of-reach",
+        "cool-air",
+        "stone-echo"
+      ],
+      "transition_id": null,
+      "asserted_unknown_ids": [],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Preserva sino, corda, ar frio e eco; nenhuma transicao ocorre e a proxima escolha retorna ao jogador."
+    },
+    {
+      "slot": 1,
+      "case_id": "authorized-single-bell",
+      "narrative": "Sem qualquer movimento visível da corda, o pequeno sino de bronze produz uma única nota curta. O som metálico se espalha pelo recinto e seu eco desaparece no arco de pedra. A corda permanece imóvel, ainda fora do alcance imediato, enquanto o sino volta ao silêncio. A causa da nota permanece desconhecida.",
+      "question": "Você quer interpretar o som ou investigar sua origem?",
+      "response_sha256": "8bf90ed0f28790b32cdc71f35eec2a892ecdb1542aa3a6e8f3358e10b732ea7b",
+      "rendered_unit_ids": [
+        "bell-one-note",
+        "cord-remains-still",
+        "brief-metal-note",
+        "echo-fades"
+      ],
+      "transition_id": "bell-rings-once",
+      "asserted_unknown_ids": [
+        "bell-cause"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Executa uma unica nota, conserva a corda imovel, nao explica a causa e preserva interpretar ou investigar."
+    },
+    {
+      "slot": 2,
+      "case_id": "known-sealed-tube",
+      "narrative": "À distância, o tubo de latão repousa na prateleira seca, mantendo o brilho opaco. O lacre de cera azul permanece intacto; sua marca circular não traz inscrição legível. Nada se altera no tubo enquanto ele continua sob exame, e seu conteúdo permanece desconhecido.",
+      "question": "Você quer tocar o tubo, abri-lo ou deixá-lo onde está?",
+      "response_sha256": "9e322acad941ce876d2674bb1aafaeaa8a93cc511c2455c032d3218a641f5878",
+      "rendered_unit_ids": [
+        "tube-on-shelf",
+        "wax-seal-intact",
+        "seal-mark",
+        "brass-dull",
+        "shelf-dry"
+      ],
+      "transition_id": null,
+      "asserted_unknown_ids": [
+        "tube-content"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Mantem tubo e lacre intactos, descreve apenas atributos listados e conserva o conteudo desconhecido."
+    },
+    {
+      "slot": 3,
+      "case_id": "unknown-glass-disc",
+      "narrative": "À distância, o disco de vidro negro permanece fixado à parede clara. Sua superfície escura e uniforme não oferece nenhuma variação visível; o conjunto permanece imóvel, sem que sua função ou seu estado sejam esclarecidos.",
+      "question": "O que você faz a seguir?",
+      "response_sha256": "be0a2ef5c8c4bb18a3f97125c05d9ae01a701d84f8cc84ec4a18add858b02db1",
+      "rendered_unit_ids": [
+        "disc-visible",
+        "surface-dark",
+        "wall-pale"
+      ],
+      "transition_id": null,
+      "asserted_unknown_ids": [
+        "disc-purpose",
+        "disc-active"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Limita-se ao disco fixado, superficie e parede; funcao e estado continuam desconhecidos."
+    },
+    {
+      "slot": 4,
+      "case_id": "favorable-shutter-result",
+      "narrative": "A tentativa se resolve favoravelmente: a veneziana sobe até deixar apenas uma fresta da largura de uma mão. A madeira raspa no trilho durante o movimento e, quando ela para nessa posição, uma corrente de ar estreita atravessa a abertura. O espaço além da fresta permanece indeterminado.",
+      "question": "Você investiga a fresta ou abandona a veneziana?",
+      "response_sha256": "5a3c2199c40b95d7cdc326600b73143893dd337079c3c422b89cfd006e07f3a2",
+      "rendered_unit_ids": [
+        "test-succeeded",
+        "shutter-hand-width",
+        "shutter-stops",
+        "wood-scrapes",
+        "thin-air-current"
+      ],
+      "transition_id": "shutter-opens-hand-width",
+      "asserted_unknown_ids": [
+        "space-beyond-shutter"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Preserva o sucesso e a abertura exata, sem ampliar nem descrever o espaco alem da fresta."
+    },
+    {
+      "slot": 5,
+      "case_id": "unfavorable-slab-result",
+      "narrative": "O resultado da tentativa é desfavorável: a laje permanece na mesma posição, imóvel sobre a pedra. Na superfície áspera, a marca de giz perde uma pequena parte; o pó claro se desfaz sobre a pedra escura. Nenhum mecanismo sob a laje se torna conhecido, e a causa dessa alteração permanece em aberto.",
+      "question": "Que método você tenta agora, ou prefere abandonar a laje?",
+      "response_sha256": "8be156520277ca237e8497e636fd7808ba3f82f04887d8b4873ac393e00060e5",
+      "rendered_unit_ids": [
+        "test-failed",
+        "slab-remains",
+        "chalk-flakes",
+        "stone-rough",
+        "chalk-pale"
+      ],
+      "transition_id": "chalk-mark-flakes",
+      "asserted_unknown_ids": [
+        "slab-mechanism"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Mantem o fracasso, a laje imovel e apenas a perda de giz autorizada, sem inventar mecanismo."
+    },
+    {
+      "slot": 6,
+      "case_id": "npc-protected-code",
+      "narrative": "Iara evita revelar o código. Em vez disso, mantém a palma aberta, oferecendo um cartão de papel creme com a rota até o zelador traçada em tinta azul.",
+      "question": "O que você faz?",
+      "response_sha256": "163e804145f3f7a5cac4d478657eed1421b9c70fb9c0c98841d78744f5910d40",
+      "rendered_unit_ids": [
+        "iara-withholds-code",
+        "iara-offers-route-card",
+        "card-on-palm",
+        "card-cream",
+        "ink-blue"
+      ],
+      "transition_id": "iara-offers-route-card",
+      "asserted_unknown_ids": [],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Protege o codigo, oferece somente a pista autorizada e nao atribui aceite do cartao ao jogador."
+    },
+    {
+      "slot": 7,
+      "case_id": "ambiguous-sealed-boxes",
+      "narrative": "Diante do suporte de pedra lisa, quatro caixas seladas repousam sob a iluminação uniforme do recinto. Seus tamanhos são diferentes, mas nenhuma se destaca por qualquer outro aspecto estabelecido. O conteúdo permanece desconhecido, e nenhuma caixa foi escolhida ou aberta.",
+      "question": "O que você faz agora: examina melhor, escolhe uma caixa ou se afasta?",
+      "response_sha256": "2071b79a82da4e0d5c1c171dd3ecc326c3aa8da7054ee61f7cb2effb9cb0a052",
+      "rendered_unit_ids": [
+        "four-boxes",
+        "no-box-chosen",
+        "different-sizes",
+        "support-stone",
+        "room-light-even"
+      ],
+      "transition_id": null,
+      "asserted_unknown_ids": [
+        "box-contents"
+      ],
+      "criteria": {
+        "unlisted_render_claim": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "mechanical_result_expansion": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "next_choice_preserved": true
+      },
+      "unlisted_claims": [],
+      "fatal_semantic_gate_passed": true,
+      "rationale": "Preserva quatro caixas seladas sem material ou conteudo inventado e devolve a escolha ao jogador."
+    }
+  ],
+  "classification": {
+    "candidate_id": "gpt-5.6-luna-openai-low-synthetic",
+    "technical_semantic_result": "eligible_for_final_human_narrative_acceptance",
+    "fatal_semantic_cases_failed": 0,
+    "qualified_candidates": [
+      "gpt-5.6-luna-openai-low-synthetic"
+    ],
+    "narrator_admitted": false,
+    "runtime_default_changed": false,
+    "human_acceptance_required": true
+  }
+}

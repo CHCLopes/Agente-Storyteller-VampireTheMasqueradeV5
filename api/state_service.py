@@ -1,16 +1,15 @@
 import os
-import json
 import time
 import asyncio
-import aiofiles
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
+from .core.config import settings
+from .persistence import LegacyMigrationError, SQLitePersistence
+from .scene_service import SceneState, scene_from_context
+
 SAVE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "saves")
 os.makedirs(SAVE_DIR, exist_ok=True)
-
-# Lock global para operações de longa duração do LLM
-global_llm_operation_lock = asyncio.Lock()
 
 _session_locks: dict[str, asyncio.Lock] = {}
 _session_processing_locks: dict[str, asyncio.Lock] = {}
@@ -64,6 +63,7 @@ class ContextModel(BaseModel):
     blocking: bool = False
     pending_roll: Optional[PendingRollModel] = None
     environmental_flags: EnvironmentalFlagsModel = Field(default_factory=EnvironmentalFlagsModel)
+    scene: Optional[SceneState] = None
 
 class StateUpdateEvent(BaseModel):
     event: str = "state_update"
@@ -74,10 +74,44 @@ class StateUpdateEvent(BaseModel):
     context: ContextModel
     player_sheet: Optional[dict] = None  # Metadados de compatibilidade com o front passivo
     relationships: Optional[list] = None  # Motor relacional — Camada 2
+    turn_number: int = Field(default=0, ge=0)
+    state_revision: int = Field(default=0, ge=0, exclude=True)
+    narrative_history: list[dict] = Field(default_factory=list)
 
-# --- FUNÇÕES DE PERSISTÊNCIA ASSÍNCRONA SEGURA ---
+# --- PROJEÇÃO DE COMPATIBILIDADE SOBRE O REPOSITÓRIO TRANSACIONAL ---
 
-def sync_event_from_context(session_id: str, context: dict, status_override: Optional[str] = None) -> StateUpdateEvent:
+
+def _configured_db_path() -> str:
+    path = settings.storyteller_db_path
+    if os.path.isabs(path):
+        return path
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(project_root, path)
+
+
+_persistence = SQLitePersistence(_configured_db_path())
+
+
+def get_persistence() -> SQLitePersistence:
+    return _persistence
+
+
+def configure_persistence_for_tests(persistence: SQLitePersistence) -> None:
+    """Replace the process repository explicitly in isolated tests only."""
+
+    global _persistence
+    _persistence = persistence
+
+def sync_event_from_context(
+    session_id: str,
+    context: dict,
+    status_override: Optional[str] = None,
+    *,
+    turn_number: int = 0,
+    state_revision: int = 0,
+    narrative_history: Optional[list[dict]] = None,
+) -> StateUpdateEvent:
+    scene = scene_from_context(context)
     player_sheet = context.get("player_sheet", {})
     status_data = player_sheet.get("status", {})
     
@@ -146,14 +180,18 @@ def sync_event_from_context(session_id: str, context: dict, status_override: Opt
         current_state=current_state,
         blocking=blocking,
         pending_roll=pending_roll,
-        environmental_flags=environmental_flags
+        environmental_flags=environmental_flags,
+        scene=scene,
     )
     
     return StateUpdateEvent(
         session_id=session_id,
         character=character,
         context=context_model,
-        player_sheet=context
+        player_sheet=context,
+        turn_number=turn_number,
+        state_revision=state_revision,
+        narrative_history=narrative_history or [],
     )
 
 async def save_session_state(
@@ -162,40 +200,93 @@ async def save_session_state(
     chronicle_name: Optional[str] = None,
     turn: Optional[int] = None
 ):
-    """
-    Salva o estado validado pelo Pydantic de forma atômica utilizando asyncio.Lock.
-    Permite assinatura antiga com dicionário e argumentos adicionais para compatibilidade.
-    """
+    """Persist a control snapshot without advancing a narrated turn."""
     if isinstance(event_data, dict):
         event_data = sync_event_from_context(session_id, event_data)
         
-    safe_filename = os.path.basename(f"{session_id}.json")
-    path = os.path.join(SAVE_DIR, safe_filename)
-    
-    # Valida e serializa para dict/json
-    serialized_data = event_data.model_dump()
-    
+    serialized_data = event_data.model_dump(mode="json")
     lock = get_session_lock(session_id)
     async with lock:
-        async with aiofiles.open(path, "w", encoding="utf-8") as f:
-            await f.write(json.dumps(serialized_data, indent=4, ensure_ascii=False))
+        campaign = await _persistence.update_campaign_snapshot(
+            session_id,
+            state=serialized_data,
+            # `StateUpdateEvent.relationships` is a frontend projection, not
+            # the canonical relationship aggregate.
+            relationships=None,
+            chronicle_name=chronicle_name,
+            expected_turn=(event_data.turn_number if turn is None else turn),
+            expected_revision=event_data.state_revision,
+        )
+        event_data.state_revision = int(campaign["state_revision"])
 
 async def load_session_state(session_id: str) -> Optional[StateUpdateEvent]:
+    """Load the canonical snapshot and narrative history from SQLite.
+
+    Legacy JSON is audited and imported lazily. Corruption is intentionally
+    surfaced instead of being converted into an empty campaign.
     """
-    Carrega o estado validando contra o Pydantic StateUpdateEvent.
-    Retorna None se o save não existir ou estiver corrompido.
-    """
-    safe_filename = os.path.basename(f"{session_id}.json")
-    path = os.path.join(SAVE_DIR, safe_filename)
-    
+
     lock = get_session_lock(session_id)
     async with lock:
-        if not os.path.exists(path):
-            return None
         try:
-            async with aiofiles.open(path, "r", encoding="utf-8") as f:
-                content = await f.read()
-                data = json.loads(content)
-                return StateUpdateEvent(**data)
-        except Exception:
+            await _persistence.migrate_legacy_session(session_id, SAVE_DIR)
+        except ValueError:
+            # SQLite accepts broader IDs safely through bound parameters; only
+            # the legacy filename importer needs the strict filename alphabet.
+            pass
+        except LegacyMigrationError:
+            raise
+
+        campaign = await _persistence.load_campaign(session_id)
+        if campaign is None:
             return None
+        data = campaign.get("state") or {}
+        if not data:
+            return None
+        event = StateUpdateEvent(**data)
+        event.state_revision = int(campaign.get("state_revision") or 0)
+        relationships = campaign.get("relationships")
+        if isinstance(relationships, dict) and "relationships" in relationships:
+            from .relationship_service import get_relationships_for_frontend, RelationshipState
+
+            event.relationships = get_relationships_for_frontend(
+                RelationshipState(**relationships)
+            )
+        elif isinstance(relationships, list):
+            event.relationships = relationships
+        event.turn_number = int(campaign.get("current_turn") or 0)
+
+        history = await _persistence.list_latest_turns(session_id, limit=100)
+        event.narrative_history = []
+        for turn in history:
+            turn_context = turn.get("context") or {}
+            receipt = (
+                turn_context.get("resolution_receipt")
+                if isinstance(turn_context, dict)
+                else None
+            )
+            if (
+                isinstance(receipt, dict)
+                and isinstance(receipt.get("receipt_id"), str)
+                and isinstance(receipt.get("display"), str)
+            ):
+                event.narrative_history.append(
+                    {
+                        "id": receipt["receipt_id"],
+                        "turn_id": turn["turn_id"],
+                        "turn_number": turn["turn_number"],
+                        "type": "mechanics",
+                        "content": receipt["display"],
+                        "narrative_mode": receipt.get("narrative_mode", "llm"),
+                        "timestamp": turn["committed_at"],
+                    }
+                )
+            event.narrative_history.append({
+                "id": (turn.get("narrative") or {}).get("narrative_id", turn["turn_id"]),
+                "turn_id": turn["turn_id"],
+                "turn_number": turn["turn_number"],
+                "type": "narrator",
+                "content": turn["narrative_text"],
+                "timestamp": turn["committed_at"],
+            })
+        return event

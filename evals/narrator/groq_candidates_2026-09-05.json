@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "catalog_checked_at": "2026-09-05",
+  "catalog_source": "https://console.groq.com/docs/models",
+  "rate_limit_source": "https://console.groq.com/docs/rate-limits",
+  "structured_output_source": "https://console.groq.com/docs/structured-outputs",
+  "data_policy_source": "https://console.groq.com/docs/your-data",
+  "candidates": [
+    {
+      "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "model": "qwen/qwen3.8-27b",
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "none",
+      "notes": "Hipótese chinesa primária para o screening sintético. Rota direta e modelo fixo; o modelo está em Preview. A política é conservadora porque o avaliador não comprova o ZDR configurado na conta."
+    },
+    {
+      "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "model": "openai/gpt-oss-120b",
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low",
+      "notes": "Controle operacional em modelo de produção com raciocínio baixo excluído da resposta. Rota direta e fixa; a política é conservadora porque o avaliador não comprova o ZDR configurado na conta."
+    }
+  ]
+}

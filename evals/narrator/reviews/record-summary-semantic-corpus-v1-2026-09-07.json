@@ -1,0 +1,1376 @@
+{
+  "document_kind": "authored_summary_semantic_regression_corpus",
+  "version": 1,
+  "recorded_at_utc": "2026-09-07T22:01:40.954310+00:00",
+  "status": "closed_independently_reviewed",
+  "scope": {
+    "historical_summary_only_outputs": 6,
+    "historical_batches": 4,
+    "provider_calls_for_consolidation": 0,
+    "new_outputs": 0,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "semantic_classifier_implemented": false,
+    "causal_comparison": false,
+    "estimated_reliability_rate": null,
+    "raw_artifacts_modified": false,
+    "inline_contract_included": false
+  },
+  "method": {
+    "labels_authored_by": "Codex root; historical case reviews used as evidence, not automatic adjudication",
+    "spans": "Python Unicode code points, zero based, half-open [start,end); literal and case sensitive",
+    "classification": {
+      "preservado": "Afirmação retida compatível com a fonte, respeitado o limite indicado.",
+      "alterado": "Afirmação retida sem suporte demonstrável na fonte.",
+      "ambíguo": "Mais de uma ligação/atribuição plausível; não aprovar preservação nem impor falha categórica.",
+      "omitido": "Afirmação da fonte não explicitada; ausência não confirma nem nega."
+    },
+    "selected_relations_only": true,
+    "omission_allowed": true,
+    "ambiguity_requires_human_arbitration_for_this_corpus": false,
+    "raw_semantic_status_unchanged": "not_performed / approval null; external authored review is separate",
+    "verification_scope": "Provenance, integrity, literal spans, schema and word measurements only. Does not prove semantic labels or product quality."
+  },
+  "records": [
+    {
+      "id": "21cf-archive-vibration",
+      "batch_id": "21cf338b-5783-43a4-91ad-82f8bac86e96",
+      "case_id": "archive-vibration",
+      "arm_id": null,
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json",
+          "sha256": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+          "line_1based": 1
+        }
+      },
+      "source_text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado.",
+      "summary_text": "No arquivo municipal, luz vermelha ilumina mesa com pastas. Perto da porta fechada, vibração leve sugere possível motor do outro lado.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 21,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 134,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Atribuição de vermelho à luz sem suporte; hipótese modal do motor preservada.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "cena",
+            "arquivo municipal"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 20,
+              "text": "No arquivo municipal"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 20,
+              "text": "No arquivo municipal"
+            }
+          ],
+          "recoverable_content_or_limit": "A cena ocorre no arquivo municipal."
+        },
+        {
+          "id": "cor",
+          "participants": [
+            "lanterna",
+            "luz",
+            "vermelha"
+          ],
+          "classification": "alterado",
+          "source_spans": [
+            {
+              "start": 22,
+              "end": 52,
+              "text": "a luz de uma lanterna vermelha"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 22,
+              "end": 34,
+              "text": "luz vermelha"
+            }
+          ],
+          "recoverable_content_or_limit": "A fonte atribui vermelho à lanterna. O resumo atribui à luz; essa afirmação não tem suporte e a cor da lanterna deixa de ser recuperável do resumo."
+        },
+        {
+          "id": "iluminação",
+          "participants": [
+            "luz",
+            "mesa",
+            "pastas"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 53,
+              "end": 87,
+              "text": "ilumina uma mesa coberta de pastas"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 35,
+              "end": 58,
+              "text": "ilumina mesa com pastas"
+            }
+          ],
+          "recoverable_content_or_limit": "A iluminação da mesa e a presença de pastas permanecem; o grau de cobertura da mesa não é recuperável."
+        },
+        {
+          "id": "sensação",
+          "participants": [
+            "vibração",
+            "porta fechada"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 89,
+              "end": 130,
+              "text": "Perto da porta fechada, uma vibração leve"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 60,
+              "end": 97,
+              "text": "Perto da porta fechada, vibração leve"
+            }
+          ],
+          "recoverable_content_or_limit": "Vibração leve perto da porta fechada."
+        },
+        {
+          "id": "hipótese",
+          "participants": [
+            "vibração",
+            "motor",
+            "outro lado"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 131,
+              "end": 190,
+              "text": "sugere que talvez exista um motor funcionando do outro lado"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 98,
+              "end": 133,
+              "text": "sugere possível motor do outro lado"
+            }
+          ],
+          "recoverable_content_or_limit": "A existência/posição do motor continua possível, sugerida pela vibração; não recuperar motor confirmado."
+        },
+        {
+          "id": "funcionamento",
+          "participants": [
+            "motor",
+            "hipótese"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 142,
+              "end": 190,
+              "text": "talvez exista um motor funcionando do outro lado"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O funcionamento pertencia à hipótese; sua ausência não o confirma nem o nega."
+        }
+      ]
+    },
+    {
+      "id": "95dd-station-clock",
+      "batch_id": "95dd9fd2-f78f-4467-858f-b3948479aa10",
+      "case_id": "station-clock",
+      "arm_id": null,
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/summary.json",
+          "sha256": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f",
+          "line_1based": 1
+        }
+      },
+      "source_text": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa.",
+      "summary_text": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado está no banco e a cortina se move com a brisa.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 23,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 120,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Afirmações retidas compatíveis; omissões não informativas. Não contém hipótese modal para avaliá-la.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "estação"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 16,
+              "text": "Na estação vazia"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 16,
+              "text": "Na estação vazia"
+            }
+          ],
+          "recoverable_content_or_limit": "Estação vazia."
+        },
+        {
+          "id": "relógio",
+          "participants": [
+            "relógio",
+            "seis horas"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 18,
+              "end": 52,
+              "text": "um relógio parado marca seis horas"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 18,
+              "end": 52,
+              "text": "um relógio parado marca seis horas"
+            }
+          ],
+          "recoverable_content_or_limit": "O relógio está parado e marca seis horas; não recuperar seis horas como horário atual."
+        },
+        {
+          "id": "envelope",
+          "participants": [
+            "envelope",
+            "banco"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 54,
+              "end": 95,
+              "text": "Um envelope lacrado repousa sobre o banco"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 54,
+              "end": 87,
+              "text": "Um envelope lacrado está no banco"
+            }
+          ],
+          "recoverable_content_or_limit": "Envelope lacrado no banco. A formulação é menos precisa, compatível com a fonte."
+        },
+        {
+          "id": "cortina",
+          "participants": [
+            "cortina",
+            "brisa"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 121,
+              "end": 150,
+              "text": "a cortina se move com a brisa"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 90,
+              "end": 119,
+              "text": "a cortina se move com a brisa"
+            }
+          ],
+          "recoverable_content_or_limit": "Movimento da cortina com a brisa."
+        },
+        {
+          "id": "janela",
+          "participants": [
+            "janela"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 106,
+              "end": 119,
+              "text": "janela aberta"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O estado aberto da janela não é recuperável."
+        },
+        {
+          "id": "proximidade",
+          "participants": [
+            "cortina",
+            "janela"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 97,
+              "end": 130,
+              "text": "perto da janela aberta, a cortina"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "A proximidade da cortina com a janela não é recuperável."
+        }
+      ]
+    },
+    {
+      "id": "0e7b-reading-room-a",
+      "batch_id": "0e7b0ac3-b88a-4962-b383-cc6f813c9d4a",
+      "case_id": "reading-room-a",
+      "arm_id": null,
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json",
+          "sha256": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+          "line_1based": 1
+        }
+      },
+      "source_text": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+      "summary_text": "Sala de leitura vazia com luminária azul iluminando mapa, estojo fechado, marcador e poltrona afastada da estante perto da porta.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 20,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 129,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Cor, escopo da iluminação e vínculo com a porta ambíguos.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "sala de leitura"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 24,
+              "text": "Na sala de leitura vazia"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 21,
+              "text": "Sala de leitura vazia"
+            }
+          ],
+          "recoverable_content_or_limit": "Sala de leitura vazia."
+        },
+        {
+          "id": "cor",
+          "participants": [
+            "base",
+            "luminária",
+            "azul"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 26,
+              "end": 52,
+              "text": "uma luminária de base azul"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 26,
+              "end": 40,
+              "text": "luminária azul"
+            }
+          ],
+          "recoverable_content_or_limit": "Não recuperar inequivocamente a base azul. Luminária azul também não demonstra por si só uma transferência explícita para a luz."
+        },
+        {
+          "id": "mapa-iluminado",
+          "participants": [
+            "luminária",
+            "mapa"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 26,
+              "end": 76,
+              "text": "uma luminária de base azul ilumina um mapa dobrado"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 26,
+              "end": 56,
+              "text": "luminária azul iluminando mapa"
+            }
+          ],
+          "recoverable_content_or_limit": "A relação de iluminação do mapa permanece, independentemente da atribuição ambígua da cor."
+        },
+        {
+          "id": "escopo-iluminação",
+          "participants": [
+            "luminária",
+            "mapa",
+            "estojo",
+            "marcador",
+            "poltrona"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 53,
+              "end": 175,
+              "text": "ilumina um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 41,
+              "end": 93,
+              "text": "iluminando mapa, estojo fechado, marcador e poltrona"
+            }
+          ],
+          "recoverable_content_or_limit": "A lista pode ser inventário sob com ou objetos de iluminando. A fonte só explicita iluminação do mapa; não afirmar iluminação dos demais nem erro categórico."
+        },
+        {
+          "id": "estojo",
+          "participants": [
+            "estojo"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 78,
+              "end": 95,
+              "text": "Um estojo fechado"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 58,
+              "end": 72,
+              "text": "estojo fechado"
+            }
+          ],
+          "recoverable_content_or_limit": "Estojo fechado."
+        },
+        {
+          "id": "poltrona-estante",
+          "participants": [
+            "poltrona",
+            "estante"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 163,
+              "end": 200,
+              "text": "uma poltrona está afastada da estante"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 85,
+              "end": 113,
+              "text": "poltrona afastada da estante"
+            }
+          ],
+          "recoverable_content_or_limit": "Poltrona afastada da estante."
+        },
+        {
+          "id": "porta",
+          "participants": [
+            "poltrona",
+            "estante",
+            "porta"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 147,
+              "end": 200,
+              "text": "perto da porta, uma poltrona está afastada da estante"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 85,
+              "end": 128,
+              "text": "poltrona afastada da estante perto da porta"
+            }
+          ],
+          "recoverable_content_or_limit": "O resumo permite vincular perto da porta à poltrona ou à estante; a localização da poltrona perde explicitação."
+        },
+        {
+          "id": "mapa-dobrado",
+          "participants": [
+            "mapa"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 64,
+              "end": 76,
+              "text": "mapa dobrado"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O estado dobrado não é recuperável."
+        },
+        {
+          "id": "estojo-marcador-mesa",
+          "participants": [
+            "estojo",
+            "marcador de páginas",
+            "mesa"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 96,
+              "end": 145,
+              "text": "repousa junto ao marcador de páginas sobre a mesa"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "Proximidade, apoio na mesa e função do marcador deixam de ser explícitos; omissão não demonstra falsidade."
+        }
+      ]
+    },
+    {
+      "id": "0e7b-reading-room-b",
+      "batch_id": "0e7b0ac3-b88a-4962-b383-cc6f813c9d4a",
+      "case_id": "reading-room-b",
+      "arm_id": null,
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json",
+          "sha256": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+          "line_1based": 2
+        }
+      },
+      "source_text": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+      "summary_text": "Sala de leitura vazia: luminária azul sobre mapa, estojo e marcador na mesa; poltrona afastada da estante perto da porta.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 20,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 121,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Cor, relação luz/luminária sobre o mapa e vínculo com a porta ambíguos.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "sala de leitura"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 24,
+              "text": "Na sala de leitura vazia"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 21,
+              "text": "Sala de leitura vazia"
+            }
+          ],
+          "recoverable_content_or_limit": "Sala de leitura vazia."
+        },
+        {
+          "id": "cor",
+          "participants": [
+            "luz",
+            "luminária",
+            "azul"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 26,
+              "end": 54,
+              "text": "uma luminária emite luz azul"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 23,
+              "end": 37,
+              "text": "luminária azul"
+            }
+          ],
+          "recoverable_content_or_limit": "A fonte atribui azul à luz. O resumo não preserva inequivocamente essa atribuição; não concluir cor explícita da base."
+        },
+        {
+          "id": "posição-iluminação",
+          "participants": [
+            "luminária",
+            "luz",
+            "mapa"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 26,
+              "end": 76,
+              "text": "uma luminária emite luz azul sobre um mapa dobrado"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 23,
+              "end": 48,
+              "text": "luminária azul sobre mapa"
+            }
+          ],
+          "recoverable_content_or_limit": "A fonte situa a luz sobre o mapa. O resumo pode descrever luminária acima do mapa; não recuperar posição física da luminária como fato confirmado."
+        },
+        {
+          "id": "estojo-mesa",
+          "participants": [
+            "estojo",
+            "marcador",
+            "mesa"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 78,
+              "end": 145,
+              "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 50,
+              "end": 75,
+              "text": "estojo e marcador na mesa"
+            }
+          ],
+          "recoverable_content_or_limit": "A enumeração mantém estojo/marcador na mesa de modo compatível; proximidade e função do marcador não ficam explícitas."
+        },
+        {
+          "id": "poltrona-estante",
+          "participants": [
+            "poltrona",
+            "estante"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 163,
+              "end": 200,
+              "text": "uma poltrona está afastada da estante"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 77,
+              "end": 105,
+              "text": "poltrona afastada da estante"
+            }
+          ],
+          "recoverable_content_or_limit": "Poltrona afastada da estante."
+        },
+        {
+          "id": "porta",
+          "participants": [
+            "poltrona",
+            "estante",
+            "porta"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 147,
+              "end": 200,
+              "text": "perto da porta, uma poltrona está afastada da estante"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 77,
+              "end": 120,
+              "text": "poltrona afastada da estante perto da porta"
+            }
+          ],
+          "recoverable_content_or_limit": "A ligação de perto da porta à poltrona ou à estante fica ambígua."
+        },
+        {
+          "id": "mapa-dobrado",
+          "participants": [
+            "mapa"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 64,
+              "end": 76,
+              "text": "mapa dobrado"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O estado dobrado não é recuperável."
+        },
+        {
+          "id": "estojo-fechado",
+          "participants": [
+            "estojo"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 81,
+              "end": 95,
+              "text": "estojo fechado"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O estado fechado não é recuperável."
+        },
+        {
+          "id": "proximidade",
+          "participants": [
+            "estojo",
+            "marcador de páginas"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 96,
+              "end": 132,
+              "text": "repousa junto ao marcador de páginas"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "A proximidade e a função do marcador deixam de ser explícitas."
+        }
+      ]
+    },
+    {
+      "id": "faad-control",
+      "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+      "case_id": "gallery-reflection",
+      "arm_id": "control",
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json",
+          "sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+          "line_1based": 1
+        }
+      },
+      "source_text": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede.",
+      "summary_text": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada; catálogo no banco; duas molduras vazias à direita da entrada.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 19,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 128,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Reflexão preservada; posição da tapeçaria diante da janela menos explícita.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "galeria"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 16,
+              "text": "Na galeria vazia"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Galeria vazia"
+            }
+          ],
+          "recoverable_content_or_limit": "Galeria vazia."
+        },
+        {
+          "id": "reflexão",
+          "participants": [
+            "espelho",
+            "tapeçaria"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 18,
+              "end": 50,
+              "text": "um espelho reflete uma tapeçaria"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 15,
+              "end": 40,
+              "text": "espelho reflete tapeçaria"
+            }
+          ],
+          "recoverable_content_or_limit": "O espelho reflete a tapeçaria."
+        },
+        {
+          "id": "janela-fechada",
+          "participants": [
+            "janela"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 71,
+              "end": 89,
+              "text": "uma janela fechada"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 51,
+              "end": 65,
+              "text": "janela fechada"
+            }
+          ],
+          "recoverable_content_or_limit": "Janela fechada."
+        },
+        {
+          "id": "posição-tapeçaria",
+          "participants": [
+            "tapeçaria",
+            "janela",
+            "espelho"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 37,
+              "end": 89,
+              "text": "uma tapeçaria pendurada diante de uma janela fechada"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 15,
+              "end": 65,
+              "text": "espelho reflete tapeçaria diante de janela fechada"
+            }
+          ],
+          "recoverable_content_or_limit": "A retirada de pendurada torna menos explícito o vínculo de diante da janela à tapeçaria ou à situação de reflexão. Não recuperar posição do espelho; não afirmar transferência inequívoca."
+        },
+        {
+          "id": "suspensão",
+          "participants": [
+            "tapeçaria"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 41,
+              "end": 60,
+              "text": "tapeçaria pendurada"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "A condição pendurada não é recuperável."
+        },
+        {
+          "id": "catálogo",
+          "participants": [
+            "catálogo",
+            "banco"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 91,
+              "end": 126,
+              "text": "Um catálogo permanece sobre o banco"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 67,
+              "end": 84,
+              "text": "catálogo no banco"
+            }
+          ],
+          "recoverable_content_or_limit": "Catálogo no banco, menos específico e compatível."
+        },
+        {
+          "id": "molduras",
+          "participants": [
+            "duas molduras vazias",
+            "entrada"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 128,
+              "end": 170,
+              "text": "à direita da entrada, duas molduras vazias"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 86,
+              "end": 127,
+              "text": "duas molduras vazias à direita da entrada"
+            }
+          ],
+          "recoverable_content_or_limit": "Duas molduras vazias à direita da entrada."
+        },
+        {
+          "id": "apoio",
+          "participants": [
+            "molduras",
+            "parede"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 150,
+              "end": 201,
+              "text": "duas molduras vazias estão apoiadas contra a parede"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "O apoio contra a parede não é recuperável."
+        }
+      ]
+    },
+    {
+      "id": "faad-relational",
+      "batch_id": "faad6837-cc0b-408d-85a6-025d0db770b3",
+      "case_id": "gallery-reflection",
+      "arm_id": "relational",
+      "raw": {
+        "summary": {
+          "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json",
+          "sha256": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178"
+        },
+        "jsonl": {
+          "file": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+          "sha256": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c",
+          "line_1based": 2
+        }
+      },
+      "source_text": "Na galeria vazia, um espelho reflete uma tapeçaria pendurada diante de uma janela fechada. Um catálogo permanece sobre o banco; à direita da entrada, duas molduras vazias estão apoiadas contra a parede.",
+      "summary_text": "Galeria vazia: espelho reflete tapeçaria diante de janela fechada. Catálogo sobre banco; duas molduras vazias apoiadas contra a parede à direita da entrada.",
+      "instruction_measurements": {
+        "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+        "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+        "word_count": 23,
+        "max_words": 25,
+        "within_word_limit": true,
+        "semantic_fidelity_evaluated": false
+      },
+      "characters": 156,
+      "parameters": {
+        "temperature": 0.65,
+        "max_output_tokens": 768,
+        "reasoning_effort": "none"
+      },
+      "verdict_authored": "Apoio das molduras acrescentado com suporte; repete a ambiguidade do controle.",
+      "relations": [
+        {
+          "id": "local",
+          "participants": [
+            "galeria"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 16,
+              "text": "Na galeria vazia"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Galeria vazia"
+            }
+          ],
+          "recoverable_content_or_limit": "Galeria vazia."
+        },
+        {
+          "id": "reflexão",
+          "participants": [
+            "espelho",
+            "tapeçaria"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 18,
+              "end": 50,
+              "text": "um espelho reflete uma tapeçaria"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 15,
+              "end": 40,
+              "text": "espelho reflete tapeçaria"
+            }
+          ],
+          "recoverable_content_or_limit": "O espelho reflete a tapeçaria."
+        },
+        {
+          "id": "janela-fechada",
+          "participants": [
+            "janela"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 71,
+              "end": 89,
+              "text": "uma janela fechada"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 51,
+              "end": 65,
+              "text": "janela fechada"
+            }
+          ],
+          "recoverable_content_or_limit": "Janela fechada."
+        },
+        {
+          "id": "posição-tapeçaria",
+          "participants": [
+            "tapeçaria",
+            "janela",
+            "espelho"
+          ],
+          "classification": "ambíguo",
+          "source_spans": [
+            {
+              "start": 37,
+              "end": 89,
+              "text": "uma tapeçaria pendurada diante de uma janela fechada"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 15,
+              "end": 65,
+              "text": "espelho reflete tapeçaria diante de janela fechada"
+            }
+          ],
+          "recoverable_content_or_limit": "A retirada de pendurada torna menos explícito o vínculo de diante da janela à tapeçaria ou à situação de reflexão. Não recuperar posição do espelho; não afirmar transferência inequívoca."
+        },
+        {
+          "id": "suspensão",
+          "participants": [
+            "tapeçaria"
+          ],
+          "classification": "omitido",
+          "source_spans": [
+            {
+              "start": 41,
+              "end": 60,
+              "text": "tapeçaria pendurada"
+            }
+          ],
+          "summary_spans": [],
+          "recoverable_content_or_limit": "A condição pendurada não é recuperável."
+        },
+        {
+          "id": "catálogo",
+          "participants": [
+            "catálogo",
+            "banco"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 91,
+              "end": 126,
+              "text": "Um catálogo permanece sobre o banco"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 67,
+              "end": 87,
+              "text": "Catálogo sobre banco"
+            }
+          ],
+          "recoverable_content_or_limit": "Catálogo sobre o banco."
+        },
+        {
+          "id": "molduras",
+          "participants": [
+            "duas molduras vazias",
+            "entrada"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 128,
+              "end": 170,
+              "text": "à direita da entrada, duas molduras vazias"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 89,
+              "end": 155,
+              "text": "duas molduras vazias apoiadas contra a parede à direita da entrada"
+            }
+          ],
+          "recoverable_content_or_limit": "Quantidade, estado e localização das molduras permanecem em leitura compatível. Não derivar localização autônoma da parede a partir desse adjunto."
+        },
+        {
+          "id": "apoio",
+          "participants": [
+            "molduras",
+            "parede"
+          ],
+          "classification": "preservado",
+          "source_spans": [
+            {
+              "start": 150,
+              "end": 201,
+              "text": "duas molduras vazias estão apoiadas contra a parede"
+            }
+          ],
+          "summary_spans": [
+            {
+              "start": 89,
+              "end": 134,
+              "text": "duas molduras vazias apoiadas contra a parede"
+            }
+          ],
+          "recoverable_content_or_limit": "O apoio das molduras contra a parede é retido adicionalmente."
+        }
+      ]
+    }
+  ],
+  "conclusions": [
+    "Cumprir schema e 25 palavras não garante preservar os participantes e vínculos das afirmações.",
+    "O conjunto registra um erro explícito de atribuição, ambiguidades e afirmações preservadas. Não estima frequência, estabilidade ou efeito causal.",
+    "A variante relacional recuperou apoio contra a parede, mas repetiu o trecho ambíguo do controle. Não foi selecionado vencedor.",
+    "Não há defeito local demonstrado de transporte, retenção literal ou medição que explique os problemas semânticos observados. Isso não prova inexistência de outros defeitos.",
+    "Encerrada esta sequência de reformulações SYSTEM e repetições das fontes; o corpus é documentação auditável para avaliações futuras, não critério novo de produto nem dados de campanha."
+  ],
+  "independent_review": {
+    "recorded_at_utc": "2026-09-07T22:05:34.280298+00:00",
+    "review_kind": "independent_authored_semantic_review",
+    "reviewer": "Codex subagent faithful_runner",
+    "package_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.json",
+    "package_sha256": "3f7e1910fefb53cfebf89bd7b36182366d0bed946144871e7741b88f96aa2bf1",
+    "markdown_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.md",
+    "markdown_sha256": "e00150e77139e5a3dd1943451d0500efec31acf60e9734ad918e71c2ad6b719b",
+    "integrity_audit": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-semantic-corpus-audit-20260907\\artifact-audit.json",
+      "sha256": "6d388c366fb7a644b452b620b734ae0d6bcf09ad939fff8e7903fe5f79f19f37"
+    },
+    "scope": {
+      "records_read_in_full": 6,
+      "authored_relations_read_in_full": 46,
+      "spans_verified_separately": 81
+    },
+    "method": "Authored reading of the six literal source/output pairs and all 46 relation labels and limits. This judgment is separate from the deterministic provenance/span checker.",
+    "status": "no_material_findings",
+    "findings": [],
+    "assessment": [
+      "The altered color relation in 21cf is supported as an unsupported attribution: the source colors the lantern and the output colors its light. The review does not claim the output proves the lantern itself is no longer red.",
+      "The modal motor claim remains uncertain; the separately omitted operating state is not treated as confirmed or denied.",
+      "The station-clock review preserves the displayed clock value without interpreting it as current time, and treats missing window details as omissions.",
+      "Color, expanded illumination scope and door attachment are conservatively labeled ambiguous where the summary admits competing attachments; the package does not manufacture categorical transfers from those readings.",
+      "Both gallery outputs retain mirror-reflects-tapestry and repeat the weaker location attachment. The relational output retains support against the wall additionally, without establishing a causal advantage.",
+      "The molduras entry explicitly limits its compatible reading and does not license a separate wall-location fact. The selected relations and allowed omissions are not a complete correctness score."
+    ],
+    "limitations": [
+      "Authored semantic judgments are not a machine-verifiable entailment test or final human/product acceptance.",
+      "Six historical outputs do not establish a reliability rate or semantic completeness.",
+      "No raw semantic status, source, output, evaluator, or runtime was modified."
+    ],
+    "provider_calls": 0,
+    "credential_reads": false,
+    "tests_run": 0,
+    "repository_writes": false
+  },
+  "verification": {
+    "recorded_at_utc": "2026-09-07T22:04:11.162349+00:00",
+    "package_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.json",
+    "package_sha256": "3f7e1910fefb53cfebf89bd7b36182366d0bed946144871e7741b88f96aa2bf1",
+    "raw_files_verified": {
+      "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/summary.json": "8ab373f9d31f982fd16f7acf34ad36d1676255e21d87b1dd610dfa3543ccceb2",
+      "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "c4bbd85c68255cb4cdb0aa1125861326e76ac591c0b7f89b187d93a95da5286d",
+      "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/summary.json": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211",
+      "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f",
+      "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/summary.json": "d10d14c885452e1e3b160056c46b1e531b1b7da8710caad273d07bab6325919e",
+      "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "3d415e680deed39fd496e2bdd57116baf240876c60afec4812b3645c09e20480",
+      "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/summary.json": "49cf7ad2f9abb57be49da3dd8338d04d8329a334716bbccc6e3c18a4935cd178",
+      "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "2b8484a9d9f0a122d2d7438224335ad742bcc3c054943b6cd13652fdec5e982c"
+    },
+    "records_verified": [
+      {
+        "id": "21cf-archive-vibration",
+        "raw_jsonl": "eval-results/20260907T190328Z-33c26c5a-59ef-4ef7-a40e-178fe3a65a16/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 1,
+        "case_id": "archive-vibration",
+        "arm_id": null,
+        "relations": 6
+      },
+      {
+        "id": "95dd-station-clock",
+        "raw_jsonl": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 1,
+        "case_id": "station-clock",
+        "arm_id": null,
+        "relations": 6
+      },
+      {
+        "id": "0e7b-reading-room-a",
+        "raw_jsonl": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 1,
+        "case_id": "reading-room-a",
+        "arm_id": null,
+        "relations": 9
+      },
+      {
+        "id": "0e7b-reading-room-b",
+        "raw_jsonl": "eval-results/20260907T211537Z-dd5ca339-6fe5-4f8d-8aeb-81abaf5c26b0/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 2,
+        "case_id": "reading-room-b",
+        "arm_id": null,
+        "relations": 9
+      },
+      {
+        "id": "faad-control",
+        "raw_jsonl": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 1,
+        "case_id": "gallery-reflection",
+        "arm_id": "control",
+        "relations": 8
+      },
+      {
+        "id": "faad-relational",
+        "raw_jsonl": "eval-results/20260907T214523Z-c8bd771b-741e-4c06-97ff-085c9882bdf2/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+        "line_1based": 2,
+        "case_id": "gallery-reflection",
+        "arm_id": "relational",
+        "relations": 8
+      }
+    ],
+    "record_count": 6,
+    "raw_file_count": 8,
+    "relation_count": 46,
+    "markdown_file": "evals\\narrator\\reviews\\record-summary-semantic-corpus-v1-2026-09-07.md",
+    "markdown_sha256": "e00150e77139e5a3dd1943451d0500efec31acf60e9734ad918e71c2ad6b719b",
+    "markdown_records_and_relation_rows_match_json": true,
+    "schema_constraint_checks": 6,
+    "instruction_measurements_checked": 6,
+    "verifier_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-semantic-corpus-audit-20260907\\verify_package.py",
+    "verifier_sha256": "f271e383f5bfe82e1cb12145e19e45fd6ccfa3debd30517d286d92db3938710e",
+    "spans_checked": 81,
+    "all_literals_exact": true,
+    "semantic_classifications_evaluated": false,
+    "provider_calls": 0,
+    "credential_reads": false,
+    "tests_run": 0,
+    "repository_writes": false,
+    "contradictions": [],
+    "audited_version": "authored draft; finalization only changes status and embeds verification/review; records are unchanged"
+  },
+  "next_work": "Auditoria local delimitada de proposta/narrativa → evento → memória → contexto, contra REQ-015 e AC-IMP-005; corrigir somente defeitos locais demonstrados. Não repetir prompts ou fontes encerradas."
+}

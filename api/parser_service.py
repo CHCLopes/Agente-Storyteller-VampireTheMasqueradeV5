@@ -1,70 +1,214 @@
-import httpx
-import json
-import re
-import os
-from pydantic import ValidationError
-from .rules_service import V5ActionPayload
-from .core.config import Settings
+from datetime import datetime, timedelta
+from typing import TypeAlias
 
-settings = Settings()
+from pydantic import BaseModel, ConfigDict
 
-def load_skill_prompt(skill_name: str) -> str:
-    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "skills", f"{skill_name}.md")
+from .core.config import settings
+from .llm import (
+    CAPABILITY_STRUCTURED_GENERATION,
+    CAPABILITY_TEXT_GENERATION,
+    CapabilityRequirement,
+    CancellationToken,
+    ErrorCategory,
+    GenerationParameters,
+    InvocationRecord,
+    LLMGateway,
+    LLMInvocationError,
+    LLMMessage,
+    LLMTarget,
+    MessageRole,
+    NormalizedError,
+    StructuredGenerationRequest,
+    get_llm_runtime,
+)
+from .llm.contract import utc_now
+from .prompt_service import load_versioned_prompt
+class H1IntentPayload(BaseModel):
+    """Semantic action classification; no canonical mechanics or outcomes."""
+
+    # Obsolete provider fields are ignored defensively. They cannot cross into
+    # the engine because this contract has no difficulty, threat, status or
+    # result fields and the orchestrator builds the mechanical payload itself.
+    model_config = ConfigDict(extra="ignore")
+
+    intent: str
+
+
+LLMServiceDiagnostic: TypeAlias = NormalizedError | dict[str, str]
+
+H1_PROMPT = load_versioned_prompt(
+    "H1_vtm_rules_parser",
+    fallback="Extraia apenas a intenção sem decidir mecânica ou resultado.",
+)
+
+async def extract_intent(
+    user_input: str,
+    *,
+    gateway: LLMGateway | None = None,
+    target: LLMTarget | None = None,
+    cancellation: CancellationToken | None = None,
+    deadline_seconds: float | None = None,
+    diagnostics: list[LLMServiceDiagnostic] | None = None,
+    invocations: list[InvocationRecord] | None = None,
+) -> H1IntentPayload:
+    if not settings.llm_h1_enabled:
+        return _create_fallback_payload(user_input)
+
     try:
-        with open(path, "r", encoding="utf-8") as f:
-            return f.read()
-    except Exception:
-        return ""
+        messages = (
+            LLMMessage(role=MessageRole.SYSTEM, content=H1_PROMPT),
+            LLMMessage(role=MessageRole.USER, content=user_input),
+        )
+        resolved_gateway, resolved_target = _resolve_llm(gateway, target)
+        shared_cancellation = cancellation or CancellationToken()
+        effective_deadline_seconds = min(
+            deadline_seconds
+            if deadline_seconds is not None
+            else settings.llm_h1_timeout_seconds,
+            float(settings.llm_timeout_seconds),
+        )
+        deadline = utc_now() + timedelta(seconds=effective_deadline_seconds)
+        return await _call_h1(
+            messages,
+            gateway=resolved_gateway,
+            target=resolved_target,
+            cancellation=shared_cancellation,
+            deadline=deadline,
+            operation="h1.extract_intent.attempt_1",
+            invocations=invocations,
+        )
+    except LLMInvocationError as exc:
+        if diagnostics is not None:
+            diagnostics.append(exc.error)
+        if exc.error.category is not ErrorCategory.INVALID_STRUCTURED_OUTPUT:
+            return _create_fallback_payload(user_input)
 
-H1_PROMPT = load_skill_prompt("H1_vtm_rules_parser")
-
-async def extract_intent(user_input: str) -> V5ActionPayload:
-    messages = [
-        {"role": "system", "content": H1_PROMPT},
-        {"role": "user", "content": user_input}
-    ]
-    
-    # 1ª Tentativa
-    try:
-        return await _call_h1(messages)
-    except ValidationError as e:
-        # Retry logic
-        error_msg = f"Invalid JSON generated: {str(e)}. Please correct your response and output only valid JSON."
-        messages.append({"role": "assistant", "content": "Failed. ValidationError."})
-        messages.append({"role": "user", "content": error_msg})
-        
-        # 2ª Tentativa (Limite Máximo de 1 Retentativa)
+        repair_messages = (
+            *messages,
+            LLMMessage(
+                role=MessageRole.ASSISTANT,
+                content="A resposta anterior não correspondeu ao schema solicitado.",
+            ),
+            LLMMessage(
+                role=MessageRole.USER,
+                content="Tente novamente e retorne somente um objeto válido para o schema.",
+            ),
+        )
         try:
-            return await _call_h1(messages)
+            return await _call_h1(
+                repair_messages,
+                gateway=resolved_gateway,
+                target=resolved_target,
+                cancellation=shared_cancellation,
+                deadline=deadline,
+                operation="h1.extract_intent.attempt_2",
+                invocations=invocations,
+            )
+        except LLMInvocationError as retry_exc:
+            if diagnostics is not None:
+                diagnostics.append(retry_exc.error)
+            return _create_fallback_payload(user_input)
         except Exception:
-            return _create_fallback_payload()
+            _append_safe_diagnostic(
+                diagnostics,
+                category="adapter_failure",
+                code="h1_retry_runtime_failure",
+                message="H1 retry could not complete through the configured LLM runtime.",
+            )
+            return _create_fallback_payload(user_input)
     except Exception:
-        return _create_fallback_payload()
+        _append_safe_diagnostic(
+            diagnostics,
+            category="adapter_failure",
+            code="h1_runtime_failure",
+            message="H1 could not access the configured LLM runtime.",
+        )
+        return _create_fallback_payload(user_input)
 
-async def _call_h1(messages: list) -> V5ActionPayload:
-    h1_payload = {
-        "model": settings.LMSTUDIO_MODEL,
-        "messages": messages,
-        "temperature": 0.1,
-        "stream": False
-    }
-    async with httpx.AsyncClient() as client:
-        resp = await client.post(f"{settings.lm_studio_base_url}/chat/completions", json=h1_payload, timeout=float(settings.LMSTUDIO_TIMEOUT))
-        resp.raise_for_status()
-        data = resp.json()
-        h1_reply = data["choices"][0]["message"]["content"]
-        
-        json_match = re.search(r'\{.*\}', h1_reply, re.DOTALL)
-        raw_json = json_match.group(0) if json_match else h1_reply
-        return V5ActionPayload(**json.loads(raw_json))
 
-def _create_fallback_payload() -> V5ActionPayload:
-    # Fallback null/seguro para abortar a matemática e avisar a engine
-    from .rules_service import V5Attribute, V5Skill
-    return V5ActionPayload(
-        intent="[FALLBACK] Não compreendi a intenção do jogador",
-        attribute=V5Attribute.Strength,
-        skill=V5Skill.BRAWL,
-        is_aggressive=False,
-        action_target="UNOPPOSED"
+async def _call_h1(
+    messages: list[dict[str, str]] | tuple[LLMMessage, ...],
+    *,
+    gateway: LLMGateway | None = None,
+    target: LLMTarget | None = None,
+    cancellation: CancellationToken | None = None,
+    deadline: datetime | None = None,
+    deadline_seconds: float = 30.0,
+    operation: str = "h1.extract_intent",
+    invocations: list[InvocationRecord] | None = None,
+) -> H1IntentPayload:
+    resolved_gateway, resolved_target = _resolve_llm(gateway, target)
+    request = StructuredGenerationRequest(
+        operation=operation,
+        target=resolved_target,
+        messages=_coerce_messages(messages),
+        deadline=deadline or (utc_now() + timedelta(seconds=deadline_seconds)),
+        cancellation=cancellation or CancellationToken(),
+        parameters=GenerationParameters(temperature=0.1),
+        response_model=H1IntentPayload,
+        required_capabilities=(
+            CapabilityRequirement(name=CAPABILITY_TEXT_GENERATION),
+            CapabilityRequirement(
+                name=CAPABILITY_STRUCTURED_GENERATION,
+                allow_emulated=True,
+            ),
+        ),
     )
+    try:
+        result = await resolved_gateway.generate_structured(request)
+    except LLMInvocationError as exc:
+        if invocations is not None:
+            invocations.append(InvocationRecord.failed(request.operation, exc.error))
+        raise
+    if invocations is not None:
+        invocations.append(InvocationRecord.completed(request.operation, result.evidence))
+    if not isinstance(result.value, H1IntentPayload):
+        raise TypeError("H1 returned an unexpected product result type")
+    return result.value
+
+
+def _coerce_messages(
+    messages: list[dict[str, str]] | tuple[LLMMessage, ...],
+) -> tuple[LLMMessage, ...]:
+    converted: list[LLMMessage] = []
+    for message in messages:
+        if isinstance(message, LLMMessage):
+            converted.append(message)
+        else:
+            converted.append(
+                LLMMessage(
+                    role=MessageRole(message["role"]),
+                    content=message["content"],
+                )
+            )
+    return tuple(converted)
+
+
+def _resolve_llm(
+    gateway: LLMGateway | None,
+    target: LLMTarget | None,
+) -> tuple[LLMGateway, LLMTarget]:
+    if gateway is not None and target is not None:
+        return gateway, target
+    if gateway is not None or target is not None:
+        raise ValueError("gateway and target must be supplied together")
+    runtime = get_llm_runtime()
+    return runtime.gateway, runtime.target
+
+
+def _append_safe_diagnostic(
+    diagnostics: list[LLMServiceDiagnostic] | None,
+    *,
+    category: str,
+    code: str,
+    message: str,
+) -> None:
+    if diagnostics is not None:
+        diagnostics.append(
+            {"category": category, "code": code, "safe_message": message}
+        )
+
+def _create_fallback_payload(user_input: str) -> H1IntentPayload:
+    """Preserve the player's declaration when semantic enrichment is unavailable."""
+
+    return H1IntentPayload(intent=user_input)

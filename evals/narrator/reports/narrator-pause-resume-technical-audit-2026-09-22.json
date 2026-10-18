@@ -1,0 +1,42 @@
+{
+  "report": "narrator-pause-resume-technical-audit",
+  "date": "2026-09-22",
+  "branch": "codex/planejamento-agente-storyteller-v5",
+  "status": "completed_human_accepted",
+  "decisions": ["DEC-001-B", "DEC-002-B", "DEC-003-B"],
+  "secrets_accessed": false,
+  "technical_checks": {
+    "backend_focused": {"passed": 163, "failed": 0, "warnings": 1},
+    "frontend": {"passed": 249, "failed": 0, "files": 13},
+    "frontend_targeted_lint": "passed",
+    "frontend_build": "passed",
+    "diff_check": "passed",
+    "backend_broad": {
+      "passed": 8408,
+      "failed": 285,
+      "errors": 61,
+      "skipped": 333,
+      "warnings": 8,
+      "duration_seconds": 5261.10,
+      "classification": "preexisting_frozen_narrator_experiment_fingerprints",
+      "observable_root": "Final actor schema differs"
+    }
+  },
+  "requirements": {
+    "gate_before_llm_dispatch": "verified",
+    "gate_immediately_before_rng": "verified",
+    "no_partial_canonical_commit": "verified",
+    "no_rng_on_resume": "verified",
+    "original_resume_link": "verified",
+    "capsule_integrity_and_rebuild": "verified",
+    "restart_and_reconnect": "verified",
+    "blocked_new_actions_and_rolls": "verified",
+    "editable_local_draft": "verified",
+    "concurrent_requests": "verified",
+    "v1_compatibility": "verified"
+  },
+  "human_acceptance": {"date": "2026-09-22", "response": "Prossiga", "tasks": ["TASK-032", "TASK-033", "TASK-034"]},
+  "pending": [],
+  "not_applicable": {"TASK-041": "DEC-003-B"},
+  "model_or_capability_promoted": false
+}

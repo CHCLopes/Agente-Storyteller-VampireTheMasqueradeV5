@@ -1,0 +1,28 @@
+{
+  "protocol": "scene-resolution-core-observation-v1",
+  "date": "2026-09-15",
+  "plan": "plan/architecture-scene-resolution-1.md",
+  "completed_phases": [0, 1, 2, 3],
+  "implementation_active_in_default_path": false,
+  "provider_calls": 0,
+  "additional_random_sources": 0,
+  "final_test_run": {
+    "passed": 272,
+    "failed": 0,
+    "warnings": 1,
+    "scope": [
+      "scene_resolution_service",
+      "scene_resolution_integration",
+      "scene_director_service",
+      "turn_models",
+      "narrative_source_progression_admission",
+      "turn_pipeline_integration",
+      "turn_execution_service",
+      "websocket_transactional"
+    ]
+  },
+  "model_selected": false,
+  "campaign_approved": false,
+  "cap_001_approved": false,
+  "next_phase": "offline_progression_evaluation"
+}

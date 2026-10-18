@@ -1,0 +1,601 @@
+{
+  "document_kind": "inline_evidence_qwen_observation_preparation",
+  "recorded_at_utc": "2026-09-07T17:57:19.351447+00:00",
+  "status": "executed_and_analyzed_batch_closed",
+  "authorization": {
+    "source": "continuous_user_authority",
+    "new_observation_approval_required": false,
+    "human_dependency": null
+  },
+  "prepared_metadata": {
+    "purpose": "inline_evidence_qwen_probe",
+    "probe_kind": "inline_evidence_qwen_probe",
+    "experiment_version": "record-inline-evidence-qwen-observation-v1",
+    "protocol": "record-inline-evidence-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_inline_evidence_qwen.py",
+      "sha256": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "none"
+    },
+    "inline_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "none"
+      },
+      "max_total_output_tokens": 3072,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json",
+        "sha256": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30",
+        "body_sha256": "bd7219cf1cd27f2ce1d80879370064b6ef7ac3d2b64f4be7a0d32da5db0326f7"
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "case": {
+        "file": "evals/narrator/record_inline_case_v1.json",
+        "sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+        "case_id": "archive-vibration"
+      },
+      "prompt": {
+        "variant": "record-inline-evidence-v1",
+        "file": "evals/narrator/prompts/record-inline-evidence-v1.md",
+        "file_sha256": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+        "sha256": "0ca6e7b9ebb2210bce3830119b324d121cfc92bd4b548b29639fb4029812cf87"
+      },
+      "response_schema_sha256": "f83bc66cab29a079598f074db3ee4838a94882ef65f254866d0505aa29b37d9a",
+      "provider_schema_sha256": "f83bc66cab29a079598f074db3ee4838a94882ef65f254866d0505aa29b37d9a",
+      "projection_policy": {
+        "concatenation": "literal_no_separator",
+        "offset_unit": "unicode_code_points",
+        "interval": "[start,end)",
+        "semantic_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "implementation": [
+        {
+          "file": "scripts/narrator_inline_evidence.py",
+          "sha256": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "c725c94ebc76b5e47895214fcf4e887b61da6daa650f191738e97db650b89dea"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "archive-vibration",
+          "source": {
+            "origin": "agent_authored_synthetic_case",
+            "synthetic_only": true,
+            "case_file": "evals/narrator/record_inline_case_v1.json",
+            "case_sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+            "field": "narrative",
+            "narrative_sha256": "70adab37989c455858052582a4dba8e2edfa3fbce0d1d2ca8257a18aa37e8685"
+          },
+          "generation_context": {
+            "version": "record-inline-evidence-v1",
+            "user_packet_sha256": "b7706e060b634d25235955eb43dd3720051916947b7ef508afb02fa75badc7bc",
+            "source_units_sha256": "b327fdb6be496eb5028dd640fd7ee9fa5e97e2d98e2288b612948146f9a4ec2b",
+            "source_units": [
+              {
+                "id": "n0",
+                "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. "
+              },
+              {
+                "id": "n1",
+                "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado."
+              }
+            ],
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 168
+            }
+          }
+        }
+      ]
+    }
+  },
+  "files": {
+    "scripts/evaluate_narrator_inline_evidence_qwen.py": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+    "scripts/run_groq_inline_evidence_qwen_probe.ps1": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+    "scripts/evaluate_narrator_models.py": "c725c94ebc76b5e47895214fcf4e887b61da6daa650f191738e97db650b89dea",
+    "tests/test_inline_evidence_qwen_execution.py": "ed822d24a5afc729044b7d565a23b9f2b855ae80b512211b2dff71bd5258efd8",
+    "tests/test_inline_evidence_qwen_runner.py": "c39742b4c0b62d3809a31226158805b6c40a951ecfde3697ca3c1e5be7bf7ccb",
+    "tests/test_inline_evidence_qwen_replay_boundary.py": "4d6068cc91d4c560271b95d33353c1755688cd5d31aadcdbf1c8c3c167611c0d",
+    "evals/narrator/reports/record-inline-evidence-qwen-design-6876955e-2026-09-07.md": "b0fd5834bf944e41a29583915daa3b19e65c155f5d89bb9837189dd69444d91c",
+    "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30"
+  },
+  "verification": {
+    "distinct_tests_passed": 240,
+    "new_tests_passed": 172,
+    "existing_tests_passed": 68,
+    "remaining_failures": 0,
+    "skips": 0,
+    "full_repository_suite": false,
+    "groups": [
+      {
+        "scope": "Qwen executor",
+        "passed": 56,
+        "new": 56,
+        "details": {
+          "distinct_passed": 56,
+          "full_group": {
+            "command": ".\\.venv\\Scripts\\python.exe -B -m pytest -q -p no:cacheprovider tests/test_inline_evidence_qwen_execution.py",
+            "passed": 51,
+            "failed": 5,
+            "seconds": 28.03,
+            "tests_sha256": "2df16b42c8b6d5c78aa5d8577cde3539deecb5373159c050712324726ab9e5b9"
+          },
+          "focused_after_test_expectation_fix": {
+            "command": ".\\.venv\\Scripts\\python.exe -B -m pytest -q -p no:cacheprovider tests/test_inline_evidence_qwen_execution.py::test_only_exact_qwen_reported_model_can_be_projected",
+            "passed": 5,
+            "failed": 0,
+            "seconds": 4.76
+          },
+          "remaining_failures": 0,
+          "ast_changed_tests": [
+            "test_only_exact_qwen_reported_model_can_be_projected"
+          ],
+          "rationale": "Groq rejects unverified model provenance before returning schema to evaluator; schema_valid remains false because evaluator validation was not reached. Assert exact existing error instead of assuming later schema success. Executor unchanged.",
+          "warning": "preexisting starlette python_multipart PendingDeprecationWarning",
+          "tests_environment": {
+            "STORYTELLER_DISABLE_DOTENV": "1",
+            "PYTHONDONTWRITEBYTECODE": "1"
+          },
+          "old_test_suites_rerun": false
+        }
+      },
+      {
+        "scope": "Qwen wrapper",
+        "passed": 91,
+        "new": 91,
+        "details": [
+          {
+            "command": ".\\.venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider tests/test_inline_evidence_qwen_runner.py -k \"parses_in_each_available_shell or real_summary_pass_failure_skip_and_cancel_match_exit_and_restore_environment\"",
+            "passed": 12,
+            "deselected": 79,
+            "seconds": 32.39
+          },
+          {
+            "command": ".\\.venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider tests/test_inline_evidence_qwen_runner.py -k \"not parses_in_each_available_shell and not real_summary_pass_failure_skip_and_cancel_match_exit_and_restore_environment\"",
+            "passed": 79,
+            "deselected": 12,
+            "seconds": 160.28
+          }
+        ]
+      },
+      {
+        "scope": "CAP replay boundary",
+        "passed": 93,
+        "new": 25,
+        "existing": 68,
+        "seconds": 1.57,
+        "files": [
+          "tests/test_inline_evidence_qwen_replay_boundary.py",
+          "tests/test_inline_evidence_replay_boundary.py",
+          "tests/test_record_independent_replay_boundary.py",
+          "tests/test_narrator_replay_skips.py"
+        ],
+        "initial_red": "Two purpose-only cases failed before adding exact Qwen guards; not counted as final passes."
+      }
+    ],
+    "warning": "pre-existing python_multipart PendingDeprecationWarning",
+    "independent_review": {
+      "executor_and_cap": "Socrates: no material implementation findings; confirmed test-only correction before schema stage",
+      "wrapper": "Root reviewed complete delta and preserved control flow; no findings"
+    },
+    "real_empty_key_integration": {
+      "recorded_at_utc": "2026-09-07T17:54:11.676549+00:00",
+      "preflight_passed": true,
+      "wrapper_exit": 3,
+      "expected_failure_stage": "credential validation",
+      "empty_secure_string": true,
+      "ambient_key_present": false,
+      "provider_calls": 0,
+      "new_artifacts": 0,
+      "stderr_empty": true,
+      "wrapper_sha256": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+      "stdout": "Inline evidence Qwen probe batch: 591938d6-1619-4d9a-90da-3fc9f6b66ff3\nOne authored synthetic case; at most one Qwen inline evidence call, 3072 output tokens, reasoning effort none, temperature 0.65.\nInitial local wait: 60 seconds; then a 60-second deadline for the single call. No narrative generation, diagnostics, retries or fallback.\nOnly summary and open questions are projected by literal concatenation; structural validation does not evaluate semantic fidelity.\nThis probe never approves narrative quality, runtime or CAP-001.\nInline evidence Qwen probe stopped because execution or evidence verification failed (credential validation).\nEMPTY_KEY_INTEGRATION_PASSED\n"
+    },
+    "integration_harness_correction": {
+      "cause": "The first minimal environment omitted PATHEXT/COMSPEC; PowerShell returned no child output or LASTEXITCODE. Direct Python produced valid UTF-8. Preserving the Windows variables restored native dispatch.",
+      "repository_code_changed": false,
+      "credential_used": false,
+      "provider_calls": 0
+    },
+    "preflight_audit": {
+      "recorded_at_utc": "2026-09-07T17:54:51.800851+00:00",
+      "prepared_metadata": {
+        "purpose": "inline_evidence_qwen_probe",
+        "probe_kind": "inline_evidence_qwen_probe",
+        "experiment_version": "record-inline-evidence-qwen-observation-v1",
+        "protocol": "record-inline-evidence-v1",
+        "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+        "full_evaluation": false,
+        "synthetic_only": true,
+        "runtime_promoted": false,
+        "cap_001_status": "not_evaluated",
+        "automated_gates_passed": false,
+        "human_review_required": true,
+        "diagnostics_executed": false,
+        "automatic_retries": 0,
+        "max_calls": 1,
+        "repetitions": 1,
+        "causal_comparison": false,
+        "narrative_generation_calls": 0,
+        "full_record_derivation": false,
+        "actor_admission": "not_applied",
+        "structural_only": true,
+        "semantic_not_evaluated": true,
+        "evaluator": {
+          "file": "scripts/evaluate_narrator_inline_evidence_qwen.py",
+          "sha256": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+          "python_version": "3.12.2",
+          "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+          "git_dirty": true
+        },
+        "candidate_policy": {
+          "adapter_kind": "groq",
+          "provider_label": "Groq",
+          "effective_provider": "Groq",
+          "upstream_provider": null,
+          "structured_mode": "native",
+          "require_zdr": false,
+          "allow_data_collection": true,
+          "campaign_data_eligible": false,
+          "expiration_date": null,
+          "reasoning_effort": "none"
+        },
+        "inline_generation_parameters": {
+          "deadline_seconds": 60,
+          "minimum_inter_call_delay_seconds": 60,
+          "requested": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072
+          },
+          "transmitted": {
+            "temperature": 0.65,
+            "max_output_tokens": 3072,
+            "reasoning_effort": "none"
+          },
+          "max_total_output_tokens": 3072,
+          "user_packet_budget": {
+            "estimated_tokens": 2000,
+            "method": "characters_divided_by_4"
+          }
+        },
+        "inputs": {
+          "dossier": {
+            "file": "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json",
+            "sha256": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30",
+            "body_sha256": "bd7219cf1cd27f2ce1d80879370064b6ef7ac3d2b64f4be7a0d32da5db0326f7"
+          },
+          "manifest": {
+            "file": "groq_candidates_2026-09-05.json",
+            "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+          },
+          "case": {
+            "file": "evals/narrator/record_inline_case_v1.json",
+            "sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+            "case_id": "archive-vibration"
+          },
+          "prompt": {
+            "variant": "record-inline-evidence-v1",
+            "file": "evals/narrator/prompts/record-inline-evidence-v1.md",
+            "file_sha256": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+            "sha256": "0ca6e7b9ebb2210bce3830119b324d121cfc92bd4b548b29639fb4029812cf87"
+          },
+          "response_schema_sha256": "f83bc66cab29a079598f074db3ee4838a94882ef65f254866d0505aa29b37d9a",
+          "provider_schema_sha256": "f83bc66cab29a079598f074db3ee4838a94882ef65f254866d0505aa29b37d9a",
+          "projection_policy": {
+            "concatenation": "literal_no_separator",
+            "offset_unit": "unicode_code_points",
+            "interval": "[start,end)",
+            "semantic_validation": false
+          },
+          "observation_policy": {
+            "max_error_body_bytes": 65536,
+            "raw_error_retained": false,
+            "raw_reasoning_retained": false
+          },
+          "implementation": [
+            {
+              "file": "scripts/narrator_inline_evidence.py",
+              "sha256": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419"
+            },
+            {
+              "file": "scripts/narrator_record_budget_observer.py",
+              "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+            },
+            {
+              "file": "scripts/evaluate_narrator_models.py",
+              "sha256": "c725c94ebc76b5e47895214fcf4e887b61da6daa650f191738e97db650b89dea"
+            },
+            {
+              "file": "api/llm/adapters/groq.py",
+              "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+            },
+            {
+              "file": "api/llm/adapters/openai_compatible.py",
+              "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+            },
+            {
+              "file": "api/llm/contract.py",
+              "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+            }
+          ],
+          "cases": [
+            {
+              "case_id": "archive-vibration",
+              "source": {
+                "origin": "agent_authored_synthetic_case",
+                "synthetic_only": true,
+                "case_file": "evals/narrator/record_inline_case_v1.json",
+                "case_sha256": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+                "field": "narrative",
+                "narrative_sha256": "70adab37989c455858052582a4dba8e2edfa3fbce0d1d2ca8257a18aa37e8685"
+              },
+              "generation_context": {
+                "version": "record-inline-evidence-v1",
+                "user_packet_sha256": "b7706e060b634d25235955eb43dd3720051916947b7ef508afb02fa75badc7bc",
+                "source_units_sha256": "b327fdb6be496eb5028dd640fd7ee9fa5e97e2d98e2288b612948146f9a4ec2b",
+                "source_units": [
+                  {
+                    "id": "n0",
+                    "text": "No arquivo municipal, a luz de uma lanterna vermelha ilumina uma mesa coberta de pastas. "
+                  },
+                  {
+                    "id": "n1",
+                    "text": "Perto da porta fechada, uma vibração leve sugere que talvez exista um motor funcionando do outro lado."
+                  }
+                ],
+                "budget": {
+                  "scope": "user_packet_only",
+                  "method": "characters_divided_by_4",
+                  "limit": 2000,
+                  "estimated_tokens": 168
+                }
+              }
+            }
+          ]
+        }
+      },
+      "files": {
+        "scripts/evaluate_narrator_inline_evidence_qwen.py": "21c1a52c7a21561ee00986d2a0decadf4e744e8693cc6edfd88d35c1b58709f9",
+        "scripts/run_groq_inline_evidence_qwen_probe.ps1": "bbe16b417aa81af322db9dbf19620c2b13cee3a8bb67866aa0d2277bcb118c8c",
+        "scripts/evaluate_narrator_models.py": "c725c94ebc76b5e47895214fcf4e887b61da6daa650f191738e97db650b89dea",
+        "tests/test_inline_evidence_qwen_execution.py": "ed822d24a5afc729044b7d565a23b9f2b855ae80b512211b2dff71bd5258efd8",
+        "tests/test_inline_evidence_qwen_runner.py": "c39742b4c0b62d3809a31226158805b6c40a951ecfde3697ca3c1e5be7bf7ccb",
+        "tests/test_inline_evidence_qwen_replay_boundary.py": "4d6068cc91d4c560271b95d33353c1755688cd5d31aadcdbf1c8c3c167611c0d",
+        "evals/narrator/reports/record-inline-evidence-qwen-design-6876955e-2026-09-07.md": "b0fd5834bf944e41a29583915daa3b19e65c155f5d89bb9837189dd69444d91c",
+        "evals/narrator/reports/record-inline-evidence-qwen-dossier-6876955e-2026-09-07.json": "ce551e0d33659cb600af00a861d4af85a00d98acc2db270bf66f9ce470eb5e30"
+      },
+      "changed_body_fields": [
+        "include_reasoning",
+        "model",
+        "reasoning_effort"
+      ],
+      "source_units_reconstruct_exactly": true,
+      "historical_files_preserved": {
+        "scripts/narrator_inline_evidence.py": "e92f769047baff1b8171d2ca98b12ba225b5c990df178b8fbe1e0c9322524419",
+        "scripts/evaluate_narrator_inline_evidence.py": "a771a2e8ba384c7de1b910d61ce2b094edbe5853a6b1eac6f246c7dbe3fcf907",
+        "scripts/run_groq_inline_evidence_probe.ps1": "30f0229909fdfa6c6b7e3f18a120307b6b4163adcd8878b8a7bf2359d98ca85d",
+        "tests/test_narrator_inline_evidence.py": "1ebe1049765328ca77f3cf6cba05dd605cece56d865418023a4555a7d9b5b7ff",
+        "tests/test_inline_evidence_execution.py": "d2f6ff0d6a7c10e7584f54c992725c8aa03598278f68417276417450f4833ca3",
+        "tests/test_inline_evidence_runner.py": "8580f01294df6021d23b686c545495120c278c2f3eab9f022e4ee852e0c8bb1e",
+        "tests/test_inline_evidence_replay_boundary.py": "2bbed5b1587da15ea7a5dfcccdbc9f54bf387f6e9c1601da7368ebec64d69763",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "evals/narrator/reports/record-inline-evidence-dossier-d1b9a968-2026-09-07.json": "e86fe2a035e4f3435fe8fda9794c9699eef37ac1da971fa65056fb8e99407088",
+        "evals/narrator/record_inline_case_v1.json": "5b812d5f4f20ef592e20268a08c2e7fd837cb5d1e6d0d96a175a4033b0383cd7",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-inline-evidence-v1.md": "e895df2097c875c8b16f2504c96c5f403bde62f92cbc2ec1c1d69ee94a468c8f",
+        "scripts/narrator_record_independent_cases.py": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+        "scripts/evaluate_narrator_record_independent_cases.py": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+        "scripts/run_groq_record_independent_cases_probe.ps1": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+        "scripts/narrator_record_derivation.py": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+        "tests/test_record_independent_cases.py": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+        "tests/test_record_independent_case_boundary.py": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+        "tests/test_record_independent_execution.py": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+        "tests/test_record_independent_runner.py": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+        "tests/test_record_independent_replay_boundary.py": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034",
+        "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+        "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "evals/narrator/record_independent_cases_v1.json": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353"
+      },
+      "historical_raw_artifacts_preserved": {
+        "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/gpt-oss-120b-groq-free-synthetic-low.jsonl": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+        "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0/summary.json": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f",
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/gpt-oss-120b-groq-free-synthetic-medium.jsonl": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+        "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/summary.json": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+        "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+        "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+        "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/summary.json": "0726add81d3e95543ba837e6f4bb7ad3a36385d96b1401b9c72feb7266615824",
+        "eval-results/20260907T173025Z-22fb64ac-3d6e-4ad1-9255-12014c3222de/gpt-oss-120b-groq-free-synthetic-low.jsonl": "b39eab2f5215568aa99af75bac32e559a893abaab4fb63f246c5957afbef2624"
+      },
+      "shared_change": {
+        "file": "scripts/evaluate_narrator_models.py",
+        "before_sha256": "ee354bc4550cd408130dbc26473d02853502b2b8bb881a50b224edc1696a3b85",
+        "after_sha256": "c725c94ebc76b5e47895214fcf4e887b61da6daa650f191738e97db650b89dea",
+        "added_lines": 12,
+        "removed_lines": 0,
+        "scope": "exact Qwen observation markers in two legacy CAP replay entry points"
+      },
+      "provider_calls": 0
+    },
+    "independent_wire_audit": {
+      "body_sha256": "bd7219cf1cd27f2ce1d80879370064b6ef7ac3d2b64f4be7a0d32da5db0326f7",
+      "body_matches_frozen_dossier": true,
+      "changed_body_fields": [
+        "include_reasoning",
+        "model",
+        "reasoning_effort"
+      ],
+      "method": "independent pure GroqAdapter builder from previous structured request with new explicit target/effort; no client or credential",
+      "provider_calls": 0
+    }
+  },
+  "scope": {
+    "max_calls": 1,
+    "max_output_tokens": 3072,
+    "temperature": 0.65,
+    "reasoning_effort": "none",
+    "initial_wait_seconds": 60,
+    "deadline_seconds_after_wait": 60,
+    "automatic_retries": 0,
+    "fallback": false,
+    "causal_comparison": false,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "live_execution": {
+    "launcher_sha256": "c8f279dc8fa2deb2f5c292bb7bcf0e134d5403f787314eec0b026399ff73ab1b",
+    "started_at_utc": "2026-09-07T17:58:34.6419153Z",
+    "title": "Agente Storyteller - Qwen inline - chave protegida",
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-live-20260907\\launch-qwen-inline.ps1",
+    "process_id": 19232,
+    "status": {
+      "phase": "finished",
+      "at_utc": "2026-09-07T17:59:49.5067634Z",
+      "exit_code": 0,
+      "process_id": 19232
+    },
+    "status_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-live-20260907\\status.json",
+    "credential_entry_required": false,
+    "credential_retained": false,
+    "batch_id": "94a95216-9d0b-479e-85d3-e6c577ce4fa3",
+    "remaining_calls_in_batch": 0
+  },
+  "evidence_files": [
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-live-20260907\\final-preflight-audit.json",
+      "sha256": "fa42e7c098ce9175377e8ff9ec896cda2ef770acb9e7ed59ded429375368614b"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-live-20260907\\independent-wire-audit.json",
+      "sha256": "7270355a29189cc7780f518e3dfe3d439360987e2084c5a03dc0023dfa807e79"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-live-20260907\\real-empty-key-integration.json",
+      "sha256": "033c5b4ee6816c68371b87fcf5deace838e6a6dab01c7016c94969aa45efffde"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-execution-20260907\\after.json",
+      "sha256": "28bee4a6c130e914a0439aefba953f8a1d6a5a841bceaea3cbecb300d08e88fb"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-inline-qwen-wrapper-pk3ne8pu\\after-tests.json",
+      "sha256": "7be787c3051d59a8490473ac6fa3538427ae4728e3a98b7db73e479cef5d9e60"
+    }
+  ],
+  "completed_observation": {
+    "batch_id": "94a95216-9d0b-479e-85d3-e6c577ce4fa3",
+    "run_dir": "eval-results/20260907T175847Z-83c88116-fb4c-4fff-b479-11d91ee655d7",
+    "process_exit_code": 0,
+    "operational_probe_passed": true,
+    "agent_registered_criteria_satisfied": false,
+    "textual_narrative_fidelity": "literal_copy_preserved",
+    "summary_words": 32,
+    "summary_characters": 191,
+    "question_count": 0,
+    "question_presupposition_review": "non_informative",
+    "raw_artifact_hashes": {
+      "summary.json": "795cc05b6211fdbf0961d61b938fb3f14a02a8b688fb541c61584c8c1e98edee",
+      "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": "cb39f07387198c31b66f8bab564ed72284985c055b08ffd274e681db349ff21a"
+    },
+    "report": "evals/narrator/reports/record-inline-evidence-qwen-observation-94a95216-2026-09-07.md",
+    "analysis": "evals/narrator/reports/record-inline-evidence-qwen-observation-94a95216-2026-09-07.json"
+  },
+  "next_step": {
+    "action": "offline_rubric_review_and_summary_only_observation_preparation",
+    "status": "in_progress_not_certified_complete",
+    "new_live_experiment_prepared": false,
+    "new_live_call_made_by_this_closure": false,
+    "authorization": "continuous_user_authority",
+    "new_hypothesis_approval_required": false,
+    "human_dependency_now": null,
+    "future_credential_entry": "protected mechanism only if needed",
+    "repeat_closed_batches": false,
+    "historical_criteria_or_raw_outputs_rewritten": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  }
+}

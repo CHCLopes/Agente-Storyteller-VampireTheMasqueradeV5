@@ -1,0 +1,62 @@
+{
+  "version": "openrouter-free-narrators-partial-review-v1",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L1",
+  "batch_id": "cbdad0ac-216c-4b40-baef-3b73c9ae1621",
+  "reviewer": "codex-independent-semantic-review",
+  "review_date": "2026-09-27",
+  "source": {
+    "summary_sha256": "048b1dee67b7d4fc07c45e0b28f27e46965616dd7c1470eff610c03ad1e55c74",
+    "records_sha256": "49c95158c11f59faeeab78330e12f49265e5b0d580646d61c6a59e3e13c73a89",
+    "completed_response_sha256": "ce2422620b64533cf2a4dcd6d45c5b5c0d5f830551c71ee0f99155a38173bb92"
+  },
+  "scope": {
+    "records_total": 24,
+    "records_completed": 1,
+    "records_semantically_reviewed": 1,
+    "incomplete_records_not_scored": 23,
+    "candidate_qualification_permitted": false
+  },
+  "review": {
+    "candidate_id": "lfm-2.5-2.6b-openrouter-free-synthetic",
+    "case_id": "favorable-shutter-result",
+    "slot": 12,
+    "narrative": "A veneziana, que estava completamente fechada, agora mostra apenas uma fresta estreita da largura de uma mão. O som da madeira raspando contra o trilho ecoa suavemente enquanto uma corrente de ar fino atravessa a brecha, soprando frio pela sala. A luz entra em fios tênues pela fenda, iluminando partículas de poeira no ar. O ambiente parece segurar a respiração, esperando o próximo movimento.",
+    "question": "O que você fará com a fresta na veneziana?",
+    "rendered_unit_ids": [
+      "test-succeeded",
+      "shutter-hand-width",
+      "shutter-stops",
+      "wood-scrapes",
+      "thin-air-current"
+    ],
+    "transition_id": "shutter-opens-hand-width",
+    "asserted_unknown_ids": [],
+    "criteria": {
+      "unlisted_render_claim": true,
+      "player_agency_attribution": false,
+      "unauthorized_secret_disclosure": false,
+      "mechanical_result_expansion": false,
+      "progression_observed": true,
+      "next_choice_preserved": true
+    },
+    "unlisted_claims": [
+      "veneziana anteriormente completamente fechada",
+      "som ecoa suavemente",
+      "corrente de ar fria",
+      "existencia de uma sala",
+      "luz em fios pela fresta",
+      "particulas de poeira no ar",
+      "ambiente parece segurar a respiracao"
+    ],
+    "fatal_semantic_gate_passed": false,
+    "rationale": "A transicao mecanica, a largura da fresta, o atrito, a corrente de ar e a proxima escolha foram preservados. A narrativa, porem, acrescentou sete alegacoes que nao pertencem ao plano fechado; unlisted_render_claim e fatal neste protocolo."
+  },
+  "classification": {
+    "nemotron": "inconclusive_operational_truncation_0_of_8_completed",
+    "liquid": "ineligible_batch_incomplete_and_only_completed_case_failed_fatal_semantic_gate",
+    "deepseek": "inconclusive_exact_free_route_unavailable_0_of_8_completed",
+    "qualified_candidates": [],
+    "narrator_admitted": false,
+    "human_acceptance_required": true
+  }
+}

@@ -1,5 +1,5 @@
 from enum import Enum
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 import random
 
 class V5Attribute(str, Enum):
@@ -58,7 +58,7 @@ class V5ActionTarget(str, Enum):
     UNOPPOSED = "UNOPPOSED"
     OPPOSED = "OPPOSED"
 
-from typing import Dict
+from typing import Dict, Literal
 
 class TrackerModel(BaseModel):
     size: int
@@ -85,6 +85,16 @@ class PredatorTypeModel(BaseModel):
     engine_data: PredatorEngineData
     narrative_data: PredatorNarrativeData
 
+
+class PredatorHuntProfile(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    predator_type: str
+    attribute: V5Attribute
+    skill: V5Skill
+    blood_resonance_preference: str
+    resonance_role: Literal["narrative_targeting_hint"] = "narrative_targeting_hint"
+
 class BloodPotencyEngineData(BaseModel):
     blood_surge_bonus: int
     damage_healed_per_rouse: int
@@ -106,10 +116,43 @@ class PlayerSheetModel(BaseModel):
     available_xp: int = 0
     spent_xp: int = 0
 
+    @model_validator(mode="after")
+    def validate_catalog_references(self):
+        """Validate known IDs while preserving the exact legacy save representation."""
+        from .catalog_models import CatalogDomain
+        from .catalog_service import get_catalog_registry, normalize_catalog_id
+
+        registry = get_catalog_registry()
+        if registry.get(CatalogDomain.CLAN, self.clan) is None:
+            raise ValueError(f"unknown clan catalog entry: {self.clan}")
+        if registry.get(CatalogDomain.PREDATOR_TYPE, self.predator_type) is None:
+            raise ValueError(
+                f"unknown predator type catalog entry: {self.predator_type}"
+            )
+        if registry.get(
+            CatalogDomain.BLOOD_POTENCY, str(self.status.blood_potency)
+        ) is None:
+            raise ValueError(
+                f"unknown blood potency catalog entry: {self.status.blood_potency}"
+            )
+
+        family_ids = registry.discipline_family_ids()
+        for supplied_id, level in self.disciplines.items():
+            known_power = registry.get(CatalogDomain.DISCIPLINE_POWER, supplied_id)
+            known_family = normalize_catalog_id(supplied_id) in family_ids
+            if known_power is None and not known_family:
+                raise ValueError(f"unknown discipline or power catalog entry: {supplied_id}")
+            if not 0 <= level <= 5:
+                raise ValueError(
+                    f"discipline or power level must be between 0 and 5: {supplied_id}"
+                )
+        return self
+
 class V5ActionPayload(BaseModel):
     intent: str
     attribute: V5Attribute
     skill: V5Skill
+    requires_roll: bool = True
     power_used: str | None = None
     weapon_category: V5WeaponCategory = V5WeaponCategory.UNARMED
     is_aggressive: bool
@@ -124,6 +167,41 @@ class V5ActionPayload(BaseModel):
     action_target: V5ActionTarget = V5ActionTarget.UNOPPOSED
     inferred_difficulty: int = Field(default=3, ge=1, le=7)
     npc_threat_level: int = Field(default=2, ge=1, le=5)
+
+
+class DeterministicTurnInputs(BaseModel):
+    """Canonical mechanical inputs supplied by trusted local modules/state."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    unopposed_difficulty: int = Field(default=3, ge=1, le=7)
+    opposed_difficulty: int = Field(default=2, ge=1, le=5)
+    attribute: V5Attribute = V5Attribute.Strength
+    skill: V5Skill = V5Skill.BRAWL
+    weapon_category: V5WeaponCategory = V5WeaponCategory.UNARMED
+    target_killed: bool = False
+    is_bane_damage: bool = False
+    is_compulsion_active: bool = False
+    is_true_faith_active: bool = False
+    action_target: V5ActionTarget | None = None
+    allowed_power_ids: tuple[str, ...] = ()
+    allowed_weapon_categories: tuple[V5WeaponCategory, ...] = (
+        V5WeaponCategory.UNARMED,
+    )
+
+    @model_validator(mode="after")
+    def validate_weapon_authority(self):
+        attribute_explicit = "attribute" in self.model_fields_set
+        skill_explicit = "skill" in self.model_fields_set
+        if attribute_explicit != skill_explicit:
+            raise ValueError(
+                "attribute and skill must be supplied together by deterministic inputs"
+            )
+        if self.weapon_category not in self.allowed_weapon_categories:
+            raise ValueError(
+                "weapon_category must be authorized by deterministic inventory/state"
+            )
+        return self
 
 class ResolutionResult(BaseModel):
     successes: int

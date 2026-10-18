@@ -1,0 +1,151 @@
+{
+  "checked_at": "2026-09-09T22:24:23.750987+00:00",
+  "scope": "Local current-game guards continuity; preserve admitted improvisation and player agency.",
+  "user_direction": "Keep the guards already narrated: they enrich the player experience. Continuous local correction authority applies.",
+  "observed": {
+    "session_counts": {
+      "attempts": 18,
+      "turns": 9,
+      "pending": 0
+    },
+    "scene_turn": 9,
+    "scene_revision": 11,
+    "scene_roster": [
+      "Príncipe",
+      "Xerife",
+      "Guardas"
+    ],
+    "historical_failure_14": "scene_secret_disclosed",
+    "historical_failures_16_17_18": "scene_npc_roster_changed_without_event",
+    "rejected_raw_proposals_available": false,
+    "ui_fixed_confirmed_by_user": true
+  },
+  "changes": {
+    "roster": "Casefold membership comparison ignores ordering; actual additions/removals still require the existing event contract.",
+    "prompt": "Complete NPC roster including groups; narrated entrances/exits update p with npc_action or transition in f.",
+    "diagnostics": "Closed structural allowlist persisted in attempts.metadata.validation_diagnostic only; no raw text, names, secret contents, API or WS expansion.",
+    "user_messages": "Distinct localized roster and secret-separation failure messages.",
+    "current_projection_repair": {
+      "mode": "apply",
+      "repair_id": "manual-guards-projection-20260909-v1",
+      "turn_number": 9,
+      "revision_before": 10,
+      "revision_after": 11,
+      "before_roster": [
+        "Príncipe",
+        "Xerife"
+      ],
+      "after_roster": [
+        "Príncipe",
+        "Xerife",
+        "Guardas"
+      ],
+      "historical_ledger_hashes": {
+        "attempts": "abdf4aea0816173acdd041a6b6531eef6b20b531575b911508724ba110f44ba8",
+        "turns": "8ab3bc0af9277913821752bdbc9794a11b22cc3736fbea63930b79178d9cd2e3",
+        "events": "415fcb979b98b73d227dceca0b2eb7a16f34b91dd9207418762426f478af5c8b",
+        "memory_candidates": "967a7a358bcfb0198f49df8e12f630fbd82ba4093a470faae9e0f10f1b15e75b",
+        "episodic_memories": "6a0c5a5562f23a0ca619274fd55fabaa544ec99f221778e9d43bed90ddefefec",
+        "consolidations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "legacy_imports": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "historical_ledger_unchanged": true,
+      "all_other_campaign_fields_unchanged": true,
+      "provider_calls": 0,
+      "rng_or_player_action": false
+    }
+  },
+  "verification": {
+    "root_integration_passed": 219,
+    "roster_passed": 13,
+    "diagnostics_passed": 53,
+    "overlap_between_groups": 1,
+    "distinct_passed": 284,
+    "failures": 0,
+    "new_distinct_tests": 55,
+    "diff_check": "passed",
+    "external_calls_for_code_and_repair": 0,
+    "real_loader_dry_run_passed": true,
+    "all_dry_run_table_rows_unchanged": true,
+    "dry_run_physical_bytes_unchanged": false
+  },
+  "files_sha256": {
+    "api/scene_director_service.py": "661e2a0dbbc2ea092fa43bd7a1495a458cfe08612fe2c16176057c5aa573e0d4",
+    "api/turn_execution_service.py": "191850c0cde76e2ed09db5d6fc2da284427d809e6f9747d0517bdc90bf158f68",
+    "api/main.py": "97966517e68f46abd21fb6ec86c8899461cebc2e388a530453bea389502d4d40",
+    "skills/H6_vtm_narrator.md": "0034c656c37e953c5f68df941c647e5ebdf3ed5e84d219b064f6e7df646bfe03",
+    "tests/test_scene_roster_regressions.py": "c19b146b0e96bf8f83c2c5539067be70596e90b368c54eb3548681a2bb112635",
+    "tests/test_scene_validation_diagnostics.py": "2a797ec56064fbc34edc037706d28aaac46b24c0de8cd3c2dbf539067eed87d1"
+  },
+  "evidence_sha256": {
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-guards-continuity-20260909\\apply-repair.json": "6c16866406dc77a7984433864b4b9ab702a5dd35122c27b59dc0330d94b95327",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-guards-continuity-20260909\\dry-run-repair.json": "f645a8e182401932d00291c7cfc3be1b1f8852f78c381f6f8dc954e678d61e13",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-guards-continuity-20260909\\dry-run-loader-verification.json": "86850ca21b8eb32da4a2c6f25262f3adea473792069f35e387b9cda84aa0850f",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-guards-continuity-20260909\\integration.xml": "9cecade258067dbdb7aba2830c3cac6d1bf0abf0c1030e40f5defd822fea1f04",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-validation-diagnostics-20260909\\final.json": "38cd8b03af0fad65a45e7716a7925cbcb7b1e5050c27b50ac71e2451998512e8",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-roster-diagnosis-20260909\\green.json": "e62aa0efa59b94d5c9cc0dd8b536e4aea935e0cf38cb49a70e36436c21c2fc71",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-repair-guards-20260909.py": "e23974569221fff6a9ccf79624ec0371f2d54bfff170ee1e26ba2e11e750fdc1",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-guards-continuity-20260909\\before-live-repair.sqlite3": "dc29026fd2ad1a84add32d8e61d21f72c42e0d7fdc76d9d32b14bf47b61ee65f",
+    "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-04e0a3ce-8112-4b58-8919-ea8f7e681221\\readiness.json": "e941ad86006f136d3399aaa60f6aee9a60ac2a12ba8a3fc69915704e18a6d5df"
+  },
+  "restart": {
+    "previous_owned_root_stopped": 17040,
+    "previous_owned_child_stopped": 18208,
+    "previous_launcher": 4848,
+    "previous_run": "7f88d18f-971c-421d-9657-a3749c8ae41f",
+    "port_free_verified_before_repair": true,
+    "preflight": "passed",
+    "launcher": {
+      "launcher_pid": 23100,
+      "test_id": "04e0a3ce-8112-4b58-8919-ea8f7e681221",
+      "purpose": "protected credential entry to resume corrected guards roster",
+      "resumed_from_test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+      "created_at": "2026-09-09T22:19:34.5551827Z"
+    },
+    "lifecycle": {
+      "test_id": "04e0a3ce-8112-4b58-8919-ea8f7e681221",
+      "updated_at": "2026-09-09T22:21:00.1350827Z",
+      "resumed_from_test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+      "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+      "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+      "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+      "code": "",
+      "server_pid": 30516,
+      "status": "ready"
+    },
+    "same_database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "readiness_file_exists": true,
+    "readiness": {
+      "success": true,
+      "probes": {
+        "text": "passed",
+        "structured": "passed",
+        "streaming": "passed"
+      },
+      "provider_calls": 3,
+      "target": {
+        "profile": "manual-game-groq-qwen-04e0a3ce-8112-4b58-8919-ea8f7e681221",
+        "provider": "Groq",
+        "model": "qwen/qwen3.8-27b"
+      }
+    },
+    "credential_dependency_resolved": true,
+    "owned_listener_verified": true,
+    "frontend_http_status": 200,
+    "frontend_entry_present": true
+  },
+  "limits": [
+    "Historical failed proposals were not retained; their exact roster deltas and semantic validity remain unknown.",
+    "No new narrative turn was generated or replayed by the agent.",
+    "Prompt improvement is not yet verified in live narrative.",
+    "Direction B remains opt-in and outside this playtest; no CAP approval.",
+    "Dry-run real-loader initialization changed physical SQLite bytes, while every table row remained identical."
+  ],
+  "next_step": "Usuário continua a mesma campanha; analisar novo feedback sem reenviar ações automaticamente ou avançar a fase B.",
+  "ui": {
+    "existing_cua_tab_no_longer_available": true,
+    "reopen_in_codex": "queued",
+    "fresh_visual_inspection_performed": false,
+    "player_action_submitted_by_agent": false
+  }
+}

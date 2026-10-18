@@ -1,0 +1,22 @@
+{
+  "protocol": "source-model-choice-status-v1",
+  "date": "2026-09-14",
+  "latest_batch_id": "095e7efd-081b-474f-b5ed-179658373ec2",
+  "technical_audit": "passed",
+  "semantic_review": "principal_and_secondary_agree",
+  "secondary_review_limit": "not_blind_and_not_organizationally_independent",
+  "candidate_status": {
+    "qwen": "not_qualified",
+    "gpt_oss": "not_qualified"
+  },
+  "runtime_default_eligible": false,
+  "campaign_data_eligible": false,
+  "cap_001_approved": false,
+  "repeat_same_batch": false,
+  "provider_calls_needed_now": false,
+  "recommended_next_architectural_question": "confirm_scene_resolver_dec_res_001_through_005",
+  "scene_resolver_planning_approved": true,
+  "scene_resolver_plan": "plan/architecture-scene-resolution-1.md",
+  "implementation_approved": false,
+  "architectural_decision_required": true
+}

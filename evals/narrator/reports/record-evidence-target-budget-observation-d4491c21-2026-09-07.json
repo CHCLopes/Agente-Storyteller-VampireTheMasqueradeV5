@@ -1,0 +1,232 @@
+{
+  "document_kind": "record_target_budget_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T14:45:07.490381+00:00",
+  "batch_id": "d4491c21-2f2d-4ffc-b02a-46b5e630ba30",
+  "evaluation_invocation_id": "b6bb2a4f-595a-45d5-b92c-95b27b56e0e3",
+  "status": "closed_envelope_and_semantic_failures",
+  "source": {
+    "directory": "eval-results/20260907T143441Z-b6bb2a4f-595a-45d5-b92c-95b27b56e0e3",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "9ccc0f5ed02c7a8d993a29c018739fb2676472e68b7257423bb21f50addf3dea",
+      "summary.json": "39d5e287e83ca5594fec3e787b05d5bd547e6d78be07ef2e1bc8ba9745afe19d"
+    }
+  },
+  "scope": {
+    "calls": 1,
+    "retries": 0,
+    "fallback": false,
+    "raw_artifacts_modified": false,
+    "new_observations_authorized": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "provider_observation": {
+    "schema": "storyteller.eval.record-budget-observation.v1",
+    "http_status": 200,
+    "request_id": "req_01m1y4qr1ces6afmhynbk6rrfb",
+    "provider_code": null,
+    "model": "openai/gpt-oss-120b",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 2484,
+      "output_tokens": 1409,
+      "total_tokens": 3893,
+      "reasoning_tokens": 915
+    },
+    "error_body": {
+      "status": "unavailable",
+      "complete": null,
+      "bytes": null,
+      "json_valid": null
+    },
+    "failed_generation": {
+      "status": "unavailable",
+      "present": null,
+      "characters": null,
+      "json_valid": null,
+      "error_position": null
+    }
+  },
+  "verification": {
+    "batch_id": "d4491c21-2f2d-4ffc-b02a-46b5e630ba30",
+    "evaluation_invocation_id": "b6bb2a4f-595a-45d5-b92c-95b27b56e0e3",
+    "preflight_reconstructed": true,
+    "summary_reconstructed": true,
+    "envelope_rejection_reproduced": true,
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "9ccc0f5ed02c7a8d993a29c018739fb2676472e68b7257423bb21f50addf3dea",
+      "summary.json": "39d5e287e83ca5594fec3e787b05d5bd547e6d78be07ef2e1bc8ba9745afe19d"
+    },
+    "spans": [
+      {
+        "path": "/o",
+        "start": 0,
+        "end": 10,
+        "field_length": 10,
+        "range_valid": true,
+        "field_text": "unresolved",
+        "slice": "unresolved",
+        "modality": "established",
+        "source_ids": [
+          "m0"
+        ]
+      },
+      {
+        "path": "/l",
+        "start": 0,
+        "end": 25,
+        "field_length": 25,
+        "range_valid": true,
+        "field_text": "Um corredor de pedra fria",
+        "slice": "Um corredor de pedra fria",
+        "modality": "established",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/s",
+        "start": 0,
+        "end": 112,
+        "field_length": 125,
+        "range_valid": true,
+        "field_text": "Personagem percebe corredor de pedra fria iluminado por néon, cheiro de fumaça e chuva, sussurro distante sugerindo presença.",
+        "slice": "Personagem percebe corredor de pedra fria iluminado por néon, cheiro de fumaça e chuva, sussurro distante sugeri",
+        "modality": "suggested",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/f/0/s",
+        "start": 3,
+        "end": 66,
+        "field_length": 63,
+        "range_valid": false,
+        "field_text": "corredor de pedra fria iluminado por lâmpadas de néon piscantes",
+        "slice": "redor de pedra fria iluminado por lâmpadas de néon piscantes",
+        "modality": "established",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/t/0",
+        "start": 0,
+        "end": 30,
+        "field_length": 30,
+        "range_valid": true,
+        "field_text": "Quem ou o que está observando?",
+        "slice": "Quem ou o que está observando?",
+        "modality": "suggested",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/t/1",
+        "start": 0,
+        "end": 30,
+        "field_length": 28,
+        "range_valid": false,
+        "field_text": "Qual é a origem do sussurro?",
+        "slice": "Qual é a origem do sussurro?",
+        "modality": "suggested",
+        "source_ids": [
+          "n0"
+        ]
+      },
+      {
+        "path": "/q",
+        "start": 0,
+        "end": 21,
+        "field_length": 21,
+        "range_valid": true,
+        "field_text": "O que você faz agora?",
+        "slice": "O que você faz agora?",
+        "modality": "suggested",
+        "source_ids": [
+          "a0"
+        ]
+      }
+    ],
+    "initial_interval_seconds": 60.812728,
+    "provider_interval_seconds": 4.228404
+  },
+  "interactive_final_status": {
+    "phase": "finished",
+    "at_utc": "2026-09-07T14:35:47.5365657Z",
+    "process_id": 2208,
+    "exit_code": 1
+  },
+  "stages": {
+    "schema": "passed",
+    "support_envelope": "rejected_record_evidence_span_invalid",
+    "final_schema": "not_reached",
+    "admission": "not_reached"
+  },
+  "semantic_review": {
+    "status": "completed_autonomous_analysis_not_human_product_acceptance",
+    "approval": false,
+    "independent_reviews": 2,
+    "findings": [
+      {
+        "field": "/t/0",
+        "finding": "Presupposes active observation while the source only suggests it; suggested metadata does not repair wording.",
+        "severity": "clear_fidelity_failure"
+      },
+      {
+        "field": "/s",
+        "finding": "Range is in bounds but cuts sugerindo and omits ndo presenca.; one suggested support combines established and suggested claims.",
+        "severity": "coverage_and_modality_failure"
+      },
+      {
+        "field": "/s",
+        "finding": "Summary itself preserves suggesting; Personagem percebe is explicit perception attribution, not by itself a voluntary player decision.",
+        "severity": "qualification"
+      },
+      {
+        "field": "/q",
+        "finding": "Free player invitation is sound; support a0 is unnecessary and does not establish a factual assertion.",
+        "severity": "support_qualification"
+      }
+    ],
+    "grounded_fields": [
+      "/o",
+      "/l",
+      "/f/0/s",
+      "/t/1"
+    ],
+    "empty_lists_consistent": [
+      "/p",
+      "/r",
+      "/f/0/a"
+    ]
+  },
+  "interpretation": {
+    "in_bounds_supports": 5,
+    "out_of_bounds_supports": 2,
+    "numerical_validity_is_not_coverage": true,
+    "output_below_previous_1536_ceiling": true,
+    "ceiling_increase_necessary_proved": false,
+    "historical_prompt_improvement_proved": false,
+    "prior_truncation_cause_proved": false,
+    "local_implementation_defect_demonstrated": false,
+    "output_minus_reasoning": 494,
+    "output_minus_reasoning_note": "Arithmetic difference, not independent tokenization of the JSON.",
+    "cost": "unavailable"
+  },
+  "next_step": {
+    "experiment_version": "record-evidence-target-quotes-v1",
+    "authorization": "continuous_user_authority",
+    "change": "Experimental declared exact target quote support protocol with deterministic unique-match coordinates; same record contract and source packet.",
+    "preparation_status": "complete_credential_required",
+    "max_calls": 1,
+    "max_output_tokens": 3072,
+    "no_automatic_budget_increase": true,
+    "human_dependency_after_preparation": "secure credential entry",
+    "preparation_report": "evals/narrator/reports/record-evidence-target-quotes-v1-2026-09-07.md"
+  }
+}

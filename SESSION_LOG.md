@@ -1,8 +1,43 @@
 ---
+
+> [!WARNING]
+> **Registro histórico, não estado canônico atual.** Este arquivo preserva decisões
+> e resultados de sessões anteriores e contém arquitetura, stack e próximos passos
+> já superados. Para o comportamento vigente, use `README.md`, o código e os testes.
+> Em especial, referências abaixo a Ollama/Gemini, múltiplos modelos obrigatórios,
+> frontend selado ou migração distribuída não constituem decisões atuais.
+
 PROJECT: Agente Storyteller | Motor Narrativo V5 🦇
 STACK: Python (FastAPI), WebSocket, Ollama, Vanilla JS (Frontend)
 LAST_SESSION: 2026-06-07
 SESSION_COUNT: 13
+
+## PROPOSED_SCOPE — 2026-09-05
+
+- **Status:** ESCOPO PROPOSTO. O usuário autorizou somente refinar e encaminhar a frente documental de pausa/retomada por indisponibilidade do Narrador.
+- **Plano:** [Pausa e retomada do Narrador](plan/feature-narrator-pause-resume-1.md) (`Planned`; implementação não autorizada).
+- **Trabalho documental:** refinamento dos dois últimos bloqueios concluído; implementação futura continua pendente e não autorizada.
+- **Próximo gate humano:** aprovar ou ajustar o escopo, a política de `gate_scope + scope_key` para `gateway|upstream|unknown` e decidir `DEC-001` (operação suspensa ou nova operação referenciada), `DEC-002` (editor bloqueado ou rascunho editável) e `DEC-003` (A com sondagem manual controlada ou B sem sondagem sintética).
+- **Não aprovado por este registro:** arquitetura da retomada, estado operacional, implementação, provedor, modelo, custo, fallback, retry automático ou dependências.
+
+## REVIEW_GATES — PAUSA/RETOMADA — 2026-09-05
+
+- **P0 — Gate persistente:** antes de toda chamada H0/H1/H4/H6 habilitada e imediatamente antes de qualquer rolagem, consultar localmente a disponibilidade do target exato e os bloqueios hierárquicos por `gate_scope + scope_key`. Limite `gateway` comprovado alcança todos e somente os targets da mesma plataforma/conta ou credencial correlacionada; limite `upstream` permanece na menor rota/provedor/target comprovada; `unknown` aplica policy conservadora explícita sem promovê-la a alcance reportado. Atualização é atômica, single-flight por escopo e recuperável após restart.
+- **P0 — Taxonomia e linguagem:** cobrir todas as categorias normalizadas e preservar `rate_limit_origin` como `gateway`, `upstream` ou `unknown`, separando origem observada, `evidence_scope` e enforcement local. Escopo nasce apenas de headers/metadados saneados e política aprovada; correlação usa ID interno ou fingerprint opaco não reversível, nunca chave/header, e não chega ao contrato público. `rate_limit_unknown_origin` vale somente para origem desconhecida; escopo, janela e reset continuam desconhecidos quando não comprovados, e nunca se afirma “cota diária” sem evidência confiável.
+- **P0 — Fallbacks:** H4 habilitado não pode degradar falha de capacidade para `static_lore` e permitir commit; H0/H1 mantêm somente fallback local, determinístico e semântico, sem autoridade mecânica ou factual.
+- **P0 — Timing:** `observed_at`, `server_now`, `retry_not_before`, origem e confiança são normalizados no servidor; relógio ou timestamp do cliente não autoriza retomada.
+- **P1 — Funções locais e editor:** ficha, histórico, catálogos, navegação e acessibilidade permanecem locais; `DEC-002` decidirá se o editor fica bloqueado ou permite apenas rascunho não submetível.
+- **P1 — Recuperação/sondagem:** retry/retomada automática permanece proibido. `DEC-003` escolherá entre **A — sondagem manual controlada**, com uma única chamada sintética mínima, campaign-free e single-flight, seguida de decisão humana separada para retomar; ou **B — sem sondagem sintética**, sem endpoint/comando/botão de verificação, mostrando espera/estado e oferecendo somente uma tentativa direta H6 iniciada pelo jogador após a condição aprovada, com a cápsula congelada e sem H0/H1/H4/RNG. Falha atualiza o gate; nenhum ramo reenvia a ação automaticamente. Sem timing confiável, a regra de elegibilidade também permanece pendente em `DEC-003`.
+- **Fechamento condicional:** a implementação futura executa exatamente um ramo; tarefas do ramo não escolhido serão marcadas `N/A por DEC-003`, não pendentes, de modo que ambos os caminhos sejam concluíveis sem dependência órfã.
+- **Recomendação não aprovada:** B é o padrão sugerido por usar menos chamadas e ter menor consumo esperado quando a recuperação funciona; A adiciona diagnóstico prévio, mas pode evitar o payload narrativo completo durante indisponibilidade persistente. Em ambos os caminhos, usar consultas locais ao gate, respeitar `retry_not_before`, coalescer concorrência e nunca retomar automaticamente.
+- **Estado:** todos os itens acima continuam propostas/gates para aprovação e não autorizam implementação.
+
+## FUTURE_PROJECTION — ALVO/API PAGA — 2026-09-05
+
+- **Status:** PROJEÇÃO FUTURA, sem aprovação, gasto, roadmap ou autorização de implementação. A fronteira LLM-001 já admite alvos compatíveis gratuitos ou pagos, sempre explícitos; isso não seleciona nem recomenda um alvo.
+- **Não aprovado:** custo, orçamento, BYOK, credencial, provedor, modelo, roteamento ou fallback.
+- **Gate humano futuro:** qualquer uso pago exige decisão separada sobre orçamento e teto, transparência ao usuário, gestão de credenciais e privacidade, medição e alertas, comportamento no esgotamento e identificação explícita do alvo.
+- **Relação com pausa/retomada:** um alvo pago nunca pode ser fallback automático de uma pausa. Retomar preserva o alvo explícito; qualquer troca futura exige decisão humana própria.
 
 ## DECISIONS_LOCKED
 - **Engine Split:** Isolamento total do Motor Mecânico V5 em relação à camada de inferência de linguagem do LLM.

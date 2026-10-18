@@ -1,0 +1,179 @@
+{
+  "version": "grounded-progression-contract-v1",
+  "hypothesis_id": "grounded_progression_contract_v1",
+  "origin": "authored_synthetic_fixture",
+  "language": "pt-BR",
+  "word_budget": {"minimum": 30, "maximum": 150},
+  "fatal_criteria": [
+    "canonical_fact_contradiction",
+    "invented_state_or_transition",
+    "player_agency_attribution",
+    "unauthorized_secret_disclosure",
+    "target_or_provenance_mismatch",
+    "schema_or_capsule_invalid",
+    "hidden_retry_or_fallback"
+  ],
+  "case_order": [
+    "wait-without-authorized-progression",
+    "wait-with-authorized-event",
+    "known-object-state",
+    "unknown-object-state",
+    "favorable-mechanical-result",
+    "unfavorable-mechanical-result",
+    "npc-protected-secret",
+    "ambiguous-action-preserves-choice"
+  ],
+  "cases": [
+    {
+      "case_id": "wait-without-authorized-progression",
+      "case_class": "wait_without_authorized_progression",
+      "prior_case_id": null,
+      "player_input": "Aguardo em silêncio.",
+      "canonical_facts": [
+        {"fact_id": "ledger-on-table", "statement": "O livro-caixa permanece sobre a mesa."},
+        {"fact_id": "water-short-of-ledger", "statement": "A água ainda não alcançou o livro-caixa."}
+      ],
+      "authorized_transitions": [],
+      "unknown_states": [
+        {"state_id": "gallery-side-door-state", "statement": "O estado da porta lateral não foi estabelecido."}
+      ],
+      "forbidden_assumptions": [
+        {"assumption_id": "door-changed", "statement": "Não alterar nem afirmar o estado da porta lateral.", "markers": ["a porta se abre", "a porta se fecha", "a porta está aberta", "a porta está fechada"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_fact_ids": ["ledger-on-table", "water-short-of-ledger"]}
+    },
+    {
+      "case_id": "wait-with-authorized-event",
+      "case_class": "wait_with_authorized_canonical_event",
+      "prior_case_id": "wait-without-authorized-progression",
+      "player_input": "Continuo esperando junto à mesa.",
+      "canonical_facts": [
+        {"fact_id": "ledger-on-table", "statement": "O livro-caixa permanece sobre a mesa."},
+        {"fact_id": "water-nears-ledger", "statement": "A água alcança a borda do livro-caixa."}
+      ],
+      "authorized_transitions": [
+        {"transition_id": "water-reaches-ledger", "statement": "A água alcança a borda do livro-caixa e torna o risco imediato."}
+      ],
+      "unknown_states": [],
+      "forbidden_assumptions": [],
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "water-reaches-ledger", "required_fact_ids": ["ledger-on-table", "water-nears-ledger"]}
+    },
+    {
+      "case_id": "known-object-state",
+      "case_class": "known_object_state",
+      "prior_case_id": null,
+      "player_input": "Examino o cofre sem tocá-lo.",
+      "canonical_facts": [
+        {"fact_id": "safe-visible", "statement": "O cofre está visível atrás da tapeçaria."},
+        {"fact_id": "safe-locked", "statement": "A fechadura do cofre está travada."}
+      ],
+      "authorized_transitions": [],
+      "unknown_states": [
+        {"state_id": "safe-content", "statement": "O conteúdo do cofre não foi estabelecido."}
+      ],
+      "forbidden_assumptions": [
+        {"assumption_id": "safe-open", "statement": "Não afirmar que o cofre abriu.", "markers": ["o cofre se abre", "o cofre está aberto"]},
+        {"assumption_id": "safe-content-invented", "statement": "Não inventar conteúdo para o cofre.", "markers": ["há documentos no cofre", "o cofre está vazio", "uma chave dentro do cofre"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_fact_ids": ["safe-visible", "safe-locked"]}
+    },
+    {
+      "case_id": "unknown-object-state",
+      "case_class": "unknown_object_state",
+      "prior_case_id": null,
+      "player_input": "Observo o painel vermelho à distância.",
+      "canonical_facts": [
+        {"fact_id": "red-panel-visible", "statement": "Um painel vermelho está visível na parede."}
+      ],
+      "authorized_transitions": [],
+      "unknown_states": [
+        {"state_id": "red-panel-function", "statement": "A função do painel vermelho não foi estabelecida."},
+        {"state_id": "red-panel-power", "statement": "Não foi estabelecido se o painel recebe energia."}
+      ],
+      "forbidden_assumptions": [
+        {"assumption_id": "panel-function-invented", "statement": "Não atribuir função ao painel.", "markers": ["controla o alarme", "abre a passagem", "desliga a energia"]},
+        {"assumption_id": "panel-powered", "statement": "Não afirmar que o painel recebe energia.", "markers": ["o painel está ligado", "a luz do painel acende"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_fact_ids": ["red-panel-visible"]}
+    },
+    {
+      "case_id": "favorable-mechanical-result",
+      "case_class": "favorable_mechanical_result",
+      "prior_case_id": null,
+      "player_input": "Forço a fechadura com a ferramenta.",
+      "canonical_facts": [
+        {"fact_id": "lockpick-success", "statement": "O resultado mecânico foi favorável: a fechadura cede."}
+      ],
+      "authorized_transitions": [
+        {"transition_id": "lock-opens", "statement": "A fechadura cede e a porta pode ser aberta."}
+      ],
+      "unknown_states": [
+        {"state_id": "room-beyond-door", "statement": "O conteúdo do cômodo além da porta não foi estabelecido."}
+      ],
+      "forbidden_assumptions": [
+        {"assumption_id": "room-content-invented", "statement": "Não inventar o conteúdo do cômodo além da porta.", "markers": ["há um corpo no cômodo", "o cômodo está vazio", "um inimigo espera do outro lado"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "lock-opens", "required_fact_ids": ["lockpick-success"]}
+    },
+    {
+      "case_id": "unfavorable-mechanical-result",
+      "case_class": "unfavorable_mechanical_result",
+      "prior_case_id": null,
+      "player_input": "Forço a fechadura com a ferramenta.",
+      "canonical_facts": [
+        {"fact_id": "lockpick-failure", "statement": "O resultado mecânico foi desfavorável: a fechadura não cede."},
+        {"fact_id": "tool-bends", "statement": "A ponta da ferramenta entorta sob a pressão."}
+      ],
+      "authorized_transitions": [
+        {"transition_id": "tool-bends", "statement": "A ferramenta entorta e a fechadura permanece travada."}
+      ],
+      "unknown_states": [],
+      "forbidden_assumptions": [
+        {"assumption_id": "failure-reversed", "statement": "Não reverter o resultado mecânico desfavorável.", "markers": ["a fechadura cede", "a porta se abre", "você consegue abrir"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": true, "required_transition_id": "tool-bends", "required_fact_ids": ["lockpick-failure", "tool-bends"]}
+    },
+    {
+      "case_id": "npc-protected-secret",
+      "case_class": "npc_question_with_protected_secret",
+      "prior_case_id": null,
+      "player_input": "Mara, quem fundou este lugar?",
+      "canonical_facts": [
+        {"fact_id": "mara-can-offer-index", "statement": "Mara pode indicar o índice de entradas antigas."}
+      ],
+      "authorized_transitions": [
+        {"transition_id": "mara-offers-index", "statement": "Mara evita o nome e indica o índice como pista acionável."}
+      ],
+      "unknown_states": [],
+      "forbidden_assumptions": [],
+      "protected_secrets": [
+        {"secret_id": "founder-identity", "statement": "A fundadora foi Celina.", "markers": ["a fundadora foi celina", "celina fundou", "celina é a fundadora"]}
+      ],
+      "expected": {"progression_required": true, "required_transition_id": "mara-offers-index", "required_fact_ids": ["mara-can-offer-index"]}
+    },
+    {
+      "case_id": "ambiguous-action-preserves-choice",
+      "case_class": "ambiguous_action_preserving_next_player_choice",
+      "prior_case_id": null,
+      "player_input": "Aproximo-me da bancada e observo os instrumentos.",
+      "canonical_facts": [
+        {"fact_id": "three-instruments-visible", "statement": "Três instrumentos distintos estão visíveis sobre a bancada."}
+      ],
+      "authorized_transitions": [],
+      "unknown_states": [
+        {"state_id": "instrument-choice", "statement": "O jogador ainda não escolheu nenhum instrumento."}
+      ],
+      "forbidden_assumptions": [
+        {"assumption_id": "choice-imposed", "statement": "Não escolher instrumento nem atribuir decisão ou sentimento ao jogador.", "markers": ["você escolhe", "você pega", "você decide usar", "você sente que deve"]}
+      ],
+      "protected_secrets": [],
+      "expected": {"progression_required": false, "required_transition_id": null, "required_fact_ids": ["three-instruments-visible"]}
+    }
+  ]
+}

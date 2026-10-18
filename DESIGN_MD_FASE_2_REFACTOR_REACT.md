@@ -1,5 +1,8 @@
 # DESIGN.md — Agente Storyteller V5 — Phase 2 (Bugs + Refactor React)
 
+> [!IMPORTANT]
+> Registro histórico de uma fase anterior. O contrato LLM, a persistência e o quickstart vigentes estão em `README.md` e no plano de arquitetura atual.
+
 ## FASE 1 — DEBUG CRÍTICO (PRÉ-REQUISITO)
 
 ### Por quê o .bat não funciona?

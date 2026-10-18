@@ -1,0 +1,59 @@
+{
+  "version": "openrouter-free-narrators-l2-partial-review-v1",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "batch_id": "47f0c07f-ed8a-49b1-a9a6-4b760e7c4ffd",
+  "reviewer": "codex-independent-semantic-review",
+  "review_date": "2026-09-27",
+  "source": {
+    "summary_sha256": "5e21e0eea47073273e7741127215bfbcc18c938444d2f0fa4b31091235f4b0fa",
+    "records_sha256": "61ca88fa5046b0e875e631ba30fff4d159ccb0e65c9ee163ed5e8336190cf111",
+    "completed_response_sha256": "35234acfe909f5c378ef9b29c1475049f34d91581727cb1b69d3178e783f2249"
+  },
+  "scope": {
+    "records_total": 24,
+    "records_completed": 1,
+    "records_semantically_reviewed": 1,
+    "records_failed_operationally": 1,
+    "records_skipped_causally": 22,
+    "candidate_qualification_permitted": false
+  },
+  "review": {
+    "candidate_id": "nemotron-3-super-openrouter-free-synthetic",
+    "case_id": "hold-silent-bell",
+    "slot": 0,
+    "narrative": "O pequeno sino de bronze permanece imóvel, sua corda fora do alcance imediato. atrás dele, o arco de pedra continua visível, e o ar junto a ele está frio. O recinto devolve um eco baixo da respiração ambiente. Você permanece parado, escutando o silêncio que envolve o sino e a pedra.",
+    "question": "O que você faz agora?",
+    "rendered_unit_ids": [
+      "bell-still",
+      "cord-out-of-reach",
+      "arch-visible",
+      "cool-air",
+      "stone-echo"
+    ],
+    "transition_id": null,
+    "asserted_unknown_ids": [],
+    "criteria": {
+      "unlisted_render_claim": true,
+      "player_agency_attribution": false,
+      "unauthorized_secret_disclosure": false,
+      "mechanical_result_expansion": false,
+      "continuity_material_repetition": false,
+      "progression_observed": false,
+      "coherent_hold_observed": true,
+      "next_choice_preserved": true
+    },
+    "unlisted_claims": [
+      "silencio envolve o sino e a pedra"
+    ],
+    "fatal_semantic_gate_passed": false,
+    "rationale": "Sino, corda, arco, ar frio, eco e a acao declarada de permanecer parado foram preservados; a pergunta devolve a proxima escolha. A afirmacao ambiental de que o silencio envolve o sino e a pedra nao pertence ao plano fechado e falha o gate fatal de alegacao nao listada."
+  },
+  "classification": {
+    "nemotron": "ineligible_batch_incomplete_and_only_completed_case_failed_fatal_semantic_gate",
+    "liquid": "inconclusive_not_dispatched_after_global_provider_unavailable",
+    "deepseek": "inconclusive_not_dispatched_after_global_provider_unavailable",
+    "qualified_candidates": [],
+    "narrator_admitted": false,
+    "human_acceptance_required": true
+  }
+}

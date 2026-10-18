@@ -1,0 +1,152 @@
+{
+  "version": "source-dialogue-comparison-v1",
+  "origin": "agent_authored_synthetic_player_fixtures",
+  "synthetic_only": true,
+  "selected_candidate_ids": [
+    "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "gpt-oss-120b-groq-free-synthetic-low"
+  ],
+  "cases": [
+    {
+      "case_id": "workshop-dialogue-continuity",
+      "setup": {
+        "protocol": "narrative-source-setup-request-v1",
+        "location": "Oficina",
+        "npcs_present": [
+          "Nina"
+        ],
+        "declared_objective": "Entender o que merece atenção nesta oficina sem tocar nos objetos."
+      },
+      "turns": [
+        {
+          "turn_key": "dialogue",
+          "player_input": "Pergunto a Nina: \"Quero entender o que merece atenção nesta oficina sem tocar nos objetos. O que você pode me contar daqui?\""
+        },
+        {
+          "turn_key": "wait",
+          "player_input": "Espero a reação de Nina."
+        },
+        {
+          "turn_key": "continuity",
+          "player_input": "Pergunto a Nina: \"Depois do que aconteceu, o que merece minha atenção agora?\""
+        }
+      ]
+    },
+    {
+      "case_id": "archive-dialogue-continuity",
+      "setup": {
+        "protocol": "narrative-source-setup-request-v1",
+        "location": "Arquivo",
+        "npcs_present": [
+          "Rui"
+        ],
+        "declared_objective": "Descobrir por onde começar a conhecer este arquivo."
+      },
+      "turns": [
+        {
+          "turn_key": "dialogue",
+          "player_input": "Pergunto a Rui: \"Quero conhecer este arquivo. Por onde posso começar, e por quê?\""
+        },
+        {
+          "turn_key": "wait",
+          "player_input": "Espero a reação de Rui."
+        },
+        {
+          "turn_key": "continuity",
+          "player_input": "Pergunto a Rui: \"O que mudou desde que começamos esta conversa?\""
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "block-1",
+      "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "case_id": "workshop-dialogue-continuity"
+    },
+    {
+      "block_id": "block-2",
+      "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+      "case_id": "workshop-dialogue-continuity"
+    },
+    {
+      "block_id": "block-3",
+      "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+      "case_id": "archive-dialogue-continuity"
+    },
+    {
+      "block_id": "block-4",
+      "candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+      "case_id": "archive-dialogue-continuity"
+    }
+  ],
+  "generation_parameters": {
+    "temperature": 0.65,
+    "max_output_tokens": 768,
+    "max_total_output_tokens": 9216,
+    "initial_quiet_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "shared_turn_deadline_seconds": 60
+  },
+  "max_calls": 12,
+  "max_calls_per_block": 3,
+  "reasoning_effort": {
+    "qwen-3.8-27b-groq-free-synthetic-nonthink": "none",
+    "gpt-oss-120b-groq-free-synthetic-low": "low"
+  },
+  "stop_policy": {
+    "chain": "typed_schema_policy_admission_delivery_commit_failure_skips_remaining_dependent_turns",
+    "global": [
+      "local_error",
+      "cancelled",
+      "credential_echo",
+      "authentication",
+      "rate_limited",
+      "quota_exceeded",
+      "timeout",
+      "provider_unavailable",
+      "route_or_model_mismatch",
+      "configuration_error",
+      "payment_required",
+      "observer_outcome_mismatch",
+      "usage_mismatch",
+      "output_limit_exceeded",
+      "deadline_exceeded",
+      "untyped_error"
+    ],
+    "llm_chain_only_categories": [
+      "invalid_structured_output",
+      "malformed_response",
+      "content_rejected"
+    ],
+    "other_llm_categories": "global",
+    "unexpected_producer_failure": "global"
+  },
+  "catalog_checked_at": "2026-09-12",
+  "catalog_sources": [
+    "https://console.groq.com/docs/models",
+    "https://console.groq.com/docs/structured-outputs",
+    "https://console.groq.com/docs/reasoning"
+  ],
+  "catalog_observation": "Official documentation lists both exact targets and strict structured output; reasoning none for Qwen and low for GPT-OSS are documented. Account availability and free quota are not established by documentation.",
+  "semantic_approval": null,
+  "runtime_default_eligible": false,
+  "campaign_data_eligible": false,
+  "cap_001_approved": false,
+  "reused_authored_inputs": {
+    "file": "evals/narrator/source_comparison_v1.json",
+    "sha256": "b755b921be4a77b2c1af030a0eed65fc4e9d9e81d5c4393eaf99507fc6e7d9e5",
+    "reuse": "cases_order_only_no_responses_sources_or_databases"
+  },
+  "prompt": {
+    "file": "evals/narrator/prompts/narrative-source-dialogue-v1.md",
+    "version": "narrative-source-dialogue-v1",
+    "file_sha256": "473208c260c2284fdc2c65cfdcb767c8a701c64d652a9c691712be99878a779d",
+    "text_sha256": "393f522ec10fad6ab096df3e13de06f6b83314ce2c44352c3f120b6241247608"
+  },
+  "eligibility_rubric_origin": {
+    "file": "evals/narrator/source_comparison_protocol_v1.md",
+    "file_sha256": "ea2257537c8d913872dd65dadf0f3ff42a01162f9584c970c5665bc777be741d",
+    "unchanged_section_sha256": "f21711cb210a3461c9cbed6b027a4de2e1b7e10397c7ee14e81fe8fc5ae1582c"
+  }
+}

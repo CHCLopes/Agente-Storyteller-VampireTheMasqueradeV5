@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-09-09T21:44:52.540660+00:00",
+  "scope": "Retomada do uso teste após pausa; nenhuma alteração de código ou ação de jogador.",
+  "prior_launcher_pid_13828_exists": false,
+  "port_8000_free_before_launch": true,
+  "matching_code_hashes": 14,
+  "session_counts": {
+    "attempts": 10,
+    "turns": 5,
+    "pending": 0
+  },
+  "preflight": {
+    "status": "passed",
+    "provider_calls": 0,
+    "target": {
+      "profile": "manual-game-groq-qwen-7f88d18f-971c-421d-9657-a3749c8ae41f",
+      "provider": "Groq",
+      "model": "qwen/qwen3.8-27b"
+    },
+    "adapter": "GroqAdapter",
+    "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "dotenv_disabled": true,
+    "frontend_ready": true,
+    "source_bridge_activated": false,
+    "resumed_session_verified": true,
+    "narrator_context_token_budget": 768
+  },
+  "launcher": {
+    "launcher_pid": 4848,
+    "test_id": "7f88d18f-971c-421d-9657-a3749c8ae41f",
+    "resumed_from": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "launched_at": "2026-09-09T21:40:39.2535963Z"
+  },
+  "lifecycle": {
+    "server_pid": 17040,
+    "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "status": "ready",
+    "code": "",
+    "resumed_from_test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "updated_at": "2026-09-09T21:41:32.6421759Z",
+    "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "test_id": "7f88d18f-971c-421d-9657-a3749c8ae41f"
+  },
+  "next_step": "Usuário continua uso teste na aba aberta; investigar feedback quando fornecido. Não enviar ações nem avançar integraçãoB durante o teste.",
+  "readiness": {
+    "success": true,
+    "target": {
+      "profile": "manual-game-groq-qwen-7f88d18f-971c-421d-9657-a3749c8ae41f",
+      "provider": "Groq",
+      "model": "qwen/qwen3.8-27b"
+    },
+    "probes": {
+      "text": "passed",
+      "structured": "passed",
+      "streaming": "passed"
+    },
+    "provider_calls": 3
+  },
+  "ui": {
+    "tab_id": "1",
+    "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "game_loaded": true,
+    "initialization_overlay_finished": true,
+    "previous_five_narratives_present": true,
+    "character_sheet_and_controls_present": true,
+    "marked_deliverable": true,
+    "player_action_submitted_by_agent": false
+  },
+  "independent_check": {
+    "code_hashes_matching": 14,
+    "build_artifacts_matching": 5,
+    "database_query_only": true,
+    "attempts": 10,
+    "turns": 5,
+    "pending": 0
+  },
+  "offline_tests_repeated": 0
+}

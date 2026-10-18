@@ -1,0 +1,252 @@
+{
+  "document_kind": "record_claim_check_observation_review",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T15:41:15.351173+00:00",
+  "status": "closed_operational_pass_semantic_failure",
+  "batch_id": "9192b8fa-398a-4b72-9d37-b91f1963bf99",
+  "evaluation_invocation_id": "f58d4027-953c-4b1b-980b-207c7d5a2d93",
+  "source": {
+    "directory": "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+      "summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196"
+    }
+  },
+  "scope": {
+    "calls": 1,
+    "retries": 0,
+    "fallback": false,
+    "raw_artifacts_modified": false,
+    "new_observations_authorized": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false
+  },
+  "provider_observation": {
+    "schema": "storyteller.eval.record-budget-observation.v1",
+    "http_status": 200,
+    "request_id": "req_01m1y7g4zrec5r9hhcs391ra1w",
+    "provider_code": null,
+    "model": "openai/gpt-oss-120b",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 2888,
+      "output_tokens": 770,
+      "total_tokens": 3658,
+      "reasoning_tokens": 354
+    },
+    "error_body": {
+      "status": "unavailable",
+      "complete": null,
+      "bytes": null,
+      "json_valid": null
+    },
+    "failed_generation": {
+      "status": "unavailable",
+      "present": null,
+      "characters": null,
+      "json_valid": null,
+      "error_position": null
+    }
+  },
+  "verification": {
+    "batch_id": "9192b8fa-398a-4b72-9d37-b91f1963bf99",
+    "evaluation_invocation_id": "f58d4027-953c-4b1b-980b-207c7d5a2d93",
+    "preflight_reconstructed": true,
+    "summary_reconstructed": true,
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+      "summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196"
+    },
+    "initial_interval_seconds": 60.638117,
+    "provider_interval_seconds": 2.82332,
+    "support_validation_reconstructed": true,
+    "composed_proposal_reconstructed": true,
+    "fixed_narrative_preserved": true
+  },
+  "interactive_final_status": {
+    "process_id": 20128,
+    "phase": "finished",
+    "exit_code": 0,
+    "at_utc": "2026-09-07T15:24:02.9032318Z"
+  },
+  "stages": {
+    "schema": "passed",
+    "support_envelope": "passed",
+    "final_schema": "passed",
+    "admission": "passed",
+    "operational_probe": "passed",
+    "semantic_fidelity": "failed_by_autonomous_review",
+    "full_evaluation": "not_performed"
+  },
+  "semantic_review": {
+    "status": "autonomous_analysis_not_human_product_acceptance",
+    "approval": false,
+    "raw_semantic_fields_remain": "not_performed",
+    "findings": [
+      {
+        "field": "/t/0",
+        "classification": "material_failure",
+        "finding": "Quem ou o que está observando? presupposes ongoing observation that the source merely suggests; suggested metadata cannot repair wording."
+      },
+      {
+        "field": "/s/support",
+        "classification": "material_failure",
+        "finding": "One established support covers the entire mixed summary, including suggested observation. Literal coverage is complete; claim and modality segmentation is not."
+      },
+      {
+        "field": "/f/0/s",
+        "classification": "qualification",
+        "finding": "Cold stone becomes cold corridor. Plausible environmental compression; not equated with the clear presupposition failure or a demonstrated deterministic gate bug."
+      }
+    ],
+    "grounded_or_appropriate_fields": [
+      "/o",
+      "/l",
+      "/p",
+      "/r",
+      "/q"
+    ],
+    "summary_relations": "Smell and uncertainty are preserved in the text; historical improvement at these points is not causal evidence.",
+    "quote_audit": {
+      "version": "record-evidence-v1",
+      "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+      "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+      "source_units": [
+        {
+          "id": "n0",
+          "origin": "narrative",
+          "path": "/fixed_narrative/text",
+          "start": 0,
+          "end": 197,
+          "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+        },
+        {
+          "id": "a0",
+          "origin": "player_input",
+          "path": "/player_input/text",
+          "value": "Onde estou?"
+        },
+        {
+          "id": "m0",
+          "origin": "mechanics",
+          "path": "/expected_outcome/value",
+          "value": "unresolved"
+        },
+        {
+          "id": "c0",
+          "origin": "known_context",
+          "path": "/context/known_context/text",
+          "value": "A crônica é urbana, contemporânea e gótico-punk."
+        }
+      ],
+      "narrative_reconstructed_exactly": true,
+      "source": {
+        "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+        "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+        "line_number": 3,
+        "field": "proposal.narrative",
+        "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+        "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+        "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+        "episode_id": "opening",
+        "turn_id": "establish-scene",
+        "repetition": 1,
+        "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+        "corpus_file": "evals/narrator/corpus_v1.json",
+        "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+        "context_origin": "original_synthetic_corpus",
+        "protected_secrets_count": 0
+      },
+      "budget": {
+        "scope": "user_packet_only",
+        "method": "characters_divided_by_4",
+        "limit": 2000,
+        "estimated_tokens": 367,
+        "omitted_background_details": 0
+      },
+      "structurally_valid": true,
+      "support_count": 5,
+      "validated_supports": [
+        {
+          "path": "/o",
+          "start": 0,
+          "end": 10,
+          "text": "unresolved",
+          "source_ids": [
+            "m0"
+          ],
+          "modality": "established",
+          "quote": "unresolved"
+        },
+        {
+          "path": "/l",
+          "start": 0,
+          "end": 22,
+          "text": "corredor de pedra fria",
+          "source_ids": [
+            "n0"
+          ],
+          "modality": "established",
+          "quote": "corredor de pedra fria"
+        },
+        {
+          "path": "/s",
+          "start": 0,
+          "end": 130,
+          "text": "Um corredor de pedra fria iluminado por lâmpadas de néon, cheirando fumaça e chuva, com um sussurro distante sugerindo observação.",
+          "source_ids": [
+            "n0"
+          ],
+          "modality": "established",
+          "quote": "Um corredor de pedra fria iluminado por lâmpadas de néon, cheirando fumaça e chuva, com um sussurro distante sugerindo observação."
+        },
+        {
+          "path": "/f/0/s",
+          "start": 0,
+          "end": 28,
+          "text": "O corredor é frio e de pedra",
+          "source_ids": [
+            "n0"
+          ],
+          "modality": "established",
+          "quote": "O corredor é frio e de pedra"
+        },
+        {
+          "path": "/t/0",
+          "start": 0,
+          "end": 30,
+          "text": "Quem ou o que está observando?",
+          "source_ids": [
+            "n0"
+          ],
+          "modality": "suggested",
+          "quote": "Quem ou o que está observando?"
+        }
+      ],
+      "semantic_coverage_review": "not_performed",
+      "semantic_entailment_review": "not_performed",
+      "quote_protocol": "record-evidence-target-quotes-v1",
+      "quote_resolution": "unique_exact_substring"
+    }
+  },
+  "interpretation": {
+    "exact_unique_quotes": 5,
+    "missing_quotes": 0,
+    "ambiguous_quotes": 0,
+    "schema_does_not_prove_semantics": true,
+    "local_defect_demonstrated": false,
+    "output_minus_reasoning": 416,
+    "output_minus_reasoning_note": "Arithmetic difference, not independent JSON tokenization.",
+    "causal_improvement_proved": false,
+    "cost": "unavailable"
+  },
+  "next_step": {
+    "experiment_version": "record-evidence-reasoning-medium-v1",
+    "authorization": "continuous_user_authority",
+    "change": "Only reasoning_effort low to medium, isolated explicit profile. Same SYSTEM, USER, strict schema, source, temperature and 3072 ceiling.",
+    "max_calls": 1,
+    "human_dependency_after_preparation": "secure credential entry",
+    "stop_rule": "After this observation do not automatically increase effort, tokens or SYSTEM instructions. Failure closes this line; success on one case requires independent follow-up cases before generalization."
+  }
+}

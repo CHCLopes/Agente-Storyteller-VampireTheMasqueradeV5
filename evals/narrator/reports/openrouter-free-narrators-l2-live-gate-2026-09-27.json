@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-27",
+  "status": "authorized_offline_preparation_and_live_after_secure_credential",
+  "human_authorization": [
+    "Aceito HYP-005-L1: Nemotron inconclusivo por truncamento; Liquid inelegível; DeepSeek inconclusivo por rota gratuita indisponível; nenhum candidato elegível; nenhum narrador admitido.",
+    "Aprovo HYP-005-L2-B: alterar somente max_output_tokens de 768 para 2048, máximo de 24 chamadas gratuitas, preservando todos os demais gates."
+  ],
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "selected_option": "L2-B",
+  "supersedes": "HYP-005-OPENROUTER-FREE-L1",
+  "single_changed_variable": {
+    "name": "max_output_tokens",
+    "from": 768,
+    "to": 2048
+  },
+  "live_inference_authorized": true,
+  "credential_status": "pending",
+  "provider_calls_at_gate_creation": 0,
+  "paid_spend_authorized": false,
+  "constraints": {
+    "synthetic_only": true,
+    "models": 3,
+    "non_chinese_models": 2,
+    "chinese_models": 1,
+    "cases_per_model": 8,
+    "max_calls": 24,
+    "max_total_output_tokens": 49152,
+    "retry": false,
+    "repair": false,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "dynamic_router": false,
+    "target_switch": false,
+    "reasoning_policy_changed": false,
+    "reported_cost_must_equal_zero_openrouter_credits": true,
+    "aggregate_with_prior_hypotheses": false,
+    "best_of_selection": false,
+    "admission_threshold_per_candidate": "8/8"
+  }
+}
+

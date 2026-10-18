@@ -1,0 +1,49 @@
+{
+  "fixture_id": "continuity-probe-v1",
+  "synthetic_only": true,
+  "predecessor_origin": "authored_synthetic_fixture",
+  "episode_id": "authored-continuity",
+  "known_context": "Galpão urbano desativado; não há NPC identificado na cena.",
+  "protected_secrets": [],
+  "initial_scene": {
+    "location": "Galpão de carga desativado",
+    "summary": "O rádio chia na bancada; o cadeado da porta lateral tem um símbolo antigo.",
+    "npcs_present": [],
+    "details": [
+      "Um rádio portátil chia sobre a bancada.",
+      "Um símbolo desbotado marca o cadeado da porta lateral."
+    ],
+    "open_threads": ["Entender a origem do símbolo no cadeado"],
+    "last_turn": 1
+  },
+  "predecessor_turn": {
+    "turn_id": "authored-predecessor",
+    "player_input": "Investigo o galpão de carga desativado.",
+    "outcome": "success"
+  },
+  "predecessor": {
+    "n": "Uma faixa de tinta azul ainda úmida termina numa fresta sob o painel de madeira da parede do fundo. A luz da janela ressalta o contraste com a poeira intacta ao redor. Perto da bancada, o rádio continua chiando.",
+    "o": "success",
+    "l": "Galpão de carga desativado",
+    "s": "Uma faixa de tinta azul ainda úmida termina numa fresta sob o painel de madeira da parede do fundo.",
+    "p": [],
+    "f": [
+      {
+        "k": "clue",
+        "s": "Uma faixa de tinta azul ainda úmida termina numa fresta sob o painel de madeira da parede do fundo.",
+        "v": "public",
+        "i": 0.7,
+        "p": true,
+        "a": []
+      }
+    ],
+    "t": ["Entender a origem da faixa de tinta azul"],
+    "r": [],
+    "q": "O que você faz diante desse detalhe?"
+  },
+  "continuation": {
+    "turn_id": "follow-recent-detail",
+    "player_input": "Examino com cuidado o detalhe que a investigação revelou.",
+    "outcome": "unresolved"
+  }
+}

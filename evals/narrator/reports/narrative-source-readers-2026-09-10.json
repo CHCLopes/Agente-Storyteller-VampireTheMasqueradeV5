@@ -1,0 +1,71 @@
+{
+  "schema": "storyteller.narrative-source-readers-review.v1",
+  "recorded_at": "2026-09-10T22:36:07.488957+00:00",
+  "status": "completed_internal_known_scene_origin_and_readers",
+  "verification": {
+    "exit_code": 0,
+    "files": {
+      "api/narrative_source_context.py": "a2b0824734117efa8a8ab7a1d5bb47fcd01ab7b86ee2ea2efef2f380a6ad7386",
+      "api/narrative_source_execution_service.py": "aedf90faa4281ec1e0de71fbc1596fa18d28ea553e38efa9298e68a1cd4b5b0c",
+      "api/persistence.py": "080fd4764c91fb9f9c6b2dd602f17df8f57bd57062f28175c3a262253d426cae",
+      "tests/test_narrative_source_context.py": "47f459746002403f2324daa5115ba7c6b6008bf22e33c02e6b66086ccfac0e6e",
+      "tests/test_narrative_source_context_persistence.py": "3018e3c69837fe6f969dcd25ac87d952ab6b9172b8f2ffd1e578dfde9e142ad9",
+      "tests/test_narrative_source_bridge.py": "6c0fe243850f259389e5912cf7cc159a457a585a84c444fcf0ef9072e1426f1c"
+    },
+    "files_stable": true,
+    "test_files": [
+      "tests/test_narrative_source_context.py",
+      "tests/test_narrative_source_context_persistence.py",
+      "tests/test_narrative_source_bridge.py",
+      "tests/test_narrative_source_turn.py",
+      "tests/test_narrative_source_persistence.py",
+      "tests/test_persistence.py",
+      "tests/test_turn_execution_service.py",
+      "tests/test_turn_pipeline_integration.py",
+      "tests/test_memory_service.py",
+      "tests/test_context_service.py",
+      "tests/test_scene_service.py",
+      "tests/test_manual_game_regressions.py"
+    ],
+    "counts": {
+      "tests": 444,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "distinct_tests": 444,
+    "seconds": 35.784,
+    "external_provider_calls": 0,
+    "fixtures": "authored; FakeLLMAdapter; temporary SQLite",
+    "dotenv_disabled": true,
+    "external_network_blocked_by": "tests/conftest.py",
+    "evidence": {
+      "integration-final.xml": "db70c9d72099a1041c4492ba88e93760b1c4f821ad900569af4553001cb696e4",
+      "integration-final.txt": "60c0ea412d58fb8b7c9a1bd1b5a8ae6d4eef12e1ec11574ae68e4e49a525d100"
+    }
+  },
+  "review": {
+    "independent_review": "two_material_findings_fixed_and_rechecked",
+    "counterexamples_before_fix": 6,
+    "unresolved_material_findings": 0
+  },
+  "protocols": {
+    "origin": "narrative-source-context-origin-v1",
+    "selection": "narrative-source-context-selection-v1",
+    "selection_policy": "required_recent_two",
+    "turn": "narrative-source-turn-v1"
+  },
+  "defaults_changed": false,
+  "real_campaign_accessed": false,
+  "save_migration": false,
+  "cap_001_approved": false,
+  "new_provider_calls": 0,
+  "limits": [
+    "trusted server draft required",
+    "known scene and fixed roster",
+    "source_only and not_assessed",
+    "two full sources, 12000 USER characters",
+    "no free lore, opening, NPC or location progression adapter"
+  ],
+  "evidence_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-readers-20260910"
+}

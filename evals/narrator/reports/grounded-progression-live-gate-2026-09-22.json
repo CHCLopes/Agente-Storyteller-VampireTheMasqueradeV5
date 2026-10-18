@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-22",
+  "status": "l1_authorized_credential_available_no_calls_made",
+  "human_authorization": {
+    "date": "2026-09-22",
+    "response": "Aprovo LIVE-HYP-001-L1. credencial pendente",
+    "option": "L1"
+  },
+  "recommended_option": "L1",
+  "options": {
+    "L1": "compare_qwen_and_gpt_oss_max_16_calls",
+    "L2": "observe_gpt_oss_only_max_8_calls",
+    "L3": "keep_live_inference_disabled"
+  },
+  "l1": {
+    "provider": "groq",
+    "targets": [
+      {"model": "qwen/qwen3.8-27b", "reasoning": "none"},
+      {"model": "openai/gpt-oss-120b", "reasoning": "low"}
+    ],
+    "temperature": 0.65,
+    "max_completion_tokens_per_call": 768,
+    "max_calls": 16,
+    "max_completion_tokens_total": 12288,
+    "deadline_seconds": 60,
+    "minimum_global_start_interval_seconds": 60,
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "paid_spend_authorized": false
+  },
+  "live_inference_authorized": true,
+  "credential_status": "available_protected",
+  "credential_provisioning": {
+    "method": "masked_interactive_terminal_input",
+    "non_sensitive_confirmation_observed": true,
+    "credential_value_observed": false,
+    "persisted_to_file": false
+  },
+  "provider_calls_at_gate_creation": 0,
+  "technical_readiness": {
+    "runner_implemented": true,
+    "live_requires_explicit_cli_opt_in": true,
+    "keyless_preflight_verified": true,
+    "credential_inspected": false,
+    "provider_calls": 0,
+    "runner_tests_passed": 12,
+    "related_tests_passed": 421,
+    "automatic_retries": 0,
+    "credential_launcher_versioned": false,
+    "dedicated_process_environment_only": true,
+    "artifact_causality_reconstructed": true
+  },
+  "remaining_gate": "run_frozen_preflight_then_start_single_authorized_batch"
+}

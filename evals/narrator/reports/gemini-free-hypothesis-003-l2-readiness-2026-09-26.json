@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-003-GEMINI-FREE-L2",
+  "status": "offline_ready_human_credential_pending",
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "paid_spend_authorized": false,
+  "synthetic_only": true,
+  "max_calls": 8,
+  "automatic_retries": 0,
+  "repair": false,
+  "fallback": false,
+  "change_from_l1": {
+    "protocol": "gemini-free-closed-world-live-v2",
+    "response_format_mime_type": "APPLICATION_JSON"
+  },
+  "verification": {
+    "focused_tests_passed": 36,
+    "related_regression_tests_passed": 50,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_exit_code": 0
+  },
+  "candidate_admitted": false,
+  "default_created": false
+}

@@ -1,0 +1,499 @@
+{
+  "head": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+  "branch": "codex/planejamento-agente-storyteller-v5",
+  "shallow": "false",
+  "local_commits": 27,
+  "current_text_files_scanned": 1063,
+  "historical_text_blobs_scanned": 182,
+  "excluded": [
+    ".env*",
+    "credentials/secrets files",
+    "campaign saves",
+    "dependencies",
+    "files over 4 MB",
+    "audit output"
+  ],
+  "parse_failures": [],
+  "handlers": [
+    {
+      "file": "api/main.py",
+      "line": 733,
+      "end_line": 737,
+      "handler": "receive_init_log",
+      "method": "POST",
+      "path": "/api/initialization/logs",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 740,
+      "end_line": 750,
+      "handler": "websocket_initialization",
+      "method": "WEBSOCKET",
+      "path": "/ws/initialization",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 753,
+      "end_line": 773,
+      "handler": "retry_initialization",
+      "method": "POST",
+      "path": "/api/initialization/retry",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 819,
+      "end_line": 820,
+      "handler": "health_check",
+      "method": "GET",
+      "path": "/health",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 824,
+      "end_line": 837,
+      "handler": "llm_capabilities",
+      "method": "GET",
+      "path": "/api/llm/capabilities",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 841,
+      "end_line": 875,
+      "handler": "test_llm_connection",
+      "method": "POST",
+      "path": "/api/llm/test-connection",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 878,
+      "end_line": 1897,
+      "handler": "websocket_endpoint",
+      "method": "WEBSOCKET",
+      "path": "/ws/session/{session_id}",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "session-scoped SQLite; same trusted local operator",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 1917,
+      "end_line": 1953,
+      "handler": "retrieve_player_context",
+      "method": "GET",
+      "path": "/session/{session_id}/memory/context",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "session-scoped SQLite; same trusted local operator",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 1957,
+      "end_line": 2034,
+      "handler": "consolidate_memory",
+      "method": "POST",
+      "path": "/session/{session_id}/memory/consolidate/{scope}",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "session-scoped SQLite; same trusted local operator",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 2037,
+      "end_line": 2071,
+      "handler": "award_xp",
+      "method": "POST",
+      "path": "/session/{session_id}/xp/award",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "session-scoped SQLite; same trusted local operator",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 2074,
+      "end_line": 2118,
+      "handler": "upgrade_trait",
+      "method": "POST",
+      "path": "/session/{session_id}/xp/upgrade",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "session-scoped SQLite; same trusted local operator",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 2130,
+      "end_line": 2134,
+      "handler": "serve_index",
+      "method": "GET",
+      "path": "/",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/main.py",
+      "line": 2143,
+      "end_line": 2160,
+      "handler": "serve_static_or_spa",
+      "method": "GET",
+      "path": "/{catchall:path}",
+      "boundary": "LocalRequestBoundary; native local operator trusted, not multi-tenant auth",
+      "object_access": "not applicable",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "api/narrative_source_local_app.py",
+      "line": 44,
+      "end_line": 58,
+      "handler": "source_local_entry",
+      "method": "WEBSOCKET",
+      "path": "/ws/source-local/{session_id}",
+      "boundary": "exact bound Host/Origin/session before accept; opt-in only",
+      "object_access": "one server-bound synthetic session and store",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 191,
+      "end_line": 192,
+      "handler": "home",
+      "method": "GET",
+      "path": "/",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 195,
+      "end_line": 202,
+      "handler": "start",
+      "method": "POST",
+      "path": "/api/start",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 205,
+      "end_line": 207,
+      "handler": "session_status",
+      "method": "GET",
+      "path": "/api/session/{session_id}",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 210,
+      "end_line": 230,
+      "handler": "action",
+      "method": "POST",
+      "path": "/api/action",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 233,
+      "end_line": 246,
+      "handler": "resume",
+      "method": "POST",
+      "path": "/api/resume",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    },
+    {
+      "file": "scripts/run_campaign_source_offline_trial.py",
+      "line": 249,
+      "end_line": 256,
+      "handler": "operation_status",
+      "method": "GET",
+      "path": "/api/operation/{session_id}/{operation_id}",
+      "boundary": "LocalRequestBoundary; token on every API handler, bootstrap root guarded by Host",
+      "object_access": "shared synthetic trial operator; session-scoped SQLite",
+      "categories": {
+        "tenant_owner": "not_applicable_multi_tenant; local boundary verified",
+        "server_permissions": "verified; SEC-001/002 remediated where applicable",
+        "idor": "verified_within_single_operator_model; no per-human isolation claimed",
+        "embedded_secrets": "static scan; candidates manually classified; no credential validation",
+        "xss": "JSON/text output or fixed HTML; React escapes; no confirmed sink"
+      }
+    }
+  ],
+  "secret_indicators": [
+    {
+      "file": "tests/test_campaign_source_offline_trial.py",
+      "line": 16,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "b141aa1b5b4257d3e49b8bd508bd8790b0d9aafbf5a5d3fca1c36e7fb06c0bb4"
+    },
+    {
+      "file": "tests/test_campaign_source_offline_trial.py",
+      "line": 76,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "b141aa1b5b4257d3e49b8bd508bd8790b0d9aafbf5a5d3fca1c36e7fb06c0bb4"
+    },
+    {
+      "file": "tests/test_campaign_source_offline_trial.py",
+      "line": 122,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "b141aa1b5b4257d3e49b8bd508bd8790b0d9aafbf5a5d3fca1c36e7fb06c0bb4"
+    },
+    {
+      "file": "tests/test_continuity_probe_runner.py",
+      "line": 132,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "0458823d52909c7e40da9916e9b977a4ea5a745ce7374edf89a62929f33128b2"
+    },
+    {
+      "file": "tests/test_narrator_source_runner.py",
+      "line": 166,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "c3cef176c611ed7cfc0fdda74a6971adaf318f75131b7811f7f4ff2087462a82"
+    },
+    {
+      "file": "tests/test_progressing_source_probe_wrapper.py",
+      "line": 164,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "f75a3c9353a3c7b94bca47f40a02acbe65dd90e8ca847e9d8778de5923dfaa58"
+    },
+    {
+      "file": "tests/test_prompt_experiment_runner.py",
+      "line": 320,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "0458823d52909c7e40da9916e9b977a4ea5a745ce7374edf89a62929f33128b2"
+    },
+    {
+      "file": "tests/test_retained_source_probe_wrapper.py",
+      "line": 164,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "f75a3c9353a3c7b94bca47f40a02acbe65dd90e8ca847e9d8778de5923dfaa58"
+    },
+    {
+      "file": "tests/test_source_context_probe_wrapper.py",
+      "line": 164,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "f75a3c9353a3c7b94bca47f40a02acbe65dd90e8ca847e9d8778de5923dfaa58"
+    },
+    {
+      "file": "tests/test_source_dialogue_comparison_launcher.py",
+      "line": 199,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "c5f25c31cffd398d60ef6fffead8588c583ff8a223dd913caa8d3ca58af6e116"
+    },
+    {
+      "file": "tests/test_source_dialogue_continuity_launcher.py",
+      "line": 189,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "c5f25c31cffd398d60ef6fffead8588c583ff8a223dd913caa8d3ca58af6e116"
+    },
+    {
+      "file": "tests/test_source_dialogue_response_launcher.py",
+      "line": 192,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "c5f25c31cffd398d60ef6fffead8588c583ff8a223dd913caa8d3ca58af6e116"
+    },
+    {
+      "file": "tests/test_source_local_trial_launcher.py",
+      "line": 181,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "0ec981719146537a74d8fffe3a997fc844366044949587ade11889a9911e1ab6"
+    },
+    {
+      "file": "tests/test_source_word_budget_launcher.py",
+      "line": 161,
+      "rule": "assigned_secret_literal",
+      "revision": null,
+      "classification": "fixture_or_placeholder",
+      "evidence": "[REDACTED: indicator literal]",
+      "fingerprint_sha256": "c5f25c31cffd398d60ef6fffead8588c583ff8a223dd913caa8d3ca58af6e116"
+    }
+  ],
+  "historical_secret_indicators": [],
+  "limitations": [
+    "heuristic scan, not proof of absence",
+    "no remote refs fetched",
+    "no live credential validation",
+    "dependency CVE audit not performed",
+    "bundles scanned as existing, no rebuild",
+    "listener binding is a deployment requirement"
+  ],
+  "bundle_files": [
+    "index-CS-kjDTq.js"
+  ]
+}

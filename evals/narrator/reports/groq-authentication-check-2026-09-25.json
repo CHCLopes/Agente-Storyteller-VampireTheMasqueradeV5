@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-25",
+  "status": "authentication_functional_at_observation_time",
+  "probe": {
+    "id": "groq-auth-once-v1",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "official_endpoint_enforced_by_adapter": true,
+    "success": true,
+    "error_category": null,
+    "status_code": null,
+    "calls_made": 1,
+    "deadline_seconds": 30,
+    "max_output_tokens": 128,
+    "retry": false,
+    "fallback": false
+  },
+  "credential_handling": {
+    "method": "masked_interactive_terminal_input",
+    "dedicated_process_environment_variable": "STORYTELLER_GROUNDED_PROGRESSION_GROQ_KEY",
+    "credential_value_observed": false,
+    "credential_value_logged": false,
+    "persisted_to_file": false
+  },
+  "proves": [
+    "credential_accepted_at_observation_time",
+    "fixed_target_reachable_at_observation_time"
+  ],
+  "does_not_prove": [
+    "future_availability_or_quota",
+    "narrative_quality",
+    "candidate_eligibility_or_admission",
+    "hypothesis_002_approval",
+    "production_configuration"
+  ],
+  "next_gate": "prospective_hypothesis_002_human_authorization"
+}

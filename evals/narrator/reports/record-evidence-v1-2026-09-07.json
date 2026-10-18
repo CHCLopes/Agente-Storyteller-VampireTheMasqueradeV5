@@ -1,0 +1,516 @@
+{
+  "purpose": "record_evidence_probe",
+  "probe_kind": "record_evidence_probe",
+  "full_evaluation": false,
+  "synthetic_only": true,
+  "runtime_promoted": false,
+  "cap_001_status": "not_evaluated",
+  "automated_gates_passed": false,
+  "human_review_required": true,
+  "diagnostics_executed": false,
+  "automatic_retries": 0,
+  "max_calls": 2,
+  "repetitions": 1,
+  "causal_comparison": false,
+  "narrative_generation_calls": 0,
+  "support_validation_scope": "structural_only",
+  "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+  "evaluator": {
+    "file": "scripts/evaluate_narrator_record_evidence.py",
+    "sha256": "25b500339fd0418714889d7b87b4a6b078e1f0dd4ee073346c7259424c629974",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "candidate_policy": {
+    "adapter_kind": "groq",
+    "provider_label": "Groq",
+    "effective_provider": "Groq",
+    "upstream_provider": null,
+    "structured_mode": "native",
+    "require_zdr": false,
+    "allow_data_collection": true,
+    "campaign_data_eligible": false,
+    "expiration_date": null,
+    "reasoning_effort": "low"
+  },
+  "evidence_generation_parameters": {
+    "deadline_seconds": 60,
+    "minimum_inter_call_delay_seconds": 60,
+    "requested": {
+      "temperature": 0.65,
+      "max_output_tokens": 768
+    },
+    "transmitted": {
+      "temperature": 0.65,
+      "max_output_tokens": 768,
+      "reasoning_effort": "low"
+    },
+    "max_total_output_tokens": 1536,
+    "user_packet_budget": {
+      "estimated_tokens": 2000,
+      "method": "characters_divided_by_4"
+    }
+  },
+  "inputs": {
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "corpus": {
+      "file": "corpus_v1.json",
+      "sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283"
+    },
+    "prompt": {
+      "variant": "record-evidence-v1",
+      "file": "evals/narrator/prompts/record-evidence-v1.md",
+      "sha256": "6282cb3c46fee52c6ef261cd5e9103e90b516cdd38d4d4f7ceb5b077a3908b6c"
+    },
+    "response_schema_sha256": "cd85424b5ef4519711b02d21b96aab36fc68c84bf8d84200f835504e971f7e8c",
+    "provider_schema_sha256": "870dae95abab2212da69ebb6ba340f87eef450cd7c5bf060f3d6d8f1b667b407",
+    "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+    "implementation": [
+      {
+        "file": "scripts/narrator_record_evidence.py",
+        "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+      },
+      {
+        "file": "scripts/narrator_record_derivation.py",
+        "sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "140c4cb0e602a7e84058980c7c6ec815e44c49829c7d177efd0b1eae373a5765"
+      },
+      {
+        "file": "scripts/narrator_actor_contract.py",
+        "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+      },
+      {
+        "file": "api/scene_director_service.py",
+        "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+      },
+      {
+        "file": "api/scene_service.py",
+        "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "opening",
+        "episode_id": "opening",
+        "turn_id": "establish-scene",
+        "source": {
+          "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+          "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+          "line_number": 3,
+          "field": "proposal.narrative",
+          "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+          "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+          "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+          "episode_id": "opening",
+          "turn_id": "establish-scene",
+          "repetition": 1,
+          "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+          "corpus_file": "evals/narrator/corpus_v1.json",
+          "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+          "context_origin": "original_synthetic_corpus",
+          "protected_secrets_count": 0
+        },
+        "generation_context": {
+          "version": "record-evidence-v1",
+          "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+          "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+          "source_units": [
+            {
+              "id": "n0",
+              "origin": "narrative",
+              "path": "/fixed_narrative/text",
+              "start": 0,
+              "end": 197,
+              "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+            },
+            {
+              "id": "a0",
+              "origin": "player_input",
+              "path": "/player_input/text",
+              "value": "Onde estou?"
+            },
+            {
+              "id": "m0",
+              "origin": "mechanics",
+              "path": "/expected_outcome/value",
+              "value": "unresolved"
+            },
+            {
+              "id": "c0",
+              "origin": "known_context",
+              "path": "/context/known_context/text",
+              "value": "A crônica é urbana, contemporânea e gótico-punk."
+            }
+          ],
+          "narrative_reconstructed_exactly": true,
+          "source": {
+            "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+            "line_number": 3,
+            "field": "proposal.narrative",
+            "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+            "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "episode_id": "opening",
+            "turn_id": "establish-scene",
+            "repetition": 1,
+            "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+            "corpus_file": "evals/narrator/corpus_v1.json",
+            "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 367,
+            "omitted_background_details": 0
+          }
+        }
+      },
+      {
+        "case_id": "mara",
+        "episode_id": "player-agency",
+        "turn_id": "world-reacts-player-remains-free",
+        "source": {
+          "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+          "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+          "line_number": 9,
+          "field": "proposal.narrative",
+          "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+          "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+          "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+          "episode_id": "player-agency",
+          "turn_id": "world-reacts-player-remains-free",
+          "repetition": 1,
+          "narrative_sha256": "6c00eeb827eb1b0ddf7544af9a527b9ff12d4c4cf83c2605363da72074f8cb26",
+          "corpus_file": "evals/narrator/corpus_v1.json",
+          "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+          "context_origin": "original_synthetic_corpus",
+          "protected_secrets_count": 0
+        },
+        "generation_context": {
+          "version": "record-evidence-v1",
+          "user_packet_sha256": "71dd4eb95d17a2b5feb17313cc39dec5e5e4b14677c969b2a1f09d774d3ab8eb",
+          "source_units_sha256": "c7b348508ca6ea02049e293f5fae0f51c2060d6945ca5016d33f49b217d61d9c",
+          "source_units": [
+            {
+              "id": "n0",
+              "origin": "narrative",
+              "path": "/fixed_narrative/text",
+              "start": 0,
+              "end": 78,
+              "text": "Mara fixa o olhar na sua postura, os dedos tremem levemente dentro do casaco. "
+            },
+            {
+              "id": "n1",
+              "origin": "narrative",
+              "path": "/fixed_narrative/text",
+              "start": 78,
+              "end": 211,
+              "text": "Ela respira fundo, deixa escapar um suspiro cansado e desliza, quase imperceptivelmente, um pedaço de papel amassado sobre o balcão. "
+            },
+            {
+              "id": "n2",
+              "origin": "narrative",
+              "path": "/fixed_narrative/text",
+              "start": 211,
+              "end": 308,
+              "text": "Não fala, mas o gesto indica que algo está prestes a ser revelado, enquanto a sirene ecoa na rua."
+            },
+            {
+              "id": "a0",
+              "origin": "player_input",
+              "path": "/player_input/text",
+              "value": "Observo Mara e espero sua reação."
+            },
+            {
+              "id": "m0",
+              "origin": "mechanics",
+              "path": "/expected_outcome/value",
+              "value": "unresolved"
+            },
+            {
+              "id": "c0",
+              "origin": "known_context",
+              "path": "/context/known_context/text",
+              "value": "Mara é uma informante desconfiada e ainda não decidiu cooperar."
+            },
+            {
+              "id": "c1",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/location",
+              "value": "Bar fechado"
+            },
+            {
+              "id": "c2",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/summary",
+              "value": "Mara espera junto ao balcão apagado enquanto uma sirene se aproxima pela avenida."
+            },
+            {
+              "id": "c3",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/npcs_present/0",
+              "value": "Mara"
+            },
+            {
+              "id": "c4",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/details/0",
+              "value": "Mara mantém uma mão dentro do casaco."
+            },
+            {
+              "id": "c5",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/open_threads/0",
+              "value": "Descobrir se Mara entregará o endereço"
+            },
+            {
+              "id": "c6",
+              "origin": "scene_background",
+              "path": "/context/scene_background/data/last_turn",
+              "value": 14
+            }
+          ],
+          "narrative_reconstructed_exactly": true,
+          "source": {
+            "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+            "line_number": 9,
+            "field": "proposal.narrative",
+            "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+            "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "episode_id": "player-agency",
+            "turn_id": "world-reacts-player-remains-free",
+            "repetition": 1,
+            "narrative_sha256": "6c00eeb827eb1b0ddf7544af9a527b9ff12d4c4cf83c2605363da72074f8cb26",
+            "corpus_file": "evals/narrator/corpus_v1.json",
+            "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 751,
+            "omitted_background_details": 0
+          }
+        }
+      }
+    ]
+  },
+  "document_kind": "record_evidence_preparation",
+  "documentation_date": "2026-09-07",
+  "status": "implementation_complete_pending_protected_credential",
+  "authorization": {
+    "status": "approved",
+    "user_instruction": "Prossiga",
+    "scope": "Prepare and verify the presented evidence envelope experiment and make one bounded run of at most two calls available."
+  },
+  "live_calls_during_preparation": 0,
+  "next_step": {
+    "action": "Run the prepared wrapper once with a key entered through Read-Host -AsSecureString, then inspect artifacts and semantic fidelity and coverage autonomously.",
+    "human_dependency": "protected_credential_entry",
+    "new_scope_confirmation_required": false,
+    "automatic_repetition": false
+  },
+  "representation": {
+    "method": "characters_divided_by_4",
+    "provider_tokenizer_measured": false,
+    "future_output_fits_guaranteed": false,
+    "max_supports": 12,
+    "max_source_ids_per_support": 3,
+    "offset_unit": "Unicode code points [start,end)",
+    "empty_supports_structurally_allowed": true,
+    "coverage_and_entailment_automatic_approval": false,
+    "cases": [
+      {
+        "case_id": "opening",
+        "user_characters": 1467,
+        "user_estimated_tokens": 367,
+        "source_units": 4,
+        "authored_envelope_characters": 681,
+        "authored_envelope_estimated_tokens": 171,
+        "authored_supports": 6
+      },
+      {
+        "case_id": "mara",
+        "user_characters": 3002,
+        "user_estimated_tokens": 751,
+        "source_units": 12,
+        "authored_envelope_characters": 884,
+        "authored_envelope_estimated_tokens": 221,
+        "authored_supports": 8
+      }
+    ]
+  },
+  "verification": {
+    "status": "passed",
+    "groups": [
+      {
+        "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider tests --ignore=tests/test_prompt_experiment_runner.py --ignore=tests/test_narrator_structured_error_probe.py --ignore=tests/test_record_derivation_runner.py --ignore=tests/test_record_evidence_runner.py",
+        "passed": 2849,
+        "failed": 0,
+        "skipped": 0,
+        "exit_code": 0,
+        "duration_seconds": 210.68
+      },
+      {
+        "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider tests/test_narrator_structured_error_probe.py -k 'not wrapper'",
+        "passed": 38,
+        "failed": 0,
+        "skipped": 0,
+        "deselected": 78,
+        "exit_code": 0,
+        "duration_seconds": 2.52
+      },
+      {
+        "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider tests/test_record_evidence_runner.py",
+        "passed": 111,
+        "failed": 0,
+        "skipped": 0,
+        "exit_code": 0,
+        "duration_seconds": 236.08
+      }
+    ],
+    "disjoint_groups": true,
+    "total_passed": 2998,
+    "total_failed": 0,
+    "total_skipped": 0,
+    "new_tests": {
+      "contract": 75,
+      "execution": 38,
+      "independent_executor_boundaries": 10,
+      "replay_boundary": 9,
+      "wrapper": 111,
+      "total": 243,
+      "all_passed": true,
+      "included_in_groups": true
+    },
+    "focused_runs_included_in_total": false,
+    "preflight": {
+      "exit_code": 0,
+      "credential_read": false,
+      "network_calls": 0
+    },
+    "wrapper_shells": {
+      "operational": "PowerShell 7",
+      "parsers": [
+        "PowerShell 7",
+        "Windows PowerShell 5"
+      ],
+      "policy_bypassed": false
+    },
+    "unchanged_prompt_structured_and_derivation_wrappers_rerun": false,
+    "real_wrapper_cli_integration": {
+      "exit_code": 3,
+      "credential_validation_reached": true,
+      "preflight_failed": false,
+      "stderr_empty": true,
+      "new_artifacts": [],
+      "removed_artifacts": [],
+      "frozen_hashes_unchanged": true,
+      "frozen_hashes": {
+        "scripts/evaluate_narrator_record_evidence.py": "25b500339fd0418714889d7b87b4a6b078e1f0dd4ee073346c7259424c629974",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "evals/narrator/prompts/record-evidence-v1.md": "401d9318570b90b64f99cd9f031668dfd2e6e2afe0957a973d90b67e95ccf9f1",
+        "scripts/run_groq_record_evidence_probe.ps1": "b4305a01f8cd8647fb3ddc71badf89b389a772d10ff1247c4aa5ef3e531c42cc"
+      },
+      "credential": "empty SecureString; GROQ_API_KEY removed from child environment",
+      "live_calls": 0,
+      "included_in_pytest_total": false,
+      "initial_temporary_command_failed_before_wrapper": true,
+      "temporary_command_only_corrected": true
+    },
+    "warning": "preexisting python_multipart PendingDeprecationWarning in each group",
+    "env": {
+      "STORYTELLER_DISABLE_DOTENV": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "external_network_blocked_by_conftest": true,
+    "out_of_scope_followups": [
+      {
+        "topic": "premature thread resolution in authored matrix control",
+        "runtime_changed": false,
+        "blocks_probe": false,
+        "source_report": "evals/narrator/reviews/modality-thread-matrix-c9c01a48-2026-09-07.md"
+      },
+      {
+        "topic": "historical persistence timing failure",
+        "reappeared_in_current_broad_run": false,
+        "runtime_changed": false,
+        "test_changed": false,
+        "historical_failure_erased": false,
+        "blocks_probe": false,
+        "source_report": "evals/narrator/reports/record-derivation-v1-2026-09-06.md"
+      }
+    ]
+  },
+  "current_files_sha256": {
+    "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+    "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+    "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/summary.json": "1a0b877147bceb640736d5f8f5c16e0527592e256826871d05c84381481f6c17",
+    "eval-results/20260907T102110Z-8db00c2e-ec83-4c63-b80a-399db4be6599/gpt-oss-120b-groq-free-synthetic-low.jsonl": "ad875eda442f3cd4d75d23733a079a53ab8a08397ae37800afc3371c15891f8d",
+    "eval-results/20260907T102110Z-8db00c2e-ec83-4c63-b80a-399db4be6599/summary.json": "e9ffcc02d4f5d7f543282f9c89f70ae020da4265068f3e82fbba9ca45a13a42d",
+    "evals/narrator/prompts/record-derivation-v1.md": "61c29f65eaa023953fecfb362ad2e09de08262034f3afed3361f8bd8e6fc5d0f",
+    "evals/narrator/prompts/record-evidence-v1.md": "401d9318570b90b64f99cd9f031668dfd2e6e2afe0957a973d90b67e95ccf9f1",
+    "evals/narrator/reports/record-derivation-hypothesis-bb98ae1e-2026-09-06.md": "f3d4b3d0ee1d60580f71db6ae3bf37aba77373d6c470dc76830e17f2875dbf0a",
+    "evals/narrator/reports/record-derivation-observation-c9c01a48-2026-09-07.json": "dfb32aced4e85fa345ea68747cb5a8ce9477f5840a5403a22835b97c028bbd0e",
+    "evals/narrator/reports/record-derivation-observation-c9c01a48-2026-09-07.md": "cd8938c4defe1a54ad383e9d804385f47e59a04dda43235b6008a8ee28a07c81",
+    "evals/narrator/reports/record-evidence-hypothesis-c9c01a48-2026-09-07.md": "37db81d11a7f53044c18d215be14b17cb368c19c5558a14393d195fa6d903877",
+    "scripts/evaluate_narrator_models.py": "140c4cb0e602a7e84058980c7c6ec815e44c49829c7d177efd0b1eae373a5765",
+    "scripts/evaluate_narrator_record_derivation.py": "da9b63cc33da7e09cb2ea62b4d933d8741fb0c46ce10846a5c9935526e697bdb",
+    "scripts/evaluate_narrator_record_evidence.py": "25b500339fd0418714889d7b87b4a6b078e1f0dd4ee073346c7259424c629974",
+    "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+    "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+    "scripts/run_groq_record_derivation_probe.ps1": "b99023c4dd9911d4d5789600d450d7a91187b23f8af0b2c2af467756955c5b95",
+    "scripts/run_groq_record_evidence_probe.ps1": "b4305a01f8cd8647fb3ddc71badf89b389a772d10ff1247c4aa5ef3e531c42cc",
+    "skills/H6_vtm_narrator.md": "55fcd71a6367c42c3c5d1fa5e5589423d94af57b6a26af65cfdfab263d13eb70",
+    "tests/test_narrator_record_derivation_contract.py": "6e28b1de7454196b19fa9f187d61194d78ba613834326569479e5a36dea3207f",
+    "tests/test_narrator_record_derivation_execution.py": "e052343506efbc919d2d2f9a42283371384b4b46f407d99b9c6302737c2a4692",
+    "tests/test_record_derivation_executor_boundaries.py": "e5517da5b709e333820faad865a0a82c38724f15d1a2739017183d5f82393f53",
+    "tests/test_record_derivation_replay_boundary.py": "77be4471482625fa9e6d75776d5253dbf4cb0d8f807c09c0c0ffd9c5aaa8e3fd",
+    "tests/test_record_derivation_runner.py": "f677a4baf9fed6a7ad4d03b04ad942fcab7a094270287baa347be9e04eb60ea6",
+    "tests\\test_narrator_record_evidence_contract.py": "6205d45974617ef2c61569b4816156a2fcedae76219a2b29aa195647105b52f6",
+    "tests\\test_narrator_record_evidence_execution.py": "ba2c79344d3d7464a1bf2081fd0dc0dc63d58662cef84ad4b3c29f74b5d7d241",
+    "tests\\test_record_evidence_executor_boundaries.py": "c8458712d58103b0db9b631d8f210b0abd11e2474f88c0836ec54dc128bb7956",
+    "tests\\test_record_evidence_replay_boundary.py": "170cf1dfc0d56990a410e6c0d7b7a45d56897d9531337fd750c33cddd126c0fe",
+    "tests\\test_record_evidence_runner.py": "8ef4913c0c338b77e39f0ab8d9413a4c9910821efd9a84a554cf7e6a8418376d"
+  },
+  "independent_review": {
+    "reviewers": 2,
+    "outstanding_in_scope_findings": 0,
+    "semantic_quality_and_support_coverage_review_after_live_results": "authorized_pending_results"
+  },
+  "final_integrity": {
+    "previous_hashes_preserved_excluding_intentional_replay_guard": 14,
+    "legacy_evaluator_delta": "six lines reject record_evidence_probe by purpose or probe_kind in two CAP replay paths",
+    "source_hashes_preserved": true,
+    "source_narratives_literal": true,
+    "api_and_h6_unchanged": true,
+    "no_code_drift_since_final_tests": true
+  }
+}

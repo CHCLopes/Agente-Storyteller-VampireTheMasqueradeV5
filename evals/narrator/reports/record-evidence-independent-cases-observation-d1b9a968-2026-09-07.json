@@ -1,0 +1,532 @@
+{
+  "document_kind": "record_independent_cases_observation",
+  "recorded_at_utc": "2026-09-07T16:41:49.123879+00:00",
+  "batch_id": "d1b9a968-d9f1-4c98-94b8-7a9bdd441ea8",
+  "source": {
+    "directory": "eval-results/20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+      "summary.json": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f"
+    }
+  },
+  "status": "closed_no_replacement_for_skipped_case",
+  "evaluation_status": "completed",
+  "launcher": {
+    "exit_code": 1,
+    "process_id": 24764,
+    "phase": "finished",
+    "at_utc": "2026-09-07T16:33:52.4228205Z"
+  },
+  "summary": {
+    "purpose": "record_evidence_independent_cases_probe",
+    "probe_kind": "record_evidence_independent_cases_probe",
+    "experiment_version": "record-evidence-independent-cases-v1",
+    "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 2,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "support_validation_scope": "structural_only",
+    "evaluation_stage": "record_evidence_independent_cases_probe",
+    "calls_made": 1,
+    "schema_valid": 1,
+    "envelope_valid": 0,
+    "final_schema_valid": 0,
+    "admitted": 0,
+    "cases_skipped": 1,
+    "transport_and_schema_passed": false,
+    "operational_probe_passed": false,
+    "availability_failure": false,
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1ybfz1megx90r0hykt90gs0",
+      "provider_code": null,
+      "model": "openai/gpt-oss-120b",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2894,
+        "output_tokens": 1380,
+        "total_tokens": 4274,
+        "reasoning_tokens": 777
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "provider_observations": [
+      {
+        "case_id": "uncertain-signal",
+        "observation": {
+          "schema": "storyteller.eval.record-budget-observation.v1",
+          "http_status": 200,
+          "request_id": "req_01m1ybfz1megx90r0hykt90gs0",
+          "provider_code": null,
+          "model": "openai/gpt-oss-120b",
+          "finish_reason": "stop",
+          "usage": {
+            "input_tokens": 2894,
+            "output_tokens": 1380,
+            "total_tokens": 4274,
+            "reasoning_tokens": 777
+          },
+          "error_body": {
+            "status": "unavailable",
+            "complete": null,
+            "bytes": null,
+            "json_valid": null
+          },
+          "failed_generation": {
+            "status": "unavailable",
+            "present": null,
+            "characters": null,
+            "json_valid": null,
+            "error_position": null
+          }
+        }
+      }
+    ],
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "support_coverage_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "partial",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 1,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": 2894,
+        "output_tokens": 1380,
+        "total_tokens": 4274
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "process_exit_code": 1
+  },
+  "operational_audit": {
+    "batch_id": "d1b9a968-d9f1-4c98-94b8-7a9bdd441ea8",
+    "run_dir": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0",
+    "finished_confirmed": true,
+    "audit_scope": "offline artifact and deterministic structural verification only",
+    "raw_artifact_hashes": {
+      "summary.json": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f",
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8"
+    },
+    "raw_artifacts_unchanged": true,
+    "preflight_matches_preparation_and_persisted_metadata_exactly": true,
+    "summary_reconstructed_exactly": true,
+    "fingerprints": {
+      "scripts/narrator_record_independent_cases.py": "ba4cb5ca28d89e0439b1d3992da03ec190b2bf1be8ba02403037fffa87a1dada",
+      "scripts/evaluate_narrator_record_independent_cases.py": "9c5ed97a241b46002a6d64150c7fe09664da6d2c1e2fc13db6d9757d08e956d0",
+      "scripts/run_groq_record_independent_cases_probe.ps1": "719f3d0e06305afacb658378f134d3b8768d06c4b021b985e133c8a2eafbb6c2",
+      "scripts/narrator_record_derivation.py": "406e05e7d65492995112deed0fb4934385cc5caecb5ef63e0f4d5c325f679857",
+      "scripts/evaluate_narrator_models.py": "692eb80bed0f0c9b96d52f22f5ec14f1147a9bd03b155bf583e9d643533328f7",
+      "tests/test_record_independent_cases.py": "173b04242dbbf16bd7b0ce49bf2793b01720dc236091cd3998d97d7c6ed73c75",
+      "tests/test_record_independent_case_boundary.py": "dd22db117b7a3ea11f464b770b9925969286a52a179411f47afff9c4fe3c7fb2",
+      "tests/test_record_independent_execution.py": "31af8f437ffde2d31a97840e0c1ebab56dc8372f9bdc89817a5ab2d656edf51e",
+      "tests/test_record_independent_runner.py": "c71e0a479761e983b9699143116d3ece91e08de53bb3b1ddf0674ec67f0e2be8",
+      "tests/test_record_independent_replay_boundary.py": "884c68de899ac6ce5154fb6fb3934a421946a4ed9c4ff657d88392ba24dc7034",
+      "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+      "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+      "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+      "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+      "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+      "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+      "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+      "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+      "evals/narrator/reports/record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json": "24a3b302938e27481f131c9ecf1826fd9571c1fdf68e2ae3238fa0a94a3cdd36",
+      "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+      "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+      "evals/narrator/record_independent_cases_v1.json": "fb7ca3efe4bb950969c18f72f704b4ab41f7039bdd2685ab7c774b58ce4f8353"
+    },
+    "prepared_code_test_fingerprints_verified": 10,
+    "preparation_test_counts_checked_without_execution": {
+      "distinct": 494,
+      "new": 237,
+      "existing": 257,
+      "sum_consistent": true,
+      "files_disjoint": true
+    },
+    "historical_raw_hashes_verified": {
+      "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/gpt-oss-120b-groq-free-synthetic-medium.jsonl": "33dd4ba6eab38e0c200ef55f6439cfd0fc4aaee1ce7771aeae0b283c149b43e8",
+      "eval-results/20260907T154835Z-6a663ad4-0cf0-46a3-8ee5-fcd83d721f38/summary.json": "758b7d4d7213bb9f642429e1f52650aaa5a7c1260a908d81af6012d21992ab22",
+      "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/gpt-oss-120b-groq-free-synthetic-low.jsonl": "97850371690834cf1cd90c41d730542943025fdc301b23400a34677683ecd7eb",
+      "eval-results/20260907T152258Z-f58d4027-953c-4b1b-980b-207c7d5a2d93/summary.json": "86ef5f53d389cb8210799928685142b5ec670a19fe5fe1e9b8edcff7388ee196",
+      "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba",
+      "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae"
+    },
+    "requests_reconstructed": [
+      {
+        "case_id": "uncertain-signal",
+        "body_sha256": "dfeab91b18a02b969f887ff06877e576c6f6dc3fd1b55fcb652a1ec6ab5c4840",
+        "user_packet_sha256": "8406c7783c645b9f8df1ca1d1d856c19f48f4f3fd6b178010a811d8613710602",
+        "only_changed_body_path": "/messages/1/content"
+      },
+      {
+        "case_id": "sensory-evidence",
+        "body_sha256": "2a762328afd75a5951071f9d39cffeee329e3184cfeaec2cc86dc13333f1b40b",
+        "user_packet_sha256": "67686acf1d0bbbf56575a8987ff18dd21019083e1bed740e06c1d6054efb3b96",
+        "only_changed_body_path": "/messages/1/content"
+      }
+    ],
+    "inventory": {
+      "calls_made": 1,
+      "cases_skipped": 1,
+      "call_case_ids": [
+        "uncertain-signal"
+      ],
+      "skipped_case_id": "sensory-evidence",
+      "skipped_reason": "previous_operational_failure"
+    },
+    "gates": {
+      "schema_valid": 1,
+      "envelope_valid": 0,
+      "final_schema_valid": 0,
+      "admitted": 0,
+      "envelope_error_reproduced": "record_quote_evidence_quote_missing",
+      "support_exact_match_audit": [
+        {
+          "index": 0,
+          "destination_path": "/o",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 1,
+          "destination_path": "/l",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 2,
+          "destination_path": "/s",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 3,
+          "destination_path": "/s",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 4,
+          "destination_path": "/f/0/s",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 5,
+          "destination_path": "/f/1/s",
+          "exact_match_found": true,
+          "second_match_found": false
+        },
+        {
+          "index": 6,
+          "destination_path": "/t/0",
+          "exact_match_found": false,
+          "second_match_found": false
+        }
+      ],
+      "composition_and_admission_not_attempted": true
+    },
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1ybfz1megx90r0hykt90gs0",
+      "provider_code": null,
+      "model": "openai/gpt-oss-120b",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2894,
+        "output_tokens": 1380,
+        "total_tokens": 4274,
+        "reasoning_tokens": 777
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "unavailable_calls": 0,
+      "mismatched_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "partial",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 1,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      },
+      "reported_subtotals": {
+        "input_tokens": 2894,
+        "output_tokens": 1380,
+        "total_tokens": 4274
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 2,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "timing": {
+      "run_started_at_utc": "2026-09-07T16:32:47.274020+00:00",
+      "adapter_started_at_utc": "2026-09-07T16:33:47.939311+00:00",
+      "adapter_finished_at_utc": "2026-09-07T16:33:51.942985+00:00",
+      "run_finished_at_utc": "2026-09-07T16:33:51.946996+00:00",
+      "run_start_to_adapter_start_utc_seconds": 60.665291,
+      "adapter_wall_utc_duration_seconds": 4.003674,
+      "local_elapsed_perf_counter_seconds": 4.009482,
+      "within_batch_start_gaps_utc_seconds": [],
+      "start_gap_applicability": "not_applicable_one_call",
+      "minimum_initial_quiet_seconds_from_frozen_code": 60,
+      "deadline_seconds_after_wait_and_preflight_checks_from_frozen_code": 60,
+      "exact_monotonic_wait_and_absolute_deadline_persisted": false,
+      "limitation": "UTC observations support local ordering and elapsed wall time; they do not measure provider arrival spacing or reconstruct the exact monotonic wait/deadline."
+    },
+    "process_exit_code": 1,
+    "operational_probe_passed": false,
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "support_coverage_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "automated_gates_passed": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "new_provider_calls_by_audit": 0,
+    "test_execution_by_audit": 0,
+    "credentials_read": false,
+    "raw_error_or_reasoning_accessed": false,
+    "actionable_operational_contradictions": []
+  },
+  "quote_rejection_audit": {
+    "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\20260907T163247Z-ea34a986-98ee-4759-aea3-cd6cf05561d0",
+    "reproduced_rejection": "record_quote_evidence_quote_missing",
+    "support_checks": [
+      {
+        "index": 0,
+        "path": "/o",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "unresolved",
+        "quote": "unresolved",
+        "source_ids": [
+          "m0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 1,
+        "path": "/l",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "biblioteca",
+        "quote": "biblioteca",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 2,
+        "path": "/s",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento. Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "quote": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento.",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 3,
+        "path": "/s",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento. Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "quote": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "source_ids": [
+          "n1"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 4,
+        "path": "/f/0/s",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento.",
+        "quote": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento.",
+        "source_ids": [
+          "n0"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 5,
+        "path": "/f/1/s",
+        "quote_present": true,
+        "unique": true,
+        "target_text": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "quote": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "source_ids": [
+          "n1"
+        ],
+        "modality": "established"
+      },
+      {
+        "index": 6,
+        "path": "/t/0",
+        "quote_present": false,
+        "unique": false,
+        "target_text": "O que está causando o ruído?",
+        "quote": "Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+        "source_ids": [
+          "n1"
+        ],
+        "modality": "suggested"
+      }
+    ],
+    "word_counts": {
+      "narrative": 31,
+      "summary": 31,
+      "player_prompt": 5
+    },
+    "prompt_summary_word_limit": 25,
+    "source_of_summary_limit": "SYSTEM instruction; not a separate evaluated gate",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "27bb788bb7bcab2c6db7f7ae8212714c7eb433c16eb7d52e64172288a64cbdf8",
+      "summary.json": "02aa85c9a4194319f7a516ac72168a89c887539361a8b3e60d97f73f93d8672f"
+    },
+    "raw_unchanged": true,
+    "response_repaired": false,
+    "provider_calls": 0
+  },
+  "semantic_review": {
+    "performed_by": "assistant_with_independent_review",
+    "scope": "returned_unadmitted_records_only",
+    "case_id": "uncertain-signal",
+    "text_fidelity": "compatible_with_uncertainty_preserved",
+    "target_dimension": "informative",
+    "structural_failure": {
+      "support_index": 6,
+      "path": "/t/0",
+      "reason": "source quotation is absent from selected target question"
+    },
+    "support_modality_failures": [
+      {
+        "support_index": 3,
+        "path": "/s"
+      },
+      {
+        "support_index": 5,
+        "path": "/f/1/s"
+      }
+    ],
+    "modality_explanation": "Each established span combines established noise and suggested mechanism; wording still preserves sugere/talvez. This is not textual certainty promotion.",
+    "summary_limit": {
+      "actual_words": 31,
+      "requested_max_words": 25,
+      "classification": "prompt_instruction_violation_not_an_observed_admission_rejection"
+    },
+    "fields": {
+      "o": "expected unresolved",
+      "l": "grounded biblioteca",
+      "s": "verbatim source preserving modalities; length instruction violated",
+      "p": "empty, compatible",
+      "f": "two verbatim source statements; public, no invented actors/player actions",
+      "t": "question asks cause of established noise; does not presuppose mechanism",
+      "r": "empty, no resolved history",
+      "q": "neutral second-person invitation;5words"
+    },
+    "unobserved_case": {
+      "case_id": "sensory-evidence",
+      "status": "not_called_not_evaluable"
+    },
+    "semantic_approval": false,
+    "causal_comparison": false,
+    "reliability_estimate": null
+  },
+  "next_step": {
+    "action": "offline contract proof of text segments with inline source references and modality",
+    "scope": "summary and open questions only; no actor/full record/runtime integration",
+    "document": "evals/narrator/reports/record-inline-evidence-design-d1b9a968-2026-09-07.md",
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  }
+}

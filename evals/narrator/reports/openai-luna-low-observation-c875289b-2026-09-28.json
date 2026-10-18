@@ -1,0 +1,55 @@
+{
+  "version": "openai-luna-low-observation-v1",
+  "date": "2026-09-28",
+  "hypothesis_id": "HYP-006-OPENAI-LUNA-LOW-L1",
+  "batch_id": "c875289b-e3f0-4907-8301-2408781a96ce",
+  "source_hashes": {
+    "preflight_sha256": "47138cae7ac41f7bf474651348905bba1d4cd61303fce1de1bc768de2ce15b0e",
+    "summary_sha256": "a593d4eecdd50c567a4bff7e383b43e6dd39a0dda4e0ed84a95c43caedfd21dc",
+    "records_sha256": "f84679cd4696206c75fd1f7e5991df629f0e8cc3ac8fbf9e8cfa351a9ba5f01b",
+    "semantic_review_sha256": "d0c1dce49522115827a51f16145d0ad06c8262e46af82094e02c55b62de35397"
+  },
+  "execution": {
+    "exact_model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "calls_made": 8,
+    "completed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "automatic_retries": 0,
+    "repair": false,
+    "fallback": false,
+    "route_verified_cases": 8,
+    "artifact_verification_passed": true,
+    "credential_removed_after_batch": true,
+    "paid_live_gate_reclosed": true
+  },
+  "usage": {
+    "input_tokens_reported": 9762,
+    "output_tokens_reported": 1473,
+    "total_tokens_reported": 11235,
+    "estimated_input_cost_usd": 0.0019524,
+    "estimated_output_cost_usd": 0.0017676,
+    "estimated_total_cost_usd": 0.00372,
+    "actual_billed_cost_observed": false
+  },
+  "semantic_review": {
+    "cases_reviewed": 8,
+    "fatal_semantic_cases_failed": 0,
+    "all_next_choices_preserved": true,
+    "player_agency_violations": 0,
+    "secret_disclosures": 0,
+    "mechanical_expansions": 0,
+    "unlisted_render_claim_cases": 0
+  },
+  "classification": {
+    "candidate_id": "gpt-5.6-luna-openai-low-synthetic",
+    "technical_semantic_result": "eligible_for_final_human_narrative_acceptance",
+    "qualified_candidates": [
+      "gpt-5.6-luna-openai-low-synthetic"
+    ],
+    "narrator_admitted": false,
+    "runtime_default_changed": false,
+    "human_acceptance_required": true
+  }
+}

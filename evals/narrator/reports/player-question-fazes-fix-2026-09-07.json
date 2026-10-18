@@ -1,0 +1,112 @@
+{
+  "schema": "storyteller.player-question-fix.v1",
+  "recorded_at": "2026-09-08T00:13:03.096046+00:00",
+  "trigger_batch": "f97a8568-4b67-4f8a-b975-78f4b6e5638b",
+  "raw_result_reclassified": false,
+  "fix": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-validator-fix-20260907\\freeze.json",
+    "sha256": "9bcae3ad5d6ca382bc1bdb9f24e452d0be7615544e6485543cdb9864804d3e0c",
+    "record": {
+      "file": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_director_service.py",
+      "before_sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "after_sha256": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+      "snapshot": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-scene-director-before-fazes-520ad02b.py.txt",
+      "syntax_valid": true,
+      "provider_calls": 0,
+      "verification_tests_owner": "faithful_runner"
+    }
+  },
+  "diff": "--- snapshot-520ad02b\n+++ scene_director_service.py\n@@ -1382,7 +1382,11 @@\n         r\"o\\s+que\\s+(?:voce\\s+)?(?:deseja|quer|gostaria\\s+de)\\s+fazer\" + modal_question_tail,\n         full_player_cue_clause,\n     )\n-    if (player_continuation or elided_player_intent) and re.search(\n+    elided_second_person_action = re.fullmatch(\n+        r\"o\\s+que\\s+fazes\" + modal_question_tail,\n+        normalized,\n+    )\n+    if (player_continuation or elided_player_intent or elided_second_person_action) and re.search(\n         r\"\\b(?:diante\\s+(?:da|de)|em\\s+relacao\\s+a)\\s+\"\n         r\"(?:(?:escrita|narracao)\\s+(?:da|de)\\s+)?(?:historia|narrativa)\\b\",\n         full_player_cue_clause,\n@@ -1394,6 +1398,7 @@\n         )\n     implicit_player_action = bool(\n         implicit_player_step or player_continuation or elided_player_intent\n+        or elided_second_person_action\n     )\n     question_addresses_player = (\n         player_precedes_action\n",
+  "verification": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\after-tests.json",
+    "sha256": "1dccf77837051e07419cac742eeb1a391867bf51e29839e5d66bbc0d7c469d52",
+    "record": {
+      "started_at": "2026-09-08T00:04:49.216739+00:00",
+      "finished_at": "2026-09-08T00:04:57.614319+00:00",
+      "command": [
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_structured_probe_player_question_regressions.py",
+        "tests/test_narrator_source_profile.py",
+        "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused-junit.xml"
+      ],
+      "exit_code": 0,
+      "counts": {
+        "tests.test_structured_probe_player_question_regressions": {
+          "total": 217,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "tests.test_narrator_source_profile": {
+          "total": 57,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "new_cases": 30,
+      "hashes_before": {
+        "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+        "tests/test_structured_probe_player_question_regressions.py": "f534fb4a42a5db964d70b1c1833fd9875aaf70e59fac4859e349b8c7729b57eb",
+        "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+        "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+      },
+      "hashes_after": {
+        "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+        "tests/test_structured_probe_player_question_regressions.py": "f534fb4a42a5db964d70b1c1833fd9875aaf70e59fac4859e349b8c7729b57eb",
+        "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+        "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+      },
+      "hashes_unchanged": true,
+      "source_profile_files_unchanged": true,
+      "test_isolation": "repository conftest active; dotenv disabled; external network blocked; subprocess environment allowlist without credential variables",
+      "evidence": {
+        "red": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.json",
+        "red_output": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.txt",
+        "green_output": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused.txt",
+        "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused-junit.xml"
+      }
+    }
+  },
+  "red": {
+    "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.json",
+    "sha256": "f58d31f633f2dce03ae3a1fb610c582ede50ee732a23f80b53a773b9296ae9a3",
+    "record": {
+      "command": [
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_structured_probe_player_question_regressions.py::test_observed_fazes_question_closes_an_otherwise_valid_proposal"
+      ],
+      "exit_code": 1,
+      "api_sha256_before": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "api_sha256_after": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+      "expected_failure": "scene_player_prompt_not_actionable",
+      "proof": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.txt"
+    }
+  },
+  "passed": 274,
+  "new_cases": 30,
+  "external_calls": 0,
+  "historical_artifacts_preserved": [
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/summary.json",
+      "sha256": "dfd1cc00a85e477db693954a70160c6b7e37e188fe7b631ef5bec6bfb14ea420"
+    },
+    {
+      "file": "eval-results/20260907T234303Z-6886c00d-1c52-4ee8-a712-42992877d6da/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "ac84ccc41acd53fa828a7b0a95e06cde6f037d64577c5653fa4094476a83109b"
+    }
+  ],
+  "runtime_integration_B": false
+}

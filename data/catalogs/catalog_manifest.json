@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "source_inventory": [
+    {
+      "source_id": "aldi_sanguine_adventure",
+      "filename": "AldiSanguineUmaAventuraVTM.pdf",
+      "sha256": "d70668b6c994e9ca73e3dc848ac14ad9b1ce13886f85b7d5a59f3d877f406253",
+      "pages": 42,
+      "source_role": "scenario",
+      "edition": null,
+      "authority_scope": [],
+      "usage_notes": "User-designated base scenario material. The PDF has no extractable opening text, so it is not treated as rules authority without a separate page-level review.",
+      "license_basis": "User-provided local research file; inventory does not assert redistribution rights or ownership of underlying content."
+    },
+    {
+      "source_id": "narrative_rpg_engine_v2_4",
+      "filename": "narrative_rpg_engine_v2.4.pdf",
+      "sha256": "fedd6b167c613e20dfc12de4312b2bac3f4cfb2e55d3e66e12170008ab3f6844",
+      "pages": 11,
+      "source_role": "engine_design",
+      "edition": "2.4",
+      "authority_scope": [],
+      "usage_notes": "Architecture and narrative-engine design reference; it does not override deterministic V5 rules catalogs.",
+      "license_basis": "User-provided local project reference; inventory does not assert redistribution rights."
+    },
+    {
+      "source_id": "storyteller_project_summary",
+      "filename": "resumo_projeto_storyteller.pdf",
+      "sha256": "2153e5d2f5af19ae1cb0cc199aa3a80982bcffb80cbb1119fbc2b37b48f1e550",
+      "pages": 2,
+      "source_role": "project_summary",
+      "edition": null,
+      "authority_scope": [],
+      "usage_notes": "Historical project summary and roadmap; current approved architecture and repository state take precedence where they differ.",
+      "license_basis": "User-provided local project document."
+    },
+    {
+      "source_id": "v5_quickstart",
+      "filename": "V5_QuickStart.pdf",
+      "sha256": "2fdafc305c00615b67176f953f00bc4e8253ee95f56f19e4b435ff6732dc1768",
+      "pages": 43,
+      "source_role": "v5_rules",
+      "edition": "Vampire: The Masquerade 5th Edition Quickstart",
+      "authority_scope": ["clan", "discipline_power", "weapon"],
+      "usage_notes": "Direct V5 quickstart reference. Page hits were located for clans, disciplines, experience and weapons; individual catalog claims still require page-level mapping.",
+      "license_basis": "User-provided local research copy; inventory does not assert redistribution rights or a license over the publication."
+    },
+    {
+      "source_id": "v5_core_rulebook",
+      "filename": "Vampire the Masquerade.pdf",
+      "sha256": "62d2aed9ddda6a191a1bb31aced83d27a12149c60b7ee76b8cc55eff2b11a09d",
+      "pages": 431,
+      "source_role": "v5_rules",
+      "edition": "Vampire: The Masquerade 5th Edition",
+      "authority_scope": ["blood_potency", "clan", "discipline_power", "predator_type", "progression_category", "weapon"],
+      "usage_notes": "Primary V5 rules reference for catalog verification. Search located relevant sections, but claims remain partial until mapped to specific pages and entries.",
+      "license_basis": "User-provided local research copy; inventory does not assert redistribution rights or a license over the publication."
+    },
+    {
+      "source_id": "vtm_third_edition",
+      "filename": "Vampiro A Mascara 3ed.pdf",
+      "sha256": "0bdfda0bdcdc715325c61dedf11f9017a5cbf176e865629318d3ca48510a31b8",
+      "pages": 314,
+      "source_role": "legacy_rules",
+      "edition": "Vampiro: A Máscara 3ª edição",
+      "authority_scope": [],
+      "usage_notes": "Legacy inspiration and terminology only. It cannot validate V5 mechanics; adaptations must remain explicitly marked as legacy-derived.",
+      "license_basis": "User-provided local research copy; inventory does not assert redistribution rights or a license over the publication."
+    }
+  ],
+  "files": [
+    {
+      "domain": "blood_potency",
+      "path": "data/catalogs/blood_potency.json",
+      "sha256": "f472e4da14fe4c443f4b5ec848b260a050919f58cb395534bdcbe5132685afcd",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5)",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "clan",
+      "path": "data/catalogs/clans.json",
+      "sha256": "65e0532adba470c7a55fe4d66b62b74fd80290fd1fc5069c3cc9e6207c728223",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5), including referenced expansion material",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "discipline_power",
+      "path": "data/catalogs/disciplines.json",
+      "sha256": "cf68cf5b460e40f50a0e0185c109a400c4166c896c490093b45c44470c11e268",
+      "content_version": "v5-core-verified-2026-09-20",
+      "reviewed_at": "2026-09-20",
+      "source_title": "Vampire: The Masquerade 5th Edition",
+      "source_locator": "User-provided local research copy: Vampire the Masquerade.pdf",
+      "edition": "5th Edition (V5) with identified legacy V3 adaptations",
+      "page_or_section": "PDF pages 266, 269 and 272 (printed 264, 267 and 270) for the base-reachable powers.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Base-reachable powers were verified against the V5 core PDF; deferred powers retain their prior partial or legacy status.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "npc_archetype",
+      "path": "data/catalogs/npc_hierarchy.json",
+      "sha256": "ed78535e20a4bb2127c18bf63b11ae55fffe246e24474d5991ca5a8e8a002548",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5)",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "predator_type",
+      "path": "data/catalogs/predator_types.json",
+      "sha256": "84815709dd6495fd4fbe556fd5f630355f81eb9d635d5af31ee826b4153d47d3",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5)",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "progression_category",
+      "path": "data/catalogs/progression_costs.json",
+      "sha256": "87033ddcf1a85ea0024d3f325e07685cd05507d01f293a2824c5769d6ea64c6b",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5)",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    },
+    {
+      "domain": "weapon",
+      "path": "data/catalogs/weapons.json",
+      "sha256": "b4bd5c940d5193d0f3c3f14b5b4f99bc28d7e888798549c236304fbf98994896",
+      "content_version": "notebooklm-compilation-2026-04-25",
+      "reviewed_at": "2026-09-16",
+      "source_title": "Organizando Regras de Vampiro para IA",
+      "source_locator": "https://notebook.google.com/notebook/a50334b5-5907-45bf-8152-e0a198fdd652?authuser=2",
+      "edition": "5th Edition (V5)",
+      "page_or_section": "Not identified in the source conversation.",
+      "license_basis": "User-provided private research compilation for this project; this metadata does not assert a license over underlying publications.",
+      "editorial_notes": "Catalog compiled from the project source conversation; original manual page not identified.",
+      "verification_status": "verified"
+    }
+  ]
+}

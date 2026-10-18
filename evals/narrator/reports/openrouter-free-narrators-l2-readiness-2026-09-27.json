@@ -1,0 +1,37 @@
+{
+  "version": "openrouter-free-narrators-l2-readiness-v1",
+  "date": "2026-09-27",
+  "hypothesis_id": "HYP-005-OPENROUTER-FREE-L2-OUTPUT-BUDGET",
+  "status": "offline_verified_credential_and_live_execution_pending",
+  "provider_calls": 0,
+  "credential_inspected": false,
+  "single_changed_variable": {
+    "name": "max_output_tokens",
+    "from": 768,
+    "to": 2048
+  },
+  "limits": {
+    "max_calls": 24,
+    "max_total_output_tokens": 49152,
+    "automatic_retries": 0,
+    "repair": false,
+    "model_fallback": false,
+    "provider_fallback": false,
+    "paid_spend_authorized": false
+  },
+  "hashes": {
+    "preflight_sha256": "bdb6969a598932d1f4bf9c4acbb744a97130b5bc3d0c03e4de4437c07c5f35fc",
+    "runner_sha256": "cb8bf46b4ecc9c30ee121de4347297541cca7f6381691da53a07b7d17343ef1b",
+    "launcher_sha256": "2a7de4a832d36d984853ad874301aef8097d1bc030ba67bf239d787bbfbc1de2",
+    "gate_sha256": "b926b89c38ddf7042fa7b8d7d335b3041f6a20e2aa93cad7ff7618170e028f91",
+    "candidate_manifest_sha256": "ca70b0d1eb94a0f000306e7018ed9fd0a906266017ae2a5aa34e5631ec6f1ea3"
+  },
+  "verification": {
+    "focused_tests_passed": 104,
+    "powershell_parse_errors": 0,
+    "keyless_preflight_passed": true,
+    "missing_key_fail_closed_passed": true,
+    "l1_runner_modified": false
+  },
+  "human_action_required": "run_masked_launcher_after_confirming_exact_free_slugs"
+}

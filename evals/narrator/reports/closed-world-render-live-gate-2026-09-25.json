@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-25",
+  "status": "l2_authorized_offline_verified_no_hypothesis_002_calls",
+  "human_authorization": {
+    "date": "2026-09-25",
+    "response": "Aprovo HYP-002-L2",
+    "option": "L2"
+  },
+  "recommended_option": "L1",
+  "selected_option": "L2",
+  "options": {
+    "L1": "gpt_oss_only_max_8_calls",
+    "L2": "compare_gpt_oss_and_qwen_max_16_calls"
+  },
+  "l2": {
+    "provider": "groq",
+    "targets": [
+      {"model": "qwen/qwen3.8-27b", "reasoning": "none"},
+      {"model": "openai/gpt-oss-120b", "reasoning": "low"}
+    ],
+    "temperature": 0.65,
+    "max_completion_tokens_per_call": 768,
+    "max_calls": 16,
+    "max_completion_tokens_total": 12288,
+    "deadline_seconds": 60,
+    "minimum_global_start_interval_seconds": 60,
+    "retry": false,
+    "repair": false,
+    "fallback": false,
+    "target_switch": false,
+    "paid_spend_authorized": false
+  },
+  "live_inference_authorized": true,
+  "credential_status": "available_protected",
+  "credential_provisioning": {
+    "method": "masked_interactive_terminal_input",
+    "non_sensitive_confirmation_observed": true,
+    "authentication_probe_successful": true,
+    "credential_value_observed": false,
+    "persisted_to_file": false
+  },
+  "provider_calls_at_gate_creation": 0,
+  "authentication_probe_is_part_of_batch": false,
+  "technical_readiness": {
+    "runner_implemented": true,
+    "live_requires_explicit_cli_opt_in": true,
+    "keyless_preflight_verified": true,
+    "credential_inspected": false,
+    "provider_calls": 0,
+    "hypothesis_002_tests_passed": 34,
+    "combined_hypothesis_001_002_tests_passed": 66,
+    "automatic_retries": 0,
+    "dedicated_process_environment_only": true,
+    "artifact_causality_reconstructed": true
+  },
+  "remaining_gate": "run_frozen_preflight_then_start_single_authorized_l2_batch"
+}

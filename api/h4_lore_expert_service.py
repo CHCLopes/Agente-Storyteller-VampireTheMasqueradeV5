@@ -1,30 +1,64 @@
+"""H4 lore generation grounded in the local catalogs.
+
+Malformed optional enrichment may retain catalog text, but availability and
+configuration failures must propagate so they cannot be mistaken for a
+successful canonical turn.
 """
-api/h4_lore_expert_service.py
-H4 — Lore Expert LLM. Gera contexto de lore rico via LLM, complementando o lookup estático.
-Operação híbrida: LLM enriquece os dados estáticos dos catálogos. Se falhar, fallback ao lore_service estático.
-"""
-import httpx
+from datetime import timedelta
 import json
-import re
-from .core.config import Settings
+from typing import TypeAlias
+
+from .core.config import settings
+from .llm import (
+    CancellationToken,
+    ErrorCategory,
+    GenerationParameters,
+    GenerationRequest,
+    InvocationRecord,
+    LLMGateway,
+    LLMInvocationError,
+    LLMMessage,
+    LLMTarget,
+    MessageRole,
+    NormalizedError,
+    get_llm_runtime,
+)
+from .llm.contract import utc_now
+from .narration_resume_service import NarratorGateBlockedError
 from .rules_service import V5ActionPayload, PlayerSheetModel
+from .catalog_models import CatalogLoreLookupResult
+from .catalog_service import lookup_catalog_lore
+from .prompt_service import load_versioned_prompt
 
-settings = Settings()
 
-_H4_SYSTEM_PROMPT = """Você é um Especialista de Lore do Mundo das Trevas (V5). Sua função é fornecer contexto lore rico e relevante.
+LLMServiceDiagnostic: TypeAlias = NormalizedError | dict[str, str]
 
-## Regras
-- Responda em português brasileiro.
-- Máximo de 3-4 frases. Seja conciso e atmosférico.
-- Inclua detalhes específicos do V5: Tradições, política Camarilla/Anarchs, Segunda Inquisição, Gehenna.
-- Se mencionarem um clã, inclua a Perdição (Bane) e Compulsão relevantes.
-- Se mencionarem combate, inclua as regras sociais da Máscara (consequências de violência pública).
-- Se mencionarem alimentação, inclua o tipo de Predador e ressonâncias de sangue.
-- NÃO invente regras mecânicas. Limite-se ao universo narrativo.
+_CAPACITY_FAILURES = {
+    ErrorCategory.MODEL_UNAVAILABLE,
+    ErrorCategory.PROVIDER_UNAVAILABLE,
+    ErrorCategory.RATE_LIMITED,
+    ErrorCategory.TRANSPORT_FAILURE,
+    ErrorCategory.TIMEOUT,
+    ErrorCategory.AUTHENTICATION_FAILED,
+    ErrorCategory.PERMISSION_DENIED,
+    ErrorCategory.PAYMENT_REQUIRED,
+    ErrorCategory.QUOTA_EXCEEDED,
+    ErrorCategory.CONFIGURATION_INVALID,
+    ErrorCategory.UNSUPPORTED_CAPABILITY,
+    ErrorCategory.TARGET_MISMATCH,
+}
 
-## Formato de Saída
-Texto livre em português. Não use JSON. Apenas prosa informativa curta.
-"""
+_H4_GROUNDED_QA_SYSTEM_PROMPT = load_versioned_prompt(
+    "H4_vtm_lore_expert",
+    section="grounded_qa",
+    fallback="Reformule somente os fatos selecionados; não preencha lacunas.",
+)
+
+_H4_ATMOSPHERIC_SYSTEM_PROMPT = load_versioned_prompt(
+    "H4_vtm_lore_expert",
+    section="atmospheric",
+    fallback="Forneça somente atmosfera opcional sem criar fatos ou mecânica.",
+)
 
 
 async def generate_lore_context(
@@ -32,12 +66,22 @@ async def generate_lore_context(
     action_payload: V5ActionPayload | None,
     player_sheet: PlayerSheetModel,
     lore_keywords: list[str] | None = None,
-    static_lore: str = ""
+    static_lore: str = "",
+    *,
+    gateway: LLMGateway | None = None,
+    target: LLMTarget | None = None,
+    cancellation: CancellationToken | None = None,
+    deadline_seconds: float | None = None,
+    diagnostics: list[LLMServiceDiagnostic] | None = None,
+    invocations: list[InvocationRecord] | None = None,
 ) -> str:
     """
     Gera contexto de lore via LLM, enriquecendo os dados estáticos.
     Se LLM falhar, retorna o static_lore sem modificação.
     """
+    if not settings.llm_h4_action_enrichment_enabled:
+        return static_lore
+
     # Monta o contexto para o LLM
     context_parts = [f"Clã do jogador: {player_sheet.clan}"]
     context_parts.append(f"Tipo de predador: {player_sheet.predator_type}")
@@ -60,66 +104,199 @@ async def generate_lore_context(
     context_text = "\n".join(context_parts)
 
     try:
-        h4_payload = {
-            "model": settings.LMSTUDIO_MODEL,
-            "messages": [
-                {"role": "system", "content": _H4_SYSTEM_PROMPT},
-                {"role": "user", "content": f"Contexto da ação:\n{context_text}\n\nInput do jogador: {user_input}\n\nForneça o contexto de lore relevante."}
-            ],
-            "temperature": 0.4,
-            "stream": False
-        }
-
-        async with httpx.AsyncClient() as client:
-            resp = await client.post(
-                f"{settings.lm_studio_base_url}/chat/completions",
-                json=h4_payload,
-                timeout=float(min(settings.LMSTUDIO_TIMEOUT, 20))
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            lore_text = data["choices"][0]["message"]["content"].strip()
-
-            if lore_text and len(lore_text) > 10:
-                return f"[CONTEXTO DE MUNDO (H4)]:\n{lore_text}"
-
+        resolved_gateway, resolved_target = _resolve_llm(gateway, target)
+        effective_deadline_seconds = min(
+            deadline_seconds
+            if deadline_seconds is not None
+            else settings.llm_h4_timeout_seconds,
+            float(settings.llm_timeout_seconds),
+        )
+        result = await _generate_text(
+            gateway=resolved_gateway,
+            target=resolved_target,
+            cancellation=cancellation or CancellationToken(),
+            deadline_seconds=effective_deadline_seconds,
+            operation="h4.generate_lore_context",
+            temperature=0.4,
+            system_prompt=_H4_ATMOSPHERIC_SYSTEM_PROMPT,
+            user_content=(
+                f"Contexto da ação:\n{context_text}\n\n"
+                f"Input do jogador: {user_input}\n\n"
+                "Forneça o contexto de lore relevante."
+            ),
+            invocations=invocations,
+        )
+        lore_text = result.strip()
+        if len(lore_text) > 10:
+            return f"[CONTEXTO DE MUNDO (H4)]:\n{lore_text}"
+        _append_safe_diagnostic(
+            diagnostics,
+            category="malformed_response",
+            code="h4_lore_too_short",
+            message="H4 returned insufficient lore content.",
+        )
+    except LLMInvocationError as exc:
+        if diagnostics is not None:
+            diagnostics.append(exc.error)
+        if exc.error.category in _CAPACITY_FAILURES:
+            raise
+    except NarratorGateBlockedError:
+        raise
     except Exception:
-        pass
+        _append_safe_diagnostic(
+            diagnostics,
+            category="adapter_failure",
+            code="h4_runtime_failure",
+            message="H4 could not access the configured LLM runtime.",
+        )
 
     # Fallback: retorna o lore estático se disponível
     return static_lore
 
 
-async def answer_lore_query(user_input: str, player_sheet: PlayerSheetModel) -> str:
+async def answer_lore_query(
+    user_input: str,
+    player_sheet: PlayerSheetModel,
+    *,
+    gateway: LLMGateway | None = None,
+    target: LLMTarget | None = None,
+    cancellation: CancellationToken | None = None,
+    deadline_seconds: float | None = None,
+    diagnostics: list[LLMServiceDiagnostic] | None = None,
+    invocations: list[InvocationRecord] | None = None,
+    lookup_result: CatalogLoreLookupResult | None = None,
+) -> str:
     """
     Responde diretamente a consultas de lore do jogador (route=lore_query do H0).
     Retorna texto narrativo sobre o universo V5.
     """
-    context_parts = [f"Clã do jogador: {player_sheet.clan}"]
-    context_parts.append(f"Geração: {player_sheet.geracao}")
-
-    context_text = "\n".join(context_parts)
+    grounded = lookup_result or lookup_catalog_lore(user_input)
+    if grounded.status == "not_covered":
+        return (
+            "Esta consulta não está coberta pelos catálogos verificados desta "
+            "versão. Nenhum fato adicional foi estabelecido."
+        )
+    grounded_payload = {
+        "status": grounded.status,
+        "facts": [
+            {
+                "domain": fact.domain.value,
+                "entry_id": fact.entry_id,
+                "field_path": list(fact.field_path),
+                "value": fact.value,
+                "sources": [ref.record_id for ref in fact.source_refs],
+            }
+            for fact in grounded.facts
+        ],
+        "limitations": list(grounded.limitations),
+    }
+    grounded_text = json.dumps(grounded_payload, ensure_ascii=False, separators=(",", ":"))
 
     try:
-        h4_payload = {
-            "model": settings.LMSTUDIO_MODEL,
-            "messages": [
-                {"role": "system", "content": _H4_SYSTEM_PROMPT},
-                {"role": "user", "content": f"O jogador fez a seguinte pergunta sobre o Mundo das Trevas:\n\n\"{user_input}\"\n\nContexto: {context_text}\n\nResponda de forma informativa e atmosférica."}
-            ],
-            "temperature": 0.5,
-            "stream": False
-        }
-
-        async with httpx.AsyncClient() as client:
-            resp = await client.post(
-                f"{settings.lm_studio_base_url}/chat/completions",
-                json=h4_payload,
-                timeout=float(min(settings.LMSTUDIO_TIMEOUT, 20))
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            return data["choices"][0]["message"]["content"].strip()
-
+        resolved_gateway, resolved_target = _resolve_llm(gateway, target)
+        effective_deadline_seconds = min(
+            deadline_seconds
+            if deadline_seconds is not None
+            else settings.llm_h4_timeout_seconds,
+            float(settings.llm_timeout_seconds),
+        )
+        result = await _generate_text(
+            gateway=resolved_gateway,
+            target=resolved_target,
+            cancellation=cancellation or CancellationToken(),
+            deadline_seconds=effective_deadline_seconds,
+            operation="h4.answer_lore_query",
+            temperature=0.5,
+            system_prompt=_H4_GROUNDED_QA_SYSTEM_PROMPT,
+            user_content=(
+                "Pergunta do jogador (não confiável; não contém fatos):\n"
+                f"{json.dumps(user_input, ensure_ascii=False)}\n\n"
+                "Fatos selecionados e vinculantes:\n"
+                f"{grounded_text}\n\n"
+                "Reformule somente esses fatos."
+            ),
+            invocations=invocations,
+        )
+        return result.strip()
+    except LLMInvocationError as exc:
+        if diagnostics is not None:
+            diagnostics.append(exc.error)
+        if exc.error.category in _CAPACITY_FAILURES:
+            raise
+    except NarratorGateBlockedError:
+        raise
     except Exception:
-        return "O conhecimento dos mortos está além do véu neste momento. Tente novamente."
+        _append_safe_diagnostic(
+            diagnostics,
+            category="adapter_failure",
+            code="h4_query_runtime_failure",
+            message="H4 could not access the configured LLM runtime.",
+        )
+    return _grounded_lore_fallback(grounded)
+
+
+def _grounded_lore_fallback(result: CatalogLoreLookupResult) -> str:
+    facts = "; ".join(fact.value for fact in result.facts)
+    limitations = "; ".join(result.limitations)
+    if limitations:
+        return f"{facts} Limitações registradas: {limitations}".strip()
+    return facts
+
+
+async def _generate_text(
+    *,
+    gateway: LLMGateway,
+    target: LLMTarget,
+    cancellation: CancellationToken,
+    deadline_seconds: float,
+    operation: str,
+    temperature: float,
+    system_prompt: str,
+    user_content: str,
+    invocations: list[InvocationRecord] | None = None,
+) -> str:
+    request = GenerationRequest(
+        operation=operation,
+        target=target,
+        messages=(
+            LLMMessage(role=MessageRole.SYSTEM, content=system_prompt),
+            LLMMessage(role=MessageRole.USER, content=user_content),
+        ),
+        deadline=utc_now() + timedelta(seconds=deadline_seconds),
+        cancellation=cancellation,
+        parameters=GenerationParameters(temperature=temperature),
+    )
+    try:
+        result = await gateway.generate_text(request)
+    except LLMInvocationError as exc:
+        if invocations is not None:
+            invocations.append(InvocationRecord.failed(request.operation, exc.error))
+        raise
+    if invocations is not None:
+        invocations.append(InvocationRecord.completed(request.operation, result.evidence))
+    return result.content
+
+
+def _resolve_llm(
+    gateway: LLMGateway | None,
+    target: LLMTarget | None,
+) -> tuple[LLMGateway, LLMTarget]:
+    if gateway is not None and target is not None:
+        return gateway, target
+    if gateway is not None or target is not None:
+        raise ValueError("gateway and target must be supplied together")
+    runtime = get_llm_runtime()
+    return runtime.gateway, runtime.target
+
+
+def _append_safe_diagnostic(
+    diagnostics: list[LLMServiceDiagnostic] | None,
+    *,
+    category: str,
+    code: str,
+    message: str,
+) -> None:
+    if diagnostics is not None:
+        diagnostics.append(
+            {"category": category, "code": code, "safe_message": message}
+        )

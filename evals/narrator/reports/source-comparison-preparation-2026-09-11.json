@@ -1,0 +1,276 @@
+{
+  "date": "2026-09-11",
+  "status": "offline_preparation_verified_live_requires_protected_credential",
+  "scope": "source-comparison-v1",
+  "live_calls": 0,
+  "distinct_final_tests": 106,
+  "test_stages": [
+    {
+      "label": "evaluator-round1",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-round1",
+      "final": false,
+      "tests": 39,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "exit_code": 1,
+        "command_succeeded": false
+      }
+    },
+    {
+      "label": "evaluator-regression",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-regression",
+      "final": false,
+      "tests": 3,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "exit_code": 1,
+        "command_succeeded": false
+      }
+    },
+    {
+      "label": "evaluator-chronology-regression",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-chronology-regression",
+      "final": false,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "exit_code": 0,
+        "command_succeeded": true
+      }
+    },
+    {
+      "label": "evaluator-final",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-final",
+      "final": true,
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "exit_code": 0,
+        "command_succeeded": true
+      }
+    },
+    {
+      "label": "launcher-round1",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-launcher-tests-56b46ba1-2305-46f4-a45d-efd1509a3fc1",
+      "final": false,
+      "tests": 58,
+      "failures": 16,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "started_at": "2026-09-11T23:20:27.0153459Z",
+        "finished_at": "2026-09-11T23:23:51.3839132Z",
+        "command_success": false,
+        "exit_code": 1
+      }
+    },
+    {
+      "label": "launcher-final",
+      "directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-comp-launch-5ff45aff",
+      "final": true,
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "process": {
+        "started_at": "2026-09-11T23:26:03.3176240Z",
+        "finished_at": "2026-09-11T23:29:51.5937303Z",
+        "exit_code": 0,
+        "command_success": true
+      }
+    }
+  ],
+  "independent_review": {
+    "document_review": "Independent review completed; corpus, rubric, stop categories and limits agreed before live observation.",
+    "evaluator_review": "Independent final review found no remaining blocker in the reviewed hashes; root inspected the final functions and focused regression cases.",
+    "launcher_review": "Root reviewed launcher, tests, final deltas and final evidence; no remaining blocker.",
+    "demonstrated_defects_corrected": [
+      "Initial suite demonstrated a mismatch between inherited failed-only audit verification and the real timeout status timed_out; new isolated verifier maps timeout, cancellation and other errors explicitly without changing the old helper.",
+      "A regression demonstrated that a row with no HTTP dispatch could carry a forged HTTP 200 observation after artifact rehashing; the verifier now requires the exact unavailable observation for no-call rows."
+    ],
+    "additional_hardening": [
+      "Explicit chronology and success-within-deadline checks added, with tests requiring their specific rejection codes. A previous temporal bypass was not demonstrated: earlier counterexamples were already rejected by persisted pair integrity checks.",
+      "Reported output above 768 triggers a global stop while retaining the observation; missing usage remains unknown. Batch start precedes construction of initial pacing budget."
+    ],
+    "test_fixture_correction": "Launcher first run had 16 failures from Windows long temporary paths. A 268-character summary path reproduced WinError 206; only the synthetic project directory name was shortened.",
+    "limitations": [
+      "Review and offline tests do not establish model quality or product acceptance.",
+      "Filesystem, setup or sealing failures can leave partial evidence that is not certified as a complete matrix.",
+      "Local hash and timing verification establish local consistency, not independent proof of provider origin."
+    ]
+  },
+  "code_hashes": {
+    "scripts/evaluate_source_comparison.py": "14132860ba1f7bafac211c8ecc75b276d7fbb9f5a15a6b60131ac46a65240b28",
+    "tests/test_source_comparison.py": "2532f03ea5ea15e06a3ad65076356f6ef0c65b6957ac51e6fb8d51d2a389ec7b",
+    "scripts/run_groq_source_comparison.ps1": "0f63ea0316bbf24304da96af3f2e1f06a064f2d189d3e020a14c16a3913879c3",
+    "tests/test_source_comparison_launcher.py": "4f9903224ace356912fd34317d5ba61d7232aa94b1174c91835315fa91339046"
+  },
+  "inputs": {
+    "evals/narrator/source_comparison_v1.json": "b755b921be4a77b2c1af030a0eed65fc4e9d9e81d5c4393eaf99507fc6e7d9e5",
+    "evals/narrator/source_comparison_protocol_v1.md": "ea2257537c8d913872dd65dadf0f3ff42a01162f9584c970c5665bc777be741d"
+  },
+  "previous_frozen_implementation_files_unchanged": 28,
+  "additional_preserved_files_verified": {
+    "scripts/evaluate_source_player.py": "7b67261cd21aed3c90cca579bc648c1a4b952652c27b90bc6d3a5b56b35a0d1e",
+    "api/narrative_source_transport.py": "ad28de63a88dafecd4cc37b3f7aeab486c906a4804c85d84230518eafc99ac0d",
+    "tests/test_source_player_launcher.py": "22649f149193e5113a0feebdaf8d3f83b2dc2656148a8b24f460d18ee96e6b25",
+    "scripts/evaluate_retained_source.py": "c09be39a25d822f8992082cf3cfd422f7200673aece0d6bdb4f6c05f03b7c230",
+    "tests/test_narrative_source_transport.py": "3fb0126285afbe1ff9642b03c6adc3dc23c40e6af90704070ef7ffa0000cf2e3",
+    "eval-results/source-player-83921947-4094-4798-990c-af65f7963e61/summary.json": "d4340540a106a3f31047ff7a4481233f07e7c73adf49224ce7c44a01350a6a2a",
+    "scripts/run_groq_source_player_probe.ps1": "4ebcbf7325966b9110e318d0de8f0d5c79cbbdd05bc93a0c2f2d9b575e63051d",
+    "tests/test_source_player_probe.py": "9dcd54097d264c36c2190e28c582328909b45fd123eedf94113595119ca5f348"
+  },
+  "preflight_only_batch_id": "9d5cb11e-75bf-4676-acea-6b95b4f149e1",
+  "preflight_sha256": "8ee139dbc945a38c7d86c5bca30e72c6ce0c0204cb35e3d5b841bf58cb88714b",
+  "preflight_process": {
+    "exit_code": 0,
+    "stage_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-preflight-check-c10e0643-a7a3-48c6-b312-a93b28b6abfd",
+    "finished_at": "2026-09-11T23:36:44.9533231Z",
+    "command_success": true,
+    "started_at": "2026-09-11T23:36:40.1117586Z"
+  },
+  "checkpoint": "eval-results/checkpoints/source-comparison-preparation-20260911",
+  "artifact_copies": [
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-round1\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-round1/pytest.log",
+      "sha256": "318bfdd54d9262c7044cbca8d003835cd4b4c0624fe021db039f78901dc957bd"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-round1\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-round1/results.xml",
+      "sha256": "3819845fde52bd8bc3132c56153ebbfbfc21944dc0ad0674e017ad6b032783c2"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-round1\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-round1/result.json",
+      "sha256": "db18721f9bf6daac8aa803a769c13d9848a6d62a2516fe04e58960e528de29be"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-regression\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-regression/pytest.log",
+      "sha256": "86bbcfbc2bfaa15e8661f244b14ccda564a8a48de27a54f74e34eb3f52f53c54"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-regression\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-regression/results.xml",
+      "sha256": "431ab59e5e8b6043b4a4a6bfb62e9af44ab39470566ebc67e61d90422270948c"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-regression\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-regression/result.json",
+      "sha256": "db18721f9bf6daac8aa803a769c13d9848a6d62a2516fe04e58960e528de29be"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-chronology-regression\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-chronology-regression/pytest.log",
+      "sha256": "59fe9fb98a84ecc3422e1a287971f123a1ce29a04146b7a2e5a59437ab946242"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-chronology-regression\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-chronology-regression/results.xml",
+      "sha256": "b5e8a9f2de3a6cbc2980748908266a63c38b701ce2b39a0b8f190d2b87888777"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-chronology-regression\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-chronology-regression/result.json",
+      "sha256": "cda3806b8e85671ccaef34fe17101791751c2c434f08ef92d70eeebece7eb81e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-final\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-final/pytest.log",
+      "sha256": "9a915af1f1e1d37776739edb012b8e014c6c3ce9d03ba92a9bae1e02002d117a"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-final\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-final/results.xml",
+      "sha256": "a689785776685355011494ea8ef79269894611ab4b19d4dafbd6b407496497d8"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-tests-20260911-final\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/evaluator-final/result.json",
+      "sha256": "cda3806b8e85671ccaef34fe17101791751c2c434f08ef92d70eeebece7eb81e"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-launcher-tests-56b46ba1-2305-46f4-a45d-efd1509a3fc1\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-round1/pytest.log",
+      "sha256": "fcf8a0f0198dea067cf053ebcd4f4a53469eef003bd85438047840039910077b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-launcher-tests-56b46ba1-2305-46f4-a45d-efd1509a3fc1\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-round1/results.xml",
+      "sha256": "b93725e4df0b72d976c0635cc932bf97e59d9cd2dea78467c32e66f37bc24def"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-launcher-tests-56b46ba1-2305-46f4-a45d-efd1509a3fc1\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-round1/result.json",
+      "sha256": "33b8794645e6e10fcd6552cfa8aeab2e3c3bba717f068bae757e7831c4e7d7b0"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-comp-launch-5ff45aff\\pytest.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-final/pytest.log",
+      "sha256": "cb0306f34a930f90c9144c74882734068b5a677d485f03e4b623311774769879"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-comp-launch-5ff45aff\\results.xml",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-final/results.xml",
+      "sha256": "314cfe4d550ad814b86c05062b0c8c33278a15a79191bf3961cced94d79c2467"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-comp-launch-5ff45aff\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/launcher-final/result.json",
+      "sha256": "e47a18f8819328a8ee23dec28a9c2f8d4af922ab007962da812c5a7c36fc7183"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-window-9d5cb11e-75bf-4676-acea-6b95b4f149e1\\preflight.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/preflight/preflight.json",
+      "sha256": "8ee139dbc945a38c7d86c5bca30e72c6ce0c0204cb35e3d5b841bf58cb88714b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-window-9d5cb11e-75bf-4676-acea-6b95b4f149e1\\binding.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/preflight/binding.json",
+      "sha256": "b2acab8e268c9fdb49461c77d8f1b3244362e651df60c0ceac9d65a43cb0ce6d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-window-9d5cb11e-75bf-4676-acea-6b95b4f149e1\\lifecycle.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/preflight/lifecycle.json",
+      "sha256": "722093dc7296feb56b377fe26cfdb007065be8c545fddfa0df85a912a079617d"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-preflight-check-c10e0643-a7a3-48c6-b312-a93b28b6abfd\\preflight.log",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/preflight-check/preflight.log",
+      "sha256": "b7570118fca3c5fe91c445da9be906900dc0065568bd96468032b4ee7c3d9366"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-comparison-preflight-check-c10e0643-a7a3-48c6-b312-a93b28b6abfd\\result.json",
+      "copy": "eval-results/checkpoints/source-comparison-preparation-20260911/preflight-check/result.json",
+      "sha256": "64fcce81e339554bfc8afef025e5e4b1ab4c706a0b2369fa60ddb37188dad1b5"
+    }
+  ],
+  "remaining_dependency": "protected Groq credential in live launcher; none available to this task process",
+  "limits": {
+    "deadline_seconds": 60,
+    "initial_quiet_seconds": 60,
+    "max_output_tokens": 768,
+    "max_total_output_tokens": 9216,
+    "minimum_inter_call_delay_seconds": 60,
+    "temperature": 0.65
+  },
+  "model_selection": null,
+  "narrative_approval": null,
+  "cap_001_approved": false,
+  "limitations": [
+    "Synthetic three-turn declarative scenes only; no investigation/RNG/combat/UI/live semantic evidence.",
+    "Filesystem/setup/seal failures preserve existing partial evidence, but an incomplete matrix is not certified.",
+    "Candidate configurations differ in reasoning and later histories; this does not isolate a causal model effect.",
+    "Local hashes/timing establish local consistency, not independent provider authenticity."
+  ]
+}

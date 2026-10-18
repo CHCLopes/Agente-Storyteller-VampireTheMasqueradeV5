@@ -1,0 +1,184 @@
+{
+  "version": "grounded-progression-responses-v1",
+  "protocol": "grounded-progression-contract-v1",
+  "review_metadata": {
+    "batch_id": "c03cff72-817f-4881-a864-8a5848011c0a",
+    "reviewer": "codex-independent-semantic-review",
+    "review_date": "2026-09-22",
+    "human_admission_required": true,
+    "source_summary_sha256": "d6c49b33ea03edc16f5c4322ce3eaf4101bab090664cab3d49fefada28af331e"
+  },
+  "input_hashes": {
+    "corpus_sha256": "e3d9252090f7c1208039c74f01bdf4bf2c9940d5560fbd43a003a9c3a7e939e4",
+    "protocol_sha256": "da938d4380c6cb73036522d407583aa26aec1ef78a05e253efef9a396ee79fb3"
+  },
+  "target": {
+    "requested": {
+      "target_id": "gpt-oss-120b-groq-free-synthetic-low",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "reported": {
+      "target_id": "gpt-oss-120b-groq-free-synthetic-low",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b",
+      "reasoning": "low"
+    }
+  },
+  "invocation": {"retry_count": 0, "fallback_used": false},
+  "responses": [
+    {
+      "case_id": "wait-without-authorized-progression",
+      "narrative": "O livro‑caixa repousa sobre a mesa de madeira, suas páginas ainda alinhadas como antes. A luz tênue da janela projeta sombras alongadas, enquanto a água que escorre lentamente pela canaleta no chão se aproxima, mas ainda não toca a borda do livro. O silêncio na galeria permanece, interrompido apenas pelo leve gotejar que ecoa nas paredes de pedra. O ar carrega um leve cheiro de umidade, mas nada mais se altera ao seu redor.",
+      "grounded_fact_ids": ["ledger-on-table", "water-short-of-ledger"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A água escorre e se aproxima do livro apesar de não existir transição autorizada para este caso."
+      }
+    },
+    {
+      "case_id": "wait-with-authorized-event",
+      "narrative": "A água, que antes deslizava silenciosa pela canaleta, chega finalmente à borda do livro‑caixa. Um leve som de respingo ecoa na galeria enquanto a superfície do livro escurece nas margens, marcando o risco iminente de se molhar. As sombras projetadas pela luz da janela tremem levemente sobre as páginas, e o cheiro de umidade se intensifica, mas a pedra ao redor permanece imóvel, como se aguardasse o próximo movimento.",
+      "grounded_fact_ids": ["ledger-on-table", "water-nears-ledger"],
+      "transition_id": "water-reaches-ledger",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A água alcança a borda e torna o risco imediato sem resolver nenhuma outra incerteza."
+      }
+    },
+    {
+      "case_id": "known-object-state",
+      "narrative": "Você se aproxima da parede onde a tapeçaria se destaca, revelando o cofre de madeira escura, ainda inteiro e firme. A luz que entra pela janela atravessa a fenda da tapeçaria, refletindo no metal frio da fechadura, que permanece fechada e inalterada. Não há som de rangidos ou vibrações; o ar ao redor parece estático, como se o cofre guardasse um segredo silencioso. Seu olhar percorre a superfície, notando apenas a textura desgastada da madeira e o brilho austero da fechadura, sem nenhum indício de abertura ou dano.",
+      "grounded_fact_ids": ["safe-visible", "safe-locked"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": true,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": false,
+        "rationale": "A resposta acrescenta que o jogador se aproxima, ação não declarada no exame sem toque."
+      }
+    },
+    {
+      "case_id": "unknown-object-state",
+      "narrative": "O painel vermelho brilha suavemente contra a parede, sua superfície lisa refletindo a luz fraca da sala. Você o encara de longe, percebendo apenas seu tom vívido e o contorno retangular, sem saber o que ele faz ou se está ligado a alguma fonte de energia. O silêncio da sala permanece, interrompido apenas pelo leve zumbido distante que parece não ter relação com o painel.",
+      "grounded_fact_ids": ["red-panel-visible"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": false,
+        "coherent_hold_observed": true,
+        "rationale": "A função e a alimentação do painel continuam explicitamente desconhecidas e nenhuma mudança é produzida."
+      }
+    },
+    {
+      "case_id": "favorable-mechanical-result",
+      "narrative": "Ao pressionar a ferramenta contra a fechadura, o metal range levemente e, então, cede. O mecanismo gira com um clique sutil, indicando que a tranca está destravada. A porta, ainda fixa ao batente, agora pode ser aberta, mas o que há do outro lado permanece obscuro, sem nenhum som ou cheiro que revele seu interior.",
+      "grounded_fact_ids": ["lockpick-success"],
+      "transition_id": "lock-opens",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A fechadura cede e a porta pode ser aberta, enquanto o conteúdo além dela permanece desconhecido."
+      }
+    },
+    {
+      "case_id": "unfavorable-mechanical-result",
+      "narrative": "A ponta da ferramenta de arrombamento cede sob a força aplicada, curvando-se em um estalo metálico. O metal se torce, formando um ângulo estranho, enquanto a fechadura permanece inalterada, seus pinos ainda firmemente posicionados. O silêncio da porta ecoa, interrompido apenas pelo som da ferramenta se deformando nas suas mãos.",
+      "grounded_fact_ids": ["lockpick-failure", "tool-bends"],
+      "transition_id": "tool-bends",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A ferramenta entorta e a fechadura permanece travada, sem reversão do resultado mecânico."
+      }
+    },
+    {
+      "case_id": "npc-protected-secret",
+      "narrative": "Mara ergue uma sobrancelha, hesita um instante e, ao invés de pronunciar o nome da fundadora, aponta discretamente para um velho índice encadernado que repousa sobre a mesa. O couro gasto do volume parece ter sido folheado inúmeras vezes, e suas páginas amarelecidas sugerem segredos guardados há muito tempo. Ela murmura, quase como um sussurro, \"Talvez isso ajude a lembrar\", sem revelar nada mais.",
+      "grounded_fact_ids": ["mara-can-offer-index"],
+      "transition_id": "mara-offers-index",
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": false,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "Mara evita a identidade protegida e oferece exatamente o índice autorizado como pista acionável."
+      }
+    },
+    {
+      "case_id": "ambiguous-action-preserves-choice",
+      "narrative": "Ao se aproximar da bancada, o ar parece vibrar levemente ao redor dos três instrumentos dispostos em linha: um violino de madeira escura, um saxofone de latão reluzente e uma pequena caixa de percussão. A luz da lâmpada pendente reflete nos acabamentos, lançando sombras que se cruzam no tampo. Um leve rangido ecoa quando o peso da sua presença pressiona o chão, mas nenhum dos objetos se move por conta própria. O silêncio permanece, apenas interrompido pelo sutil chiado de um ventilador distante.",
+      "grounded_fact_ids": ["three-instruments-visible"],
+      "transition_id": null,
+      "asserted_state_ids": [],
+      "schema_valid": true,
+      "capsule_link_valid": true,
+      "review": {
+        "canonical_fact_contradiction": false,
+        "invented_state_or_transition": true,
+        "player_agency_attribution": false,
+        "unauthorized_secret_disclosure": false,
+        "continuity_material_repetition": false,
+        "progression_observed": true,
+        "coherent_hold_observed": false,
+        "rationale": "A resposta inventa tipos específicos para os instrumentos e uma vibração ambiental sem transição autorizada."
+      }
+    }
+  ]
+}

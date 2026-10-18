@@ -1,0 +1,83 @@
+{
+  "protocol": "closed-world-render-contract-v1",
+  "target": {
+    "target_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "provider": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "reasoning": "low"
+  },
+  "case_count": 8,
+  "passed_count": 0,
+  "failed_count": 8,
+  "qualified_in_protocol": false,
+  "runtime_default_eligible": false,
+  "human_admission_required": true,
+  "cases": [
+    {
+      "case_id": "hold-silent-bell",
+      "word_count": 73,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "authorized-single-bell",
+      "word_count": 71,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "continuity_repetition_failed"
+      ]
+    },
+    {
+      "case_id": "known-sealed-tube",
+      "word_count": 81,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "unknown-glass-disc",
+      "word_count": 73,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "favorable-shutter-result",
+      "word_count": 79,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "unfavorable-slab-result",
+      "word_count": 78,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "npc-protected-code",
+      "word_count": 83,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed"
+      ]
+    },
+    {
+      "case_id": "ambiguous-sealed-boxes",
+      "word_count": 83,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "HYP-007",
+  "lot_id": "HYP-007-L2",
+  "target_model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "max_calls": 17,
+  "max_output_tokens_per_call": 768,
+  "max_request_bytes": 20000,
+  "max_estimated_usd": "0.15",
+  "paid_ceiling_authorized": true,
+  "live_inference_authorized": false,
+  "admission_automatic": false,
+  "prompt_sha256": "10b64256b36fcae1a80432361e9e4883129d8b78084a855b03515ab26742f4cf",
+  "implementation_sha256": {
+    "scripts/evaluate_hybrid_campaign_luna_live.py": "d6ed35966fdab5b99347f6e8702bb9b1f981b8dfd80ab00795d4734fe223eed5",
+    "scripts/run_hybrid_campaign_luna_live.ps1": "4eed0054f8ed73d8d98599245cf850272b8d82e6cec7bea7f37aa8efb66bdf9f",
+    "scripts/preflight_hybrid_campaign_luna.py": "0b641b34fbb84c0ba32f5f7d7853c4282b57e438a3a0282099a34c4a3883f9fe",
+    "scripts/evaluate_openai_luna_low_live.py": "7633125176bfe7b84c842c7fc8ab36d54cf5edf88c461d6c9b6d1590b183844e",
+    "scripts/report_luna_test_cost.py": "d5a8c0f1e588ec3d5c048bbfcc1d4860e018b6b28a60241a87ddfd3d455a6600",
+    "api/campaign_progression_catalog.py": "504e5e7c5161e5058d6bb17b39b82675178640773877bddbf38b8cba5d31efb9",
+    "api/campaign_progression_service.py": "e63ca9b9caaebf66cdcb675c0fa15d95b78da75aa0c13199c2af0bdc72603ed2",
+    "api/campaign_source_capsule.py": "4d69cf05db4ffdd6baa2b9bacd84aec3d60ef5d529e7b1f132b75737d544bc88",
+    "api/campaign_source_context.py": "c45d73d5433a1a8dc98472a318848a077c94dfb28a9e3da75029aa962d948b01",
+    "api/campaign_source_execution_service.py": "de2ebe4251e2605b97a48635f81556698c0bbaddc4eeb34e62b7cf2348b8244b",
+    "api/campaign_source_input_service.py": "20c9d976f0037a16f2ab55d4a1626be9001377b78a4390a9f1a8c3168f18e71b",
+    "api/campaign_source_profile.py": "f648ec802265868fff636f54a0a6d7ed1994f1017db297dd4fb59a049bb5c831",
+    "api/campaign_source_storage.py": "3b0a041ddf42493efe4993004218d188f64e8bb11a0484094a549caf65bac189",
+    "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+    "api/persistence.py": "bb1e2e7f3ebdd0c3d0bbec0ce5bf98dca250366d9911f9c37f7282d1936167cb",
+    "api/rules_service.py": "0368f714383db2fa71c05902e22ecdf749b72d558ffb9749813e1bd68b642551"
+  },
+  "notes": "HYP-007-L2 executado em 03/10/2026: duas chamadas, um turno completo, parada por policy_failed no turno 2. Live encerrado; custo estimado USD 0.0012318, nao cobranca confirmada."
+}

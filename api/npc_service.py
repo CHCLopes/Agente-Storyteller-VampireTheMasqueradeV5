@@ -1,6 +1,9 @@
 from pydantic import BaseModel, Field
-import os
-import json
+import re
+import unicodedata
+
+from .catalog_models import CatalogDomain
+from .catalog_service import get_catalog_registry
 
 class NpcEngineData(BaseModel):
     base_dice_pool: int
@@ -18,21 +21,38 @@ class NpcModel(BaseModel):
     engine_data: NpcEngineData
     narrative_data: NpcNarrativeData
 
-_NPC_CACHE: dict[str, NpcModel] = {}
-
 def load_npc_catalog():
-    global _NPC_CACHE
-    if _NPC_CACHE: return
-    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogs", "npc_hierarchy.json")
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        for key, val in data.items():
-            _NPC_CACHE[key] = NpcModel(**val)
+    get_catalog_registry()
 
 def get_npc_model(npc_id: str) -> NpcModel | None:
-    load_npc_catalog()
-    return _NPC_CACHE.get(npc_id.lower())
+    record = get_catalog_registry().get(CatalogDomain.NPC_ARCHETYPE, npc_id)
+    return NpcModel.model_validate(record.payload) if record else None
+
+
+def get_supported_npc_model(npc_id: str) -> NpcModel:
+    record = get_catalog_registry().require(CatalogDomain.NPC_ARCHETYPE, npc_id)
+    if record.mvp_scope != "base_reachable":
+        raise ValueError(f"NPC archetype is outside the approved MVP scope: {npc_id}")
+    return NpcModel.model_validate(record.payload)
 
 def get_all_npcs() -> dict[str, NpcModel]:
-    load_npc_catalog()
-    return _NPC_CACHE
+    return {
+        record.identity.entry_id: NpcModel.model_validate(record.payload)
+        for record in get_catalog_registry().entries(CatalogDomain.NPC_ARCHETYPE)
+    }
+
+
+def find_npc_ids(text: str) -> tuple[str, ...]:
+    """Resolve localized, explicit NPC mentions to canonical catalog IDs."""
+
+    decomposed = unicodedata.normalize("NFKD", text.casefold())
+    normalized = "".join(
+        character for character in decomposed if not unicodedata.combining(character)
+    )
+    found: list[str] = []
+    for record in get_catalog_registry().entries(CatalogDomain.NPC_ARCHETYPE):
+        npc_id = record.identity.entry_id
+        aliases = (npc_id, *record.identity.aliases)
+        if any(re.search(r"\b" + re.escape(alias) + r"\b", normalized) for alias in aliases):
+            found.append(npc_id)
+    return tuple(found)

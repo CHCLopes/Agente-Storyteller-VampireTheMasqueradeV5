@@ -1,0 +1,199 @@
+{
+  "date": "2026-09-11",
+  "status": "completed",
+  "scope": "bounded_hypothetical_interest_advice",
+  "changed_existing_files": [
+    "api/scene_director_service.py"
+  ],
+  "new_regression_tests": 48,
+  "final_regression": {
+    "tests": 1097,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "code_hashes": {
+    "api/scene_director_service.py": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+    "tests/test_hypothetical_interest_regressions.py": "849bc99e60cf9c3b14970693476aae402f11572ad1dfe3d3382fd05516f0a308"
+  },
+  "test_process": {
+    "hashes_before": {
+      "tests/test_scene_focus_npc_object_regressions.py": "d2ed6fe2edcaf5a0864523cf3e60919c3387c431e6e02196745041715a22b9c2",
+      "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016",
+      "tests/test_temporal_barrier_open_regressions.py": "f6b905576a90f5ae668feaed750d4ac0c66a9dbaf2b2ca34781a101e67a8c9f3",
+      "tests/test_scene_focus_passive_regressions.py": "737e0f582414b73d3f81fce679e4ad466df5ec8172ee5135b66b735bea7a685f",
+      "tests/test_narrative_source_bridge.py": "6c0fe243850f259389e5912cf7cc159a457a585a84c444fcf0ef9072e1426f1c",
+      "tests/test_narrative_source_setup_flow.py": "6b3f3b496b9e6c201f72a150f8b9e1f5ee66593602ac1209c16f1ec928c090dd",
+      "tests/test_perceived_passive_actor.py": "a10e8ec4a8a550a2eb2cd95ba2622e51c45380544f2825326fe85855c34db2db",
+      "tests/test_scene_focus_wait_regressions.py": "75bf551e110d12880ddbe3259dcfbfd296a3170f01e7dd07665789b0efad658a",
+      "tests/test_implicit_agency_regressions.py": "8f6c2e14aabe2d8c8ba0d828969f80c942582252557eb5e86d7b6740d926b958",
+      "tests/test_grounded_player_question_regressions.py": "03d49653174b8f2016c5134dbc00bbfe52873bb0d21b070295974fc7a033930a",
+      "tests/test_attributed_agency_regressions.py": "5a2dc80b2a52a1ebc8c273005d340926d4e615ae70e21d6ae95bfdf553a97b66",
+      "api/scene_director_service.py": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+      "tests/test_narrative_source_progression_admission.py": "e2d02e390876526500c1c7ffc03b01c78f96543a7a595d20f516eb52c666f7d8",
+      "tests/test_faithful_object_state_regressions.py": "d280c1453496f2a1735eb1f3455ecce8daebc9b56dba455aa6f05ffc00a3c915",
+      "tests/test_scene_director_service.py": "460397b1afe7e467b97cd09ab838a816c4de7aa5467b1dcf713fc37862aff20c",
+      "tests/test_faithful_player_question_regressions.py": "35fa63b01a24c1d349a9af75f3d4e3bd82252bb744185077e1b4b4f3555bd640",
+      "tests/test_implicit_player_contact.py": "f342b9b660db473f4ad2cbf3138f0d97c1a41d3729510c73c0c055a46ef8e29d",
+      "tests/test_implicit_touch_and_attempt.py": "9321656606671b050c2cedbe60cb8b5b64232eea70a1594f87c0f34526ecea74",
+      "tests/test_perceived_actor_boundaries.py": "eb1330cde0fb844bcd8543b75b7dbdb9187510fbe5ef51fb365f53e4a25dc2bd",
+      "tests/test_scene_focus_mara_holding_regressions.py": "31fb96c0f004f7775f4ce6eb26b347d227d42eaf4553120a5c65e9fe4e64f82a",
+      "tests/test_hypothetical_interest_regressions.py": "849bc99e60cf9c3b14970693476aae402f11572ad1dfe3d3382fd05516f0a308",
+      "tests/test_temporal_barrier_contact.py": "71c5dbe801dd024e4ae7e2b9a18614bc43927b425cedb1896ab211c390fb1161"
+    },
+    "started_at": "2026-09-12T00:05:11.8111181Z",
+    "exit_code": 0,
+    "command_success": true,
+    "stage_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-hypothetical-interest-final-fffb6d2e-b038-4cf3-b71f-447e8fd5c417",
+    "finished_at": "2026-09-12T00:05:39.3085772Z",
+    "hashes_after": {
+      "tests/test_scene_focus_npc_object_regressions.py": "d2ed6fe2edcaf5a0864523cf3e60919c3387c431e6e02196745041715a22b9c2",
+      "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016",
+      "tests/test_temporal_barrier_open_regressions.py": "f6b905576a90f5ae668feaed750d4ac0c66a9dbaf2b2ca34781a101e67a8c9f3",
+      "tests/test_scene_focus_passive_regressions.py": "737e0f582414b73d3f81fce679e4ad466df5ec8172ee5135b66b735bea7a685f",
+      "tests/test_narrative_source_bridge.py": "6c0fe243850f259389e5912cf7cc159a457a585a84c444fcf0ef9072e1426f1c",
+      "tests/test_narrative_source_setup_flow.py": "6b3f3b496b9e6c201f72a150f8b9e1f5ee66593602ac1209c16f1ec928c090dd",
+      "tests/test_perceived_passive_actor.py": "a10e8ec4a8a550a2eb2cd95ba2622e51c45380544f2825326fe85855c34db2db",
+      "tests/test_scene_focus_wait_regressions.py": "75bf551e110d12880ddbe3259dcfbfd296a3170f01e7dd07665789b0efad658a",
+      "tests/test_implicit_agency_regressions.py": "8f6c2e14aabe2d8c8ba0d828969f80c942582252557eb5e86d7b6740d926b958",
+      "tests/test_grounded_player_question_regressions.py": "03d49653174b8f2016c5134dbc00bbfe52873bb0d21b070295974fc7a033930a",
+      "tests/test_attributed_agency_regressions.py": "5a2dc80b2a52a1ebc8c273005d340926d4e615ae70e21d6ae95bfdf553a97b66",
+      "api/scene_director_service.py": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964",
+      "tests/test_narrative_source_progression_admission.py": "e2d02e390876526500c1c7ffc03b01c78f96543a7a595d20f516eb52c666f7d8",
+      "tests/test_faithful_object_state_regressions.py": "d280c1453496f2a1735eb1f3455ecce8daebc9b56dba455aa6f05ffc00a3c915",
+      "tests/test_scene_director_service.py": "460397b1afe7e467b97cd09ab838a816c4de7aa5467b1dcf713fc37862aff20c",
+      "tests/test_faithful_player_question_regressions.py": "35fa63b01a24c1d349a9af75f3d4e3bd82252bb744185077e1b4b4f3555bd640",
+      "tests/test_implicit_player_contact.py": "f342b9b660db473f4ad2cbf3138f0d97c1a41d3729510c73c0c055a46ef8e29d",
+      "tests/test_implicit_touch_and_attempt.py": "9321656606671b050c2cedbe60cb8b5b64232eea70a1594f87c0f34526ecea74",
+      "tests/test_perceived_actor_boundaries.py": "eb1330cde0fb844bcd8543b75b7dbdb9187510fbe5ef51fb365f53e4a25dc2bd",
+      "tests/test_scene_focus_mara_holding_regressions.py": "31fb96c0f004f7775f4ce6eb26b347d227d42eaf4553120a5c65e9fe4e64f82a",
+      "tests/test_hypothetical_interest_regressions.py": "849bc99e60cf9c3b14970693476aae402f11572ad1dfe3d3382fd05516f0a308",
+      "tests/test_temporal_barrier_contact.py": "71c5dbe801dd024e4ae7e2b9a18614bc43927b425cedb1896ab211c390fb1161"
+    },
+    "test_files": [
+      "tests/test_hypothetical_interest_regressions.py",
+      "tests/test_scene_director_service.py",
+      "tests/test_attributed_agency_regressions.py",
+      "tests/test_implicit_agency_regressions.py",
+      "tests/test_implicit_player_contact.py",
+      "tests/test_implicit_touch_and_attempt.py",
+      "tests/test_temporal_barrier_open_regressions.py",
+      "tests/test_temporal_barrier_contact.py",
+      "tests/test_perceived_actor_boundaries.py",
+      "tests/test_perceived_passive_actor.py",
+      "tests/test_faithful_player_question_regressions.py",
+      "tests/test_faithful_object_state_regressions.py",
+      "tests/test_grounded_player_question_regressions.py",
+      "tests/test_narrator_source_profile.py",
+      "tests/test_narrative_source_bridge.py",
+      "tests/test_narrative_source_setup_flow.py",
+      "tests/test_narrative_source_progression_admission.py",
+      "tests/test_scene_focus_wait_regressions.py",
+      "tests/test_scene_focus_npc_object_regressions.py",
+      "tests/test_scene_focus_mara_holding_regressions.py",
+      "tests/test_scene_focus_passive_regressions.py"
+    ]
+  },
+  "checkpoint": "eval-results/checkpoints/hypothetical-interest-fix-20260911",
+  "copies": [
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-before-20260912\\pytest.log",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/red-exact/pytest.log",
+      "sha256": "9d659f00232740e3f8b99441c1b4efbbf31e220f6235d17e121b2019e27bab9c"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-before-20260912\\results.xml",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/red-exact/results.xml",
+      "sha256": "46d2f204efcaa1877261feb9d9e365024636d3a75e0dea8b2ae2affcdc542d70"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-before-20260912\\result.json",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/red-exact/result.json",
+      "sha256": "067c63eee1eab5cc2d14c4481d8e92ffbf34fa88cdc83f3e3162df5fa27d9f26"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-focused-20260912\\pytest.log",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/new-tests/pytest.log",
+      "sha256": "13d6afff423b0402b4cf110ed5528093b62978014be939c28c87c2ab9a170446"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-focused-20260912\\results.xml",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/new-tests/results.xml",
+      "sha256": "9692dcd528439dfa8f9341639b4033cccb85cbe198b62df2fdd729cae1f61eac"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-focused-20260912\\result.json",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/new-tests/result.json",
+      "sha256": "8bdd9d670259529260ce6c53ae8deac1cf5d1f54b2497c646b6afbf661662073"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-hypothetical-interest-final-fffb6d2e-b038-4cf3-b71f-447e8fd5c417\\pytest.log",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/final-regression/pytest.log",
+      "sha256": "8ee83b2a53928408e1dc86024124cde6cfbf5c9de19a2daa5b220b3ec6773c87"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-hypothetical-interest-final-fffb6d2e-b038-4cf3-b71f-447e8fd5c417\\results.xml",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/final-regression/results.xml",
+      "sha256": "64b7e36ab90107c10d6a9957d685f4d4b43cc18c68dd6874f3a683f4e98b639c"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-hypothetical-interest-final-fffb6d2e-b038-4cf3-b71f-447e8fd5c417\\result.json",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/final-regression/result.json",
+      "sha256": "0dabf0277affe1dd8a471234301ba9a3a8aac1912a7220a1deef7130c82d776b"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-agency-diagnostic-61b83a2f\\diagnostic.json",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diagnostic/diagnostic.json",
+      "sha256": "c8e86d2a0710f489b91a1dbb0fc42f0f4871bceea56387e3af3296ca4892f2bc"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-agency-diagnostic-61b83a2f\\verb-ablation.json",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diagnostic/verb-ablation.json",
+      "sha256": "99574d39d0d118dc1e8821c80376dd356af5c785b2eba0429ad12cf803e0a5c8"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-agency-diagnostic-61b83a2f\\report.md",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diagnostic/report.md",
+      "sha256": "a0e82c93dc9a9fe44db1d23293ba5b1c02cf7df2c5802ea2af8bc482d3bc06f3"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-agency-diagnostic-61b83a2f.py",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diagnostic/storyteller-source-agency-diagnostic-61b83a2f.py",
+      "sha256": "4f57a7753f3919224b6d5c745d5d581308e07fd4dffc1718ec7aeb1901dd3eae"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-agency-verb-ablation-61b83a2f.py",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diagnostic/storyteller-source-agency-verb-ablation-61b83a2f.py",
+      "sha256": "7bb3869dfe789b5eda160e437ddd1485e3d39b5b7a45c02dfbc51ff8b0aabb2f"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-diff-20260912\\guard.diff",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diff/guard.diff",
+      "sha256": "59258371ac407a9d994aa830904ba48f6096937d6ec4532cd7da80e968c751b1"
+    },
+    {
+      "source": "C:\\Users\\skate\\AppData\\Local\\Temp\\st-interest-diff-20260912\\scene_director_service-before.py",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/diff/scene_director_service-before.py",
+      "sha256": "661e2a0dbbc2ea092fa43bd7a1495a458cfe08612fe2c16176057c5aa573e0d4"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\api\\scene_director_service.py",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/after/api/scene_director_service.py",
+      "sha256": "67d442419704c56cb9b5bfedf54da68bd7b8ac2c53c7ed13fe1ffe541ab61964"
+    },
+    {
+      "source": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\tests\\test_hypothetical_interest_regressions.py",
+      "copy": "eval-results/checkpoints/hypothetical-interest-fix-20260911/after/tests/test_hypothetical_interest_regressions.py",
+      "sha256": "849bc99e60cf9c3b14970693476aae402f11572ad1dfe3d3382fd05516f0a308"
+    }
+  ],
+  "independent_review": "No remaining blocker; exact 17-line diff reviewed against frozen snapshot.",
+  "live_calls_after_comparison": 0,
+  "historical_batch_reclassified": false,
+  "preexisting_out_of_scope": {
+    "evidence": "inspection_only",
+    "location": "api/scene_director_service.py::_action_authorizations, lines1943-1961",
+    "observation": "Existing search/follow families inspect integral player input; quote stripping in the inspected path is specific to wait.",
+    "limit": "Do not claim all quoted input is inert. An unexecuted first-draft test expectation that would require changing this old behavior was replaced with a check using the original declaration. No runtime fix for that separate concern."
+  }
+}

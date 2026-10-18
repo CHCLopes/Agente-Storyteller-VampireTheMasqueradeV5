@@ -1,0 +1,386 @@
+{
+  "document_kind": "record_claim_check_preparation",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T15:19:21.665391+00:00",
+  "status": "executed_and_analyzed_operational_pass_semantic_failure",
+  "authorization": {
+    "source": "explicit continuous full authority from user2026-09-07",
+    "new_observations_authorized": true,
+    "new_batch_approval_required": false,
+    "remaining_human_dependency": null
+  },
+  "prepared_metadata": {
+    "purpose": "record_evidence_claim_check_probe",
+    "probe_kind": "record_evidence_claim_check_probe",
+    "experiment_version": "record-evidence-claim-check-v1",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "support_validation_scope": "structural_only",
+    "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_record_claim_check.py",
+      "sha256": "902027fbdc7e0d28201cd787af180a65edbb45fe4070ab646e9b74fd331491d7",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low"
+    },
+    "evidence_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "low"
+      },
+      "max_total_output_tokens": 3072,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json",
+        "sha256": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "original_body_sha256": "573bfe7589a2efefb75435c6f38a6127c87909170798523780e8a18da1969d89",
+        "proposed_body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+        "changed_payload_fields": [
+          "messages[0].content"
+        ]
+      },
+      "baseline_dossier": {
+        "file": "evals/narrator/reports/record-evidence-target-quotes-dossier-d4491c21-2026-09-07.json",
+        "sha256": "b5e60a9d0313209a413c90c9f68b081b16cb943d9d6a55a899e91d2691daadfc",
+        "body_sha256": "573bfe7589a2efefb75435c6f38a6127c87909170798523780e8a18da1969d89"
+      },
+      "support_resolution_policy": {
+        "method": "unique_exact_target_quote",
+        "quote_protocol": "record-evidence-target-quotes-v1",
+        "matching": "literal_unicode_code_points",
+        "ambiguous_quote": "reject",
+        "missing_quote": "reject",
+        "records_rewritten": false,
+        "offsets_purpose": "audit_only",
+        "coverage_validation": false,
+        "entailment_validation": false
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "corpus": {
+        "file": "corpus_v1.json",
+        "sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283"
+      },
+      "prompt": {
+        "variant": "record-evidence-claim-check-v1",
+        "file": "evals/narrator/prompts/record-evidence-claim-check-v1.md",
+        "sha256": "dc338d3ff2f1cf3fa04222e717b5e3f060541fbf41cf4abd5a9cf7af66a74839"
+      },
+      "response_schema_sha256": "225adcde7c70dbd5be868b06a8731fc59f00bf11de80cc9639a88d7573db15d8",
+      "provider_schema_sha256": "fe5e9738d12ca0b094643c04e45cdbf87aee17588b0889f75927ec8df663cff2",
+      "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+      "implementation": [
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/narrator_record_quote_evidence.py",
+          "sha256": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58"
+        },
+        {
+          "file": "scripts/narrator_record_evidence.py",
+          "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+        },
+        {
+          "file": "scripts/narrator_record_derivation.py",
+          "sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "35b0b3387f2cd5c8947f3971f27ad93a0f99460dff626da59e9509440b8a4741"
+        },
+        {
+          "file": "scripts/narrator_actor_contract.py",
+          "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "opening",
+          "episode_id": "opening",
+          "turn_id": "establish-scene",
+          "source": {
+            "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+            "line_number": 3,
+            "field": "proposal.narrative",
+            "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+            "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "episode_id": "opening",
+            "turn_id": "establish-scene",
+            "repetition": 1,
+            "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+            "corpus_file": "evals/narrator/corpus_v1.json",
+            "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "generation_context": {
+            "version": "record-evidence-v1",
+            "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+            "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+            "source_units": [
+              {
+                "id": "n0",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 0,
+                "end": 197,
+                "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+              },
+              {
+                "id": "a0",
+                "origin": "player_input",
+                "path": "/player_input/text",
+                "value": "Onde estou?"
+              },
+              {
+                "id": "m0",
+                "origin": "mechanics",
+                "path": "/expected_outcome/value",
+                "value": "unresolved"
+              },
+              {
+                "id": "c0",
+                "origin": "known_context",
+                "path": "/context/known_context/text",
+                "value": "A crônica é urbana, contemporânea e gótico-punk."
+              }
+            ],
+            "narrative_reconstructed_exactly": true,
+            "source": {
+              "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+              "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+              "line_number": 3,
+              "field": "proposal.narrative",
+              "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+              "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+              "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+              "episode_id": "opening",
+              "turn_id": "establish-scene",
+              "repetition": 1,
+              "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+              "corpus_file": "evals/narrator/corpus_v1.json",
+              "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+              "context_origin": "original_synthetic_corpus",
+              "protected_secrets_count": 0
+            },
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 367,
+              "omitted_background_details": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "files": {
+    "scripts/evaluate_narrator_record_claim_check.py": "902027fbdc7e0d28201cd787af180a65edbb45fe4070ab646e9b74fd331491d7",
+    "scripts/run_groq_record_claim_check_probe.ps1": "3bcc9f8d973d86a0105dbdf303edb5d9246fde183df374f4ded0ad817fe3fcff",
+    "scripts/evaluate_narrator_models.py": "35b0b3387f2cd5c8947f3971f27ad93a0f99460dff626da59e9509440b8a4741",
+    "tests/test_record_claim_check_execution.py": "bec1d1c6a7645f3c12ed30972e05cddf6f6e073446a2a9fcf8275f4ba7e4b63f",
+    "tests/test_record_claim_check_runner.py": "bcf75fe615c97dfda2190bf7e126fa3f5b6ae39094459e351cad745c10650ddf",
+    "tests/test_record_claim_check_replay_boundary.py": "97b9b44eb96654340a04c8c3d004fbadb4587f4d3f2bd46ca19cbc71a3c59805",
+    "evals/narrator/prompts/record-evidence-claim-check-v1.md": "b392c740bf0977ef9a65c1283ac04b1ff0e2e3185ac1da039cc6a45486e76ea2"
+  },
+  "verification": {
+    "tests_passed_distinct": 156,
+    "new_tests": 113,
+    "existing_tests": 43,
+    "failed": 0,
+    "skipped": 0,
+    "full_repository_suite": false,
+    "groups": [
+      {
+        "files": [
+          "tests/test_record_claim_check_execution.py"
+        ],
+        "passed": 39,
+        "new": 39,
+        "seconds": 27.33
+      },
+      {
+        "files": [
+          "tests/test_record_claim_check_runner.py"
+        ],
+        "passed": 53,
+        "new": 53
+      },
+      {
+        "files": [
+          "tests/test_record_claim_check_replay_boundary.py",
+          "tests/test_record_quotes_replay_boundary.py",
+          "tests/test_narrator_replay_skips.py"
+        ],
+        "passed": 64,
+        "new": 21,
+        "existing": 43,
+        "seconds": 1.65
+      }
+    ],
+    "smoke_and_previous_preparation_counts_not_added": true,
+    "known_warning": "preexisting python_multipart PendingDeprecationWarning",
+    "root_preflight_passed": true,
+    "body_sha256": "0ef02b6c4987318c829e7193e6cdbba67dcc58d6937e966fdcf3809c64cbd209",
+    "independent_review": "no material findings: root executor/wrapper review and separate prompt/wrapper/dossier/report review",
+    "baseline_preserved_except_declared_cap_guard": true,
+    "legacy_guard_added_lines": 12,
+    "legacy_guard_removed_lines": 0,
+    "raw_hashes_preserved": {
+      "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/summary.json": "f1be997a180d091d4ac07ea1ab0c0c66cafdb618fa4f4a968a811ba986b577ae",
+      "eval-results/20260907T145720Z-f6f7d63d-b888-4d16-b201-46bbc8dee31e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "1e17d6b7a28861d15fd8434b1af6c76aac3b7f9237d08751681a5c4ec3cebfba"
+    },
+    "empty_credential_integration_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-claim-check-wrapper-20260907\\real-empty-key-integration.json",
+    "empty_credential_integration": {
+      "exit_code": 3,
+      "credential_validation_reached": true,
+      "preflight_failed": false,
+      "stderr_empty": true,
+      "new_artifacts": [],
+      "removed_artifacts": [],
+      "hashes_unchanged": true,
+      "hashes_before": {
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-evidence-claim-check-v1.md": "b392c740bf0977ef9a65c1283ac04b1ff0e2e3185ac1da039cc6a45486e76ea2",
+        "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "evals/narrator/reports/record-evidence-target-quotes-dossier-d4491c21-2026-09-07.json": "b5e60a9d0313209a413c90c9f68b081b16cb943d9d6a55a899e91d2691daadfc",
+        "scripts/evaluate_narrator_models.py": "35b0b3387f2cd5c8947f3971f27ad93a0f99460dff626da59e9509440b8a4741",
+        "scripts/evaluate_narrator_record_claim_check.py": "902027fbdc7e0d28201cd787af180a65edbb45fe4070ab646e9b74fd331491d7",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+        "scripts/run_groq_record_claim_check_probe.ps1": "3bcc9f8d973d86a0105dbdf303edb5d9246fde183df374f4ded0ad817fe3fcff",
+        "tests/test_record_claim_check_runner.py": "bcf75fe615c97dfda2190bf7e126fa3f5b6ae39094459e351cad745c10650ddf"
+      },
+      "hashes_after": {
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-evidence-claim-check-v1.md": "b392c740bf0977ef9a65c1283ac04b1ff0e2e3185ac1da039cc6a45486e76ea2",
+        "evals/narrator/reports/record-evidence-claim-check-dossier-fda8af66-2026-09-07.json": "5b4bd26ab85ae927c4d7ebea03d5363f20d19d8b4bc0e1ee0c0cccd6fd9a33c9",
+        "evals/narrator/reports/record-evidence-target-quotes-dossier-d4491c21-2026-09-07.json": "b5e60a9d0313209a413c90c9f68b081b16cb943d9d6a55a899e91d2691daadfc",
+        "scripts/evaluate_narrator_models.py": "35b0b3387f2cd5c8947f3971f27ad93a0f99460dff626da59e9509440b8a4741",
+        "scripts/evaluate_narrator_record_claim_check.py": "902027fbdc7e0d28201cd787af180a65edbb45fe4070ab646e9b74fd331491d7",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/narrator_record_quote_evidence.py": "15083d0bfa8fe9df88784efd5980f54cdaafc5133ce9125933b98ed234ff3f58",
+        "scripts/run_groq_record_claim_check_probe.ps1": "3bcc9f8d973d86a0105dbdf303edb5d9246fde183df374f4ded0ad817fe3fcff",
+        "tests/test_record_claim_check_runner.py": "bcf75fe615c97dfda2190bf7e126fa3f5b6ae39094459e351cad745c10650ddf"
+      },
+      "credential": "empty SecureString; GROQ_API_KEY removed from child environment",
+      "live_calls": 0,
+      "command": "pwsh -NoLogo -NoProfile -NonInteractive -Command <empty SecureString wrapper invocation>; no execution-policy bypass",
+      "output_handling": "stdout/stderr captured and discarded; only stage booleans retained"
+    }
+  },
+  "interactive_launcher": {
+    "process_id": 20128,
+    "wrapper_sha256": "3bcc9f8d973d86a0105dbdf303edb5d9246fde183df374f4ded0ad817fe3fcff",
+    "started_at_utc": "2026-09-07T15:20:16.8742293Z",
+    "launcher_sha256": "f520c2780e4fc221e3a9c4cbb532411cb03ba25c1242539f5b8a89c12875ecb9",
+    "max_calls": 1,
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-claim-check-live-20260907\\launch-claim-check.ps1",
+    "experiment_version": "record-evidence-claim-check-v1",
+    "last_observed_status": {
+      "process_id": 20128,
+      "phase": "awaiting_secure_credential",
+      "exit_code": null,
+      "at_utc": "2026-09-07T15:20:18.8181015Z"
+    }
+  },
+  "limitations": [
+    "SYSTEM-only historical observation is not causal A/B.",
+    "Exact quote validity does not prove coverage, entailment or narrative quality.",
+    "Historical768 SYSTEM sentence retained; API ceiling3072 unchanged.",
+    "No runtime, campaign data or CAP-001 approval."
+  ],
+  "next_step": "Open one secure credential window, execute at most one call, analyze immutable artifacts and continue under existing authority.",
+  "status_at_preparation": "offline_preparation_complete_authorized_awaiting_secure_credential",
+  "execution_followup": {
+    "batch_id": "9192b8fa-398a-4b72-9d37-b91f1963bf99",
+    "status": "finished",
+    "report": "evals/narrator/reports/record-evidence-claim-check-observation-9192b8fa-2026-09-07.md",
+    "rerun_authorized": false
+  }
+}

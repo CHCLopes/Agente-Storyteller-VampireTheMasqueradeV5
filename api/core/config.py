@@ -1,134 +1,262 @@
-"""
-Módulo de Configuração Central do Backend do Agente Storyteller V5.
-Utiliza Pydantic Settings para carregamento automatizado de variáveis do arquivo .env ou do ambiente do Railway.
-"""
-from typing import List, Optional
-from pydantic import Field, SecretStr
+"""Central, secret-safe configuration for the Storyteller modular monolith."""
+
+from __future__ import annotations
+
+import os
+import re
+from typing import List, Literal, Optional
+
+from pydantic import AliasChoices, Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
+CapabilityMode = Literal["native", "emulated", "unsupported", "unknown"]
+ReasoningEffort = Literal["none", "low", "medium", "high"]
+LLMAdapterKind = Literal["openai-compatible", "openrouter", "gemini", "nvidia", "groq"]
+DOTENV_DISABLE_ENV_VAR = "STORYTELLER_DISABLE_DOTENV"
+_GEMINI_STABLE_MODEL = re.compile(
+    r"\Agemini-\d+(?:\.\d+)+-[a-z0-9]+(?:-[a-z0-9]+)*\Z"
+)
+_NVIDIA_NIM_OFFICIAL_BASE_URL = "https://integrate.api.nvidia.com/v1"
+_NVIDIA_NIM_PROVIDER_LABEL = "nvidia nim"
+_NVIDIA_NIM_MODEL_ID = "nvidia/nemotron-3-ultra-550b-a55b"
+_GROQ_OFFICIAL_BASE_URL = "https://api.groq.com/openai/v1"
+_GROQ_PROVIDER_LABEL = "groq"
+_GROQ_FIXED_REASONING_EFFORT = {
+    "qwen/qwen3.8-27b": "none",
+    "openai/gpt-oss-120b": "low",
+}
+
+
+def _configured_dotenv_file() -> str | None:
+    """Return the normal dotenv path unless the process explicitly disables it."""
+
+    disabled = os.environ.get(DOTENV_DISABLE_ENV_VAR, "").strip().casefold()
+    return None if disabled in {"1", "true", "yes", "on"} else ".env"
+
+
 class Settings(BaseSettings):
-    """
-    Classe de Gerenciamento de Configurações Globais do Aplicativo.
-    Lê chaves de variáveis de ambiente do .env local ou de variáveis injetadas na nuvem (Railway).
-    """
+    """Load product configuration without selecting an LLM provider in code."""
 
-    # --- Configurações do Servidor ---
-    environment: str = Field(
-        default="development",
-        description="Define o ambiente de execução da aplicação (development ou production)."
-    )
-    host: str = Field(
-        default="127.0.0.1",
-        description="IP ou interface de rede na qual o servidor FastAPI escutará."
-    )
-    port: int = Field(
-        default=8000,
-        description="Porta de rede para exposição da API HTTP/WebSocket."
-    )
-    log_level: str = Field(
-        default="INFO",
-        description="Nível mínimo de severidade dos logs gravados pela aplicação."
-    )
-    debug: bool = Field(
-        default=True,
-        description="Habilita reload automático do servidor ASGI e detalhamento de erros."
-    )
+    environment: str = Field(default="development")
+    host: str = Field(default="127.0.0.1")
+    port: int = Field(default=8000)
+    log_level: str = Field(default="INFO")
+    debug: bool = Field(default=True)
 
-    # --- Banco de Dados ---
-    database_url: str = Field(
-        default="sqlite:///./campaign.db",
-        description="URL de conexão com o banco de dados (SQLite local ou PostgreSQL)."
+    # The SQLite event store is local-first and intentionally independent from
+    # the deprecated SQLAlchemy URL retained below for startup compatibility.
+    storyteller_db_path: str = Field(
+        default="data/saves/storyteller.sqlite3",
+        validation_alias=AliasChoices("STORYTELLER_DB_PATH"),
     )
-    database_pool_size: int = Field(
-        default=5,
-        description="Número máximo de conexões mantidas no pool do ORM SQLAlchemy."
-    )
+    database_url: str = Field(default="sqlite:///./campaign.db")
+    database_pool_size: int = Field(default=5)
 
-    # --- Configurações do Google Gemini API ---
-    gemini_api_key: Optional[SecretStr] = Field(
+    # Provider-neutral LLM composition. No target identity, endpoint or model
+    # has a production default: every component must be explicitly supplied.
+    # Legacy Gemini/LM Studio names remain aliases only for non-secret endpoint
+    # fields; target identity, provider label and any credential stay explicit.
+    llm_target_id: Optional[str] = Field(
         default=None,
-        description="[SECRET] Chave privada de acesso à API do Google Gemini."
+        validation_alias=AliasChoices("LLM_TARGET_ID"),
     )
-    gemini_model: str = Field(
-        default="gemini-2.5-flash",
-        description="Nome do modelo da Gemini API a ser invocado."
+    llm_provider_label: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("LLM_PROVIDER_LABEL", "LLM_PROVIDER"),
     )
-    gemini_base_url: str = Field(
-        default="https://generativelanguage.googleapis.com/v1beta/openai",
-        description="URL base do endpoint compatível OpenAI fornecido pelo Gemini."
+    llm_model: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("LLM_MODEL", "GEMINI_MODEL", "LMSTUDIO_MODEL"),
     )
-    gemini_timeout: int = Field(
-        default=30,
-        description="Tempo limite em segundos para o retorno de chamadas de LLM."
+    llm_base_url: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices(
+            "LLM_BASE_URL",
+            "GEMINI_BASE_URL",
+            "LM_STUDIO_BASE_URL",
+            "LMSTUDIO_BASE_URL",
+        ),
     )
-
-    # --- CORS & Segurança ---
-    frontend_url: str = Field(
-        default="http://localhost:3000",
-        description="Origem HTTP do frontend React autorizada a fazer requisições CORS."
+    llm_api_key: Optional[SecretStr] = Field(
+        default=None,
+        validation_alias=AliasChoices("LLM_API_KEY"),
     )
-    allowed_hosts: List[str] = Field(
-        default=["localhost", "127.0.0.1"],
-        description="Lista de nomes de domínio permitidos no cabeçalho Host das requisições."
+    llm_adapter_kind: LLMAdapterKind = Field(
+        default="openai-compatible",
+        validation_alias=AliasChoices("LLM_ADAPTER_KIND"),
     )
-    jwt_secret: SecretStr = Field(
-        default=SecretStr("super_secret_default_key_change_in_production"),
-        description="[SECRET] Chave de encriptação simétrica usada para assinar sessões."
+    llm_openrouter_provider: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("LLM_OPENROUTER_PROVIDER"),
     )
-
-    # --- Rate Limiting & Cotas ---
-    gemini_max_rpm: int = Field(
+    llm_timeout_seconds: int = Field(
         default=60,
-        description="Limite máximo de requisições por minuto toleradas sob a cota do Gemini."
+        ge=1,
+        le=600,
+        validation_alias=AliasChoices(
+            "LLM_TIMEOUT_SECONDS", "GEMINI_TIMEOUT", "LMSTUDIO_TIMEOUT"
+        ),
     )
-    gemini_max_monthly_tokens: int = Field(
-        default=1000000,
-        description="Cota limite de consumo de tokens por mês."
+    llm_h0_timeout_seconds: float = Field(
+        default=15.0,
+        gt=0.0,
+        le=600.0,
+        validation_alias=AliasChoices("LLM_H0_TIMEOUT_SECONDS"),
     )
-    queue_max_size: int = Field(
-        default=10,
-        description="Tamanho limite da fila interna para enfileiramento de turnos assíncronos."
+    llm_h1_timeout_seconds: float = Field(
+        default=30.0,
+        gt=0.0,
+        le=600.0,
+        validation_alias=AliasChoices("LLM_H1_TIMEOUT_SECONDS"),
+    )
+    llm_h4_timeout_seconds: float = Field(
+        default=20.0,
+        gt=0.0,
+        le=600.0,
+        validation_alias=AliasChoices("LLM_H4_TIMEOUT_SECONDS"),
+    )
+    llm_h0_enabled: bool = Field(
+        default=False,
+        validation_alias=AliasChoices("LLM_H0_ENABLED"),
+    )
+    llm_h1_enabled: bool = Field(
+        default=False,
+        validation_alias=AliasChoices("LLM_H1_ENABLED"),
+    )
+    llm_h4_action_enrichment_enabled: bool = Field(
+        default=False,
+        validation_alias=AliasChoices("LLM_H4_ACTION_ENRICHMENT_ENABLED"),
+    )
+    llm_h6_max_output_tokens: int = Field(
+        default=96,
+        ge=32,
+        le=2048,
+        validation_alias=AliasChoices("LLM_H6_MAX_OUTPUT_TOKENS"),
+    )
+    llm_scene_director_max_output_tokens: int = Field(
+        default=256,
+        ge=128,
+        le=4096,
+        validation_alias=AliasChoices("LLM_SCENE_DIRECTOR_MAX_OUTPUT_TOKENS"),
+    )
+    llm_scene_director_temperature: float = Field(
+        default=0.65,
+        ge=0.0,
+        le=1.5,
+        validation_alias=AliasChoices("LLM_SCENE_DIRECTOR_TEMPERATURE"),
+    )
+    llm_reasoning_effort: Optional[ReasoningEffort] = Field(
+        default=None,
+        validation_alias=AliasChoices("LLM_REASONING_EFFORT"),
+    )
+    llm_campaign_data_allowed: bool = Field(
+        default=False,
+        validation_alias=AliasChoices("LLM_CAMPAIGN_DATA_ALLOWED"),
+    )
+    llm_structured_generation: CapabilityMode = Field(
+        default="unknown",
+        validation_alias=AliasChoices("LLM_STRUCTURED_GENERATION"),
+    )
+    llm_streaming: CapabilityMode = Field(
+        default="unknown",
+        validation_alias=AliasChoices("LLM_STREAMING"),
     )
 
-    # Configuração do leitor do arquivo de variáveis de ambiente
+    context_token_budget: int = Field(default=2400, ge=256, le=32768)
+    context_chars_per_token: float = Field(default=4.0, gt=0.0, le=16.0)
+    narrator_context_token_budget: int = Field(
+        default=192,
+        ge=64,
+        le=4096,
+        validation_alias=AliasChoices("NARRATOR_CONTEXT_TOKEN_BUDGET"),
+    )
+
+    frontend_url: str = Field(default="http://localhost:3000")
+    allowed_hosts: List[str] = Field(default=["localhost", "127.0.0.1"])
+    jwt_secret: SecretStr = Field(
+        default=SecretStr("super_secret_default_key_change_in_production")
+    )
+    queue_max_size: int = Field(default=10, ge=1)
+
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=_configured_dotenv_file(),
         env_file_encoding="utf-8",
-        extra="ignore"
+        extra="ignore",
+        populate_by_name=True,
     )
 
-    # --- Métodos de Conveniência ---
-
-    def llm_headers(self) -> dict[str, str]:
-        """
-        Retorna o dicionário de cabeçalhos HTTP necessários para fazer a inferência no Gemini API.
-        Injeta dinamicamente a chave privada de autenticação como token Bearer se configurada.
-        """
-        headers = {
-            "Content-Type": "application/json"
-        }
-        if self.gemini_api_key:
-            # Desembrulha o SecretStr para obter a string crua para requisição
-            headers["Authorization"] = f"Bearer {self.gemini_api_key.get_secret_value()}"
-        return headers
-
-    def llm_endpoint(self) -> str:
-        """
-        Calcula e retorna a URL completa do endpoint da API do Gemini para inferência de chat completions.
-        """
-        return f"{self.gemini_base_url}/chat/completions"
+    @property
+    def llm_is_configured(self) -> bool:
+        identity = (
+            self.llm_target_id,
+            self.llm_provider_label,
+            self.llm_model,
+            self.llm_base_url,
+        )
+        if not all(value is not None and bool(value.strip()) for value in identity):
+            return False
+        if self.llm_adapter_kind == "openai-compatible":
+            return True
+        key_is_present = (
+            self.llm_api_key is not None
+            and bool(self.llm_api_key.get_secret_value().strip())
+        )
+        if self.llm_adapter_kind == "openrouter":
+            return (
+                self.llm_provider_label is not None
+                and self.llm_provider_label.strip().casefold() == "openrouter"
+                and self.llm_openrouter_provider is not None
+                and bool(self.llm_openrouter_provider.strip())
+                and key_is_present
+            )
+        if self.llm_adapter_kind == "groq":
+            return (
+                self.llm_provider_label is not None
+                and self.llm_provider_label.strip().casefold() == _GROQ_PROVIDER_LABEL
+                and self.llm_base_url is not None
+                and self.llm_base_url.strip().rstrip("/") == _GROQ_OFFICIAL_BASE_URL
+                and self.llm_model is not None
+                and self.llm_model.strip() in _GROQ_FIXED_REASONING_EFFORT
+                and self.llm_reasoning_effort
+                == _GROQ_FIXED_REASONING_EFFORT[self.llm_model.strip()]
+                and key_is_present
+            )
+        if self.llm_adapter_kind == "nvidia":
+            return (
+                self.llm_provider_label is not None
+                and self.llm_provider_label.strip().casefold()
+                == _NVIDIA_NIM_PROVIDER_LABEL
+                and self.llm_model is not None
+                and self.llm_model.strip() == _NVIDIA_NIM_MODEL_ID
+                and self.llm_base_url is not None
+                and self.llm_base_url.strip().rstrip("/")
+                == _NVIDIA_NIM_OFFICIAL_BASE_URL
+                and key_is_present
+                and self.llm_campaign_data_allowed
+            )
+        return (
+            self.llm_provider_label is not None
+            and self.llm_provider_label.strip().casefold() == "google gemini"
+            and self.llm_model is not None
+            and _GEMINI_STABLE_MODEL.fullmatch(self.llm_model.strip().casefold())
+            is not None
+            and not any(
+                marker in self.llm_model.strip().casefold()
+                for marker in ("latest", "preview", "experimental", "-exp")
+            )
+            and self.llm_base_url is not None
+            and self.llm_base_url.strip().rstrip("/")
+            == "https://generativelanguage.googleapis.com/v1beta"
+            and key_is_present
+            and self.llm_campaign_data_allowed
+        )
 
     def db_connection_string(self) -> str:
-        """
-        Retorna a string de conexão tratada e higienizada do banco de dados SQLAlchemy.
-        """
         return self.database_url
 
     def cors_origins(self) -> list[str]:
-        """
-        Retorna a lista tratada de domínios permitidos nas requisições do CORS (incluindo frontend_url).
-        """
         return [self.frontend_url] + self.allowed_hosts
 
-# Instanciação do Singleton Global de Configurações
+
 settings = Settings()

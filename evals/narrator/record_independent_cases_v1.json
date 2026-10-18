@@ -1,0 +1,27 @@
+{
+  "corpus_id": "storyteller-record-independent-cases-v1",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_cases",
+  "cases": [
+    {
+      "case_id": "uncertain-signal",
+      "episode_id": "independent-uncertainty",
+      "turn_id": "derive-uncertainty",
+      "narrative": "A luz de uma luminária acesa ilumina o interior da biblioteca, que está vazia naquele momento. Um ruído vindo de trás da estante sugere que algum mecanismo talvez esteja funcionando ali.",
+      "player_input": "Onde estou?",
+      "outcome": "unresolved",
+      "scene": null,
+      "known_context": "A crônica é urbana, contemporânea e gótico-punk."
+    },
+    {
+      "case_id": "sensory-evidence",
+      "episode_id": "independent-sensory",
+      "turn_id": "derive-sensory",
+      "narrative": "No interior da oficina deserta, há um cheiro de tinta fresca que permanece no ar daquele lugar. Sobre a bancada da oficina, uma lâmpada de cor azul pisca de maneira intermitente.",
+      "player_input": "Onde estou?",
+      "outcome": "unresolved",
+      "scene": null,
+      "known_context": "A crônica é urbana, contemporânea e gótico-punk."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "storyteller.manual-current-game-test.v1",
+  "recorded_at": "2026-09-08T01:31:49.505122+00:00",
+  "purpose": "User requested the complete current game UI before proceeding with direction B integration.",
+  "user_selected": "current game, Groq from prior tests",
+  "test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+  "launcher_pid": 26144,
+  "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+  "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+  "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+  "lifecycle_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\status.json",
+  "lifecycle_at_preparation": {
+    "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "updated_at": "2026-09-08T01:29:50.8377597Z",
+    "status": "awaiting_secure_credential",
+    "test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "code": "",
+    "server_pid": null
+  },
+  "target": {
+    "profile": "manual-game-groq-qwen-4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "provider": "Groq",
+    "model": "qwen/qwen3.8-27b"
+  },
+  "adapter": "GroqAdapter",
+  "files": {
+    "api/core/config.py": "c60fea76cee0fbe478f48da05f29a79278c1d5efce3ea9c69aeef8d8a2fd9c82",
+    "api/llm/runtime.py": "4c53d7e31606306a9fdb96eeeab417715ed206e2296ab5e235280bb545040ee7",
+    "tests/llm/test_groq_runtime.py": "cf7dc9b8770f7c5340ed8120b6f73a995dab87e95595bd64ca232911fe994b07",
+    "scripts/manual_game_preflight.py": "a2fbb99be34150341f5414584ff05fd2a4001642a988c29de5e37ce99fc723c8",
+    "scripts/run_storyteller_manual_test.ps1": "b20b87e57f6fc92d84cc92fc41e3d96f02b4298c56c8c8be7a290443eec7b534"
+  },
+  "verification": {
+    "frontend_build": "tsc -b and vite build passed",
+    "runtime_tests": {
+      "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-groq-runtime-composition-20260907\\after-tests.json",
+      "sha256": "a684c307e9d041e3a02a87dff7d67cf398e28678c7de0273bcc0c363f3d3709f",
+      "record": {
+        "checked_at": "2026-09-08T01:20:44.474171+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/llm/test_groq_runtime.py",
+          "tests/llm/test_runtime.py",
+          "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-groq-runtime-composition-20260907\\focused.xml",
+          "--tb=short"
+        ],
+        "exit_code": 0,
+        "counts": {
+          "tests.llm.test_groq_runtime": {
+            "total": 17,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "tests.llm.test_runtime": {
+            "total": 37,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        },
+        "hashes_before": {
+          "api/core/config.py": "c60fea76cee0fbe478f48da05f29a79278c1d5efce3ea9c69aeef8d8a2fd9c82",
+          "api/llm/runtime.py": "4c53d7e31606306a9fdb96eeeab417715ed206e2296ab5e235280bb545040ee7",
+          "tests/llm/test_groq_runtime.py": "cf7dc9b8770f7c5340ed8120b6f73a995dab87e95595bd64ca232911fe994b07",
+          "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+          "tests/llm/test_runtime.py": "800b5c082808b8415ed2b7aff8f319a346565be0ef8c3a3e6c45000da7fc2787"
+        },
+        "hashes_after": {
+          "api/core/config.py": "c60fea76cee0fbe478f48da05f29a79278c1d5efce3ea9c69aeef8d8a2fd9c82",
+          "api/llm/runtime.py": "4c53d7e31606306a9fdb96eeeab417715ed206e2296ab5e235280bb545040ee7",
+          "tests/llm/test_groq_runtime.py": "cf7dc9b8770f7c5340ed8120b6f73a995dab87e95595bd64ca232911fe994b07",
+          "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+          "tests/llm/test_runtime.py": "800b5c082808b8415ed2b7aff8f319a346565be0ef8c3a3e6c45000da7fc2787"
+        },
+        "provider_calls": 0,
+        "network": "conftest unchanged; MockTransport only; dotenv disabled; allowlisted environment"
+      }
+    },
+    "offline_preflight": {
+      "status": "passed",
+      "provider_calls": 0,
+      "target": {
+        "profile": "manual-game-groq-qwen-4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+        "provider": "Groq",
+        "model": "qwen/qwen3.8-27b"
+      },
+      "adapter": "GroqAdapter",
+      "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+      "dotenv_disabled": true,
+      "frontend_ready": true,
+      "source_bridge_activated": false
+    },
+    "bootstrap_only": {
+      "status": "bootstrap_passed",
+      "updated_at": "2026-09-08T01:27:50.5515099Z",
+      "test_id": "6564a58d-c91c-4cc3-8c28-c0729b63f949",
+      "url": "http://127.0.0.1:8000/play/local.6564a58d-c91c-4cc3-8c28-c0729b63f949",
+      "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-6564a58d-c91c-4cc3-8c28-c0729b63f949\\storyteller.sqlite3",
+      "code": "",
+      "session_id": "local.6564a58d-c91c-4cc3-8c28-c0729b63f949",
+      "server_pid": 19484
+    },
+    "blank_credential": {
+      "test_id": "895af573-7f2e-484b-82fc-61fffb86b2d6",
+      "session_id": "local.895af573-7f2e-484b-82fc-61fffb86b2d6",
+      "url": "http://127.0.0.1:8000/play/local.895af573-7f2e-484b-82fc-61fffb86b2d6",
+      "updated_at": "2026-09-08T01:24:31.5939377Z",
+      "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-895af573-7f2e-484b-82fc-61fffb86b2d6\\storyteller.sqlite3",
+      "server_pid": null,
+      "status": "failed",
+      "code": "manual_game_start_failed"
+    },
+    "existing_database_relaunch": "refused before preflight or state write; existing bootstrap database preserved",
+    "bootstrap_port_released": true,
+    "preparation_provider_calls": 0
+  },
+  "operational_limits": {
+    "startup_diagnostics": "Existing readiness sequence: up to three synthetic calls, fail-fast, one global60s deadline; no automatic narrative generation.",
+    "manual_actions": "Only player-submitted actions after startup; this is an exploratory UI test, not a fixed model benchmark or causal comparison.",
+    "h0_h1_h4_action_enrichment": false,
+    "h6_max_output_tokens": 768,
+    "temperature": 0.65,
+    "reasoning_effort": "none",
+    "retry_fallback": "No model retry or target fallback in the adapter; user controls new UI actions.",
+    "server": "single process tree,127.0.0.1:8000, no reload, owned listener checked before local HTTP",
+    "storage": "new SQLite in Temp; dotted session identifier rejects the legacy-file importer before path access",
+    "credential": "Read-Host SecureString, child environment only; never read from dotenv, chat, file or arguments"
+  },
+  "source_bridge_activated": false,
+  "cap_001_approval": false,
+  "existing_saves_used": false,
+  "next_step": "User is trying the current game; receive observations before proceeding to the next development phase.",
+  "status": "ready_for_user_playtest",
+  "live_readiness": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\readiness.json",
+    "sha256": "8b094fdbab6cd24bb873c129ef2f48d4a917f79b5f79e53e597e56d258c6875a",
+    "configured": true,
+    "ready": true,
+    "success": true,
+    "probes": [
+      {
+        "name": "text",
+        "status": "passed"
+      },
+      {
+        "name": "structured",
+        "status": "passed"
+      },
+      {
+        "name": "streaming",
+        "status": "passed"
+      }
+    ]
+  },
+  "lifecycle_after_secure_entry": {
+    "database": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-manual-game-4cfd5337-1c84-487e-bd77-8fe8e4d78a29\\storyteller.sqlite3",
+    "session_id": "local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "updated_at": "2026-09-08T01:32:11.7894794Z",
+    "status": "ready",
+    "test_id": "4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "url": "http://127.0.0.1:8000/play/local.4cfd5337-1c84-487e-bd77-8fe8e4d78a29",
+    "code": "",
+    "server_pid": 23336
+  },
+  "ui_verification": {
+    "checked_at": "2026-09-08T01:35:11.029519+00:00",
+    "method": "Codex in-app browser accessibility snapshot",
+    "game_page_loaded": true,
+    "initialization_overlay_finished": true,
+    "character_sheet_visible": true,
+    "action_input_and_send_available": true,
+    "user_action_submitted_by_agent": false
+  }
+}

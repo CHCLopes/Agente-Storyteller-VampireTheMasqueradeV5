@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "catalog_checked_at": "2026-09-05",
+  "catalog_source": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "data_policy_source": "https://ai.google.dev/gemini-api/terms",
+  "candidates": [
+    {
+      "candidate_id": "gemini-3.8-flash-free-synthetic-low",
+      "adapter_kind": "gemini",
+      "provider_label": "Google Gemini",
+      "effective_provider": "Google Gemini",
+      "model": "gemini-3.8-flash",
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low",
+      "notes": "Controle estável no nível gratuito, restrito ao corpus sintético porque os termos de serviços não pagos permitem uso de entradas e respostas para melhoria de produtos."
+    }
+  ]
+}

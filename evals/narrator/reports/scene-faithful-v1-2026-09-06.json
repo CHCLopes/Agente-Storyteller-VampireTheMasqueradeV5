@@ -1,0 +1,105 @@
+{
+  "kind": "offline_prompt_preparation",
+  "prompt_variant": "scene-faithful-v1",
+  "baseline_prompt_variant": "scene-attributed-v1",
+  "interventions": [
+    "system_prompt"
+  ],
+  "context_contract_version": "scene-focus-v1",
+  "live_calls_made": 0,
+  "runtime_promoted": false,
+  "causal_comparison": false,
+  "complete_ab_experiment": false,
+  "human_review_required": true,
+  "frozen_files_sha256": {
+    "api/scene_director_service.py": "c874b176de47c33d9e0335fa4a923d439d98e98a7710311aede0a5c3e7c85d18",
+    "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+    "scripts/narrator_scene_focus.py": "6e3ec627f61ce1d441ac93006e405463da4579b874b6bd8bdc195d0240d40f8a",
+    "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+    "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+    "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+    "skills/H6_vtm_narrator.md": "55fcd71a6367c42c3c5d1fa5e5589423d94af57b6a26af65cfdfab263d13eb70"
+  },
+  "historical_sources_sha256": {
+    "eval-results/20260906T155743Z-61410a16-34d9-4271-a68f-4d0c999d131e/summary.json": "47f10049d09f5bfe67395e17a8de044cd3aadab9c0a16d76c75d3ead16440ab3",
+    "eval-results/20260906T155743Z-61410a16-34d9-4271-a68f-4d0c999d131e/gpt-oss-120b-groq-free-synthetic-low.jsonl": "22c9ee2538c9ce9cfb4e29ea03107dbf71973a03ba15d420aec4755de24aff12",
+    "eval-results/20260906T160840Z-71f1f555-1887-4ee6-bf0f-09272797333c/summary.json": "779379f46914d2771760489c7903270baeb1a910a737d8594dfe8c57f89eaab0",
+    "eval-results/20260906T160840Z-71f1f555-1887-4ee6-bf0f-09272797333c/gpt-oss-120b-groq-free-synthetic-low.jsonl": "7c94efe7ef77fc5c19d50953ddcf0c98c72082cb8712c639094317ddcae3eb4b",
+    "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/gpt-oss-120b-groq-free-synthetic-low.jsonl": "2a0d6a36d09150cec60def2454300347ff8cbcbec3c0ce8b6544fb475c212f27",
+    "eval-results/20260906T193753Z-68eb8e8b-6470-4286-bcae-d15a6493dfc9/summary.json": "bb93b311423f3bd5d5b32f58b6b99ebfc610b6c3f21bad63cfb3592491287f76"
+  },
+  "system_prompts": {
+    "h6-control-v1": {
+      "sha256": "b943f9c644d827acb68e214e1c55b6132ffe2ffdf2c02bdb7c842a77990ce2d6",
+      "characters": 2846,
+      "whitespace_words": 400
+    },
+    "scene-beat-v1": {
+      "sha256": "f58f30f69c70a22a4a04b28b524a6684418f17fcdacc2f6bbd2d5f87ec6eccd6",
+      "characters": 3037,
+      "whitespace_words": 429
+    },
+    "scene-focus-v1": {
+      "sha256": "830454df2171dabcc0bb9aeb5f775fa7b6f29066ac0dbd2675f5de14ed8b4252",
+      "characters": 3609,
+      "whitespace_words": 521
+    },
+    "scene-grounded-v1": {
+      "sha256": "ff47d144200ddaac14c7db30f6328f73de5fb466730fe178fb49dc335dbac331",
+      "characters": 4841,
+      "whitespace_words": 697
+    },
+    "scene-attributed-v1": {
+      "sha256": "da0b9087b7adcdfd2a70cf3d64c91b72eb163ce2d338f18268b10e4cd8f34aab",
+      "characters": 6336,
+      "whitespace_words": 920
+    },
+    "scene-faithful-v1": {
+      "sha256": "76a9ffdb37296be672e94e1a8c741d90cb5c44164c8dcf888107d308865218d2",
+      "characters": 7878,
+      "whitespace_words": 1160
+    }
+  },
+  "response_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+  "implementation_sha256": {
+    "scripts/evaluate_narrator_models.py": "41a4fa1db88878acffda546f3efaec9064ac518f16ae697ef12def550b791da0",
+    "scripts/run_groq_prompt_experiment.ps1": "5b8fe4849e092e62d8c214c0c562405fb18f05fc878e81a3b80fde34044057bc",
+    "tests/test_narrator_grounded_prompt.py": "267ec90f14dadd8f81ea91c55184dd3f15c3620c718711050cced3590fdf2001",
+    "tests/test_prompt_experiment_runner.py": "7afb9ac63dd2f48689d93891124669398093354c3e42f492a726dc05a8abf83e",
+    "evals/narrator/prompts/scene-faithful-v1.md": "19bcd2d4fa6fb235591b042a606d4056cd12dc0e6f152e70d417d065954f4965"
+  },
+  "verification": {
+    "remaining_suite": {
+      "command": ".venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider --ignore=tests/test_prompt_experiment_runner.py",
+      "passed": 2147,
+      "skipped": 0,
+      "warnings": 1,
+      "exit_code": 0,
+      "seconds": 111.53
+    },
+    "focused_suite": {
+      "passed": 60,
+      "exit_code": 0,
+      "included_in_full_total": true
+    },
+    "independent_static_reviews": {
+      "prompt": "no_actionable_findings",
+      "evaluator_and_runner": "no_actionable_findings"
+    },
+    "runner_suite": {
+      "command": ".venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider tests/test_prompt_experiment_runner.py",
+      "passed": 297,
+      "skipped": 295,
+      "warnings": 1,
+      "exit_code": 0,
+      "seconds": 491.75
+    },
+    "total": {
+      "passed": 2444,
+      "skipped": 295,
+      "exit_code": 0,
+      "disjoint_groups": true
+    },
+    "skips_reason": "PowerShell 5 execution-policy module unavailable; no bypass. Operational PowerShell 7 and both parsers passed."
+  }
+}

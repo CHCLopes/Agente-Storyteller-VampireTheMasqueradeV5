@@ -1,0 +1,17 @@
+# Casos independentes — preparação concluída
+
+A observação `record-evidence-independent-cases-v1` está preparada sob autorização contínua. O [desenho e os critérios prévios](record-evidence-independent-cases-design-84ea2c0c-2026-09-07.md) investigam incerteza na biblioteca e relação sensorial na oficina. Os [dois pedidos congelados](record-evidence-independent-cases-dossier-84ea2c0c-2026-09-07.json) usam o mesmo SYSTEM claim-check e mudam somente o USER frente ao pedido low anterior. A abertura anterior permanece encerrada.
+
+Groq direta/GPT-OSS120B low, temperatura 0,65, 3.072 tokens por chamada, máximo de 6.144 no lote. Até duas chamadas, uma por caso, em ordem fixa; espera inicial e intervalo de 60 s, deadline de 60 s após a espera. Qualquer falha de execução ou admissão impede o caso seguinte. Instâncias separadas mantêm o diagnóstico de cada chamada próprio. Não há retry, fallback, diagnóstico adicional, juiz LLM ou geração de narrativa.
+
+**494 testes distintos passaram: 237 novos e 257 existentes**, sem falhas ou skips. São 44 do corpus, 261 da fronteira e contratos, 42 do executor, 83 do wrapper e 64 de replay. Smokes e os 219 da preparação medium não foram somados. Não é suíte integral do repositório; permanece o warning preexistente de python_multipart. [Metadados e verificação completos](record-evidence-independent-cases-v1-2026-09-07.json).
+
+O preflight identificou as fontes inicialmente curtas (19/18 palavras). Elas foram corrigidas para 31 palavras cada antes de qualquer chamada e passaram com uma pergunta neutra, sem alterar gates ou critérios. Corpus, pedidos e bindings foram congelados novamente; o preparo anterior está preservado em snapshot. A revisão também corrigiu o acesso do wrapper às observações aninhadas em summary.
+
+A extensão da fonte acrescenta seis linhas na seleção de verificador; a tag só escolhe o ramo, e o corpus congelado decide a identidade integral. O guard bb98 permanece igual. Seis pacotes/audits, três schemas e os corpos históricos low/medium foram preservados. A outra alteração compartilhada acrescenta 12 linhas que impedem replay CAP-001. Os seis artefatos brutos dos três lotes mais recentes estão intactos.
+
+Preflight, transporte simulado, revisão independente e integração real com SecureString vazia passaram. A revisão corrigiu o acesso ao diagnóstico dentro de `summary` no wrapper antes da execução. A integração sem chave parou na validação da credencial, sem chamada ou novos artefatos. Correspondência literal e admissão não são revisão semântica. Omissão legítima da dimensão-alvo fica não informativa. O lote encerra após os casos permitidos; não haverá tentativa substituta para preencher uma amostra interrompida.
+
+Launcher iniciado, PID 24764, às 2026-09-07T16:31:21.9336559Z; último estado observado: `awaiting_secure_credential`. A chave não foi lida ou registrada pelo agente. Conferir `C:\Users\skate\AppData\Local\Temp\storyteller-record-independent-live-20260907\status.json` antes de qualquer janela. Título: “Agente Storyteller - casos independentes - chave protegida”. A única dependência humana é a entrada protegida da chave. Não duplicar janela/lote; nenhum resultado aprova runtime ou CAP-001.
+
+Estado posterior: lote d1b9a968 executado e encerrado com uma chamada recusada e um caso não chamado; [resultado analisado](record-evidence-independent-cases-observation-d1b9a968-2026-09-07.md). PID 24764 finished, chave descartada. O estado anterior do launcher neste documento descreve a preparação, não uma chamada pendente.

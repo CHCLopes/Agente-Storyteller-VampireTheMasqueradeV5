@@ -1,0 +1,74 @@
+{
+  "protocol": "grounded-progression-contract-v1",
+  "target": {
+    "target_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "provider": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "reasoning": "low"
+  },
+  "case_count": 8,
+  "passed_count": 5,
+  "failed_count": 3,
+  "qualified_in_protocol": false,
+  "runtime_default_eligible": false,
+  "human_admission_required": true,
+  "cases": [
+    {
+      "case_id": "wait-without-authorized-progression",
+      "word_count": 75,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    },
+    {
+      "case_id": "wait-with-authorized-event",
+      "word_count": 70,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "known-object-state",
+      "word_count": 88,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    },
+    {
+      "case_id": "unknown-object-state",
+      "word_count": 65,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "favorable-mechanical-result",
+      "word_count": 55,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "unfavorable-mechanical-result",
+      "word_count": 50,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "npc-protected-secret",
+      "word_count": 64,
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "case_id": "ambiguous-action-preserves-choice",
+      "word_count": 83,
+      "passed": false,
+      "reasons": [
+        "fatal_semantic_gate_failed",
+        "coherent_hold_review_failed"
+      ]
+    }
+  ]
+}

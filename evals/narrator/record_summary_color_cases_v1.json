@@ -1,0 +1,39 @@
+{
+  "schema": "storyteller.eval.summary-color-corpus.v1",
+  "cases": [
+    {
+      "schema": "storyteller.eval.inline-evidence-input.v1",
+      "case_id": "reading-room-a",
+      "synthetic_only": true,
+      "origin": "agent_authored_synthetic_case",
+      "narrative": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+      "source_units": [
+        {
+          "id": "n0",
+          "text": "Na sala de leitura vazia, uma luminária de base azul ilumina um mapa dobrado. "
+        },
+        {
+          "id": "n1",
+          "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+        }
+      ]
+    },
+    {
+      "schema": "storyteller.eval.inline-evidence-input.v1",
+      "case_id": "reading-room-b",
+      "synthetic_only": true,
+      "origin": "agent_authored_synthetic_case",
+      "narrative": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante.",
+      "source_units": [
+        {
+          "id": "n0",
+          "text": "Na sala de leitura vazia, uma luminária emite luz azul sobre um mapa dobrado. "
+        },
+        {
+          "id": "n1",
+          "text": "Um estojo fechado repousa junto ao marcador de páginas sobre a mesa; perto da porta, uma poltrona está afastada da estante."
+        }
+      ]
+    }
+  ]
+}

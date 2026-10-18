@@ -1,0 +1,424 @@
+{
+  "document_kind": "summary_budget_observation_analysis",
+  "recorded_at_utc": "2026-09-07T20:49:45.815512+00:00",
+  "status": "closed_operational_success_with_bounded_fidelity_review",
+  "batch_id": "95dd9fd2-f78f-4467-858f-b3948479aa10",
+  "run_dir": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9",
+  "case_id": "station-clock",
+  "purpose": "summary_budget_qwen_probe",
+  "experiment_version": "record-summary-budget-qwen-observation-v1",
+  "protocol": "record-summary-only-v1",
+  "synthetic_only": true,
+  "origin": "agent_authored_synthetic_case",
+  "full_record_derivation": false,
+  "actor_admission": "not_applied",
+  "launcher": {
+    "process_id": 21744,
+    "phase": "finished",
+    "finished_at_utc": "2026-09-07T20:41:18.2606505Z",
+    "exit_code": 0,
+    "credential_retained": false
+  },
+  "raw_artifacts": {
+    "summary.json": {
+      "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/summary.json",
+      "sha256": "487117deccd95da1585147a3149b3e8bded146803a3c49a88bea01b1d7c5f211"
+    },
+    "qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl": {
+      "file": "eval-results/20260907T204016Z-b929bf2c-302d-4b26-b36b-abb0eec249d9/qwen-3.8-27b-groq-free-synthetic-nonthink.jsonl",
+      "sha256": "91edd2cbe2791da84329ac61465e580f5c8974bfa8d0c1d9daa02a2fdb6de17f"
+    }
+  },
+  "preparation_at_execution": {
+    "file": "evals/narrator/reports/record-summary-budget-v1-2026-09-07.json",
+    "snapshot_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-budget-close-95dd9fd2-uxv_l2s_\\evals\\narrator\\reports\\record-summary-budget-v1-2026-09-07.json",
+    "snapshot_sha256": "468920ee71bf771b88eb106b1a19b0c2703e9b6b42d537e8c58616b3c8d1b7bc",
+    "protected_preparation_fields_preserved": [
+      "prepared_metadata",
+      "files",
+      "verification",
+      "scope",
+      "evidence_files"
+    ],
+    "preparation_test_count": 65,
+    "tests_reexecuted_for_this_analysis": 0
+  },
+  "frozen_inputs": {
+    "dossier": {
+      "file": "evals/narrator/reports/record-summary-budget-dossier-1edf4d3e-2026-09-07.json",
+      "sha256": "8df1c12ea57076dd44a5aca2173b06b693f1904fada52bfd8b041bcebc557cac",
+      "body_sha256": "d494be582e549a917419c06229fed3acb60f092f7f7bcbc982ebe8caea804eac"
+    },
+    "manifest": {
+      "file": "groq_candidates_2026-09-05.json",
+      "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+    },
+    "case": {
+      "file": "evals/narrator/record_summary_budget_case_v1.json",
+      "sha256": "98cf0817f45f18cf39e6ead2d0825a18134d71e5e38213e789a0a0fce2e0415a",
+      "case_id": "station-clock"
+    },
+    "prompt": {
+      "variant": "record-summary-budget-v1",
+      "file": "evals/narrator/prompts/record-summary-budget-v1.md",
+      "file_sha256": "6a59513d8b99659f00548ed3d5300f3137e402f40a2e3f7fc26d674dbc9964f4",
+      "sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce"
+    },
+    "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "provider_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616",
+    "measurement_policy": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "max_words": 25,
+      "changes_exit_code": false,
+      "semantic_validation": false
+    },
+    "observation_policy": {
+      "max_error_body_bytes": 65536,
+      "raw_error_retained": false,
+      "raw_reasoning_retained": false
+    },
+    "implementation": [
+      {
+        "file": "scripts/narrator_summary_only.py",
+        "sha256": "ad3324da8bce3213f4e128c78f7f97998e91a0376046c3a09c007e45021e5182"
+      },
+      {
+        "file": "scripts/narrator_record_budget_observer.py",
+        "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+      },
+      {
+        "file": "scripts/evaluate_narrator_models.py",
+        "sha256": "e596329c9f63598533f91bde1f87ff881d59eda1b4912e47ab586b3ec3e857f5"
+      },
+      {
+        "file": "api/llm/adapters/groq.py",
+        "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+      },
+      {
+        "file": "api/llm/adapters/openai_compatible.py",
+        "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+      },
+      {
+        "file": "api/llm/contract.py",
+        "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "station-clock",
+        "source": {
+          "origin": "agent_authored_synthetic_case",
+          "synthetic_only": true,
+          "case_file": "evals/narrator/record_summary_budget_case_v1.json",
+          "case_sha256": "98cf0817f45f18cf39e6ead2d0825a18134d71e5e38213e789a0a0fce2e0415a",
+          "field": "narrative",
+          "narrative_sha256": "2191a03f86fa363ab4cdfdf83dd360124454a18992c1eab88e49443f1fbc8b2b"
+        },
+        "generation_context": {
+          "version": "record-inline-evidence-v1",
+          "user_packet_sha256": "e82e044261995d7cf942da383756a1e15d3c94efae7f52143f32327b6c896758",
+          "source_units_sha256": "df7fdae143699d07a94032a1d97eaf962a958fc1d299d2598ccbe845930d7d44",
+          "source_units": [
+            {
+              "id": "n0",
+              "text": "Na estação vazia, um relógio parado marca seis horas. "
+            },
+            {
+              "id": "n1",
+              "text": "Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa."
+            }
+          ],
+          "budget": {
+            "scope": "user_packet_only",
+            "method": "characters_divided_by_4",
+            "limit": 2000,
+            "estimated_tokens": 147
+          }
+        }
+      }
+    ]
+  },
+  "evaluator_at_execution": {
+    "file": "scripts/evaluate_narrator_summary_budget.py",
+    "sha256": "f2fe52f134df0fd97f843a257f2edb6023be56b233b8f9a50c903f48bb2af3d0",
+    "python_version": "3.12.2",
+    "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+    "git_dirty": true
+  },
+  "operational_result": {
+    "purpose": "summary_budget_qwen_probe",
+    "probe_kind": "summary_budget_qwen_probe",
+    "experiment_version": "record-summary-budget-qwen-observation-v1",
+    "protocol": "record-summary-only-v1",
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "full_record_derivation": false,
+    "actor_admission": "not_applied",
+    "structural_only": true,
+    "semantic_not_evaluated": true,
+    "evaluation_stage": "summary_budget_qwen_probe",
+    "calls_made": 1,
+    "cases_skipped": 0,
+    "schema_valid": 1,
+    "instruction_measurements": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "word_count": 23,
+      "max_words": 25,
+      "within_word_limit": true,
+      "semantic_fidelity_evaluated": false
+    },
+    "transport_and_schema_passed": true,
+    "operational_probe_passed": true,
+    "availability_failure": false,
+    "provider_observation": {
+      "schema": "storyteller.eval.record-budget-observation.v1",
+      "http_status": 200,
+      "request_id": "req_01m1ysn3mheh2sabqbsqh3eftm",
+      "provider_code": null,
+      "model": "qwen/qwen3.8-27b",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 459,
+        "output_tokens": 38,
+        "total_tokens": 497,
+        "reasoning_tokens": null
+      },
+      "error_body": {
+        "status": "unavailable",
+        "complete": null,
+        "bytes": null,
+        "json_valid": null
+      },
+      "failed_generation": {
+        "status": "unavailable",
+        "present": null,
+        "characters": null,
+        "json_valid": null,
+        "error_position": null
+      }
+    },
+    "route_verification": {
+      "status": "verified",
+      "calls_made": 1,
+      "verified_calls": 1,
+      "mismatched_calls": 0,
+      "unavailable_calls": 0,
+      "identity_consistent": true
+    },
+    "usage_aggregate": {
+      "status": "reported",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 1,
+      "unavailable_calls": 0,
+      "totals": {
+        "input_tokens": 459,
+        "output_tokens": 38,
+        "total_tokens": 497
+      },
+      "reported_subtotals": {
+        "input_tokens": 459,
+        "output_tokens": 38,
+        "total_tokens": 497
+      }
+    },
+    "cost_aggregate": {
+      "status": "unavailable",
+      "expected_calls": 1,
+      "calls_made": 1,
+      "reported_calls": 0,
+      "unavailable_calls": 1,
+      "total_amount": null,
+      "reported_amount_subtotal": null,
+      "currency": null
+    },
+    "semantic_fidelity_review": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "process_exit_code": 0
+  },
+  "literal_source": {
+    "narrative": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa.",
+    "source_units": [
+      {
+        "id": "n0",
+        "text": "Na estação vazia, um relógio parado marca seis horas. "
+      },
+      {
+        "id": "n1",
+        "text": "Um envelope lacrado repousa sobre o banco; perto da janela aberta, a cortina se move com a brisa."
+      }
+    ]
+  },
+  "literal_response": {
+    "response_structure": {
+      "summary": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado está no banco e a cortina se move com a brisa."
+    },
+    "summary_text": "Na estação vazia, um relógio parado marca seis horas. Um envelope lacrado está no banco e a cortina se move com a brisa.",
+    "character_count": 120,
+    "instruction_measurements": {
+      "method": "unicode_words_with_internal_hyphen_or_apostrophe",
+      "pattern": "[^\\W_]+(?:[-’'][^\\W_]+)*",
+      "word_count": 23,
+      "max_words": 25,
+      "within_word_limit": true,
+      "semantic_fidelity_evaluated": false
+    }
+  },
+  "agent_semantic_review": {
+    "reviewer": "independent_agent_review",
+    "status": "completed_no_unsupported_retained_claim_identified",
+    "scope": "Only the returned summary against its frozen source; no general capability or product approval.",
+    "raw_automated_review_unchanged": {
+      "status": "not_performed",
+      "approval": null
+    },
+    "word_limit": {
+      "status": "satisfied",
+      "word_count": 23,
+      "character_count": 120,
+      "max_words": 25,
+      "operational_exit_changed": false
+    },
+    "supported_claims": [
+      {
+        "source_id": "n0",
+        "source_quote": "Na estação vazia",
+        "response_quote": "Na estação vazia",
+        "assessment": "Local e estado vazio preservados."
+      },
+      {
+        "source_id": "n0",
+        "source_quote": "um relógio parado marca seis horas",
+        "response_quote": "um relógio parado marca seis horas",
+        "assessment": "Indicação do relógio e estado parado preservados literalmente; não afirma que a hora atual seja seis horas."
+      },
+      {
+        "source_id": "n1",
+        "source_quote": "Um envelope lacrado repousa sobre o banco",
+        "response_quote": "Um envelope lacrado está no banco",
+        "assessment": "Objeto e estado lacrado preservados; no banco é localização menos precisa compatível com sobre o banco, sem nova ação ou posição contraditória."
+      },
+      {
+        "source_id": "n1",
+        "source_quote": "a cortina se move com a brisa",
+        "response_quote": "a cortina se move com a brisa",
+        "assessment": "Movimento e relação com a brisa preservados literalmente; não introduz agente ou causa diferente."
+      }
+    ],
+    "unsupported_claims_identified": [],
+    "omissions": [
+      {
+        "source_id": "n1",
+        "source_quote": "perto da janela aberta",
+        "assessment": "Janela aberta e proximidade não aparecem no resumo. Omissão permitida na compressão; dimensão não informativa, sem inferir preservação nem distorção."
+      }
+    ],
+    "agency": "Nenhuma ação, emoção, escolha ou conclusão de jogador/NPC adicionada.",
+    "certainty": "Os fatos retidos mantêm seu estatuto. A fonte não contém hipótese modal; este caso não informa preservação de incerteza modal.",
+    "local_defect_demonstrated": false,
+    "semantic_product_approval": null,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "descriptive_comparison": {
+    "reference_batch": "1edf4d3e-13f0-4161-916c-a178b58c1825",
+    "reference_outcome": "HTTP 429 em A, B não chamado e nenhum texto.",
+    "current_outcome": "Uma nova fonte, HTTP 200/stop, rota e schema válidos no teto 768.",
+    "changed_http_fields": [
+      "messages[0].content",
+      "messages[1].content",
+      "max_completion_tokens"
+    ],
+    "causal": false,
+    "complete_ab": false,
+    "interpretation": "Demonstra que este pedido específico completou os estágios operacionais. Não demonstra que 768 causou o sucesso, não explica a fórmula OTPM nem mede taxa, estabilidade ou capacidade geral."
+  },
+  "operational_audit": {
+    "file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-summary-budget-live-20260907\\artifact-audit.json",
+    "sha256": "658cc0e2dfb5fd9107700d5c740754c6d2872a03bf4013a42932054923c9d742",
+    "recorded_at_utc": "2026-09-07T20:44:20.030427+00:00",
+    "exact_reconstruction": {
+      "current_preflight_equals_prepared_metadata": true,
+      "current_preflight_equals_final_preflight_audit": true,
+      "current_preflight_equals_initial_preflight": true,
+      "current_preflight_equals_raw_summary_metadata": true,
+      "current_preflight_equals_raw_jsonl_metadata": true,
+      "preparation_files_equals_final_audit_files": true,
+      "reconstructed_summary_equals_raw_summary": true,
+      "status_and_exit_consistent": true
+    },
+    "integrity_counts": {
+      "preparation_files": 10,
+      "historical_files": 60,
+      "historical_raw_artifacts": 16,
+      "all_unchanged": true
+    },
+    "reconstructed_request": {
+      "body_sha256": "d494be582e549a917419c06229fed3acb60f092f7f7bcbc982ebe8caea804eac",
+      "dossier_body_exact": true,
+      "root_independent_wire_body_matches": true,
+      "operation": "summary-budget.station-clock",
+      "case_id": "station-clock",
+      "user_packet_sha256": "e82e044261995d7cf942da383756a1e15d3c94efae7f52143f32327b6c896758",
+      "system_prompt_sha256": "1eca37a720951743b0f989b3ed31b1fd726663345bad71016179966d5548d5ce",
+      "response_schema_sha256": "56665f9935721c6e5909de1d3f8b7fb869de6cda7cecd4af0b3591d977a15616"
+    },
+    "timing": {
+      "raw_run_started_at": "2026-09-07T20:40:16.170803+00:00",
+      "raw_adapter_started_at": "2026-09-07T20:41:16.645402+00:00",
+      "raw_adapter_finished_at": "2026-09-07T20:41:17.795691+00:00",
+      "raw_run_finished_at": "2026-09-07T20:41:17.799705+00:00",
+      "launcher_finished_at_utc": "2026-09-07T20:41:18.2606505Z",
+      "launcher_pid": 21744,
+      "run_start_to_adapter_start_wall_seconds": 60.474599,
+      "adapter_wall_seconds": 1.150289,
+      "row_perf_latency_seconds": 1.151466,
+      "run_wall_seconds": 61.628902,
+      "inter_call_start_gap_seconds": null
+    },
+    "interpretation_limits": [
+      "Operational transport, verified route and schema success do not approve semantic fidelity, narrative quality, runtime or CAP-001.",
+      "The reported reasoning token count is null, not zero; no reasoning content was read or retained.",
+      "Cost is unreported, not established as zero.",
+      "The new source, SYSTEM numerical ceiling and transport ceiling all differ from the historical request; this single observation cannot establish that a lower ceiling caused success or explain the previous OTPM formula.",
+      "UTC timestamps retain their explicit +00:00 offsets. The initial wall interval includes quiet time and local work; the exact monotonic sleep and absolute request deadline are not persisted.",
+      "Only one dispatch exists, so there is no between-call interval to observe; local timing does not prove network arrival timing.",
+      "The request was reconstructed exactly against frozen code and dossier; these artifacts contain no raw outbound HTTP wire capture."
+    ],
+    "contradictions": [],
+    "integrity_scope": "Fingerprints confirmed during this audit, before any subsequent shared CAP preparation changes."
+  },
+  "next_step": {
+    "status": "preparation_in_progress_not_declared_ready",
+    "authorization": "continuous_user_authority",
+    "new_generic_approval_required": false,
+    "description": "Preparar um contraste de atribuição com duas fontes sintéticas novas e independentes, mantendo o SYSTEM record-summary-budget-v1, o schema SummaryOnlyProposal, Qwen/Groq gratuito, reasoning_effort=none, temperatura 0,65 e teto de 768 por chamada (até 1.536 no total). Limite de duas chamadas, espera inicial e intervalo entre inícios de pelo menos 60 segundos, deadline de 60 segundos após a espera e parada no primeiro erro operacional. Não repetir station-clock, archive-vibration, observatory-a/observatory-b ou preencher casos anteriores. A preparação está em curso, ainda não declarada pronta; nenhum novo envio é registrado neste fechamento. Concluir o trabalho local independente antes de depender de uma nova entrada protegida de credencial, sem nova confirmação genérica.",
+    "new_provider_call_made_by_this_closure": false
+  },
+  "limits": {
+    "causal_comparison": false,
+    "success_rate_estimated": false,
+    "raw_semantic_review_rewritten": false,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "new_tests_run": 0,
+    "new_provider_calls": 0,
+    "credentials_read": false,
+    "raw_artifacts_modified": false
+  }
+}

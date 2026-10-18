@@ -1,0 +1,118 @@
+{
+  "project": "Agente Storyteller",
+  "date": "2026-10-16",
+  "scope": "Worktree b008. React/TypeScript, FastAPI/Python e SQLite orientado a eventos. Cinco categorias da skill; correções expressamente autorizadas.",
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "alta",
+      "category": "Permissão no servidor",
+      "title": "Fronteira local sem validação Host/Origin",
+      "locations": [
+        {
+          "file": "api/main.py",
+          "line": 331
+        },
+        {
+          "file": "api/local_request_security.py",
+          "line": 34
+        },
+        {
+          "file": "scripts/run_campaign_source_offline_trial.py",
+          "line": 152
+        }
+      ],
+      "baseline": "Antes da correção: api/main.py:873 (WebSocket) e scripts/run_campaign_source_offline_trial.py:188 (bootstrap). Posições do estado local observado, não de um commit histórico.",
+      "before": "async def websocket_endpoint(websocket: WebSocket, session_id: str):\n    await websocket.accept()\n# Sem gate Host/Origin antes do accept no baseline.",
+      "entry": "Origin/Host de requisição de navegador; sessão conhecida ou padrão local_player. POST de retry não exige corpo.",
+      "condition": "Site não confiável aberto pelo operador em navegador/ambiente que permita acesso site externo -> loopback; DNS rebinding depende do ambiente. Reprodução local ASGI, não exploração real.",
+      "impact": "Possível leitura/mutação de sessão conhecida ou disparo de operações locais/runtime. Host forjado também alcançava o bootstrap que distribui o token efêmero do ensaio. Uma causa única, não contada novamente como IDOR.",
+      "correction": "LocalRequestBoundary antes de todos os handlers principais e offline: exige Host loopback, recusa origem estrangeira/null e metadados duplicados. HTTP 403 e WebSocket 1008 antes do accept. Mantém mesma origem, desenvolvimento local explícito e automação nativa sem Origin.",
+      "status": "corrigido",
+      "tests": "Quatro regressões de fronteira falharam antes. Depois: seis POSTs, origens e headers ambíguos, bootstrap, fluxo nativo e HTTP/WebSocket legítimos.",
+      "caveat": "Não autentica pessoas nem contém processo local malicioso. O listener deve permanecer em loopback; headers não provam a interface de escuta. Sem autorização para publicar LAN/Internet.",
+      "acceptance": [
+        "Origem estrangeira recusada antes de efeitos/accept.",
+        "Host de rebinding não lê bootstrap.",
+        "Fluxos locais legítimos preservados.",
+        "Nenhuma exceção testserver no servidor."
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "severity": "média",
+      "category": "Permissão no servidor",
+      "title": "Consolidação do jogador incluía fontes privadas",
+      "locations": [
+        {
+          "file": "api/main.py",
+          "line": 1976
+        },
+        {
+          "file": "api/main.py",
+          "line": 2016
+        }
+      ],
+      "baseline": "Antes da correção: api/main.py:1971 (seleção de fontes). Reprodução com fontes sintéticas; dados reais de campanha não foram usados.",
+      "before": "rows = await store.list_episodic_memories(session_id)\n# ... linhas intermediárias omitidas ...\nmemories.append(EpisodicMemory.model_validate(payload))\n# ... resposta do endpoint ...\n\"consolidation\": consolidation.model_dump(mode=\"json\"),",
+      "entry": "POST /session/{session_id}/memory/consolidate/{scope}, sem IDs ou com ID privado.",
+      "condition": "Sessão com fontes storyteller/system. A factory conservava a classificação privada, mas a rota retornava o resumo inteiro ao jogador. Não requer quebrar SQLite ou credencial.",
+      "impact": "Divulgação de resumo/referências privados e segredos narrativos. A rota também podia suceder uma cadeia privada pelo caminho do jogador.",
+      "correction": "Filtrar public/player antes da validação de IDs e do resumo. IDs privados se comportam como ausentes. Cadeia anterior privada causa recusa controlada sem expor ID/versão ou sobrescrever fontes. Sem migração/bifurcação do versionamento.",
+      "status": "corrigido",
+      "tests": "Três regressões falharam antes e passaram depois: seleção implícita, ID privado e cadeia privada. Resumo fundamentado e idempotência existentes preservados.",
+      "caveat": "Uma cadeia privada existente não pode ser atualizada por essa rota do jogador. Recusa deliberada para preservar a cadeia canônica única; sem API administrativa nova.",
+      "acceptance": [
+        "Somente public/player no resumo entregue.",
+        "ID privado não concede acesso nem grava consolidação.",
+        "Cadeia privada preservada, sem vazamento de ID.",
+        "Resumo livre continua não canônico."
+      ]
+    }
+  ],
+  "strengths": [
+    "Transporte B opt-in compara Host, Origin e sessão exatos antes do accept, com store/configuração vinculados no servidor (api/narrative_source_local_selection.py:177-205).",
+    "Queries de sessão/operação usam parâmetros SQLite. Importação legada restringe alfabeto antes de criar caminhos (api/persistence.py:4881).",
+    "Catchall exige caminho resolvido contido em DIST_ROOT; teste de traversal passou (api/main.py:2149).",
+    "React entrega mensagens como texto. Testes de HTML malicioso cobrem narrativa, streaming e prévia B.",
+    "Ensaio offline exige token comparado em tempo constante em todos os cinco handlers API; bootstrap agora tem barreira Host/Origin.",
+    "SecretStr em configuração; auditoria sem .env ou validação de credenciais reais."
+  ],
+  "limitations": [
+    "Um operador local confiável, sem usuários/tenants/papéis. Não foi criado login nem isolamento por pessoa. A API não deve ser publicada sob esse contrato.",
+    "20 handlers explícitos, quatro rotas automáticas de documentação e um mount estático. Factories Groq/Luna reutilizam a entrada B inventariada.",
+    "Scan heurístico mascarado exclui .env*, credenciais, saves, dependências e arquivos acima de 4 MB; não prova ausência universal de segredos.",
+    "Histórico local não raso, 27 commits disponíveis, sem fetch. Bundle existente inspecionado, sem rebuild ou serviço real.",
+    "Sem análise de CVEs/dependências, pentest de infraestrutura ou exploração real no navegador. Não é certificação nem garantia integral.",
+    "Default JWT legado sem consumidor de autenticação no código: informativo, não vulnerabilidade explorável confirmada; não alterado.",
+    "Suíte integral não repetida. Avisos de depreciação das dependências existentes, sem falha nos grupos executados.",
+    "A correção do ensaio offline invalida manifestos congelados que o incluam. Não reescrever hashes históricos; próxima preparação deve congelar novamente seu próprio runtime antes de qualquer execução.",
+    "Retomada antiga dizia L4 aguardando chave apesar do lote encerrado; reconciliar fatos sem inferir aceite narrativo.",
+    "Revisão das alterações focada nas correções; quatro linhas com espaços finais preexistentes em main foram preservadas. Não é alegação de diff global sem avisos."
+  ],
+  "verification": {
+    "baseline_regressions_failed": 7,
+    "backend_focused_passed": 196,
+    "backend_additional_passed": 56,
+    "frontend_passed": 24,
+    "full_suite": false,
+    "external_calls": 0,
+    "paid_inference_usd": "0",
+    "issues_published": 0,
+    "commits_created": 0
+  },
+  "recommendations": [
+    {
+      "priority": "P1",
+      "text": "Manter correções e testes de regressão; continuar em loopback. Ambas as causas confirmadas foram corrigidas."
+    },
+    {
+      "priority": "P2",
+      "text": "Antes de retomar narrador, refazer preflight/manifesto prospectivo com fronteira corrigida, preservando lotes históricos. Nenhuma inferência nesta auditoria."
+    },
+    {
+      "priority": "P3",
+      "text": "Novas rotas devem herdar a barreira e a visibilidade; publicação multiusuário/LAN exige arquitetura própria. JWT inativo/CVEs ficam fora das correções oportunistas."
+    }
+  ]
+}

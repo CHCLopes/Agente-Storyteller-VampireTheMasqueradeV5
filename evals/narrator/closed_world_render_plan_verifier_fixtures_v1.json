@@ -1,0 +1,16 @@
+{
+  "version": "closed-world-render-verifier-fixtures-v1",
+  "purpose": "offline_verifier_mutation_matrix",
+  "fixtures": [
+    {"fixture_id": "target-mismatch", "mutation": "target.reported.model", "expected": "integrity_error"},
+    {"fixture_id": "hidden-retry", "mutation": "invocation.retry_count", "expected": "integrity_error"},
+    {"fixture_id": "input-hash-mismatch", "mutation": "input_hashes.corpus_sha256", "expected": "integrity_error"},
+    {"fixture_id": "unlisted-render-claim", "mutation": "responses[0].review.unlisted_render_claim", "expected": "case_rejected"},
+    {"fixture_id": "unknown-content-asserted", "mutation": "responses[0].asserted_unknown_ids", "expected": "case_rejected"},
+    {"fixture_id": "forbidden-marker", "mutation": "responses[0].narrative", "expected": "case_rejected"},
+    {"fixture_id": "required-transition-missing", "mutation": "responses[1].transition_id", "expected": "case_rejected"},
+    {"fixture_id": "required-unit-missing", "mutation": "responses[0].rendered_unit_ids", "expected": "case_rejected"},
+    {"fixture_id": "next-choice-lost", "mutation": "responses[0].review.next_choice_preserved", "expected": "case_rejected"},
+    {"fixture_id": "word-budget-exceeded", "mutation": "responses[0].narrative", "expected": "case_rejected"}
+  ]
+}

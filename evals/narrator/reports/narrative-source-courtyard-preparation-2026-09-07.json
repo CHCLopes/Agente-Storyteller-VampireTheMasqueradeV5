@@ -1,0 +1,376 @@
+{
+  "schema": "storyteller.narrative-source-courtyard-preparation.v1",
+  "prepared_at": "2026-09-08T00:13:05.335649+00:00",
+  "prepared_scope": {
+    "direction": "B",
+    "case": "courtyard-observe-wait",
+    "max_calls": 2,
+    "automatic_retries": 0,
+    "synthetic_only": true,
+    "additional_human_approval_required": false,
+    "credential_input_required": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated"
+  },
+  "prepared_metadata": {
+    "automated_gates_passed": false,
+    "automatic_retries": 0,
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "effective_provider": "Groq",
+      "expiration_date": null,
+      "provider_label": "Groq",
+      "reasoning_effort": "none",
+      "require_zdr": false,
+      "structured_mode": "native",
+      "upstream_provider": null
+    },
+    "canonical_admission": false,
+    "cap_001_status": "not_evaluated",
+    "causal_comparison": false,
+    "diagnostics_executed": false,
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_source.py",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true,
+      "python_version": "3.12.2",
+      "sha256": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3"
+    },
+    "experiment_version": "narrative-source-observation-v1",
+    "full_evaluation": false,
+    "full_record_derivation": false,
+    "human_review_required": true,
+    "inputs": {
+      "case": {
+        "canonical_scene": {
+          "location": "Pátio coberto",
+          "npcs_present": []
+        },
+        "case_id": "courtyard-observe-wait",
+        "file": "evals/narrator/narrative_source_case_courtyard_v1.json",
+        "origin": "agent_authored_synthetic_case",
+        "sha256": "c1441274bc8ceb088a7e30c5de0411310db642d14fee514ce6d04d867fa4f469",
+        "turns": [
+          {
+            "player_input": "Observo o pátio coberto do lugar onde estou, sem tocar em nada.",
+            "turn_id": "observe"
+          },
+          {
+            "player_input": "Continuo no mesmo lugar e aguardo, sem tocar em nada.",
+            "turn_id": "wait"
+          }
+        ]
+      },
+      "first_request": {
+        "body_sha256": "675fc683b16c053baaec0b1c6b6b942f33551a0d6d6b21e9a76cd95ceb1f0249",
+        "user_estimated_tokens": 140,
+        "user_packet_sha256": "c38b444f7b58a9c14136374857c3dbb5bffb9038fc90ae1083baa6ad2ac19351"
+      },
+      "implementation": [
+        {
+          "file": "api/narrative_grounding.py",
+          "sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3"
+        },
+        {
+          "file": "scripts/narrator_source_profile.py",
+          "sha256": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/turn_models.py",
+          "sha256": "42707f52d07a3d51dae1d365d283a09c4a03bf5543cc83f2425690e815b71ba7"
+        },
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "prompt": {
+        "file": "evals/narrator/prompts/narrative-source-v1.md",
+        "file_sha256": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d",
+        "sha256": "147588db153513bb5da8a0aff3f0ef67773481b8feabc40093de4f8bd259084c",
+        "variant": "narrative-source-v1"
+      },
+      "provider_schema_sha256": "db09e29a802160d7bb6931bcdffc8fedc565d3389f1d243cd2043e148c1f6166",
+      "response_schema_sha256": "db09e29a802160d7bb6931bcdffc8fedc565d3389f1d243cd2043e148c1f6166",
+      "source_policy": {
+        "canonical_truth_confirmed": false,
+        "core_protocol": "narrative-source-v1",
+        "invocation_id": "uuid5(batch_id,narrative-source.turn_id)",
+        "normalization": "collapse_unicode_whitespace",
+        "profile": "narrative-source-profile-v1",
+        "question_is_source": false,
+        "representation": "projected_source",
+        "second_user": "previous_complete_source_only",
+        "session_id": "batch_id",
+        "source_field": "n",
+        "turn_ids": [
+          "observe",
+          "wait"
+        ],
+        "user_serialization": "json_unicode_sorted_compact"
+      },
+      "stopping_policy": {
+        "fallback": false,
+        "fill_skips": false,
+        "narrative_retries": 0,
+        "stop_on_first_operational_or_policy_failure": true
+      }
+    },
+    "max_calls": 2,
+    "narrative_generation_parameters": {
+      "deadline_seconds": 60,
+      "initial_quiet_seconds": 60,
+      "max_total_output_tokens": 1536,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "max_output_tokens": 768,
+        "temperature": 0.65
+      },
+      "transmitted": {
+        "max_output_tokens": 768,
+        "reasoning_effort": "none",
+        "temperature": 0.65
+      },
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "probe_kind": "narrative_source_probe",
+    "protocol": "narrative-source-profile-v1",
+    "purpose": "narrative_source_probe",
+    "repetitions": 1,
+    "runtime_promoted": false,
+    "selected_candidate_id": "qwen-3.8-27b-groq-free-synthetic-nonthink",
+    "semantic_not_evaluated": true,
+    "synthetic_only": true
+  },
+  "prepared_files": [
+    {
+      "file": "api/narrative_grounding.py",
+      "sha256": "417962e0fffc216a77153748f742a86e2b761fd5a3041e74181d8803128b61a3"
+    },
+    {
+      "file": "api/scene_director_service.py",
+      "sha256": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921"
+    },
+    {
+      "file": "evals/narrator/narrative_source_case_courtyard_v1.json",
+      "sha256": "c1441274bc8ceb088a7e30c5de0411310db642d14fee514ce6d04d867fa4f469"
+    },
+    {
+      "file": "evals/narrator/prompts/narrative-source-v1.md",
+      "sha256": "8859291d17c6036166878802839204d8b770f17c442dcd178c24cc357929477d"
+    },
+    {
+      "file": "scripts/evaluate_narrator_models.py",
+      "sha256": "833609e6e2ccba67279c60b047eada64ac49eef4a31d6daed92dc9aaed7b2b59"
+    },
+    {
+      "file": "scripts/evaluate_narrator_source.py",
+      "sha256": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3"
+    },
+    {
+      "file": "scripts/narrator_source_profile.py",
+      "sha256": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112"
+    },
+    {
+      "file": "scripts/run_groq_narrative_source_probe.ps1",
+      "sha256": "d9db0de43c1116716f7c3b41139526853955c5b709ffe02e09fe159d599e7eb7"
+    },
+    {
+      "file": "tests/test_narrator_source_execution.py",
+      "sha256": "ef73fe600e5cd1abc87b97d529c0e2b2d68a4649b11692faeb67a0ebaec5fe30"
+    },
+    {
+      "file": "tests/test_narrator_source_runner.py",
+      "sha256": "ebbf30e620910496c4cc27363715ae292d56a430f7e950974b83e5d4c39e6d07"
+    },
+    {
+      "file": "tests/test_structured_probe_player_question_regressions.py",
+      "sha256": "f534fb4a42a5db964d70b1c1833fd9875aaf70e59fac4859e349b8c7729b57eb"
+    }
+  ],
+  "prepared_verification": {
+    "executor_runner_passed": 66,
+    "question_fix_passed": 274,
+    "question_fix_new_cases": 30,
+    "external_calls": 0,
+    "tests": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-courtyard-verification-final-20260907\\tests.json",
+      "sha256": "12478ee8c11179c9758205111a498086e0a707c0e74345d9710c7c385835d5b6",
+      "record": {
+        "started_at": "2026-09-08T00:09:06.765054+00:00",
+        "finished_at": "2026-09-08T00:11:07.998440+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_narrator_source_execution.py",
+          "tests/test_narrator_source_runner.py",
+          "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-courtyard-verification-final-20260907\\tests.xml"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 121.23399999993853,
+        "before": {
+          "scripts/evaluate_narrator_source.py": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+          "scripts/run_groq_narrative_source_probe.ps1": "d9db0de43c1116716f7c3b41139526853955c5b709ffe02e09fe159d599e7eb7",
+          "tests/test_narrator_source_execution.py": "ef73fe600e5cd1abc87b97d529c0e2b2d68a4649b11692faeb67a0ebaec5fe30",
+          "tests/test_narrator_source_runner.py": "ebbf30e620910496c4cc27363715ae292d56a430f7e950974b83e5d4c39e6d07",
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+          "evals/narrator/narrative_source_case_courtyard_v1.json": "c1441274bc8ceb088a7e30c5de0411310db642d14fee514ce6d04d867fa4f469"
+        },
+        "after": {
+          "scripts/evaluate_narrator_source.py": "813917b32a7a1ae33925d7e45f6c20ca2fe48e2af30310f42a0017604b9487b3",
+          "scripts/run_groq_narrative_source_probe.ps1": "d9db0de43c1116716f7c3b41139526853955c5b709ffe02e09fe159d599e7eb7",
+          "tests/test_narrator_source_execution.py": "ef73fe600e5cd1abc87b97d529c0e2b2d68a4649b11692faeb67a0ebaec5fe30",
+          "tests/test_narrator_source_runner.py": "ebbf30e620910496c4cc27363715ae292d56a430f7e950974b83e5d4c39e6d07",
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+          "evals/narrator/narrative_source_case_courtyard_v1.json": "c1441274bc8ceb088a7e30c5de0411310db642d14fee514ce6d04d867fa4f469"
+        },
+        "external_calls": 0,
+        "network": "unchanged tests/conftest.py blocks external HTTPX and nonloopback",
+        "stdout": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-courtyard-verification-final-20260907\\tests.stdout.txt",
+        "stderr": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-courtyard-verification-final-20260907\\tests.stderr.txt",
+        "unchanged_during_tests": true
+      }
+    },
+    "question_fix": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\after-tests.json",
+      "sha256": "1dccf77837051e07419cac742eeb1a391867bf51e29839e5d66bbc0d7c469d52",
+      "record": {
+        "started_at": "2026-09-08T00:04:49.216739+00:00",
+        "finished_at": "2026-09-08T00:04:57.614319+00:00",
+        "command": [
+          "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_structured_probe_player_question_regressions.py",
+          "tests/test_narrator_source_profile.py",
+          "--junitxml=C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused-junit.xml"
+        ],
+        "exit_code": 0,
+        "counts": {
+          "tests.test_structured_probe_player_question_regressions": {
+            "total": 217,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "tests.test_narrator_source_profile": {
+            "total": 57,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        },
+        "new_cases": 30,
+        "hashes_before": {
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+          "tests/test_structured_probe_player_question_regressions.py": "f534fb4a42a5db964d70b1c1833fd9875aaf70e59fac4859e349b8c7729b57eb",
+          "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+          "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+        },
+        "hashes_after": {
+          "api/scene_director_service.py": "143ebab307b8720b8380c5daa2cab691048c5cffccfc7ed0c9a8d0e7996fa921",
+          "tests/test_structured_probe_player_question_regressions.py": "f534fb4a42a5db964d70b1c1833fd9875aaf70e59fac4859e349b8c7729b57eb",
+          "scripts/narrator_source_profile.py": "ba6c8e49b8d9dcadb8fcfc7500ebfe812485bbaf3062098f572743fdcd76e112",
+          "tests/test_narrator_source_profile.py": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+        },
+        "hashes_unchanged": true,
+        "source_profile_files_unchanged": true,
+        "test_isolation": "repository conftest active; dotenv disabled; external network blocked; subprocess environment allowlist without credential variables",
+        "evidence": {
+          "red": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.json",
+          "red_output": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\red.txt",
+          "green_output": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused.txt",
+          "junit": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-fazes-question-regressions-20260907\\focused-junit.xml"
+        }
+      }
+    },
+    "preflight": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-courtyard-preflight-final-20260907.json",
+      "sha256": "207fe211ec6854d24acc7e2f2824f434cb574c87ea1f82755e8b3cb2017a711e",
+      "command": [
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\scripts\\evaluate_narrator_source.py",
+        "--preflight",
+        "--case-id",
+        "courtyard-observe-wait"
+      ],
+      "exit_code": 0
+    },
+    "reviews": "executor/wrapper independent review closed; live historical case rejected before credentials"
+  },
+  "evidence_files": {
+    "design": {
+      "file": "evals/narrator/reports/narrative-source-courtyard-design-2026-09-07.md",
+      "sha256": "7fa9424d2bd092188e4a1c6c0fbc1cd45c1c952b71ba99b856040cf5d04b1ffa"
+    },
+    "console_launcher": {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-courtyard-console-20260907.ps1",
+      "sha256": "110389b6d83307b90604bcd537f732fb45cd58dff7c94aa700be706ba26f5432"
+    }
+  },
+  "lifecycle": {
+    "exit_code": 1,
+    "batch_id": "f6483710-ae78-4024-a2c5-25bbcd5e9cf0",
+    "status": "finished",
+    "updated_at": "2026-09-08T00:17:39.8680031Z",
+    "process_id": 4080,
+    "window_directory": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-window-f6483710-ae78-4024-a2c5-25bbcd5e9cf0",
+    "lifecycle_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-window-f6483710-ae78-4024-a2c5-25bbcd5e9cf0\\lifecycle.json",
+    "preflight_path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-narrative-source-window-f6483710-ae78-4024-a2c5-25bbcd5e9cf0\\preflight.json",
+    "observed_at": "2026-09-08T00:22:55.292740+00:00",
+    "launch_started_at": "2026-09-08T00:14:23.9386699Z",
+    "window_preflight_matches_prepared": true,
+    "batch_closed": true,
+    "result_report": "evals/narrator/reports/narrative-source-courtyard-observation-f6483710-2026-09-07.json",
+    "next_action": "local_opt_in_source_turn_bridge",
+    "credential_input_required_now": false
+  }
+}

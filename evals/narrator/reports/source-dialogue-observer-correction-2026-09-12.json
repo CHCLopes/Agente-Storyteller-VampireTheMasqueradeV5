@@ -1,0 +1,349 @@
+{
+  "status": "completed_locally",
+  "new_provider_calls": 0,
+  "core_sha256": "898c7e9134acee08c711196f2ee4230ddf968f767da87d30047a8e6f7aa93953",
+  "test_suites": [
+    {
+      "role": "focal_30_and_existing_63",
+      "distinct_cases": 93,
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\green.xml"
+    },
+    {
+      "role": "new_pkh_integration",
+      "distinct_cases": 2,
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\green.xml"
+    },
+    {
+      "role": "shared_policy_regression",
+      "distinct_cases": 331,
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-root-verification-20260912\\result.xml"
+    }
+  ],
+  "distinct_passing_cases": 426,
+  "independent_review": {
+    "date": "2026-09-12",
+    "review_kind": "independent_scoped_code_and_evidence_review",
+    "verdict": "approved_scoped_observer_attribution_offline",
+    "material_findings_remaining": 0,
+    "scope": "Read-only review of the authorized observer-attribution change and existing verification receipts; no suite or provider invocation by reviewer.",
+    "reviewed_change": {
+      "changed_existing_helpers": [
+        "_known_npc_observes_player_object",
+        "_is_npc_observer_coordinate_action"
+      ],
+      "added_private_helpers": [
+        "_observer_narration_without_speech",
+        "_observer_subject_tail",
+        "_observer_wait_predicate"
+      ],
+      "unchanged": [
+        "action patterns and authorizations",
+        "general pronoun tracker",
+        "n/q limits",
+        "prompts/model targets",
+        "persistence production code",
+        "UI",
+        "historical evaluator/launcher/result files"
+      ]
+    },
+    "resolved_findings": [
+      {
+        "id": "actor-tail",
+        "basis": "static review of candidate v1, not an executed candidate-v1 countertest",
+        "issue": "Initial subject.match admitted arbitrary tails; an intervening unknown subject in the same sentence could preserve NPC ancestry.",
+        "resolution": "Entire local gesture/reporting tail now must match bounded non-personal fragments; otherwise ancestry resets. Two focused negative cases added."
+      },
+      {
+        "id": "unquoted-direct-speech",
+        "basis": "static review before core application",
+        "issue": "Stripping a dash could turn unquoted direct speech into evidence of a narrator-established actor.",
+        "resolution": "The new ancestry proof rejects a dash without a recognized following quoted block; focused negative added."
+      },
+      {
+        "id": "integration-system",
+        "basis": "read-only review of the new integration test",
+        "issue": "First fixture config passed file frontmatter as SYSTEM.",
+        "resolution": "The fixture now extracts the exact SYSTEM body and asserts text SHA393f522e; final causal baseline and green use identical test ef4d3396."
+      }
+    ],
+    "test_results": {
+      "distinct": 426,
+      "passed": 426,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "runs": [
+        {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\green.xml",
+          "passed": 93,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\green.xml",
+          "passed": 2,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        },
+        {
+          "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-root-verification-20260912\\result.xml",
+          "passed": 331,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      ],
+      "author_selection": 93,
+      "integration": 2,
+      "shared_policy": 331,
+      "counts_exclude_red_and_repeated_runs": true,
+      "tests_executed_by_reviewer": 0,
+      "baseline_lexical": {
+        "cases": 27,
+        "failed_desired_acceptances": 6,
+        "passed": 21
+      },
+      "baseline_integration": {
+        "name": "red-exact-system",
+        "cases": 2,
+        "captured_t2_failed_as_expected": true,
+        "player_action_control_passed": true
+      }
+    },
+    "integration_conclusion": "Fresh synthetic SQLite and FakeLLMAdapter: captured n/q produce two confirmed turns after correction; T1 source is complete in T2, q excluded, no mechanical/state change or RNG, replay uses forbidden producer/gateway and preserves all table contents. Added genuine player action remains refused. No historical session is reused.",
+    "historical_status": {
+      "batch": "87e187bb-61e7-4949-9574-4aea19f23c9f",
+      "unchanged": "two HTTP calls, one committed turn, rejected T2",
+      "original_records_hash_verified": true,
+      "pre_fix_checkpoint_manifest_hash_verified": true,
+      "no_reclassification": true
+    },
+    "limitations": [
+      "This is bounded heuristic attribution, not a general Portuguese parser.",
+      "Unrecognized ancestry and ambiguous constructions remain conservative refusals.",
+      "Preserving refusal of an NPC expectation or an ambiguous omitted subject does not prove the player action was semantically completed.",
+      "Final tests establish the stated cases; they do not prove complete linguistic coverage or narrative utility.",
+      "No provider rerun, product acceptance, default model selection or CAP-001 approval."
+    ],
+    "approvals": {
+      "scoped_offline_fix_review": true,
+      "model": false,
+      "runtime_default": false,
+      "campaign": false,
+      "ui": false,
+      "CAP_001": false
+    },
+    "sources": [
+      {
+        "file": "api/scene_director_service.py",
+        "sha256": "898c7e9134acee08c711196f2ee4230ddf968f767da87d30047a8e6f7aa93953"
+      },
+      {
+        "file": "tests/test_scene_dialogue_observer_attribution.py",
+        "sha256": "a1b8e44b2b6faf2bbde9ab719aa11ac3ea9e0ea614e95ae3ef56543fd8a5f28b"
+      },
+      {
+        "file": "tests/test_source_dialogue_observer_recovery.py",
+        "sha256": "ef4d33966ebf94b703b5756c76954c1242f80eae30d3e3efce0fc0d60f1dfc50"
+      },
+      {
+        "file": "tests/test_scene_focus_npc_object_regressions.py",
+        "sha256": "d2ed6fe2edcaf5a0864523cf3e60919c3387c431e6e02196745041715a22b9c2"
+      },
+      {
+        "file": "tests/test_scene_focus_mara_holding_regressions.py",
+        "sha256": "31fb96c0f004f7775f4ce6eb26b347d227d42eaf4553120a5c65e9fe4e64f82a"
+      },
+      {
+        "file": "tests/test_scene_director_service.py",
+        "sha256": "460397b1afe7e467b97cd09ab838a816c4de7aa5467b1dcf713fc37862aff20c"
+      },
+      {
+        "file": "tests/test_implicit_agency_regressions.py",
+        "sha256": "8f6c2e14aabe2d8c8ba0d828969f80c942582252557eb5e86d7b6740d926b958"
+      },
+      {
+        "file": "tests/test_attributed_agency_regressions.py",
+        "sha256": "5a2dc80b2a52a1ebc8c273005d340926d4e615ae70e21d6ae95bfdf553a97b66"
+      },
+      {
+        "file": "tests/test_narrator_source_profile.py",
+        "sha256": "09d1fe3062750a84e9b133d61c3ee2e597db13b6ad5f6c066e6a61f958199016"
+      },
+      {
+        "file": "tests/conftest.py",
+        "sha256": "d779c64e08bd1f7ea4fac9db97ad1287478281c7cbf2a88c60fb0e06824688ed"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\delivery.json",
+        "sha256": "497004b0b3f8541e933c233a1478c527262ad6251e01593b33648236a4e7740a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\delivery.json",
+        "sha256": "8d529656eb1d02bed1bd390af9e18eae9b302ac82acdfb5ffcb9dc7157f99f75"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-root-verification-20260912\\delivery.json",
+        "sha256": "e7ea565570d16ee93047a181a7014703d06739feaaf82abbee9775538a3d8b2a"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\red.log",
+        "sha256": "c0f0174934e73e49e60c7c25190b8379ff00a43a3124a5263fbbbd081ed8263c"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\red.xml",
+        "sha256": "ddfb06082ad0a334fe83d6e38fafde0893ce802921a34b5b9b5aea1e2ed2f564"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\before-red.json",
+        "sha256": "7dc6faa99872fec03a18a69d4a01f8cd28a1d3e06d33f3dfa9da9056160d1958"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\after-red.json",
+        "sha256": "7dc6faa99872fec03a18a69d4a01f8cd28a1d3e06d33f3dfa9da9056160d1958"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\candidate-v1.diff",
+        "sha256": "be7806dd3d79e08ab9b71717ec12d9b7e5b2515781de9c32976d39e28e051533"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\candidate.diff",
+        "sha256": "ec314ac8c4b0305400238dd7125acb2eb076b6bf7f164de15183de684378d13f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\scope-check.json",
+        "sha256": "1f6a3e5012f326698ec737c514944f8708bcc4afd8fd1dde910ec5aac1db8dd2"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\green.log",
+        "sha256": "2803957d571e07a30bbe440bc178ed28eba884f9ff215f6ed8df9540bbbd1a55"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\green.xml",
+        "sha256": "a2662151f55959a9ef9a883ea84af1d4d0a96337fc427e977d2033826ac54d3d"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\before-green.json",
+        "sha256": "ee02f35f532637a1fd3a6b09403faeef4a340d79e122426c1abc7b2becc25c45"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\after-green.json",
+        "sha256": "ee02f35f532637a1fd3a6b09403faeef4a340d79e122426c1abc7b2becc25c45"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-fix-20260912\\reconciliation.json",
+        "sha256": "3b55c0a1332db0067c2ce0a24439e98bf8424b686a1e914c41cfafb863b6e540"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\baseline-notes.md",
+        "sha256": "8a8513d6087e2b1e9a0b407d1a3afb88e4ffb42fd72e4ec14b3930d9c372f40b"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\red-exact-system.log",
+        "sha256": "6fb460c4ab76c43c583333183b022dd29ed4163c80e0b56080fca4cbb80d5488"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\red-exact-system.xml",
+        "sha256": "42b70281b277e11318414f3fc67f297cbc625da4e52f95715d7151b66a2693c1"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\red-exact-system-result.json",
+        "sha256": "4a3621218f7f099a9c5a69b9c0630a538d41f440e2742ccbcf888dfcfef91a7e"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\green.log",
+        "sha256": "352d99043fa681111b64fa1d6f9af5f769c844bf3360788d8f5e190605e05da7"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\green.xml",
+        "sha256": "42a317b613cc9bbcfa15d4c9b8c3fe0f7736fb00f87fe86c95f99e47461657a0"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-integration-20260912\\green-result.json",
+        "sha256": "417a989b65e872ed2a92a2dd18355f7c1c7b6a5f792134e7800f41302de6a45f"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-root-verification-20260912\\result.log",
+        "sha256": "977cacc0a9ea228263fabc3886b806b2ad4b8348358813fb88f71441f44d8485"
+      },
+      {
+        "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-dialogue-observer-root-verification-20260912\\result.xml",
+        "sha256": "d7fa8f7ae4a24d03b64f48c04062be833e02a09094c7eac7d23bec91bf3a2963"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\checkpoints\\source-dialogue-continuity-observation-87e187bb-20260912\\manifest.json",
+        "sha256": "14ec252d78315976047649c765a21825545ca6bdc2c3eaf44e575be42d307fe0"
+      },
+      {
+        "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl",
+        "sha256": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0"
+      }
+    ]
+  },
+  "limitations": [
+    "Recorte lexical conservador; não é análise sintática geral.",
+    "Desejo/expectativa de NPC e sujeito implícito ambíguo conservam recusas herdadas, sem afirmação de ato consumado.",
+    "Lote87 não reclassificado; qualidade narrativa/modelo/runtime padrão/CAP-001 não aprovados."
+  ],
+  "historical_anchors_preserved": [
+    [
+      "source-dialogue-continuity-observation-87e187bb-20260912",
+      "14ec252d78315976047649c765a21825545ca6bdc2c3eaf44e575be42d307fe0",
+      69
+    ],
+    [
+      "source-dialogue-continuity-preparation-20260912",
+      "ebe2721a72838aaaaf2be744aadb39a0af9914dfa4f99878183a88e3ffd1ce50",
+      97
+    ]
+  ],
+  "raw_artifacts": [
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\preflight.json",
+      "sha256": "8eef86e1c47f96974fd5e28a49ba78e7196fbfa61966774f148fc610d5bdcfc6"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\binding.json",
+      "sha256": "b85c2d02d0a65a1f6f3e271c968d9155d851fe41be65c7092bfde575dd5bfd89"
+    },
+    {
+      "path": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-source-dialogue-continuity-window-87e187bb-61e7-4949-9574-4aea19f23c9f\\lifecycle.json",
+      "sha256": "5cd69f35cb6465ad986015ec0c4ee02496496e06eef6687d0d1c8ab1f36c75bc"
+    },
+    {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\records.jsonl",
+      "sha256": "c64b4f9b5db3dcb15d0ef99aa218bc24eddfe29b9d86c64ea334246037e875f0"
+    },
+    {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3",
+      "sha256": "f701829a389205819cb4bdee48c0f5f41792e4e8e5d401f29c9902131fdb99fc"
+    },
+    {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-shm",
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\source-dialogue-continuity.sqlite3-wal",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\skate\\.codex\\worktrees\\b008\\AgenteStoryteller\\eval-results\\source-dialogue-continuity-87e187bb-61e7-4949-9574-4aea19f23c9f\\summary.json",
+      "sha256": "0e7aa20e24436eadc796ba66cabd845f35226e35db145883dec5126d4bbc2dc8"
+    }
+  ],
+  "checkpoint": {
+    "file": "eval-results/checkpoints/source-dialogue-observer-correction-20260912/manifest.json",
+    "sha256": "6379c44e32b3c052a6f5addef65669b75f96238f5550c50db7d97e38e4d1e002",
+    "copies": 68
+  },
+  "approvals": {
+    "model_selection": false,
+    "runtime_default": false,
+    "campaign": false,
+    "CAP-001": false
+  }
+}

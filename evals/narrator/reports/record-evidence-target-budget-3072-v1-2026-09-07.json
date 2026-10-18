@@ -1,0 +1,370 @@
+{
+  "document_kind": "record_target_budget_preparation",
+  "date": "2026-09-07",
+  "recorded_at_utc": "2026-09-07T14:33:17.487251+00:00",
+  "status": "executed_closed_envelope_and_semantic_failures",
+  "authorization": {
+    "source": "explicit continuous full authority from user2026-09-07",
+    "new_observations_authorized": true,
+    "new_hypothesis_or_batch_approval_required": false,
+    "remaining_human_dependency": null
+  },
+  "prepared_metadata": {
+    "purpose": "record_evidence_target_budget_probe",
+    "probe_kind": "record_evidence_target_budget_probe",
+    "experiment_version": "record-evidence-target-spans-3072-v1",
+    "full_evaluation": false,
+    "synthetic_only": true,
+    "runtime_promoted": false,
+    "cap_001_status": "not_evaluated",
+    "automated_gates_passed": false,
+    "human_review_required": true,
+    "diagnostics_executed": false,
+    "automatic_retries": 0,
+    "max_calls": 1,
+    "repetitions": 1,
+    "causal_comparison": false,
+    "narrative_generation_calls": 0,
+    "support_validation_scope": "structural_only",
+    "selected_candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+    "evaluator": {
+      "file": "scripts/evaluate_narrator_record_target_budget.py",
+      "sha256": "e464d738cd7d177b6f9e483830dba28508ff5a88bb8256c4d385f26c22e47780",
+      "python_version": "3.12.2",
+      "git_commit": "5e563824fcba4c53cc37b5084a8ce65f3fa30356",
+      "git_dirty": true
+    },
+    "candidate_policy": {
+      "adapter_kind": "groq",
+      "provider_label": "Groq",
+      "effective_provider": "Groq",
+      "upstream_provider": null,
+      "structured_mode": "native",
+      "require_zdr": false,
+      "allow_data_collection": true,
+      "campaign_data_eligible": false,
+      "expiration_date": null,
+      "reasoning_effort": "low"
+    },
+    "evidence_generation_parameters": {
+      "deadline_seconds": 60,
+      "minimum_inter_call_delay_seconds": 60,
+      "requested": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072
+      },
+      "transmitted": {
+        "temperature": 0.65,
+        "max_output_tokens": 3072,
+        "reasoning_effort": "low"
+      },
+      "max_total_output_tokens": 3072,
+      "user_packet_budget": {
+        "estimated_tokens": 2000,
+        "method": "characters_divided_by_4"
+      }
+    },
+    "inputs": {
+      "dossier": {
+        "file": "evals/narrator/reports/record-evidence-target-budget-3072-dossier-26547182-2026-09-07.json",
+        "sha256": "ae30f021f344c49e97a901685a591602755e836885b890d7e469dad8670f88d0",
+        "original_body_sha256": "8138c098ec49cdc768e7c5d9fe19cc952001939f1c54af11bdb1241762526a09",
+        "proposed_body_sha256": "5e376cb4cdee903b0f1a5bbcd3a14fa181d966656102f4c4985d87b4eb9ea186",
+        "changed_payload_fields": [
+          "max_completion_tokens"
+        ]
+      },
+      "observation_policy": {
+        "max_error_body_bytes": 65536,
+        "raw_error_retained": false,
+        "raw_reasoning_retained": false
+      },
+      "manifest": {
+        "file": "groq_candidates_2026-09-05.json",
+        "sha256": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6"
+      },
+      "corpus": {
+        "file": "corpus_v1.json",
+        "sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283"
+      },
+      "prompt": {
+        "variant": "record-evidence-target-spans-v1",
+        "file": "evals/narrator/prompts/record-evidence-target-spans-v1.md",
+        "sha256": "fdba32bb00dd20144ec5553d72635c3a2388fee9c4621486f3bddd6f3b1721cb"
+      },
+      "response_schema_sha256": "cd85424b5ef4519711b02d21b96aab36fc68c84bf8d84200f835504e971f7e8c",
+      "provider_schema_sha256": "870dae95abab2212da69ebb6ba340f87eef450cd7c5bf060f3d6d8f1b667b407",
+      "final_schema_sha256": "bdbda5ab60a1d9c4af44bcadf3be3d09b333b566b61cad9f68cfa7e8a9065bd2",
+      "implementation": [
+        {
+          "file": "scripts/narrator_record_budget_observer.py",
+          "sha256": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060"
+        },
+        {
+          "file": "scripts/narrator_record_evidence.py",
+          "sha256": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5"
+        },
+        {
+          "file": "scripts/narrator_record_derivation.py",
+          "sha256": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12"
+        },
+        {
+          "file": "scripts/evaluate_narrator_models.py",
+          "sha256": "e5cb42403f03b294360cea953d7854a9107eb7534ff70ce3226951ceb9343e1b"
+        },
+        {
+          "file": "scripts/narrator_actor_contract.py",
+          "sha256": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b"
+        },
+        {
+          "file": "api/scene_director_service.py",
+          "sha256": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58"
+        },
+        {
+          "file": "api/scene_service.py",
+          "sha256": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607"
+        },
+        {
+          "file": "api/llm/adapters/groq.py",
+          "sha256": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328"
+        },
+        {
+          "file": "api/llm/adapters/openai_compatible.py",
+          "sha256": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058"
+        },
+        {
+          "file": "api/llm/contract.py",
+          "sha256": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "opening",
+          "episode_id": "opening",
+          "turn_id": "establish-scene",
+          "source": {
+            "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+            "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+            "line_number": 3,
+            "field": "proposal.narrative",
+            "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+            "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+            "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+            "episode_id": "opening",
+            "turn_id": "establish-scene",
+            "repetition": 1,
+            "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+            "corpus_file": "evals/narrator/corpus_v1.json",
+            "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+            "context_origin": "original_synthetic_corpus",
+            "protected_secrets_count": 0
+          },
+          "generation_context": {
+            "version": "record-evidence-v1",
+            "user_packet_sha256": "42eb962a2042c00b2030d5cb63b1f7e1f17894158e5df61cdcad0d317c32a480",
+            "source_units_sha256": "8a001b3193f6b7a6a249e060430be7edeb92b514cb143601d1d458e717462dcf",
+            "source_units": [
+              {
+                "id": "n0",
+                "origin": "narrative",
+                "path": "/fixed_narrative/text",
+                "start": 0,
+                "end": 197,
+                "text": "Um corredor de pedra fria se estende, iluminado por lâmpadas de néon piscantes; o cheiro de fumaça e chuva encharca o ar, e um sussurro distante ecoa, sugerindo que algo ou alguém observa ao longe."
+              },
+              {
+                "id": "a0",
+                "origin": "player_input",
+                "path": "/player_input/text",
+                "value": "Onde estou?"
+              },
+              {
+                "id": "m0",
+                "origin": "mechanics",
+                "path": "/expected_outcome/value",
+                "value": "unresolved"
+              },
+              {
+                "id": "c0",
+                "origin": "known_context",
+                "path": "/context/known_context/text",
+                "value": "A crônica é urbana, contemporânea e gótico-punk."
+              }
+            ],
+            "narrative_reconstructed_exactly": true,
+            "source": {
+              "jsonl_file": "eval-results/20260906T234523Z-e141618c-c050-4eab-884c-37b50558c17d/gpt-oss-120b-groq-free-synthetic-low.jsonl",
+              "jsonl_sha256": "f682846c98cd7ea0d1982ccceddea4033932bd6f1c564576a0f7e4cd9ec00288",
+              "line_number": 3,
+              "field": "proposal.narrative",
+              "batch_id": "bb98ae1e-529b-4645-be17-ffe42734db14",
+              "evaluation_invocation_id": "e141618c-c050-4eab-884c-37b50558c17d",
+              "candidate_id": "gpt-oss-120b-groq-free-synthetic-low",
+              "episode_id": "opening",
+              "turn_id": "establish-scene",
+              "repetition": 1,
+              "narrative_sha256": "a03124561fb5b22a6cfca73a60766b29b68af06fefc1b9efa921b018fb95cf18",
+              "corpus_file": "evals/narrator/corpus_v1.json",
+              "corpus_sha256": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+              "context_origin": "original_synthetic_corpus",
+              "protected_secrets_count": 0
+            },
+            "budget": {
+              "scope": "user_packet_only",
+              "method": "characters_divided_by_4",
+              "limit": 2000,
+              "estimated_tokens": 367,
+              "omitted_background_details": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "files_sha256": {
+    "scripts/evaluate_narrator_record_target_budget.py": "e464d738cd7d177b6f9e483830dba28508ff5a88bb8256c4d385f26c22e47780",
+    "scripts/run_groq_record_target_budget_probe.ps1": "76b763a74e17605ddb973d8f1abe350f2aecdd9c11384a6277610072105c21d3",
+    "tests/test_record_target_budget_execution.py": "e2e595936d0a5adbce37e2a5b1a417a71a71321819ce66fb963af2aaa12a03cb",
+    "tests/test_record_target_budget_runner.py": "993eb39576d4d285f538ef796de29cdb4d2624d0467c002ceb791ccc1bbc0c68",
+    "tests/test_record_target_budget_replay_boundary.py": "e8cc65bac042981f18e1121b396ebe5a0b1ad6ba8ad76be5f0fb328f2984db20",
+    "scripts/evaluate_narrator_models.py": "e5cb42403f03b294360cea953d7854a9107eb7534ff70ce3226951ceb9343e1b"
+  },
+  "verification": {
+    "distinct_tests_passed": 294,
+    "new_distinct_tests_passed": 103,
+    "existing_distinct_tests_passed": 191,
+    "failed": 0,
+    "skipped": 0,
+    "whole_repository_rerun": false,
+    "groups": [
+      {
+        "name": "target_budget_replay_and_prior_boundaries",
+        "passed": 212,
+        "new": 21,
+        "seconds": 3.89,
+        "command": "pytest -q -p no:cacheprovider tests/test_record_target_budget_replay_boundary.py tests/test_record_target_spans_replay_boundary.py tests/test_record_budget_replay_boundary.py tests/test_record_evidence_replay_boundary.py tests/test_record_derivation_replay_boundary.py tests/test_narrator_replay_skips.py tests/test_narrator_eval.py"
+      },
+      {
+        "name": "new_target_budget_executor",
+        "passed": 35,
+        "seconds": 27.92,
+        "command": "pytest -q -p no:cacheprovider tests/test_record_target_budget_execution.py"
+      },
+      {
+        "name": "new_target_budget_wrapper",
+        "passed": 47,
+        "seconds": 94.48,
+        "command": "pytest -q -p no:cacheprovider tests/test_record_target_budget_runner.py"
+      }
+    ],
+    "counting_note": "Disjoint focused groups. RED and repeated smoke excluded. Earlier479 not added.",
+    "warning": "preexisting python_multipart PendingDeprecationWarning",
+    "environment": [
+      "existing venv Python3.12.2",
+      "STORYTELLER_DISABLE_DOTENV=1",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "pytest network/persistence isolation preserved"
+    ],
+    "independent_review": {
+      "executor_diff": "no_material_findings",
+      "interpretation_and_design": "no_material_findings",
+      "read_only": true
+    },
+    "real_empty_key_integration": {
+      "exit_code": 3,
+      "credential_validation_reached": true,
+      "preflight_failed": false,
+      "stderr_empty": true,
+      "new_artifacts": [],
+      "removed_artifacts": [],
+      "hashes_unchanged": true,
+      "hashes_before": {
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-evidence-target-spans-v1.md": "aed7e269b11b88379d09221a071f598dfe1fb845be2a65ecb3bbe479d76e91a4",
+        "evals/narrator/reports/record-evidence-target-budget-3072-dossier-26547182-2026-09-07.json": "ae30f021f344c49e97a901685a591602755e836885b890d7e469dad8670f88d0",
+        "scripts/evaluate_narrator_models.py": "e5cb42403f03b294360cea953d7854a9107eb7534ff70ce3226951ceb9343e1b",
+        "scripts/evaluate_narrator_record_target_budget.py": "e464d738cd7d177b6f9e483830dba28508ff5a88bb8256c4d385f26c22e47780",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/run_groq_record_target_budget_probe.ps1": "76b763a74e17605ddb973d8f1abe350f2aecdd9c11384a6277610072105c21d3",
+        "tests/test_record_target_budget_runner.py": "993eb39576d4d285f538ef796de29cdb4d2624d0467c002ceb791ccc1bbc0c68"
+      },
+      "hashes_after": {
+        "api/llm/adapters/groq.py": "dbcde3da86ad591d2ccc2891d0425e30b3d9a5eb7ea09af5132e7417e1e94328",
+        "api/llm/adapters/openai_compatible.py": "edd9d7b4f8788aea53af569910dea98344c20070fcd963d9c51ad43505d72058",
+        "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+        "api/scene_director_service.py": "520ad02bd4c0cac2961bb11556533f93eaa94cbfeac3cbb4ef20df14b49cbc58",
+        "api/scene_service.py": "b523534a12c8121a6f0159e0057556f0d7952f1cca9bba71cc23c6f7c924b607",
+        "evals/narrator/corpus_v1.json": "eada383ea638b61e5826a6cec46ed3c74b521a353cb4a94fdb75cc7129e91283",
+        "evals/narrator/groq_candidates_2026-09-05.json": "de31691d9562e7cc8abe2b13d004098967976cda321c975d2f3ed7a147a15de6",
+        "evals/narrator/prompts/record-evidence-target-spans-v1.md": "aed7e269b11b88379d09221a071f598dfe1fb845be2a65ecb3bbe479d76e91a4",
+        "evals/narrator/reports/record-evidence-target-budget-3072-dossier-26547182-2026-09-07.json": "ae30f021f344c49e97a901685a591602755e836885b890d7e469dad8670f88d0",
+        "scripts/evaluate_narrator_models.py": "e5cb42403f03b294360cea953d7854a9107eb7534ff70ce3226951ceb9343e1b",
+        "scripts/evaluate_narrator_record_target_budget.py": "e464d738cd7d177b6f9e483830dba28508ff5a88bb8256c4d385f26c22e47780",
+        "scripts/narrator_actor_contract.py": "867125e5226f741142a5c872f66172491a3e58378a9e1c1ee2cbcb64d2fdde0b",
+        "scripts/narrator_record_budget_observer.py": "36a119fb82702580aeaf9ed6608679ec7fecb85faab57334d8eb5ea0f6f06060",
+        "scripts/narrator_record_derivation.py": "368a900699e13607b1b8664ec9334d1a5e401738562a39dd8c3d1e2e584b7e12",
+        "scripts/narrator_record_evidence.py": "899c9ce054200421f1ee7811866b97e00957cfe1a8d7038586a08ee0e5fa44d5",
+        "scripts/run_groq_record_target_budget_probe.ps1": "76b763a74e17605ddb973d8f1abe350f2aecdd9c11384a6277610072105c21d3",
+        "tests/test_record_target_budget_runner.py": "993eb39576d4d285f538ef796de29cdb4d2624d0467c002ceb791ccc1bbc0c68"
+      },
+      "credential": "empty SecureString; GROQ_API_KEY removed from child environment",
+      "live_calls": 0
+    },
+    "root_preflight": "exact3072 body, same SYSTEM and USER hashes verified"
+  },
+  "preservation": {
+    "prior_target_spans_executor_wrapper_prompt_tests": "hashes preserved",
+    "prior_raw_runs": [
+      "26547182-1133-477d-92a7-fa9f5729c423",
+      "b129ceaa-599c-4448-b095-d37c0f0411c1"
+    ],
+    "raw_artifacts_modified": false,
+    "runtime_and_contracts_changed": false,
+    "legacy_evaluator_delta": {
+      "added": 12,
+      "removed": 0,
+      "scope": "Two exclusive replay guards for new experiment"
+    }
+  },
+  "live_calls_during_preparation": 0,
+  "limitations": [
+    "SYSTEM retains historical768 text by deliberate isolation; API ceiling3072",
+    "No automatic escalation or repetition inside the runner",
+    "Schema/reference validity does not imply semantic quality",
+    "Inherited observation keeps metadata separate from legacy aggregate",
+    "No causal A/B or automatic CAP/runtime approval"
+  ],
+  "next_step": "Launch one dedicated secure prompt, execute the bounded observation, analyze the result and continue necessary work under full authority.",
+  "interactive_launch": {
+    "launcher": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-target-budget-live-20260907\\launch-target-budget-3072.ps1",
+    "scope": "target-budget3072: one fixed opening, same SYSTEM/USER/schema, secure user credential",
+    "status_file": "C:\\Users\\skate\\AppData\\Local\\Temp\\storyteller-record-target-budget-live-20260907\\status.json",
+    "launcher_sha256": "9b8f89adba3bb3b3324bfaa89fcd09de4a4e52fdda6d9f27652a68b51a985280",
+    "process_id": 2208,
+    "launched_at_utc": "2026-09-07T14:34:26.3656412Z",
+    "last_observed_status": {
+      "phase": "finished",
+      "at_utc": "2026-09-07T14:35:47.5365657Z",
+      "process_id": 2208,
+      "exit_code": 1
+    },
+    "note": "User supplied key through protected prompt; no credential recorded. Do not launch another instance."
+  },
+  "completed_observation": {
+    "batch_id": "d4491c21-2f2d-4ffc-b02a-46b5e630ba30",
+    "report": "record-evidence-target-budget-observation-d4491c21-2026-09-07.md",
+    "raw_hashes": {
+      "gpt-oss-120b-groq-free-synthetic-low.jsonl": "9ccc0f5ed02c7a8d993a29c018739fb2676472e68b7257423bb21f50addf3dea",
+      "summary.json": "39d5e287e83ca5594fec3e787b05d5bd547e6d78be07ef2e1bc8ba9745afe19d"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-26",
+  "hypothesis_id": "HYP-006-OPENAI-LUNA-LOW-L1",
+  "status": "offline_ready_paid_live_blocked",
+  "target": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "low"
+  },
+  "limits": {
+    "calls": 8,
+    "max_output_tokens_per_call": 768,
+    "max_output_tokens_total": 6144,
+    "required_account_spend_limit_usd": 0.05
+  },
+  "pricing_observed_usd_per_million_tokens": {
+    "input": 0.20,
+    "output": 1.20
+  },
+  "live_inference_authorized": false,
+  "paid_spend_authorized": false,
+  "provider_calls": 0,
+  "credential_requested": false,
+  "offline_verification": {
+    "focused_tests_passed": 48,
+    "powershell_parse_errors": 0,
+    "live_refused_before_credential": true,
+    "live_refused_before_run_directory": true
+  },
+  "transport_verification": {
+    "official_recommended_endpoint": "Responses API",
+    "prepared_transport": "POST /v1/responses",
+    "reasoning_effort": "low",
+    "store": false,
+    "structured_output": "json_schema",
+    "mock_transport_test_passed": true,
+    "preflight_sha256": "b7eb390e974ee0187482d2042c31b8d555545eacc5a896ab10e02b0f9623dc51",
+    "runner_sha256": "7633125176bfe7b84c842c7fc8ab36d54cf5edf88c461d6c9b6d1590b183844e",
+    "test_sha256": "254eb8ac1234bf5aeadc5a2a6dfb86f824dccd697e7aae6b4a74b00251fcf85f"
+  }
+}
