@@ -110,11 +110,10 @@ README, guia técnico, instruções e este registro acompanham um segundo commit
 documental na mesma branch. A confirmação do HEAD final é realizada após esse
 envio; não se usa `push --dry-run` como prova de publicação.
 
-`main` permanece em `2e84c55f6f93ec2c7e6b00f3622054ef99c61ece`;
-nenhum merge, troca de branch padrão, exclusão ou force-push nesta atividade.
-O README atualizado deve ser consultado na branch de implementação; a página
-inicial de `main` continua mostrando sua versão anterior. Isso não é um merge
-pendente oculto nem aceite do gate narrativo.
+No primeiro envio, `main` permaneceu em
+`2e84c55f6f93ec2c7e6b00f3622054ef99c61ece`, sem merge ou troca de branch
+padrão. A publicação documental posterior, autorizada separadamente, está
+registrada abaixo; não constitui aceite do gate narrativo.
 
 O estado local esperado após a publicação documental contém somente as duas
 alterações de exemplos de ambiente excluídas. Dados operacionais ignorados
@@ -127,3 +126,29 @@ A fonte de verdade continua `PROMPT_RETOMADA_2026-09-06.md`; não há
 `state/PROJECT_STATE.md` neste worktree. Próxima intervenção de produto continua
 DEC-NARR-VALID-001, opção A/B ainda não escolhida. L83 permanece preparado e não
 executado. Publicar o snapshot não aprova nova arquitetura, lote ou narrador.
+
+## Apresentação principal publicada em main
+
+Em seguida, humano solicitou explicitamente que o novo README fosse a
+apresentação principal, substituindo a versão que ainda se referia ao Groq.
+Commit `667d0cf1f7c8b997a87b26f7f6575302ccfbc54c` publicado em `main`
+por push normal: somente `README.md` foi alterado em relação à main anterior.
+Nenhum código, dependência, configuração de provedor ou arquivo de ambiente
+foi promovido, nem houve merge da branch de implementação.
+
+Os 14 links documentais apontam para arquivos existentes no checkpoint
+`4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26`; assim, não dependem de arquivos
+ausentes na main e conservam a referência ao estado descrito. O README explica
+a separação entre apresentação em main e código da branch de desenvolvimento.
+
+Verificações: diff restrito a um arquivo; whitespace aprovado; zero menções a
+Groq; zero indicadores pelos padrões de tokens/chave privada/URL credenciada;
+todos os destinos documentais conferidos na árvore Git publicada.
+Após o push, `ls-remote` confirmou o commit da main; a API pública confirmou
+`default_branch=main` e o mesmo SHA do blob README local e remoto.
+Não houve execução de testes de aplicação nesta mudança exclusivamente textual;
+os testes do checkpoint técnico acima não são atribuídos à main antiga.
+
+A preparação usou um checkout gerenciado isolado, sem trocar a branch ou
+alterar os dois exemplos de ambiente do worktree de implementação. Checkout
+temporário arquivado após a publicação, com recuperação pelo histórico gerenciado.

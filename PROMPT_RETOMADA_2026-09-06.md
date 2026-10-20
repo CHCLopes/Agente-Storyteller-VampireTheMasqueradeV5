@@ -5,8 +5,12 @@ de agir e carregue apenas o contexto necessário ao próximo passo.
 
 ## Publicação do desenvolvimento — 20/10/2026
 
-Sincronização segura autorizada para a branch de implementação, sem promoção
-para main. README público reescrito conforme o estágio real; guia técnico
+Sincronização segura inicialmente autorizada para a branch de implementação.
+Depois, humano autorizou expressamente publicar o novo README como apresentação
+principal em main: commit 667d0cf publicado e referência remota/README público
+conferidos; somente README.md mudou em main, sem merge de código. Links dos
+documentos apontam para o checkpoint publicado 4b3380c da implementação.
+README público reescrito conforme o estágio real; guia técnico
 preservado em DEVELOPMENT.md. Registro de escopo, exclusões, testes e resultado
 Git: docs/repository-checkpoint-2026-10-20.md. Checkpoint técnico 45d4a37
 publicado na branch remota e hash conferido; apresentação em commit documental
