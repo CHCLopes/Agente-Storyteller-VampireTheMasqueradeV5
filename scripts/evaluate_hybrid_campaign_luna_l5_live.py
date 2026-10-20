@@ -44,7 +44,7 @@ from scripts.report_luna_test_cost import display, read_records, summarize
 from scripts.run_campaign_source_offline_trial import _initial_state
 
 
-GATE = ROOT / "evals/narrator/reports/hybrid-campaign-luna-l5-live-gate-2026-10-03.json"
+GATE = ROOT / "evals/narrator/reports/hybrid-campaign-luna-l5-live-gate-2026-10-18.json"
 OUTPUT_ROOT = ROOT / "eval-results"
 LOT_ID = "HYP-007-L5"
 LOT_PREFIX = "hybrid-campaign-luna-l5-"
@@ -70,6 +70,7 @@ FROZEN_FILES = (
     "api/campaign_source_turn.py",
     "api/campaign_source_offline_corpus.py",
     "scripts/run_campaign_source_offline_trial.py",
+    "api/local_request_security.py",
     "api/campaign_source_storage.py",
     "api/scene_director_service.py",
     "api/llm/contract.py",
@@ -92,6 +93,9 @@ def _gate() -> dict:
         "max_request_bytes": MAX_REQUEST_BYTES,
         "max_estimated_usd": str(PROPOSED_LIMIT),
         "admission_automatic": False,
+        "retry": False,
+        "fallback": False,
+        "synthetic_only": True,
         "content_version": "record-at-risk.v2",
         "policy_version": "campaign-progression.v2",
         "input_usd_per_million_tokens": str(PRICE_INPUT),
@@ -221,7 +225,7 @@ async def run_batch(*, directory: Path, key: SecretStr,
     """Run once. Tests inject a fake adapter; production uses OpenAI only."""
     if adapter_factory is None:
         _require_live_gate(_gate())
-        # A distinct, atomic latch prevents concurrent or accidental repeat L4 lots.
+        # A distinct, atomic latch prevents concurrent or accidental repeat L5 lots.
         LOT_LOCK.mkdir(parents=True, exist_ok=False)
     if directory.exists():
         raise ValueError("campaign_luna_batch_exists")

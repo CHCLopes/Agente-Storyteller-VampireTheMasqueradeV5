@@ -1,0 +1,20 @@
+{
+  "date": "19/10/2026",
+  "pages": 7,
+  "informational_findings": 3,
+  "security_vulnerabilities_demonstrated": 0,
+  "http_handlers": 0,
+  "surfaces_sha256": {
+    "scripts/luna_credential_supervisor.py": "f4d980cd4be69d0804177af53998ba62f0be58c1340e25f53ad741445e05d70e",
+    "scripts/run_luna_credential_supervisor.ps1": "b36e576a3b3f995e377eda9b4b07b8e7807cad61d1e6c455c30aff7d2f96fae9",
+    "scripts/evaluate_openai_luna_low_live.py": "f7bcce7f513e376fa9c7e2fa0aebc1677e1870780b22429bc05d770373b614fc",
+    "scripts/evaluate_hybrid_campaign_luna_l25_live.py": "e28404278418fcdd7a19a56ddc6e11b819688251ceec501e3d8fd419bd907635",
+    "scripts/evaluate_hybrid_campaign_luna_l26_live.py": "65faa8cdc271ec5b35d15ffaab93f05a3df27e6835ec0708fc0922683d11f4e2",
+    "scripts/run_hybrid_campaign_luna_l25_live.ps1": "ea8a629c0d5f51fc58054562601ebdf30e22ca8d60a6ab8c76e5317456e13b7b",
+    "scripts/run_hybrid_campaign_luna_l26_live.ps1": "afb89fb9f6b7a468ce3e01babbe4c4b83f64e4526711c95a8a12dec6fd082ee0",
+    "tests/test_luna_credential_supervisor.py": "528f3956d51d2ca554233b0eaee2703d145c19576f9fde48b71147c2b260b2b8",
+    "tests/test_luna_credential_input_audit.py": "9a231456e377253f774282931d9f8bead8ea2d87e39b3970dee9e49f35ce2006",
+    "tests/test_luna_test_cost.py": "ff4ceb5561a27dd43da1903accb6dfbbeba21332883510023feb8e4e98f0b338"
+  },
+  "pdf_sha256": "620f317d49a03615f0815e56e3e7526362683513693cd5099fdba368b3912cc5"
+}

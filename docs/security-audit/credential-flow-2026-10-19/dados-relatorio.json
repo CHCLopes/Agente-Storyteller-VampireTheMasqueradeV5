@@ -1,0 +1,86 @@
+{
+  "date": "19/10/2026",
+  "scope": "Aplicação receptora da credencial: console Windows, supervisor temporário, lançador PowerShell, fila local e adaptador OpenAI Responses. Sem acesso à chave real, clipboard, ambiente/memória do processo ou arquivos .env.",
+  "stack": "Python 3, PowerShell, console Windows/msvcrt, subprocess, HTTPX e Pydantic. O jogo usa React/FastAPI/SQLite, mas não é a superfície receptora auditada. Não há rotas HTTP nem frontend web nesta aplicação receptora.",
+  "conclusion": "Três falhas locais verificadas e corrigidas nas fontes. Zero vulnerabilidades exploráveis remotamente demonstradas neste escopo. A causa da tentativa real anterior permanece inconclusiva; colagem duplicada não foi confirmada na chave real.",
+  "findings": [
+    {
+      "id": "KEY-001",
+      "severity": "informativa",
+      "category": "Gestão de credencial / entrada local",
+      "title": "Entrada sem feedback e sem validação estrutural",
+      "file": "scripts/luna_credential_supervisor.py",
+      "line": 31,
+      "before": "O console usava getpass e verificava apenas se key.strip() era não vazio. O operador não via quantidade de caracteres, duplicata ou controles de colagem.",
+      "condition": "Operador cola duas vezes o mesmo token, ou o terminal entrega Ctrl+V como controle em vez do texto. A presença desse evento na entrada real não foi inspecionada.",
+      "impact": "Falha local, tentativa desnecessária, diagnóstico ambíguo e dificuldade de correção. Nenhum vazamento de chave foi demonstrado.",
+      "correction": "Editor mascarado com asteriscos e contador só na tela, Backspace, Esc/Ctrl+U, cancelamento, limite de buffer e validação. Repetição integral de token sk- duas a quatro vezes é recusada; espaços, Unicode e controles são recusados. Nunca ler clipboard, revelar fragmentos ou dividir automaticamente a chave.",
+      "evidence": "read_credential; credential_problem em scripts/evaluate_openai_luna_low_live.py:46; bloqueio do supervisor antes de subprocess em scripts/luna_credential_supervisor.py:167.",
+      "acceptance": ["Colagem repetida rejeitada e corrigível", "Nenhum valor real no output/status/log", "Entrada inválida bloqueada antes do HTTP", "Asteriscos/contador testados em console Windows com valor sintético"],
+      "status": "Corrigido nas fontes; ativação requer reinício e entrada protegida humana"
+    },
+    {
+      "id": "KEY-002",
+      "severity": "informativa",
+      "category": "Diagnóstico seguro / transporte",
+      "title": "Falhas locais, rede e JSON agrupadas no mesmo código",
+      "file": "scripts/evaluate_openai_luna_low_live.py",
+      "line": 61,
+      "before": "HTTPError e ValueError eram normalizados como transport_or_response_invalid, sem subtipo suficiente para diagnóstico.",
+      "condition": "Cabeçalho local inválido, falha de conexão/timeout/protocolo ou resposta JSON inválida.",
+      "impact": "Não distinguir falha local de falha remota; risco operacional de pedir outra chave ou repetir chamada sem causa conhecida. Não constitui, isoladamente, vulnerabilidade de autorização.",
+      "correction": "Classificação só pelo tipo da exceção, sem texto potencialmente secreto. Separar protocolo local, conexão, timeout, protocolo remoto, requisição local, I/O e parsing/forma do JSON. Preservar códigos HTTP 401/403/429/5xx.",
+      "evidence": "transport_error_code:61; response_json_invalid:209; response_shape_invalid:215. Testes MockTransport fazem exceções conterem texto sintético sensível e confirmam que ele não aparece no erro normalizado.",
+      "acceptance": ["Sem mensagem bruta de exceção/headers/body", "Sem retry novo", "Categorias distinguíveis em testes offline", "Histórico L26 preservado, sem reclassificar sua causa"],
+      "status": "Corrigido e verificado offline"
+    },
+    {
+      "id": "KEY-003",
+      "severity": "informativa",
+      "category": "Tratamento de credencial inválida",
+      "title": "Ramo de credencial vazia referenciava fase inexistente",
+      "file": "scripts/evaluate_openai_luna_low_live.py",
+      "line": 172,
+      "before": "OperationPhase.AUTHENTICATION não existe no enum do contrato; o ramo de credencial vazia produzia AttributeError em vez do erro controlado.",
+      "condition": "Entrada vazia chegando diretamente ao adaptador, ou entrada malformada interceptada no novo ramo.",
+      "impact": "Erro local sem diagnóstico contratual; nenhuma chamada necessária para reproduzir. Não comprova vazamento de credencial.",
+      "correction": "Usar OperationPhase.VALIDATION; categoria de autenticação e códigos credential_missing/credential_input_invalid sem material secreto.",
+      "evidence": "api/llm/contract.py:91 define as fases; scripts/evaluate_openai_luna_low_live.py:172 usa fase válida após correção.",
+      "acceptance": ["Entrada vazia gera erro normalizado", "Sem AttributeError", "Sem acesso à rede para chave inválida"],
+      "status": "Corrigido e verificado offline"
+    }
+  ],
+  "coverage": [
+    {"category": "Isolamento de dono/tenant", "result": "Não aplicável como multi-tenant", "reason": "Console local sem banco de usuários nem API exposta. Arquivos da fila pertencem ao contexto local; processos com acesso equivalente ao host estão fora de uma fronteira de cofre."},
+    {"category": "Autorização no servidor", "result": "Protegido no worker local", "reason": "Sem gate apenas visual: flags de aprovação, alvo, teto, hashes, latch e prazo são verificados antes do envio e após preflight. Aprovação humana é registrada pelo agente, não inferida pelo worker."},
+    {"category": "IDOR", "result": "Não aplicável como rota HTTP; paths auditados", "reason": "Número de lote tipado, sem comando/path arbitrário; resolução dos arquivos congelados deve ficar dentro da raiz. Não há handlers HTTP nesta superfície."},
+    {"category": "Segredos", "result": "Proteções verificadas com limites", "reason": "Sem valor real examinado. Sem persistência programática de chave, sem argumentos com chave, sem chave no preflight. Ambiente só do filho. Não garantir zeroização de RAM/pagefile/dumps do SO."},
+    {"category": "XSS / injeção no output", "result": "XSS não aplicável; console verificado", "reason": "Sem HTML/JS. Conteúdo digitado nunca é escrito no terminal; somente asteriscos/contagem e mensagens fixas, impedindo eco de escape/control. Pedidos não viram comandos arbitrários."}
+  ],
+  "strengths": [
+    "Expiração UTC e monotônica; expiração/interrupção mata e recolhe avaliador ativo.",
+    "Manifesto e implementação revalidados após preflight e antes da credencial no filho.",
+    "Pedido consumido uma vez, latch e memória de lotes impedem repetição silenciosa.",
+    "Credencial não aparece em argumentos, status ou preflight; conteúdo real não foi lido.",
+    "Correção visual falha fechada sem console interativo; não usa clipboard nem eco plaintext."
+  ],
+  "verification": [
+    "Entrada e erros reproduzidos com valores exclusivamente sintéticos e transportes mockados; nenhuma chamada paga nesta auditoria.",
+    "h11 reproduziu rejeição local de cabeçalho com caractere de controle, sem socket; compatibilidade com hipótese anterior não prova causa real.",
+    "Console Windows PTY exibiu asteriscos e contador e retornou SYNTHETIC_CONSOLE_CHECK_OK; nenhum valor real foi usado.",
+    "73 testes focados aprovados antes da ampliação; 126 testes relacionados aprovados ao final, incluindo editor, supervisora, custo, adaptador, gates históricos isolados e integração de campanha. Um aviso preexistente python_multipart. XML eval-results/credential-input-audit-extended-2026-10-19.xml. Suíte integral não executada."
+  ],
+  "limitations": [
+    "Não é auditoria integral de React/FastAPI/SQLite nem certificação. Escopo restrito à aplicação receptora, adaptador e lançadores de credencial.",
+    "A chave real, seu comprimento, duplicação, conteúdo, clipboard e memória/ambiente do processo ativo não foram inspecionados; validade no provedor continua desconhecida.",
+    "A versão antiga da supervisora está carregada no processo existente. Mudar fonte não modifica suas funções em memória; ativação exige reinício e uma entrada protegida humana. Não encerrar sem coordenação enquanto o usuário está fora.",
+    "Formato estrutural não prova autenticação. Não se impõe comprimento fixo nem se assume formato completo futuro das chaves do provedor.",
+    "Sem rede real, CVE scan ou análise de todo histórico/bundle do produto. Histórico examinado apenas para os arquivos explicitamente no escopo. Relatório anterior preservado."
+  ],
+  "recommendations": [
+    "P1: reiniciar a sessão com a versão corrigida quando o humano puder inserir a chave; até lá manter gates de envio fechados.",
+    "P1: não inferir colagem duplicada na chave real nem pedir sua exibição; nunca reconstruir/corrigir o segredo automaticamente.",
+    "P2: em próxima chamada especificamente autorizada, usar os novos códigos seguros de diagnóstico e mostrar custo final; nenhum retry nesta auditoria.",
+    "P3: preservar hashes e recibos antigos; preparar novos manifestos para código alterado. Não atualizar hashes históricos para fazê-los passar."
+  ]
+}

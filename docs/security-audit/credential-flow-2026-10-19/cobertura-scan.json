@@ -1,0 +1,26 @@
+{
+  "scope": [
+    "scripts/luna_credential_supervisor.py",
+    "scripts/run_luna_credential_supervisor.ps1",
+    "scripts/evaluate_openai_luna_low_live.py",
+    "scripts/evaluate_hybrid_campaign_luna_l25_live.py",
+    "scripts/evaluate_hybrid_campaign_luna_l26_live.py",
+    "scripts/run_hybrid_campaign_luna_l25_live.ps1",
+    "scripts/run_hybrid_campaign_luna_l26_live.ps1",
+    "tests/test_luna_credential_supervisor.py",
+    "tests/test_luna_credential_input_audit.py",
+    "tests/test_luna_test_cost.py"
+  ],
+  "current_indicators": [],
+  "history_indicators": [],
+  "history_blobs": 2,
+  "http_handlers": [],
+  "excluded": [
+    ".env*",
+    "clipboard",
+    "process memory/environment",
+    "user saves",
+    "whole-product bundles",
+    "unrelated repository history"
+  ]
+}

@@ -43,6 +43,36 @@ CASE_IDS = (
 SCHEDULE = tuple((CANDIDATE_ID, case) for case in CASE_IDS)
 
 
+def credential_problem(value: str) -> str | None:
+    """Structural input checks only; never authenticate or reveal token material."""
+    if not value:
+        return 'missing'
+    if not value.isascii() or any(not (char.isalnum() or char in '-_') for char in value):
+        return 'invalid_characters'
+    # A complete token pasted two, three or four times is not silently split.
+    if value.startswith('sk-'):
+        for count in (2, 3, 4):
+            size, remainder = divmod(len(value), count)
+            if not remainder and size > 3 and value[:size] * count == value:
+                return 'repeated'
+    return None
+
+
+def transport_error_code(error: Exception) -> str:
+    """Classify by exception type, never by its potentially secret message."""
+    if isinstance(error, httpx.LocalProtocolError):
+        return 'local_protocol_invalid'
+    if isinstance(error, httpx.TimeoutException):
+        return 'transport_timeout'
+    if isinstance(error, httpx.ConnectError):
+        return 'transport_connection_failed'
+    if isinstance(error, httpx.RemoteProtocolError):
+        return 'remote_protocol_invalid'
+    if isinstance(error, (httpx.InvalidURL, httpx.UnsupportedProtocol, ValueError)):
+        return 'local_request_invalid'
+    return 'transport_io_failed'
+
+
 class OpenAIResponsesAdapter:
     """Minimal Responses API adapter used only by the bounded Luna evaluation."""
 
@@ -133,11 +163,13 @@ class OpenAIResponsesAdapter:
 
     async def generate_structured(self, request) -> StructuredGenerationResult:
         started_at = utc_now()
-        secret = self._api_key.get_secret_value().strip()
-        if not secret:
+        secret = self._api_key.get_secret_value()
+        problem = credential_problem(secret)
+        if problem:
             raise self._error(
                 request, started_at, category=ErrorCategory.AUTHENTICATION_FAILED,
-                code="credential_missing", phase=OperationPhase.AUTHENTICATION,
+                code="credential_missing" if problem == 'missing' else 'credential_input_invalid',
+                phase=OperationPhase.VALIDATION,
                 message="OpenAI authentication is unavailable.",
             )
         try:
@@ -151,7 +183,6 @@ class OpenAIResponsesAdapter:
                     ),
                 )
             response.raise_for_status()
-            payload = response.json()
         except httpx.HTTPStatusError as exc:
             status = exc.response.status_code
             category = {
@@ -164,11 +195,25 @@ class OpenAIResponsesAdapter:
                 phase=OperationPhase.RESPONSE, message="OpenAI rejected the evaluation request.",
                 status_code=status,
             ) from None
-        except (httpx.HTTPError, ValueError):
+        except (httpx.HTTPError, ValueError) as exc:
             raise self._error(
                 request, started_at, category=ErrorCategory.PROVIDER_UNAVAILABLE,
-                code="transport_or_response_invalid", phase=OperationPhase.RESPONSE,
+                code=transport_error_code(exc), phase=OperationPhase.RESPONSE,
                 message="OpenAI evaluation transport did not return a usable response.",
+            ) from None
+        try:
+            payload = response.json()
+        except ValueError:
+            raise self._error(
+                request, started_at, category=ErrorCategory.PROVIDER_UNAVAILABLE,
+                code="response_json_invalid", phase=OperationPhase.RESPONSE,
+                message="OpenAI evaluation returned an invalid JSON response.",
+            ) from None
+        if not isinstance(payload, dict):
+            raise self._error(
+                request, started_at, category=ErrorCategory.PROVIDER_UNAVAILABLE,
+                code="response_shape_invalid", phase=OperationPhase.RESPONSE,
+                message="OpenAI evaluation returned an invalid response shape.",
             ) from None
         model = payload.get("model") if isinstance(payload.get("model"), str) else None
         evidence = self._evidence(

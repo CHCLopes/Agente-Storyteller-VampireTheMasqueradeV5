@@ -33,4 +33,5 @@ venv/
 /client/dist-source-player-trial/
 /client/dist-source-trial/
 /docs/security-audit/previews/
+/docs/security-audit/**/previews/
 

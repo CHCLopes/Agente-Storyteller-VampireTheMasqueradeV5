@@ -1,0 +1,209 @@
+"""L82 resumes the full schedule without modifying historical gates."""
+import json
+import pytest
+from pydantic import SecretStr
+from scripts import evaluate_hybrid_campaign_luna_l82_live as subject
+from test_hybrid_campaign_luna_live import fake_adapter
+
+
+@pytest.fixture
+def gate(tmp_path, monkeypatch):
+    value = json.loads(subject.GATE.read_text(encoding='utf-8'))
+    value.update(paid_ceiling_authorized=False, live_inference_authorized=False)
+    # Historical live manifest stays immutable after the proven local fix.
+    value['implementation_sha256'] = {name: subject._sha((subject.ROOT/name).read_bytes()) for name in subject.FROZEN_FILES}
+    path = tmp_path / 'gate.json'
+    path.write_text(json.dumps(value), encoding='utf-8')
+    monkeypatch.setattr(subject, 'GATE', path)
+    return subject._gate()
+
+
+@pytest.mark.parametrize('name', ['evaluate_hybrid_campaign_luna_l25_live.py',
+                                  'preflight_hybrid_campaign_luna_l25.py',
+                                  'run_hybrid_campaign_luna_l25_live.ps1'])
+def test_identity_only(name):
+    expected = (subject.ROOT/'scripts'/name).read_text(encoding='utf-8')
+    expected = expected.replace('l25','l82').replace('L25','L82').replace('2026-10-18','2026-10-20').replace('source-v6','source-v22')
+    if name.startswith('preflight_'):
+        expected = expected.replace('MAX_CALLS = 17', 'CASES = CASES[-1:] + CASES[:-1]\nMAX_CALLS = 17')
+    assert (subject.ROOT/'scripts'/name.replace('l25','l82')).read_text(encoding='utf-8').splitlines() == expected.splitlines()
+
+
+def test_refusal_first_preserves_every_case_turn_effect_and_outcome():
+    from scripts.preflight_hybrid_campaign_luna_l53 import CASES as previous
+    assert subject.CASES == previous[-1:] + previous[:-1]
+    assert sorted(subject.CASES) == sorted(previous)
+    assert sum(len(case[1]) for case in subject.CASES) == 17
+    assert subject.CASES[0][0] == 'CAMP-EVAL-08'
+
+
+def test_current_manifest_limits_and_historical_gates(gate):
+    assert gate['max_calls'] == subject.MAX_CALLS == 17
+    assert gate['max_estimated_usd'] == '0.15'
+    assert gate['retry'] is gate['fallback'] is gate['admission_automatic'] is False
+    assert len(gate['implementation_sha256']) == 22
+    for lot, day in ((25,'18'),(26,'19'),(27,'19')):
+        path = subject.ROOT/f'evals/narrator/reports/hybrid-campaign-luna-l{lot}-live-gate-2026-10-{day}.json'
+        old = json.loads(path.read_text(encoding='utf-8'))
+        assert old['live_inference_authorized'] is old['paid_ceiling_authorized'] is False
+
+
+def test_preflight_has_no_dispatch(gate, monkeypatch, capsys):
+    def forbidden(*args, **kwargs):
+        pytest.fail('offline rehearsal cannot access credential or dispatch')
+    monkeypatch.setattr(SecretStr, 'get_secret_value', forbidden)
+    monkeypatch.setattr(subject.CampaignLunaAdapter, 'generate_structured', forbidden)
+    assert subject.main(['--preflight']) == 0
+    result = json.loads(capsys.readouterr().out.splitlines()[0])
+    assert result['calls_planned'] == 17 and result['provider_calls'] == 0
+
+
+@pytest.mark.asyncio
+async def test_fake_full_schedule(gate, monkeypatch, tmp_path):
+    monkeypatch.setattr(subject, '_gate', lambda: dict(gate, paid_ceiling_authorized=True, live_inference_authorized=True))
+    result = await subject.run_batch(directory=tmp_path/'fake', key=SecretStr('synthetic-only'), adapter_factory=fake_adapter)
+    assert result['status'] == 'completed' and result['completed_turns'] == 17
+
+
+@pytest.mark.asyncio
+async def test_closed_gate_precedes_dispatch(gate, tmp_path, monkeypatch):
+    latch = tmp_path/'once'
+    monkeypatch.setattr(subject, 'LOT_LOCK', latch)
+    with pytest.raises(ValueError, match='authorization_missing'):
+        await subject.run_batch(directory=tmp_path/'blocked', key=SecretStr('synthetic-only'))
+    assert not latch.exists()
+
+
+def test_prompt_v9_changes_only_the_registered_style_block():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v8.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v9.md').read_text(encoding='utf-8')
+    start=new.index('A proteção de segredos e o estado da campanha')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    normalized=' '.join(new.split()).casefold()
+    assert 'não invente juramento, proibição, esquecimento, desconhecimento' in normalized
+    assert 'não repita o segredo ou sua recusa em ajuda ou conclusão' in normalized
+    assert 'não cria ramos de diálogo, novas intenções ou passagem de tempo' in normalized
+
+
+def test_prompt_v10_changes_only_the_rescue_reaction_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v9.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v10.md').read_text(encoding='utf-8')
+    start=new.index('No resgate concluído, faça Mara reagir ao resultado físico do registro,')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'sem atribuir uma nova decisão ao jogador' in new[start:end]
+
+
+def test_prompt_v11_changes_only_failed_recovery_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v10.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v11.md').read_text(encoding='utf-8')
+    start=new.index('Na investigação com falha, diferencie não recuperar conteúdo nesta tentativa')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'ainda há recuperação parcial possível' in new[start:end]
+
+
+def test_prompt_v12_changes_only_explicit_wet_damage_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v11.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v12.md').read_text(encoding='utf-8')
+    start=new.index('Quando state_after.record for wet, descreva concretamente')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'não substitui o dano já ocorrido' in new[start:end]
+
+
+def test_prompt_v13_changes_only_withdrawal_immobility_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v12.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v13.md').read_text(encoding='utf-8')
+    start=new.index('Na desistência, encerrar a tentativa sem deslocamento presumido conserva a')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'não impõe imobilidade ao jogador' in new[start:end]
+
+
+def test_prompt_v14_changes_only_direct_failure_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v13.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v14.md').read_text(encoding='utf-8')
+    start=new.index('Na investigação com falha, relate diretamente que a tentativa falha em recuperar')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'Não atribua objetivo anterior não declarado' in new[start:end]
+
+
+def test_prompt_v15_changes_only_concrete_prose_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v14.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v15.md').read_text(encoding='utf-8')
+    start=new.index('Descreva objetos e personagens diretamente, em linguagem física concreta.')
+    end=new.index('Preserve danos, descobertas, destinos escolhidos e a ordem causal.', start)
+    assert ' '.join((new[:start]+new[end:]).split()) == ' '.join(old.split())
+    assert 'a cena' in new[start:end] and 'não é personagem' in new[start:end]
+
+
+def test_v16_only_removes_redundant_explanations_and_shortens_subject_guidance():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v15.md').read_text(encoding='utf-8')
+    expected=old
+    for fragment in (
+        'A recusa não precisa ser\numa parede de interface: tom e reação podem sustentar tensão sem revelar lore.',
+        'Essa reação não autoriza reabrir o objetivo.',
+        'Essa descrição não torna o registro perdido nem elimina o resgate parcial.',
+        'Fontes narrativas anteriores não podem contradizer esse estado canônico.',
+        'Ao descrever o estado físico de um objeto, nomeie o objeto em vez de retomá-lo\ncom “ele” ou “ela”: por exemplo, “O registro permanece intacto”. Atribua cada\nação ou estado ao sujeito correto; essa clareza não autoriza ações adicionais\ndo jogador, nova mecânica ou mudança do efeito preparado.',
+    ):
+        assert fragment in expected
+        expected=expected.replace(fragment,'')
+    expected=expected.replace('Esperar ou aguardar não autoriza',
+        'Nomeie o objeto ao descrever seu estado; atribua ações ao sujeito correto.\nEsperar ou aguardar não autoriza')
+    assert (subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v16.md').read_text(encoding='utf-8').splitlines()==expected.splitlines()
+    assert len((subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v16.md').read_bytes()) < len(old.encode('utf-8'))-500
+
+
+def test_v17_only_prioritizes_current_input_over_previous_speech():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v16.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v17.md').read_text(encoding='utf-8')
+    start=new.index('Responda somente ao player_input atual.')
+    end=new.index('Em `n`, escreva prosa concreta que mostre a mudança do turno.',start)
+    assert ' '.join((new[:start]+new[end:]).split())==' '.join(old.split())
+    assert 'sem repetir a recusa' in new[start:end]
+
+
+def test_v18_only_requests_the_existing_open_question_when_not_terminal():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v17.md').read_text(encoding='utf-8')
+    new=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v18.md').read_text(encoding='utf-8')
+    start=new.index('Neste perfil sintético, quando outcome for null, use exatamente em q:')
+    end=new.index('Em `realized_effects`, copie exatamente, na mesma ordem, a lista de efeitos',start)
+    assert ' '.join((new[:start]+new[end:]).split())==' '.join(old.split())
+    assert 'O que você faz agora?' in new[start:end]
+    assert 'q continua exatamente vazio' in new[start:end]
+
+
+def test_v19_only_explicitly_names_record_for_position_or_state():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v18.md').read_text(encoding='utf-8')
+    expected=old.replace('Nomeie o objeto ao descrever seu estado; atribua ações ao sujeito correto.',
+        'Nomeie o registro em posição/estado; nunca ele/ela nem onde ele estava.')
+    assert old!=expected
+    assert (subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v19.md').read_text(encoding='utf-8')==expected
+
+
+def test_v20_only_rewords_npc_withdrawal_reaction_not_player_choice():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v19.md').read_text(encoding='utf-8')
+    expected=old.replace('Na desistência declarada pelo jogador, mostre também Mara recebendo essa escolha,',
+        'Na desistência, faça Mara reagir sem chamar o gesto de escolha do jogador,')
+    assert old!=expected
+    assert (subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v20.md').read_text(encoding='utf-8')==expected
+
+
+def test_v21_only_clarifies_npc_speech_and_no_implicit_drying():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v20.md').read_text(encoding='utf-8')
+    expected=old.replace('Sua voz pode sugerir reserva ou\nintenções sem revelar fatos protegidos.',
+        'Use fala natural e completa, sem revelar fatos protegidos.')
+    expected=expected.replace('Mara pode oferecer ajuda e indicar opções sem afirmar que o jogador decidiu algo.',
+        'Mara oferece opções, não decisões do jogador. Superfície seca não seca páginas.')
+    assert old!=expected
+    assert (subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v21.md').read_text(encoding='utf-8')==expected
+    assert len(expected.encode('utf-8'))<=len(old.encode('utf-8'))
+
+
+def test_v22_only_clarifies_record_does_not_dry():
+    old=(subject.ROOT/'evals/narrator/prompts/hybrid-campaign-source-v21.md').read_text(encoding='utf-8')
+    assert subject.PROMPT.read_text(encoding='utf-8')==old.replace('Superfície seca não seca páginas.','Retirar da água não seca registro nem páginas.')

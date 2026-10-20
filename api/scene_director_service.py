@@ -812,7 +812,12 @@ _FAILURE_MARKER = re.compile(
     r"\b(?:falh\w*|(?:nao|nada)\s+(?:se\s+)?(?:consegu\w*|cede(?:m|u|ram)?|abr(?:e|em|iu|iram))|"
     r"nada\s+conclusivo|complica\w*|"
     r"custo|pressao|imped\w*|bloque\w*|atras\w*|perd\w*|escap\w*|"
-    r"resist\w*|incomplet\w*|parcial\w*|risco|ameac\w*)\b"
+    r"resist\w*|incomplet\w*|parcial\w*|risco|ameac\w*)\b|"
+    r"\binvestigacao\s+nao\s+recupera\s+conteudo\s+algum\b|"
+    r"(?:^|[.])\s*(?:ao examinar o registro na bancada baixa do arquivo,\s*)?"
+    r"voce\s+nao\s+recupera\s+(?:nenhum|seu)\s+conteudo\b|"
+    r"(?:^|[.])\s*sua tentativa de examinar o registro nao recupera conteudo algum\b|"
+    r"(?:^|[.,])\s*(?:mas )?a tentativa nao recupera conteudo\b"
 )
 
 _FAILURE_GOAL_GRANT = re.compile(
@@ -821,7 +826,10 @@ _FAILURE_GOAL_GRANT = re.compile(
     r"solucion\w*|resolv\w*|confirm\w*|identific\w*|localiz\w*)\b|"
     r"\b(?:prova|evidencia|pista|resposta|registro)\s+"
     r"(?:definitiv\w*|conclusiv\w*|complet\w*)\b|"
-    r"\b(?:objetivo|missao|tarefa)\s+(?:cumprid\w*|concluid\w*)\b"
+    r"\b(?:objetivo|missao|tarefa)\s+(?:cumprid\w*|concluid\w*)\b|"
+    r"\brecuper(?:a|ou)\s+(?:informacao\s+util|informacoes\s+uteis|parte\s+da\s+informacao)\b|"
+    r"(?:^|(?<=[.]))\s*o registro permanece na bancada, agora parcial, "
+    r"com parte de seu conteudo recuperada\s*(?=[.!;]|$)"
 )
 
 _NEGATED_GOAL_PREFIX = re.compile(
@@ -1436,6 +1444,9 @@ def _validate_player_prompt(
     player_continuation = re.fullmatch(
         r"como\s+(?:voce\s+)?(?:deseja|gostaria\s+de)\s+prosseguir" + modal_question_tail,
         full_player_cue_clause,
+    ) or re.fullmatch(
+        r"como\s+voce\s+quer\s+proceder\s+com\s+o\s+registro\s+molhado\?",
+        full_player_cue_clause,
     )
     elided_player_intent = re.fullmatch(
         r"o\s+que\s+(?:voce\s+)?(?:deseja|quer|gostaria\s+de)\s+fazer" + modal_question_tail,
@@ -1455,9 +1466,23 @@ def _validate_player_prompt(
             evidence={"field": "player_prompt", "rule": "open_player_action_question",
                       "reason": "does_not_invite_player_action", "word_count": len(words)},
         )
+    # The article in 'Qual e a sua proxima acao?' does not change the owner.
+    # Require the whole field: a trailing valid question must not hide an
+    # instruction, an NPC's question, another sentence or a closed menu.
+    articled_player_choice = re.fullmatch(
+        r"qual\s+(?:e|sera)\s+[ao]\s+" + _PLAYER_PROMPT_POSSESSIVE_ACTION
+        + modal_question_tail,
+        normalized,
+    )
+    # A whole-field question about an intended action preserves open agency;
+    # no leading instruction, NPC owner or closed-menu suffix can match.
+    intended_player_action = re.fullmatch(
+        r"que\s+acao\s+voce\s+pretende\s+realizar" + modal_question_tail,
+        normalized,
+    )
     implicit_player_action = bool(
         implicit_player_step or player_continuation or elided_player_intent
-        or elided_second_person_action
+        or elided_second_person_action or articled_player_choice or intended_player_action
     )
     question_addresses_player = (
         player_precedes_action
@@ -1892,6 +1917,135 @@ def _action_signature_matches(
     matches: list[tuple[str, str, re.Match[str]]] = []
     for concept, family, pattern in _PLAYER_ACTION_PATTERNS:
         for match in re.finditer(pattern, normalized):
+            # The noun in em mente is not the verb mentir. Skip this token
+            # only; actual lying and coordinated player actions stay visible.
+            if (family == "lie" and match.group() == "mente"
+                    and re.search(r"\bem\s+$", normalized[:match.start()])):
+                continue
+            # The exact noun material is not a conjugation of matar.
+            # Skip only this token; real killing and later actions remain.
+            if family == "kill" and match.group() == "material":
+                continue
+            # A future passive condition of the record executes no inspection.
+            # Keep actual player examination and every later verb visible.
+            if (family == "inspect_general" and match.group() == "examinado"
+                    and re.search(r"\bo registro ficara em melhores condicoes para ser\s+$", normalized[:match.start()])
+                    and re.match(r"\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Water traversing record pages is not player travel.
+            # Retain any other crossing or subsequent player action.
+            if (family == "cross" and match.group() == "atravessar"
+                    and re.search(r"\ba agua continua sobre a bancada baixa ate\s+$", normalized[:match.start()])
+                    and re.match(r"\s+completamente o registro\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            if (family == "cross" and match.group() == "atravessa"
+                    and re.search(r"\bmas a agua continua sobre a bancada baixa e\s+$", normalized[:match.start()])
+                    and re.match(r"\s+o registro\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            if (family == "cross" and match.group() == "atravessa"
+                    and re.search(r"\benquanto\s+a\s+agua\s+alcanca\s+a\s+bancada\s+baixa\s+e\s+$", normalized[:match.start()])
+                    and re.match(r"\s+as\s+paginas\s+do\s+registro\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Water owns this explicit contact; the waiting player does not.
+            # Keep every other touch/action visible to the agency guard.
+            if (family == "touch" and match.group() == "toca"
+                    and re.search(r"\benquanto\s+a\s+agua\s+alcanca\s+a\s+bancada\s+baixa\s+e\s+$", normalized[:match.start()])
+                    and re.match(r"\s+o\s+registro\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Explicit infiltration, not the waiting player, advances here.
+            # A relative clause with explicit drops has the same nonplayer
+            # actor. Skip that verb only, never coordinated player movement.
+            if (family == "advance" and match.group() == "avancam"
+                    and re.search(r"\bas gotas que\s+$", normalized[:match.start()])
+                    and re.match(r"\s+pela estrutura\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Its spatial complement cannot change that actor. Skip only this
+            # token, retaining every coordinated/subsequent player action.
+            if (family == "advance" and match.group() == "avanca"
+                    and re.search(r"\b(?:a\s+(?:infiltracao|agua)|na\s+umidade\s+que)\s+$", normalized[:match.start()])):
+                continue
+            # Infiltration owns this bounded gerund, not the waiting player.
+            if (family == "advance" and match.group() == "avancando"
+                    and re.search(r"\bmas a agua continua\s+$", normalized[:match.start()])):
+                continue
+            if (family == "advance" and match.group() == "avancando"
+                    and re.search(r"\ba\s+infiltracao\s+se\s+espalha\s+pela\s+parede\s+do\s+arquivo,\s*$", normalized[:match.start()])
+                    and re.match(r"\s+o\s+bastante\s+para\s+tornar\s+o\s+risco\s+imediato\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # This separate water clause also has an explicit nonplayer actor.
+            # Keep all later verbs and any other actor visible to the guard.
+            if (family == "advance" and match.group() == "avanca"
+                    and re.search(r"\be\s+a\s+agua\s+$", normalized[:match.start()])
+                    and re.match(r"\s+sobre\s+o\s+registro\s+na\s+bancada\s+baixa\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Following legible marks during this explicit record inspection
+            # describes reading, not a journey. No later verb is skipped.
+            if (family == "follow" and match.group() == "seguindo"
+                    and re.search(r"\bexamina\s+o\s+registro\s+sobre\s+a\s+bancada\s+baixa\s+no\s+arquivo,\s*$", normalized[:match.start()])
+                    and re.match(r"\s+marcas\s+e\s+trechos\s+ainda\s+legiveis\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # 'Mantendo o tom contido' names vocal tone, not taking control.
+            # Only the nominal token is waived; later player verbs remain.
+            if (family == "take_control" and match.group() == "tom"
+                    and re.search(r"\bmantendo\s+o\s+$", normalized[:match.start()])
+                    and re.match(r"\s+contido(?=\s*(?:[.!?;:,]|$)|\s+apesar\b)", normalized[match.end():])):
+                continue
+            # This bounded environmental subject owns the threat, not a
+            # player mentioned earlier. Keep all subsequent actions visible.
+            if (family == "threaten" and match.group() == "ameaca"
+                    and re.search(r"\benquanto\s+a\s+infiltracao\s+$", normalized[:match.start()])
+                    and re.match(r"\s+a\s+bancada\s+baixa\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # In this local removal clause, -o refers to the explicit record,
+            # not a reflexive player retreat. Do not waive another antecedent.
+            if (family == "withdraw" and match.group() == "afastando"
+                    and re.search(r"\bretira o registro molhado da bancada baixa,\s*$", normalized[:match.start()])
+                    and re.match(r"[-\u2010\u2011]o da agua que se espalha pelo arquivo\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            if (family == "withdraw" and match.group() == "afastando"
+                    and re.search(r"\bretira\s+o\s+registro\b[^.!?;:]*,\s*$", normalized[:match.start()])
+                    and re.match(r"[-\u2010\u2011]o\s+da\s+infiltracao\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # This explicit atmospheric subject is not the player closing.
+            # Keep concrete player actions and every subsequent verb visible.
+            if (family == "close" and match.group() == "fechar"
+                    and re.search(r"\bo\s+arquivo\s+parece\s+se\s+$", normalized[:match.start()])
+                    and re.match(r"\s+ao\s+redor\s+da\s+bancada\s+baixa\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Avoiding an object's exposure does not assert player waiting.
+            # Restrict to this explicit object/state frame, not later actions.
+            if (family == "remain" and match.group() == "permaneca"
+                    and re.search(r"\bevitando\s+que\s+o\s+registro\s+$", normalized[:match.start()])
+                    and re.match(r"\s+exposto\s+ao\s+risco\s+atual\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # The explicit infiltration subject owns this bounded gerund,
+            # not the waiting player. Keep every later action visible.
+            if (family == "approach" and match.group() == "aproximando"
+                    and re.search(r"\ba\s+infiltracao\s+se\s+espalha\s+pelas\s+paredes\s+do\s+arquivo,\s*$", normalized[:match.start()])
+                    and re.match(r"-se\s+da\s+bancada\s+baixa\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # A bounded temporal clause names moisture, not the player.
+            # Skip only its advance predicate; all later actions stay visible.
+            if (family == "advance" and match.group() == "avance"
+                    and re.search(r"\bantes\s+que\s+a\s+umidade\s+$", normalized[:match.start()])
+                    and re.match(r"(?:\s+mais)?\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            # Plural document fragments are not the player's departure.
+            # Require this bounded nominal frame; later verbs remain scanned.
+            # Possessive + legibility explicitly names document parts, not
+            # player departure. Skip only this token, retaining later verbs.
+            if (family == "depart" and match.group() == "parte"
+                    and re.search(r"\brecuper(?:a|ou)\s+$", normalized[:match.start()])
+                    and re.match(r"\s+da informacao\b", normalized[match.end():])):
+                continue
+            if (family == "depart" and match.group() == "partes"
+                    and re.search(r"\b(?:de\s+suas|das)\s+$", normalized[:match.start()])
+                    and re.match(r"\s+ainda\s+legiveis\s*(?:[.!?;:,]|$)", normalized[match.end():])):
+                continue
+            if (family == "depart" and match.group() == "partes"
+                    and re.search(r"\bentre\s+as\s+$", normalized[:match.start()])
+                    and re.match(r"\s+(?:preservadas\b|(?:ainda\s+)?legiveis\s*(?:[.!?;:,]|$))", normalized[match.end():])):
+                continue
             if family == "manipulate":
                 if re.search(
                     r"\b(?:nao|nunca|jamais)\s+(?:tenta\s+)?$", normalized[:match.start()],
@@ -2331,6 +2485,68 @@ def _is_npc_observer_coordinate_action(
     return re.search(protected_reference, complement) is None
 
 
+def _mask_known_npc_gaze_report(
+    value: str, *, player_aliases: Iterable[str], npc_aliases: Iterable[str],
+) -> str:
+    """Exclude only a proven NPC's reporting/contact verb, never quoted content.
+
+    In 'Mara ergue os olhos para voce e fala em voz baixa:', 'voce' is
+    the gaze object. An unresolved pronoun or any different coordination
+    remains conservative. Offsets and every other action stay unchanged.
+    """
+    players = {"voce", "eu", "personagem", "jogador", "jogadora", "o jogador", "a jogadora",
+               "seu personagem", "sua personagem", "o personagem", "a personagem",
+               *_normalized_aliases(player_aliases)}
+    npcs = set(_normalized_aliases(npc_aliases)) - players
+    narration = _observer_narration_without_speech(value)
+    if not npcs or narration is None:
+        return value
+    names = "|".join(re.escape(name) for name in sorted(npcs, key=len, reverse=True))
+    objects = "|".join(re.escape(name) for name in sorted(players, key=len, reverse=True))
+    gaze = re.compile(
+        rf"(?:^|(?<=[.!?;:]))\s*(?:(?:a|o)\s+)?(?P<actor>{names}|ele|ela)\s+"
+        rf"(?:ergue|levanta)\s+os\s+olhos\s+para\s+(?:{objects})\s+e\s+"
+        r"(?P<report>fala)\s+em\s+voz\s+(?:baixa|suave|firme)\s*:"
+    )
+    # A non-personal object state can intervene only in this bounded frame.
+    # A mention, unknown actor, dialogue or player subject cannot own 'ela'.
+    antecedent = re.compile(
+        rf"(?:(?:a|o)\s+)?(?P<owner>{names})\s+se\s+inclina\s+sobre\s+a\s+bancada"
+        r"(?:\s+baixa)?\s*,\s*sem\s+tocar\s+no\s+"
+        r"(?P<object>registro|documento|livro|papel)\s*;\s*o\s+(?P=object)\s+"
+        r"permanece\s+seco(?:\s*,\s*ainda\s+no\s+mesmo\s+lugar)?"
+    )
+    masked = list(value)
+    npc_no_contact = re.compile(
+        rf"(?:^|(?<=[.!?;:]))\s*(?:{names}) acompanha o avanco da agua "
+        rf"e volta-se para (?:{objects}), tensa, sem (?P<contact>tocar) no objeto[.!?]"
+    )
+    for match in npc_no_contact.finditer(narration):
+        start, end = match.span('contact')
+        masked[start:end] = [' '] * (end - start)
+    for match in gaze.finditer(narration):
+        if match.group('actor') not in npcs:
+            previous = [part.strip() for part in re.split(r'[.!?:]', narration[:match.start()])
+                        if part.strip()]
+            proof = antecedent.fullmatch(previous[-1]) if previous else None
+            if proof is None and previous:
+                # A named NPC observing object moisture can own the next
+                # pronoun gaze/report; no player, relative or quoted actor.
+                proof = re.fullmatch(
+                    rf"(?:(?:a|o)\s+)?(?P<owner>{names})\s+acompanha\s+as\s+"
+                    r"marcas\s+de\s+umidade\s+sem\s+tocar\s+no\s+objeto",
+                    previous[-1],
+                )
+            if (proof is None
+                    or _last_alias_position(previous[-1], tuple(players)) >= 0
+                    or {npc for npc in npcs if _last_alias_position(previous[-1], (npc,)) >= 0}
+                    != {proof.group('owner')}):
+                continue
+        start, end = match.span('report')
+        masked[start:end] = [' '] * (end - start)
+    return ''.join(masked)
+
+
 def _validate_declared_player_actions(
     proposal: SceneContinuationProposal,
     *,
@@ -2369,6 +2585,27 @@ def _validate_declared_player_actions(
         rf"(?:{conditional_players})\s+(?:nao\s+)?)"
         r"(?P<action>explorar|explore|manipular|manipule|"
         r"observar|observe|examinar|examine)\b"
+    )
+    conditional_need_move = re.compile(
+        rf"(?P<prefix>(?:^|[.!?;:\"“‘«'`])\s*(?:se|caso)\s+"
+        rf"(?:{conditional_players})\s+(?:nao\s+)?precisar\s+)"
+        r"(?P<action>move|manipula)(?P<clitic>[-\u2010\u2011]l[oa]s?)(?=\s*,)"
+    )
+    pending_player_decision = re.compile(
+        rf"(?P<prefix>\bate\s+que\s+(?:{conditional_players})\s+)"
+        r"(?P<action>decida)(?=\s+como\s+proceder\s*(?:[.!?;:,\"”’»'`]|$))"
+    )
+    future_player_decision = re.compile(
+        rf"(?P<prefix>\bao\s+que\s+(?:{conditional_players})\s+)"
+        r"(?P<action>decidir)(?=\s+fazer\s*(?:[.!?;:,\"”’»'`]|$))"
+    )
+    ongoing_player_deliberation = re.compile(
+        rf"(?P<prefix>\benquanto\s+(?:{conditional_players})\s+)"
+        r"(?P<action>decide)(?=\s+como\s+proceder\s*(?:[.!?;:,\"”’»'`]|$))"
+    )
+    conditional_player_decision = re.compile(
+        rf"(?P<prefix>\bse\s+(?:{conditional_players})\s+)"
+        r"(?P<action>decidir)(?=\s+(?:como\s+)?agir\s*(?:[.!?;:,\"”’»'`]|$))"
     )
     conditional_perception = re.compile(
         rf"(?P<prefix>(?:^|[.!?;:\"“‘«'`])\s*(?:se|caso)\s+"
@@ -2421,6 +2658,52 @@ def _validate_declared_player_actions(
         )
         normalized = hypothetical_interest_advice.sub(mask_hypothetical_actions, normalized)
         normalized = dependent_interest.sub(mask_hypothetical_actions, normalized)
+        # Clitic move-lo/manipula-lo after conditional need asserts no action.
+        # Keep later actions and all offsets.
+        normalized = conditional_need_move.sub(
+            lambda match: match.group('prefix') + ' ' * len(match.group('action'))
+            + match.group('clitic'), normalized,
+        )
+        # 'Until you decide how to proceed' keeps the choice pending.
+        # Mask only this subjunctive, never a following action or decision.
+        normalized = pending_player_decision.sub(
+            lambda match: match.group('prefix') + ' ' * len(match.group('action')),
+            normalized,
+        )
+        normalized = future_player_decision.sub(
+            lambda match: match.group('prefix') + ' ' * len(match.group('action')),
+            normalized,
+        )
+        # Deliberation without a chosen action keeps the player's choice open.
+        # Concrete choices or subsequent verbs do not match this narrow frame.
+        normalized = ongoing_player_deliberation.sub(
+            lambda match: match.group('prefix') + ' ' * len(match.group('action')),
+            normalized,
+        )
+        # 'If you decide to act' is conditional, not an asserted choice.
+        # Only this open-ended decision verb is masked, not a later action.
+        normalized = conditional_player_decision.sub(
+            lambda match: match.group('prefix') + ' ' * len(match.group('action')),
+            normalized,
+        )
+        normalized = _mask_known_npc_gaze_report(
+            normalized, player_aliases=normalized_player_aliases,
+            npc_aliases=normalized_npc_aliases,
+        )
+        # An untargeted declared wait may mention the exact current place.
+        # Mask only that grounded adjunct, never a destination or later verb.
+        if () in authorized_actions.get(("wait", "explicit_wait_equivalent"), ()):
+            current_place = _normalize_for_policy(proposal.location)
+            if current_place:
+                grounded_wait = re.compile(
+                    r"\bvoce\s+(?:espera|aguarda)\s+"
+                    rf"(?P<place>(?:no|na)\s+{re.escape(current_place)})"
+                    r"(?=\s*(?:[.!?;:,]|$)|\s+enquanto\b)"
+                )
+                normalized = grounded_wait.sub(
+                    lambda match: match.group()[:match.start('place')-match.start()]
+                    + ' ' * len(match.group('place')), normalized,
+                )
         for clause_index, match in enumerate(
             _PLAYER_SUBJECT_CLAUSE.finditer(normalized)
         ):
@@ -2621,6 +2904,12 @@ def _affirmative_goal_matches(value: str):
     """Yield local affirmative achievements, not negated/failed attempts."""
 
     for match in _FAILURE_GOAL_GRANT.finditer(value):
+        # Water reaching the bench and wetting the record is damage, not a
+        # player's achieved objective. Leave every later result visible.
+        if (match.group() == "alcanca"
+                and re.search(r"(?:^|[.])\s*a\s+agua\s+$", value[:match.start()])
+                and re.match(r"\s+a\s+bancada\s+baixa\s+no\s+arquivo\s+e\s+molha\s+as\s+paginas\s+do\s+registro\s*(?:[.!?;:,]|$)", value[match.end():])):
+            continue
         clause_start = max(
             value.rfind(separator, 0, match.start())
             for separator in (".", "!", "?", ";", ":")
@@ -2641,6 +2930,20 @@ def _affirmative_goal_matches(value: str):
         if _PASSIVE_NEGATED_GOAL_PREFIX.search(active_prefix):
             continue
         if _present_nominal_passive_is_negated(value, match, active_prefix):
+            continue
+        # Water reaching document pages is a damaging environmental effect,
+        # not the player's achievement. Later affirmative grants still count.
+        if (match.group() == "alcanca"
+                and re.search(r"(?:^|,)\s*a\s+(?:umidade|agua)\s*$", active_prefix)
+                and re.match(r"\s+as\s+paginas(?=\s*(?:[.!?;:,]|$)|\s+e\b)", value[match.end():])):
+            continue
+        # This new recovery marker requires an explicit affirmative player
+        # subject. Conditions, wishes and attempts cannot substantiate it.
+        if (re.fullmatch(r"recuper(?:a|ou)\s+(?:informacao\s+util|informacoes\s+uteis|parte\s+da\s+informacao)", match.group())
+                and not re.search(
+                    r"(?:^|,)\s*(?:[”»]\s*)?voce"
+                    r"(?:\s+examina o registro (?:na|sobre a) bancada baixa do arquivo e)?\s*$",
+                    active_prefix)):
             continue
         # This discovery is still a goal under time pressure, not a result.
         # Skip only its infinitive; a later affirmative discovery still counts.
@@ -2936,7 +3239,15 @@ def validate_mechanical_narrative(
     assertions = _player_visible_scene_assertions(proposal) if proposal else (narrative,)
     for assertion in assertions:
         normalized = _normalize_for_policy(assertion)
-        if _failure_goal_is_granted(normalized, player_input=player_input, current_scene=current_scene) or _FAILURE_POSSESSION_GRANT.search(normalized):
+        # An explicit environment carrying tension grants no player possession.
+        # Scan every other match, including later possession in the same text.
+        possession_granted = any(
+            not (match.group() == "carrega"
+                 and re.search(r"\be\s+o\s+ambiente\s+agora\s+$", normalized[:match.start()])
+                 and re.match(r"\s+uma\s+tensao\s+evidente\s*(?:[.!?;:,]|$)", normalized[match.end():]))
+            for match in _FAILURE_POSSESSION_GRANT.finditer(normalized)
+        )
+        if _failure_goal_is_granted(normalized, player_input=player_input, current_scene=current_scene) or possession_granted:
             raise SceneProposalError("scene_failure_granted_goal")
 
 

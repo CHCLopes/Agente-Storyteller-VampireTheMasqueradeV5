@@ -82,11 +82,11 @@ def _plain(text: str) -> str:
 _REQUIRED = {
     "R-01": (("mara",), ("registro", "agua", "infiltr", "ajud", "tarefa")),
     "R-02": (("mara",), ("fundadora",), ("nao", "recus", "segredo")),
-    "R-03": (("mara",), ("agua", "infiltr"), ("avisa", "alerta", "risco", "aproxima"), ("seco", "seca", "intacto")),
+    "R-03": (("mara",), ("agua", "infiltr"), ("avisa", "alerta", "risco", "aproxima", "a ameaca agora e evidente"), ("seco", "seca", "intacto")),
     "R-03B": (("agua", "infiltr"), ("molh", "ating"), ("registro", "documento")),
     "R-04": (("agua", "infiltr"), ("registro", "texto", "documento"), ("perdid", "irrecuper", "ilegivel")),
     "R-05": (("registro", "documento"), ("salv", "proteg", "preserv"), ("intacto", "seco", "seca")),
-    "R-06": (("registro", "documento"), ("parcial", "parte", "trecho"), ("salv", "legivel", "preserv")),
+    "R-06": (("registro", "documento"), ("parcial", "parte", "trecho", "o que ainda permanece legivel e salvo"), ("salv", "legivel", "preserv")),
     "R-07": (("registro", "documento", "texto"), ("recuper", "descobr", "legivel"), ("parcial", "parte", "trecho")),
     "R-08": (("registro", "documento", "texto"), ("nao", "falh", "sem"), ("molh", "perdid", "agua", "irrecuper")),
     "R-09": (("mara",), ("desist", "aband", "recus", "nao vai ajud")),
@@ -97,6 +97,29 @@ def _realizes_rule(text: str, packet: CampaignNarratorPacket) -> bool:
     normalized = _plain(text)
     rule = packet.beat.selected_option_id.split(".", 1)[0]
     groups = _REQUIRED.get(rule)
+    # This exact direct refusal can refer to the founder identity already
+    # named by the prepared question. It grants no identity or new state.
+    direct_refusal = re.search(
+        r'(?:^|[.!?])\s*(?P<speaker>mara\b[^.!?;“"]{0,160})'
+        r'(?:[.!?;]\s*)?[“"]nao vou divulgar essa identidade\.[”"]', normalized)
+    if (rule == "R-02" and re.search(r"\bfundadora\b", _plain(packet.player_input))
+            and direct_refusal and not re.search(
+                r'\b(?:se|caso|talvez|poderia|dissesse|diria)\b', direct_refusal['speaker'])):
+        groups = (("mara",), ("nao", "recus", "segredo"))
+    # This affirmative, bounded physical clause realizes wet without the
+    # older molh/ating stems. Negation, condition and wishes cannot match.
+    if rule == "R-03B" and re.search(
+            r"(?:^|[.!?;])\s*(?:no arquivo,\s*)?a agua alcanca o registro "
+            r"sobre a bancada baixa e umedece suas paginas\s*(?=[;.!?]|$)",
+            normalized):
+        groups = (("agua", "infiltr"), ("registro", "documento"))
+    # Salvaging what is still legible explicitly states partial preservation.
+    # Only this affirmative assertion substitutes for the partial-word group.
+    if rule == "R-06" and re.search(
+            r"(?:^|[.!?;])\s*o que ainda e legivel (?:e|foi) salvo\s*(?=[,.!;]|$)|"
+            r"\be apenas o que permaneceu legivel e salvo\s*(?=[,.!;]|$)",
+            normalized):
+        groups = (("registro", "documento"), ("salv", "legivel", "preserv"))
     if groups is None or any(not any(fragment in normalized for fragment in group) for group in groups):
         return False
     if re.search(r"\bfundadora (?:e|era|se chama|chamava-se) [a-z]", normalized):
@@ -120,6 +143,9 @@ def _realizes_rule(text: str, packet: CampaignNarratorPacket) -> bool:
         # A declared destination is part of the player's authorized method.
         return False
     if rule == "R-01" and "campaign.knows.safe_surface" in packet.required_effects:
+        if re.search(r"\ba tarefa e examinar o (?:documento|registro)\b", normalized):
+            # Inspection is an optional method, not the rescue objective.
+            return False
         if not any(word in normalized for word in ("seca", "seco", "galeria")):
             return False
     if rule == "R-01" and "mara.responds.to_rescue_request" in packet.required_effects:
@@ -136,12 +162,25 @@ def _realizes_rule(text: str, packet: CampaignNarratorPacket) -> bool:
             r"\b(?:registro|documento) (?:voltou a ficar|ficou|permaneceu) (?:intacto|seco)\b",
             normalized):
         return False
-    if after.record in {"preserved", "partial"} and re.search(r"\b(?:registro|documento) (?:foi |esta )?(?:perdido|destruido)\b", normalized):
+    if after.record == "wet" and re.search(r"\bnao ha nada legivel\b", normalized):
+        # Failed inspection did not make a still-salvageable record lost.
+        # NPC dialogue cannot silently revoke that prepared consequence.
+        return False
+    if after.record in {"preserved", "partial"} and re.search(r"\b(?:registro|documento) (?:foi |esta |continua )?(?:perdido|destruido)\b", normalized):
         return False
     if before.record == "wet" and after.record == "partial" and rule == "R-06":
+        # Moving to a dry surface did not prepare drying the wet pages.
+        # A quoted NPC assertion cannot add that physical consequence.
+        if re.search(r'(?:[“"]|(?:^|[.!?;])\s*o registro )\s*esta seco (?:agora[.!]|por fora[,;.!])', normalized):
+            return False
         if not any(word in normalized for word in ("dano", "molh", "perd", "ainda")):
             return False
     if rule == "R-08" and re.search(r"\b(?:recuperou|encontrou|descobriu) (?:o |a )?(?:conteudo|informacao|trecho)\b", normalized):
+        return False
+    if after.outcome is not None and re.search(
+            r"\b(?:precisamos tratar essas paginas com cuidado|"
+            r"coloque-o com cuidado sobre a superficie seca)\b", normalized):
+        # An epilogue may acknowledge damage, not impose another care task.
         return False
     if after.outcome is not None and re.search(
             r"\b(?:precisa|deve|tem que) (?:voltar a )?(?:salvar|resgatar|recuperar) (?:o |a )?(?:registro|documento)\b",
