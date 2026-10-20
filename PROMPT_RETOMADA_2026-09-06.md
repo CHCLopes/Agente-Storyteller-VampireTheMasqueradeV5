@@ -3,7 +3,1890 @@
 Continue o trabalho existente neste projeto. Confirme os fatos nos arquivos antes
 de agir e carregue apenas o contexto necessário ao próximo passo.
 
-## Checkpoint vigente — promoção GitHub concluída em 18/10/2026
+## Publicação do desenvolvimento — 20/10/2026
+
+Sincronização segura autorizada para a branch de implementação, sem promoção
+para main. README público reescrito conforme o estágio real; guia técnico
+preservado em DEVELOPMENT.md. Registro de escopo, exclusões, testes e resultado
+Git: docs/repository-checkpoint-2026-10-20.md. Checkpoint técnico 45d4a37
+publicado na branch remota e hash conferido; apresentação em commit documental
+separado. Consultar o registro e a referência remota para o HEAD final.
+Nenhuma alteração de produto/arquitetura ou inferência paga nesta atividade.
+O próximo gate de produto continua DEC-NARR-VALID-001 abaixo, sem opção escolhida.
+
+## Checkpoint vigente — L82 encerrado; L83 não executado; decisão de estratégia — 20/10/2026
+
+Fonte do checkpoint: evals/narrator/reports/hybrid-campaign-luna-validation-checkpoint-2026-10-20.md.
+L82: 9 chamadas/8 turnos, USD 0.0091548 estimado, não cobrança. Equivalência
+parcial passada faltante corrigida; pedido de novo cuidado após desfecho bloqueado.
+Auditoria também reproduziu duas violações ACEITAS: tarefa virou examinar em
+vez de preservar, e epílogo pediu transporte já narrado. Fixes locais delimitados;
+91 focados e 987 ampliados do snapshot final passam, XML
+hyp-007-l82-final-expanded-2026-10-20.xml; diff focado inspecionado/sem whitespace.
+Não interpretar correções lexicais como prova geral de significado/produto.
+
+Todos os gates executados L76–L82 fechados. L83/v23 preparado false/false,
+22 hashes reais conferidos, sem execução/latch/request/summary ou custo de inferência.
+Autorização contínua <= USD 0.15 e avaliação intermediária delegada continuam
+vigentes: NÃO pedir nova aprovação financeira. Não houve revogação pelo usuário.
+Nenhum narrador admitido/default alterado; CAMP-24/MVP continuam abertos.
+
+Próxima decisão humana proposta DEC-NARR-VALID-001, não aprovada: A (recomendada)
+revisar desenho da fronteira de validação/contrato antes de novos lotes, versus
+B manter contrato atual e seguir correções experimentais delimitadas com risco
+explícito. Não implementar nova arquitetura por arrasto. Não falta teto para
+L83; a questão é estratégia/risco e fidelidade do MVP. Astra high recomendado
+para A; planejar e comparar propostas offline, sem novas chamadas pagas iniciais,
+e submeter contrato antes de implementar. Não inferir estabilidade por um lote verde.
+
+Totais conferidos L41–L82: 42 lotes/396 chamadas/356 turnos/USD 0.3919904
+estimados; L76–L82: 83 chamadas/76 turnos/USD 0.0828204. Versões variaram,
+não calcular taxa de estabilidade. Chave não acessada; supervisora ociosa,
+expiração à meia-noite de Fortaleza preservada. Sem merge/commit/push nesta etapa.
+
+## Histórico — L81 encerrado; L82/v22 em preparação — 20/10/2026
+
+L81: 16 chamadas/15 turnos, USD 0.0158616 estimado, não cobrança. R-08 rejeitado
+por marca ausente a tentativa não recupera conteúdo. Equivalência negativa
+assertiva delimitada corrigida; 184 testes passam incluindo wet não lost,
+atomicidade/restart/replay com uma rolagem/chamada. 966 ampliados passam no
+snapshot anterior ao fix (não atribuir cobertura retroativa). Gate fechado,
+histórico preservado. L82/v22 verifica correção sob mesmos matriz integral/
+ordem/alvo/22 hashes/tetos 17 chamadas/USD 0.15 total, primeira falha encerra,
+sem retry/fallback/best-of/admissão. Preparação keyless antes do despacho.
+L41–L81: 387 chamadas/348 turnos/USD 0.3828356 estimados, versões variaram.
+Sem nova ação humana imediata; avaliação intermediária delegada vigente.
+
+## Histórico — L80 encerrado; L81/v22 em preparação — 20/10/2026
+
+L80: 17 chamadas/16 turnos, USD 0.0168512 estimado, não cobrança; último R-06
+rejeitado porque preservação apenas do que permaneceu legível não era reconhecida.
+Também dizia Está seco por fora, consequência não preparada. Reprodução fiel
+falhou antes do fix; equivalência parcial delimitada corrigida e secagem por fora
+agora bloqueada. 31 focados/integração passam. Gate fechado/histórico preservado.
+V22 esclarece retirar da água não seca registro nem páginas (única troca v21).
+L81 verifica nova hipótese sob mesmos matriz integral/ordem/alvo/22 hashes/tetos
+17 chamadas/USD 0.15 total, primeira falha encerra/sem retry/fallback/best-of/
+admissão. Preparação keyless/bytes antes do despacho pela supervisora.
+L41–L80: 371 chamadas/333 turnos/USD 0.3669740 estimados, versões variaram.
+Sem nova ação humana imediata; avaliação intermediária delegada vigente.
+
+## Histórico — L79 encerrado; L80 em preparação — 20/10/2026
+
+L79: 12 chamadas/11 turnos, USD 0.0122374 estimado, não cobrança. R-04 bloqueado
+porque água até atravessar completamente o registro foi atribuído ao jogador.
+Reproduzido/corrigido quadro explícito delimitado; 220 testes passam, incluindo
+perda atômica/restart/replay sem RNG. Gate fechado, histórico preservado.
+L80/v21 verifica essa correção prospectiva, mesmos matriz integral/ordem/alvo/
+22 hashes/tetos 17 chamadas/USD 0.15 total, primeira falha encerra, sem retry/
+fallback/best-of/admissão. Preparação keyless antes do envio pela supervisora.
+L41–L79: 354 chamadas/317 turnos/USD 0.3501228 estimados, versões variaram.
+Sem nova ação humana imediata; avaliação intermediária delegada vigente.
+
+## Histórico — L78 encerrado; L79 em preparação — 20/10/2026
+
+L78: 10 chamadas/9 turnos, USD 0.0099626 estimado, não cobrança. R-03 bloqueado
+porque gotas que avançam foi atribuído ao jogador objeto de olhar do NPC.
+Reproduzido/corrigido quadro ambiental delimitado; 257 testes passam. Gate
+fechado; evidência histórica preservada. L79/v21 verifica essa correção com
+mesma matriz integral/ordem/alvo/22 hashes/tetos 17 chamadas/USD 0.15 total;
+primeira falha encerra, sem retry/fallback/best-of/admissão. Preparação keyless
+antes do despacho pela supervisora. Ajuda L78 também teve prosa confusa sobre
+exame/local: manter avaliação qualitativa, não admitir só por testes verdes.
+L41–L78: 342 chamadas/306 turnos/USD 0.3378854 estimados. Sem nova ação humana.
+
+## Histórico — L77 encerrado; L78 em preparação — 20/10/2026
+
+L77: 15 chamadas/14 turnos, USD 0.0148322 estimado; R-07 bloqueado por partes
+nominal interpretado como partir em das partes ainda legíveis. Falha reproduzida,
+extensão nominal delimitada corrigida; 218 focados/37 inspeção-atomicidade passam.
+Gate fechado, resposta literal e histórico preservados. L78/v21 testa essa
+correção prospectiva, mesma matriz integral/ordem/alvo/22 hashes/tetos até
+17 chamadas/USD 0.15 total por lote; primeira falha encerra, sem retry/fallback/
+best-of/admissão. Preparação keyless e hashes antes do envio pela supervisora.
+L41–L77: 332 chamadas/297 turnos/USD 0.3279228 estimados, não cobrança/taxa de
+estabilidade. Sem nova ação humana imediata; avaliação intermediária delegada.
+
+## Histórico — L76 encerrado; correção nominal — 20/10/2026
+
+L76: 4 chamadas/3 turnos, USD 0.0039206 estimado, não cobrança. R-01 rejeitado
+porque em mente foi tomado como mentir. Reproduzido antes da correção; detector
+agora ignora apenas esse substantivo preposicionado. Mentir/ocultar/abrir seguem
+bloqueados. 146 testes passam; gate L76 fechado e evidência histórica preservada.
+L77 verifica essa correção prospectivamente, sem mudar v21/matriz integral/ordem,
+alvo ou tetos até 17 chamadas/USD 0.15 total por lote; primeira falha encerra,
+sem retry/fallback/best-of/admissão. Preparação keyless/hashes antes do envio.
+L41–L76: 317 chamadas/283 turnos/USD 0.3130906 estimados. Autorização contínua
+e avaliação intermediária delegada vigentes. Nenhuma nova ação humana imediata.
+
+## Histórico — L75 integral técnico; lacuna qualitativa corrigida — 20/10/2026
+
+L75 batch 6fdb6e67-3784-4e9b-892e-4c84daa39a04 completou 17 chamadas/17
+turnos/oito percursos sob v20, USD 0.0170188 estimado. Auditoria independente
+confere regras/desfechos/identity/custo/SHA/22 hashes, 44–90 palavras, máximo
+19.783 bytes, geração mediana 3.297 ms/máxima 10.107 ms. 654 relacionados passam.
+Gate fechado/saídas preservadas. NÃO admitir apenas pelo resultado técnico.
+Leitura qualitativa encontrou Está seco agora após mover páginas molhadas e
+fala truncada R08. Duas falhas offline pré-fix, guard prospectivo bloqueia
+secagem não preparada no resgate parcial, preserva negativa e fora da água;
+cinco regressões/39 relacionados passam. V21 pede fala natural/completa e
+esclarece superfície seca não seca páginas, sem aumentar prompt. L76 separado
+fechado em preparação, mesmo alvo/matriz integral/ordem/22 hashes/tetos até
+17 chamadas/USD 0.15 total por lote. Hipótese nova de fidelidade/prosa, não best-of.
+Totais conferidos L41–L75: 35 lotes/313 chamadas/280 turnos/USD 0.3091700
+estimados, não cobrança; versões variaram, não calcular taxa de estabilidade.
+Próximo: concluir preparação/hashes/diff e liberar L76 uma vez pela supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L74 encerrado; L75 em verificação — 20/10/2026
+
+L74 batch 22d84fe7-6c48-417a-b1b2-ec6edc80b939: 13 chamadas/12 turnos,
+USD 0.0131672 estimado, não cobrança. R-09/04 nominal recebendo sua escolha
+de Mara após você tomado como escolha do jogador. Guard conservador mantido;
+12 relacionados provam alternativa recebe a desistência, mesmo fechamento/
+bench/fala direta, ação extra bloqueada e replay sem RNG extra. Gate fechado,
+evidência mantida. V20 troca somente orientação recebendo escolha por reação
+à desistência; L75 separado fechado em preparação, mesmo alvo/matriz integral/
+ordem/22 hashes/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L74: 296 chamadas/263 turnos, USD 0.2921512 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e liberar L75 uma vez via supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L73 encerrado; L74 em verificação — 20/10/2026
+
+L73 batch 0c8b91a8-fb5f-459e-9e19-66e0721a62d2: 15 chamadas/14 turnos,
+USD 0.0149588 estimado, não cobrança. R-07/06 tem duas causas: recuperação
+parcial não reconhecida e parte nominal lida como partir. Ambas reproduzidas;
+fix exige sujeito explícito do jogador e exclui apenas parte nesse complemento,
+com concessão na falha/negação/hipótese/NPC/citação/partida real bloqueadas.
+212 relacionados aprovados; 636 ampliados anteriores aprovados. Gate fechado,
+evidência mantida. L74 separado fechado em preparação, mesmo v19/alvo/matriz
+integral/ordem/22 hashes/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L73: 283 chamadas/251 turnos, USD 0.2789840 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e liberar L74 uma vez via supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L72 encerrado; L73 em verificação — 20/10/2026
+
+L72 batch f2b6aa4b-18f1-4f86-a09d-935c090d81b0: 15 chamadas/14 turnos,
+USD 0.0150288 estimado, não cobrança. Seis percursos completos, R-07/06 parou
+por recuperação nominal de conteúdo não reconhecida. Duas falhas pré-fix,
+marcador assertivo delimitado de registro parcial/conteúdo recuperado reconhece
+sucesso e proíbe mesma concessão na falha; negação/hipótese/citação não sustentam.
+199 relacionados aprovados; preparação L73 verifica limite final de sentença.
+Gate fechado/evidência mantida. L73 separado fechado em preparação, mesmo
+v19/alvo/matriz integral/ordem/22 hashes/tetos até 17 chamadas/USD 0.15 total.
+Totais L41–L72: 268 chamadas/237 turnos, USD 0.2640252 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e liberar L73 uma vez via supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L71 encerrado; L72 em verificação — 20/10/2026
+
+L71 batch d5f1e700-e0c8-4f6e-9933-c1d17c92d47e: sete chamadas/seis turnos,
+USD 0.0068850 estimado, não cobrança. R-03B/02 onde ele estava rejeitado por
+pronome ambíguo. Guard mantido; 15 regressões de dano aprovadas demonstram
+alternativa na bancada baixa com mesmo wet e agência/atomicidade/replay/RNG.
+Gate fechado/evidência mantida. V19 só reforça nomear registro em posição/estado;
+L72 separado fechado em preparação, mesmo alvo/matriz integral/ordem/22 hashes/
+tetos até 17 chamadas/USD 0.15 total por lote. Totais L41–L71: 253 chamadas/
+223 turnos, USD 0.2489964 estimados, não cobrança. Próximo: concluir preparação/
+replay de tamanho/hashes/diff e liberar L72 uma vez via supervisora existente.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L70 encerrado; L71 em verificação — 20/10/2026
+
+L70 batch 7d2a6ba8-3405-431b-be37-c1e41e3efc88: quatro chamadas/três turnos,
+USD 0.0039672 estimado, não cobrança. R-01/01 pergunta sim/não quer levar o
+registro rejeitada corretamente. 38 relacionados aprovados; guard/runtime
+inalterados para esse caso. Gate fechado/saídas mantidas. V18 só orienta q
+exatamente O que você faz agora? quando outcome null, vazio terminal, nesse
+perfil sintético. Não altera contrato/default; prosa n varia, q fica repetitiva.
+L71 separado fechado em preparação, mesmo alvo/matriz integral/ordem/22 hashes/
+tetos até 17 chamadas/USD 0.15 total por lote. Totais L41–L70: 246 chamadas/
+217 turnos, USD 0.2421114 estimados, não cobrança. Próximo: concluir preparação/
+replay de tamanho/hashes/diff e liberar L71 uma vez pela supervisora existente.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L69 encerrado; L70 em verificação — 20/10/2026
+
+L69 batch c5c41978-7f96-4c02-a231-56ba2468dc39: seis chamadas/cinco turnos,
+USD 0.0058922 estimado, não cobrança. R-03/02 sem tocar no objeto de Mara
+atribuído ao jogador mencionado como objeto de volta-se para você. Duas falhas
+pré-fix, correção restrita de contato negado com sujeito NPC nomeado/narração
+fora de citação; 220 relacionados e 45 ambientais/NPC aprovados. Gate fechado,
+evidência preservada. L70 separado fechado em preparação, mesmo v17/alvo/
+matriz integral/ordem/22 hashes/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L69: 242 chamadas/214 turnos, USD 0.2381442 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e liberar L70 uma vez via supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L68 encerrado; L69 em verificação — 20/10/2026
+
+L68 batch 2a28644c-955c-4e0b-b6be-e9367bfc5086: 12 chamadas/11 turnos,
+USD 0.0123238 estimado, não cobrança. R-04/03 mas a infiltração avança tomado
+como movimento do jogador. Duas falhas pré-fix; vínculo de sujeito ambiental
+imediato água/infiltração independe de conjunção, preserva verbos posteriores.
+202 relacionados aprovados; 559 ampliados anteriores aprovados. Gate fechado,
+evidência preservada. L69 separado fechado em preparação, mesmo v17/alvo/
+matriz integral/ordem/22 hashes/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L68: 236 chamadas/209 turnos, USD 0.2322520 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e liberar L69 uma vez pela supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L67 encerrado; L68 em verificação — 20/10/2026
+
+L67 batch 3741a4c7-778e-41cf-a34c-785d7582d730: oito chamadas/sete turnos,
+USD 0.0080808 estimado, não cobrança. R-01/02 pergunta Como você quer proceder
+com o registro molhado? não reconhecida como convite à ação. Duas falhas
+pré-fix, equivalência restrita de campo inteiro; 171 relacionados e 53 questão/
+contexto aprovados, inclusive wet/reinício/replay/ação extra bloqueada.
+Gate fechado/evidência mantida. L68 separado fechado em preparação, mesmo
+v17/alvo/matriz integral/ordem/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L67: 224 chamadas/198 turnos, USD 0.2199282 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e executar L68 uma vez via supervisora.
+Primeira falha encerra/sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L66 encerrado; L67 em verificação — 20/10/2026
+
+L66 batch 359de0e2-1a8d-4684-9d15-50ae37bcbbf3: duas chamadas/um turno,
+USD 0.0019282 estimado, não cobrança. R-01/08 passiva futura do registro para
+ser examinado confundida com ação executada. Fix delimitado, primeira referência
+de família corrigida ainda offline; seis regressões/141 relacionados aprovados,
+incluindo sequência de diálogo/reinício/replay sem RNG extra. Gate fechado,
+evidência preservada. L67 separado fechado em preparação, mesmo v17/alvo/
+matriz integral/ordem/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L66: 216 chamadas/191 turnos, USD 0.2118474 estimados, não cobrança.
+Próximo: concluir preparação/hashes/diff e executar L67 uma vez via supervisora.
+Primeira falha encerra, sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L65 encerrado; L66 em verificação — 20/10/2026
+
+L65 batch 3e476d4a-59e4-4cb9-99a7-48ee204bd41c: 12 chamadas/11 turnos,
+USD 0.0123666 estimado, não cobrança. R-04/03 água continua avançando tratada
+como jogador; duas falhas pré-fix, correção só do token com sujeito explícito,
+163 relacionados aprovados. 539 ampliados anteriores aprovados, evidência XML.
+Gate fechado/saídas preservadas; L66 separado fechado em preparação, mesmo
+v17/alvo/matriz integral/ordem/tetos até 17 chamadas/USD 0.15 total por lote.
+Totais L41–L65: 214 chamadas/190 turnos, USD 0.2099192 estimados, não cobrança.
+Próximo: concluir preparação, conferir hashes/diff e liberar L66 uma vez pela
+supervisora existente. Primeira falha encerra, sem retry/fallback/admissão.
+Sem nova ação humana imediata. CAMP-24/admissão/default/MVP continuam abertos.
+
+## Histórico — L64 encerrado; L65 em verificação — 20/10/2026
+
+L64 batch aa020e7d-bf88-462e-8611-8f560b2b1e1e: nove chamadas/oito turnos,
+USD 0.0092450 estimado, não cobrança. R-06/02 afastando-o da água confundido
+com retirada do jogador, apesar de antecedente registro molhado explícito.
+Gate fechado/histórico mantido. Duas falhas pré-fix, correção delimitada de
+clítico do objeto com contraposições, 151 relacionados aprovados. L65 separado
+fechado em preparação, mesmo v17/alvo/matriz integral/ordem/tetos 17/USD 0.15.
+Totais L41–L64: 202 chamadas/179 turnos, USD 0.1975526 estimados, não cobrança.
+Próximo: conferir preparação/hashes e executar L65 uma vez pela supervisora;
+primeira falha encerra, sem retry/fallback/admissão. Sem nova ação humana imediata.
+
+## Histórico — L63 encerrado; L64 em verificação — 20/10/2026
+
+L63 batch a52c9207-e8f9-46f5-ab51-4f91a08f5f2f: duas chamadas/um turno,
+USD 0.0018726 estimado, não cobrança. R-01/08 repetiu recusa da fundadora ao
+responder tarefa: inadequação narrativa. Erro técnico combat veio de material
+reconhecido pelo stem mat* como matar. Fix só do nominal exato, uma falha
+pré-fix/quatro contraprovas/142 relacionados aprovados, sem dispensar matar.
+Gate fechado/saída preservada; nenhum resultado narrativo reclassificado.
+V17 reforça entrada atual, não reapresentar fala histórica; L64 separado em
+verificação, mesmo alvo/matriz integral/ordem/22 hashes/tetos 17/USD 0.15 total.
+Primeira falha encerra/sem retry/fallback/admissão; avaliações delegadas mantidas.
+Totais L41–L63: 193 chamadas/171 turnos, USD 0.1883076 estimados, não cobrança.
+Próximo: concluir preparação L64/replay de tamanho/regressões e liberar uma vez
+pela supervisora existente. Sem nova ação humana imediata ou entrada de chave.
+
+## Histórico — L62 encerrado; L63 em verificação — 20/10/2026
+
+L62 batch 7688e9ef-63a0-435f-8594-58863d6de4cc: 12 chamadas/11 turnos,
+USD 0.0121282 estimado, não cobrança. Compactação passou o ponto L61; R-04/03
+rejeitado por água continua sobre bancada e atravessa registro atribuída ao
+jogador. Gate fechado/histórico preservado. Duas falhas antes do fix delimitado;
+156 relacionados e 25 preparação/replay/contexto aprovados após correção.
+L63 separado em execução após 517 ampliados aprovados (XML hyp-007-l63-expanded-2026-10-20.xml), mesmo v16/matriz/tetos até
+17 chamadas/USD 0.15 total, primeira falha encerra, sem retry/fallback/admissão.
+Totais L41–L62: 191 chamadas/170 turnos, USD 0.1864350 estimados, não cobrança.
+Próximo: observar resultado L63, fechar gate e reconciliar evidências. Despacho
+único via supervisora existente, hashes conferidos/diff check limpo. Sem nova
+ação humana imediata ou entrada de chave.
+Avaliações intermediárias delegadas; admissão/default/produto finais humanos.
+
+## Histórico — L61 encerrado; L62 compacto em verificação — 20/10/2026
+
+L61 batch 3ece37fd-21c2-49be-9c85-f2cbf06edf9e: sete chamadas/sete turnos,
+USD 0.0068490 estimado, não cobrança. Oitava etapa bloqueada antes do envio;
+replay offline confirmou corpo 20.093 > teto 20.000 bytes. Gate fechado e
+histórico preservado, sem reclassificação. 507 relacionados aprovados.
+V16 compacta somente explicações redundantes, sem mudar contexto/histórico/
+canon/gates/tetos; replay dos sete textos seguido de corpus completa fake17,
+máximo 19.455 bytes. Isso não garante limite para toda prosa futura.
+L62 separado fechado em verificação: mesmos oito percursos/17 chamadas,
+USD 0.15 total por lote, primeira falha encerra, sem retry/fallback/admissão.
+Totais L41–L61: 179 chamadas/159 turnos, USD 0.1743068 estimados, não cobrança.
+Próximo: verificar preparação/hashes de L62, ativar/despachar uma vez pela
+supervisora existente. Sem nova ação humana imediata ou nova entrada de chave.
+Admissão/default/MVP continuam sujeitos ao gate humano final.
+
+## Histórico — L60 encerrado; L61 fechado em verificação — 20/10/2026
+
+L60 batch 55fdbe26-7137-4ac0-a3ba-38db5a69e0ad: uma chamada/zero turnos,
+USD 0.0008756 estimado por usage (3304 entrada/179 saída), não cobrança.
+Recusa direta de Mara: Não vou divulgar essa identidade. Rejeitada por exigir
+literal fundadora apesar da pergunta preparada. Saída histórica não reclassificada;
+gate L60 fechado. Expressão atenção da cena artificial orientou prompt v15.
+L61 ainda fechado, sem despacho: vínculo anafórico apenas na pergunta da fundadora,
+fala direta efetiva de Mara, sem identidade/lore nova. Contraprova hipotética
+reproduziu falha offline e foi corrigida antes de qualquer chamada paga.
+Sete regressões de contexto/agência/segredo/atomicidade/reinício/replay passam.
+Preparação e contratos ampliados em verificação. Totais L41–L60: 172 chamadas,
+152 turnos, USD 0.1674578 estimados; teto USD 0.15 por lote, não cumulativo.
+Autorização contínua e avaliação intermediária delegada mantidas, sem admissão.
+Próximo: verificar preparação L61/22 hashes e fake17; só então ativar e despachar
+uma vez via supervisora diária existente, até 17 chamadas, primeira falha encerra.
+
+## Histórico — L59 rejeição preservada; L60/v14 preparado — 20/10/2026
+
+Worktree b008/AgenteStoryteller, branch codex/planejamento-agente-storyteller-v5.
+state/PROJECT_STATE.md ausente. Preservar checkout de origem e alterações alheias.
+Não ler .env, clipboard, chave, ambiente de credencial ou memória de processo.
+
+Humano aprovou L40 com ressalva de linguagem artificial e delegou avaliações
+intermediárias de L41 e testes necessários ao agente até gate humano real.
+Autorização contínua até USD 0.15 estimado TOTAL por lote (não por chamada),
+sem novo pedido individual. Registrar hipótese/quantidade/teto/hashes/parada;
+primeira falha encerra, sem retry silencioso/best-of/fallback/admissão automática.
+Novas decisões de arquitetura/canon/produto e admissão final continuam humanas.
+
+Supervisora diária 67a9500f-348a-4191-959e-b10c0d58938e, PID 12304 ativo:
+entrada protegida validada localmente e autenticação observada nas chamadas.
+Expira 21/10 00:00 Fortaleza (=03:00 UTC). Não recuperar chave/renovar sozinha.
+L60 preparado, sem nova ação humana imediata ou nova entrada de chave.
+
+L41–L59: dezenove lotes encerrados na primeira falha, 171 chamadas/152 turnos,
+USD 0.1665822 estimados finais por usage observado, não cobrança. O teto aprovado
+USD 0.15 é por lote, não cumulativo; cada lote ficou abaixo dele. Todos os
+respectivos gates fechados/latches/saídas preservados, sem reclassificar lotes
+após correções. Nenhum lote atual completou os oito percursos. L54 percorreu
+08 completo: recusa direta, ajuda sem repetir segredo e final Está salvo, sem
+relatório de proteção/lore inventada. Avaliação intermediária positiva do agente,
+não admissão final nem estabilidade estatística. L40 aceito com ressalva preservado.
+Relatórios individuais hybrid-campaign-luna-hyp-007-l41 até l59-2026-10-20.md.
+
+Correções locais com reprodução antes do fix e contraprovas: sujeitos ambientais
+infiltração/água não são ações do jogador; wet afirmativo/preservação parcial
+são reconhecidos em quadros delimitados; negativa assertiva de recuperação
+realiza falha, alcance ambiental/ambiente carregando tensão não concedem sucesso/
+posse. Estado wet rejeita nada legível indevido. Agência real, sucesso indevido,
+negação/hipótese/pergunta/citação continuam protegidos. Commit/reinício/replay
+preservam RNG/geração, sem novas rolagens nas retomadas. Nenhuma refatoração geral.
+
+Prompt v13 preserva v9 de recusa diegética sem relatório de segurança e sem lore
+inventada; v10 pede reação concreta ao resgate, v11 distingue falha de perda total,
+v12 explicita dano wet já ocorrido, v13 não imobiliza jogador na desistência.
+Guard mantido para escolha genérica retrospectiva L45 e imobilidade real L51.
+Diálogo colateral/Por que? não implementado; mundo dramático não autoriza narrador
+trapacear nem promover prosa a estado. Catálogo/RNG/resultados não alterados.
+
+L54 parou R-04/03 por água atravessando páginas atribuída ao jogador. Seis casos
+novos/duas falhas pré-fix/52 relacionados aprovados após fix delimitado; ações
+reais/commit/reinício/replay protegidos. L55 mantém v13/Luna low/ordem 08 primeiro/
+todos oito percursos/17 chamadas/768 tokens/20.000 bytes/60s/USD 0.15 total,
+22 hashes atuais. L55 duas chamadas/um turno, USD 0.0019168, parada R-01/08 por
+se você decidir como agir tomado como decisão concreta. Seis casos novos/duas
+falhas pré-fix/84 relacionados aprovados após extensão delimitada de condição
+aberta; ações reais preservadas, replay sem RNG/geração extra. L56 mantém matriz/
+ordem/prompt/tetos; preparação em verificação. Último amplo antes desse fix:
+465 aprovados, XML hyp-007-l55-related-2026-10-20.xml; não suíte de release.
+L56 15 chamadas/14 turnos/seis percursos, USD 0.0148946 estimados; parada R-07/06
+por exame e recuperação coordenados não reconhecidos. Nove regressões/duas falhas
+pré-fix/84 relacionados aprovados após fix delimitado, negação/hipótese/NPC/ação
+extra protegidos, uma rolagem/geração/replay. L57 mantém v13/matriz/ordem/tetos,
+preparação em verificação. Último amplo antes desse fix: 471 aprovados, XML
+hyp-007-l56-related-2026-10-20.xml. Sem admissão/default/release.
+L57 dez chamadas/nove turnos, USD 0.0100426; parada R-03/03 por complemento espacial
+da infiltração mudando atribuição de sujeito. Oito casos novos/quatro falhas pré-fix/
+84 relacionados aprovados após fix: sujeito explícito enquanto a infiltração avança
+independe do complemento; dispensar só esse token, manter todos verbos seguintes/
+atores. L58 mantém v13/matriz/ordem/tetos; preparação em verificação. Último amplo
+antes desse fix: 480 aprovados, XML hyp-007-l57-related-2026-10-20.xml.
+L58 dez chamadas/nove turnos, USD 0.0100744; parada R-03/03 por umidade que avança
+tomada como jogador. Seis casos novos/duas falhas pré-fix/90 relacionados aprovados
+após reconhecimento desse sujeito relativo explícito. Apenas token avança dispensado,
+demais atores/verbos protegidos. L59 mantém v13/matriz/ordem/tetos, preparação em
+verificação. Último amplo antes desse fix: 488 aprovados, XML hyp-007-l58-related-2026-10-20.xml.
+L59 16 chamadas/15 turnos/sete percursos, USD 0.0157842; parada R-08/07 por
+fechamento retrospectivo ambíguo deixa de revelar o que você procurava. Guard
+inalterado; quatro regressões/79 relacionados aprovados: alternativa direta
+mantém wet/resgate parcial possível, ações/sucesso extra bloqueados, replay com
+uma rolagem/geração. V14 pede falha direta sem objetivo anterior presumido.
+L60 mantém alvo/matriz/ordem/tetos; preparação em verificação. Último amplo
+antes do ajuste de prompt: 494 aprovados, XML hyp-007-l59-related-2026-10-20.xml.
+Ao terminar L60: ler registros/resumo, custo, fechar gate, avaliar todas saídas,
+reconciliar plano e checklist; continuar correções/testes necessários autorizados.
+Se houver evidência suficiente para propor admissão final, preparar gate humano
+explícito sem trocar default ou fechar MVP por arrasto. TASK-013/CAMP-24 abertos.
+
+## Histórico de preparação — 20/10/2026 (superado pelo checkpoint acima)
+
+Humano autorizou nova janela diária e delegou avaliações intermediárias de L41
+e testes necessários ao agente até gate humano real; não solicitar novo aceite
+de cada lote/variante. Mantidos escopo e teto <= USD 0.15 por lote, sem retry
+silencioso/fallback/admissão final automática. Janela externa aberta em 20/10:
+sessão 67a9500f-348a-4191-959e-b10c0d58938e, PID 12304 ativo, status observado
+awaiting_secure_credential. Expira em 21/10 00:00 Fortaleza (=03:00 UTC).
+Única ação humana imediata: inserir chave uma vez no editor mascarado e Enter.
+Não ler clipboard/chave/ambiente/memória; acompanhar somente status e evidências.
+L41 hashes revalidados, gate fechado/latch ausente; após entrada validar idle,
+ativar manifesto/pedido e executar. Nenhuma chamada paga nesta abertura.
+
+Humano aprovou resultados L40 e pediu corrigir falas artificiais sobre informação/
+identidade protegida. Aceite recebido com essa ressalva, não pedir novamente
+julgamento dos mesmos resultados. Sem admissão/default automático ou conclusão
+integral do MVP. V9 implementado no prompt compartilhado: recusa contextual basta,
+sem anunciar controles internos nem repetir recusa fora de contexto; não inventar
+proibição/esquecimento/juramento/merecimento, não impor medo/obediência ou alterar
+regras/pressão. Validadores/catálogo/lore/estado e saídas L40 inalterados.
+Três regressões naturais demonstram recusa/ajuda/resgate aceitos e vazamento/
+ação indevida rejeitados atomicamente, reinício/replay sem RNG/geração extra.
+30 relacionados aprovados, XML hyp-007-l41-natural-refusal-readiness-2026-10-20.xml.
+L41 novo fechado: v9/Luna low/até 17 chamadas/768 tokens/20.000 bytes/60s/USD 0.15
+total, primeira falha para, sem retry/fallback/admissão. 22 hashes/preflight
+17 sintéticos/zero rede/16.770 bytes; nenhum dispatch hoje/custo preparação USD 0.
+Eficácia de linguagem do Luna ainda não observada. Autorização contínua cobre
+tetos/quantidades no escopo, não solicitar novo orçamento. Dependência humana:
+autorizar abertura da sessão diária de hoje e inserir chave protegida uma vez.
+Lease de ontem expirou 20/10 00:00 Fortaleza, PID 20604 ausente; status idle antigo
+não prova sessão ativa. Não recuperar chave nem renovar automaticamente.
+Visão de mundo antagonista dramático/diálogo colateral registrada em
+plan/observation-campaign-state-language-1.md, sem expandir MVP/catálogo: Por que?
+ainda classifica None. Motivos NPC são possibilidades autorais, não lore nova.
+Relatório evals/narrator/reports/hybrid-campaign-luna-l41-readiness-2026-10-20.md.
+
+L40 batch 7295e209-3a13-4fd0-8224-3e7318fcfdb2 completed: 17 chamadas/17 turnos,
+oito percursos completos (01 preserved/02 partial/03 lost/04 abandoned/05 preserved/
+06 partial/07 partial/08 preserved). Sem retry/fallback/admissão. OpenAI/Luna low
+observados; 54371 tokens entrada/3639 saída, USD 0.0152410 estimados finais,
+não cobrança. Geração 2962–4320 ms, mediana 3650; textos 47–107 palavras,
+q <=15/vazio ao concluir. Gate fechado/latch/histórico preservados, supervisor
+20604 idle/last_lot40/exit0 até meia-noite Fortaleza, sem nova entrada necessária.
+521 relacionados aprovados, XML hyp-007-l40-final-related-2026-10-19.xml;
+diff/hashes/proveniência/uso/desfechos/faixa de palavras verificados. Não é suíte
+integral de release nem estabilidade estatística. Nenhum narrador admitido.
+Total L30–L40: 86 chamadas/USD 0.0753034 estimados, sem incluir lotes anteriores.
+Relatório: evals/narrator/reports/hybrid-campaign-luna-hyp-007-l40-2026-10-19.md.
+Leitura humana pronta/verificada com 17 respostas literais:
+evals/narrator/reports/luna-l40-human-review-2026-10-19.md. Única intervenção
+imediata: avaliar oito percursos quanto a progressão/role play/pertinência de Mara,
+clareza de resultados e encerramento; reprovação deve citar caso/turno. Não
+substituir essa decisão por mais amostras. TASK-013/CAMP-24/MVP continuam abertos.
+Autorização contínua <= USD 0.15 por teste permanece vigente; não voltar a pedir
+aprovação individual de quantidade/teto em tarefas necessárias dentro do escopo.
+Após julgamento, registrar aceite/restrições e prosseguir no checklist aprovado.
+
+L39 batch 74d69c19-f140-43c2-b9c6-a40b793ebb55: dez chamadas/nove turnos,
+três percursos completos, R-09/04 rejeitado por omitir Mara (exigida pela política
+vigente/corpus). Não flexibilizar gate. USD 0.0087130 finais estimados, não
+cobrança; gate fechado/latch mantido. Três regressões/26 relacionados e dez
+preparação sobrepostos aprovados. V8 explicita só reação NPC na desistência,
+sem impor ação ou nova tarefa; runtime/critérios mantidos. L40 novo v8/Luna low/
+17 chamadas/768 tokens/20.000 bytes/60s/USD 0.15 total, primeira falha para,
+sem retry/fallback/admissão. 22 hashes/preflight 17 sintéticos/zero rede/15.038
+bytes; execução coberta pela autorização contínua. Nenhum narrador admitido.
+Relatório hybrid-campaign-luna-hyp-007-l39-2026-10-19.md.
+
+L38 batch e68b17f8-df25-4ea8-9d9a-e2bf390eaafa: 12 chamadas/11 turnos,
+cinco percursos completos, parada R-07/06 por recupera informações úteis não
+reconhecido como singular informação útil. Flexão plural adicionada com mesmos
+filtros de sujeito/negação/falha. Testes legíveis 33→39, duas falhas pré-fix;
+264 relacionados e 46 preparação sobrepostos aprovados, atomicidade/replay sem
+RNG/geração extra. USD 0.0103988 finais estimados, não cobrança; gate fechado/
+latch preservado. L39 novo mesmo v7/alvo/17 chamadas/768 tokens/20.000 bytes/
+60s/USD 0.15 total, primeira falha para, sem retry/fallback/admissão; 22 hashes/
+preflight 17 sintéticos/zero rede/14.763 bytes. Autorização contínua cobre
+execução, não pedir novo aceite. Nenhum narrador admitido. Relatório L38.
+
+L37 batch 2d428b81-b729-486b-b42f-fb33917caebe: uma chamada/zero turnos,
+R-01/01 falso positivo Se você precisar manipulá-lo (interact). Padrão clítico
+condicional existente estendido de move para move|manipula, sem ação executada
+ou ocultação de verbos posteriores. Quatro falhas pré-fix, 27 condicionais,
+156 relacionados e 34 preparação sobrepostos aprovados. USD 0.0007564 finais
+estimados, não cobrança; gate fechado/latch mantido. Regressão anterior à
+extensão: 478 relacionados aprovados. L38 novo mesmo v7/alvo/17 chamadas/
+768 tokens/20.000 bytes/60s/USD 0.15 total, primeira falha para, sem retry/
+fallback/admissão. 22 hashes/preflight 17 sintéticos/zero rede/14.763 bytes.
+Execução coberta pela autorização contínua, não pedir novo aceite. Nenhum
+narrador admitido. Relatório hybrid-campaign-luna-hyp-007-l37-2026-10-19.md.
+
+L36 batch 9adca484-5bc6-4235-b9fc-b72094ffaace: nove chamadas/oito turnos,
+01 intacto/02 parcial completos, parada R-04/03 por água avança sobre registro
+atribuído ao jogador (move). Corrigido só quadro ambiental explícito, demais
+atores/ações posteriores mantidos. Oito regressões/duas falhas pré-fix;
+145 relacionados e 15 preparação sobrepostos aprovados, atomicidade/replay
+sem RNG/geração extra. USD 0.0080752 finais estimados, não cobrança; gate
+fechado/latch preservado. L37 novo mesmo v7/alvo/17 chamadas/768 tokens/
+20.000 bytes/60s/USD 0.15 total, primeira falha para, sem retry/fallback/admissão.
+22 hashes/preflight 17 sintéticos/zero rede/14.763 bytes; execução coberta pela
+autorização contínua, não pedir novo aceite. Nenhum narrador admitido.
+Relatório hybrid-campaign-luna-hyp-007-l36-2026-10-19.md.
+
+L35 batch 10021029-5ee3-42bc-b8a5-7684a436120a: uma chamada/zero turnos,
+R-01/01 falso positivo Que ação você pretende realizar agora? (seis palavras).
+Fullmatch reconhece apenas pergunta completa com cauda modal existente; menus,
+instruções/NPC/ações presumidas continuam bloqueados. Duas falhas pré-fix,
+31 testes de pergunta; 165 relacionados e 38 preparação sobrepostos aprovados.
+USD 0.0007748 finais estimados, não cobrança; gate fechado/latch preservado.
+L36 prospectivo mesmo v7/alvo/17 chamadas/768 tokens/20.000 bytes/60s/USD 0.15
+total, primeira falha para, sem retry/fallback/admissão; 22 hashes/preflight 17
+sintéticos/zero rede/14.763 bytes. Autorização contínua cobre execução.
+Total desta etapa L30–L35 USD 0.0321190 estimados, não cobrança. Nenhum narrador
+admitido. Relatório hybrid-campaign-luna-hyp-007-l35-2026-10-19.md.
+
+L34 batch a6150a5f-6970-4927-b174-5e78de16cd4e: 13 chamadas/12 turnos,
+seis percursos completos (01–06), parada R-08/07 por falha explícita não
+reconhecida (a investigação não recupera conteúdo algum). Marcador delimitado
+adicionado; umidade alcança as páginas desambiguado de conquista do jogador.
+11 regressões/seis falhas pré-fix; 289 relacionados e 18 preparação/R-08
+aprovados (sobreposição), atomicidade/reinício/replay sem RNG/geração extra.
+USD 0.0111458 finais estimados, não cobrança; gate fechado/latch preservado.
+Observação UX separada: Podemos examiná-lo após final R-05/01 pode soar como
+convite à continuação; submeter encerramento ao humano, não admitir por gates.
+L35 mesmo v7/alvo/limites/17 chamadas/USD 0.15 total, primeira falha para,
+sem retry/fallback/admissão; 22 hashes/preflight 17 sintéticos/zero rede/14.763
+bytes, execução coberta pela autorização contínua. Nenhum narrador admitido.
+Relatório hybrid-campaign-luna-hyp-007-l34-2026-10-19.md.
+
+L33 batch f203c19d-7318-47a0-ac6c-3dcba601cafa: 12 chamadas/11 turnos,
+cinco percursos completos; R-07/06 parou por seguindo marcas e trechos ainda
+legíveis interpretado como deslocamento. Corrigido apenas quadro explícito de
+examinar registro na bancada; seguir NPC/partir/ações posteriores protegidos.
+Testes leitura 26→33, duas falhas pré-fix, 177 relacionados e 40 preparação/
+leitura aprovados (sobreposição). USD 0.0106532 estimados, não cobrança; gate
+fechado/latch preservado. L34 novo mesmo v7/alvo/limites, 17 chamadas/USD 0.15
+total, primeira falha para, sem retry/fallback/admissão. 22 hashes/preflight 17
+sintéticos/zero chamadas/14.763 bytes; execução coberta pela autorização contínua.
+Nenhum narrador admitido. Relatório hybrid-campaign-luna-hyp-007-l33-2026-10-19.md.
+
+L32 batch 48f2b030-7564-49bf-8808-23346ff27dce: uma chamada/zero turnos,
+R-01/01 rejeitado por enquanto decidimos o próximo passo (choice coletiva não
+declarada). Não flexibilizar gate. USD 0.0007964 finais estimados, não cobrança;
+gate fechado/latch/histórico mantidos. Quatro regressões novas/20 relacionados e
+11 preparação aprovados (sobreposição); atomicidade/reinício/replay sem RNG extra.
+Regressão ampliada L30/L31: 409 aprovados. V7 acrescenta orientação de agência
+coletiva em fala de Mara, sem mudar runtime/critérios. L33 novo: v7/Luna low/
+17 chamadas/768 tokens/20.000 bytes/60s/USD 0.15 total; primeira falha para,
+sem retry/fallback/admissão. Preflight 17 sintéticos/zero chamadas/14.763 bytes,
+22 hashes válidos. Execução coberta pela autorização contínua, sem novo aceite.
+Nenhum narrador admitido. Relatório hybrid-campaign-luna-hyp-007-l32-2026-10-19.md.
+
+L31 batch c2468a41-0a55-4ab8-ae8d-e1982dd12b5d: cinco chamadas/quatro turnos,
+01 completo/intacto, parada R-01/02 turno 3 por substantivo tom tomado como
+verbo tomar (take). Corrigido somente mantendo o tom contido, sem esconder
+verbos posteriores. Testes 8→15, duas falhas pré-fix, 170 relacionados aprovados.
+USD 0.0043730 estimados finais, não cobrança; gate fechado/latch mantido.
+L32 prospectivo, mesmos v6/alvo/limites/17 chamadas/USD 0.15 total; primeira
+falha encerra, sem retry/fallback/admissão. 22 hashes/preflight 17 sintéticos/
+zero chamadas/14.457 bytes; execução coberta pela autorização contínua.
+Não pedir novo aceite/teto. Nenhum narrador admitido. Relatório L31 no diretório
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l31-2026-10-19.md.
+
+L30 batch b8ce5b26-f0eb-4833-87c9-980d347d01ac: cinco chamadas/quatro turnos,
+01 completo/intacto; parada R-01/02 por ameaça da infiltração atribuída ao jogador
+(combat). Falso positivo corrigido só no quadro enquanto a infiltração ameaça
+a bancada baixa; ações posteriores e outros atores protegidos. Oito regressões,
+duas falhas pré-fix, 137 agência/integração e 55 preparação/supervisora/custo
+aprovados (sobreposição). USD 0.0043758 estimados finais, não cobrança; gate
+fechado/latch/histórico preservados. L31 prospectivo: mesmos v6/Luna low/limites,
+17 chamadas/USD 0.15 total, primeira falha para, sem retry/fallback/admissão.
+22 hashes/preflight 17 sintéticos/zero chamadas/14.457 bytes. Autorização contínua
+cobre execução; não pedir aceite/teto novamente. Nenhum narrador admitido.
+Relatório hybrid-campaign-luna-hyp-007-l30-2026-10-19.md.
+
+Humano autorizou explicitamente L30 e todos os testes futuros necessários ao
+escopo aprovado com tetos planejados <= USD 0.15 por lote/teste. Supera pedidos
+anteriores de aprovação individual/quantidade; registrar prospectivamente cada
+hipótese/limite/hash/parada, sem retry silencioso/best-of/fallback/admissão.
+L30: até 17 chamadas v6/Luna low/768 tokens/20.000 bytes/60s, USD 0.15 total,
+primeira falha encerra; 22 hashes revalidados, latch ausente, supervisor 20604
+idle antes do pedido. Depois analisar/custear/fechar gate e prosseguir em tarefas
+locais necessárias. Parar somente por intervenção real, escopo/arquitetura,
+credencial, teto superior ou aceitação humana de produto.
+
+L29 batch 8eb276ee-09b4-4715-adb4-7498f0796dad: 12 chamadas/11 turnos,
+cinco percursos completos (01–05); parada R-07/06. Custo final estimado USD
+0.0102446, não cobrança. Gate fechado/latch/histórico preservados, sem retry.
+Offline confirmou partes em entre as partes ainda legíveis como depart;
+ampliado somente quadro nominal. Após isso, segunda lacuna de sucesso:
+recupera informação útil não reconhecido. Marcador delimitado ao sujeito
+afirmativo explícito você, filtros de negação/asserção mantidos, falha não
+pode conceder o resultado. Tentativa/pergunta/diálogo/hipótese/NPC não provam sucesso.
+Testes legíveis ampliados 10→26; três falhas pré-ajuste nominal, duas pré-ajuste
+de resultado. 344 relacionados aprovados, atomicidade/reinício/replay sem
+RNG/geração extra; XML hyp-007-l29-correction-l30-readiness-2026-10-19.xml.
+L30 preparado/fechado: mesmo v6/alvo/17 chamadas/768 tokens/20.000 bytes/60s,
+USD 0.15 total, sem retry/fallback/admissão; 22 hashes atuais/preflight 17
+sintéticos/zero envios/14.457 bytes. Proposta: aceitar L29 inconclusivo integral/
+cinco percursos e autorizar execução única L30. Continue/prossiga aprova.
+Não pedir novamente teto padrão; supervisor 20604 idle até meia-noite Fortaleza.
+Nenhum narrador admitido. Relatório hybrid-campaign-luna-hyp-007-l29-2026-10-19.md.
+
+Prossiga aprova a proposta L29: até 17 chamadas Luna low/v6, 768 tokens,
+20.000 bytes/60s, USD 0.15 total estimado, sem retry/fallback/admissão;
+parada na primeira falha. L28 aceito como inconclusivo integral/cinco percursos/
+falso positivo nominal confirmado. Hashes 22 revalidados, latch L29 ausente;
+supervisora 20604 ativa/idle antes do pedido. Flags L29 ativados para execução
+única, depois analisar/custear/fechar gate. Não ler chave nem reabrir lotes antigos.
+
+L28 batch 090516e9-50b3-4154-b931-b85abd682dea: 12 chamadas/11 turnos,
+cinco percursos completos (01–05); parada R-07/06 por substantivo partes em
+de suas partes ainda legíveis interpretado como partida do jogador.
+Falso positivo confirmado offline; correção mínima delimitada ao quadro nominal.
+Dez regressões novas, duas falhas antes da correção; 193 relacionados aprovados,
+incluindo atomicidade/reinício/replay sem repetir RNG/geração. Diff inspecionado.
+USD 0.0102126 finais estimados, não cobrança; gate fechado/latch/histórico mantidos.
+L29 separado/fechado: mesmo v6/Luna low/17 chamadas/768 tokens/20.000 bytes/60s,
+USD 0.15 total, sem retry/fallback/admissão; preflight 17 sintéticos/zero envios/
+14.457 bytes/22 hashes. Proposta delimitada: aceitar resultado L28 inconclusivo
+integral/cinco percursos/falso positivo e autorizar L29. Continue/prossiga aprova;
+não pedir novamente teto padrão. Supervisora 20604 idle até meia-noite Fortaleza,
+sem reentrada enquanto ativa; observar somente status. Nenhum narrador admitido.
+Relatório evals/narrator/reports/hybrid-campaign-luna-hyp-007-l28-2026-10-19.md.
+
+Humano pediu voltar aos testes de narrador e prosseguir. Próxima bateria pendente
+retomada como L28 nova, sem reabrir manifestos L25-L27: até 17 chamadas Luna low,
+prompt v6, 768 tokens/20.000 bytes/60s, teto USD 0.15 para lote inteiro, parada
+na primeira falha, sem retry/fallback/admissão. Hipótese: observar campanha integral
+após correção de adjunto canônico de espera, com adapter auditado. Critério técnico:
+17 turnos concluídos e desfechos esperados dos oito casos; falha interrompe lote.
+66 testes focados aprovados; preflight 17 sintéticos/zero envios/14.457 bytes;
+22 hashes atuais válidos. Alteração dos scripts somente identidade/data de L25.
+Flags L28 ativados após preparação. Executar uma vez pela supervisora 20604,
+observar records/summary/custo, fechar gate, analisar sem reclassificar histórico.
+
+Entrada local validada e chamada única explicitamente autorizada executada pela
+supervisora corrigida. L27 batch e3c7c9ae-201c-4fbe-8ef0-a2c6eb926cb1: planned=1,
+attempted=1, completed=1; OpenAI/gpt-5.6-luna low observados, sem retry/fallback.
+Geração 4388 ms; turno 4538 ms; 2512 tokens de entrada e 163 de saída.
+Custo estimado USD 0.000698, não cobrança confirmada. Desfecho preserved.
+Gate L27 fechado após execução; latch preservado. Supervisora PID 20604 idle,
+last_lot=27/exit=0; mantém deadline original. Não comprova causa da falha L26
+nem admite narrador. Evidência: evals/narrator/reports/luna-single-call-l27-2026-10-19.md.
+
+Ativação em 19/10: humano encerrou a primeira janela; PID antigo 3076 ausente.
+Nova janela externa corrigida aberta, PID 20604 confirmado ativo, sessão
+2f8a38f5-f351-4f99-89e2-57e16a141407, status awaiting_secure_credential.
+Expiração 20/10/2026 00:00 Fortaleza (03:00 UTC). Aguarda uma entrada humana
+mascarada; nenhuma inferência iniciada nesta substituição. Não recuperar chave
+anterior nem confundir entrada local validada com autenticação no provedor.
+
+Humano pediu auditoria do fluxo e da aplicação que recebe a chave, incluindo
+feedback visual e prevenção de colagem dupla. Sem ler chave real/.env/clipboard/
+ambiente ou memória do processo. Escopo completo do receptor: console/lançador/
+supervisor/fila/adapter, não todo React/FastAPI. Três falhas locais informativas:
+entrada sem feedback/validação, transporte/JSON indistinguíveis e fase inexistente
+no erro de credencial vazia. Corrigidas nas fontes; nenhuma vulnerabilidade remota
+demonstrada nem hipótese confirmada sobre a chave real.
+Editor Windows mascarado com asteriscos/contador, Backspace, Esc/Ctrl+U e cancelamento;
+controles/espaços/Unicode/repetição integral recusados antes do HTTP, com reentrada.
+Adapter classifica erros seguros por tipo, sem texto bruto/headers/body; usa
+OperationPhase.VALIDATION. Não há correção automática de segredo ou clipboard API.
+126 relacionados aprovados/um aviso preexistente; XML
+eval-results/credential-input-audit-extended-2026-10-19.xml. Console Windows PTY
+verificado com valor sintético; scan de 10 arquivos/dois blobs históricos sem
+indicadores pelos padrões. PDF sete páginas verificado, em
+docs/security-audit/credential-flow-2026-10-19/relatorio-auditoria-seguranca.pdf;
+fontes/gerador/scan/manifesto/issues/README no mesmo diretório. Relatório antigo preservado.
+Nenhuma chamada paga nesta auditoria. L26 continua inconclusivo/custo indisponível;
+L25 nunca executado. Gates reais fechados e manifestos históricos preservados;
+hashes antigos agora devem recusar código alterado. Fixtures temporárias isolam
+testes sem atualizar gates antigos. Nenhum narrador admitido/MVP aberto.
+ATIVAÇÃO: PID 3076/sessão 4beb08ec-4442-46ae-bb9d-c9c70377b216 ainda é a versão antiga
+em memória, preservada idle. NÃO usar para nova inferência. Não injetar mudanças
+nem extrair sua chave. Quando o humano puder inserir novamente: encerrar antiga
+sem filho ativo, abrir versão corrigida com deadline absoluto, aguardar UMA
+entrada no editor mascarado e conferir só idle/credential_local_validation=passed.
+Autenticação remota só em nova chamada cuja quantidade seja autorizada; teto
+USD 0,15 por teste já aprovado. Não pedir reaprovação desse mesmo teto.
+
+## Checkpoint anterior — chamada única encerrada sem resposta; sem nova tentativa — 19/10/2026
+
+Probe L26 batch 6c5f11c5-b2e7-4d1e-9c6b-b2422b407abf: UMA tentativa/zero turnos,
+campaign_source_provider_failure/transport_or_response_invalid. Nenhuma resposta
+nem usage: custo final indisponível, não zero/cobrança confirmada. Autenticação
+inconclusiva; marcador call_made não prova chegada ao servidor. Não inferir chave
+inválida/rede/TLS/saldo. Não ler chave/clipboard/ambiente/memória do terminal.
+Gate probe fechado/trava/artefatos mantidos; sem retry/fallback/segunda chamada.
+L25 inteiro nunca publicado/executado e segue fechado. Nenhum narrador admitido.
+46 testes focados antes/depois aprovados/um aviso preexistente; XML
+eval-results/luna-single-call-closure-2026-10-19.xml. Relatório
+evals/narrator/reports/luna-single-call-probe-2026-10-19.md.
+Supervisora PID 3076 continua idle, sessão 4beb08ec-4442-46ae-bb9d-c9c70377b216,
+last_lot=26/exit 2, deadline 20/10 00:00 Fortaleza. Não abrir outra nem pedir
+nova chave sem evidência. Humano deixou Codex remoto e encerrou somente áudio.
+USD 0,15 por teste é teto padrão previamente aprovado, mas quantidade/escopo
+não são automáticos: autorização atual era uma chamada, já consumida.
+Antes de outra inferência: diagnóstico seguro/offline de categorias do adapter
+e autorização específica da quantidade. MVP/TASK-013/CAMP-24 seguem abertos.
+
+## Checkpoint anterior — probe de UMA chamada autorizado; L25 inteiro fechado — 19/10/2026
+
+Humano pediu teste e depois restringiu expressamente a UMA chamada paga,
+manteve teto USD 0,15 e confirmou Está autorizado. Também definiu USD 0,15
+como teto padrão já aprovado por teste enquanto outro teto não for proposto;
+não pedir novamente esse mesmo orçamento. Escopo/quantidade continuam limitados.
+Pedido anterior L25 interrompido antes de publicar: supervisora idle, sem
+pedido/latch/artefatos e gate fechado. Não executar bateria L25 inteira.
+Probe separado L26: somente CAMP-EVAL-05/R-05, MAX_CALLS=1/schedule unitário,
+authorized_calls=1 obrigatório no gate antes de credencial e a cada dispatch.
+max_calls=17 é só envelope técnico compatível com a supervisora já ativa,
+não autorização para 17: limite efetivo é um, comprovado por testes. Mesmo Luna
+low/v6/768 tokens/20.000 bytes/60s/USD 0,15, sem retry/fallback/admissão.
+46 testes focados aprovados/um aviso preexistente; XML
+eval-results/luna-single-call-readiness-2026-10-19.xml. Gate probe ativado;
+enviar pedido único sem chave na sessão 4beb08ec-4442-46ae-bb9d-c9c70377b216.
+Após encerrar conferir resposta/proveniência/custo e fechar probe. Não executar
+outra chamada mesmo se falhar. Nenhum narrador admitido/MVP aberto.
+
+## Checkpoint anterior — supervisora temporária autorizada; L25 ainda fechado — 19/10/2026
+
+Humano autorizou em voz guardar chave apenas em memória até meia-noite de
+Fortaleza e, após esclarecimento do bloqueio de segurança, executar apenas
+baterias individualmente aprovadas dentro dos tetos. Regra para a semana
+19–25/10: uma sessão diária, sem renovação automática. Primeiro patch bloqueado
+não alterou arquivos; implementação posterior autorizada explicitamente.
+Supervisor/launcher/testes separados, sem mudança no produto/avaliadores
+congelados. Plano: plan/process-luna-credential-lease-1.md. Chave nunca em
+arquivo/comando/log/ambiente permanente; estado local guarda só metadados.
+Deadline absoluto + monotônico; interromper filho na expiração/interrupção.
+52 testes keyless aprovados/um aviso preexistente, XML
+eval-results/luna-supervisor-readiness-2026-10-19.xml; AST PowerShell válido.
+Janela externa aberta, processo Python PID 3076 ativo, sessão
+4beb08ec-4442-46ae-bb9d-c9c70377b216, fase awaiting_secure_credential,
+deadline 20/10/2026 00:00 Fortaleza (03:00 UTC). Aguardar uma entrada protegida;
+observar somente eval-results/credential-leases/4beb08ec-4442-46ae-bb9d-c9c70377b216/status.json,
+PID/expiração. Não abrir outra supervisora nem ler entrada/ambiente/memória.
+Nenhuma inferência ou chave real usada na verificação.
+L24 permanece na conclusão proposta abaixo; L25 fechado, teto/aceite não foram
+aprovados pelo pedido de retenção. Sem novo lote até aprovação individual.
+Nenhum narrador admitido; MVP/TASK-013/CAMP-24 abertos.
+
+## Checkpoint anterior — L24 encerrado; espera no local corrigida; L25 fechado — 18/10/2026
+
+L24 batch 9933c25d-e8b9-467f-b2c2-4ef2df8f6b81/v6: quatro chamadas/três turnos,
+01 completo/intacto, parada R-03B/02 por Você aguarda no Arquivo tomado como
+alvo novo para Espero. Falso positivo, não repetição do silêncio L23. USD
+0,0033604 finais estimados, não cobrança; 11.378 tokens entrada/904 saída.
+Gate fechado/trava/artefatos mantidos. Correção restrita: adjunto no/na mais
+local canônico exato para espera explicitamente sem alvo, fronteira/offsets
+preservados. Oito regressões novas/80 focados aprovados, duas falhas antes da
+correção; atomicidade/reinício/replay sem RNG/geração extra.
+L25 separado/fechado, mesmo v6/alvo/limites. 149 testes relacionados aprovados,
+inclui diretor de cenas/preparação/integração; 17 sintéticos/zero chamadas/
+14.457 bytes/22 hashes/AST válidos. Proposta: aceitar L24 inconclusivo integral/
+um percurso completo e autorizar L25 até 17 chamadas/USD 0,15 estimados adicionais,
+Luna low/v6/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão.
+Continue/prossiga aprova ambos; até lá sem terminal/chave/inferência L25.
+Após autorização abrir lançador e aguardar chave protegida. L23 aceito;
+nenhum narrador admitido, TASK-013/CAMP-24/MVP abertos. Relatório
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l24-2026-10-18.md.
+
+## Checkpoint anterior — L23 aceito; L24/v6 autorizado — 18/10/2026
+
+Continue aceita L23 com violação real de agência/campanha integral inconclusiva,
+um percurso completo e nenhum narrador admitido. Autoriza L24/v6 até 17 chamadas
+Luna low/USD 0,15 estimados adicionais, 768 tokens/20.000 bytes/60s, sem retry/
+fallback/admissão automática. Preflight revalidado: 17 sintéticos/zero chamadas,
+máximo 14.457 bytes/22 hashes válidos, trava ausente antes do lançamento.
+Somente gates paid/live ativados; notas prospectivas do manifesto históricas.
+Próxima dependência: entrada protegida da chave no lançador externo L24.
+Após entrada observar lote único pelos artefatos, apresentar custo e fechar gate.
+Não repetir L23, não ler .env/chave/ambiente/memória do terminal. TASK-013/
+CAMP-24/MVP abertos. Não pedir novamente aceite L23 ou teto L24.
+
+## Checkpoint anterior — L23 violação real de agência; L24/v6 fechado — 18/10/2026
+
+L23 batch 831812c6-fb54-4367-9624-37de554fd759: quatro chamadas/três turnos,
+01 completo/intacto; parada R-03B/02 por Você permanece em silêncio para Espero.
+Violação REAL: espera não autoriza silêncio/imobilidade, conforme contrato
+existente. Não flexibilizar validador; runtime preservado. USD 0,0032892 finais
+estimados, não cobrança; 11.076 tokens entrada/895 saída. Gate fechado/trava/
+evidência mantidos. Seis regressões novas/72 focados aprovados: rejeição atômica,
+contraprova literal, reinício/replay sem RNG/geração extra.
+L24/v6 separado/fechado; instrução explicita distinção sem alterar critérios.
+31 focados aprovados; 17 sintéticos/zero chamadas/14.457 bytes/22 hashes/AST
+válidos. Eficácia narrativa v6 não demonstrada. Proposta: aceitar L23 com
+violação real/campanha integral inconclusiva/um percurso completo e autorizar
+L24/v6 até 17 chamadas/USD 0,15 estimados adicionais, Luna low/768 tokens/
+20.000 bytes/60s, sem retry/fallback/admissão. Continue/prossiga aprova ambos;
+até lá sem terminal/chave/chamada L24. Depois abrir lançador e aguardar chave
+protegida. L22 aceito; nenhum narrador admitido, TASK-013/CAMP-24/MVP abertos.
+Relatório evals/narrator/reports/hybrid-campaign-luna-hyp-007-l23-2026-10-18.md.
+
+## Checkpoint anterior — L22 aceito; L23 autorizado — 18/10/2026
+
+Continue aceita L22 na conclusão delimitada: campanha integral inconclusiva,
+um percurso completo, nenhum narrador admitido. Autoriza L23 até 17 chamadas
+Luna low/USD 0,15 estimados adicionais, mesmo v5/768 tokens/20.000 bytes/60s,
+sem retry/fallback/admissão automática. Preflight revalidado: 17 sintéticos,
+zero chamadas, máximo 13.952 bytes/22 hashes válidos; trava ausente antes do
+lançamento. Só gates paid/live ativados; notas prospectivas são históricas.
+Próxima dependência: entrada protegida da chave no lançador externo L23.
+Após entrada observar lote único por artefatos, apresentar custo e fechar gate.
+Não repetir L22, não ler .env/chave/ambiente/memória do terminal. TASK-013/
+CAMP-24/MVP abertos. Não pedir novamente aceite L22 ou teto L23.
+
+## Checkpoint anterior — L22 encerrado; oração ambiental corrigida; L23 fechado — 18/10/2026
+
+L22 batch e3666327-94cc-4794-b087-4029247cf98c: seis chamadas/cinco turnos,
+01 completo/intacto, parada R-06/02 por antes que a umidade avance atribuído
+ao jogador. USD 0,0052084 finais estimados, não cobrança; 18.620 tokens entrada/
+1.237 saída. Gate fechado/trava/histórico preservados. Exceção já existente
+agora aceita ausência de mais, mantendo sujeito/predicado/fronteira explícitos.
+Oito regressões novas, duas falhas antes da correção, 43 focados aprovados;
+parcialidade/atomicidade/reinício/replay sem RNG ou geração adicional.
+L23 separado/fechado, mesmo v5/alvo/limites, 33 focados aprovados; preflight
+17 sintéticos/zero chamadas/13.952 bytes/22 hashes válidos/AST válido.
+Proposta: L22 inconclusivo integral/um percurso completo e L23 até 17 chamadas/
+USD 0,15 estimados adicionais, Luna low/v5/768 tokens/20.000 bytes/60s, sem
+retry/fallback/admissão. Continue/prossiga aprova ambos; até lá sem terminal/
+chave/inferência L23. Após aprovação abrir lançador e aguardar chave protegida.
+L21 aceito; nenhum narrador admitido, TASK-013/CAMP-24/MVP abertos.
+Relatório evals/narrator/reports/hybrid-campaign-luna-hyp-007-l22-2026-10-18.md.
+
+## Checkpoint anterior — L21 aceito; L22 autorizado — 18/10/2026
+
+Prossiga aceita L21 na conclusão delimitada: campanha integral inconclusiva,
+um percurso completo, nenhum narrador admitido. L22 autorizado até 17 chamadas
+Luna low/USD 0,15 estimados adicionais, mesmo v5/768 tokens/20.000 bytes/60s,
+sem retry/fallback/admissão automática. Preflight revalidado: 17 sintéticos,
+zero chamadas, máximo 13.952 bytes/22 hashes válidos, trava ausente antes do
+lançamento. Apenas gates paid/live ativados; notas prospectivas são históricas.
+Próxima dependência: entrada protegida da chave no lançador externo L22.
+Após entrada observar lote único por artefatos, informar custo final e fechar
+gate. Não repetir L21, não ler .env/chave/ambiente/memória do terminal.
+TASK-013/CAMP-24/MVP abertos; não pedir novamente aceite L21 ou teto L22.
+
+## Checkpoint anterior — L21 encerrado; aviso corrigido; L22 fechado — 18/10/2026
+
+L21 batch afc50a96-706c-4f44-ba6b-f8fcf2a2858f: três chamadas/dois turnos,
+CAMP-EVAL-01 completo/intacto. Parada R-03/02 por falso positivo lexical:
+a ameaça agora é evidente não reconhecida como aviso. Custo final estimado
+USD 0,0022768, não cobrança; 7.934 tokens entrada/575 saída. Gate fechado/trava
+e artefatos preservados. Validação de agência aceitou; _realizes_rule rejeitou.
+Correção restrita de equivalência R-03; oito regressões novas/39 focados aprovados,
+commit/rejeição atômica/reinício/replay sem RNG/geração adicional. Não reclassificar
+live. L22 separado/fechado, mesmo v5/alvo/limites, 30 focados aprovados, preflight
+17 sintéticos/zero chamadas/13.952 bytes/22 hashes válidos, AST válido.
+Proposta: L21 inconclusivo integral/um percurso completo e L22 até 17 chamadas/
+USD 0,15 estimados adicionais, Luna low, 768 tokens/20.000 bytes/60s, sem retry/
+fallback/admissão. Continue/prossiga aprova ambos; até lá sem terminal/chave/
+inferência L22. Após autorização abrir lançador e aguardar chave protegida.
+L20 aceito; nenhum narrador admitido, TASK-013/CAMP-24/MVP abertos.
+Relatório evals/narrator/reports/hybrid-campaign-luna-hyp-007-l21-2026-10-18.md.
+
+## Checkpoint anterior — L20 aceito; L21 autorizado — 18/10/2026
+
+Prossiga aceita a conclusão delimitada L20 (campanha integral inconclusiva,
+um percurso completo, nenhum narrador admitido) e autoriza L21 até 17 chamadas
+Luna low/USD 0,15 estimados adicionais, mesmo v5/768 tokens/20.000 bytes/60s,
+sem retry/fallback/admissão automática. Preflight revalidado sem chamada ao
+provedor, 22 hashes válidos; trava L21 ainda ausente antes do lançamento.
+Gates paid/live ativados; notas prospectivas do manifesto são históricas.
+Próxima dependência: entrada protegida da chave no lançador externo L21.
+Depois observar lote único pelos artefatos, informar custo final e fechar gate.
+Não repetir L20 nem ler .env/chave/ambiente ou memória do terminal.
+TASK-013/CAMP-24/MVP continuam abertos. Não pedir novamente aceite/teto L21.
+
+## Checkpoint anterior — L20 encerrado; correção offline; L21 fechado — 18/10/2026
+
+L20 batch 685a737d-81de-414e-9a8e-c1bb0f9b4f56: três chamadas/dois turnos,
+CAMP-EVAL-01 completo/intacto. Parada R-03/02 por falso positivo: gerúndio
+aproximando-se da infiltração atribuído ao jogador. Custo final estimado
+USD 0,0023168, não cobrança; 7.960 tokens entrada/604 saída. HTTP 429 não repetido.
+Gate L20 fechado/trava/evidência preservados. Correção mínima de sujeito ambiental,
+nove regressões novas/39 focados aprovados com atomicidade/reinício/replay sem RNG.
+L21 preparado separado/fechado, mesmo v5/alvo/limites, 34 testes focados aprovados,
+CLI sintético zero chamadas/AST válido. Nenhum narrador admitido, MVP aberto.
+Proposta delimitada: aceitar L20 inconclusivo integral e autorizar L21 até
+17 chamadas/USD 0,15 estimados adicionais, 768 tokens/20.000 bytes/60s, sem
+retry/fallback/admissão. Continue/prossiga aprova ambos; até lá L21 fechado,
+sem terminal/chave/chamada. Após aprovação abrir lançador e aguardar chave
+protegida. Relatório: evals/narrator/reports/hybrid-campaign-luna-hyp-007-l20-2026-10-18.md.
+
+## Checkpoint anterior — limite externo removido; L20 preparado — 18/10/2026
+
+Humano informou que L19 atingiu limite anterior de USD 0,05 e que o removeu;
+continue autoriza continuidade delimitada, sem aumentar teto local. Causa é
+informação humana, não diagnóstico retroativo do registro HTTP 429. L19
+permanece encerrado/inconclusivo, custo indisponível, gate fechado/trava mantida.
+L20 separado: mesmo prompt v5/runtime/critérios, 17 chamadas Luna low, teto
+estimado adicional USD 0,15, 768 tokens/20.000 bytes/60s, sem retry/fallback.
+34 testes focados aprovados (um aviso preexistente); preflight 17 sintéticos/
+zero chamadas, máximo 13.952 bytes e 22 hashes válidos. Só identidade do lote
+alterada; sem mudança de produto. Gates L20 ativados após verificação.
+Próxima dependência: entrada protegida da chave no lançador externo L20.
+Não reutilizar chave/ambiente de L19, não ler .env. Após entrada, observar
+artefatos do lote único, mostrar custo e fechar gate. Nenhum narrador admitido;
+TASK-013/CAMP-24/MVP abertos. Checkpoints abaixo são históricos.
+
+## Checkpoint anterior — L19 encerrado por HTTP 429 — 18/10/2026
+
+Após entrada protegida confirmada, L19 batch b37735dc-a05a-410c-aa90-afeff8ea534c
+parou na primeira chamada: campaign_source_provider_failure/http_429, zero
+turnos concluídos, nenhuma resposta narrativa. Custo final indisponível por
+ausência de usage; não equivale a USD zero nem confirma cobrança. Gate paid/live
+fechado, trava única preservada; sem retry/fallback/L20. L18 já aceito.
+Detalhes e hashes: evals/narrator/reports/hybrid-campaign-luna-hyp-007-l19-2026-10-18.md.
+Próxima dependência humana: verificar saldo e limites da organização/projeto
+no painel OpenAI sem compartilhar credenciais nem aumentar teto automaticamente.
+O HTTP isolado não distingue rate limit, quota ou saldo. Nenhum narrador admitido;
+TASK-013/CAMP-24/MVP abertos. Prontidão do terminal abaixo é histórica.
+
+## Checkpoint anterior — L18 aceito; L19/v5 autorizado — 18/10/2026
+
+Continue aprova a proposta delimitada anterior: L18 aceito inconclusivo para
+campanha integral por falso positivo de autoria NPC, dois percursos concluídos
+sem narrador admitido. L19/v5 autorizado até 17 chamadas Luna low, teto adicional
+estimado USD 0,15, 768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Só flags paid/live L19 ativados; hashes/prompt v5 preservados.
+Notas prospectivas/hash do manifesto fechado são históricos. Não pedir
+novamente aceite L18 ou orçamento L19.
+
+Próxima dependência: chave protegida no terminal externo L19 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L18. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L19/v5 aberto via wt.exe; prontidão às 21:26:54 UTC de 18/10,
+PID 11756 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.952 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L18 encerrado; autoria NPC corrigida; L19 sem orçamento — 18/10/2026
+
+L18 batch 7bb9007d-4fa0-4d8c-807e-760a17396d08/v5, sete chamadas/seis turnos;
+CAMP-EVAL-01 e 02 completos (intacto/parcial). Parada campaign_source_policy_failed
+no R-03/03, demais percursos não alcançados. USD 0,0061390 finais estimados,
+não cobrança; 21.131 tokens entrada/1.594 saída. Gate L18 fechado/trava mantida,
+sem retry/fallback/transferir slots. L17 aceito não volta a pendente, nenhum
+narrador admitido.
+
+Falso positivo de autoria: Mara acompanha as marcas de umidade sem tocar no
+objeto. Ela ergue os olhos para você e fala em voz baixa. Social atribuído ao
+jogador. Prova anterior completa de NPC conhecido adicionada ao mask existente
+de olhar/fala; mantém owner único, ausência de jogador e conteúdo citado visível.
+Dez testes novos/85 focados agência/autoria/terminal e 35 preparação/histórico/
+exato aprovados, sobrepostos. R-03 commit warned/revisão um, ação indevida
+rollback/revisão zero, replay/reinício sem geração/entrega/RNG extra. Sem mudar
+prompt/schema/catálogo/persistência/autoridade; histórico preservado, sem
+reclassificação live. Manifesto histórico L18 rejeita runtime corrigido;
+testes isolam hashes atuais só em manifesto temporário.
+Regressão ampliada 1.061 aprovada, um aviso preexistente, 191,13s; XML
+eval-results/hyp-007-l19-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado.
+
+L19 separado, paid/live false/22 hashes, mesmo v5/alvo/limites. CLI 17 sintéticos/
+zero chamadas/13.952 bytes, AST válido; sem chave/terminal/trava L19. Correção/
+preparação USD 0 adicional. Proposta: aceitar L18 inconclusivo integral por
+falso positivo de autoria NPC, dois percursos concluídos sem narrador admitido,
+e autorizar L19 até 17 chamadas Luna low/USD 0,15 estimados adicionais/768 tokens/
+20.000 bytes/60s, sem retry/fallback. Continue/prossiga aprova proposta, depois
+terminal externo/chave protegida. Não repetir L18/transferir slots/prometer
+última tentativa. Fragilidade lexical/UX/fidelidade pendentes; TASK-013/CAMP-24/
+MVP abertos. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l18-2026-10-18.md.
+
+## Checkpoint anterior — L17 aceito; L18/v5 autorizado — 18/10/2026
+
+Prossiga aprova a proposta delimitada anterior: L17 aceito inconclusivo para
+campanha integral por falso positivo de movimento clítico do registro; q
+terminal correto observado em R-06, nenhum narrador admitido. L18/v5 autorizado
+até 17 chamadas Luna low, teto adicional estimado USD 0,15, 768 tokens/20.000
+bytes/60s, sem retry/fallback/admissão automática. Só flags paid/live L18
+ativados, hashes/prompt v5 preservados. Notas prospectivas/hash do manifesto
+fechado são históricos. Não pedir novamente aceite L17 ou orçamento L18.
+
+Próxima dependência: chave protegida no terminal externo L18 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L17. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L18/v5 aberto via wt.exe; prontidão às 21:06:36 UTC de 18/10,
+PID 12748 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.952 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L17 encerrado; retirada clítica corrigida; L18 sem orçamento — 18/10/2026
+
+L17 batch 062b4f49-873d-4ffa-9f7e-4a0f2cef6dac/v5, seis chamadas/cinco turnos,
+CAMP-EVAL-01 completo; parada campaign_source_policy_failed no R-06/02,
+03–08 não alcançados. USD 0,0051470 finais estimados, não cobrança; 18.607
+tokens entrada/1.188 saída. Gate L17 fechado/trava mantida, sem retry/fallback/
+transferir slots. L16 aceito não volta a pendente; nenhum narrador admitido.
+
+R-06 retornou q vazio e encerramento parcial: violação L16 não se repetiu
+nesse caso, sem provar eficácia geral v5. Recusa por falso positivo move/withdraw
+em afastando-o da infiltração, referindo ao registro retirado, não ao jogador.
+Corrigido só quadro clítico -o da infiltração com antecedente retira o registro
+na mesma oração antes da vírgula/fronteira final. Não cobrir reflexivo/jogador/
+outro antecedente/fronteira de sentença; manter ações posteriores e cânone.
+Nove novos testes, 82 focados de políticas/terminal e 48 preparação/histórico/
+exato aprovados (sobrepostos). R-06 confirma partial/dry_surface/revisão quatro,
+avanço indevido rollback wet/revisão três; reinício/replay sem geração/entrega/
+RNG extra. Sem mudar prompt/schema/catálogo/persistência/autoridade. Histórico
+preservado. Testes L16/L17 isolam manifesto temporário e provam drift do runtime
+novo sem rebasear originais; validade histórica L16 anterior não é reescrita.
+Regressão ampliada 1.038 aprovada, um aviso preexistente, 184,30s; XML
+eval-results/hyp-007-l18-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado.
+
+L18 separado, paid/live false/22 hashes, mesmo v5/alvo/corpus/limites. CLI 17
+sintéticos/zero chamadas/13.952 bytes, AST válido; sem chave/terminal/trava L18.
+Correção/preparação USD 0 adicional. Proposta: aceitar L17 inconclusivo integral
+por falso positivo de movimento clítico do registro, q terminal correto observado
+em R-06 sem narrador admitido, e autorizar L18 até 17 chamadas Luna low/USD 0,15
+estimados adicionais/768 tokens/20.000 bytes/60s, sem retry/fallback. Continue/
+prossiga aprova proposta, depois terminal externo/chave protegida. Não repetir
+L17/transferir slots/prometer última tentativa. Fragilidade lexical/UX/fidelidade
+pendentes, TASK-013/CAMP-24/MVP abertos. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l17-2026-10-18.md.
+
+## Checkpoint anterior — L16 aceito; hipótese v5/L17 autorizada — 18/10/2026
+
+Continue aprova a proposta delimitada anterior: L16 aceito como violação real
+de fechamento terminal; Luna não admitido no perfil v4. L17/v5 autorizado até
+17 chamadas Luna low, teto adicional estimado USD 0,15, 768 tokens/20.000 bytes/
+60s, sem retry/fallback/admissão automática. Prompt v5 prioriza condição de q
+terminal e não muda critérios. Somente flags paid/live L17 ativados; hashes
+preservados. Notas prospectivas e hash do manifesto fechado são históricos.
+Não pedir novamente aceite L16 ou orçamento L17. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L17 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L16. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L17/v5 aberto via wt.exe; prontidão às 20:48:29 UTC de 18/10,
+PID 18136 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.952 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L16 violou fechamento; v5/L17 preparado sem orçamento — 18/10/2026
+
+L16 batch b6fa997d-1241-4363-8d52-1aded62e4a42 fez seis chamadas/cinco turnos,
+CAMP-EVAL-01 completo; parada campaign_source_policy_failed no R-06/02,
+03–08 não alcançados. USD 0,0052150 finais estimados, não cobrança; 18.353
+tokens entrada/1.287 saída. Gate L16 fechado, trava mantida, sem retry/fallback/
+transferir slots. L15 aceito não volta a pendente; nenhum narrador admitido.
+
+VIOLAÇÃO REAL, não falso positivo: q "Como você examina o conteúdo legível do
+registro preservado?" não vazio num state_after.outcome partial. Prompt v4
+e contrato já exigem q vazio. Erro campaign_source_effect_mismatch reproduzido.
+Cinco testes novos provam pergunta recusada/rollback revisão três wet/sem
+entrega. Contrafactual exclusivamente offline q vazio confirma partial/revisão
+quatro/replay sem geração/entrega/RNG extra. Não editar/reclassificar live.
+Sem alteração de validador/runtime/schema/catálogo/persistência/autoridade.
+
+Hipótese L17 não repete v4: prompt v5 reordena só instrução q, priorizando
+causal_packet.state_after.outcome; partial explicitamente terminal, só null
+autoriza pergunta. Critérios não mudam; hipótese ainda sem inferência real.
+Hash v4 preservado. L17 preparado separado, paid/live false/22 hashes,
+mesmo alvo low/corpus/17 chamadas/768 tokens/20.000 bytes/60s. CLI 17 sintéticos/
+zero chamadas, máximo 13.952 bytes e AST válido; sem chave/terminal/trava L17.
+Custo adicional offline USD 0. Manifesto L16 continua válido/fechado (sem drift
+de runtime); teste prospectivo verifica isso e delta limitado de prompt.
+57 focados aprovados/um aviso preexistente/34,66s, XML
+eval-results/hyp-007-l17-focused-2026-10-18.xml, zero errors/failures. Sem nova
+suíte ampliada por não mudar runtime; 997 são históricos, não execução atual.
+Não é suíte integral/release verde; diff inspecionado, sem commit/push.
+
+Proposta: aceitar L16 como violação real de fechamento terminal, Luna não
+admitido no perfil v4, e autorizar L17/v5 até 17 chamadas/USD 0,15 estimados
+adicionais, sem retry/fallback/admissão automática. Continue/prossiga aprova
+ambos; depois terminal externo e chave protegida. Não repetir L16/transferir
+slots/prometer última tentativa. TASK-013/CAMP-24/MVP abertos. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l16-2026-10-18.md.
+
+## Checkpoint anterior — L15 aceito; L16 autorizado — 18/10/2026
+
+Prossiga aprova a proposta delimitada anterior: L15 aceito inconclusivo para
+campanha integral por falso positivo de escolha futura, nenhum narrador
+admitido. L16 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L16 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L15 ou orçamento L16. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L16 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L15. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L16 aberto via wt.exe; prontidão às 20:39:49 UTC de 18/10,
+PID 11204 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L15 encerrado; escolha futura corrigida; L16 sem orçamento — 18/10/2026
+
+L15 batch 0edbff66-af8c-4b64-b60e-1ea1dd71acd5 já terminal ao usuário pedir
+prossiga: três chamadas/dois turnos, CAMP-EVAL-01 completo; parada R-03/02
+campaign_source_policy_failed. USD 0,0022494 finais estimados, não cobrança;
+7.695 tokens entrada/592 saída. Gate L15 fechado, trava mantida, sem retry/
+fallback/transferência de slots. Ready é histórico. L14 aceito não volta a
+pendente. Nenhum narrador admitido; não abrir outro lançador L15.
+
+Falso positivo: ao que você decidir fazer tratado como choice já executada.
+Corrigido quadro delimitado ao que + jogador conhecido + decidir fazer com
+fronteira na política existente de decisões pendentes, mascarando só decidir.
+Texto/offsets/ações posteriores preservados. Oito novos testes; 68 focados de
+políticas e 33 preparação/histórico/exato aprovados, sobrepostos. R-03 commit
+warned/revisão um/sem desfecho, ações indevidas rollback, replay/reinício sem
+nova geração/entrega/RNG. Sem mudar prompt/schema/catálogo/persistência/autoridade.
+Originais/manifesto executado L15 preservados, sem reclassificação live.
+Regressão ampliada 997 aprovada, um aviso preexistente, 156,15s; XML
+eval-results/hyp-007-l16-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado. Continue durante testes deu
+sequência ao trabalho em andamento, não aprovou orçamento ainda não apresentado.
+
+L16 separado, paid/live false, 22 hashes, mesmo prompt v4/alvo/corpus/limites.
+CLI 17 sintéticos/zero chamadas/13.614 bytes, AST válido; sem chave/terminal/
+trava L16. Correção/preparação USD 0 adicional. Proposta: aceitar L15 inconclusivo
+integral por falso positivo de escolha futura, nenhum narrador admitido, e
+autorizar L16 até 17 chamadas Luna low/USD 0,15 estimados adicionais/768 tokens/
+20.000 bytes/60s, sem retry/fallback. Continue/prossiga aprova proposta, depois
+terminal externo e chave protegida. Prossiga anterior não aceita resultado ainda
+não apresentado. Não repetir L15/transferir slots/promover última tentativa.
+Fragilidade lexical registrada sem refatoração geral; UX/fidelidade pendentes.
+TASK-013/CAMP-24/MVP abertos. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l15-2026-10-18.md.
+
+## Checkpoint anterior — L14 aceito; L15 autorizado — 18/10/2026
+
+Continue aprova a proposta delimitada anterior: L14 aceito inconclusivo para
+campanha integral por lacuna lexical de resgate parcial, nenhum narrador
+admitido. L15 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L15 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L14 ou orçamento L15. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L15 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L14. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L15 aberto via wt.exe; prontidão às 18:37:22 UTC de 18/10,
+PID 6752 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L14 encerrado; realização parcial corrigida; L15 sem orçamento — 18/10/2026
+
+L14 batch 47ea5162-cd94-4c14-a0e7-2327082164a5, seis chamadas/cinco turnos,
+CAMP-EVAL-01 completo; parada campaign_source_policy_failed no R-06/02.
+03–08 não alcançados. USD 0,0051728 finais estimados, não cobrança; 18.448
+tokens entrada/1.236 saída. Gate L14 fechado, trava mantida, sem retry/fallback/
+transferência de slots. L13 aceito não volta a pendente; narrador não admitido.
+
+Agência geral passou; R-06 não reconhecia o que ainda permanece legível é salvo
+como realização parcial por exigir parcial/parte/trecho. Acrescentada somente
+essa frase normalizada ao grupo R-06 em api/campaign_source_profile.py, mantendo
+demais obrigações. Contraprova revelou continua perdido não coberto; acrescentado
+continua ao guard existente de estado contraditório preserved/partial. Sem
+afrouxar teste, sem mudar prompt/schema/catálogo/persistência/RNG/autoridade.
+Seis novos testes, 33 focados perfil/integração/trajetórias e 31 preparação/
+histórico/exato aprovados (sobrepostos). R-06 commit partial/dry_surface;
+ação indevida rollback wet/revisão três, replay/reinício sem geração/entrega/RNG
+extra. Originais/manifesto executado L14 preservados; sem reclassificação live.
+Regressão ampliada 976 aprovada, um aviso preexistente, 146,77s; XML
+eval-results/hyp-007-l15-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado.
+
+L15 preparado separado, paid/live false, 22 hashes, mesmo prompt v4/alvo/limites.
+CLI 17 sintéticos/zero chamadas/13.614 bytes, AST válido; sem chave/terminal/
+trava L15. Correção/preparação adicional USD 0. Proposta: aceitar L14 inconclusivo
+integral por lacuna lexical R-06, nenhum narrador admitido, e autorizar L15 até
+17 chamadas Luna low/USD 0,15 estimados adicionais/768 tokens/20.000 bytes/60s,
+sem retry/fallback. Continue/prossiga aprova proposta; depois terminal externo
+e chave protegida. Não repetir L14, transferir slots ou prometer última tentativa.
+Fragilidade lexical registrada, sem refatoração geral; UX/fidelidade semântica
+pendentes. TASK-013/CAMP-24/MVP abertos. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l14-2026-10-18.md.
+
+## Checkpoint anterior — L13 aceito; L14 autorizado — 18/10/2026
+
+Prossiga aprova a proposta delimitada anterior: L13 aceito inconclusivo para
+campanha integral por falso positivo de atribuição atmosférica, nenhum narrador
+admitido. L14 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L14 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L13 ou orçamento L14. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L14 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L13. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L14 aberto via wt.exe; prontidão às 18:15:33 UTC de 18/10,
+PID 18292 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L13 encerrado; atribuição atmosférica corrigida; L14 sem orçamento — 18/10/2026
+
+L13 batch a41446fe-c0ba-46b7-982f-357eee247315, três chamadas/dois turnos,
+CAMP-EVAL-01 completo; parada campaign_source_policy_failed no R-03/02.
+Custo final estimado USD 0,0022426, não cobrança; 7.697 tokens entrada/586 saída.
+Gate L13 fechado, trava preservada, sem retry/fallback/transferência de slots.
+L12 aceito não volta a pendente; nenhum narrador admitido.
+
+Falso positivo em o Arquivo parece se fechar ao redor da bancada baixa,
+interpretado como interact/close do jogador. Corrigido só esse quadro explícito
+em _action_signature_matches, preservando offsets/texto/ações seguintes.
+Oito novos testes; 60 focados de políticas e 33 preparação/histórico/exato
+aprovados, sobrepostos. Exato confirma R-03/warned sem desfecho; fechamento
+indevido posterior recusa atomicamente; reinício/replay sem nova geração/
+entrega/RNG. Sem mudar prompt/schema/catálogo/persistência/autoridade.
+Registros e manifesto executado L13 preservados; sem reclassificação live.
+Regressão ampliada 957 aprovada, um aviso preexistente, 128,53s; XML
+eval-results/hyp-007-l14-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado.
+
+L14 preparado separado, paid/live false, 22 hashes, mesmo prompt v4/alvo/limites.
+CLI 17 sintéticos/zero chamadas, máximo 13.614 bytes, AST válido; sem chave,
+terminal ou trava L14. Correção/preparação adicional USD 0. Proposta: aceitar
+L13 inconclusivo integral por falso positivo de atribuição atmosférica, nenhum
+narrador admitido, e autorizar L14 até 17 chamadas Luna low/USD 0,15 estimados
+adicionais, 768 tokens/20.000 bytes/60s, sem retry/fallback. Continue/prossiga
+aprova proposta; depois terminal externo e chave protegida. Não repetir L13,
+transferir slots ou prometer última tentativa. Fragilidade lexical registrada
+sem refatoração geral; narrativa/UX e fidelidade semântica continuam pendentes.
+TASK-013/CAMP-24/MVP abertos, ressalvas L9/alias mantidas. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l13-2026-10-18.md.
+
+## Checkpoint anterior — L12 aceito; L13 autorizado — 18/10/2026
+
+Prossiga aprova a proposta delimitada anterior: L12 aceito inconclusivo para
+campanha integral por falso positivo de estado do registro, nenhum narrador
+admitido. L13 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L13 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L12 ou orçamento L13. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L13 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L12. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L13 aberto via wt.exe; prontidão às 18:07:53 UTC de 18/10,
+PID 20180 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L12 encerrado; exposição do registro corrigida; L13 sem orçamento — 18/10/2026
+
+L12 batch 33f9877d-1e86-4c0e-a757-0a3bf2ae6973, uma chamada/zero turnos,
+parada campaign_source_policy_failed no primeiro R-01/01. USD 0,0007374 finais
+estimados, não cobrança; 2.367 tokens entrada/220 saída. Geração 4.664 ms,
+turno 4.775 ms; amostra única não SLA. Gate L12 fechado, trava mantida, sem
+retry/fallback/transferência de slots. L11 aceito não volta a pendente.
+
+Falso positivo: em evitando que o registro permaneça exposto ao risco atual,
+remain foi atribuído ao jogador. Corrigido apenas quadro explícito de objeto
+em _action_signature_matches, mantendo offsets/texto/ações seguintes. Oito
+testes novos; 52 focados de políticas e 33 preparação/histórico/exato aprovados
+(sobrepostos). R-01 seguro confirma uma vez/threatened sem desfecho; espera
+indevida posterior recusa atomicamente; reinício/replay sem nova geração/entrega/
+RNG. Sem mudar prompt/schema/catálogo/persistência/autoridade. Histórico preservado.
+Regressão ampliada 936 aprovada, um aviso preexistente, 123,01s; XML
+eval-results/hyp-007-l13-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push; checkout original preservado.
+
+L13 preparado separado, paid/live false, 22 hashes, mesmo prompt v4/alvo/limites.
+Preflight 17 sintéticos/zero chamadas/13.614 bytes, AST válido; sem terminal,
+chave ou trava L13. Correção/preparação USD 0 adicional. Fragilidade operacional
+do scanner lexical para variação de prosa registrada, sem refatoração geral ou
+mudança arquitetural por arrasto. Fidelidade semântica/UX ainda não aprovadas.
+Proposta: aceitar L12 inconclusivo integral por falso positivo de estado do
+registro, nenhum narrador admitido, e autorizar L13 até 17 chamadas Luna low,
+USD 0,15 estimados adicionais/768 tokens/20.000 bytes/60s, sem retry/fallback.
+Continue/prossiga aprova proposta; depois terminal externo e chave protegida.
+Não repetir L12, transferir slots ou prometer última tentativa. TASK-013/CAMP-24/
+MVP abertos; ressalvas L9/alias mantidas. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l12-2026-10-18.md.
+
+## Checkpoint anterior — L11 aceito; L12 autorizado — 18/10/2026
+
+Continue aprova a proposta delimitada anterior: L11 aceito inconclusivo para
+campanha integral por falso positivo de atribuição ambiental, nenhum narrador
+admitido. L12 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L12 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L11 ou orçamento L12. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L12 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L11. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L12 aberto via wt.exe; prontidão às 17:07:56 UTC de 18/10,
+PID 11324 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L11 encerrado; avanço ambiental corrigido; L12 sem orçamento — 18/10/2026
+
+L11 batch 1b1382a6-1ed6-4ae9-840d-c01f394a0077: seis chamadas/cinco turnos,
+CAMP-EVAL-01 completo; parada R-06/CAMP-EVAL-02 em campaign_source_policy_failed.
+03–08 não alcançados. Custo final estimado USD 0,0052376, não cobrança;
+18.346 tokens entrada/1.307 saída. Geração 3.289–4.941 ms, turno 3.595–5.257 ms;
+amostra sintética, não SLA. Gate L11 fechado, trava mantida, sem retry/fallback
+ou reutilização de slots. L10 aceito não volta a pendente; narrador não admitido.
+
+Falso positivo reproduzido: "antes que a umidade avance mais" atribuído ao
+jogador em vez de umidade. Corrigido somente quadro temporal delimitado na
+família advance, mantendo texto/offsets/ações posteriores. Oito testes novos,
+44 focados de políticas e 33 preparação/histórico/exato aprovados (sobrepostos).
+Resposta exata passa offline; movimento/decisão/abertura indevidos continuam
+bloqueados. Integração R-06 commit parcial/rollback/replay/reinício sem nova
+geração/entrega/RNG. Sem mudança de prompt/schema/catálogo/persistência/autoridade.
+Registros e manifesto histórico L11 preservados, sem reclassificação live.
+Regressão ampliada: 915 aprovados, um aviso preexistente, 110,91s; XML
+eval-results/hyp-007-l12-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace,
+sem commit/push, checkout original preservado.
+
+L12 separado, paid/live false, 22 hashes, mesmo prompt v4/alvo/corpus/limites.
+CLI 17 sintéticos/zero chamadas, máximo 13.614 bytes e AST válido; sem chave,
+terminal ou trava L12. Correção/preparação USD 0 adicional. Proposta: aceitar
+L11 inconclusivo integral por falso positivo de atribuição ambiental, nenhum
+narrador admitido, e autorizar L12 até 17 chamadas Luna low/USD 0,15 estimados
+adicionais, 768 tokens/20.000 bytes/60s, sem retry/fallback. Continue/prossiga
+aprova proposta; depois terminal externo e chave protegida. Não repetir L11 ou
+transferir slots, não prometer última tentativa. TASK-013/CAMP-24/MVP abertos.
+Ressalvas narrativas L9 e pronomes/alias mantidas. Relatório:
+evals/narrator/reports/hybrid-campaign-luna-hyp-007-l11-2026-10-18.md.
+
+## Checkpoint anterior — L10 aceito; L11 autorizado — 18/10/2026
+
+Continue aprova a proposta delimitada anterior: L10 aceito inconclusivo para
+campanha integral por falso positivo de decisão pendente, nenhum narrador
+admitido. L11 autorizado até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, prompt v4/768 tokens/20.000 bytes/60s, sem retry/fallback/admissão
+automática. Somente flags paid/live L11 ativados; hashes preservados. Notas
+prospectivas e hash do manifesto fechado de preparação são históricos.
+Não pedir novamente aceite L10 ou orçamento L11. Narrativa/UX não admitidas.
+
+Próxima dependência: chave protegida no terminal externo L11 após preflight
+e prontidão. Depois observar lote único por artefatos, apresentar custo final
+e fechar gate. Não ler .env, chave, ambiente/memória de terminal, não repetir
+L10. TASK-013/CAMP-24/MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L11 aberto via wt.exe; prontidão às 16:24:35 UTC de 18/10,
+PID 16280 ativo, fase awaiting_secure_credential, zero chamadas antes da entrada.
+Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes, 22 hashes válidos.
+Não abrir outro lançador. Aguardar entrada protegida e observar o mesmo lote
+por artefatos, sem inspecionar ambiente/memória/entrada do terminal.
+
+## Checkpoint anterior — L10 encerrado; decisão pendente corrigida; L11 sem orçamento — 18/10/2026
+
+L10 batch 965327f4-db29-4668-afe5-0d535c2c8099 fez uma chamada/zero turnos,
+parou em campaign_source_policy_failed no primeiro R-01/CAMP-EVAL-01.
+Custo final estimado USD 0,0007104, não cobrança; 2.400 tokens entrada/192 saída.
+Geração 3.740 ms, turno 3.861 ms; amostra única não SLA. Gate L10 fechado,
+trava preservada, sem retry/fallback/reutilização de slots. L9 aceito não volta
+a pendente; nenhum narrador admitido e oito percursos não completados.
+
+Falso positivo reproduzido em "até que você decida como proceder": choice
+indevidamente executado. Corrigido apenas esse quadro de decisão pendente em
+_validate_declared_player_actions, com jogador conhecido e fronteira final;
+mascara só decida e mantém ações posteriores. Resposta exata passa offline;
+decisão/ação real posterior continua recusada atomicamente. Dez testes novos
+com R-01, aliases, rollback e replay/reinício sem nova geração/entrega/RNG.
+58 focados de políticas e 35 preparação/histórico aprovados (sobrepostos).
+Regressão ampliada: 894 aprovados, um aviso preexistente, 95,97s; XML
+eval-results/hyp-007-l11-readiness-2026-10-18.xml, zero errors/failures.
+Não é suíte integral/frontend/release verde. Diff inspecionado sem whitespace.
+Sem mudança de prompt/schema, RNG, persistência, catálogo ou autoridade.
+Registros e manifesto histórico L10 preservados; sem reclassificação live.
+
+L11 preparado separadamente, paid/live false, 22 hashes, mesmo prompt v4,
+modelo low/corpus/limites. CLI 17 sintéticos/zero chamadas, 13.614 bytes, AST
+válido. Nenhum terminal/chave/trava L11. Correção/preparação USD 0 adicional.
+Proposta: aceitar L10 inconclusivo integral por falso positivo de decisão
+pendente, nenhum narrador admitido, e autorizar L11 até 17 chamadas Luna low,
+USD 0,15 estimados adicionais/768 tokens/20.000 bytes/60s, sem retry/fallback.
+Continue/prossiga aprova proposta; depois abrir terminal externo identificado
+e pedir chave protegida. Não repetir L10/transferir slots nem prometer última
+tentativa. TASK-013/CAMP-24/MVP abertos. Ressalvas narrativas L9 e alias mantidas.
+Relatório: evals/narrator/reports/hybrid-campaign-luna-hyp-007-l10-2026-10-18.md.
+
+## Checkpoint anterior — L9 aceito; L10 autorizado — 18/10/2026
+
+O usuário respondeu "Continue" à proposta delimitada anterior: aceita L9
+inconclusivo para campanha integral por falso positivo nominal, nenhum narrador
+admitido, e autoriza L10 até 17 chamadas Luna low, teto adicional estimado
+USD 0,15, mesmo prompt v4, 768 tokens/20.000 bytes/60s, sem retry/fallback ou
+admissão automática. Somente flags paid/live ativados; hashes preservados.
+Notas prospectivas e hash de preparação fechada do manifesto são históricos.
+Não pedir novamente aceite L9 ou orçamento L10. Narrativa/UX não admitidas.
+
+Próxima dependência: entrada protegida da chave no terminal externo L10,
+após preflight e prontidão confirmados. Depois observar lote único, apresentar
+custo final e fechar gate. Não ler .env, credencial ou ambiente/memória do
+terminal, não repetir L9. TASK-013/CAMP-24 e MVP continuam abertos.
+
+Lançador externo L10 aberto via wt.exe; marcador de prontidão às 16:03:07 UTC
+de 18/10, PID 14080, fase awaiting_secure_credential, zero chamadas antes da
+entrada. Preflight revalidado: 17 sintéticos/zero chamadas, 13.614 bytes e
+22 hashes válidos. Não abrir outro lançador. Aguardar chave protegida e observar
+o mesmo lote por artefatos, sem inspecionar ambiente/memória do terminal.
+
+## Checkpoint anterior — L9 encerrado; nominal corrigido; L10 sem orçamento — 18/10/2026
+
+L9 batch 6c5cbe84-00a9-4aff-b242-5a6ede0af505: 12 chamadas, 11 turnos completos,
+cinco percursos 01–05 concluídos; R-07/CAMP-EVAL-06 rejeitado, 07/08 não
+alcançados. Parada campaign_source_policy_failed. Custo final estimado
+USD 0,0097762, não cobrança; 34.709 tokens entrada/2.362 saída. Geração
+2.231–4.403 ms, turno 2.364–4.605 ms; observações, não SLA. Gate L9 fechado,
+trava mantida, sem retry/fallback ou reutilização de slots. L8 aceito não
+volta a ficar pendente. Nenhum narrador admitido.
+
+Falso positivo reproduzido: substantivo partes em "entre as partes preservadas"
+lido como move/depart. Correção restrita na família depart com contexto nominal
+exato, sem mudança de prompt v4, RNG, persistência/catálogo/autoridade. Resposta
+exata passa offline; partida posterior continua bloqueada atomicamente.
+Oito testes novos, 33 focados conjuntos aprovados; replay/reinício sem nova
+geração/entrega/RNG. Artefatos live e manifesto histórico L9 preservados.
+Regressão ampliada 871 aprovada, um aviso preexistente, 91,61s; XML
+eval-results/hyp-007-l10-readiness-2026-10-18.xml, zero errors/failures.
+Contagens sobrepostas; não é suíte integral/frontend/release verde.
+Não confundir admissão offline com fidelidade semântica: R-01 "Não o mova por
+enquanto" e R-07 "parcialmente restaurado"/"pista relevante" merecem avaliação
+humana de narrativa. Sem novo fato canônico ou aprovação automática.
+
+L10 preparado, paid/live false, 22 hashes, mesmo prompt v4/alvo/corpus/limites.
+CLI 17 sintéticos/zero chamadas e corpo máximo 13.614 bytes, AST válido.
+Nenhum terminal/chave/trava live L10. Custo adicional da correção/preparação USD 0.
+Proposta: aceitar L9 inconclusivo integral por falso positivo nominal, nenhum
+narrador admitido, e autorizar L10 até 17 chamadas Luna low e USD 0,15 estimados
+adicionais, 768 tokens/20.000 bytes/60s, sem retry/fallback. Continue/prossiga
+aprova a proposta; depois abrir terminal externo e pedir chave protegida.
+Não repetir L9 nem transferir saldo. TASK-013/CAMP-24/MVP seguem abertos.
+Relatório: evals/narrator/reports/hybrid-campaign-luna-hyp-007-l9-2026-10-18.md.
+
+## Checkpoint anterior — L8 aceito; L9 autorizado — 18/10/2026
+
+O usuário respondeu "continue" à proposta delimitada: aceita L8 inconclusivo
+para a experiência integral por falso positivo local de condicional, nenhum
+narrador admitido, e autoriza L9 até 17 chamadas Luna low, teto adicional
+estimado USD 0,15, prompt v4/768 tokens/20.000 bytes, sem retry/fallback ou
+admissão automática. Flags paid/live L9 ativados; hashes e demais parâmetros
+preservados. A nota prospectiva no manifesto e o hash da preparação fechada
+são históricos. Não pedir novamente aceite L8 ou orçamento L9.
+
+Próximo passo: preflight sem chave, terminal externo identificado, confirmação
+de prontidão e entrada protegida pelo usuário. Não ler credencial, ambiente ou
+memória do terminal. Depois observar lote único, custo final e fechar gate.
+TASK-013/CAMP-24 e MVP continuam abertos; nenhum narrador admitido.
+
+Lançador externo L9 aberto via wt.exe; marcador de prontidão às 15:52:44 UTC
+de 18/10, PID 5388, fase awaiting_secure_credential, zero chamadas antes da
+entrada. Preflight: 17 turnos sintéticos, máximo 13.614 bytes, USD 0. Não abrir
+outro lançador. Aguardar chave protegida e observar o mesmo lote por artefatos,
+sem inspecionar ambiente, memória ou entrada do terminal.
+
+## Checkpoint anterior — L8 encerrado; condicional corrigida; L9 sem orçamento — 18/10/2026
+
+L8 executou uma chamada real, zero turnos completos, batch
+`d3ff90c3-c6aa-406a-a0e6-8d029363d6a5`. Parada `campaign_source_policy_failed`
+no primeiro R-01/CAMP-EVAL-01. Custo final estimado USD 0,0007162, não cobrança
+confirmada; 2.375 tokens de entrada e 201 de saída, uma chamada com usage.
+Geração local 4.519 ms, turno 4.638 ms; observação única, não SLA. Gate paid/live
+L8 fechado, trava mantida, sem retry/fallback. Não reutilizar 16 slots restantes.
+Marcador ready é histórico, não status atual. L7/L6/L5 aceitos não ficam pendentes
+novamente; nenhum narrador/default admitido e os oito percursos não completados.
+
+Falso positivo reproduzido na hipótese "Se você precisar movê-lo, ...". O scan
+lia `move` (infinitivo com clítico normalizado) como `interact/move_object`
+executado pelo jogador. Correção local no tratamento já existente de hipóteses:
+mascarar somente esse verbo na condicional delimitada se/caso + jogador +
+precisar + movê-lo/la/los/las + vírgula, preservando offsets e ações seguintes.
+Resposta L8 exata passa offline sem reescrita. Movimentos afirmativos, comandos,
+promessas e ações posteriores não declaradas continuam bloqueados; sem alteração
+de RNG/persistência/catálogo/schema/prompt v4. Não reclassificar o turno live.
+
+Verificação: cinco positivos falharam antes; 18 testes novos de condicional e
+integração, checagem focada conjunta de 43 e seleção ampliada final de 850
+aprovados (sobrepostos), um aviso preexistente. Commit R-01, reinício e replay
+sem nova geração/RNG; movimento indevido deixa revisão/fonte/entrega intactas.
+Limitação separada conservada: alias nomeado do jogador numa fala pode tornar
+um "Ela" posterior ambíguo para o gate de pronome; com Mara explícita passa.
+Teste desse bloqueio mantido, sem ampliar correferência por arrasto.
+
+L9 preparado separadamente, mesmo prompt v4, alvo/corpus/limites, 22 hashes,
+paid/live false. Preflight CLI 17 turnos sintéticos/zero chamadas reais, corpo
+máximo 13.614 bytes; AST PowerShell válido. Sem launcher, chave ou trava live L9.
+Custo da correção/preparação adicional: USD 0. Alterações locais sem commit/push.
+Não é suíte integral verde. Manifesto e records L8 preservados; testes L8 usam
+manifesto temporário isolado e provam recusa do runtime novo pelo histórico.
+
+Conclusão delimitada proposta: L8 inconclusivo para campanha integral por falso
+positivo de ação em condicional, nenhum narrador admitido. Próxima proposta:
+aceitar a conclusão e autorizar L9 até 17 chamadas Luna low, teto estimado
+adicional USD 0,15, 768 tokens/20.000 bytes, sem retry/fallback. Continue/prossiga
+aprova a proposta delimitada; não exigir frase ritual. Até lá, L9 fechado.
+Não prometer que L9 será a última tentativa; permanece a ressalva da fila dada
+antes de L8. Depois: revalidar, abrir Windows Terminal identificado, confirmar
+prontidão, entrada protegida e lote único/custo/gates/fechamento live. Não ler
+`.env*`, saves, chaves ou ambiente/memória de terminal; não repetir L8.
+
+Evidência: `evals/narrator/reports/hybrid-campaign-luna-hyp-007-l8-2026-10-18.md`.
+TASK-022/023 fecham correção/preparação; TASK-013/CAMP-24 e MVP abertos.
+Configuração recomendada para autorização/operação delimitada: Sol low.
+
+## Checkpoint anterior — L7 aceito; L8 autorizado — 18/10/2026
+
+O usuário respondeu "Prossiga, mas antes de começar, me informe quantas e quais
+são as baterias de testes restantes". Conforme convenção explícita, L7 aceito
+na conclusão delimitada inconclusiva por falso positivo de q, nenhum narrador
+admitido; L8 autorizado nos limites já propostos. Antes de ativar/executar,
+informou-se a fila e conferiu-se o protocolo: uma bateria paga preparada nesta
+frente (L8, oito percursos/17 chamadas); depois, se aprovada tecnicamente,
+avaliação humana de narrativa/UX e ensaio correspondente ainda a delimitar.
+Não há L9 aprovado, número garantido de tentativas futuras ou total fechado
+das baterias do restante do MVP. Nove contraprovas e regressões offline já
+exercitadas não são nove novos lotes pagos. Bandeja/UI/ficha/aceitação integral
+continuam na sequência, sem abrir essas frentes agora.
+
+L8: até 17 chamadas `gpt-5.6-luna`/`low`, USD 0,15 estimados adicionais,
+768 tokens/20.000 bytes, sem retry/fallback/admissão automática. Somente os
+flags paid/live L8 ativados; prompt v4, 22 hashes e limites preservados.
+Notas do manifesto e SHA da preparação com flags false são históricos;
+este checkpoint registra a autorização posterior. L7 fechado e sem repetição.
+
+Próxima dependência: revalidar preflight, abrir Windows Terminal identificado
+L8, confirmar novo marcador/processo e pedir entrada protegida. Não abrir dois
+lançadores, ler `.env*`/saves/chaves ou consultar ambiente/memória de terminal.
+Depois da entrada: observar lote único, apresentar custo/gates/resultado e
+fechar live. Não pedir novamente orçamento ou aceite L7. Nenhum narrador
+admitido; TASK-013/CAMP-24 e MVP continuam abertos.
+
+Lançador L8 aberto via `wt.exe`, janela confirmada `HYP-007-L8 - chave segura`.
+Novo marcador às 15:35:46 UTC de 18/10, PID 19660, fase
+`awaiting_secure_credential`, zero chamadas antes da entrada. Processo ativo,
+sem trava live L8 na última checagem. Preflight revalidado: 17 turnos sintéticos,
+corpo máximo 13.614 bytes, 22 hashes válidos. Não abrir outro lançador; aguardar
+entrada protegida e observar o mesmo lote, sem consultar ambiente/credencial.
+
+## Checkpoint anterior — resultado L7 e prontidão L8 — 18/10/2026
+
+Ao retomar após indisponibilidade da revisão automática, observou-se que o
+lançador L7 já tinha produzido resultado terminal. Não foi aberto outro lote.
+Batch `7d690675-b176-4ad6-bf91-0f7e77102ddc`: três chamadas, dois turnos completos,
+CAMP-EVAL-01 ajuda/resgate concluído; parada de política no primeiro R-03 de
+CAMP-EVAL-02. Custo final estimado USD 0,0022832, não cobrança confirmada;
+7.696 tokens de entrada e 620 de saída, três chamadas com usage. Sem retry ou
+fallback. Gate paid/live L7 fechado, trava mantida; não reutilizar 14 slots.
+O marcador ready e seu zero de chamadas são históricos pré-entrada, não status
+atual. L6/L5 aceitos permanecem encerrados; nenhum narrador/default admitido.
+
+Falso positivo reproduzido: "Qual é a sua próxima ação diante do risco imediato?"
+é recusada como `scene_player_prompt_not_actionable`, mas remover apenas o
+artigo ("Qual é sua...") passa. Pergunta tem 10 palavras, não falha de tamanho.
+Correção local em `_validate_player_prompt` admite a forma possessiva com artigo
+apenas por fullmatch do campo inteiro e cauda contextual limitada, preservando
+limite 15, recusa de pergunta a NPC, instrução prévia, segunda frase ou menu.
+Resposta exata L7 passa offline, commit/reinício/replay sem nova geração/RNG;
+pergunta sobre decisão de Mara continua recusada sem estado/fonte parcial.
+Não reclassificar o turno live rejeitado. Fonte e manifestos executados intactos.
+
+22 testes novos da pergunta, 34 focados junto a L8 e regressão ampliada final
+de 819 aprovados (sobrepostos), um aviso de depreciação preexistente. Não é
+suíte integral verde. Testes L6/L7 usam manifestos temporários isolados e
+comprovam recusa dos manifestos históricos diante do runtime corrigido.
+
+L8 preparado separadamente, mesmo prompt v4/target/corpus/limites e 22 hashes.
+Preflight CLI: 17 turnos sintéticos, zero chamadas reais, corpo máximo 13.614
+bytes. AST PowerShell válido. Gate paid/live false; sem launcher, chave ou
+trava live L8. Custo desta correção/preparação: USD 0. Alterações locais sem
+commit/push. Observação de prosa "marcado como advertido" registrada somente
+em `plan/observation-campaign-state-language-1.md`, sem nova frente/prioridade.
+
+Conclusão delimitada proposta: L7 inconclusivo para campanha integral por falso
+positivo de pergunta acionável, nenhum narrador admitido. Próxima proposta:
+aceitar essa conclusão e autorizar L8 até 17 chamadas Luna low, teto estimado
+adicional USD 0,15, 768 tokens/20.000 bytes, sem retry/fallback. Continue/prossiga
+aprova a proposta delimitada conforme convenção; não exigir frase ritual.
+Até lá, L8 fechado. Depois: revalidar, abrir Windows Terminal identificado,
+confirmar prontidão, pedir entrada protegida e observar lote único/custo/gates;
+fechar live ao fim. Não ler `.env*`, saves, chaves ou ambiente de terminal.
+
+Evidência: `evals/narrator/reports/hybrid-campaign-luna-hyp-007-l7-2026-10-18.md`.
+TASK-020/021 fecham correção/preparação; TASK-013/CAMP-24 e MVP continuam abertos.
+Configuração recomendada para autorização/operação delimitada: Sol low.
+
+## Checkpoint anterior — L6 aceito; L7 autorizado — 18/10/2026
+
+O usuário respondeu "prossiga" à proposta de conclusão delimitada L6 e orçamento
+L7. Pela convenção explicitamente definida em 18/10 e registrada em AGENTS.md,
+isso aprova a proposta nos limites apresentados. Não manter esses aceites
+pendentes nem pedir frase ritual. L6 fica aceito como inconclusivo para a
+avaliação integral por rejeição real de q e lacuna de instrução, nenhum narrador
+admitido. Não reclassificar seu turno rejeitado ou reabrir L6.
+
+L7 autorizado: até 17 chamadas `gpt-5.6-luna`/`low`, teto estimado adicional
+USD 0,15, 768 tokens de saída e 20.000 bytes/requisição, sem retry/fallback.
+Somente paid/live do manifesto L7 foram ativados; prompt v4 e 22 hashes
+preservados. Notas do manifesto e evidência abaixo registram a preparação
+anterior com flags false; este checkpoint registra a autorização posterior.
+Nenhuma admissão automática ou saldo transferido de lote anterior.
+
+Próxima dependência: revalidar hashes/preflight e abrir Windows Terminal externo
+via `wt.exe`, título L7, confirmar novo marcador/processo e pedir entrada
+protegida. Não abrir dois lançadores, ler `.env*`/saves/chaves ou consultar
+ambiente/memória de terminais. Depois da entrada: observar lote único, conferir
+custo/gates/resultado e fechar live. TASK-013/CAMP-24 e MVP continuam abertos.
+
+## Checkpoint anterior — resultado L6 e preparação L7 — 18/10/2026
+
+HYP-007-L6 executou uma chamada real, zero turnos completos. Batch
+`adf70b63-235c-457f-86df-b0625fad10e2`, parada `campaign_source_policy_failed`
+no primeiro R-01/CAMP-EVAL-01. Custo final estimado USD 0,0007156, não cobrança
+confirmada; 2.372 tokens de entrada e 201 de saída, usage disponível. Tempo
+local observado: 4.491 ms de geração e 4.586 ms de turno, sem promessa de SLA.
+Gate paid/live L6 fechado, trava mantida; não reutilizar os 16 slots restantes.
+L5 permanece aceito. A entrada "feito" autorizou acompanhar L6, não aceita por
+arrasto o resultado agora apresentado. Nenhum narrador/default admitido.
+
+Diagnóstico observável: a pergunta q original tem 19 palavras; validador exige
+até 15 e recusa `scene_player_prompt_too_long`. É rejeição real de formato,
+não o falso positivo de sujeito de L5. `_realizes_rule` R-01 retorna true.
+Mesma narrativa com apenas q substituído por "O que você faz agora?" passa
+offline. Schema pede até 200 caracteres, mas prompt v3 não explicitava o teto
+de 15 palavras. L6 não chegou ao R-03 e não prova a correção L5 em nova prosa.
+Não reclassificar L6 ou atribuir toda a falha exclusivamente ao modelo.
+
+Tratamento prospectivo: prompt v4 separado torna explícita a pergunta única,
+aberta, até 15 palavras, terminada em ?, sem menu restritivo. Validador, schema,
+política, RNG e persistência inalterados; prompt v3 e registros L6 intactos.
+L7 tem runner/preflight/lançador/manifesto próprios, mesmo alvo/corpus/limites,
+22 hashes e flags paid/live false. Preflight CLI: 17 turnos sintéticos, zero
+chamadas reais, maior corpo 13.614 bytes; parser PowerShell válido.
+13 testes focados e seleção relacionada de 127 aprovados (sobrepostos), um
+aviso preexistente. Custo da preparação adicional: USD 0. Sem terminal ou chave
+L7; alterações locais sem commit/push. Não é suíte integral verde.
+
+Conclusão delimitada proposta: L6 inconclusivo para a campanha integral por
+rejeição real do limite de q e lacuna de instrução, nenhum narrador admitido.
+Próxima proposta: aceitar essa conclusão e autorizar HYP-007-L7, até 17 chamadas
+Luna low, teto estimado adicional USD 0,15, 768 tokens/20.000 bytes, sem
+retry/fallback. Não pedir frase ritual: continue/prossiga aprova esta proposta
+nos limites apresentados, conforme convenção explícita. Até lá, gate L7 fechado.
+Depois de autorizado: revalidar, abrir Windows Terminal identificado L7,
+confirmar novo marcador, pedir entrada protegida e executar uma vez. Não ler
+`.env*`, saves ou ambiente/memória do terminal; não repetir L6 nem transferir teto.
+
+Evidência: `evals/narrator/reports/hybrid-campaign-luna-hyp-007-l6-2026-10-18.md`.
+TASK-019 fecha somente diagnóstico/contrato/preparação; TASK-013/CAMP-24 e MVP
+continuam abertos. Configuração recomendada para autorização/operação: Sol low.
+
+## Checkpoint anterior — L5 aceito; L6 autorizado — 18/10/2026
+
+O usuário esclareceu explicitamente que "continue" e "prossiga" aprovam a
+proposta apresentada e autorizam seguir. Declarou também: "L5 foi aceito,
+assim como o teto de L6". Não manter aceite L5 ou orçamento L6 pendentes.
+Convenção registrada no AGENTS.md local, conservando limites/exclusões da
+proposta anterior e sem transformar aprovação em autorização ilimitada.
+
+L5 aceito em sua conclusão delimitada: inconclusivo por falso positivo de
+atribuição NPC, nenhum narrador admitido. Não reclassificar seu turno rejeitado.
+HYP-007-L6 autorizado até 17 chamadas `gpt-5.6-luna`/`low`, teto estimado
+adicional USD 0,15, 768 tokens de saída/chamada e 20.000 bytes/requisição,
+sem retry/fallback ou admissão automática. Ativados somente os flags paid/live
+do manifesto L6 de 18/10; prompt v3, 22 hashes e parâmetros preservados.
+As notas do manifesto e o relatório de prontidão descrevem a preparação
+anterior; esta atualização registra a autorização posterior explícita.
+
+Próxima dependência: revalidar preflight e abrir Windows Terminal externo via
+`wt.exe` com título L6, confirmar novo marcador/processo e pedir entrada
+protegida da chave. Não pedir novamente orçamento ou aceite. Não reutilizar
+chave L5, inspecionar ambiente/memória de terminal ou ler `.env*`. Depois da
+entrada: observar lote único, custo/gates/resultado e fechar autorização live.
+TASK-013/CAMP-24 e MVP permanecem abertos; nenhum narrador/default admitido.
+
+Terminal externo L6 aberto via `wt.exe`, título confirmado
+`HYP-007-L6 - chave segura`. Novo marcador às 14:37:53 UTC de 18/10, PID 3876,
+fase `awaiting_secure_credential`, zero chamadas antes da entrada, processo
+ativo na última checagem. Preflight aprovado: 17 turnos sintéticos, maior corpo
+13.415 bytes, 22 hashes válidos. Não abrir segundo lançador; aguardar a entrada
+protegida e observar o mesmo lote. Sem redirecionar saída ou acessar chave.
+
+## Checkpoint anterior — preparação L6 antes da confirmação explícita — 18/10/2026
+
+O usuário respondeu "continue", autorizando continuidade técnica. Essa resposta
+não é registrada como aceite formal narrativo/produtual: a revisão automática
+de segurança recusou essa inferência. L5 continua com aceite delimitado pendente,
+sem admissão de narrador, aprovação da campanha completa ou novo gasto. L5 fica
+encerrado com três chamadas/dois turnos e USD 0,0022452 estimados, não cobrança
+confirmada. Seus registros, prompt v3 e manifesto executado permanecem intactos.
+
+O falso positivo foi corrigido localmente em
+`api/scene_director_service.py::_mask_known_npc_gaze_report`. A política distingue
+o destinatário em "Mara ergue os olhos para você e fala em voz baixa:" do sujeito
+de uma ação imposta ao jogador. A prova é limitada ao gesto/reportagem local e,
+para pronome, ao antecedente explícito e quadro não pessoal observado. Apenas
+o verbo de fala comprovadamente do NPC é mascarado na análise; o texto entregue,
+falas citadas, ações posteriores, agência e demais gates permanecem verificados.
+Não é um resolvedor geral de linguagem nem reforma lexical. O texto exato L5
+passa offline; isso não reclassifica a chamada histórica rejeitada.
+
+Verificação: quatro positivos falharam antes; passaram 31 testes de reprodução
+e contraprovas, incluindo commit/reinício/replay sem nova geração/RNG e recusa
+atômica de promessa indevida do jogador. A seleção ampliada final aprovou 754
+testes; checagem adicional L5/L6/reprodução aprovou 59 (sobrepostos, não somar).
+Um aviso de depreciação preexistente; não é suíte integral verde. Os testes L5
+agora usam manifesto temporário isolado, como L2/L3, e comprovam que o manifesto
+executado recusa o runtime alterado; nenhum hash histórico foi atualizado.
+
+L6 preparado separadamente, mesmo prompt v3, Luna low, corpus e parâmetros:
+`evals/narrator/reports/hybrid-campaign-luna-l6-live-gate-2026-10-18.json`.
+22 arquivos congelados; runner/preflight/lançador próprios e trava distinta.
+Preflight CLI: 17 turnos sintéticos, zero chamadas reais, maior corpo 13.415
+bytes; parser PowerShell válido. Gate paid/live false; sem launcher ou chave.
+Custo final desta correção/preparação: USD 0. Alterações locais sem commit/push.
+
+Próximo bloqueio humano: aceitar ou contestar explicitamente a conclusão
+delimitada L5 e autorizar ou ajustar HYP-007-L6, até 17 chamadas de
+`gpt-5.6-luna`/`low`, teto estimado adicional proposto USD 0,15, 768 tokens de
+saída/chamada, até 20.000 bytes/requisição, sem retry/fallback. Nenhum saldo L5
+é transferido. Depois: ativar apenas L6, revalidar hashes/preflight, abrir o
+Windows Terminal via `wt.exe` com janela identificada, confirmar novo marcador
+de prontidão e pedir entrada protegida. Não ler segredo/ambiente, pedir chave
+no chat ou reabrir L5. Apresentar custo e resultado e fechar live ao fim.
+
+TASK-017/018 registram correção e prontidão, não admissão. TASK-013/CAMP-24 e
+MVP continuam abertos. Relatório:
+`evals/narrator/reports/hybrid-campaign-luna-hyp-007-l6-readiness-2026-10-18.md`.
+Configuração recomendada para autorização e operação delimitada: Sol low.
+
+## Checkpoint anterior — L5 encerrado; conclusão delimitada proposta — 18/10/2026
+
+HYP-007-L5 executado após entrada protegida confirmada pelo usuário. Lote
+`7b94103b-f600-4f25-a370-0efb761429cf`: três chamadas reais, dois turnos completos,
+parada em `campaign_source_policy_failed` no primeiro R-03 de CAMP-EVAL-02.
+CAMP-EVAL-01 completou ajuda R-01 e resgate R-05, com desfecho `preserved`.
+Custo final estimado USD 0,0022452, 7.656 tokens de entrada e 595 de saída;
+três chamadas com usage, sem confirmação de cobrança/cache/taxas/impostos.
+Não houve retry/fallback. Não reutilizar os 14 slots não executados.
+
+O hash de records foi conferido contra summary. Reprodução offline: realização
+R-03 passa, mas o detector genérico aponta `scene_player_agency_violation`,
+`undeclared_player_action`, sujeito `voce`, conceito `social`. O trecho de Mara
+"Ela ergue os olhos para você e fala em voz baixa" dispara o falso positivo;
+nomear Mara mantendo a coordenação não resolve. Substituir só esse trecho por
+"Mara diz em voz baixa" faz a mesma proposta passar localmente. Não houve
+alteração do texto live, detector, prompt ou critérios para reclassificar o turno.
+
+Conclusão técnica proposta: L5 inconclusivo por falso positivo de atribuição NPC;
+dois turnos admitidos não comprovam os oito percursos ou admissão do narrador.
+O aviso R-03 não foi admitido. Nenhum narrador/default admitido; CAMP-24 e
+TASK-013 continuam abertos. Próximo checkpoint humano: aceitar ou contestar essa
+conclusão delimitada, sem inferir aprovação narrativa integral ou novo orçamento.
+Depois, tratar prospectivamente a reprodução delimitada, preservando o lote
+executado e sem abrir reforma lexical geral ou nova avaliação paga por arrasto.
+
+Gate L5 de 18/10 fechado: paid/live false, trava de execução mantida. Marcador
+`ready.json` é histórico pré-credencial, não prova de espera atual. Não relançar
+L4/L5, solicitar chave ou ler memória/ambiente do terminal. Relatório:
+`evals/narrator/reports/hybrid-campaign-luna-hyp-007-l5-2026-10-18.md`.
+Verificação de fechamento: 33 testes focados aprovados (preparação L5, política
+de campanha e custo), um aviso de depreciação preexistente. Alterações locais,
+sem commit/push. Configuração recomendada para revisar o resultado: Sol high.
+
+## Checkpoint anterior — L5 autorizado e entrada protegida — 18/10/2026
+
+O usuário declarou "Novo lote pago autorizado. Continue", aprovando a proposta
+HYP-007-L5 abaixo: até 17 chamadas Luna low e teto estimado adicional USD 0,15,
+sem retry/fallback. Somente `paid_ceiling_authorized` e
+`live_inference_authorized` do manifesto L5 de 18/10 foram ativados. Conteúdo,
+prompt, 22 hashes, preços, limites e manifestos históricos não foram alterados.
+As notas de preparação no manifesto e o relatório de prontidão descrevem o
+momento anterior à aprovação; este checkpoint registra a autorização posterior.
+Não pedir novamente orçamento L5. Próxima dependência: entrada protegida da
+chave no lançador PowerShell externo L5, após revalidar o preflight. Não ler
+credencial, `.env*` ou pedir chave no chat. Não iniciar um segundo lançador
+se o marcador `eval-results/preflights/hybrid-campaign-luna-l5-ready.json`
+identificar processo L5 ainda ativo. Depois da entrada: observar artefatos
+sintéticos, verificar custo/gates/resultado e fechar autorização live ao fim.
+Nenhum narrador/default admitido; TASK-013/CAMP-24 continuam abertos.
+
+Lançador externo reaberto em 18/10, PID 15384. Marcador de prontidão confirmou
+`awaiting_secure_credential`, zero chamadas e corpo máximo 13.415 bytes após
+preflight próprio. Processo ainda ativo na última checagem. Não abrir outra
+janela por arrasto: aguardar a entrada protegida e observar o mesmo lote.
+Não houve redirecionamento de saída do terminal ou acesso à credencial.
+O processo anterior 13876 foi encerrado sem trava live ou lote criado depois
+de o usuário informar ausência do prompt. O relançamento via `wt.exe` confirmou
+janela Windows Terminal intitulada `HYP-007-L5 - chave segura` e novo marcador
+de prontidão do PID 15384. Não usar o marcador antigo como prova de visibilidade.
+
+### Preparação concluída antes da autorização acima
+
+O usuário declarou: "O resultado de L4 foi aceito. Continue". Registrar o aceite
+delimitado de HYP-007-L4: duas chamadas, um turno completo e parada de política
+R-05; custo histórico estimado USD 0,0014972, sem confirmação de cobrança.
+Isso não comprova campanha completa nem admite narrador/default. Não repetir L4.
+
+A preparação prospectiva HYP-007-L5 foi renovada com o runtime pós-auditoria:
+novo manifesto `evals/narrator/reports/hybrid-campaign-luna-l5-live-gate-2026-10-18.json`,
+22 arquivos congelados incluindo a barreira local Host/Origin, prompt v3 inalterado.
+Os manifestos L4/L5 de 03/10 permanecem byte a byte intactos. O runner e o lançador
+L5 apontam apenas para o novo manifesto e recusam drift, retry/fallback e admissão
+automática. L5 é sintético, opt-in e separado dos saves existentes.
+
+Passaram 15 testes L5 e, depois, 78 testes relacionados que incluem esses 15.
+Preflight CLI: 17 turnos sintéticos, zero chamadas reais, maior corpo 13.415 bytes;
+parser PowerShell válido. Sem leitura de credencial, launcher executado ou trava
+live criada. Custo final desta preparação: USD 0. A suíte integral permanece
+com as limitações históricas da consolidação Git; não foi repetida nesta etapa.
+
+Próximo bloqueio humano: autorizar ou ajustar HYP-007-L5, até 17 chamadas de
+`gpt-5.6-luna`/`low`, teto estimado adicional proposto USD 0,15, 768 tokens de
+saída/chamada, até 20.000 bytes/requisição, sem retry/fallback. Os flags paid/live
+continuam false; não solicitar chave antes dessa autorização. Depois: ativar
+somente este gate, abrir PowerShell externo para entrada protegida, executar uma
+vez e apresentar custo/gates/resultado para julgamento humano. Autenticação e
+saldo atuais não foram consultados. Não transferir orçamento de lotes anteriores.
+
+TASK-016 registra a prontidão técnica, mas TASK-013 e CAMP-24 continuam abertos.
+Evidências e comandos: `evals/narrator/reports/hybrid-campaign-luna-hyp-007-l5-readiness-2026-10-18.md`.
+Alterações desta preparação são locais, ainda sem commit/push. Preservar branch
+de implementação e checkout original; GitHub principal não foi alterado aqui.
+Configuração recomendada para a autorização/operação delimitada: Sol low;
+o alvo da API continua Luna low. Não iniciar bandeja/UI/ficha antes deste gate.
+
+## Checkpoint anterior — promoção GitHub concluída em 18/10/2026
 
 O usuário autorizou consolidar a evolução do worktree na branch principal do
 repositório `CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5`. Preservar
@@ -28,10 +1911,10 @@ Comprovante, evidências e limitações: `docs/repository-promotion.md`. O workt
 de implementação continua na branch `codex/planejamento-agente-storyteller-v5`,
 alinhada à nova `main`; não trocar ou atualizar o checkout original por arrasto.
 O MVP continua aberto; nenhum narrador/default está admitido. A autorização
-Git não aceita L4, não libera L5 e não modifica o backlog de produto. O próximo
-checkpoint de produto continua sendo o aceite narrativo L4; antes de qualquer
-avaliação posterior, renovar preflight/congelamento prospectivo com a segurança
-corrigida e obter a autorização de gasto aplicável, sem pedir chave por arrasto.
+Git não aceitou L4, não liberou L5 e não modificou o backlog de produto. Ao fim
+da promoção, faltavam aceite delimitado L4 e renovação da preparação prospectiva;
+ambos foram atendidos pelo checkpoint vigente acima. Autorização própria de
+gasto L5 continua pendente; não pedir chave por arrasto.
 
 ## Checkpoint anterior — auditoria de segurança em 16/10/2026
 
@@ -2127,7 +4010,7 @@ Referências sem página original e metadados
 desconhecidos permanecem `partial`/`null`; não promover essa proveniência editorial
 a validação jurídica ou regra mecânica.
 
-## Próximo passo exato vigente
+## Próximo passo histórico — 03/10 e 16/10; substituído pelo checkpoint vigente acima
 
 Em 03/10, a opção A de posição também foi aprovada e TASK-014 foi concluída
 offline (relatório `evals/narrator/reports/campaign-record-location-v2-2026-10-03.md`).

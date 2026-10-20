@@ -34,6 +34,69 @@ de chave por mecanismo seguro, não pelo chat; nunca usar chave antiga da conver
 
 ## Produto e limites
 
+### Naturalidade e experiência — 20/10/2026
+
+Em seguida, humano autorizou abrir a sessão diária de API e delegou ao agente
+as avaliações de resultados de L41 e testes futuros necessários até o próximo
+gate humano real, como na bateria anterior. Não parar por aceite intermediário
+de lote/variante/naturalidade quando os critérios já estiverem definidos.
+Conservar teto <= USD 0.15 por lote, registros prospectivos, parada na primeira
+falha, sem retry silencioso/fallback ou nova arquitetura por arrasto. Credencial,
+novo cânone/produto/arquitetura fora das decisões aprovadas, destruição e aceite
+final que efetivamente dependa do humano continuam gates humanos.
+
+Humano aprovou resultados L40 com ressalva de linguagem não natural. Recusa
+contextual já cumpre segredo; não anunciar estado interno de informação protegida
+ao jogador nem repetir a recusa em tarefa/conclusão fora de contexto. Preservar
+agência e autoridade canônica. Não inventar motivos ou lore para recusar.
+Mundo/NPCs podem resistir e ajudar; narrador não pode trapacear, punir curiosidade
+arbitrariamente ou garantir roteiro/vitória. Diálogo colateral e por quê contextual
+são visão de experiência registrada, não ramos implementados no catálogo atual.
+Limites/correção: plan/observation-campaign-state-language-1.md. Não converter
+essa visão em expansão silenciosa do MVP nem em poderes canônicos da LLM.
+
+### Autorização contínua de testes — 19/10/2026 (vigente)
+
+Humano autorizou explicitamente L30 e todos os testes futuros necessários no
+escopo aprovado, com tetos planejados de no máximo USD 0.15 por lote/teste.
+Não pedir aprovação individual adicional de quantidade ou desse teto dentro
+desses limites. Esta decisão supera as restrições históricas abaixo de uma
+chamada ou aprovação por lote; não transforma artefatos antigos em reexecutáveis.
+Antes de cada lote registrar hipótese, quantidade, teto, hashes e parada;
+primeira falha encerra, analisar antes de qualquer teste novo. Sem retry
+silencioso/best-of/fallback/admissão automática. Custear cada teste e distinguir
+estimativa de cobrança. Acima de USD 0.15, credenciais, nova arquitetura,
+expansão de escopo ou aceitação humana de produto continuam exigindo intervenção.
+Manter expiração da supervisora à meia-noite e não renovar automaticamente.
+
+### Sessão temporária de credencial — semana de 19 a 25/10/2026
+
+Humano autorizou explicitamente supervisora local que guarda a chave apenas
+em memória até meia-noite de Fortaleza e executa somente baterias aprovadas
+individualmente dentro dos tetos. Esta será a forma de trabalho nesta semana.
+Uma entrada protegida por sessão diária; sem renovação automática, arquivo de
+chave, ambiente permanente, rede/listener ou nova autorização de gasto inferida.
+Na expiração/interrupção, encerrar também avaliador ativo. Não ler chave,
+entrada/ambiente/memória do terminal. Requests/status são não secretos.
+Procedimento e limites: plan/process-luna-credential-lease-1.md.
+Esta autorização operacional não aceita L24 nem aprova orçamento L25 por arrasto.
+
+### Convenção explícita de aprovação — 18/10/2026
+
+Em 19/10, humano fixou USD 0,15 estimados como teto padrão previamente aprovado
+por teste enquanto outro valor não for proposto. Não pedir novamente aprovação
+desse mesmo teto. Quantidade/escopo do teste continuam exigindo autorização:
+pedido atual foi reduzido a UMA chamada paga, explicitamente autorizada em voz.
+Não converter esse limite unitário em autorização para executar a bateria inteira.
+
+O usuário esclareceu: quando responder "continue" ou "prossiga", considera
+aprovada a proposta delimitada imediatamente anterior e autoriza seguir o
+trabalho. Não exigir uma frase ritual adicional para esse mesmo aceite.
+A aprovação conserva o escopo, limites e exclusões apresentados; não autoriza
+gasto ainda não proposto, decisão não apresentada ou admissão não submetida.
+Credenciais e ações que só o usuário pode executar continuam dependências
+humanas. Especificamente: L5 foi aceito e o teto proposto de L6 foi autorizado.
+
 Monólito modular local-first: React/TypeScript e FastAPI/Python. Regras, RNG,
 estado e commits transacionais são determinísticos; a LLM propõe improvisação
 e continuidade sem controlar o jogador ou sobrescrever mecânica/cânone.
@@ -59,7 +122,8 @@ sintéticas, nunca dados de campanha.
 
 ## Verificação e navegação
 
-Configuração, instalação, servidor e build estão no `README.md` e em
+Apresentação e limites estão no `README.md`; configuração, instalação, servidor
+e build detalhados estão em `DEVELOPMENT.md` e em
 `client/package.json`; executar apenas o necessário ao escopo, sem iniciar
 serviços ou instalar dependências como parte automática do preflight.
 
