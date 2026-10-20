@@ -1,525 +1,213 @@
-<div align="center">
-  <img src="vampire-icon.ico" alt="Logo Agente Storyteller" width="96" height="96" />
+# Agente Storyteller
 
-  # Agente Storyteller | Motor Narrativo V5 🦇
+**Uma crônica de RPG que lembra suas escolhas — sem entregar as regras à IA.**
 
-  **Monólito modular local-first para conduzir crônicas de Vampiro: A Máscara 5ª Edição com regras determinísticas, narrativa assistida por LLM e memória transacional.**
+![Status: MVP em desenvolvimento](https://img.shields.io/badge/status-MVP_em_desenvolvimento-8b2635)
+![React 19](https://img.shields.io/badge/interface-React_19-61dafb)
+![FastAPI](https://img.shields.io/badge/backend-FastAPI-009688)
+![Local-first](https://img.shields.io/badge/arquitetura-local--first-4b5563)
 
-  [![Licença](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)](LICENSE)
-  [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-  [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-</div>
+O Agente Storyteller investiga como combinar interpretação, liberdade narrativa
+e consequências persistentes em uma experiência de RPG inspirada em
+*Vampire: The Masquerade V5*. O jogador age; o sistema resolve a mecânica;
+o narrador dá forma à cena dentro do que realmente aconteceu.
 
-## Estado do desenvolvimento
+O projeto está saindo do desenvolvimento reservado para compartilhar sua
+construção: o que já funciona, o que os testes revelaram e o que ainda precisa
+amadurecer. **Ainda não é um jogo completo, um release do MVP ou uma demonstração
+pública pronta para jogadores.**
 
-O MVP está em desenvolvimento e nenhum narrador/default foi admitido. Protocolos
-e lotes de avaliação não constituem aprovação de produto nem autorização para
-executar chamadas pagas. Consulte `PROMPT_RETOMADA_2026-09-06.md` para o checkpoint
-vigente e `docs/repository-promotion.md` para a promoção GitHub autorizada.
-As correções e os limites da auditoria estão em `docs/security-audit/README.md`.
+## Por que este projeto existe
 
-## Pausa e retomada do Narrador
+Uma boa sessão precisa de mais do que respostas convincentes de um modelo.
+Precisa lembrar acontecimentos, respeitar o personagem do jogador e fazer a
+história avançar sem inventar resultados mecânicos ou revelar segredos da campanha.
 
-Quando H6 falha por indisponibilidade transitória confirmada como retomável, o jogo preserva no servidor a ação, a resolução determinística, o contexto selecionado e o alvo exato. A tentativa original termina sem alterar o estado canônico. A interface mostra **Narração pausada** e permite:
+A proposta separa essas responsabilidades. Regras, rolagens e estado pertencem
+ao sistema; a IA participa da narração, sem se tornar dona do cânone. O objetivo
+é que o jogador participe da cena, em vez de apenas assistir a uma descrição.
 
-- **Retomar narração** cria uma operação nova e tenta somente H6 uma vez. Regras, dados, H0, H1 e H4 não são executados novamente.
-- **Descartar ação** abandona logicamente a proposta; os efeitos preservados não são aplicados.
+## Onde estamos
 
-O editor continua disponível como rascunho local, mas envio, atalhos e rolagens ficam bloqueados enquanto houver uma pausa ativa. Refresh, reconexão e restart reidratam o cartão. Não existe verificação sintética de disponibilidade, retry automático, troca automática de modelo ou exclusão física automática da cápsula no piloto local.
+**Checkpoint de 20 de outubro de 2026.** O núcleo técnico e uma microcampanha
+experimental já permitem investigar continuidade, diálogo e desfechos. A
+qualidade narrativa e a fronteira de validação continuam em avaliação.
 
-O cliente recebe somente IDs opacos, resumo da ação e da resolução, categoria normalizada, mensagem segura e timing comprovado quando existir. Chaves, headers, `scope_key`, prompt, contexto confidencial e saída provisória não fazem parte do contrato público.
+| Frente | Estado atual |
+| --- | --- |
+| Interface local | React/TypeScript, comunicação com backend e histórico de turnos |
+| Mecânica e persistência | Resolução determinística, RNG controlado e estado orientado a eventos |
+| Continuidade | Contexto estruturado, limites de visibilidade e reconstrução de sessão |
+| Pausa e retomada | Núcleo implementado, com testes de concorrência, persistência e retomada |
+| Campanha híbrida | Microcampanha catalogada com Mara, escolhas e desfechos delimitados |
+| Narrador | Experimentos comparativos e regressões; **nenhum narrador admitido** |
+| MVP completo | **Em aberto**: aceitação integral e demais entregas do checklist ainda pendentes |
 
----
+O perfil narrativo B e os ensaios com Luna são experimentais. Uma bateria aprovada
+tecnicamente não equivale à aprovação do narrador nem à estabilidade geral do
+produto. Foram encontrados tanto bloqueios indevidos quanto violações narrativas
+aceitas pelo validador; correções locais não encerram essa questão arquitetural.
 
-## Visão geral
+O próximo gate de produto é decidir como revisar a fronteira de validação antes
+de continuar a admissão do narrador. A publicação deste código **não resolve nem
+aprova essa decisão**. Veja o [checkpoint de validação](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/evals/narrator/reports/hybrid-campaign-luna-validation-checkpoint-2026-10-20.md).
 
-O Agente Storyteller combina uma interface React com um backend FastAPI. Regras,
-cálculos, transições e estado canônico permanecem sob controle dos módulos locais;
-o LLM recebe contexto estruturado e propõe a continuação da ficção. A aplicação
-valida essa proposta antes de admitir novos fatos de cena: o modelo não pode
-substituir resultados mecânicos nem confirmar sozinho o que passa a ser canônico.
+## O que já está construído
 
-A premissa de experiência é condução por improviso: em cada entrada ficcional
-significativa, o mundo reage, revela, complica ou avança uma pendência e devolve ao
-jogador uma oportunidade concreta de agir. Eventos passados são imutáveis; a cena
-e a projeção atual do mundo evoluem por novos eventos validados.
+- Interface jogável local, com área narrativa, HUD e preservação do rascunho do jogador.
+- Backend modular em FastAPI, com contratos estruturados para ações e turnos.
+- Resolvedor determinístico piloto e catálogos de contexto para o escopo da campanha.
+- Persistência orientada a eventos e reconstrução do estado validado.
+- Pausa e retomada de operações, com vínculos entre a execução original e a retomada.
+- Microcampanha para observar ajuda, recusa contextual, resgate, perda e conclusão.
+- Ferramentas de avaliação com hipóteses, limites, proveniência e registro de custo estimado.
+- Testes de regressão para agência do jogador, segredo, progressão e integridade canônica.
 
-`local-first` descreve o controle do núcleo e dos dados. A inferência pode apontar
-para qualquer alvo explicitamente configurado que implemente o protocolo
-OpenAI-compatible e as capabilities exigidas. O produto não escolhe provedor,
-modelo, endpoint ou fallback silenciosamente.
-
-> [!NOTE]
-> Este é o repositório de desenvolvimento (Core). A distribuição voltada ao
-> jogador está em [Agente Storyteller - Distribuição Pública](https://github.com/CHCLopes/AgenteStorytellerGame_Public).
+Esses recursos têm cobertura delimitada por cenários. Não significam suporte
+irrestrito a qualquer ação, NPC, aventura ou formulação de linguagem natural.
 
 ## Arquitetura do turno
 
 ```mermaid
 flowchart LR
-    UI[React / WebSocket] --> API[FastAPI: coordenador do turno]
-    API --> RULES[Módulos determinísticos]
-    RULES --> DRAFT[Fatos e eventos canônicos em rascunho]
-    DRAFT --> CTX[Contexto em camadas e sob orçamento]
-    CTX --> LLM[Fronteira LLM-001]
-    LLM --> ADAPTER[Adaptador OpenAI-compatible explícito]
-    LLM --> PROPOSAL[Proposta estruturada de continuação]
-    PROPOSAL --> ADMIT[Admissão local: mecânica, agência, segredo e continuidade]
-    ADMIT --> TX[(SQLite: cena, eventos, narrativa e memória em commit único)]
-    TX --> UI
-    TX --> RETRIEVE[Memória episódica e consolidações]
-    RETRIEVE --> CTX
+    A[Ação do jogador] --> B[Resolvedor determinístico]
+    B --> C[Resultado e contexto preparados]
+    C --> D[Proposta do narrador]
+    D --> E[Validação local]
+    E --> F[Commit atômico e eventos]
+    F --> G[Interface e continuidade]
 ```
 
-- **Autoridade determinística:** regras, dados rolados, invariantes e transições
-  são calculados localmente e registrados como fatos estruturados.
-- **Autoridade ficcional limitada:** H6 pode propor observações, pistas, reações
-  externas, complicações, transições e ganchos. A política local confere resultado
-  mecânico, agência, visibilidade e continuidade antes de criar IDs e canonizar.
-- **Fronteira LLM agnóstica:** texto, geração estruturada e streaming usam um
-  contrato interno com capabilities, deadline, cancelamento, erros normalizados,
-  proveniência e uso/custo observáveis. SDK e detalhes HTTP ficam no adaptador.
-- **Turno atômico:** estado, cena, narrativa concluída, eventos, relações e memória
-  são promovidos juntos. A proposta estruturada é mantida interna e a prosa só é
-  publicada depois da validação; falhas não deixam mutação parcial nem consomem o
-  turno com um beat técnico.
-- **Memória em camadas:** contexto quente, episódios, estado semântico e
-  arcos/pendências são separados; recuperação filtra visibilidade e aplica orçamento.
-- **Persistência segura:** SQLite usa transações e migração lazy, idempotente e
-  não destrutiva dos JSON legados. Os arquivos-fonte não são reescritos.
+A narração é uma proposta sujeita a validação, não uma autorização para alterar
+regras ou controlar o jogador. O sistema mantém limites entre estado canônico,
+conteúdo visível e informação reservada. A suficiência semântica dessa validação
+é justamente uma das questões abertas do projeto.
 
-O MVP executa o backend como um único processo/worker. O SQLite serializa escritas
-entre conexões, mas os locks de sessão que coordenam leituras e atualizações vivem
-no processo da aplicação; não configure múltiplos workers nesta etapa.
-No startup, tentativas `pending` anteriores ao início do processo são encerradas
-como canceladas sem promover estado. Schemas legados incompatíveis com as
-invariantes suportadas são recusados antes de qualquer mutação automática.
+**Local-first não significa necessariamente inferência local.** Persistência e
+orquestração são locais; um provedor remoto, quando habilitado explicitamente,
+recebe o contexto enviado naquela chamada. Ensaios de modelos usam fixtures
+sintéticas, não campanhas pessoais.
 
-## Direção B: ponte interna de fontes atribuídas
+## Tecnologias
 
-A entrada interna `execute_source_turn` exige uma campanha criada por
-`SQLitePersistence.create_narrative_source_campaign`, com cena conhecida e elenco
-fixo. `read_source_context_snapshot` confere origem, revisão e toda a história
-elegível antes de recuperar as duas últimas fontes integrais. Um recibo registra
-os IDs selecionados e omitidos; `n` permanece atribuído e `q` separado.
+| Camada | Tecnologias | Papel no projeto |
+| --- | --- | --- |
+| Interface | React 19, TypeScript 6, Vite 8, Tailwind CSS 4 | Interação, apresentação da cena e estado da interface |
+| Backend | Python, FastAPI, Pydantic | Contratos, orquestração e validação |
+| Estado | SQLite e eventos | Persistência e reconstrução de sessões |
+| Verificação | pytest, Vitest, Testing Library | Regressões de backend e interface |
+| Narração | Adaptadores de provedores e protocolos de avaliação | Experimentação controlada, sem modelo admitido como padrão do MVP |
 
-Essa entrada recusa campanhas existentes e dependências de memória/cena v1.
-Ela é exercitada com dados sintéticos e não altera a seleção do jogo atual.
-Contrato, testes e limites no [relatório da integração interna B](evals/narrator/reports/narrative-source-readers-2026-09-10.md).
+## Explorar o repositório
 
-O preparador interno `prepare_source_turn_draft` transforma uma declaração
-explícita do servidor ou um teste ordinário já resolvido em rascunho B, preservando
-o recibo e sem nova rolagem. Ele não classifica texto livre nem aplica efeitos;
-[escopo e integração local](evals/narrator/reports/narrative-source-preparation-2026-09-10.md).
+A `main` contém esta apresentação principal. Os documentos vinculados apontam
+para o checkpoint de desenvolvimento publicado, sem pressupor merge do código.
 
-`prepare_retained_source_turn` conserva essa preparação em uma cápsula no SQLite;
-`execute_retained_source_turn` a recupera por sessão/operação. Reinício e replay
-usam o recibo retido; tentativas pendentes ou terminais não autorizam reenvio.
-A retenção é uma operação de controle, sem novo turno ou avanço de estado.
-[Contrato, provas e limites do coordenador](evals/narrator/reports/narrative-source-coordinator-2026-09-10.md).
+O código mais recente deste checkpoint está na branch
+`codex/planejamento-agente-storyteller-v5`. A branch de implementação e a `main`
+podem ter estados diferentes; confira a branch antes de reproduzir um resultado.
 
-`SQLitePersistence.read_source_operation_status` consulta o estado de uma operação
-retida e sua causa segura de falha, incluindo após reinício. A resposta separa
-a revisão-base da atual; uma preparação antiga não promete prontidão. A leitura
-usa banco existente em modo somente leitura e não executa novamente a operação.
-[Contrato e verificação da consulta](evals/narrator/reports/narrative-source-operation-status-2026-09-11.md).
-
-`SourcePlayerActionRequest` define a futura entrada B com somente `operation_id`
-e `player_input`. A guarda interna revalida a origem contra a sessão do servidor;
-não classifica a ação ou produz recibo. O limite é de 500 caracteres de texto e
-240 de identidade B, com preservação literal das entradas aceitas.
-[Contrato e 161 verificações focadas](evals/narrator/reports/narrative-source-entry-2026-09-11.md).
-O produtor interno `prepare_source_player_action` já reserva a operação antes
-de interpretar/rolar e retém cápsula/conclusão atomicamente. O perfil local aceita
-espera, fala dirigida e investigação ordinária; o coordenador retido recebe o
-recibo sem nova rolagem. [Contrato, provas e limites](evals/narrator/reports/narrative-source-input-producer-2026-09-11.md).
-`create_source_trial_setup` cria a preparação autorada de uma cena B nova; local,
-elenco e objetivo ficam em manifesto separado de qualquer fonte do modelo.
-`read_source_setup_manifest` reapresenta esse briefing após reinício sem criar
-turno. A composição interna até H6 foi verificada com respostas sintéticas.
-[Setup e 488 verificações distintas](evals/narrator/reports/narrative-source-setup-2026-09-11.md).
-O [transporte optativo](plan/feature-narrative-source-transport-1.md) possui contrato
-público estrito, seletor server-side, factory/handler separados e página própria.
-Em 21/09/2026, o recorte foi aceito para um único operador local, somente em
-`127.0.0.1`. O encerramento WebSocket e o painel estreito foram corrigidos e
-reverificados. O jogo padrão continua no fluxo v1 atual.
-A [observação do produtor com diálogo e espera](evals/narrator/reports/source-player-observation-83921947-2026-09-11.md)
-foi encerrada: dois turnos confirmados e replay verificado. Continuidade e agência
-foram preservadas, mas o avanço narrativo foi parcial. A aceitação posterior cobre
-somente o opt-in local; não escolhe narrador definitivo nem aprova CAP-001.
-
-## Interface
-
-O frontend mantém os temas góticos claro e escuro e trata separadamente narrativa,
-terminal do turno e snapshot canônico. Em falha, timeout ou cancelamento, nenhuma
-proposta parcial é promovida ao histórico concluído.
-
-## Uso teste isolado do jogo atual com Groq
-
-Com a interface compilada e as dependências existentes, o launcher abaixo abre uma
-sessão inventada em SQLite temporário. A chave é solicitada no terminal protegido,
-sem ler `.env`. Ele usa explicitamente Groq/Qwen, realiza a verificação inicial do
-narrador e mantém a janela aberta até você encerrar o servidor com Enter.
+Pré-requisitos: Git, Python compatível com as dependências do backend e Node.js
+compatível com Vite 8. A instalação abaixo prepara o ambiente de desenvolvimento;
+**não inicia serviços, não baixa pesos de modelos e não faz chamadas de IA**.
 
 ```powershell
-pwsh -NoProfile -File scripts/run_storyteller_manual_test.ps1 -TestId ([guid]::NewGuid())
-```
-
-O endereço da sessão aparece no terminal. A porta8000 precisa estar livre; o script
-não reutiliza servidores alheios. Sem opção de retomada, recusa bancos anteriores. Esse comando abre o fluxo
-atual do jogo. A ponte experimental de fontes da direção B não é ativada.
-Para verificar somente a preparação, sem chave ou modelo, acrescente `-PreflightOnly`.
-
-Para retomar explicitamente um teste isolado já existente, use um identificador
-novo para os logs e indique o identificador original do banco:
-
-```powershell
-pwsh -NoProfile -File scripts/run_storyteller_manual_test.ps1 -TestId ([guid]::NewGuid()) -ResumeFromTestId <GUID-do-teste-original>
-```
-
-A retomada preserva a URL/sessão e o SQLite original, verifica a identidade em modo
-somente leitura e solicita a chave novamente. Não recupera credenciais anteriores.
-O servidor anterior deve estar encerrado. IDs de retomadas encerradas não podem
-ser reutilizados; preparação offline pode transitar para uma abertura. O launcher
-configura768 tokens estimados de contexto narrativo, mantendo fatos obrigatórios.
-A abertura de uma sessão nova apresenta local e presenças; uma retomada não reinicia
-a cena. A narrativa e a ficha rolam dentro da janela, com controles acessíveis.
-
-### Entrada B optativa local
-
-Esta entrada é separada do jogo v1 e atende somente o operador do desktop em
-loopback. Ela não publica a API para outra máquina. Para validar a preparação sem
-chave, banco, listener ou inferência:
-
-```powershell
-pwsh -NoProfile -File scripts/run_groq_source_local_trial.ps1 -PreflightOnly
-```
-
-Para abrir a sessão local, execute o mesmo comando sem `-PreflightOnly`. A chave é
-solicitada como `SecureString` no PowerShell e existe somente no processo-filho:
-
-```powershell
-pwsh -NoProfile -File scripts/run_groq_source_local_trial.ps1
-```
-
-O lançador fixa backend em `127.0.0.1:8018`, frontend em `127.0.0.1:5178`, banco
-sintético isolado, sessão escolhida pelo servidor e limites do ensaio. Enter encerra
-somente os serviços pertencentes ao lançador. O `App` e o save v1 não são migrados.
-
-## Quickstart de desenvolvimento
-
-### Pré-requisitos
-
-- Python 3.11 ou superior.
-- Node.js `^20.19.0` ou `>=22.12.0`.
-- Um único alvo LLM OpenAI-compatible, iniciado e escolhido explicitamente.
-
-### 1. Backend e frontend
-
-```bash
-git clone https://github.com/CHCLopes/AgenteStoryteller.git
-cd AgenteStoryteller
+git clone --branch codex/planejamento-agente-storyteller-v5 https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5.git
+cd Agente-Storyteller-VampireTheMasqueradeV5
 
 python -m venv .venv
-# PowerShell: .\.venv\Scripts\Activate.ps1
-# Linux/macOS: source .venv/bin/activate
-pip install -r api/requirements.txt
+& .\.venv\Scripts\python.exe -m pip install -r api/requirements.txt
 
 cd client
 npm ci
 npm run build
-cd ..
 ```
 
-### 2. Configuração explícita
+Para arquitetura detalhada, configuração e execução interativa, consulte o
+[guia técnico](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/DEVELOPMENT.md). Os protocolos de ensaio têm alvos e limites
+próprios: não execute lançadores de avaliações reais como parte da instalação.
+Uma sessão com provedor exige configuração explícita e pode gerar custo.
 
-Crie o arquivo local de configuração a partir do template. Não versione o `.env`:
+### Verificação local sem credencial
+
+Na raiz do repositório, um recorte útil para começar é:
 
 ```powershell
-Copy-Item .env.example .env
-```
-
-```bash
-cp .env.example .env
-```
-
-Preencha os campos do alvo explícito:
-
-```dotenv
-LLM_TARGET_ID=identificador-local-da-configuracao
-LLM_PROVIDER_LABEL=rotulo-informativo
-LLM_MODEL=modelo-exato-esperado
-LLM_BASE_URL=http://127.0.0.1:1234/v1
-LLM_ADAPTER_KIND=openai-compatible
-LLM_STRUCTURED_GENERATION=emulated
-LLM_STREAMING=native
-LLM_REASONING_EFFORT=none
-```
-
-`LLM_API_KEY` é opcional no adaptador genérico e obrigatório nos perfis remotos
-OpenRouter, Gemini e NVIDIA NIM. `native`, `emulated`, `unsupported` e `unknown` são os
-valores válidos de capability; o fluxo narrativo do MVP exige geração estruturada
-disponível (`native` ou `emulated`). Streaming continua diagnosticado pelo contrato
-LLM-001, mas H6 confirma a proposta estruturada completa antes de publicar a prosa
-ao jogador. O modelo retornado pelo alvo deve coincidir com `LLM_MODEL`.
-
-`LLM_REASONING_EFFORT` é opcional e só deve ser definido quando o adaptador
-declarar suporte ao valor escolhido. No Gemini 3.7 Flash, apenas `low`, `medium`
-e `high` são convertidos em `thinkingLevel`; `none` é recusado. Parâmetros de
-sampling obsoletos, como temperatura, não são enviados. Quando omitido,
-preserva-se o padrão do alvo.
-
-`LLM_TIMEOUT_SECONDS` é o teto de cada invocação. H0, H1 e H4 preservam os
-defaults de 15, 30 e 20 segundos por meio de `LLM_H0_TIMEOUT_SECONDS`,
-`LLM_H1_TIMEOUT_SECONDS` e `LLM_H4_TIMEOUT_SECONDS`; aumentá-los nunca ultrapassa
-o teto global. `LLM_SCENE_DIRECTOR_MAX_OUTPUT_TOKENS` limita a proposta JSON de
-cena compacta (256 por padrão), e `LLM_SCENE_DIRECTOR_TEMPERATURE` controla a variação
-criativa (0,65 por padrão). O campo legado `LLM_H6_MAX_OUTPUT_TOKENS` permanece
-aceito por compatibilidade, mas não limita a nova proposta estruturada.
-
-`CONTEXT_TOKEN_BUDGET` limita a recuperação e `NARRATOR_CONTEXT_TOKEN_BUDGET`
-limita a projeção compacta efetivamente enviada ao H6. Fatos completos continuam
-no rascunho e no commit transacional; a projeção omite JSON, faces de dados, IDs e
-scores que não ajudam a narrativa.
-
-O perfil padrão usa triagem H0 determinística, preserva literalmente a declaração
-do jogador em H1 e mantém H4 no lore estático durante ações. Assim, somente H6
-consome a LLM no turno ficcional normal. `LLM_H0_ENABLED`, `LLM_H1_ENABLED` e
-`LLM_H4_ACTION_ENRICHMENT_ENABLED` continuam switches explícitos para avaliação,
-mas vêm desligados e nunca transferem autoridade mecânica ao narrador.
-
-O template não aprova o endpoint de exemplo acima nem qualquer provedor: ajuste os
-valores ao alvo que você escolheu. Não há autodetecção ou fallback.
-
-#### Perfil OpenRouter controlado
-
-O adaptador OpenRouter é uma composição explícita do mesmo contrato LLM-001. Ele
-aceita apenas as URLs oficiais, exige chave e provedor upstream fixo, desabilita
-fallback de rota, requer suporte aos parâmetros enviados e aplica `data_collection:
-deny` com ZDR. Cache e plugins de transformação são desabilitados; se a resposta
-reportar transformação de pipeline ou omitir metadado de rota, ela é rejeitada de
-modo conservador. A rota e o custo reportados entram na evidência. Identificadores dinâmicos como
-`openrouter/free`, `openrouter/auto`, `:nitro`, `:floor`, `:exacto` e `:online` são
-recusados. A variante estática `:free` continua permitida e precisa passar pelo
-probe com o slug lógico solicitado preservado. Se o endpoint reportar um ID físico
-ou versionado diferente, ele só é aceito quando os metadados comprovam rota direta,
-provedor pinado e sucesso na primeira tentativa. Se o detalhamento opcional de
-tentativas estiver presente, ele também precisa concordar com o endpoint selecionado;
-esse ID físico fica registrado na proveniência.
-
-Exemplo do candidato datado de 27/08/2026 — não é seleção automática nem garantia
-de permanência no catálogo:
-
-```dotenv
-LLM_TARGET_ID=openrouter-glm-5-2-free-decarts
-LLM_PROVIDER_LABEL=OpenRouter
-LLM_MODEL=z-ai/glm-5.2:free
-LLM_BASE_URL=https://openrouter.ai/api/v1
-LLM_ADAPTER_KIND=openrouter
-LLM_OPENROUTER_PROVIDER=decart
-LLM_API_KEY=
-LLM_STRUCTURED_GENERATION=native
-LLM_STREAMING=native
-```
-
-Preencha `LLM_API_KEY` somente no arquivo local ignorado ou no ambiente do
-processo. Reinicie completamente o backend depois de trocar o perfil: settings e
-runtime são carregados uma vez e um processo antigo continua apontando para o alvo
-anterior. Antes da primeira cena real, lembre que o contexto da campanha sai do
-dispositivo e depende das políticas atuais do serviço e do provedor upstream.
-
-O snapshot e os comparadores sintéticos estão em
-`evals/narrator/openrouter_candidates_2026-08-27.json`. Catálogo, limites gratuitos
-e políticas podem mudar; revalide-os em fontes oficiais antes de uma rodada nova.
-
-#### Gemini direto: avaliação sintética e runtime protegido
-
-O adaptador Gemini usa somente o endpoint oficial `generateContent`, sem SDK,
-estado remoto, tools, retry ou fallback. O identificador `gemini-3.7-flash` fica
-fixo e cada resposta deve reportar uma `modelVersion` compatível; aliases mutáveis
-como `gemini-flash-latest`, versões preview e experimentais são recusados.
-
-```dotenv
-LLM_TARGET_ID=gemini-3-7-flash-campaign-approved
-LLM_PROVIDER_LABEL=Google Gemini
-LLM_MODEL=gemini-3.7-flash
-LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta
-LLM_ADAPTER_KIND=gemini
-LLM_API_KEY=
-LLM_STRUCTURED_GENERATION=native
-LLM_STREAMING=native
-LLM_REASONING_EFFORT=low
-LLM_CAMPAIGN_DATA_ALLOWED=false
-```
-
-A chave é enviada somente no header `x-goog-api-key`; não use query string e não
-registre a credencial. Crie uma Auth key atual no Google AI Studio e configure-a
-apenas no ambiente local. O payload força `store: false`, mantém tools ausentes,
-usa bloqueio `BLOCK_ONLY_HIGH` nas quatro categorias ajustáveis e valida novamente
-todo JSON com Pydantic e invariantes do domínio.
-
-Na modalidade gratuita, o Google pode usar prompts e respostas para melhorar
-produtos e pode haver revisão humana. Por isso, `false` bloqueia este adaptador no
-runtime principal: copiar o perfil não envia cenas, memórias ou segredos por
-acidente. O teste gratuito usa exclusivamente o avaliador sintético abaixo, que
-não abre saves, banco ou `.env`. Altere `LLM_CAMPAIGN_DATA_ALLOWED` para `true`
-somente depois de confirmar uma política compatível para o projeto associado à
-chave; esse opt-in não muda nem afrouxa as validações narrativas locais.
-
-O manifesto auditável está em
-`evals/narrator/gemini_candidates_2026-08-28.json`. As referências oficiais são o
-[modelo estável](https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash),
-o [contrato REST](https://ai.google.dev/api/generate-content), as
-[chaves](https://ai.google.dev/gemini-api/docs/api-key) e os
-[termos de dados](https://ai.google.dev/gemini-api/terms).
-
-#### NVIDIA NIM: avaliação sintética e runtime protegido
-
-O perfil NVIDIA usa a API OpenAI-compatible hospedada no endpoint oficial
-`https://integrate.api.nvidia.com/v1`, com autenticação Bearer e sem SDK do
-provedor. O modelo fica fixado em `nvidia/nemotron-3-ultra-550b-a55b`; o sistema
-recusa troca silenciosa de modelo ou endpoint. A geração estruturada usa JSON
-emulado, validado localmente por Pydantic, e o streaming permanece nativo.
-Essa fixação protege o identificador lógico retornado pela API; o endpoint
-hospedado não expõe digest do checkpoint e, portanto, não oferece a mesma
-imutabilidade verificável de um NIM autogerenciado com imagem pinada.
-
-```dotenv
-LLM_TARGET_ID=nvidia-nemotron-3-ultra-550b-a55b-campaign-approved
-LLM_PROVIDER_LABEL=NVIDIA NIM
-LLM_MODEL=nvidia/nemotron-3-ultra-550b-a55b
-LLM_BASE_URL=https://integrate.api.nvidia.com/v1
-LLM_ADAPTER_KIND=nvidia
-LLM_API_KEY=
-LLM_STRUCTURED_GENERATION=emulated
-LLM_STREAMING=native
-LLM_CAMPAIGN_DATA_ALLOWED=false
-```
-
-No runtime, a credencial é lida exclusivamente de `LLM_API_KEY`, definida no
-`.env` local ignorado ou no ambiente do processo. `NVIDIA_API_KEY` não é um alias
-do runtime: ela existe apenas para a execução isolada do avaliador sintético. Essa
-separação impede que uma chave de trial seja promovida por acidente ao jogo real.
-
-O trial gratuito deve receber somente o corpus sintético, nunca cenas, memórias,
-segredos ou outros dados da campanha. `LLM_CAMPAIGN_DATA_ALLOWED=false` mantém o
-runtime bloqueado. Altere para `true` somente depois de contratar ou confirmar uma
-política apropriada para os dados reais do projeto; o opt-in não reduz as
-validações locais. O comando do screening e o manifesto auditável ficam em
-`evals/narrator/README.md`.
-
-As referências oficiais são o
-[contrato da API LLM](https://docs.api.nvidia.com/nim/re/reference/llm-apis), o
-[quickstart de autenticação](https://docs.api.nvidia.com/nim/re/docs/api-quickstart)
-e os
-[termos do trial](https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf).
-
-### 3. Execução
-
-Com o frontend compilado e o alvo já disponível:
-
-```bash
-python scripts/initialize_game.py
-```
-
-O inicializador sobe um único processo FastAPI na porta 8000, executa um probe
-sintético sem dados da campanha e abre o navegador somente se a resposta indicar
-`configured: true`, `ready: true` e `success: true`. Ele não instala nem inicia o
-alvo LLM.
-
-Também é possível iniciar manualmente:
-
-```bash
-uvicorn api.main:app --host 127.0.0.1 --port 8000 --reload
-```
-
-Para testar apenas a conexão, faça `POST` em
-`http://127.0.0.1:8000/api/llm/test-connection`. O backend compartilha chamadas
-concorrentes e mantém sucessos por 60 segundos para proteger a cota do provedor.
-Falhas ficam em cache por 5 segundos, permitindo uma nova tentativa curta sem
-repetir três chamadas a cada clique.
-
-### 4. Testes
-
-```bash
-pytest -q
+$env:STORYTELLER_DISABLE_DOTENV = '1'
+& .\.venv\Scripts\python.exe -m pytest -q tests/test_campaign_source_profile.py tests/test_campaign_source_integration.py tests/test_campaign_goal_and_epilogue_regressions.py
 
 cd client
 npm test -- --pool=threads --maxWorkers=1 --no-file-parallelism
 npm run build
-npm run lint
 ```
 
-Os testes padrão usam adaptadores sintéticos e não exigem rede nem um LLM real.
+Os testes Python isolam a persistência e bloqueiam rede externa pelo `conftest.py`.
+Esse recorte não é a suíte inteira nem uma avaliação de qualidade narrativa por
+um jogador. O repositório também conserva protocolos históricos congelados;
+não os alteramos retroativamente para produzir resultados verdes.
 
-A comparação viva é separada e opt-in. Ela não abre `.env`, saves ou banco da
-campanha e recusa execução sem `--live`:
+## Qualidade e limites conhecidos
 
-```powershell
-$key = Read-Host "OpenRouter API key" -AsSecureString
-$env:OPENROUTER_API_KEY = [System.Net.NetworkCredential]::new("", $key).Password
-python scripts/evaluate_narrator_models.py --live --candidate glm-5.2-free-decarts-zdr
-Remove-Item Env:OPENROUTER_API_KEY
-Remove-Variable key
-```
+O desenvolvimento utiliza cenários reproduzíveis, contraprovas e regressões.
+Os resultados devem ser lidos com seu escopo e snapshot, não como uma promessa
+de ausência de falhas. Há falhas conhecidas na suíte histórica ampla e no lint;
+elas estão discriminadas no [registro de publicação anterior](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/docs/repository-promotion.md).
 
-Uma repetição faz o screening de sete turnos, além dos probes de texto e stream.
-Use `--repetitions 3` somente no finalista para obter as 21 respostas da aceitação
-completa. Controles marcados como sintéticos exigem `--allow-synthetic-only`.
-Relatórios são gravados em `eval-results/`, ignorado pelo Git; a chave nunca entra
-no payload ou no relatório.
+As verificações deste checkpoint e suas exclusões estão no
+[registro de sincronização](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/docs/repository-checkpoint-2026-10-20.md).
+Os relatórios versionados documentam conclusões; resultados brutos locais de
+execução ficam fora do Git. O [índice de avaliações](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/evals/narrator/README.md)
+explica o processo de admissão.
 
-Para o screening Gemini gratuito, gere uma chave nova e informe-a somente ao
-processo local:
+Pontos de atenção atuais incluem naturalidade das falas, responsividade dos NPCs,
+progressão e fidelidade entre resultado preparado e texto narrado. A campanha
+experimental é um instrumento para testar isso, não uma campanha completa pronta.
 
-```powershell
-$key = Read-Host "Gemini Auth API key" -AsSecureString
-$env:GEMINI_API_KEY = [System.Net.NetworkCredential]::new("", $key).Password
-python scripts/evaluate_narrator_models.py --live --manifest evals/narrator/gemini_candidates_2026-08-28.json --candidate gemini-3.7-flash-free-synthetic --api-key-env GEMINI_API_KEY --allow-synthetic-only
-Remove-Item Env:GEMINI_API_KEY
-Remove-Variable key
-```
+## Segurança e privacidade
 
-Esse perfil não é elegível para dados reais de campanha.
+- Chaves, arquivos de ambiente, bancos locais, saves, logs e resultados brutos não fazem parte desta publicação.
+- A integração com provedores é opt-in; não cole credenciais em issues, commits ou conversas.
+- A sessão temporária de avaliação recebe a chave de forma protegida e a mantém no processo, com prazo de expiração; não é um cofre permanente nem revoga a chave no provedor.
+- Tetos, autorizações e limites de chamadas são controles por ensaio, não autorização automática decorrente da instalação.
+- As proteções e suas limitações estão documentadas nas [auditorias de segurança](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/docs/security-audit/README.md) e no [procedimento da supervisora](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/plan/process-luna-credential-lease-1.md).
 
-## Topologia principal
+## Próximas entregas do MVP
 
-```text
-AgenteStoryteller/
-├── api/
-│   ├── llm/                       # contrato, runtime e adaptadores isolados
-│   ├── context_service.py         # montagem e recuperação sob orçamento
-│   ├── memory_service.py          # candidatos, episódios e consolidações
-│   ├── persistence.py             # schema SQLite e migração dos JSON legados
-│   ├── turn_execution_service.py  # unidade transacional do turno
-│   ├── turn_models.py             # eventos, narrativa e memória tipados
-│   ├── orchestrator_service.py    # regras, rascunho e narrador H6
-│   └── main.py                    # composition root HTTP/WebSocket
-├── client/src/                    # React, protocolo narrativo e HUD
-├── data/                          # catálogos, fontes e saves locais
-├── scripts/                       # inicialização e validação operacional
-├── skills/                        # contratos de comportamento H0/H1/H4/H6
-└── tests/                         # contrato, persistência, pipeline e regressão
-```
+O [checklist aprovado](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/plan/checklist-planejamento-campanha-hibrida.md) organiza
+o fechamento. O trabalho inclui resolver o gate da validação e a admissão do
+narrador, concluir a campanha híbrida mínima, delimitar os catálogos necessários,
+entregar a bandeja de dados e o conforto funcional da interface. Criação e ficha
+do jogador ficam por último, antes da aceitação integral e da entrega.
 
-## Manutenção
+Publicar o desenvolvimento não transforma esse backlog em release concluído.
+Novas ideias não entram automaticamente no escopo do MVP.
 
-- Para integrar outro protocolo, implemente um adaptador da fronteira em
-  `api/llm/adapters/` e faça a composição explícita em `api/llm/runtime.py`.
-  O domínio não deve importar SDKs de provedor.
-- Catálogos e parâmetros versionados podem permanecer em JSON. Cálculos,
-  invariantes e transições pertencem aos módulos determinísticos testados.
-- Eventos canônicos são imutáveis; resumos e consolidações são derivados,
-  versionados e preservam referências às fontes.
-- O store padrão fica em `data/saves/storyteller.sqlite3` e pode ser alterado por
-  `STORYTELLER_DB_PATH`. Faça backup antes de mover dados reais.
+## Como o projeto é construído
 
----
+Carlos Henrique Lopes conduz intenção de produto, decisões de arquitetura,
+prioridades e aceitação. O Codex apoia investigação, implementação, testes e
+documentação dentro do escopo autorizado. Decisões humanas, evidências técnicas
+e hipóteses experimentais são registradas separadamente.
 
-<div align="center">
-  Desenvolvido e mantido sob padrões de engenharia local-first. 🦇
+O propósito de abrir essa construção é tornar o processo consultável: mostrar
+os mecanismos, os problemas encontrados e os critérios usados para avançar,
+sem apresentar um experimento como produto acabado.
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-lopes-b445aa201)
-  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/CHCLopes)
-</div>
+## Documentação
+
+- [Guia técnico e configuração](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/DEVELOPMENT.md)
+- [Fonte de verdade para retomada](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/PROMPT_RETOMADA_2026-09-06.md)
+- [Arquitetura da campanha híbrida](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/plan/architecture-hybrid-campaign-progression-1.md)
+- [Plano de pausa e retomada](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/plan/feature-narrator-pause-resume-1.md)
+- [Avaliações do narrador](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/evals/narrator/README.md)
+- [Checkpoint desta publicação](https://github.com/CHCLopes/Agente-Storyteller-VampireTheMasqueradeV5/blob/4b3380ca012a1d96a4818ca21ac9e3f21b7b0e26/docs/repository-checkpoint-2026-10-20.md)
+
+## Autoria e direitos
+
+Projeto de [Carlos Henrique Lopes](https://github.com/CHCLopes).
+Contato profissional: [LinkedIn](https://www.linkedin.com/in/carlos-lopes-b445aa201/).
+
+Este é um projeto independente, sem afiliação oficial com os titulares de
+*Vampire: The Masquerade*. Marcas e material de terceiros pertencem aos seus
+respectivos titulares. Não há arquivo `LICENSE` neste checkpoint; portanto,
+este README não declara uma licença de uso ou redistribuição para o código.
