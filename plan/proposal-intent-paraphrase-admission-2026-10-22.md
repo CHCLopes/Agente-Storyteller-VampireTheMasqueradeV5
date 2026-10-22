@@ -1,6 +1,8 @@
 # Gate: quem valida paráfrases novas?
 
-Status: proposta para decisão humana, não aprovada. Escopo B offline concluído.
+Status: opção C aprovada pelo humano em 22/10/2026. Escopo limitado ao catálogo
+exato e ao experimento offline; não aprova integração, modelo real ou autoridade
+causal.
 
 O contrato rejeita formato inválido e troca de vínculo, mas não prova equivalência
 semântica. Guard independente só reconhece o catálogo atual. Modelo real não medido.

@@ -3,9 +3,9 @@
 Continue o trabalho existente neste projeto. Confirme os fatos nos arquivos antes
 de agir e carregue apenas o contexto necessário ao próximo passo.
 
-## Checkpoint vigente — B offline concluído; gate C/D — 22/10/2026
+## Checkpoint vigente — C offline concluído; gate E/F — 22/10/2026
 
-Humano escolheu B e autorizou commit/push antes de cada gate humano. Diretrizes
+Humano escolheu B e depois C; autorizou commit/push antes de cada gate humano. Diretrizes
 registradas em AGENTS.md, inclusive bloco de configuração obrigatório. Contrato
 experimental intent_interpretation_offline.py, corpus24 e avaliador separados do jogo.
 61 testes focados/197 regressão conjunta passam. Zero inferência/chave/custo de API.
@@ -16,11 +16,13 @@ Não alegar capacidade de modelo, improvisação geral ou novo interpretador adm
 32 fontes congeladas L86 intactas. Original/defaults/saves/ambiente preservados.
 Relatório: evals/narrator/reports/intent-interpretation-offline-2026-10-22.md.
 Evidência sintética publicável: evals/narrator/spikes/intent-interpretation-2026-10-22/.
-Próximo gate real C/D: C aprovar seis equivalências literais para novo experimento
-offline sem API/integração; D definir fonte independente para interpretação aberta.
-Escopo exato: plan/proposal-intent-paraphrase-admission-2026-10-22.md. Nenhuma opção
-aprovada ainda; CAMP-13..16/CAMP-24 abertos. Publicar branch atual antes de apresentar
-gate; verificar ref remoto e informar resultado real. Não integrar/main/merge por arrasto.
+Catálogo C exato executado:6/6 aprovadas,0/6 controles aceitos,baseline0/6; relatório
+evals/narrator/reports/intent-paraphrase-admission-offline-2026-10-22.md.
+Próximo gate real E/F: E integrar somente as seis strings ao ensaio A2; F conservar
+como estudo offline e definir fonte independente antes de ampliar. Escopo:
+plan/proposal-intent-paraphrase-integration-2026-10-22.md. Nenhuma opção aprovada;
+CAMP-13..16/CAMP-24 abertos. Publicar branch atual antes de apresentar gate;
+verificar ref remoto e informar resultado real. Não integrar/main/merge por arrasto.
 
 ## Checkpoint anterior — A2 em navegador; gate de próximo escopo — 22/10/2026
 

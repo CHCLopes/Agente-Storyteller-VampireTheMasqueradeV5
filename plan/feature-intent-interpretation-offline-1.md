@@ -46,6 +46,16 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 | TASK-004 | Criar tests/test_intent_interpretation_offline.py para bindings, parsing, limites, negação, ator, replay e matriz de 24 casos. Executar teste focado e regressão do browser. | [x] | 2026-10-22 |
 | TASK-005 | Executar uma observação congelada; registrar resultados/casos não resolvidos em relatório, atualizar retomada/checklist e preparar próximo gate humano. | [x] | 2026-10-22 |
 
+### Implementation Phase 3
+
+- GOAL-003: Executar a opção C como catálogo exato e preparar o gate de integração.
+
+| Task | Description | Completed | Date |
+|---|---|---|---|
+| TASK-006 | Criar api/experiments/intent_interpretation_catalog.py com seis strings exatas e nenhuma normalização, substring ou execução. | [x] | 2026-10-22 |
+| TASK-007 | Criar scripts/evaluate_intent_paraphrase_admission_offline.py e doze casos (seis aprovados/seis controles), com manifesto de hashes e custo zero. | [x] | 2026-10-22 |
+| TASK-008 | Criar testes focados, executar observação e regressão conjunta; registrar relatório e preparar E/F sem admitir integração. | [x] | 2026-10-22 |
+
 ## 3. Alternatives
 
 - ALT-001: Confiar no campo de confiança/proposta/evidência literal não prova semântica; medir contraprova.
@@ -55,7 +65,7 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 ## 4. Dependencies
 
 - DEP-001: Pydantic/pytest existentes e CampaignIntentKind/classify_campaign_intent congelados.
-- DEP-002: Proposta B aprovada, preservando a autoridade causal determinística.
+- DEP-002: Propostas B e C aprovadas, preservando a autoridade causal determinística.
 
 ## 5. Files
 
@@ -64,6 +74,9 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 - FILE-003: scripts/evaluate_intent_interpretation_offline.py.
 - FILE-004: tests/test_intent_interpretation_offline.py.
 - FILE-005: evals/narrator/reports/intent-interpretation-offline-2026-10-22.md e estado de retomada.
+- FILE-006: api/experiments/intent_interpretation_catalog.py.
+- FILE-007: scripts/evaluate_intent_paraphrase_admission_offline.py e tests/test_intent_paraphrase_admission_offline.py.
+- FILE-008: evals/narrator/reports/intent-paraphrase-admission-offline-2026-10-22.md.
 
 ## 6. Testing
 
@@ -72,6 +85,7 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 - TEST-003: Proposta semanticamente fiel mas não reconhecida permanece pendente, sem fingir cobertura.
 - TEST-004: Baseline desconhecida não equivale a intenção errada; apresentar falso bloqueio/aceite separados.
 - TEST-005: 32 fontes A2/L86 mantêm hashes; browser não recebe o contrato novo.
+- TEST-006: Seis strings aprovadas elegíveis e seis controles recusados por igualdade exata.
 
 ## 7. Risks & Assumptions
 
@@ -86,3 +100,7 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 
 Resultado:61 testes focados e197 da regressão conjunta passaram. Contrato estrutural
 não prova semântica; guard mantém cobertura atual. Gate C/D preparado, não aprovado.
+
+Opção C aprovada em 22/10/2026: catálogo exato de seis equivalências em variante
+separada, sem API, integração, RNG ou autoridade causal. A variante foi executada;
+o próximo gate E/F decide se esse catálogo entra no ensaio A2.
