@@ -56,11 +56,21 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 | TASK-007 | Criar scripts/evaluate_intent_paraphrase_admission_offline.py e doze casos (seis aprovados/seis controles), com manifesto de hashes e custo zero. | [x] | 2026-10-22 |
 | TASK-008 | Criar testes focados, executar observação e regressão conjunta; registrar relatório e preparar E/F sem admitir integração. | [x] | 2026-10-22 |
 
+### Implementation Phase 4
+
+- GOAL-004: Concluir E por delegação humana e aguardar resoluções do brainstorm.
+
+| Task | Description | Completed | Date |
+|---|---|---|---|
+| TASK-009 | Criar api/experiments/intent_paraphrase_boundary.py com recibo exato persistido antes do claim A2; no harness adicionar modo opt-in exact_paraphrases, DB exclusivo e exibição do texto original. Não alterar módulos congelados. | [x] | 2026-10-22 |
+| TASK-010 | Criar tests/test_intent_paraphrase_integration.py: seis pares com baseline, seis controles, near misses, quatro desfechos, isolamento, replay/restart e retomada sem RNG adicional. | [x] | 2026-10-22 |
+| TASK-011 | Registrar 39 testes focados/245 da regressão selecionada, 32 hashes intactos e custo zero; preparar transcrição integral do brainstorm, checkpoint e arquivos para publicação antes da espera solicitada. | [x] | 2026-10-22 |
+
 ## 3. Alternatives
 
 - ALT-001: Confiar no campo de confiança/proposta/evidência literal não prova semântica; medir contraprova.
 - ALT-002: Aceitar novas paráfrases por labels do corpus na função assess vazaria o gabarito; proibido.
-- ALT-003: Acoplar imediatamente ao A2 ou resolvedor amplia o aceite; não executar.
+- ALT-003: Integração ao produto/resolvedor permanece fora do escopo. E autorizou somente o modo exato opt-in no harness A2; nenhuma paráfrase nova.
 
 ## 4. Dependencies
 
@@ -77,6 +87,8 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 - FILE-006: api/experiments/intent_interpretation_catalog.py.
 - FILE-007: scripts/evaluate_intent_paraphrase_admission_offline.py e tests/test_intent_paraphrase_admission_offline.py.
 - FILE-008: evals/narrator/reports/intent-paraphrase-admission-offline-2026-10-22.md.
+- FILE-009: api/experiments/intent_paraphrase_boundary.py, scripts/run_expression_selection_browser_trial.py e tests/test_intent_paraphrase_integration.py.
+- FILE-010: evals/narrator/reports/intent-paraphrase-integration-2026-10-22.md e docs/handoffs/brainstorm-npc-decision-narrator-2026-10-22.md.
 
 ## 6. Testing
 
@@ -84,8 +96,9 @@ não integrar ou avaliar modelo real. Respostas autoradas não medem capacidade 
 - TEST-002: Contraprovas de negação, ator, novo método e cânone não elegíveis no guard.
 - TEST-003: Proposta semanticamente fiel mas não reconhecida permanece pendente, sem fingir cobertura.
 - TEST-004: Baseline desconhecida não equivale a intenção errada; apresentar falso bloqueio/aceite separados.
-- TEST-005: 32 fontes A2/L86 mantêm hashes; browser não recebe o contrato novo.
+- TEST-005: 32 fontes A2/L86 mantêm hashes; modo anterior do browser não recebe B/C; E usa opt-in separado.
 - TEST-006: Seis strings aprovadas elegíveis e seis controles recusados por igualdade exata.
+- TEST-007: Em E as seis entradas alcançam mesmo estado/efeitos/texto que as canônicas; recibo original conservado, sem rebind de ID ou RNG em replay/retomada.
 
 ## 7. Risks & Assumptions
 
@@ -103,4 +116,6 @@ não prova semântica; guard mantém cobertura atual. Gate C/D preparado, não a
 
 Opção C aprovada em 22/10/2026: catálogo exato de seis equivalências em variante
 separada, sem API, integração, RNG ou autoridade causal. A variante foi executada;
-o próximo gate E/F decide se esse catálogo entra no ensaio A2.
+o gate E/F subsequente foi resolvido por delegação humana em favor de E.
+E concluída:39 focados e245 na regressão selecionada;32 fontes intactas. Aguardar
+resoluções do brainstorm após publicação, sem abrir nova bateria ou arquitetura.

@@ -3,7 +3,27 @@
 Continue o trabalho existente neste projeto. Confirme os fatos nos arquivos antes
 de agir e carregue apenas o contexto necessário ao próximo passo.
 
-## Checkpoint vigente — C offline concluído; gate E/F — 22/10/2026
+## Checkpoint vigente — E concluída; aguardar resoluções do brainstorm — 22/10/2026
+
+Humano delegou a opção mais recomendada E/F, conclusão dos testes e push, depois
+espera por resoluções/instruções do brainstorm desenvolvido em outro chat.
+E integrada somente no harness A2 com flag --exact-paraphrases: seis frases
+exatas, banco novo e recibos companheiros preservam texto literal e binding por
+sessão/operação antes de encaminhar frase canônica ao núcleo congelado.
+Modo baseline anterior preservado; controles C recusados sem avanço no modo E.
+39 testes focados e245 na regressão selecionada passaram (32 casos E novos);
+mesmo aviso preexistente python_multipart.32 hashes L86 intactos;gates false/false.
+Zero inferência/chave/custo; nenhuma nova observação visual em navegador E.
+Relatório: evals/narrator/reports/intent-paraphrase-integration-2026-10-22.md.
+Texto integral transferível: docs/handoffs/brainstorm-npc-decision-narrator-2026-10-22.md.
+Publicar arquivos relacionados na branch atual e confirmar ref remoto. Excluir
+as alterações preexistentes de .env.example/api/.env.example e artefatos locais.
+Após publicação, aguardar humano; não iniciar nova bateria, integrar ao produto,
+adotar Jev/utilidade/GOAP ou transformar exemplos do brainstorm em cânone.
+Pergunta de checkpoints/desfechos ainda sem resposta. CAMP-13..16/CAMP-24 abertos.
+Configuração final obrigatória com modelo/esforço/motivo preenchidos.
+
+## Checkpoint anterior — C offline concluído; gate E/F — 22/10/2026
 
 Humano escolheu B e depois C; autorizou commit/push antes de cada gate humano. Diretrizes
 registradas em AGENTS.md, inclusive bloco de configuração obrigatório. Contrato

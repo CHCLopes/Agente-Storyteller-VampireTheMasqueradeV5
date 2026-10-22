@@ -3,7 +3,21 @@
 Data original: 09/09/2026. Atualização: 21/10/2026.
 Estado: **planejamento ativo por PROG-ROUTE-B; respostas de produto em proposta**.
 
-Checkpoint vigente — C offline concluído; gate E/F — 22/10/2026
+Checkpoint vigente — E concluída; aguardar resoluções do brainstorm — 22/10/2026
+
+Humano delegou E (opção recomendada), conclusão de testes/push e espera por suas
+resoluções/instruções do brainstorm em outro chat. Flag opt-in --exact-paraphrases
+no harness A2 aceita somente seis strings C, conserva texto original em recibo
+companheiro e encaminha frase canônica ao núcleo congelado. Banco novo exclusivo;
+modo anterior preservado, sem novo cânone/modelo.39 focados e245 da regressão
+selecionada passaram;32 fontes L86 intactas,gates false/false,USD0 inferência.
+Relatório: evals/narrator/reports/intent-paraphrase-integration-2026-10-22.md.
+Transferência: docs/handoffs/brainstorm-npc-decision-narrator-2026-10-22.md.
+Depois de publicar e confirmar ref remoto, aguardar humano. Não abrir nova
+bateria, adotar proposta dual-model/brainstorm ou integrar produto por arrasto.
+CAMP-13..16/CAMP-24 continuam abertos;E/F resolvido,não pedir escolha novamente.
+
+Checkpoint anterior — C offline concluído; gate E/F — 22/10/2026
 
 Humano escolheu B e depois C; autorizou commit/push antes de cada gate humano. Diretrizes
 registradas em AGENTS.md, inclusive bloco de configuração obrigatório. Contrato

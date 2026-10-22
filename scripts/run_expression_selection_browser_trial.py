@@ -14,6 +14,8 @@ from api.campaign_progression_catalog import classify_campaign_intent
 from api.experiments.expression_selection.contract import SelectionConfig
 from api.experiments.expression_selection.service import execute
 from api.experiments.expression_selection.store import SelectionStore
+from api.experiments.intent_interpretation_catalog import APPROVED_PARAPHRASES, VERSION
+from api.experiments.intent_paraphrase_boundary import ExactParaphraseBoundary
 from api.llm.contract import CancellationToken, utc_now
 from api.local_request_security import LocalRequestBoundary
 from api.rules_service import PlayerSheetModel
@@ -59,12 +61,25 @@ $('cancel').onclick=()=>task(async()=>{show(await api('/api/cancel',{session_id:
 if(session)task(async()=>show(await api('/api/session/'+encodeURIComponent(session))));else controls();
 </script></html>"""
 
-def create_app(db_path: Path, *, access_token: str | None = None) -> FastAPI:
-    store = SelectionStore(db_path, create=not Path(db_path).exists())
+def create_app(db_path: Path, *, access_token: str | None = None,
+               exact_paraphrases: bool = False) -> FastAPI:
+    db_path = Path(db_path)
+    creating = not db_path.exists()
+    receipt_path = db_path.with_name(db_path.name + '.paraphrases.sqlite3')
+    if exact_paraphrases and creating and receipt_path.exists():
+        raise ValueError('paraphrase_receipts_already_exist')
+    store = SelectionStore(db_path, create=creating)
+    boundary = ExactParaphraseBoundary(receipt_path, create=creating) if exact_paraphrases else None
+    if boundary and not creating:
+        # Never adopt a baseline session or reroll a partially claimed operation.
+        with store._connection() as c:
+            for row in c.execute('SELECT session_id,id,input FROM operations'):
+                boundary.raw_input(row['session_id'], row['id'], row['input'])
     token = access_token or secrets.token_urlsafe(24)
     app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
     app.add_middleware(LocalRequestBoundary)
     app.state.selection_store = store
+    app.state.paraphrase_boundary = boundary
 
     def authorize(value):
         if not value or not secrets.compare_digest(value, token):
@@ -83,9 +98,15 @@ def create_app(db_path: Path, *, access_token: str | None = None) -> FastAPI:
             store._history(c, s)
             rows = c.execute("SELECT id,input,presentation FROM operations WHERE session_id=? AND phase='completed' ORDER BY rowid", (sid,)).fetchall()
             pending = c.execute("SELECT id,input,phase FROM operations WHERE session_id=? AND phase IN ('preparing','prepared')", (sid,)).fetchone()
+            history = [dict(operation_id=r['id'], input=r['input'], text=json.loads(r['presentation'])['text']) for r in rows]
+            pending = dict(pending) if pending else None
+            if boundary:
+                for row in history:
+                    row['input'] = boundary.raw_input(sid, row['operation_id'], row['input'])
+                if pending:
+                    pending['input'] = boundary.raw_input(sid, pending['id'], pending['input'])
             return dict(session_id=sid, turn=s.state.revision, outcome=s.state.outcome,
-                opening=OPENING, history=[dict(operation_id=r['id'], input=r['input'], text=json.loads(r['presentation'])['text']) for r in rows],
-                pending=dict(pending) if pending else None, provider_calls=0)
+                opening=OPENING, history=history, pending=pending, provider_calls=0)
 
     @app.exception_handler(ValueError)
     async def invalid(_request, _exc):
@@ -95,9 +116,15 @@ def create_app(db_path: Path, *, access_token: str | None = None) -> FastAPI:
     async def finish(value, *, resume=False):
         view(value.session_id)  # Validate mode and retained history before mutation.
         if not resume:
-            if classify_campaign_intent(value.player_input) is None:
+            if boundary:
+                if value.player_input not in APPROVED_PARAPHRASES:
+                    raise HTTPException(422, "Esta ação ainda não é coberta neste ensaio. Sua sessão não avançou.")
+                canonical = boundary.admit(value.session_id, value.operation_id, value.player_input)
+            else:
+                canonical = value.player_input
+            if classify_campaign_intent(canonical) is None:
                 raise HTTPException(422, "Esta ação ainda não é coberta neste ensaio. Sua sessão não avançou.")
-            store.prepare(value.session_id, value.operation_id, value.player_input)
+            store.prepare(value.session_id, value.operation_id, canonical)
         attempts = store.attempts(value.session_id, value.operation_id)
         previous = None
         attempt_id = 'web-' + sha256(value.operation_id.encode('utf-8')).hexdigest()
@@ -117,7 +144,14 @@ def create_app(db_path: Path, *, access_token: str | None = None) -> FastAPI:
 
     @app.get('/', response_class=HTMLResponse)
     async def home():
-        return HTMLResponse(PAGE.replace('__TOKEN__', json.dumps(token)), headers={'Cache-Control':'no-store','Referrer-Policy':'no-referrer'})
+        page = PAGE
+        if boundary:
+            page = page.replace("selection-a2-session", "selection-a2-exact-session").replace("selection-a2-operation", "selection-a2-exact-operation")
+            page = page.replace("const text=$('input').value.trim();if(!text)return;", "const text=$('input').value;if(!text.trim())return;")
+            start = page.index('<small>Catálogo fechado.')
+            end = page.index('</small>', start)
+            page = page[:start] + '<small>Catálogo exato E (' + VERSION + '). Aceita somente: ' + ' / '.join(APPROVED_PARAPHRASES) + '. Pontuação, espaços e maiúsculas precisam coincidir. Recarregar recupera a sessão e seu histórico.' + page[end:]
+        return HTMLResponse(page.replace('__TOKEN__', json.dumps(token)), headers={'Cache-Control':'no-store','Referrer-Policy':'no-referrer'})
 
     @app.post('/api/start')
     async def start(x_trial_token: str | None = Header(default=None)):
@@ -151,9 +185,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--db', type=Path, required=True, help='Banco exclusivo do ensaio A2; não usar banco do produto.')
     parser.add_argument('--port', type=int, default=8032)
+    parser.add_argument('--exact-paraphrases', action='store_true', help='Opt-in E: somente seis frases exatas; usar banco novo exclusivo.')
     args = parser.parse_args()
     import uvicorn
-    uvicorn.run(create_app(args.db), host='127.0.0.1', port=args.port, log_level='warning')
+    uvicorn.run(create_app(args.db, exact_paraphrases=args.exact_paraphrases), host='127.0.0.1', port=args.port, log_level='warning')
 
 if __name__ == '__main__':
     main()
