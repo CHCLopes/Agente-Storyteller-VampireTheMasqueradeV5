@@ -3,6 +3,216 @@
 Continue o trabalho existente neste projeto. Confirme os fatos nos arquivos antes
 de agir e carregue apenas o contexto necessário ao próximo passo.
 
+## Checkpoint vigente — B offline concluído; gate C/D — 22/10/2026
+
+Humano escolheu B e autorizou commit/push antes de cada gate humano. Diretrizes
+registradas em AGENTS.md, inclusive bloco de configuração obrigatório. Contrato
+experimental intent_interpretation_offline.py, corpus24 e avaliador separados do jogo.
+61 testes focados/197 regressão conjunta passam. Zero inferência/chave/custo de API.
+Formato/literalidade falham na primeira contraprova de negação; diagnóstico separado
+com sete propostas erradas. Guard independente bloqueia-as, mas só reconhece4 das10
+intenções autoradas; seis paráfrases fiéis continuam pendentes,14 referências sem ação.
+Não alegar capacidade de modelo, improvisação geral ou novo interpretador admitido.
+32 fontes congeladas L86 intactas. Original/defaults/saves/ambiente preservados.
+Relatório: evals/narrator/reports/intent-interpretation-offline-2026-10-22.md.
+Evidência sintética publicável: evals/narrator/spikes/intent-interpretation-2026-10-22/.
+Próximo gate real C/D: C aprovar seis equivalências literais para novo experimento
+offline sem API/integração; D definir fonte independente para interpretação aberta.
+Escopo exato: plan/proposal-intent-paraphrase-admission-2026-10-22.md. Nenhuma opção
+aprovada ainda; CAMP-13..16/CAMP-24 abertos. Publicar branch atual antes de apresentar
+gate; verificar ref remoto e informar resultado real. Não integrar/main/merge por arrasto.
+
+## Checkpoint anterior — A2 em navegador; gate de próximo escopo — 22/10/2026
+
+Diretriz de continuidade/bloco final registrada em AGENTS.md. Ensaio determinístico
+separado do produto em scripts/run_expression_selection_browser_trial.py, porta8032
+somente127.0.0.1, banco exclusivo eval-results/expression-selection-browser-2026-10-22.
+10 testes focados passam. Navegador interno confirmou início, fala, ação não coberta
+sem turno, reformulação, desfecho, reload e recuperação após restart do servidor.
+Sem inferência/chave: USD0 novo. 32 hashes L86 e records originais reconferidos intactos.
+Relatório: evals/narrator/reports/expression-selection-browser-review-2026-10-22.md.
+CAMP-13..16/CAMP-24 continuam abertos: catálogo não demonstra improvisação livre.
+Gate humano real: A priorizar integração do recorte fechado; B (recomendado) priorizar
+desenho/teste exclusivamente offline de interpretação delimitada, sem autoridade causal.
+Escopo/limites/24 casos/aceitação: plan/proposal-expression-selection-next-scope-2026-10-22.md.
+Não iniciar B ou integração por inferência do agente: define prioridade/superfície
+nova. Não reativar proposta dual-model/ALT-003 causal, não promover MVP/narrador/default.
+Checkout original preservado, sem commit/push, .env/credenciais não lidos.
+
+## Checkpoint anterior — A2/L86 concluído; baseline recomendada — 22/10/2026
+
+Envio L86 explicitamente autorizado pelo humano após pergunta sobre os17 payloads
+sintéticos à API da OpenAI/gpt-5.6-luna low/tetoUSD0.15. Bloqueio prévio de revisão
+automática resolvido por esse aceite; nenhum mecanismo de contorno. Lote único
+282a3849-3c62-4390-8809-e9bb95a2385c executado e encerrado.
+
+17 pares/17 chamadas, estados/efeitos iguais nos oito percursos. Uso reportado:
+6.448 tokens entrada/859 saída; USD0.0023204 estimado, cobrança não confirmada.
+Maior request2.215 bytes, saída limitada256 tokens. 17 corpos reais coincidem com
+payloads aprovados e hashes de request. Banco SQLite do lote retido;34 replays
+pós-execução conferidos byte a byte sem gateway, RNG, builder ou renderer atuais.
+
+Seleção Luna:12 falas alternativas/5 originais, oito frases de posição repetidas,
+dois layouts em parágrafos; dois textos exatamente iguais à baseline. Diferenças
+não demonstram melhora; ganho editorial consistente da LLM não demonstrado.
+Recomendação: conservar seleção determinística como referência no recorte autorado;
+não abrir lotes equivalentes para procurar vantagem. A2 experimental cumpriu escopo.
+Garantia de prosa fechada depende da verdade/elegibilidade do catálogo; não declarar
+fidelidade geral de RPG aberto ou capacidade de modelos locais/gratuitos.
+
+Relatório integral e34 textos reais:
+evals/narrator/reports/expression-selection-l86-observation-2026-10-22.md.
+Auditoria: eval-results/expression-selection-l86-observation-review-2026-10-22.json.
+Execução: eval-results/hybrid-campaign-luna-l86-282a3849-3c62-4390-8809-e9bb95a2385c.
+SHA256 records792b7df18cc297804102501714d9f100314cb91a5d5b14776d674d3860368e1c.
+142 testes selecionados da implementação continuam registrados; nenhum módulo
+foi alterado na execução real. Gates false/false, trava mantida, nenhum lote novo.
+
+Supervisora852c6897-09cd-414a-bb1a-584f0d709df1/PID21812 voltou idle/exit code0;
+expira23/10/2026 00:00 Fortaleza. Não renovar automaticamente, ler segredo ou
+reutilizar sessões antigas. Conferir estado vivo caso outra inferência seja
+necessária e autorizada. Nenhuma ação humana pendente para concluir L86.
+
+A2 permanece opt-in/isolado; não migrar original nem promover default/admissão/MVP.
+Reaproveitamento futuro deve separar resultados, opções elegíveis e proveniência,
+com proposta própria para uma cena aberta. CAMP-24/produto/adaptação do original
+continuam decisões futuras; nenhuma delas foi aprovada por este lote.
+
+Diretriz humana de gates decisórios: bloco final Configuração recomendada com
+Modelo, Esforço, Motivo, Ação humana necessária e O que continuará autonomamente
+depois da ação. Priorizar economia de recursos; não criar gate onde o trabalho
+já está autorizado ou concluído.
+
+## Checkpoint anterior — A2 implementada offline; envio L86 bloqueado — 22/10/2026
+
+Humano aprovou com “Prossiga” o experimento isolado de seleção de expressão com
+contrato próprio, persistência/retomada e comparação determinística. Implementado
+em api/experiments/expression_selection; política determinística ou target de modelo
+explícito. IDs fechados, autoria da aplicação, raw JSON estrito, SQLite dedicado,
+claim antes de RNG, CAS atômico, seleção retida e replay pelos bytes persistidos.
+Sem alteração de módulos de regras/leitores A1/defaults/checkout original.
+
+142 testes distintos selecionados passaram: 138 núcleo/regressão +4 harness;
+75 novos (71 experimento +4 harness), sem somar reexecuções intermediárias.
+Cobertura: oito percursos/variantes ausentes, parsing/versão/escopo, concorrência,
+rollback/cancelamento, recuperação explícita e replay sem geração/rolagem extra.
+Preflight L86: 17 pares completos, zero provedor, maior request2.215 bytes.
+Relatório: evals/narrator/reports/expression-selection-a2-implementation-2026-10-22.md.
+Plano: plan/experiment-expression-selection-1.md. XMLs/artefatos no relatório.
+
+L86 preparado: <=17 chamadas Luna low/Responses/store false, 256 tokens efetivos
+por request (manifesto com limite superior768), <=20k bytes, USD0.15 estimado,
+32 hashes, primeira falha encerra; sem retry/fallback/admissão. O comando de
+ativação/despacho foi REJEITADO pela revisão automática por exigir autorização
+explícita para os payloads específicos no destino OpenAI com custo. O comando
+não executou. Gates false/false; nenhum request/latch/envio L86, custo novo USD0.
+Não contornar a rejeição nem inferir autorização específica do aceite experimental.
+
+Payloads exatos preparados localmente para decisão:
+eval-results/expression-selection-l86-payload-review-verified-2026-10-22/payloads-for-approval.json.
+SHA256 3dc437e9b2cc112ecccceb92324d6780c9c99c9fbf295fb9d309af8b4d7ab038.
+Destino https://api.openai.com/v1/responses; instruções, consequências/falas/opções
+sintéticas e schema. Sem chave, ficha, save pessoal ou código-fonte. SQLite e
+records dessa pasta são simulação autorada; não afirmar ganho de Luna.
+
+Supervisora aberta hoje a pedido humano; sessão852c6897-09cd-414a-bb1a-584f0d709df1,
+PID Python21812 (launcherPowerShell23284). Chave recebida, idle observado;
+expiração23/10/2026 00:00 Fortaleza. Não ler segredo/terminal/ambiente/memória,
+renovar automaticamente ou reutilizar sessões antigas. Revalidar vida antes de envio.
+
+Próximo gate: confirmar envio desses17 payloads sintéticos à OpenAI até USD0.15.
+Após aceite explícito, revalidar hash/lease e despachar uma única vez; fechar gates,
+revisar todas as apresentações versus baseline e relatar custo. Nenhuma nova
+implementação é necessária para tornar a aprovação concreta. CAMP-24/MVP/default,
+admissão e adaptação da ferramenta original continuam abertos. Catálogo depende
+de curadoria correta; escolha fechada não prova a verdade das frases do autor.
+
+Diretriz humana para respostas com gate decisório: encerrar com “Configuração
+recomendada”, contendo Modelo, Esforço, Motivo, Ação humana necessária e O que
+continuará autonomamente depois da ação; priorizar economia de recursos.
+
+## Checkpoint anterior — estudo A2 agnóstico concluído offline — 21/10/2026
+
+Humano autorizou continuar o estudo e sugeriu possível reaproveitamento na
+ferramenta original com modelos gratuitos/leves/locais. Hipótese registrada;
+nenhuma migração, adoção de provedor, mudança de default ou fechamento de autoria
+aprovados. Original master permaneceu somente leitura; APIs/domínio do worktree
+não foram alterados neste estudo.
+
+Prova isolada de seleção entre expressões autoradas por IDs: 17 planos congelados
+do L85, 136 combinações; 238 respostas malformadas/inelegíveis e 119 trocas de
+vínculo/catálogo rejeitadas. Nenhuma aceitação inesperada nesses casos. Contraprova:
+frase falsa inserida no catálogo confiável foi aceita. Garantia é ausência de
+prosa arbitrária da resposta, condicionada à correção editorial e elegibilidade.
+Não demonstra capacidade de modelo leve nem ganho sobre baseline determinística.
+
+Oito testes de transporte simulado native/emulated passam. Diferença observada:
+parser do adaptador comum conserva última chave JSON duplicada; prova pura rejeita.
+Limite de integração registrado, código compartilhado intacto. Zero chamadas de
+inferência, custo novo USD 0, nenhum L86, download ou servidor iniciado.
+
+Relatório: evals/narrator/reports/architecture-model-agnostic-expression-spike-2026-10-21.md.
+Exemplos autorados: evals/narrator/reports/expression-selection-authored-examples-2026-10-21.md.
+Protocolo/script/observação: evals/narrator/spikes/expression-selection-2026-10-21/.
+
+Recomendação: reaproveitar separação de autoridade, contratos, vínculos e
+proveniência; comparar seleção por modelo com baseline explícita antes de justificar
+inferência. Textos/catálogo da microcampanha não se transferem automaticamente ao
+RPG aberto. Documentação oficial de LM Studio/Ollama/llama.cpp consultada; nenhum
+alvo real, hardware, quantização ou custo operacional foi avaliado.
+
+Próximo recorte PROPOSTO: seleção versionada em novas sessões sintéticas, cobrindo
+variantes ausentes, integração transacional/replay/parsing e comparação editorial.
+Integração no runtime e adaptação do original dependem de decisão humana sobre
+escopo e custo de reduzir improvisação. Autorização do estudo não é essa decisão.
+A1 continua experimental, L84/L85 fechados e íntegros; CAMP-24/MVP/default abertos.
+Supervisora não foi usada neste estudo; conferir vida/expiração antes de inferência,
+sem renovar automaticamente a sessão que expira 22/10 00:00 Fortaleza.
+
+## Checkpoint anterior — A1 v2 ensaiada — 21/10/2026
+
+A1 aprovada com “Prossiga” e implementada opt-in campaign-source-local-v2 no
+worktree b008. Aplicação compõe fatos/falas essenciais; LLM preenche dois slots
+opcionais; plano/hash/proveniência e leitores v1/v2 preservados. Sem migração,
+RNG novo, alteração de default, commit/push/merge ou admissão.
+
+269 testes distintos da implementação e seis testes novos do ensaio L85 passam.
+L84: 12 chamadas/12 turnos completos, USD 0.0075790 estimado; três descrições de
+Mara renderizadas como diálogo. Gates fechados durante revisão; a chamada 13 não
+foi enviada. Erro generation_failed nesse registro decorre do fechamento local.
+L85: mudança apenas de prompt para explicitar discurso direto; 17 chamadas/17
+turnos, oito percursos e desfechos conferidos, USD 0.0099808 estimado. Uma reação
+não vazia em discurso direto; 14/17 turnos sem texto opcional. Máximo request
+9.352 bytes. Total desta continuidade: 29 chamadas/USD 0.0175598, não cobrança.
+
+L85 técnico completo não significa aceitação narrativa: atmosfera afirmou
+silêncio não estabelecido na cena. Núcleo crítico e referências preservados;
+autoria/offsets conferidos. A LLM escreveu 220 caracteres dos segmentos, contra
+4.030 da aplicação (sem separadores/pergunta final). Contribuição limitada nesta
+matriz, não estimativa de estabilidade. Persistem 9/10 contraprovas inválidas
+aceitas offline; não declarar fidelidade integral ou naturalidade geral.
+
+Relatório e 17 apresentações reais para revisão:
+evals/narrator/reports/campaign-expression-v2-l84-l85-review-2026-10-21.md.
+Lotes, respostas e manifests preservados; L84/L85 false/false, travas mantidas.
+L83 histórico fechado; não regravar seus hashes após mudanças compartilhadas.
+Nenhum L86 preparado/despachado. Bancos dos ensaios eram temporários; JSONL e
+summaries preservados. Navegador/replay real destes lotes não foram verificados.
+
+Supervisora fa6f0ca5-2cc1-4dd3-9821-34946243c0c7/PID 12548 observada idle após
+L85, exit code 0; expira 22/10 00:00 Fortaleza. Chave exclusivamente no processo;
+reconferir estado vivo antes de eventual despacho. Não renovar automaticamente.
+
+Ciclo experimental A1 previsto concluído. Próximo gate: decisão sobre autoria e
+garantia de produto, não aceite intermediário de lote ou novo teto financeiro.
+Proposta ainda NÃO aprovada: estudar expressão também composta pela aplicação
+com opções autoradas/referências verificáveis se fidelidade integral for requisito;
+alternativa é manter prosa livre com garantia limitada explicitamente aceita.
+Não transformar aprovação experimental A1 em aceite final dessa limitação.
+Não abrir mais lotes só para encontrar um resultado sem falhas. Autorização
+contínua <= USD 0.15 continua vigente para testes justificados dentro do escopo;
+CAMP-24/admissão/default/MVP seguem abertos. Nenhuma troca automática de modelo.
+
 ## Publicação do desenvolvimento — 20/10/2026
 
 Sincronização segura inicialmente autorizada para a branch de implementação.
@@ -16,9 +226,9 @@ Git: docs/repository-checkpoint-2026-10-20.md. Checkpoint técnico 45d4a37
 publicado na branch remota e hash conferido; apresentação em commit documental
 separado. Consultar o registro e a referência remota para o HEAD final.
 Nenhuma alteração de produto/arquitetura ou inferência paga nesta atividade.
-O próximo gate de produto continua DEC-NARR-VALID-001 abaixo, sem opção escolhida.
+Na publicação, DEC-NARR-VALID-001 ainda não tinha escolha; o checkpoint de 21/10 acima registra A e a proposta A1 pendente.
 
-## Checkpoint vigente — L82 encerrado; L83 não executado; decisão de estratégia — 20/10/2026
+## Checkpoint histórico — L82 encerrado; L83 não executado; decisão de estratégia — 20/10/2026
 
 Fonte do checkpoint: evals/narrator/reports/hybrid-campaign-luna-validation-checkpoint-2026-10-20.md.
 L82: 9 chamadas/8 turnos, USD 0.0091548 estimado, não cobrança. Equivalência

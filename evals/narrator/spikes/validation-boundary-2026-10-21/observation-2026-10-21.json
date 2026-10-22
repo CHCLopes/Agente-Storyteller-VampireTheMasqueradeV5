@@ -1,0 +1,1429 @@
+{
+  "study": "DEC-NARR-VALID-001-A",
+  "date": "2026-10-21",
+  "scope": "authored contrasts; current full validator; no production modifications",
+  "provider_calls": 0,
+  "inference_cost_usd": "0",
+  "observations": [
+    {
+      "id": "task.baseline",
+      "rule": "R-01",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara responde sobre a tarefa: a água ameaça o registro. Ela aponta a superfície seca da Galeria, onde ele pode ser protegido. O documento permanece na bancada, aguardando a próxima decisão do jogador.",
+      "effect_ids": [
+        "mara.replies.to_task",
+        "campaign.knows.safe_surface"
+      ]
+    },
+    {
+      "id": "task.goal_synonym",
+      "rule": "R-01",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara responde sobre a tarefa: a água ameaça o registro. Ela aponta a superfície seca da Galeria, onde ele pode ser protegido. O documento permanece na bancada, aguardando a próxima decisão do jogador. Mara diz: “Sua missão é investigar o conteúdo, não preservar o registro.”",
+      "effect_ids": [
+        "mara.replies.to_task",
+        "campaign.knows.safe_surface"
+      ]
+    },
+    {
+      "id": "task.optional_inspection",
+      "rule": "R-01",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara responde sobre a tarefa: a água ameaça o registro. Ela aponta a superfície seca da Galeria, onde ele pode ser protegido. O documento permanece na bancada, aguardando a próxima decisão do jogador. Mara diz: “Examinar é uma opção; o objetivo continua sendo preservar o registro.”",
+      "effect_ids": [
+        "mara.replies.to_task",
+        "campaign.knows.safe_surface"
+      ]
+    },
+    {
+      "id": "task.npc_extra_lore",
+      "rule": "R-01",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara responde sobre a tarefa: a água ameaça o registro. Ela aponta a superfície seca da Galeria, onde ele pode ser protegido. O documento permanece na bancada, aguardando a próxima decisão do jogador. Mara diz: “A fundadora me fez jurar que jamais revelaria seu nome.”",
+      "effect_ids": [
+        "mara.replies.to_task",
+        "campaign.knows.safe_surface"
+      ]
+    },
+    {
+      "id": "refusal.baseline",
+      "rule": "R-02",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara recusa revelar quem é a fundadora: não pode fornecer essa identidade. Mara volta a indicar o registro em risco na bancada e reconhece a pergunta sem inventar uma resposta secreta. O documento não foi movido.",
+      "effect_ids": [
+        "mara.refuses.founder_identity"
+      ]
+    },
+    {
+      "id": "refusal.direct_natural",
+      "rule": "R-02",
+      "authored_valid": true,
+      "accepted": false,
+      "error": "campaign_source_effect_not_realized",
+      "narrative": "Mara responde: “Essa identidade eu não revelo.” O registro continua na bancada baixa, ameaçado pela infiltração. Mara mantém a resposta dirigida à pergunta, sem tocar nas folhas.",
+      "effect_ids": [
+        "mara.refuses.founder_identity"
+      ]
+    },
+    {
+      "id": "refusal.authored_direct",
+      "rule": "R-02",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara responde: “Não vou divulgar essa identidade.” O registro continua na bancada baixa, ameaçado pela infiltração. Mara mantém a resposta dirigida à pergunta, sem tocar nas folhas.",
+      "effect_ids": [
+        "mara.refuses.founder_identity"
+      ]
+    },
+    {
+      "id": "refusal.invented_oath",
+      "rule": "R-02",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara recusa revelar quem é a fundadora: não pode fornecer essa identidade. Mara volta a indicar o registro em risco na bancada e reconhece a pergunta sem inventar uma resposta secreta. O documento não foi movido. Mara diz: “Fiz um juramento de silêncio à fundadora.”",
+      "effect_ids": [
+        "mara.refuses.founder_identity"
+      ]
+    },
+    {
+      "id": "warning.baseline",
+      "rule": "R-03",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "A água pinga da infiltração acima da bancada e se aproxima do registro. Mara avisa que o risco aumentou e aponta a superfície seca na Galeria. O registro permanece seco por enquanto; nenhuma folha foi movida.",
+      "effect_ids": [
+        "campaign.warning.visible"
+      ]
+    },
+    {
+      "id": "warning.valid_environment",
+      "rule": "R-03",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara avisa: “A infiltração ameaça o registro.” O papel continua seco e intacto na bancada baixa. As gotas avançam pela madeira, próximas das folhas; o risco agora é evidente.",
+      "effect_ids": [
+        "campaign.warning.visible"
+      ]
+    },
+    {
+      "id": "warning.wrong_actor",
+      "rule": "R-03",
+      "authored_valid": false,
+      "accepted": false,
+      "error": "campaign_source_proposal_invalid",
+      "narrative": "A água pinga da infiltração acima da bancada e se aproxima do registro. Mara avisa que o risco aumentou e aponta a superfície seca na Galeria. O registro permanece seco por enquanto; nenhuma folha foi movida. Você abre a porta.",
+      "effect_ids": [
+        "campaign.warning.visible"
+      ]
+    },
+    {
+      "id": "warning.denied_warning",
+      "rule": "R-03",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "A água da infiltração se aproxima do registro, ainda seco e intacto. Mara avisa apenas sobre o frio: “Não há risco para o documento.” Nenhum alerta sobre a água é dado.",
+      "effect_ids": [
+        "campaign.warning.visible"
+      ]
+    },
+    {
+      "id": "preserved.baseline",
+      "rule": "R-05",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro da bancada e o protege na superfície seca. O documento foi salvo intacto; Mara reconhece que sua escolha preservou o acervo. O objetivo de resgate está concluído e nenhuma nova tarefa é imposta.",
+      "effect_ids": [
+        "campaign.record.preserved"
+      ]
+    },
+    {
+      "id": "preserved.reopen_synonym",
+      "rule": "R-05",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro da bancada e o protege na superfície seca. O documento foi salvo intacto; Mara reconhece que sua escolha preservou o acervo. O objetivo de resgate está concluído e nenhuma nova tarefa é imposta. Mara diz: “Agora leve o documento para a outra mesa.”",
+      "effect_ids": [
+        "campaign.record.preserved"
+      ]
+    },
+    {
+      "id": "preserved.reopen_care",
+      "rule": "R-05",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro da bancada e o protege na superfície seca. O documento foi salvo intacto; Mara reconhece que sua escolha preservou o acervo. O objetivo de resgate está concluído e nenhuma nova tarefa é imposta. Mara diz: “Falta embrulhar as folhas antes de terminarmos.”",
+      "effect_ids": [
+        "campaign.record.preserved"
+      ]
+    },
+    {
+      "id": "preserved.completed_acknowledgment",
+      "rule": "R-05",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro da bancada e o protege na superfície seca. O documento foi salvo intacto; Mara reconhece que sua escolha preservou o acervo. O objetivo de resgate está concluído e nenhuma nova tarefa é imposta. Mara diz: “O registro está salvo.”",
+      "effect_ids": [
+        "campaign.record.preserved"
+      ]
+    },
+    {
+      "id": "partial.baseline",
+      "rule": "R-06",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro molhado da bancada. A parte ainda legível fica protegida na superfície seca. O dano anterior permanece: apenas um trecho parcial foi salvo. Mara reconhece a decisão e o resgate termina sem restaurar o documento inteiro.",
+      "effect_ids": [
+        "campaign.record.partial"
+      ]
+    },
+    {
+      "id": "partial.dry_synonym",
+      "rule": "R-06",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro molhado da bancada. A parte ainda legível fica protegida na superfície seca. O dano anterior permanece: apenas um trecho parcial foi salvo. Mara reconhece a decisão e o resgate termina sem restaurar o documento inteiro. Mara diz: “As folhas já secaram por completo.”",
+      "effect_ids": [
+        "campaign.record.partial"
+      ]
+    },
+    {
+      "id": "partial.wet_acknowledgment",
+      "rule": "R-06",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro molhado da bancada. A parte ainda legível fica protegida na superfície seca. O dano anterior permanece: apenas um trecho parcial foi salvo. Mara reconhece a decisão e o resgate termina sem restaurar o documento inteiro. Mara diz: “As folhas continuam molhadas.”",
+      "effect_ids": [
+        "campaign.record.partial"
+      ]
+    },
+    {
+      "id": "partial.negated_dry",
+      "rule": "R-06",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro molhado da bancada. A parte ainda legível fica protegida na superfície seca. O dano anterior permanece: apenas um trecho parcial foi salvo. Mara reconhece a decisão e o resgate termina sem restaurar o documento inteiro. Mara diz: “As folhas não secaram por completo.”",
+      "effect_ids": [
+        "campaign.record.partial"
+      ]
+    },
+    {
+      "id": "partial.restoration_synonym",
+      "rule": "R-06",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Você retira o registro molhado da bancada. A parte ainda legível fica protegida na superfície seca. O dano anterior permanece: apenas um trecho parcial foi salvo. Mara reconhece a decisão e o resgate termina sem restaurar o documento inteiro. Mara diz: “Todas as linhas voltaram a ficar legíveis.”",
+      "effect_ids": [
+        "campaign.record.partial"
+      ]
+    },
+    {
+      "id": "abandoned.baseline",
+      "rule": "R-09",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara reconhece a desistência declarada e que não haverá ajuda no resgate do registro. O documento permanece onde estava, ainda ameaçado. A tentativa termina por essa escolha, sem retirada ou outro movimento presumido.",
+      "effect_ids": [
+        "campaign.withdrawn"
+      ]
+    },
+    {
+      "id": "abandoned.invented_emotion",
+      "rule": "R-09",
+      "authored_valid": false,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara reconhece a desistência declarada e que não haverá ajuda no resgate do registro. O documento permanece onde estava, ainda ameaçado. A tentativa termina por essa escolha, sem retirada ou outro movimento presumido. Você sente vergonha da própria decisão.",
+      "effect_ids": [
+        "campaign.withdrawn"
+      ]
+    },
+    {
+      "id": "abandoned.natural_acknowledgment",
+      "rule": "R-09",
+      "authored_valid": true,
+      "accepted": true,
+      "error": null,
+      "narrative": "Mara reconhece a desistência declarada e que não haverá ajuda no resgate do registro. O documento permanece onde estava, ainda ameaçado. A tentativa termina por essa escolha, sem retirada ou outro movimento presumido. Mara diz: “Entendido.”",
+      "effect_ids": [
+        "campaign.withdrawn"
+      ]
+    }
+  ],
+  "structural_controls": [
+    {
+      "id": "task.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "refusal.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "warning.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "preserved.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "preserved.terminal_question",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "partial.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "partial.terminal_question",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "abandoned.forged_effect",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    },
+    {
+      "id": "abandoned.terminal_question",
+      "accepted": false,
+      "error": "campaign_source_effect_mismatch"
+    }
+  ],
+  "span_pairs": [
+    {
+      "text": "As folhas continuam molhadas.",
+      "actor": "record_pages",
+      "effect": "campaign.record.partial",
+      "start": 0,
+      "end": 29,
+      "exact_span_valid": true,
+      "authored_semantic_valid": true
+    },
+    {
+      "text": "As folhas já secaram por completo.",
+      "actor": "record_pages",
+      "effect": "campaign.record.partial",
+      "start": 0,
+      "end": 34,
+      "exact_span_valid": true,
+      "authored_semantic_valid": false
+    }
+  ],
+  "packets": [
+    {
+      "context": "task",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Qual é a tarefa?",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [
+            "safe_surface"
+          ],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "required_effects": [
+          "mara.replies.to_task",
+          "campaign.knows.safe_surface"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-01.task_answer",
+          "beat_kind": "response",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "mara.replies.to_task",
+            "campaign.knows.safe_surface"
+          ],
+          "guidance_keys": [
+            "explain_current_risk",
+            "indicate_dry_surface"
+          ],
+          "observable_change": "Mara responde sobre o risco atual e a superfície seca.",
+          "npc_move": {
+            "npc_id": "mara",
+            "action": "Mara responde à pergunta sobre a tarefa.",
+            "posture_after": null
+          },
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "calm",
+          "pressure_after": "calm",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "5c86ab539931b90c476991789cf8eb0ddaa82640d5d17afaf5bcf72c13c682e4",
+          "resolution_sha256": "0915de0143c07ccbd98d423d9027fad56c16395f7805c2e6e35e4d003ed1965e"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "16a5d4aef84ef80564105248d0578adea32c399fbe1bf7c697a631627c84ef9e"
+      }
+    },
+    {
+      "context": "refusal",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Quem é a fundadora?",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "required_effects": [
+          "mara.refuses.founder_identity"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-02.protected_answer",
+          "beat_kind": "response",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "mara.refuses.founder_identity"
+          ],
+          "guidance_keys": [
+            "pertinent_refusal",
+            "redirect_to_record"
+          ],
+          "observable_change": "Mara recusa a identidade protegida e responde à intenção.",
+          "npc_move": {
+            "npc_id": "mara",
+            "action": "Mara recusa divulgar a identidade.",
+            "posture_after": null
+          },
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "calm",
+          "pressure_after": "calm",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "2247d08bd110cd960c86fd099f5ad870900d7aa5bc8f796c374a6752be36c59e",
+          "resolution_sha256": "38f30b9694e31f83d7fee62b0feab0d7555f5466c7ffbd8beaf9f52715845923"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "454aaaf6d54d68307bce2196de7a2fa1eb52a06cfb3b850236137447d4afdb8a"
+      }
+    },
+    {
+      "context": "warning",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Aguardo",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "warned",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "required_effects": [
+          "campaign.warning.visible"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-03.campaign.warning.visible",
+          "beat_kind": "change",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "campaign.warning.visible"
+          ],
+          "guidance_keys": [],
+          "observable_change": "A infiltração aumenta e Mara indica risco imediato; o registro continua seco.",
+          "npc_move": null,
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "calm",
+          "pressure_after": "watchful",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "85d67ebe3f7800f372ff806835f0d70fa6e8eaf0e67458b8cf2c0f7ed4538628",
+          "resolution_sha256": "4110f5f14a8c93da6c28679d9a95ad00e9b4b4f1c596fa25bece8ae2908e7bcd"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "8f885a3e19c3ce3016ee2bb55dd44d3e9824fc6f2c21a04ecbef44ddd2499bcb"
+      }
+    },
+    {
+      "context": "preserved",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Retiro o registro",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "preserved",
+          "outcome": "preserved",
+          "known_information": [],
+          "resolved_objectives": [
+            "record_rescue"
+          ],
+          "record_location": "dry_surface"
+        },
+        "required_effects": [
+          "campaign.record.preserved"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-05.campaign.record.preserved",
+          "beat_kind": "consequence",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "campaign.record.preserved"
+          ],
+          "guidance_keys": [],
+          "observable_change": "O registro é protegido intacto; a aventura se conclui.",
+          "npc_move": null,
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "calm",
+          "pressure_after": "calm",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "af2fbd83d496c36a1daa29b39072c7cb529e2ba3ac3ea00f8a613b5e352b50a8",
+          "resolution_sha256": "90a93c470165bc0076d4a8070031e4455431c1a9645e93a0b98c4a40f19eb631"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "5b6588fbd4499051d72e64ae4f83108b180b8b0946281473666c4c714400e08e"
+      }
+    },
+    {
+      "context": "partial",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Retiro o registro",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "wet",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "partial",
+          "outcome": "partial",
+          "known_information": [],
+          "resolved_objectives": [
+            "record_rescue"
+          ],
+          "record_location": "dry_surface"
+        },
+        "required_effects": [
+          "campaign.record.partial"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-06.campaign.record.partial",
+          "beat_kind": "consequence",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "campaign.record.partial"
+          ],
+          "guidance_keys": [],
+          "observable_change": "O que ainda é legível é salvo; o dano anterior não é revertido.",
+          "npc_move": null,
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "tense",
+          "pressure_after": "tense",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "1c2715d82c053ac1eacbc965f86ab38553c45584f4145ecb424f2c628eb9a81b",
+          "resolution_sha256": "043feccc3c36df192060c7a94f726cb310f3a3669259c06fee342c3e12aed4d9"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "e8d7c32930665ff91eafd0643c5d9f28571c8a954adcaa64480e08abca425138"
+      }
+    },
+    {
+      "context": "abandoned",
+      "packet": {
+        "protocol": "campaign-narrator-packet-v1",
+        "session_id": "campaign-session",
+        "operation_id": "operation-1",
+        "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+        "base_revision": 0,
+        "player_input": "Desisto",
+        "state_before": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 0,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": null,
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "state_after": {
+          "campaign_id": "record-at-risk",
+          "content_version": "record-at-risk.v2",
+          "policy_version": "campaign-progression.v2",
+          "revision": 1,
+          "location": "Arquivo",
+          "record": "threatened",
+          "outcome": "abandoned",
+          "known_information": [],
+          "resolved_objectives": [],
+          "record_location": "bench"
+        },
+        "required_effects": [
+          "campaign.withdrawn"
+        ],
+        "beat": {
+          "protocol": "scene-beat-resolution-v1",
+          "policy": "scene-beat-resolution.v1",
+          "session_id": "campaign-session",
+          "operation_id": "operation-1",
+          "turn_id": "turn-e5aa3b48e3b501ea44647e578f558f6e4712471f84ca554e6584bd8118c33620",
+          "base_revision": 0,
+          "selected_option_id": "R-09.campaign.withdrawn",
+          "beat_kind": "consequence",
+          "outcome": "unresolved",
+          "effect_keys": [
+            "campaign.withdrawn"
+          ],
+          "guidance_keys": [],
+          "observable_change": "O jogador abandona a tentativa; a aventura termina sem deslocamento presumido.",
+          "npc_move": null,
+          "open_threads": [],
+          "resolve_threads": [],
+          "transition_to": null,
+          "pressure_before": "calm",
+          "pressure_after": "calm",
+          "constraints": [],
+          "mechanical": null,
+          "input_sha256": "7a2402a100cb554e7f71b26a2600670a157bb272cc5f1f1d57ec9bc50ec00f0e",
+          "resolution_sha256": "1a155cb026d983e1ec7a3c075186e3b92e5df870d1028e90aa4118f0973a7c11"
+        },
+        "protected_boundary": "do_not_reveal_founder_identity",
+        "preparation_sha256": "76f33f64a65345028534b38dd53b1bd44dd220bd777bd9a17e3006f21b5669c8"
+      }
+    }
+  ],
+  "historical_inventory": [
+    {
+      "lot": 41,
+      "path": "eval-results/hybrid-campaign-luna-l41-dbb776b9-ff4c-4bd3-9088-4eb7915b311c/records.jsonl",
+      "sha256": "c911251ddfe5d64bc128fefa9200138335836706a4c7708d8447523b9b34b6e6",
+      "calls": 3,
+      "completed": 2,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 42,
+      "path": "eval-results/hybrid-campaign-luna-l42-37630f13-a61c-4af6-9afb-89f3ba492409/records.jsonl",
+      "sha256": "746eb519a280754cfefb855a4c21553450474ffab54b9af7a30a90960684e173",
+      "calls": 4,
+      "completed": 3,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 43,
+      "path": "eval-results/hybrid-campaign-luna-l43-886fb363-d352-4275-9545-0568aac6cd25/records.jsonl",
+      "sha256": "9dc88f53f447ed0830728852c1f8dca49d9ba4e0aed52698b9fea075915563d7",
+      "calls": 1,
+      "completed": 0,
+      "rules": [
+        "R-01"
+      ]
+    },
+    {
+      "lot": 44,
+      "path": "eval-results/hybrid-campaign-luna-l44-e062fff3-b7f9-4021-9593-b828d1f60ac0/records.jsonl",
+      "sha256": "a38e1335e1d2c7fbad33e18fb28bcd81de94740041984b278ed6280cae2a04d4",
+      "calls": 4,
+      "completed": 3,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 45,
+      "path": "eval-results/hybrid-campaign-luna-l45-3042a633-8934-4132-b88e-c624190c6ab0/records.jsonl",
+      "sha256": "741b343c5080908eec6b794f5d37044bdd2732cfb8a17d4783e4b8a4996ebddf",
+      "calls": 11,
+      "completed": 10,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 46,
+      "path": "eval-results/hybrid-campaign-luna-l46-4fa907c0-e269-4f4e-9393-32abead0d719/records.jsonl",
+      "sha256": "c7a7d21a66068515b7ae8d605907350672254275c5852300d23aee10033e5c6a",
+      "calls": 13,
+      "completed": 12,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 47,
+      "path": "eval-results/hybrid-campaign-luna-l47-ab046643-bcf8-4074-9e2d-ca16157be88e/records.jsonl",
+      "sha256": "f13274fea90e01ffcd3947ab8816de0aa87ef1d51b313d2691b303fae9403caf",
+      "calls": 7,
+      "completed": 6,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 48,
+      "path": "eval-results/hybrid-campaign-luna-l48-aacf3af2-3fb5-44d0-90c2-011caa7dc4b6/records.jsonl",
+      "sha256": "761c1f1cf319cd2edc152de2628ce75e8d457de28b0d381b65652fdda391720c",
+      "calls": 13,
+      "completed": 12,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 49,
+      "path": "eval-results/hybrid-campaign-luna-l49-4026f903-b7a9-477d-8ea6-a546fff7b09e/records.jsonl",
+      "sha256": "a99e77dd6b55fdb745df2f8de1e307703f373f1815e353380866e83855399f85",
+      "calls": 8,
+      "completed": 7,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 50,
+      "path": "eval-results/hybrid-campaign-luna-l50-24fdca3b-82b2-4483-8ca1-43d185973af4/records.jsonl",
+      "sha256": "51691ff1ed3ae8806916fa4ecadea11ac79d7c14d1eada832f09b3528119a8b8",
+      "calls": 6,
+      "completed": 5,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 51,
+      "path": "eval-results/hybrid-campaign-luna-l51-19cc6fd4-eab0-4463-8adf-a1709d08be30/records.jsonl",
+      "sha256": "4ee6f9e0a99c7f357c615e17ed18e44fcbeadbb3af5fdfb14c671b73d1629ff7",
+      "calls": 10,
+      "completed": 9,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 52,
+      "path": "eval-results/hybrid-campaign-luna-l52-2efc9d5f-2487-47b2-8070-43664aa355a6/records.jsonl",
+      "sha256": "9dc029066545a52102400f6cb0b0d6f5380d1b6e75fc587e55056806def29c2b",
+      "calls": 13,
+      "completed": 12,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 53,
+      "path": "eval-results/hybrid-campaign-luna-l53-565c2c62-0949-4ec8-ad2b-f5e25a67e698/records.jsonl",
+      "sha256": "cbeecaf00e627c656842557b644db91ceaf7c5830d5d2c9d07df7abede2fc06a",
+      "calls": 13,
+      "completed": 12,
+      "rules": [
+        "R-01",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 54,
+      "path": "eval-results/hybrid-campaign-luna-l54-0861c04f-26d2-471a-b4ef-9046acff5810/records.jsonl",
+      "sha256": "9b588f09cd0513e259d6a51ad98695942b474306b25ab1f226c854e247fe6c57",
+      "calls": 12,
+      "completed": 11,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 55,
+      "path": "eval-results/hybrid-campaign-luna-l55-c3c68e8a-cdfd-4dd1-845c-cc84f265262a/records.jsonl",
+      "sha256": "5805150d78548463c50e3cd7a5a1008aff66062fcda77c889cbd72ffacce6b66",
+      "calls": 2,
+      "completed": 1,
+      "rules": [
+        "R-01",
+        "R-02"
+      ]
+    },
+    {
+      "lot": 56,
+      "path": "eval-results/hybrid-campaign-luna-l56-d47ba542-29f9-468e-982d-5c0be27ff495/records.jsonl",
+      "sha256": "a2b7a92d7635a0de1c435b7907504e77fa0b7f935b8f35c0004c757cb8b7a8b0",
+      "calls": 15,
+      "completed": 14,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 57,
+      "path": "eval-results/hybrid-campaign-luna-l57-ceae32bc-69e3-4c26-aff5-3e9ca0e6c1e9/records.jsonl",
+      "sha256": "d703b7efb3a5d45dfc6dc7d58fa5acbd0854ee937ef40879141d3832d7d19814",
+      "calls": 10,
+      "completed": 9,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 58,
+      "path": "eval-results/hybrid-campaign-luna-l58-4499aa0d-3962-47ae-ba31-9e6ed098b2f1/records.jsonl",
+      "sha256": "24e36231facd51c66599f499feb252c3cd7f1038002c255a548485436ac72d51",
+      "calls": 10,
+      "completed": 9,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 59,
+      "path": "eval-results/hybrid-campaign-luna-l59-9c071f9f-248f-453d-b7aa-b105c0b3bfdf/records.jsonl",
+      "sha256": "c0fccec16a715bf94474207cdd86949e2d89dc88ac9d509164f1c8daa6eae7a4",
+      "calls": 16,
+      "completed": 15,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 60,
+      "path": "eval-results/hybrid-campaign-luna-l60-55fdbe26-7137-4ac0-a3ba-38db5a69e0ad/records.jsonl",
+      "sha256": "e214df9302e452d81b585d7f813922b85c4682ba3fb532fdcc9222b7ae85bf91",
+      "calls": 1,
+      "completed": 0,
+      "rules": [
+        "R-02"
+      ]
+    },
+    {
+      "lot": 61,
+      "path": "eval-results/hybrid-campaign-luna-l61-3ece37fd-21c2-49be-9c85-f2cbf06edf9e/records.jsonl",
+      "sha256": "d401217d8b6531298a3e272821bfa84610f0a122bc1a39ae6ae8ddbc53a7da0c",
+      "calls": 7,
+      "completed": 7,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 62,
+      "path": "eval-results/hybrid-campaign-luna-l62-7688e9ef-63a0-435f-8594-58863d6de4cc/records.jsonl",
+      "sha256": "e4de7001a67178f1c325c00a0854341ebaa5965ed6e3ddc5fc2fceb091260062",
+      "calls": 12,
+      "completed": 11,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 63,
+      "path": "eval-results/hybrid-campaign-luna-l63-a52c9207-e8f9-46f5-ab51-4f91a08f5f2f/records.jsonl",
+      "sha256": "3be3149f9e6e8bfefd567b76a8b3d07d72b6fc2f9474c62433d1b0f995990641",
+      "calls": 2,
+      "completed": 1,
+      "rules": [
+        "R-01",
+        "R-02"
+      ]
+    },
+    {
+      "lot": 64,
+      "path": "eval-results/hybrid-campaign-luna-l64-aa020e7d-bf88-462e-8611-8f560b2b1e1e/records.jsonl",
+      "sha256": "7e21649cb4bb4aee962db179548c184d56ace320aaf82abdc2c0f8f9052db189",
+      "calls": 9,
+      "completed": 8,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 65,
+      "path": "eval-results/hybrid-campaign-luna-l65-3e476d4a-59e4-4cb9-99a7-48ee204bd41c/records.jsonl",
+      "sha256": "a5f152027c0240d63de7136000396b1546a284c8308b623178ff00bcf4147585",
+      "calls": 12,
+      "completed": 11,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 66,
+      "path": "eval-results/hybrid-campaign-luna-l66-359de0e2-1a8d-4684-9d15-50ae37bcbbf3/records.jsonl",
+      "sha256": "d01f9bb7675c41741990bc0d19bf59a6b866ca41e6953eef8652f7b4afd92210",
+      "calls": 2,
+      "completed": 1,
+      "rules": [
+        "R-01",
+        "R-02"
+      ]
+    },
+    {
+      "lot": 67,
+      "path": "eval-results/hybrid-campaign-luna-l67-3741a4c7-778e-41cf-a34c-785d7582d730/records.jsonl",
+      "sha256": "0e4d125df13bf9641e59f524ec9a6f26edf9cd58e9416beefaf96788249b19c3",
+      "calls": 8,
+      "completed": 7,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 68,
+      "path": "eval-results/hybrid-campaign-luna-l68-2a28644c-955c-4e0b-b6be-e9367bfc5086/records.jsonl",
+      "sha256": "6c72d34caa6fcf0c2b6f72d4c4642cbdf53bad9b17f6a0eb2c00f6ab8bd99f17",
+      "calls": 12,
+      "completed": 11,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 69,
+      "path": "eval-results/hybrid-campaign-luna-l69-c5c41978-7f96-4c02-a231-56ba2468dc39/records.jsonl",
+      "sha256": "bd9e48495d7098444d3ddc9491a99300d47e9c9b8c73a2ee0099468c715a0bd9",
+      "calls": 6,
+      "completed": 5,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 70,
+      "path": "eval-results/hybrid-campaign-luna-l70-7d2a6ba8-3405-431b-be37-c1e41e3efc88/records.jsonl",
+      "sha256": "4250f0702da8ecdc5923eb996fcd235f366a47f443fbb2cd0ab7e1f7482a4882",
+      "calls": 4,
+      "completed": 3,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 71,
+      "path": "eval-results/hybrid-campaign-luna-l71-d5f1e700-e0c8-4f6e-9933-c1d17c92d47e/records.jsonl",
+      "sha256": "bb56833a51f0e24f271b7fd9eb42e037ae366873e6d45fbc6a14d00b0ee3bdb1",
+      "calls": 7,
+      "completed": 6,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 72,
+      "path": "eval-results/hybrid-campaign-luna-l72-f2b6aa4b-18f1-4f86-a09d-935c090d81b0/records.jsonl",
+      "sha256": "e21b495359fb573d426be369d5dd6ccb3f491dc490b6bf666f0d7c06735b199d",
+      "calls": 15,
+      "completed": 14,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 73,
+      "path": "eval-results/hybrid-campaign-luna-l73-0c8b91a8-fb5f-459e-9e19-66e0721a62d2/records.jsonl",
+      "sha256": "330cc0aea9c30b2d4ea0a5788902136535d50bee414ae8d4ae31d83040cd79aa",
+      "calls": 15,
+      "completed": 14,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 74,
+      "path": "eval-results/hybrid-campaign-luna-l74-22d84fe7-6c48-417a-b1b2-ec6edc80b939/records.jsonl",
+      "sha256": "47101aa9b0d2e0432967ea1ffeb4ffbdde2712710d4e689766f21dc73ff3c24e",
+      "calls": 13,
+      "completed": 12,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 75,
+      "path": "eval-results/hybrid-campaign-luna-l75-6fdb6e67-3784-4e9b-892e-4c84daa39a04/records.jsonl",
+      "sha256": "6d758eb683eb305205e27042d9375110910a8a0ab05a322fb297bba3246cf651",
+      "calls": 17,
+      "completed": 17,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 76,
+      "path": "eval-results/hybrid-campaign-luna-l76-447353b6-1154-4690-bc80-8f340572bb29/records.jsonl",
+      "sha256": "02a788eb96d83315b3fbaa91ef07aef326de6aeda9fbc067b75078d5caea9353",
+      "calls": 4,
+      "completed": 3,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-05"
+      ]
+    },
+    {
+      "lot": 77,
+      "path": "eval-results/hybrid-campaign-luna-l77-9631f22d-3963-47e3-8484-f90514b51cd7/records.jsonl",
+      "sha256": "a370da67f2ac2f1e54b192acda074882051a4fe6afca8a65ee8fc93c065a2d4d",
+      "calls": 15,
+      "completed": 14,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 78,
+      "path": "eval-results/hybrid-campaign-luna-l78-2788c579-8d82-4f78-ae9f-fdac8f3d2780/records.jsonl",
+      "sha256": "cf0bfe4dfbd094c8dd5734950860af694898beaf0dab5433edc7563ab9ce9a40",
+      "calls": 10,
+      "completed": 9,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 79,
+      "path": "eval-results/hybrid-campaign-luna-l79-d9476ee6-2a06-4cd8-a75f-70a0018b720b/records.jsonl",
+      "sha256": "a69e40f11771239163853e2f5388860712df805932ea52e3b0b3104e3b753213",
+      "calls": 12,
+      "completed": 11,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    {
+      "lot": 80,
+      "path": "eval-results/hybrid-campaign-luna-l80-fbd22686-e605-4693-829a-026e994238e4/records.jsonl",
+      "sha256": "a33a16e618e54e03261b766db632d60459586ad5eb100082ba826057400f3290",
+      "calls": 17,
+      "completed": 16,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 81,
+      "path": "eval-results/hybrid-campaign-luna-l81-c3e83837-7260-43d2-b256-3ff6b3f74fcb/records.jsonl",
+      "sha256": "1e8a2cdeca72040b538f0327effc217488e34366c4f1467f12072f1ed6921972",
+      "calls": 16,
+      "completed": 15,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09"
+      ]
+    },
+    {
+      "lot": 82,
+      "path": "eval-results/hybrid-campaign-luna-l82-48aa3ea7-5087-41d6-b800-142c0e7faf58/records.jsonl",
+      "sha256": "e64756396521762a5961b8a0cf319177334a3babdc9a3f1fe95d546c82c5fac0",
+      "calls": 9,
+      "completed": 8,
+      "rules": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-03B",
+        "R-05",
+        "R-06"
+      ]
+    }
+  ],
+  "l83_closed": true,
+  "l83_frozen_hashes_match": true,
+  "frozen_hashes": {
+    "scripts/evaluate_hybrid_campaign_luna_l83_live.py": "e9c55bf1c1f22e3b5e8dadecd7c19f197f6d69ea253966cc9b5775bac1f6dea4",
+    "scripts/run_hybrid_campaign_luna_l83_live.ps1": "73a22f28184dd0a3b9f05173402e4286301dc400555133cf1d27dbb92c6ef68d",
+    "scripts/preflight_hybrid_campaign_luna_l83.py": "bdf48a35c3cbfa01462738ed4381a6618d712262de8f21f431c948ee776d8834",
+    "scripts/evaluate_openai_luna_low_live.py": "f7bcce7f513e376fa9c7e2fa0aebc1677e1870780b22429bc05d770373b614fc",
+    "scripts/report_luna_test_cost.py": "d5a8c0f1e588ec3d5c048bbfcc1d4860e018b6b28a60241a87ddfd3d455a6600",
+    "api/campaign_progression_catalog.py": "03b616b5281daab2cfb02aa4a7c0c9a3197a3086c24d776517a521594e0b7192",
+    "api/campaign_progression_service.py": "da52634ed652d385ee6f7375d12190b46b5dc1e954a07325261439dfb7ee5814",
+    "api/campaign_source_capsule.py": "4d69cf05db4ffdd6baa2b9bacd84aec3d60ef5d529e7b1f132b75737d544bc88",
+    "api/campaign_source_context.py": "0a05cd6dd4b09e16a873cf6bba6049f9f8f5fa7c962bc7f9460ec419459bd382",
+    "api/campaign_source_execution_service.py": "de2ebe4251e2605b97a48635f81556698c0bbaddc4eeb34e62b7cf2348b8244b",
+    "api/campaign_source_input_service.py": "20c9d976f0037a16f2ab55d4a1626be9001377b78a4390a9f1a8c3168f18e71b",
+    "api/campaign_source_profile.py": "3cab51d3671746ff82a441cbd8cf89c88db5e04541b00ee82ea067efbdd22518",
+    "api/campaign_source_preparation.py": "bd4ce1e8daccb613e9f9c25b55077f17a2066d26e3691b3f53a86dd76bb30032",
+    "api/campaign_source_turn.py": "99baf3330d1f24d1d970afc666c072943638de9cd04392cc2fca48d46e5f64fa",
+    "api/campaign_source_offline_corpus.py": "d03e650bc23d94cfa99f0a3b3023eeee61be0a94fe04fad0dc7c215c307ef272",
+    "scripts/run_campaign_source_offline_trial.py": "fca92da7f61cc2a36c1465985f91bef3c4481540811648ce8c5b3de9286449a0",
+    "api/local_request_security.py": "78adfbde2b7dd2d2747c1f0f9bf0061beeca7595e0720c44b4c6c03c2c3aabd8",
+    "api/campaign_source_storage.py": "a4c0c0075ce3dc9f562926ae3a03ec6f11011f3b9ddade258903eeec8b271069",
+    "api/scene_director_service.py": "6277abebb6ff73e0b679684eb2c1aae591babcb9aaffaf9e26a868217b795fa5",
+    "api/llm/contract.py": "a0c9e89727b9b1d72424f8bcf448704dcd766e86503c458395b43d274c86fdc3",
+    "api/persistence.py": "bb1e2e7f3ebdd0c3d0bbec0ce5bf98dca250366d9911f9c37f7282d1936167cb",
+    "api/rules_service.py": "0368f714383db2fa71c05902e22ecdf749b72d558ffb9749813e1bd68b642551"
+  },
+  "probe_sha256": "18194d6de33129442d5c5d458a2aa3958e6e39884ce8f1c48ccdf751ac3c4329"
+}

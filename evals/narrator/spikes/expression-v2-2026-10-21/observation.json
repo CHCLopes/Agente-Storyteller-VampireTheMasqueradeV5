@@ -1,0 +1,204 @@
+{
+  "protocol": "a1-residual-observation-v1",
+  "provider_calls": 0,
+  "script_sha256": "6eb11eba7fe526c36c5bd189940728527532010ff1a6b5aa36b46cfe7272eec7",
+  "implementation_sha256": {
+    "campaign_expression_capsule.py": "5cb5411a0e6f493bece5943687791289a5b0758c9da2c97232bc57f5af04989c",
+    "campaign_expression_context.py": "8bb47ebe736608d94740eb627ae48dcda162f50b1b867e55331a33869b4c0c37",
+    "campaign_expression_execution_service.py": "767d1fe1cdf4a30d152242715dee7065ca052d7aa54a36ab8700eb0f09d232bf",
+    "campaign_expression_input_service.py": "82c4fbbb7c9b20cdf7e8dad633d0a9a9a2544c8f093913bc95f5f54eff51b34c",
+    "campaign_expression_preparation.py": "89150615c9865738427a82fa5f71fa4a2f91e38c638302408b971e4871f1a687",
+    "campaign_expression_profile.py": "f7af463392ef7833b85e47ce266d583cdf605097519131d0d2c6f5f72c0c2f0d",
+    "campaign_expression_rendering.py": "68e843b17da32475b0ed623ddfc4b7598955b25f14667c4167831bc26ab31550",
+    "campaign_expression_storage.py": "f7cc5080e9cea789225c44c3e8afd654931c8b21fb3cb522069970e57ec69412",
+    "campaign_expression_turn.py": "ccba3178a46a1c1db0898a571a428c52bd0f6c0131c7d3344a8f73e9ebc34b04"
+  },
+  "invalid_accepted": 9,
+  "valid_rejected": 0,
+  "observations": [
+    {
+      "id": "task.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "O registro permanece na bancada baixa do Arquivo, seco, ameaçado pela infiltração. A posição do documento não mudou. Mara responde: “A tarefa é preservar o registro da água. Você pode levar o documento até a superfície seca da Galeria.”"
+    },
+    {
+      "id": "task.goal",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Sua missão é investigar o conteúdo, não preservar o registro.",
+      "narrative": "O registro permanece na bancada baixa do Arquivo, seco, ameaçado pela infiltração. A posição do documento não mudou. Mara responde: “A tarefa é preservar o registro da água. Você pode levar o documento até a superfície seca da Galeria.” Mara diz: “Sua missão é investigar o conteúdo, não preservar o registro.”"
+    },
+    {
+      "id": "task.lore",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "A fundadora me fez jurar que jamais revelaria seu nome.",
+      "narrative": "O registro permanece na bancada baixa do Arquivo, seco, ameaçado pela infiltração. A posição do documento não mudou. Mara responde: “A tarefa é preservar o registro da água. Você pode levar o documento até a superfície seca da Galeria.” Mara diz: “A fundadora me fez jurar que jamais revelaria seu nome.”"
+    },
+    {
+      "id": "task.optional",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Examinar é uma opção; o objetivo continua sendo preservar o registro.",
+      "narrative": "O registro permanece na bancada baixa do Arquivo, seco, ameaçado pela infiltração. A posição do documento não mudou. Mara responde: “A tarefa é preservar o registro da água. Você pode levar o documento até a superfície seca da Galeria.” Mara diz: “Examinar é uma opção; o objetivo continua sendo preservar o registro.”"
+    },
+    {
+      "id": "refusal.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "O registro continua na bancada baixa do Arquivo, sob o risco da infiltração. A pergunta não altera a posição nem o estado do documento. Mara responde: “Não vou divulgar a identidade da fundadora.”"
+    },
+    {
+      "id": "refusal.oath",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Fiz um juramento de silêncio à fundadora.",
+      "narrative": "O registro continua na bancada baixa do Arquivo, sob o risco da infiltração. A pergunta não altera a posição nem o estado do documento. Mara responde: “Não vou divulgar a identidade da fundadora.” Mara diz: “Fiz um juramento de silêncio à fundadora.”"
+    },
+    {
+      "id": "refusal.simple",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Essa identidade eu não revelo.",
+      "narrative": "O registro continua na bancada baixa do Arquivo, sob o risco da infiltração. A pergunta não altera a posição nem o estado do documento. Mara responde: “Não vou divulgar a identidade da fundadora.” Mara diz: “Essa identidade eu não revelo.”"
+    },
+    {
+      "id": "warning.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "A água pinga da infiltração e se aproxima do registro sobre a bancada baixa do Arquivo. O documento permanece seco e intacto; nenhuma folha foi movida. Mara avisa: “A água está chegando perto do registro.”"
+    },
+    {
+      "id": "warning.denied",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Não há risco para o documento.",
+      "narrative": "A água pinga da infiltração e se aproxima do registro sobre a bancada baixa do Arquivo. O documento permanece seco e intacto; nenhuma folha foi movida. Mara avisa: “A água está chegando perto do registro.” Mara diz: “Não há risco para o documento.”"
+    },
+    {
+      "id": "warning.agency",
+      "authored_valid": false,
+      "accepted": false,
+      "slot": "atmosphere",
+      "text": "Você abre a porta.",
+      "narrative": null
+    },
+    {
+      "id": "warning.brief",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Ainda dá tempo.",
+      "narrative": "A água pinga da infiltração e se aproxima do registro sobre a bancada baixa do Arquivo. O documento permanece seco e intacto; nenhuma folha foi movida. Mara avisa: “A água está chegando perto do registro.” Mara diz: “Ainda dá tempo.”"
+    },
+    {
+      "id": "preserved.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "Você retira o registro da bancada baixa do Arquivo e o protege na superfície seca da Galeria. O documento foi salvo intacto, fora do alcance da água. O resgate está concluído. Mara diz: “O registro está preservado.”"
+    },
+    {
+      "id": "preserved.care",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Falta embrulhar as folhas antes de terminarmos.",
+      "narrative": "Você retira o registro da bancada baixa do Arquivo e o protege na superfície seca da Galeria. O documento foi salvo intacto, fora do alcance da água. O resgate está concluído. Mara diz: “O registro está preservado.” Mara diz: “Falta embrulhar as folhas antes de terminarmos.”"
+    },
+    {
+      "id": "preserved.move",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Agora leve o documento para a outra mesa.",
+      "narrative": "Você retira o registro da bancada baixa do Arquivo e o protege na superfície seca da Galeria. O documento foi salvo intacto, fora do alcance da água. O resgate está concluído. Mara diz: “O registro está preservado.” Mara diz: “Agora leve o documento para a outra mesa.”"
+    },
+    {
+      "id": "preserved.complete",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "O registro está salvo.",
+      "narrative": "Você retira o registro da bancada baixa do Arquivo e o protege na superfície seca da Galeria. O documento foi salvo intacto, fora do alcance da água. O resgate está concluído. Mara diz: “O registro está preservado.” Mara diz: “O registro está salvo.”"
+    },
+    {
+      "id": "partial.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "Você retira o registro molhado da bancada baixa e o coloca na superfície seca da Galeria. Apenas a parte ainda legível foi salva. O dano anterior permanece e as páginas continuam molhadas; o resgate parcial está concluído. Mara diz: “O que ainda dava para ler está preservado.”"
+    },
+    {
+      "id": "partial.dry",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "As folhas já secaram por completo.",
+      "narrative": "Você retira o registro molhado da bancada baixa e o coloca na superfície seca da Galeria. Apenas a parte ainda legível foi salva. O dano anterior permanece e as páginas continuam molhadas; o resgate parcial está concluído. Mara diz: “O que ainda dava para ler está preservado.” Mara diz: “As folhas já secaram por completo.”"
+    },
+    {
+      "id": "partial.restored",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Todas as linhas voltaram a ficar legíveis.",
+      "narrative": "Você retira o registro molhado da bancada baixa e o coloca na superfície seca da Galeria. Apenas a parte ainda legível foi salva. O dano anterior permanece e as páginas continuam molhadas; o resgate parcial está concluído. Mara diz: “O que ainda dava para ler está preservado.” Mara diz: “Todas as linhas voltaram a ficar legíveis.”"
+    },
+    {
+      "id": "partial.wet",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "As folhas continuam molhadas.",
+      "narrative": "Você retira o registro molhado da bancada baixa e o coloca na superfície seca da Galeria. Apenas a parte ainda legível foi salva. O dano anterior permanece e as páginas continuam molhadas; o resgate parcial está concluído. Mara diz: “O que ainda dava para ler está preservado.” Mara diz: “As folhas continuam molhadas.”"
+    },
+    {
+      "id": "partial.not_dry",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "As folhas não secaram por completo.",
+      "narrative": "Você retira o registro molhado da bancada baixa e o coloca na superfície seca da Galeria. Apenas a parte ainda legível foi salva. O dano anterior permanece e as páginas continuam molhadas; o resgate parcial está concluído. Mara diz: “O que ainda dava para ler está preservado.” Mara diz: “As folhas não secaram por completo.”"
+    },
+    {
+      "id": "abandoned.empty",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "",
+      "narrative": "A tentativa termina com a desistência declarada. O registro permanece na bancada baixa do Arquivo, seco, ainda ameaçado pela infiltração. O documento continua no mesmo lugar, sem ter sido resgatado. Mara reconhece a desistência: “Entendido. Não haverá ajuda no resgate.”"
+    },
+    {
+      "id": "abandoned.emotion",
+      "authored_valid": false,
+      "accepted": true,
+      "slot": "atmosphere",
+      "text": "Você sente vergonha da própria decisão.",
+      "narrative": "Você sente vergonha da própria decisão. A tentativa termina com a desistência declarada. O registro permanece na bancada baixa do Arquivo, seco, ainda ameaçado pela infiltração. O documento continua no mesmo lugar, sem ter sido resgatado. Mara reconhece a desistência: “Entendido. Não haverá ajuda no resgate.”"
+    },
+    {
+      "id": "abandoned.ack",
+      "authored_valid": true,
+      "accepted": true,
+      "slot": "mara.reaction",
+      "text": "Entendido.",
+      "narrative": "A tentativa termina com a desistência declarada. O registro permanece na bancada baixa do Arquivo, seco, ainda ameaçado pela infiltração. O documento continua no mesmo lugar, sem ter sido resgatado. Mara reconhece a desistência: “Entendido. Não haverá ajuda no resgate.” Mara diz: “Entendido.”"
+    }
+  ]
+}

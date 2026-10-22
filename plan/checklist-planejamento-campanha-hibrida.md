@@ -1,9 +1,93 @@
 # Checklist de planejamento — campanha híbrida
 
-Data original: 09/09/2026. Atualização: 20/10/2026.
+Data original: 09/09/2026. Atualização: 21/10/2026.
 Estado: **planejamento ativo por PROG-ROUTE-B; respostas de produto em proposta**.
 
-Checkpoint operacional vigente, 20/10: L82 encerrado em 9 chamadas/8 turnos,
+Checkpoint vigente — B offline concluído; gate C/D — 22/10/2026
+
+Humano escolheu B e autorizou commit/push antes de cada gate humano. Diretrizes
+registradas em AGENTS.md, inclusive bloco de configuração obrigatório. Contrato
+experimental intent_interpretation_offline.py, corpus24 e avaliador separados do jogo.
+61 testes focados/197 regressão conjunta passam. Zero inferência/chave/custo de API.
+Formato/literalidade falham na primeira contraprova de negação; diagnóstico separado
+com sete propostas erradas. Guard independente bloqueia-as, mas só reconhece4 das10
+intenções autoradas; seis paráfrases fiéis continuam pendentes,14 referências sem ação.
+Não alegar capacidade de modelo, improvisação geral ou novo interpretador admitido.
+32 fontes congeladas L86 intactas. Original/defaults/saves/ambiente preservados.
+Relatório: evals/narrator/reports/intent-interpretation-offline-2026-10-22.md.
+Evidência sintética publicável: evals/narrator/spikes/intent-interpretation-2026-10-22/.
+Próximo gate real C/D: C aprovar seis equivalências literais para novo experimento
+offline sem API/integração; D definir fonte independente para interpretação aberta.
+Escopo exato: plan/proposal-intent-paraphrase-admission-2026-10-22.md. Nenhuma opção
+aprovada ainda; CAMP-13..16/CAMP-24 abertos. Publicar branch atual antes de apresentar
+gate; verificar ref remoto e informar resultado real. Não integrar/main/merge por arrasto.
+
+Checkpoint anterior — A2 em navegador; gate de próximo escopo — 22/10/2026
+
+Diretriz de continuidade/bloco final registrada em AGENTS.md. Ensaio determinístico
+separado do produto em scripts/run_expression_selection_browser_trial.py, porta8032
+somente127.0.0.1, banco exclusivo eval-results/expression-selection-browser-2026-10-22.
+10 testes focados passam. Navegador interno confirmou início, fala, ação não coberta
+sem turno, reformulação, desfecho, reload e recuperação após restart do servidor.
+Sem inferência/chave: USD0 novo. 32 hashes L86 e records originais reconferidos intactos.
+Relatório: evals/narrator/reports/expression-selection-browser-review-2026-10-22.md.
+CAMP-13..16/CAMP-24 continuam abertos: catálogo não demonstra improvisação livre.
+Gate humano real: A priorizar integração do recorte fechado; B (recomendado) priorizar
+desenho/teste exclusivamente offline de interpretação delimitada, sem autoridade causal.
+Escopo/limites/24 casos/aceitação: plan/proposal-expression-selection-next-scope-2026-10-22.md.
+Não iniciar B ou integração por inferência do agente: define prioridade/superfície
+nova. Não reativar proposta dual-model/ALT-003 causal, não promover MVP/narrador/default.
+Checkout original preservado, sem commit/push, .env/credenciais não lidos.
+
+Checkpoint anterior,22/10: A2/L86 concluído após aceite específico de envio à OpenAI.
+17 pares/17 chamadas, USD0.0023204 estimado, estados/efeitos iguais.17 requests
+coincidem com payloads aprovados;34 replays reais conferidos no SQLite retido.
+Luna escolheu oito frases de posição repetidas; ganho editorial consistente não
+demonstrado. Conservar baseline determinística como referência no recorte autorado.
+142 testes da implementação registrados, código congelado na execução. Gates
+false/false/trava mantida, nenhum lote novo nem ação humana pendente para L86.
+Supervisora852c6897-09cd-414a-bb1a-584f0d709df1/PID21812 idle/exit0, expira23/10
+00:00 Fortaleza. CAMP-24/default/MVP/admissão/adaptação original seguem abertos.
+Relatório: evals/narrator/reports/expression-selection-l86-observation-2026-10-22.md.
+
+Checkpoint anterior,22/10: A2 experimental aprovada e implementada offline em
+pacote isolado/SQLite próprio; sem alteração do produto/original. 142 testes
+selecionados passam (75 novos), preflight17 pares/zero provedor/max2.215 bytes.
+L86 preparado false/false; despacho REJEITADO pela revisão automática por exigir
+aceite explícito dos payloads específicos à OpenAI até USD0.15. Nenhum envio,
+request/latch ou custo novo. Payloads exatos e hash no relatório abaixo. Próximo:
+confirmação específica de egress, depois revalidar/despachar uma vez/revisar custo.
+Supervisora852c6897-09cd-414a-bb1a-584f0d709df1/PID21812 idle; expira23/10 00:00
+Fortaleza, sem renovação automática. CAMP-24/default/MVP/admissão abertos.
+Relatório: evals/narrator/reports/expression-selection-a2-implementation-2026-10-22.md.
+
+Checkpoint anterior, 21/10: estudo A2 autorizado e concluído offline, considerando
+adaptação agnóstica ao original e modelos leves/gratuitos/locais. 136 combinações
+nos 17 planos L85; 238 respostas inválidas e 119 trocas de vínculo rejeitadas.
+Frase falsa do autor confiável aceita na contraprova: não declarar verdade geral.
+Oito testes de adaptador simulado passam; parsing duplicado difere do protótipo,
+limite registrado sem corrigir código compartilhado. Zero inferência/custo novo,
+nenhum L86. Reaproveitamento de contratos/autoridade é promissor; ganho de modelo
+sobre baseline e capacidade de hardware permanecem desconhecidos. Integração e
+migração do original ainda não aprovadas; CAMP-24/admissão/MVP abertos.
+Relatório: evals/narrator/reports/architecture-model-agnostic-expression-spike-2026-10-21.md.
+
+Checkpoint anterior, 21/10: A1 v2 implementada e ensaiada, opt-in. 269 testes da
+implementação e seis novos L85 passam. L84: 12 chamadas/12 turnos, USD 0.0075790;
+três descrições apresentadas como fala; gate fechado antes da chamada 13.
+L85: esclarecimento de discurso direto no prompt, 17 chamadas/17 turnos, oito
+percursos completos; USD 0.0099808. Total novo USD 0.0175598 estimado, não cobrança.
+L85 teve 14/17 turnos sem expressão opcional e uma atmosfera de silêncio não
+estabelecida na cena, aceita pelos guards. Núcleo crítico/proveniência conferidos;
+9/10 contraprovas inválidas aceitas offline continuam válidas. Sem fidelidade
+geral/naturalidade/admissão. L84/L85 fechados, travas e histórico preservados.
+Supervisora fa6f0ca5-2cc1-4dd3-9821-34946243c0c7/PID12548 idle após L85;
+expiração 22/10 00:00 Fortaleza. Nenhum L86 preparado. Próximo gate: autoria e
+garantia de produto; proposta de expressão também autorada ainda não aprovada.
+A autorização contínua <=USD 0.15 permanece. CAMP-24/default/MVP abertos.
+Relatório e apresentações: evals/narrator/reports/campaign-expression-v2-l84-l85-review-2026-10-21.md.
+
+Checkpoint histórico de 20/10 (anterior à escolha A): L82 encerrado em 9 chamadas/8 turnos,
 USD 0.0091548 estimado. Auditoria revelou também tarefa trocada e ação repetida
 no epílogo anteriormente aceitas; reproduzidas/corrigidas, 91 focados e 987
 ampliados do snapshot final passam. Diff focado e 22 hashes reais conferidos.

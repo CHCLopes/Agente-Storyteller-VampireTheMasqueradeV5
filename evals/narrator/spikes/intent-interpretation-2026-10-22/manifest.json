@@ -1,0 +1,15 @@
+{
+  "hypothesis": "Binding and literal spans prevent substitution, but do not prove semantics; independent guard preserves authority without extending coverage.",
+  "cases": 24,
+  "synthetic_only": true,
+  "provider_calls": 0,
+  "max_cost_usd": "0",
+  "retry": false,
+  "fallback": false,
+  "stop": "Format-only variant stops at first incorrect intent accepted. Separate forensic diagnosis tests the boundary; no candidate promotion.",
+  "sha256": {
+    "evals/narrator/spikes/intent-interpretation-2026-10-22/corpus.json": "6afbe4078f94cc0be6f09525c6d35a5e5d22951b599c8616a1d5a18c9f6ae8d8",
+    "api/experiments/intent_interpretation_offline.py": "48974b2fdf6535a27f427af2348fa218a728cac9c42e1212a989c11205c8c56c",
+    "C:/Users/skate/.codex/worktrees/b008/AgenteStoryteller/scripts/evaluate_intent_interpretation_offline.py": "be9d9fc4a9dabf1aa8ca816b35270818c9d602d7de69339485cdf4c89de26896"
+  }
+}

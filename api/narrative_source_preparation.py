@@ -172,7 +172,8 @@ def prepare_source_turn_draft(
     SQLite eligibility and freshness remain enforced by the execution boundary.
     """
     try:
-        if type(snapshot) not in (SourceContextSnapshot, CampaignSourceSnapshot):
+        from .campaign_expression_context import CampaignExpressionSnapshot
+        if type(snapshot) not in (SourceContextSnapshot, CampaignSourceSnapshot, CampaignExpressionSnapshot):
             raise ValueError
         checked = type(snapshot).model_validate(snapshot)
         if checked.state_revision < checked.current_turn:

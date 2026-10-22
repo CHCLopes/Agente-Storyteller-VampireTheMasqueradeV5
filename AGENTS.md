@@ -32,6 +32,42 @@ modificar configurações globais ou arquivos fora do projeto por esta autoriza�
 Não abrir, copiar, imprimir ou registrar `.env` ou credenciais. Solicitar inserção
 de chave por mecanismo seguro, não pelo chat; nunca usar chave antiga da conversa.
 
+## Continuidade e formato de resposta — 22/10/2026
+
+Humano reforçou: quando não houver intervenção humana necessária, continuar todas
+as tarefas autorizadas até o próximo gate decisório real. Não encerrar apenas
+por terminar uma subtarefa nem criar aceite intermediário já delegado.
+
+Em TODA resposta final, incluir ao final este bloco, priorizando economia de
+recursos e indicando expressamente quando nenhuma ação humana for necessária:
+
+Configuração recomendada:
+
+- Modelo:
+- Esforço:
+- Motivo:
+- Ação humana necessária:
+- O que continuará autonomamente depois da ação:
+
+O bloco não amplia escopo, não troca o modelo automaticamente e não transforma
+recomendação em decisão aprovada. Preservar os limites de arquitetura e aceite
+final humano descritos abaixo.
+
+## Publicação antes de gate humano — 22/10/2026
+
+Humano determinou: entre a última atividade que não exige sua interação e a
+apresentação do gate decisório humano, fazer commit e push do projeto no GitHub.
+Esta instrução autoriza publicação do trabalho relacionado e verificado na branch
+atual de implementação. Não implica merge, promoção à main, alteração do checkout
+original, publicação de credenciais/saves/dados locais ou inclusão de mudanças
+alheias. Inspecionar diff/arquivos, executar verificações pertinentes e confirmar
+ref remoto após push. Se houver bloqueio concreto, relatar sem afirmar publicação.
+
+Ao final de toda resposta que exige interação humana, incluir obrigatoriamente
+“Configuração recomendada”, com Modelo, Esforço, Motivo, Ação humana necessária e
+O que continuará autonomamente depois da ação. Priorizar economia de recursos.
+A regra anterior de incluir o bloco em toda resposta final permanece vigente.
+
 ## Produto e limites
 
 ### Naturalidade e experiência — 20/10/2026

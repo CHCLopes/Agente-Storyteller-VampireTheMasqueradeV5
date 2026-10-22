@@ -591,6 +591,11 @@ def _validate_narrative_source_obligation(
     metadata = _json_load(attempt["metadata_json"], {}) if attempt is not None else {}
     has_marker = isinstance(metadata, Mapping) and "narrative_contract" in metadata
     has_envelope = isinstance(context, Mapping) and "narrative_source" in context
+    from .campaign_expression_turn import PROTOCOL as CAMPAIGN_EXPRESSION_PROTOCOL
+    if (narrative_contract == CAMPAIGN_EXPRESSION_PROTOCOL
+            or isinstance(metadata, Mapping) and metadata.get("narrative_contract") == CAMPAIGN_EXPRESSION_PROTOCOL
+            or isinstance(context, Mapping) and "campaign_expression" in context):
+        return None  # Validated against the v2 origin and retained plan under BEGIN IMMEDIATE.
     from .campaign_source_turn import PROTOCOL as CAMPAIGN_SOURCE_PROTOCOL
     if (narrative_contract == CAMPAIGN_SOURCE_PROTOCOL
             or isinstance(metadata, Mapping) and metadata.get("narrative_contract") == CAMPAIGN_SOURCE_PROTOCOL
@@ -2750,6 +2755,11 @@ class SQLitePersistence:
                     validate_source_state_context,
                 )
                 stored_metadata = _json_load(row["metadata_json"], {}) if row is not None else {}
+                from .campaign_expression_context import ORIGIN_KEY as EXPRESSION_ORIGIN_KEY
+                from .campaign_expression_storage import CampaignExpressionStorageError
+                if (isinstance(stored_metadata, Mapping) and EXPRESSION_ORIGIN_KEY in stored_metadata
+                        or isinstance(metadata, Mapping) and EXPRESSION_ORIGIN_KEY in metadata):
+                    raise CampaignExpressionStorageError("campaign_expression_snapshot_mutation_forbidden")
                 from .campaign_source_context import ORIGIN_KEY as CAMPAIGN_SOURCE_ORIGIN_KEY
                 from .campaign_source_storage import CampaignSourceStorageError
                 if (isinstance(stored_metadata, Mapping)
@@ -3689,6 +3699,17 @@ class SQLitePersistence:
                 # before an idempotent return. Removing both arguments is no bypass.
                 validate_source_obligation(connection)
                 from .campaign_source_storage import validate_campaign_commit_in_connection
+                validate_campaign_commit_in_connection(
+                    connection, session_id=session_id, operation_id=operation_id,
+                    attempt_id=attempt_id, turn_id=turn_id,
+                    narrative_contract=narrative_contract, requested_turn=requested_turn,
+                    base_revision=base_revision, base_state_revision=base_state_revision,
+                    user_input=user_input, state=state, relationships=relationships,
+                    context=context, narrative=narrative_payload, facts=fact_payloads,
+                    events=event_payloads, memory_candidates=candidate_payloads,
+                    episodic_memories=memory_payloads, provenance=provenance,
+                )
+                from .campaign_expression_storage import validate_campaign_commit_in_connection
                 validate_campaign_commit_in_connection(
                     connection, session_id=session_id, operation_id=operation_id,
                     attempt_id=attempt_id, turn_id=turn_id,
